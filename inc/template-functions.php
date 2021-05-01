@@ -38,7 +38,11 @@ add_action( 'wp_head', 'dedicatedsolutions_pingback_header' );
 
 
 
-
+/**  
+ *  Add Advance Custom Fields plugin feature in 
+ *  Custom Wordpress theme by including in theme 
+ * 
+ */
 define( 'DS_THEME_PATH', trailingslashit( get_template_directory() ) );
 define( 'DS_IMAGE_URI', trailingslashit( get_stylesheet_directory_uri() . '/assets/image/' ) );
 define( 'DS_ACF_PATH', trailingslashit( dirname( __FILE__ ) ) . 'lib/advanced-custom-fields-pro' );
@@ -55,24 +59,24 @@ function ds_acf_settings_url( $url ) {
 	$url = trailingslashit( DS_ACF_URL );
 	return $url;
 }
-
 function ds_acf_settings_path( $path ) {
 	$path = trailingslashit( DS_ACF_PATH ); // update path
 	return $path;
 }
-
 function ds_acf_settings_show_admin( $show_admin ) {
 	return true;
 }
-if( function_exists('acf_add_options_page') ) {
-	acf_add_options_page(array(
-		'page_title' 	=> 'Theme General Settings',
-		'menu_title'	=> 'Theme Settings',
-		'menu_slug' 	=> 'theme-general-settings',
-		'capability'	=> 'edit_posts',
-		'redirect'		=> false
-	));
-}
+
+
+// if( function_exists('acf_add_options_page') ) {
+// 	acf_add_options_page(array(
+// 		'page_title' 	=> 'Theme General Settings',
+// 		'menu_title'	=> 'Theme Settings',
+// 		'menu_slug' 	=> 'theme-general-settings',
+// 		'capability'	=> 'edit_posts',
+// 		'redirect'		=> false
+// 	));
+// }
 
 function ds_show_icon($icon, $echo=true){
 	if ( $echo ) {

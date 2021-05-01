@@ -73,6 +73,7 @@ if ( ! function_exists( 'dedicatedsolutions_setup' ) ) :
 		);
 
 		// Set up the WordPress core custom background feature.
+		/*
 		add_theme_support(
 			'custom-background',
 			apply_filters(
@@ -83,6 +84,7 @@ if ( ! function_exists( 'dedicatedsolutions_setup' ) ) :
 				)
 			)
 		);
+		*/
 
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
@@ -145,17 +147,13 @@ add_action( 'widgets_init', 'dedicatedsolutions_widgets_init' );
  * Enqueue scripts and styles.
  */
 function dedicatedsolutions_scripts() {
-	wp_enqueue_style( 'dedicatedsolutions-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_style_add_data( 'dedicatedsolutions-style', 'rtl', 'replace' );
-
-
+	wp_enqueue_style( 'ds-style', get_stylesheet_uri(), array(), _S_VERSION );
+	wp_style_add_data( 'ds-style', 'rtl', 'replace' );
 
 	// CSS Files
 	wp_enqueue_style( 'ds-bootstrap', trailingslashit(get_template_directory_uri()) . 'assets/plugin/bootstrap/css/bootstrap.css', array(), NULL );
 	wp_enqueue_style( 'ds-fullpage-style', trailingslashit(get_template_directory_uri()) . 'assets/css/fullpage.min.css', array(), wp_get_theme()->get( 'Version' ) );
-	wp_enqueue_style( 'ds-style', trailingslashit(get_template_directory_uri()) . 'assets/css/style.css', array(), wp_get_theme()->get( 'Version' ) );
-
-
+	wp_enqueue_style( 'ds-style-main', trailingslashit(get_template_directory_uri()) . 'assets/css/style.css', array(), wp_get_theme()->get( 'Version' ) );
 
 	// JS Scripts
 	wp_enqueue_script(
@@ -205,22 +203,10 @@ function dedicatedsolutions_scripts() {
 add_action( 'wp_enqueue_scripts', 'dedicatedsolutions_scripts' );
 
 
-if ( function_exists('acf_add_options_page') ) {
-
-	acf_add_options_page( array(
-		'page_title' 	=> 'Theme Settings',
-		'menu_title'	=> 'Theme Settings',
-		'menu_slug' 	=> 'ds-theme-general-settings',
-		'capability'	=> 'edit_posts',
-		'redirect'		=> false
-	));
-}
-
-
 /**
  * Implement the Custom Header feature.
  */
-require get_template_directory() . '/inc/custom-header.php';
+// require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.
@@ -251,4 +237,32 @@ require get_template_directory() . '/inc/menu-functions.php';
 // if ( defined( 'JETPACK__VERSION' ) ) {
 // 	require get_template_directory() . '/inc/jetpack.php';
 // }
+
+
+
+
+function required_custom_post_types(){
+   
+	// Services
+	register_post_type('services', array(
+		'labels' => array('name' => 'Our Services'),
+		'public' => true,
+		'menu_position'=> 24,
+		'supports' => array('title','editor','thumbnail','excerpt'),
+		'rewrite'=> array('slug'=> 'services'),
+		'menu_icon' => 'dashicons-sos'
+	));
+
+	// Why Us
+	register_post_type('why-us', array(
+		'labels' => array('name' => 'Why Us'),
+		'public' => true,
+		'menu_position'=> 22,
+		'supports' => array('title','editor','thumbnail','excerpt'),
+		'rewrite'=> array('slug'=> 'services'),
+		'menu_icon' => 'dashicons-awards'
+	));
+
+}
+add_action('init','required_custom_post_types');
 

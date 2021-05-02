@@ -8,15 +8,8 @@
 
 ?>
 
-<?php //if ( has_nav_menu( 'primary' ) ) : ?>
+<?php if ( has_nav_menu( 'primary' ) ) : ?>
 		<?php
-		// wp_nav_menu(
-		// 	array(
-		// 		'theme_location' => 'menu-1',
-		// 		'menu_id'        => 'primary-menu',
-		// 	)
-		// );
-
 		wp_nav_menu(
 			array(
 				'theme_location'  => 'primary',
@@ -33,7 +26,7 @@
 		);		
 		?>
 	<!-- #site-navigation -->
-<?php //endif; ?>
+<?php endif; ?>
 <div class="nav navbar-nav navbar-right">
 	<button class="btn btn-primary navbar-btn ">
 		<svg xmlns="http://www.w3.org/2000/svg" class="btn-icon" width="24.536" height="25.133"

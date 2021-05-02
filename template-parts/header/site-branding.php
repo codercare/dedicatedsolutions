@@ -21,11 +21,11 @@ $header_class = $show_title ? 'site-title' : 'screen-reader-text';
 		<a class="navbar-brand" href="#"><?php the_custom_logo(); ?></a>
 	<?php endif; ?>
 
-	<?php if ( $description && get_theme_mod( 'display_title_and_tagline', true ) === true ) : ?>
+	<?php /* if ( $description && get_theme_mod( 'display_title_and_tagline', true ) === true ) : ?>
 		<p class="site-description">
 			<?php echo $description; // phpcs:ignore WordPress.Security.EscapeOutput ?>
 		</p>
-	<?php endif; ?>
+	<?php endif; */ ?>
 <!-- .site-branding -->
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
 	aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">

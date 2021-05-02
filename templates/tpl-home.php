@@ -14,6 +14,9 @@ while ( have_posts() ) :
 			<?php
 			$banner_image_url = '';
 			$banner_image = get_field( 'banner_image' );
+            // echo"<pre>";
+            // print_r($banner_image);
+            // die();
 			if ( ! empty($banner_image) ) {
 				$banner_image_url = $banner_image['url'];
 			}
@@ -373,9 +376,10 @@ while ( have_posts() ) :
                                         if( have_rows('unlimited_bandwidth_feature_list') ):
                                             // Loop through rows.
                                             while( have_rows('unlimited_bandwidth_feature_list') ) : the_row();
+                                            $bandwidth_icon_image = get_sub_field('unlimited_bandwidth_png_image');
                                                 ?>
                                                 <li>
-                                                <span><?php the_sub_field('unlimited_bandwidth_svg_image_code');?></span>
+                                                <img src="<?php echo $bandwidth_icon_image['url']; ?>" style="width:22px">
                                                 <?php the_sub_field('unlimited_bandwidth_feature_text');?>
                                                 </li>
                                                 <?php
@@ -387,281 +391,10 @@ while ( have_posts() ) :
                             </div>
 							<div class="col-lg-6 col-sm-12 col-12">
                                 <div class="info-bandwidth-img">
-
-                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                        width="445" height="404.654" viewBox="0 0 445 404.654">
-                                        <defs>
-                                            <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1"
-                                                gradientUnits="objectBoundingBox">
-                                                <stop offset="0" stop-color="#fa8d1d" />
-                                                <stop offset="1" stop-color="#fe722d" />
-                                            </linearGradient>
-                                            <filter id="Path_1" x="20.656" y="4.373" width="209.652" height="400.281"
-                                                filterUnits="userSpaceOnUse">
-                                                <feOffset input="SourceAlpha" />
-                                                <feGaussianBlur stdDeviation="12.5" result="blur" />
-                                                <feFlood flood-color="#fe722d" />
-                                                <feComposite operator="in" in2="blur" />
-                                                <feComposite in="SourceGraphic" />
-                                            </filter>
-                                        </defs>
-                                        <g id="Group_22" data-name="Group 22" transform="translate(-574.477 -189.002)">
-                                            <ellipse id="Ellipse_1" data-name="Ellipse 1" cx="176" cy="177" rx="176"
-                                                ry="177" transform="translate(624.477 219.002)" />
-                                            <g id="Group_16" data-name="Group 16"
-                                                transform="matrix(-0.788, -0.616, 0.616, -0.788, 901.656, 530.717)">
-                                                <line id="Line_1" data-name="Line 1" x2="12.958"
-                                                    transform="translate(0.762 0) rotate(15.009)" fill="none"
-                                                    stroke="#fc7928" stroke-width="4" />
-                                                <line id="Line_2" data-name="Line 2" x2="12.958"
-                                                    transform="translate(0 2.845) rotate(15.009)" fill="none"
-                                                    stroke="#fc7928" stroke-width="4" />
-                                            </g>
-                                            <g id="Group_17" data-name="Group 17"
-                                                transform="translate(954.087 463.424) rotate(-165.992)">
-                                                <line id="Line_1-2" data-name="Line 1" x2="12.958"
-                                                    transform="translate(0.762 0) rotate(15.009)" fill="none"
-                                                    stroke="#fc7928" stroke-width="4" />
-                                                <line id="Line_2-2" data-name="Line 2" x2="12.958"
-                                                    transform="translate(0 2.845) rotate(15.009)" fill="none"
-                                                    stroke="#fc7928" stroke-width="4" />
-                                            </g>
-                                            <g id="Group_18" data-name="Group 18"
-                                                transform="translate(967.43 379.732) rotate(163)">
-                                                <line id="Line_1-3" data-name="Line 1" x2="12.958"
-                                                    transform="translate(0.762 0) rotate(15.009)" fill="none"
-                                                    stroke="#fc7928" stroke-width="4" />
-                                                <line id="Line_2-3" data-name="Line 2" x2="12.958"
-                                                    transform="translate(0 2.845) rotate(15.009)" fill="none"
-                                                    stroke="#fc7928" stroke-width="4" />
-                                            </g>
-                                            <g id="Group_19" data-name="Group 19"
-                                                transform="translate(938.314 300.36) rotate(126.011)">
-                                                <line id="Line_1-4" data-name="Line 1" x2="12.958"
-                                                    transform="translate(0.762 0) rotate(15.009)" fill="none"
-                                                    stroke="#fc7928" stroke-width="4" />
-                                                <line id="Line_2-4" data-name="Line 2" x2="12.958"
-                                                    transform="translate(0 2.845) rotate(15.009)" fill="none"
-                                                    stroke="#fc7928" stroke-width="4" />
-                                            </g>
-                                            <g id="Group_21" data-name="Group 21"
-                                                transform="translate(801.798 227.931) rotate(90)">
-                                                <line id="Line_1-5" data-name="Line 1" x2="12.958"
-                                                    transform="translate(0 2.928)" fill="none" stroke="#fa8720"
-                                                    stroke-width="4" />
-                                                <line id="Line_2-5" data-name="Line 2" x2="12.958"
-                                                    transform="translate(0 0)" fill="none" stroke="#fa8720"
-                                                    stroke-width="4" />
-                                            </g>
-                                            <g id="Group_20" data-name="Group 20"
-                                                transform="translate(886.746 251.937) rotate(107)">
-                                                <line id="Line_1-6" data-name="Line 1" x2="12.958"
-                                                    transform="translate(0.762 0) rotate(15.009)" fill="none"
-                                                    stroke="#fc7928" stroke-width="4" />
-                                                <line id="Line_2-6" data-name="Line 2" x2="12.958"
-                                                    transform="translate(0 2.845) rotate(15.009)" fill="none"
-                                                    stroke="#fc7928" stroke-width="4" />
-                                            </g>
-                                            <g id="Ellipse_2" data-name="Ellipse 2"
-                                                transform="translate(632.477 228.002)" fill="rgba(0,0,0,0)"
-                                                stroke="#fff" stroke-width="2">
-                                                <ellipse cx="167.5" cy="168" rx="167.5" ry="168" stroke="none" />
-                                                <ellipse cx="167.5" cy="168" rx="166.5" ry="167" fill="none" />
-                                            </g>
-                                            <g transform="matrix(1, 0, 0, 1, 574.48, 189)" filter="url(#Path_1)">
-                                                <path id="Path_1-2" data-name="Path 1"
-                                                    d="M3132.032,176.12s-115.97,24.962-117.008,150.29c-1.56-.52-1.56,103.877,103.747,141.708-.39-.78-5.071,17.161-5.071,17.161S2993.574,449.4,2997.473,316.788c0,.39.39-124.418,131.439-156.79C3128.911,160.779,3132.032,176.12,3132.032,176.12Z"
-                                                    transform="translate(-2939.22 -118.13)"
-                                                    fill="url(#linear-gradient)" />
-                                            </g>
-                                            <g id="Group_1" data-name="Group 1" transform="translate(779.064 374.587)">
-                                                <path id="Path_4" data-name="Path 4"
-                                                    d="M13.252,0A13.252,13.252,0,1,1,0,13.252,13.252,13.252,0,0,1,13.252,0Z"
-                                                    transform="translate(8.246 8.246)" fill="#424242" />
-                                                <g id="Path_3" data-name="Path 3" transform="translate(0 0)">
-                                                    <path id="Path_8074" data-name="Path 8074"
-                                                        d="M21.5,0A21.5,21.5,0,1,1,0,21.5,21.5,21.5,0,0,1,21.5,0Z"
-                                                        transform="translate(0 0)" fill="none" />
-                                                    <path id="Path_8075" data-name="Path 8075"
-                                                        d="M21.5,2.356a19.147,19.147,0,0,0-7.45,36.78,19.147,19.147,0,0,0,14.9-35.277,19.02,19.02,0,0,0-7.45-1.5M21.5,0A21.5,21.5,0,1,1,0,21.5,21.5,21.5,0,0,1,21.5,0Z"
-                                                        transform="translate(0 0)" fill="#424242" />
-                                                </g>
-                                                <circle id="Ellipse_3" data-name="Ellipse 3" cx="6" cy="6" r="6"
-                                                    transform="translate(15.413 15.414)" fill="#fff" />
-                                            </g>
-                                            <path id="Path_2" data-name="Path 2" d="M0,0,34.223,27.241l113.022,89.965"
-                                                transform="translate(770.524 371.936)" fill="none" stroke="#fff"
-                                                stroke-width="3" />
-                                            <g id="Group_2" data-name="Group 2" transform="translate(912.748 537.122)">
-                                                <text id="_10" data-name="10" transform="translate(-0.271 16.88)"
-                                                    font-size="16" font-family="Roboto-Bold, Roboto" font-weight="700">
-                                                    <tspan x="0" y="0">10</tspan>
-                                                </text>
-                                                <text id="Gbits" transform="translate(21.729 11.88)" fill="#545454"
-                                                    font-size="9" font-family="Roboto-Bold, Roboto" font-weight="700">
-                                                    <tspan x="0" y="0">Gbits</tspan>
-                                                </text>
-                                            </g>
-                                            <g id="Group_3" data-name="Group 3" transform="translate(975.231 458.48)">
-                                                <text id="_10-2" data-name="10" transform="translate(0.245 16.521)"
-                                                    font-size="16" font-family="Roboto-Bold, Roboto" font-weight="700">
-                                                    <tspan x="0" y="0">9</tspan>
-                                                </text>
-                                                <text id="Gbits-2" data-name="Gbits"
-                                                    transform="translate(12.245 12.521)" fill="#545454" font-size="9"
-                                                    font-family="Roboto-Bold, Roboto" font-weight="700">
-                                                    <tspan x="0" y="0">Gbits</tspan>
-                                                </text>
-                                            </g>
-                                            <g id="Group_4" data-name="Group 4" transform="translate(986.003 366.91)">
-                                                <text id="_10-3" data-name="10" transform="translate(0.474 17.091)"
-                                                    font-size="16" font-family="Roboto-Bold, Roboto" font-weight="700">
-                                                    <tspan x="0" y="0">8</tspan>
-                                                </text>
-                                                <text id="Gbits-3" data-name="Gbits"
-                                                    transform="translate(11.474 12.091)" fill="#545454" font-size="9"
-                                                    font-family="Roboto-Bold, Roboto" font-weight="700">
-                                                    <tspan x="0" y="0">Gbits</tspan>
-                                                </text>
-                                            </g>
-                                            <g id="Group_5" data-name="Group 5" transform="translate(959.071 280.728)">
-                                                <text id="_10-4" data-name="10" transform="translate(0.405 17.275)"
-                                                    font-size="16" font-family="Roboto-Bold, Roboto" font-weight="700">
-                                                    <tspan x="0" y="0">7</tspan>
-                                                </text>
-                                                <text id="Gbits-4" data-name="Gbits"
-                                                    transform="translate(13.405 13.275)" fill="#545454" font-size="9"
-                                                    font-family="Roboto-Bold, Roboto" font-weight="700">
-                                                    <tspan x="0" y="0">Gbits</tspan>
-                                                </text>
-                                            </g>
-                                            <g id="Group_6" data-name="Group 6" transform="translate(896.589 216.088)">
-                                                <text id="_10-5" data-name="10" transform="translate(-0.112 16.915)"
-                                                    font-size="16" font-family="Roboto-Bold, Roboto" font-weight="700">
-                                                    <tspan x="0" y="0">6</tspan>
-                                                </text>
-                                                <text id="Gbits-5" data-name="Gbits"
-                                                    transform="translate(11.888 12.915)" fill="#545454" font-size="9"
-                                                    font-family="Roboto-Bold, Roboto" font-weight="700">
-                                                    <tspan x="0" y="0">Gbits</tspan>
-                                                </text>
-                                            </g>
-                                            <g id="Group_2-2" data-name="Group 2" transform="translate(650.964 542.51)">
-                                                <text id="_10-6" data-name="10" transform="translate(-0.487 17.493)"
-                                                    font-size="16" font-family="Roboto-Bold, Roboto" font-weight="700">
-                                                    <tspan x="0" y="0">0</tspan>
-                                                </text>
-                                                <text id="Gbits-6" data-name="Gbits"
-                                                    transform="translate(10.513 13.493)" fill="#545454" font-size="9"
-                                                    font-family="Roboto-Bold, Roboto" font-weight="700">
-                                                    <tspan x="0" y="0">Gbits</tspan>
-                                                </text>
-                                            </g>
-                                            <g id="Group_3-2" data-name="Group 3"
-                                                transform="translate(584.173 464.943)">
-                                                <text id="_10-7" data-name="10" transform="translate(0.304 17.058)"
-                                                    font-size="16" font-family="Roboto-Bold, Roboto" font-weight="700">
-                                                    <tspan x="0" y="0">1</tspan>
-                                                </text>
-                                                <text id="Gbits-7" data-name="Gbits"
-                                                    transform="translate(12.304 13.058)" fill="#545454" font-size="9"
-                                                    font-family="Roboto-Bold, Roboto" font-weight="700">
-                                                    <tspan x="0" y="0">Gbits</tspan>
-                                                </text>
-                                            </g>
-                                            <g id="Group_4-2" data-name="Group 4"
-                                                transform="translate(574.477 372.297)">
-                                                <text id="_10-8" data-name="10" transform="translate(0 16.706)"
-                                                    font-size="16" font-family="Roboto-Bold, Roboto" font-weight="700">
-                                                    <tspan x="0" y="0">2</tspan>
-                                                </text>
-                                                <text id="Gbits-8" data-name="Gbits" transform="translate(12 14.706)"
-                                                    fill="#545454" font-size="9" font-family="Roboto-Bold, Roboto"
-                                                    font-weight="700">
-                                                    <tspan x="0" y="0">Gbits</tspan>
-                                                </text>
-                                            </g>
-                                            <g id="Group_5-2" data-name="Group 5"
-                                                transform="translate(596.022 287.191)">
-                                                <text id="_10-9" data-name="10" transform="translate(0.455 16.812)"
-                                                    font-size="16" font-family="Roboto-Bold, Roboto" font-weight="700">
-                                                    <tspan x="0" y="0">3</tspan>
-                                                </text>
-                                                <text id="Gbits-9" data-name="Gbits"
-                                                    transform="translate(11.455 12.812)" fill="#545454" font-size="9"
-                                                    font-family="Roboto-Bold, Roboto" font-weight="700">
-                                                    <tspan x="0" y="0">Gbits</tspan>
-                                                </text>
-                                            </g>
-                                            <g id="Group_6-2" data-name="Group 6"
-                                                transform="translate(655.273 222.553)">
-                                                <text id="_10-10" data-name="10" transform="translate(0.203 17.449)"
-                                                    font-size="16" font-family="Roboto-Bold, Roboto" font-weight="700">
-                                                    <tspan x="0" y="0">4</tspan>
-                                                </text>
-                                                <text id="Gbits-10" data-name="Gbits"
-                                                    transform="translate(13.203 12.449)" fill="#545454" font-size="9"
-                                                    font-family="Roboto-Bold, Roboto" font-weight="700">
-                                                    <tspan x="0" y="0">Gbits</tspan>
-                                                </text>
-                                            </g>
-                                            <g id="Group_8" data-name="Group 8" transform="translate(779.162 187.002)">
-                                                <text id="_10-11" data-name="10" transform="translate(0.314 17)"
-                                                    font-size="16" font-family="Roboto-Bold, Roboto" font-weight="700">
-                                                    <tspan x="0" y="0">5</tspan>
-                                                </text>
-                                                <text id="Gbits-11" data-name="Gbits" transform="translate(13.314 12)"
-                                                    fill="#545454" font-size="9" font-family="Roboto-Bold, Roboto"
-                                                    font-weight="700">
-                                                    <tspan x="0" y="0">Gbits</tspan>
-                                                </text>
-                                            </g>
-                                            <g id="Group_9" data-name="Group 9" transform="translate(668.47 466.9)">
-                                                <line id="Line_1-7" data-name="Line 1" x2="12.958"
-                                                    transform="translate(0.762 6.201) rotate(-15.009)" fill="none"
-                                                    stroke="#fc7928" stroke-width="4" />
-                                                <line id="Line_2-7" data-name="Line 2" x2="12.958"
-                                                    transform="translate(0 3.356) rotate(-15.009)" fill="none"
-                                                    stroke="#fc7928" stroke-width="4" />
-                                            </g>
-                                            <g id="Group_15" data-name="Group 15"
-                                                transform="matrix(0.788, -0.616, 0.616, 0.788, 730.527, 528.621)">
-                                                <line id="Line_1-8" data-name="Line 1" x2="12.958"
-                                                    transform="translate(0.762 6.201) rotate(-15.009)" fill="none"
-                                                    stroke="#fc7928" stroke-width="4" />
-                                                <line id="Line_2-8" data-name="Line 2" x2="12.958"
-                                                    transform="translate(0 3.356) rotate(-15.009)" fill="none"
-                                                    stroke="#fc7928" stroke-width="4" />
-                                            </g>
-                                            <g id="Group_12" data-name="Group 12" transform="translate(649.578 383.73)">
-                                                <line id="Line_1-9" data-name="Line 1" x2="12.958"
-                                                    transform="translate(0 2.917)" fill="none" stroke="#fb7f24"
-                                                    stroke-width="4" />
-                                                <line id="Line_2-9" data-name="Line 2" x2="12.958"
-                                                    transform="translate(0.41)" fill="none" stroke="#fb7f24"
-                                                    stroke-width="4" />
-                                            </g>
-                                            <g id="Group_13" data-name="Group 13"
-                                                transform="translate(676.887 303.407) rotate(39)">
-                                                <line id="Line_1-10" data-name="Line 1" x2="12.958"
-                                                    transform="translate(0 2.928)" fill="none" stroke="#fa8720"
-                                                    stroke-width="4" />
-                                                <line id="Line_2-10" data-name="Line 2" x2="12.958"
-                                                    transform="translate(0 0)" fill="none" stroke="#fa8720"
-                                                    stroke-width="4" />
-                                            </g>
-                                            <g id="Group_14" data-name="Group 14"
-                                                transform="translate(728.128 259.822) rotate(39)">
-                                                <line id="Line_1-11" data-name="Line 1" x2="12.958"
-                                                    transform="translate(0 2.928)" fill="none" stroke="#fa8720"
-                                                    stroke-width="4" />
-                                                <line id="Line_2-11" data-name="Line 2" x2="12.958"
-                                                    transform="translate(0 0)" fill="none" stroke="#fa8720"
-                                                    stroke-width="4" />
-                                            </g>
-                                        </g>
-                                    </svg>
-
+                                        <?php 
+                                        $bandwidth_feature_image = get_field('unlimited_bandwidth_feature_image');
+                                        ?> 
+                                        <img src="<?php echo $bandwidth_feature_image['url']; ?>" style="width:100%" >  
                                 </div>
                             </div>
                         </div>
@@ -758,7 +491,7 @@ while ( have_posts() ) :
 										?>
 										<h4><?php the_sub_field('section_title'); ?></h4>
 										<p><?php the_sub_field('section_content'); ?></p>
-										<a href="<?php the_sub_field('section_button_link'); ?>" class="btn btn-border btn-black-border"><?php the_sub_field('section_button_label'); ?></a>
+										<a href="<?php the_sub_field('section_button_link'); ?>" class="btn btn-border btn-black-border"><?php the_sub_field('section_button_label_service'); ?></a>
 									</div>
 								</div>
 								<?php
@@ -776,9 +509,9 @@ while ( have_posts() ) :
     <section class="section fix-height-container ">
         <div class="content-wrapper">
             <div class="section-text text-center">
-                <h2><?php the_field('feature_content_section_sub_title'); ?></h2>
+                <h2><?php the_field('feature_content_section_title'); ?></h2>
                 <span class="section-border"></span>
-                <h5><?php the_field('feature_content_section_title'); ?></h5>
+                <h5><?php the_field('feature_content_section_sub_title'); ?></h5>
             </div>
                 <div class="container">
                     <div class="row">
@@ -788,10 +521,12 @@ while ( have_posts() ) :
                             // Loop through rows.
                             $i = 1;
                             while( have_rows('feature_content_blocks') ) : the_row();
+                            $product_image = get_sub_field('feature_block_icon_image');
+
                                 ?>
                                 <div class="col-lg-3 col-sm-6 col-6">
                                     <div class="hover-info-box">
-                                        <?php the_sub_field('feature_block_svg_image_code'); ?>
+                                        <img src="<?php echo $product_image['url'];?>" style="width:36px; height:36px;">
                                         <h5><?php the_sub_field('feature_block_title'); ?></h5>
                                         <p><?php the_sub_field('feature_block_content'); ?></p>
                                         <a href="<?php the_sub_field('feature_block_button_link'); ?>" class="btn btn-border btn-black-border"><?php the_sub_field('feature_block_button_lable'); ?></a>

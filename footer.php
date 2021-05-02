@@ -20,21 +20,27 @@
 <footer class="site-footer">
     <div class="container">
         <div class="footer-wrapper">
+            
+
             <div class="footer-cards">
-                <h6>Accepted Payment</h6>
-                <?php
-					$payment_images = get_field('accepted_payments', 'option');
-					$size = 'full'; // (thumbnail, medium, large, full or custom size)
-					if( $payment_images ): ?>
-                <?php foreach( $payment_images as $image_id ): ?>
-                <span>
-                    <?php echo wp_get_attachment_image( $image_id, $size ); ?>
-                </span>
-                <?php endforeach; ?>
-                <?php endif; ?>
+            <h6>Accepted Payment</h6>
+            <span>
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/image/visa.svg" class="attachment-full size-full" alt="" loading="lazy" width="43" height="30">
+            </span>
+            <span>
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/image/mastercard.svg" class="attachment-full size-full" alt="" loading="lazy" width="40" height="30">							
+            </span>
+            <span>
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/image/paypal.svg" class="attachment-full size-full" alt="" loading="lazy" width="43" height="30">							
+            </span>
+            <span>
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/image/american-express.svg" class="attachment-full size-full" alt="" loading="lazy" width="43" height="30">							
+            </span>
+            <span>
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/image/discover.svg" class="attachment-full size-full" alt="" loading="lazy" width="41" height="30">							
+            </span>
+			</div>
 
-
-            </div>
             <div class="footer-info mobile-hidden">
                 <span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="28.444" height="35" viewBox="0 0 28.444 35">
@@ -72,19 +78,19 @@
                 </span>
                 <div class="footer-right-content ">
                     <h6>US Based Support</h6>
-                    <p><?php echo get_field('us_based_support', 'option');?></p>
+                    <p>Live Chat 24/7 </p>
                 </div>
             </div>
             <div class="footer-info tab-hidden">
                 <div class="footer-right-content ">
                     <h6>Manage Support</h6>
-                    <span><?php echo get_field('manage_support', 'option');?></span>
+                    <span>Industry Leading Managed Support</span>
                 </div>
             </div>
             <div class="footer-info tab-hidden">
                 <div class="footer-right-content ">
                     <h6>Speak with an expert </h6>
-                    <span><?php echo get_field('speak_with_an_expert', 'option');?></span>
+                    <span>Need help deciding on the best server for your need?</span>
                 </div>
             </div>
             <div class="footer-info">

@@ -80,7 +80,8 @@ while ( have_posts() ) :
                                 </g>
                             </svg>
                             <?php the_field( 'banner_dedicated_server_button_label' ); ?></a>
-                        <a href="<?php the_field( 'banner_private_cloud_button_link' ); ?>" class="btn btn-primary navbar-btn "><svg xmlns="http://www.w3.org/2000/svg"
+                        <a href="<?php the_field( 'banner_private_cloud_button_link' ); ?>" class="btn btn-primary navbar-btn ">
+                        <svg xmlns="http://www.w3.org/2000/svg"
                                 class="btn-icon" width="24.02" height="22.471" viewBox="0 0 24.02 22.471">
                                 <g id="server" transform="translate(-7.99 -23.971)">
                                     <path id="Path_6131" data-name="Path 6131"
@@ -117,7 +118,8 @@ while ( have_posts() ) :
                                         d="M289.162,360h-.775a.387.387,0,0,0,0,.775h.775a.387.387,0,0,0,0-.775Z"
                                         transform="translate(-266.45 -319.756)" fill="#fff" />
                                 </g>
-                            </svg><?php the_field( 'banner_private_cloud_button_label' ); ?></a>
+                            </svg>
+                            <?php the_field( 'banner_private_cloud_button_label' ); ?></a>
                     </div>
                     <div>
 						<?php

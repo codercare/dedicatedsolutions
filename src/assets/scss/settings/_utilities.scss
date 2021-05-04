@@ -1,0 +1,6 @@
+.u-mb-untill-small{
+	margin-bottom: 1rem;
+	@include respond(small){
+		margin-bottom: 0;
+	}
+}

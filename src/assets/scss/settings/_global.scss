@@ -1,0 +1,47 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size:50%;
+  scroll-behavior: smooth;
+
+  @include respond(tab-land){
+    font-size:56.25%;
+  }
+  @include respond(big-desktop){
+    font-size:62.25%;
+  }
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  color: $darkGrey;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  color: $mainOrange;
+}
+
+:focus {
+  outline: 2px solid $mainOrange;
+}
+::selection {
+  background: $mainOrange;
+  color: #ffffff;
+}
+::-moz-selection {
+  background: $mainOrange;
+  color: #ffffff;
+}

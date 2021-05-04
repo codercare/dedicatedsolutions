@@ -1,32 +1,56 @@
-<?php
-/**
- * The header for our theme
- *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package dedicatedsolutions
- */
-
-
-?>
-<!doctype html>
+<!DOCTYPE html>
 <html <?php language_attributes(); ?>>
-<head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<?php wp_head(); ?>
-	<!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-        rel="stylesheet">
-</head>
+	<head>
+		<meta charset="<?php bloginfo( 'charset' ); ?>">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title><?php bloginfo( 'title' ); ?></title>
+		<?php wp_head(); ?>
+	</head>
 
-<body <?php body_class(); ?>>
-<?php wp_body_open(); ?>
-<div id="page" class="page-content">
-	<?php  get_template_part( 'template-parts/header/site-header' ); ?>
-	<div id="content" class="site-content">
-		<div id="primary" class="content-area">
-			<main id="main" class="site-main" role="main">
+	<body <?php body_class(); ?>>
+
+		<header role="header" class="site-header">
+			<div class="wrapper">
+				<div class="rows rows--t-padding rows--b-padding rows--item-vertical-center">
+					<div class="rows__small-8 rows__medium-3">
+						<div class="site-header__logo">
+							<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/logos.png'; ?>" alt="Dedicated solutions Logo">
+						</div>
+					</div>
+					<div class="rows__medium-7 rows__display-none-um">
+						<div class="site-header__menu-content">
+							<nav class="header-navigation" role="navigation" aria-label="<?php esc_html_e( 'Main Navigation', '_themename' ); ?>">
+							<?php
+								wp_nav_menu(
+									array(
+										'theme_location' => 'header-nav-menu',
+										'container'      => false,
+									)
+								);
+								?>
+							</nav>
+						</div>
+					</div>
+					<div class="rows__small-4 rows__medium-2 rows--item-vertical-center">
+						<button class="btn--orange ml-auto"><i class="fas fa-comment-dots"></i><span>Live Chat</span></button>
+						<div class="site-header__menu-icon">
+							<div class="site-header__menu-icon__middle"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<div class="site-header__mobile-menu-content">
+				<nav class="header-mobile-navigation" role="navigation" aria-label="<?php esc_html_e( 'Main Navigation', '_themename' ); ?>">
+				<?php
+					wp_nav_menu(
+						array(
+							'theme_location' => 'header-nav-menu',
+							'container'      => false,
+						)
+					);
+					?>
+				</nav>
+		</div>
+			

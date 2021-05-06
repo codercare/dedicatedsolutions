@@ -39,8 +39,12 @@
 						</li>
 					</ul>
 					<div class="site-footer__btn-container">
-						<a class="btn--orange u-mr"><span class="btn-icon"><i class="fas fa-mobile-alt"></i></span><span>Contact Us</span></a>
-						<a class="btn--orange"><span class="btn-icon"><i class="fas fa-comment-dots"></i></span></a>
+						<a href="<?php the_field( 'banner_dedicated_server_button_link' ); ?>" class="btn--orange u-mb-untill-small u-mr">
+							<span class="btn-label">Contact Us</span>
+						</a>
+						<a href="<?php the_field( 'banner_dedicated_server_button_link' ); ?>" class="btn--orange u-mb-untill-small">
+							<div class="btn-icon"><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/chat@2x.png'; ?>" alt="" srcset=""></div>
+						</a>
 					</div>
 				</div>
 

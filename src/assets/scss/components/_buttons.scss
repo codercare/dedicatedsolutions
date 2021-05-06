@@ -4,6 +4,7 @@
 	padding: 12px 22px;
 	border-radius: 4px;
 	font-family: 'Roboto', sans-serif;
+	font-size: 14px;
 	font-weight: 500;
 	display: flex;
 	align-items: center;
@@ -80,4 +81,71 @@
         transform: translateY(-1px);
         box-shadow: 0 5px 10px rgba(#3f3f3f, 0.09);
     }
+}
+
+.btn--outline{
+	@extend %btn;
+	color: #fff;
+	border: solid 1px #fff;
+	background-color: transparent;
+	transition: all .2s ease-in-out;
+	text-decoration: none;
+
+	.fas{
+		font-size: 11px;
+		margin-left: 7px;
+		transition: all .2s ease-in-out;
+	}
+
+	&:hover,
+	&:active,
+    &:focus{
+		border: #fff;
+		border: solid 1px #fff;
+		color: $mainOrange;
+		text-decoration: none;
+		background-color: #fff;
+
+		.fas{
+			margin-left: 13px;
+		}
+	}
+}
+
+.btn--outline-dark{
+	@extend %btn;
+	color: $black;
+	border: solid 1px $black;
+	background-color: transparent;
+	transition: all .2s ease-in-out;
+	text-decoration: none;
+
+	.fas{
+		font-size: 11px;
+		margin-left: 7px;
+		transition: all .2s ease-in-out;
+	}
+
+	&:hover,
+	&:active,
+    &:focus{
+		border: #fff;
+		border: solid 1px $mainOrange;
+		color: $mainOrange;
+		text-decoration: none;
+		background-color: #fff;
+
+		.fas{
+			margin-left: 13px;
+		}
+	}
+}
+
+.btn-icon{
+	width: 13px;
+	margin-right: 5px;
+
+	img{
+		object-fit: cover;
+	}
 }

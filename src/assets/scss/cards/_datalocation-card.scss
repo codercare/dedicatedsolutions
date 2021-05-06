@@ -1,0 +1,57 @@
+.datalocation-card{
+	padding: 4rem 4rem 4.5rem 4rem;
+	background-color: $mainOrange;
+	color: #fff;
+	margin-bottom: 2.5rem;
+
+	&__header{
+		display: flex;
+		margin-bottom: 2rem;
+	}
+
+	&__icon{
+		max-width: 4.5rem;
+		overflow: hidden;
+		margin-right: 1rem;
+
+		img{
+			object-fit: cover;
+		}
+	}
+
+	&__title{
+		font-family: 'Product Sans', sans-serif;
+		font-weight: 700;
+		font-size: 2.4rem;
+	}
+
+	&__content{
+		ul{
+			padding: 0;
+			margin: 0;
+			list-style: none;
+		}
+
+		li{
+			font-family: 'Roboto', sans-serif;
+			font-size: 1.6rem;
+			position: relative;
+			padding-left: 2rem;
+			&:not(:last-child){
+				margin-bottom: 2rem;
+			}
+
+			&::after{
+				content: '';
+				height: 8px;
+				width: 8px;
+				background: $black;
+				border-radius: 100%;
+				position: absolute;
+				left: 0;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+		}
+	}
+}

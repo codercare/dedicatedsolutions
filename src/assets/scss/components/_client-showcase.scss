@@ -1,0 +1,22 @@
+.client-showcase{
+	background-color: #F6F6F6;
+	padding-top: 3rem;
+	padding-bottom: 3rem;
+
+	&__logo-list{
+		list-style: none;
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+		flex-wrap: wrap;
+	}
+
+	&__logo{
+		max-width: 100px;
+		overflow: hidden;
+
+		img{
+			object-fit: conver;
+		}
+	}
+}

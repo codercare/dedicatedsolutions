@@ -36,7 +36,7 @@
 						</div>
 					</div>
 					<div class="rows__small-4 rows__medium-2 rows--item-vertical-center">
-						<button class="btn--orange ml-auto"><i class="fas fa-comment-dots"></i><span>Live Chat</span></button>
+						<button class="btn--orange ml-auto"><span class="btn-icon"><i class="fas fa-comment-dots"></i></span><span>Live Chat</span></button>
 						<div class="site-header__menu-icon">
 							<div class="site-header__menu-icon__middle"></div>
 						</div>

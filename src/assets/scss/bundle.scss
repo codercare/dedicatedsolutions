@@ -4,11 +4,28 @@
 @import 'settings/global';
 @import 'settings/utilities';
 
-@import 'components/wrapper';
-@import 'components/rows';
+@import 'grid/wrapper';
+@import 'grid/rows';
+
 @import 'components/site-header';
 @import 'components/header-navigation';
 @import 'components/buttons';
 @import 'components/large-banner';
+@import 'components/client-showcase';
+@import 'components/typography';
+@import 'components/section-customer';
+@import 'components/datacenter-location';
+@import 'components/datacenter';
+@import 'components/server-features';
+@import 'components/features-highlight';
+@import 'components/section-services';
+@import 'components/section-products';
+@import 'components/tech-support';
+@import 'components/site-footer';
 
-
+@import 'cards/customer-cards';
+@import 'cards/datalocation-card';
+@import 'cards/feature-highlight-card';
+@import 'cards/services-card';
+@import 'cards/product-card';
+@import 'cards/tech-support-card';

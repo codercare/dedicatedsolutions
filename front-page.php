@@ -9,7 +9,7 @@ if ( ! empty( $banner_image ) ) {
 }
 ?>
 
-<section class="large-banner" style="background-image: url(<?php echo $banner_image_url; ?>);">
+<secstion class="large-banner" style="background-image: url(<?php echo $banner_image_url; ?>);">
 	<div class="large-banner__container">
 		<h1 class="large-banner__heading"><?php the_field( 'banner_title' ); ?></h1>
 		<div class="large-banner__CTA-container">

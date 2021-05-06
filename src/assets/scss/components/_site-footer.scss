@@ -1,0 +1,110 @@
+.site-footer{
+	margin-top: 20rem;
+	background-color: $black;
+	color: #fff;
+	padding: 2rem 0;
+
+	&__content{
+		display: flex;
+		align-items: center;
+	}
+
+	&__btn-container{
+		display: flex;
+	}
+}
+
+.payment-methods{
+	display: flex;
+	align-items: center;
+	margin-right: 3rem;
+
+	&__title{
+		font-family: 'Product Sans', sans-serif;
+		font-size: 1.6rem;
+		font-weight: 700;
+		display: flex;
+		flex-direction: column;
+		margin-right: 1rem;
+	}
+
+	&__list{
+		margin: 0;
+		padding: 0;
+		display: flex;
+		list-style: none;
+	}
+
+	&__item{
+		width: 4.5rem;
+
+		img{
+			height: 3rem;
+			object-fit: cover;
+		}
+
+		&:not(:last-child){
+			margin-right: 5px;
+		}
+	}
+}
+
+.us-support{
+	position: relative;
+	padding-left: 5rem;
+	margin-right: 3rem;
+
+	&__title{
+		font-family: 'Product Sans', sans-serif;
+		font-size: 1.6rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		margin: 0;
+	}
+
+	&__text{
+		font-size: 1.4rem;
+	}
+
+	&__icon-container{
+		position: absolute;
+		left: 0;
+
+		.fas{
+			font-size: 4rem;
+		}
+	}
+}
+
+.support-links{
+	list-style: none;
+	display: flex;
+	padding: 0;
+	margin: 0;
+	margin-right: 3rem;
+
+	&__item{
+		&:not(:last-child){
+			margin-right: 1rem;
+		}
+	}
+
+	&__title{
+		font-family: 'Product Sans', sans-serif;
+		font-size: 1.2rem;
+		font-weight: 700;
+		text-transform: uppercase;
+	}
+
+	&__link{
+		font-size: 12px;
+		line-height: 1.2;
+		max-width: 15rem;
+		display: block;
+		color: #fff;
+
+		&:hover{
+			color: inherit;
+		}
+	}
+}

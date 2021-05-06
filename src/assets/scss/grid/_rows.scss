@@ -22,7 +22,7 @@
   }
 
   &--gutters {
-    margin-right: -65px;
+    margin-right: -60px;
   }
 
   &--gutters-large {
@@ -30,11 +30,15 @@
   }
 
   &--gutters-small {
-    margin-right: -45px;
+    margin-right: -25px;
+  }
+
+  &--gutters-smaller{
+    margin-right: -10px;
   }
 
   &--gutters > div {
-    padding-right: 65px;
+    padding-right: 60px;
   }
 
   &--gutters-large > div {
@@ -42,7 +46,11 @@
   }
 
   &--gutters-small > div {
-    padding-right: 45px;
+    padding-right: 25px;
+  }
+
+  &--gutters-smaller > div {
+    padding-right: 10px;
   }
 
   &__b-margin-until-medium {

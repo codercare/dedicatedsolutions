@@ -1,0 +1,27 @@
+.feature-highlight-card{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	&__image-container{
+		width: 5rem;
+		img{
+			object-fit: cover;
+		}
+	}
+
+	&__title{
+		font-size: 1.4rem;
+		font-weight: 500;
+		color: #fff;
+		margin-top: 2.3rem;
+		margin-bottom: 1.2rem;
+	}
+
+	&__description{
+		color: #fff;
+		font-weight: 400;
+		font-size: 2.4rem;
+	}
+}

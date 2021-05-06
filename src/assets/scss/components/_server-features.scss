@@ -1,0 +1,41 @@
+.server-features{
+	padding-top: 12rem;
+	padding-bottom: 12rem;
+
+	&__text{
+		font-size: 1.7rem;
+		font-weight: 500;
+		margin-bottom: 3.5rem;
+	}
+
+	&__list{
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		font-size: 1.5rem;
+		font-weight: 500;
+	}
+
+	&__item{
+		margin-bottom: 3rem;
+		position: relative;
+		padding-left: 5rem;
+		img{
+			position: absolute;
+			left: 0;
+			top: 50%;
+			transform: translateY(-50%);	
+			width: 4rem;
+			object-fit: cover;
+		}
+	}
+
+	&__image-container{
+		width: 100%;
+		overflow: hidden;
+
+		img{
+			object-fit: cover;
+		}
+	}
+}

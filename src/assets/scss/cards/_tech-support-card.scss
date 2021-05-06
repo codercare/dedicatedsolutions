@@ -1,0 +1,29 @@
+.tech-support-card{
+	padding: 5rem 4rem 6rem 5rem;
+	background-position: center;
+	background-repeat: no-repeat;
+	color: #fff;
+	position: relative;
+
+	&__title{
+		font-family: 'Product Sans', sans-serif;
+		font-weight: 700;
+		font-size: 3.6rem;
+		margin-bottom: 2rem;
+	}
+
+	&__description{
+		margin-bottom: 4.5rem;
+	}
+
+	&__icon-container{
+		position: absolute;
+		right: 4rem;
+		bottom: 6rem;
+		width: 6rem;
+		overflow: hidden;
+		img{
+			object-fit: cover;
+		}
+	}
+}

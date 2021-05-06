@@ -12,7 +12,7 @@ html {
     font-size:56.25%;
   }
   @include respond(big-desktop){
-    font-size:62.25%;
+    font-size:62.5%;
   }
 }
 
@@ -20,6 +20,7 @@ body {
   font-size: 1.6rem;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
+  line-height: 1.8;
   color: $darkGrey;
 }
 

@@ -1,8 +1,23 @@
 .datacenter-location{
 	background-color: $black;
-	padding-top: 12rem;
-	padding-bottom: 12rem;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
+	padding-top: 5rem;
+	padding-bottom: 5rem;
+
+	@include respond(small){
+		padding-top: 8rem;
+		padding-bottom: 8rem;
+	}
+
+	@include respond(tab-port){
+		padding-top: 10rem;
+		padding-bottom: 0rem;
+	}
+
+	@include respond(tab-land){
+		padding-top: 12rem;
+		padding-bottom: 12rem;
+	}
 }

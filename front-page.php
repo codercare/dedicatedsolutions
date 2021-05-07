@@ -9,16 +9,15 @@ if ( ! empty( $banner_image ) ) {
 }
 ?>
 
-
 <section class="large-banner" style="background-image: url(<?php echo $banner_image_url; ?>);">
 	<div class="large-banner__container">
 		<h1 class="large-banner__heading"><?php the_field( 'banner_title' ); ?></h1>
 		<div class="large-banner__CTA-container">
 			<a href="<?php the_field( 'banner_dedicated_server_button_link' ); ?>" class="btn--orange u-mb-untill-small">
-				<span class="btn-icon"><i class="fas fa-server"></i></span><?php the_field( 'banner_dedicated_server_button_label' ); ?>
+				<div class="btn-icon"><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/dserver.png'; ?>" alt="" srcset=""></div><span class="btn-label"><?php the_field( 'banner_dedicated_server_button_label' ); ?></span>
 			</a>
 			<a href="<?php the_field( 'banner_private_cloud_button_link' ); ?>" class="btn--orange">
-				<span class="btn-icon"><i class="fas fa-user-lock"></i></span><?php the_field( 'banner_private_cloud_button_label' ); ?>
+				<div class="btn-icon"><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/server@2x.png'; ?>" alt="" srcset=""></div><span class="btn-label"><?php the_field( 'banner_private_cloud_button_label' ); ?></span>
 			</a>
 		</div>
 		<div class="large-banner__features">
@@ -353,8 +352,7 @@ if ( ! empty( $technology_and_support_bg_image ) ) {
 	</div>
 </section>
 
-<footer>
-	
+<footer>	
 </footer>
 
 

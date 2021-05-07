@@ -1,14 +1,16 @@
 %btn{
 	border-radius: 5px;
 	border: none;
-	padding: 12px 22px;
+	padding: 1.2rem 2.2rem;
 	border-radius: 4px;
 	font-family: 'Roboto', sans-serif;
-	font-size: 14px;
+	font-size: 1.4rem;
 	font-weight: 500;
 	display: flex;
 	align-items: center;
 	max-width: max-content;
+	max-height: 50px;
+	height: 50rem;
 }
 
 .btn--orange{
@@ -19,7 +21,7 @@
 	transition: all .3s ease-in;
 	box-shadow: 0 10px 20px rgba(#3f3f3f, 0.2);
 
-	span{
+	.btn-txt-um{
 		display: none;
 
 		@include respond(tab-land){
@@ -142,8 +144,9 @@
 }
 
 .btn-icon{
-	width: 13px;
-	margin-right: 5px;
+	width: 2.5rem;
+	margin-right: 1rem;
+	overflow: hidden;
 
 	img{
 		object-fit: cover;

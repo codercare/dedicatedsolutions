@@ -36,7 +36,9 @@
 						</div>
 					</div>
 					<div class="rows__small-4 rows__medium-2 rows--item-vertical-center">
-						<button class="btn--orange ml-auto"><span class="btn-icon"><i class="fas fa-comment-dots"></i></span><span>Live Chat</span></button>
+						<a href="<?php the_field( 'banner_dedicated_server_button_link' ); ?>" class="btn--orange u-mb-untill-small ml-auto">
+							<div class="btn-icon"><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/chat@2x.png'; ?>" alt="" srcset=""></div><span class="btn-label btn-txt-um">Live Chat</span>
+						</a>
 						<div class="site-header__menu-icon">
 							<div class="site-header__menu-icon__middle"></div>
 						</div>

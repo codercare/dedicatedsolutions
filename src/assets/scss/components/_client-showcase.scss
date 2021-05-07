@@ -9,11 +9,14 @@
 		justify-content: space-evenly;
 		align-items: center;
 		flex-wrap: wrap;
+		padding: 0;
 	}
 
 	&__logo{
 		max-width: 100px;
 		overflow: hidden;
+		margin-bottom: 2rem;
+    	margin-right: 1rem;
 
 		img{
 			object-fit: conver;

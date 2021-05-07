@@ -353,8 +353,7 @@ if ( ! empty( $technology_and_support_bg_image ) ) {
 	</div>
 </section>
 
-<footer>
-	
+<footer>	
 </footer>
 
 

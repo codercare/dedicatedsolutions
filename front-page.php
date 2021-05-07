@@ -33,9 +33,9 @@ if ( ! empty( $banner_image ) ) {
 				</ul>
 			<?php endif; ?>
 		</div>
-		<div class="btn--transparent">
-			<span>Learn More</span> 
-			<i class="fas fa-arrow-down"></i>
+		<div class="btn--transparent">			
+			<span><a href="<?php the_field( 'learn_more' ); ?>">Learn More</a></span> 
+			<i class="fas fa-arrow-down"></i>			
 		</div>
 	</div>
 </section>
@@ -64,7 +64,9 @@ if ( ! empty( $banner_image ) ) {
 		<header class="section-header u-txt-center">
 			<h2 class="section-header__title"><?php the_field( 'customer_satisfied_section_title' ); ?></h2>
 			<span class="section-header__decoration-element"></span>
+			<?php if( get_field('customer_satisfied_section_sub_title') ): ?>
 			<p class="section-header__sub-title"><?php the_field( 'customer_satisfied_section_sub_title' ); ?></p>
+			<?php endif; ?>
 		</header>
 		<div class="section-customer__content">
 			<div class="rows rows--gutters-small">
@@ -73,7 +75,7 @@ if ( ! empty( $banner_image ) ) {
 				$i = 1;
 				while ( have_rows( 'satisfied_customer' ) ) :
 					the_row();
-					$sc_bg_image_url                     = '';
+					$sc_bg_image_url = '';
 					$satisfied_customer_background_color = get_sub_field( 'satisfied_customer_background_color' );
 					$satisfied_customer_background_image = get_sub_field( 'satisfied_customer_background_image' );
 					if ( ! empty( $satisfied_customer_background_image ) ) {
@@ -81,10 +83,10 @@ if ( ! empty( $banner_image ) ) {
 					}
 					?>
 				<div class="rows__medium-4">
-					<div class="customer-cards" style="background-color: <?php echo $satisfied_customer_background_color; ?>;<?php echo $sc_bg_image_url; ?>">
+					<div class="customer-cards" style="background-color: <?php echo $satisfied_customer_background_color.'; '; echo $sc_bg_image_url; ?>">
 						<h4 class="customer-cards__title"><?php the_sub_field( 'satisfied_customer_title' ); ?></h4>
-						<p class="customer-cards__details"><?php the_sub_field( 'satisfied_customer_content' ); ?></p>
-						<a href="#" class="btn--outline"><span>Request</span><i class="fas fa-arrow-right"></i></a>
+						<p class="customer-cards__details"><?php the_sub_field( 'satisfied_customer_content' ); ?></p>						
+						<a href="<?php the_sub_field( 'satisfied_customer_button_link' ); ?>" class="btn--outline"><span><?php the_sub_field( 'satisfied_customer_button_label' ); ?></span><i class="fas fa-arrow-right"></i></a>
 					</div>
 				</div>
 					<?php
@@ -110,7 +112,9 @@ if ( ! empty( $data_center_locations_section_bg_image ) ) {
 		<header class="section-header section-header--on-dark-bg u-txt-center">
 			<h2 class="section-header__title"><?php the_field( 'data_center_locations_section_title' ); ?></h2>
 			<span class="section-header__decoration-element--dark"></span>
+			<?php if( get_field('data_center_locations_section_sub_title') ): ?>
 			<p class="section-header__sub-title"><?php the_field( 'data_center_locations_section_sub_title' ); ?></p>
+			<?php endif; ?>
 		</header>
 		<div class="datacenter-location__content">
 			<div class="wrapper wrapper--medium">
@@ -124,7 +128,7 @@ if ( ! empty( $data_center_locations_section_bg_image ) ) {
 						<div class="datalocation-card">
 							<div class="datalocation-card__header">
 								<div class="datalocation-card__icon">
-									<img src="/wp-content/themes/dedicatedsolutions/dist/assets/images/data-location-icon.png" alt="Icon image">
+									<img src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/data-location-icon.png" alt="Icon image">
 								</div>
 								<h3 class="datalocation-card__title"><?php the_sub_field( 'data_center_locations_title' ); ?></h3>
 							</div>
@@ -185,7 +189,9 @@ if ( ! empty( $data_center_locations_section_bg_image ) ) {
 		<header class="section-header u-txt-center">
 			<h2 class="section-header__title"><?php the_field( 'unlimited_bandwidth_section_title' ); ?></h2>
 			<span class="section-header__decoration-element"></span>
+			<?php if( get_field('unlimited_bandwidth_section_sub_title') ): ?>
 			<p class="section-header__sub-title"><?php the_field( 'unlimited_bandwidth_section_sub_title' ); ?></p>
+			<?php endif; ?>
 		</header>
 		<div class="rows rows--gutters">
 			<div class="rows__medium-6">
@@ -251,9 +257,11 @@ if ( ! empty( $data_center_locations_section_bg_image ) ) {
 <section class="section-services">
 	<div class="wrapper">
 		<header class="section-header u-txt-center">
-			<h2 class="section-header__title">Our Services</h2>
+			<h2 class="section-header__title"><?php the_field( 'services_section_title' ); ?></h2>
 			<span class="section-header__decoration-element"></span>
-			<p class="section-header__sub-title">Dedicated Solution Services</p>
+			<?php if( get_field('services_section_sub_title') ): ?>
+			<p class="section-header__sub-title"><?php the_field( 'services_section_sub_title' ); ?></p>
+			<?php endif; ?>
 		</header>
 		<div class="rows rows--gutters-small">
 			<?php
@@ -266,7 +274,19 @@ if ( ! empty( $data_center_locations_section_bg_image ) ) {
 				<div class="rows__medium-6">
 					<div class="services-card" style="background-color:<?php echo $section_background_color; ?>">
 						<div class="services-card__image-container">
+							<?php
+							$service_section_icon_image = get_sub_field('section_icon_image');
+							$service_image_url = $service_section_icon_image['url'];
+							
+							if(isset($service_image_url)){?>
+							<img src="<?php echo $service_image_url; ?>" alt="" srcset="">
+							<?php
+							}else{?>
 							<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/service-icon.png'; ?>" alt="" srcset="">
+							<?php
+							}
+							?>
+							
 						</div>
 						<h3 class="services-card__title"><?php the_sub_field( 'section_title' ); ?></h3>
 						<p class="services-card__description"><?php the_sub_field( 'section_content' ); ?></p>
@@ -284,8 +304,12 @@ if ( ! empty( $data_center_locations_section_bg_image ) ) {
 <section class="section-products">
 	<div class="wrapper">
 		<header class="section-header u-txt-center">
-			<h2 class="section-header__title">Our Products</h2>
+			<h2 class="section-header__title"><?php the_field( 'feature_content_section_title' ); ?></h2>
 			<span class="section-header__decoration-element"></span>
+			<?php if( get_field('feature_content_section_sub_title') ): ?>
+			<p class="section-header__sub-title"><?php the_field( 'feature_content_section_sub_title' ); ?></p>
+			<?php endif; ?>
+
 		</header>
 		<div class="rows rows--gutters-smaller">
 		<?php
@@ -297,7 +321,7 @@ if ( ! empty( $data_center_locations_section_bg_image ) ) {
 			<div class="rows__medium-3">
 				<div class="product-card">
 					<div class="product-card__image-container">
-						<img src="<?php echo $product_image['url']; ?>" >
+						<img src="<?php echo $product_image['url']; ?>" alt="<?php the_sub_field( 'feature_block_title' ); ?>" >
 					</div>
 					<h4 class="product-card__title"><?php the_sub_field( 'feature_block_title' ); ?></h4>
 					<p class="product-card__description"><?php the_sub_field( 'feature_block_content' ); ?></p>
@@ -329,6 +353,11 @@ if ( ! empty( $technology_and_support_bg_image ) ) {
 					the_row();
 					$tnsupport_block_bg_image_url          = '';
 					$technology_and_support_block_bg_image = get_sub_field( 'technology_and_support_block_bg_image' );
+					
+					$block_front_small_icon_image = get_sub_field( 'block_front_small_icon' );
+					
+					
+
 					if ( ! empty( $technology_and_support_block_bg_image ) ) {
 						$tnsupport_block_bg_image_url = 'background-image: url(' . $technology_and_support_block_bg_image['url'] . ');';
 					}
@@ -339,7 +368,7 @@ if ( ! empty( $technology_and_support_bg_image ) ) {
 						<p class="tech-support-card__description"><?php the_sub_field( 'technology_and_support_block_content' ); ?></p>
 						<a href="<?php the_sub_field( 'technology_and_support_block_button_link' ); ?>" class="btn--outline"><?php the_sub_field( 'technology_and_support_block_button_label' ); ?><i class="fas fa-arrow-right"></i></a>
 						<div class="tech-support-card__icon-container">
-							<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/server@2x.png'?>" alt="" srcset="">
+						<img src="<?php echo $block_front_small_icon_image['url']; ?>" alt="<?php the_sub_field( 'technology_and_support_block_title' ); ?>">
 						</div>
 					</div>
 				</div>

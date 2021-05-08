@@ -9,7 +9,7 @@ if ( ! empty( $banner_image ) ) {
 }
 ?>
 
-<section class="large-banner" style="background-image: url(<?php echo $banner_image_url; ?>);">
+<section id="large-banner" data-matching-link="#large-banner-link" class="large-banner page-section" style="background-image: url(<?php echo $banner_image_url; ?>);">
 	<div class="large-banner__container">
 		<h1 class="large-banner__heading"><?php the_field( 'banner_title' ); ?></h1>
 		<div class="large-banner__CTA-container">
@@ -59,7 +59,7 @@ if ( ! empty( $banner_image ) ) {
 	</div>
 </section>
 
-<section class="section-customer">
+<section id="section-customer" data-matching-link="#section-customer-link" class="section-customer page-section">
 	<div class="wrapper">
 		<header class="section-header u-txt-center">
 			<h2 class="section-header__title"><?php the_field( 'customer_satisfied_section_title' ); ?></h2>
@@ -105,7 +105,7 @@ if ( ! empty( $data_center_locations_section_bg_image ) ) {
 	$data_center_bg_image_url = 'background-image: url(' . $data_center_locations_section_bg_image['url'] . ');';
 }
 ?>
-<section class="datacenter-location" style="<?php echo $data_center_bg_image_url; ?>">
+<section id="datacenter-location" data-matching-link="#datacenter-location-link" class="datacenter-location page-section" style="<?php echo $data_center_bg_image_url; ?>">
 	<div class="wrapper">
 		<header class="section-header section-header--on-dark-bg u-txt-center">
 			<h2 class="section-header__title"><?php the_field( 'data_center_locations_section_title' ); ?></h2>
@@ -180,7 +180,7 @@ if ( ! empty( $data_center_locations_section_bg_image ) ) {
 	</div>
 </section>
 
-<section class="server-features">
+<section id="server-features" data-matching-link="#server-features-link" class="server-features page-section">
 	<div class="wrapper wrapper--medium">
 		<header class="section-header u-txt-center">
 			<h2 class="section-header__title"><?php the_field( 'unlimited_bandwidth_section_title' ); ?></h2>
@@ -248,7 +248,7 @@ if ( ! empty( $data_center_locations_section_bg_image ) ) {
 	</div>
 </section>
 
-<section class="section-services">
+<section id="section-services" data-matching-link="#section-services-link" class="section-services page-section">
 	<div class="wrapper">
 		<header class="section-header u-txt-center">
 			<h2 class="section-header__title">Our Services</h2>
@@ -281,7 +281,7 @@ if ( ! empty( $data_center_locations_section_bg_image ) ) {
 	</div>
 </section>
 
-<section class="section-products">
+<section id="section-products" data-matching-link="#section-products-link" class="section-products page-section">
 	<div class="wrapper">
 		<header class="section-header u-txt-center">
 			<h2 class="section-header__title">Our Products</h2>
@@ -319,7 +319,7 @@ if ( ! empty( $technology_and_support_bg_image ) ) {
 	$t_and_s_bg_image_url = 'background-image: url(' . $technology_and_support_bg_image['url'] . ');';
 }
 ?>
-<section class="tech-support" style="<?php echo $t_and_s_bg_image_url; ?>">
+<section id="tech-support" data-matching-link="#tech-support-link" class="tech-support page-section" style="<?php echo $t_and_s_bg_image_url; ?>">
 	<div class="tech-support__content">
 		<div class="wrapper wrapper--medium">
 			<div class="rows rows--gutters-small">
@@ -351,10 +351,5 @@ if ( ! empty( $technology_and_support_bg_image ) ) {
 		</div>
 	</div>
 </section>
-
-<footer>
-	
-</footer>
-
 
 <?php get_footer(); ?>

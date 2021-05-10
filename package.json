@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.3",
+    "lodash": "^4.17.21",
     "normalize.scss": "^0.1.0"
   },
   "bugs": {

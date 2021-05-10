@@ -2,4 +2,4 @@ import $ from 'jquery';
 
 import './component/navigation';
 import './component/mobilemenu';
-import './component/slider';
+import './component/scrollnavigation';

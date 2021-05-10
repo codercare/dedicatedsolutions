@@ -206,6 +206,7 @@ while ( have_posts() ) :
 							// Loop through rows.
 							$i = 1;
 							while( have_rows('satisfied_customer') ) : the_row();
+							    //  if($i > 3){ break; }
 								// Load sub field value.
 								$sc_bg_image_url = '';
 								$satisfied_customer_background_color = get_sub_field('satisfied_customer_background_color');
@@ -250,6 +251,7 @@ while ( have_posts() ) :
 	<!--Content (2)-->
     <section class="section fix-height-container ">
         <div class="content-wrapper">
+		<br/>
             <?php
 			$data_center_bg_image_url = '';
 			$data_center_locations_section_bg_image = get_field('data_center_locations_section_bg_image');
@@ -312,6 +314,14 @@ while ( have_posts() ) :
                     </div>
                 </div>
             </div>
+           
+        </div>
+    </section>
+
+	<!--Content (2-1)-->
+    <section class="section fix-height-container ">
+        <div class="content-wrapper">
+         
             <div class="data-center-slide-wrapper">
                     <div class="container-fluid">
                         <div class="row">
@@ -350,6 +360,41 @@ while ( have_posts() ) :
                         </div>
                     </div>
             </div>
+			<div class="bandwidth-feature-box">
+                <div class="container">
+                    <div class="row text-center">
+						<?php
+						// Check rows exists.
+						if( have_rows('icon_feature_blocks') ):
+							// Loop through rows.
+							while( have_rows('icon_feature_blocks') ) : the_row();
+								$icon_block_image = '';
+								$icon_feature_block_image = get_sub_field('icon_feature_block_image');
+								?>
+								<div class="col-lg-4 col-sm-4 col-4">
+									<?php
+									if ( ! empty($icon_feature_block_image) ) {
+										$icon_block_image = $icon_feature_block_image['url'];
+										?>
+										<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+											width="49" height="49" viewBox="0 0 49 49">
+											<image id="characteristics-nav-li.it1" width="49" height="49"
+												xlink:href="<?php echo $icon_block_image;?>" />
+										</svg>
+										<?php
+									}
+									?>
+									<p><?php the_sub_field('icon_feature_block_sub_title');?></p>
+									<h4><?php the_sub_field('icon_feature_block_title');?></h4>
+								</div>
+								<?php
+							endwhile;
+						endif;
+						?>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
     <!--Content End-->
@@ -401,43 +446,16 @@ while ( have_posts() ) :
                     </div>
                 </div>
             </div>
-            <div class="bandwidth-feature-box">
-                <div class="container">
-                    <div class="row text-center">
-						<?php
-						// Check rows exists.
-						if( have_rows('icon_feature_blocks') ):
-							// Loop through rows.
-							while( have_rows('icon_feature_blocks') ) : the_row();
-								$icon_block_image = '';
-								$icon_feature_block_image = get_sub_field('icon_feature_block_image');
-								?>
-								<div class="col-lg-4 col-sm-4 col-4">
-									<?php
-									if ( ! empty($icon_feature_block_image) ) {
-										$icon_block_image = $icon_feature_block_image['url'];
-										?>
-										<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-											width="49" height="49" viewBox="0 0 49 49">
-											<image id="characteristics-nav-li.it1" width="49" height="49"
-												xlink:href="<?php echo $icon_block_image;?>" />
-										</svg>
-										<?php
-									}
-									?>
-									<p><?php the_sub_field('icon_feature_block_sub_title');?></p>
-									<h4><?php the_sub_field('icon_feature_block_title');?></h4>
-								</div>
-								<?php
-							endwhile;
-						endif;
-						?>
-                    </div>
-                </div>
-            </div>
+           
         </div>
     </section>
     <!--Content End-->
+
+	<!--Content (3-1)-->
+    <!-- <section class="section fix-height-container ">
+        <div class="content-wrapper ">		   
+		</div>
+    </section> -->
 
 
 	<!--Content (4)-->

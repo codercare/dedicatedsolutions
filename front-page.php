@@ -352,11 +352,4 @@ if ( ! empty( $technology_and_support_bg_image ) ) {
 	</div>
 </section>
 
-<<<<<<< HEAD
-<footer>	
-</footer>
-
-
-=======
->>>>>>> 066d7719067e3401048557746b27ce0ac7d0d952
 <?php get_footer(); ?>

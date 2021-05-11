@@ -2,6 +2,20 @@
   border-bottom: 3px solid $mainOrange;
   position: relative;
   z-index: 3;
+  width: 100%;
+  background: #fff;
+  transition: .5s all ease-out;
+
+  &--on-scroll{
+    border-bottom: 1px solid $mainOrange;
+    position: fixed;
+    box-shadow: 0 10px 20px rgba(#3f3f3f, 0.09);
+
+    &::before {
+      border-bottom: 1px solid $mainOrange!important;
+      height: 0!important;
+    }
+  }
 
   .container {
     padding-top: 7px;
@@ -15,6 +29,7 @@
     height: 25px;
     width: 100%;
     background-color: $black;
+    transition: .5s all ease-out;
   }
 
   &__logo {
@@ -97,7 +112,7 @@
     transform: scale(1.2);
     text-align: center;
     transition: all 0.3s ease-out;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     height: 100vh;

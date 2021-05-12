@@ -1,21 +1,32 @@
 .site-header {
-  border-bottom: 3px solid $mainOrange;
-  position: relative;
+  border-bottom: 2px solid $mainOrange;
+  position: sticky;
+  top: 0;
+  left: 0;
   z-index: 3;
   width: 100%;
   background: #fff;
   transition: .5s all ease-out;
 
-  &--on-scroll{
-    border-bottom: 1px solid $mainOrange;
-    position: fixed;
-    box-shadow: 0 10px 20px rgba(#3f3f3f, 0.09);
-
-    &::before {
-      border-bottom: 1px solid $mainOrange!important;
-      height: 0!important;
+  @include respond(tab-land){
+    position: relative;
+    border-bottom: 3px solid $mainOrange;
+    
+    &--on-scroll{
+      border-bottom: 1px solid $mainOrange;
+      position: fixed;
+      box-shadow: 0 10px 20px rgba(#3f3f3f, 0.09);
+  
+      &::before {
+        border-bottom: 1px solid $mainOrange!important;
+        height: 0!important;
+        height: 25px;
+        border-bottom: 3px solid $mainOrange;
+      }
     }
   }
+
+
 
   .container {
     padding-top: 7px;
@@ -24,9 +35,9 @@
 
   &::before {
     content: "";
-    border-bottom: 3px solid $mainOrange;
+    border-bottom: 2px solid $mainOrange;
     display: block;
-    height: 25px;
+    height: 0;
     width: 100%;
     background-color: $black;
     transition: .5s all ease-out;

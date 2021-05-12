@@ -1,20 +1,20 @@
 .section-customer{
-	padding-top: 5rem;
-	padding-bottom: 5rem;
+	padding-top: 12rem;
+	padding-bottom: 12rem;
 
 	@include respond(small){
-		padding-top: 8rem;
-		padding-bottom: 8rem;
+		padding-top: 13rem;
+		padding-bottom: 13rem;
 	}
 
 	@include respond(tab-port){
-		padding-top: 10rem;
-		padding-bottom: 0rem;
+		padding-top: 12rem;
+		padding-bottom: 12rem;
 	}
 
 	@include respond(tab-land){
-		padding-top: 12rem;
-		padding-bottom: 12rem;
+		padding-top: 17rem;
+		padding-bottom: 15rem;
 	}
 
 	&__content{

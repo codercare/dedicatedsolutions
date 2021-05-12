@@ -58,6 +58,7 @@
 					?>
 				</nav>
 		</div>
+		<?php if( is_front_page() ):?>
 		<nav class="scroll-nav">
           <ul>
             <li><a href="#large-banner" id="large-banner-link" class="scroll-nav--is-active"></a></li>
@@ -69,3 +70,4 @@
             <li><a href="#tech-support" id="tech-support-link"></a></li>
           </ul>
         </nav>
+		<?php endif;?>

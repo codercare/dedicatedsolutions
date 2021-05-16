@@ -39,7 +39,7 @@ const paths = {
 
 export const serve = (done) => {
 	server.init({
-		proxy: 'http://dedicated-solution.local/'
+		proxy: 'http://localhost/dedicated-solutions.com/'
 	});
 	done();
 }

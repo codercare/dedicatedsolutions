@@ -172,43 +172,12 @@ require get_template_directory() . '/inc/menu-functions.php';
 // 	require get_template_directory() . '/inc/jetpack.php';
 // }
 
-function required_custom_post_types(){
-   
-	// Services
-	register_post_type('services', array(
-		'labels' => array('name' => 'Our Services'),
-		'public' => true,
-		'menu_position'=> 24,
-		'supports' => array('title','editor','thumbnail','excerpt'),
-		'rewrite'=> array('slug'=> 'services'),
-		'menu_icon' => 'dashicons-sos'
-	));
+require get_template_directory() . '/inc/custom_posts_features.php';
 
-	// Why Us
-	register_post_type('why-us', array(
-		'labels' => array('name' => 'Why Us'),
-		'public' => true,
-		'menu_position'=> 22,
-		'supports' => array('title','editor','thumbnail','excerpt'),
-		'rewrite'=> array('slug'=> 'services'),
-		'menu_icon' => 'dashicons-awards'
-	));
 
-}
-add_action('init','required_custom_post_types');
 /**
  * Add SVG Support in theme to upload and view svg files
  */
-
-// function add_file_types_to_uploads($file_types){
-// 	$new_filetypes = array();
-// 	$new_filetypes['svg'] = 'image/svg+xml';
-// 	$file_types = array_merge($file_types, $new_filetypes );
-// 	return $file_types;
-// 	}
-// add_filter('upload_mimes', 'add_file_types_to_uploads');
-
-
 function cc_mime_types($mimes) {
 	$mimes['svg'] = 'image/svg+xml';
 	return $mimes;

@@ -15,7 +15,10 @@
 				<div class="rows rows--t-padding rows--b-padding rows--item-vertical-center">
 					<div class="rows__small-8 rows__medium-3">
 						<div class="site-header__logo">
-							<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/logos.png'; ?>" alt="Dedicated solutions Logo">
+						<?php if ( has_custom_logo()) : ?>
+						<?php the_custom_logo(); ?>
+						<?php endif; ?>
+						<!-- <img src="<?php echo get_template_directory_uri() . '/dist/assets/images/logos.png'; ?>" alt="Dedicated solutions Logo"> -->
 						</div>
 					</div>
 					<div class="rows__medium-7 rows__display-none-um">

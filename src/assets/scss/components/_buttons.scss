@@ -152,3 +152,21 @@
 		object-fit: cover;
 	}
 }
+.btn--white{
+	@extend %btn;
+	background: #fff;
+	color: $black;
+	max-width: none;
+	height: auto;
+	display: inline-block;
+	max-height: none;
+	&:hover, &:focus{
+		background: $mainOrange;
+		text-decoration: none;
+		color: #fff;
+		outline: none;
+	}
+	.fas{
+		margin: 0 0 0 1rem;
+	}
+}

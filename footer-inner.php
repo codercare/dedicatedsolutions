@@ -57,8 +57,7 @@
 					licenseKey: '71051AA7-77BC4D43-BEDAB639-090EF836',
 					fitToSection: true,
 					navigation: true,
-					navigationPosition: 'right',
-					verticalCentered:false
+					navigationPosition: 'right'
 				});
 			});
 		</script>

@@ -13,8 +13,8 @@ get_header();
 ?>
 
 
-<main id="main" class="site-main">
-	<section class="page-banner reseller-page-banner" style="background-image:url('<?php echo $banner_image_url; ?>')">
+<main id="fullpage" class="site-main">
+	<section class="page-banner reseller-page-banner section fp-auto-height" style="background-image:url('<?php echo $banner_image_url; ?>')">
 		<div class="wrapper">
 			<div class="page-banner-content">
 				<h1 class="large-banner__heading"><?php the_field( 'reseller_program_title' ); ?></h1>
@@ -24,7 +24,7 @@ get_header();
 		</div>
 	</section>
 	
-	<section class="reseller-exclusive page-section">
+	<section class="reseller-exclusive page-section section fp-auto-height">
 		<div class="wrapper">
 			<h2 class="section-header__title"><?php the_field( 'exclusive_reseller_title' ); ?></h2>
 			<span class="section-header__decoration-element"></span>
@@ -39,7 +39,7 @@ get_header();
 		$reseller_bg_image = $bg_image['url'];
 	}
 	?>
-	<section class="reseller-program-work page-section" style="background-image:url('<?php echo $reseller_bg_image; ?>')">
+	<section class="reseller-program-work page-section section fp-auto-height" style="background-image:url('<?php echo $reseller_bg_image; ?>')">
 		<div class="wrapper">
 			<h2 class="section-header__title"><?php the_field( 'reseller_program_works_title' ); ?></h2>
 			<span class="section-header__decoration-element--dark"></span>
@@ -79,7 +79,7 @@ get_header();
 		</div>
 	</section>
 
-	<section class="why-choose-dedicatedSolutions page-section">
+	<section class="why-choose-dedicatedSolutions page-section section fp-auto-height">
 		<div class="wrapper">
 			<h2 class="section-header__title"><?php the_field('why_choose_our_dedicated_title'); ?></h2>
 			<span class="section-header__decoration-element"></span>
@@ -109,7 +109,7 @@ get_header();
 								<?php															
 								while ( have_rows( 'features_lists' ) ) : the_row();								
 								?>
-								<li><?php the_sub_field( 'list' ); ?></li>
+								<li><span><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/check.png'; ?>" alt="check-icon"></span><?php the_sub_field( 'list' ); ?></li>
 								<?php 
 								endwhile;
 								?>
@@ -122,44 +122,12 @@ get_header();
 					endwhile; 
 					endif;
 					?>
-					<!-- <div class="rows__medium-4">
-						<div class="why-choose-card">
-							<figure class="thumbnail-image">
-								<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/why-choose-img2.jpg'; ?>" alt="why-choose-img2">
-							</figure>
-							<div class="why-choose-card-content">
-								<h2>All In One Solution</h2>
-								<ul>
-									<li>Instant server creation.</li>
-									<li>Integrated billing system.</li>
-									<li>Integrated helpdesk.</li>
-									<li>End-customer billing available.</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="rows__medium-4">
-						<div class="why-choose-card">
-							<figure class="thumbnail-image">
-								<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/why-choose-img3.jpg'; ?>" alt="why-choose-img3">
-							</figure>
-							<div class="why-choose-card-content">
-								<h2>Do and Earn More With Us</h2>
-								<ul>
-									<li>Reseller API Available.</li>
-									<li>Mobile Reseller & Control App.</li>
-									<li>Reseller Billing & Helpdesk Software.</li>
-									<li>WHMCS Reseller Module.</li>
-									<li>Custom Products for Resellers.</li>
-								</ul>
-							</div>
-						</div>
-					</div> -->
+					
 				</div>
 			</div>
 		</div>
 	</section>
 </main>
+<?php get_footer('inner'); ?>
 
 
-<?php get_footer(); ?>

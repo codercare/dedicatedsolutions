@@ -1,19 +1,19 @@
 .section-products{
-	padding-top: 12rem;
-	padding-bottom: 12rem;
+	padding-top: 4rem;
+	// padding-bottom: 12rem;
 
-	@include respond(small){
-		padding-top: 13rem;
-		padding-bottom: 13rem;
-	}
+	// @include respond(small){
+	// 	padding-top: 13rem;
+	// 	padding-bottom: 13rem;
+	// }
 
-	@include respond(tab-port){
-		padding-top: 14rem;
-		padding-bottom: 14rem;
-	}
+	// @include respond(tab-port){
+	// 	padding-top: 14rem;
+	// 	padding-bottom: 14rem;
+	// }
 
-	@include respond(tab-land){
-		padding-top: 17rem;
-		padding-bottom: 15rem;
-	}
+	// @include respond(tab-land){
+	// 	padding-top: 17rem;
+	// 	padding-bottom: 15rem;
+	// }
 }

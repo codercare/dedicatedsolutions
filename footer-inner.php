@@ -1,4 +1,4 @@
-		<footer class="site-footer section fp-auto-height">
+		<footer class="site-footer site-inner-footer">
 			<div class="wrapper">
 				<div class="site-footer__content">
 					<div class="payment-methods">
@@ -58,6 +58,7 @@
 					fitToSection: true,
 					navigation: true,
 					navigationPosition: 'right',
+					verticalCentered:false
 				});
 			});
 		</script>

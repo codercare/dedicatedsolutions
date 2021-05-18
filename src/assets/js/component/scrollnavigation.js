@@ -36,7 +36,7 @@ class StickyHeader {
       if ( (scrollPercent < 40 && scrollPercent > 0 && this.scrollDirection == 'down') || (scrollPercent < 33 && this.scrollDirection == 'up')) {
         let matchingLink = el.getAttribute("data-matching-link");
         document.querySelectorAll(`.scroll-nav a:not(${matchingLink})`).forEach(el => el.classList.remove("scroll-nav--is-active"));
-        document.querySelector(matchingLink).classList.add("scroll-nav--is-active");
+        // document.querySelector(matchingLink).classList.add("scroll-nav--is-active");
       }
     }
   }

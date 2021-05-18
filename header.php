@@ -59,15 +59,15 @@
 				</nav>
 		</div>
 		<?php if( is_front_page() ):?>
-		<nav class="scroll-nav">
+		<!-- <nav class="section  scroll-nav">
           <ul>
-            <li><a href="#large-banner" id="large-banner-link" class="scroll-nav--is-active"></a></li>
-            <li><a href="#section-customer" id="section-customer-link"></a></li>
-            <li><a href="#datacenter-location" id="datacenter-location-link"></a></li>
-			<li><a href="#server-features" id="server-features-link"></a></li>
-            <li><a href="#section-services" id="section-services-link"></a></li>
-			<li><a href="#section-products" id="section-products-link"></a></li>
-            <li><a href="#tech-support" id="tech-support-link"></a></li>
+            <li><a class="slide"></a></li>
+            <li><a class="slide"></a></li>
+            <li><a class="slide"></a></li>
+			<li><a class="slide"></a></li>
+            <li><a class="slide"></a></li>
+			<li><a class="slide"></a></li>
+            <li><a class="slide"></a></li>
           </ul>
-        </nav>
+        </nav> -->
 		<?php endif;?>

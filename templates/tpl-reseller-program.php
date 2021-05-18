@@ -4,8 +4,8 @@
 get_header();?>
 
 
-<main id="main" class="site-main">
-	<section class="page-banner reseller-page-banner" style="background-image:url('<?php echo get_template_directory_uri() . '/dist/assets/images/reseller-banner-bg.png'; ?>')">
+<main id="fullpage" class="site-main">
+	<section class="page-banner reseller-page-banner section fp-auto-height" style="background-image:url('<?php echo get_template_directory_uri() . '/dist/assets/images/reseller-banner-bg.png'; ?>')">
 		<div class="wrapper">
 			<div class="page-banner-content">
 				<h1 class="large-banner__heading">Reseller Program</h1>
@@ -15,7 +15,7 @@ get_header();?>
 		</div>
 	</section>
 	
-	<section class="reseller-exclusive page-section">
+	<section class="reseller-exclusive page-section section fp-auto-height">
 		<div class="wrapper">
 			<h2 class="section-header__title">Our Exclusive Reseller Program</h2>
 			<span class="section-header__decoration-element"></span>
@@ -24,7 +24,7 @@ get_header();?>
 		</div>
 	</section>
 	
-	<section class="reseller-program-work page-section" style="background-image:url('<?php echo get_template_directory_uri() . '/dist/assets/images/program-work-bg.png'; ?>')">
+	<section class="reseller-program-work page-section section" style="background-image:url('<?php echo get_template_directory_uri() . '/dist/assets/images/program-work-bg.png'; ?>')">
 		<div class="wrapper">
 			<h2 class="section-header__title">How Does Dedicated Solutions Reseller Program It Work?</h2>
 			<span class="section-header__decoration-element--dark"></span>
@@ -80,7 +80,7 @@ get_header();?>
 		</div>
 	</section>
 
-	<section class="why-choose-dedicatedSolutions page-section">
+	<section class="why-choose-dedicatedSolutions page-section section">
 		<div class="wrapper">
 			<h2 class="section-header__title">Why Choose Our Dedicated Solutions Reseller Program?</h2>
 			<span class="section-header__decoration-element"></span>
@@ -95,11 +95,11 @@ get_header();?>
 							<div class="why-choose-card-content">
 								<h2>Offer the Best Products</h2>
 								<ul>
-									<li>Offer Tier III and Tier IV Datacenters!</li>
-									<li>No downtime since 5 years.</li>
-									<li>SSAE16 & PCI conform.</li>
-									<li>Over 100 network carriers.</li>
-									<li>Up to Unlimited Bandwidth.</li>
+									<li><span><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/check.png'; ?>" alt="check-icon"></span>Offer Tier III and Tier IV Datacenters!</li>
+									<li><span><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/check.png'; ?>" alt="check-icon"></span>No downtime since 5 years.</li>
+									<li><span><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/check.png'; ?>" alt="check-icon"></span>SSAE16 & PCI conform.</li>
+									<li><span><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/check.png'; ?>" alt="check-icon"></span>Over 100 network carriers.</li>
+									<li><span><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/check.png'; ?>" alt="check-icon"></span>Up to Unlimited Bandwidth.</li>
 								</ul>
 							</div>
 						</div>
@@ -112,10 +112,10 @@ get_header();?>
 							<div class="why-choose-card-content">
 								<h2>All In One Solution</h2>
 								<ul>
-									<li>Instant server creation.</li>
-									<li>Integrated billing system.</li>
-									<li>Integrated helpdesk.</li>
-									<li>End-customer billing available.</li>
+									<li><span><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/check.png'; ?>" alt="check-icon"></span>Instant server creation.</li>
+									<li><span><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/check.png'; ?>" alt="check-icon"></span>Integrated billing system.</li>
+									<li><span><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/check.png'; ?>" alt="check-icon"></span>Integrated helpdesk.</li>
+									<li><span><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/check.png'; ?>" alt="check-icon"></span>End-customer billing available.</li>
 								</ul>
 							</div>
 						</div>
@@ -128,11 +128,11 @@ get_header();?>
 							<div class="why-choose-card-content">
 								<h2>Do and Earn More With Us</h2>
 								<ul>
-									<li>Reseller API Available.</li>
-									<li>Mobile Reseller & Control App.</li>
-									<li>Reseller Billing & Helpdesk Software.</li>
-									<li>WHMCS Reseller Module.</li>
-									<li>Custom Products for Resellers.</li>
+									<li><span><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/check.png'; ?>" alt="check-icon"></span>Reseller API Available.</li>
+									<li><span><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/check.png'; ?>" alt="check-icon"></span>Mobile Reseller & Control App.</li>
+									<li><span><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/check.png'; ?>" alt="check-icon"></span>Reseller Billing & Helpdesk Software.</li>
+									<li><span><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/check.png'; ?>" alt="check-icon"></span>WHMCS Reseller Module.</li>
+									<li><span><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/check.png'; ?>" alt="check-icon"></span>Custom Products for Resellers.</li>
 								</ul>
 							</div>
 						</div>
@@ -142,6 +142,6 @@ get_header();?>
 		</div>
 	</section>
 </main>
+<?php get_footer('inner'); ?>
 
 
-<?php get_footer(); ?>

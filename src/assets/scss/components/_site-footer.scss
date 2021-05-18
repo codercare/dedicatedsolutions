@@ -3,6 +3,16 @@
 	background-color: $black;
 	color: #fff;
 	padding: 2rem 0;
+	// position: fixed;
+	// bottom: 0;
+	// left: 0;
+	// width: 100%;
+	&.site-inner-footer{
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+	}
 
 	@include respond(tab-land){
 		// margin-top: 20rem;
@@ -138,4 +148,23 @@
 			color: inherit;
 		}
 	}
+}
+
+#fp-nav.fp-right{
+	ul{
+		li{
+			a{
+				outline: none;
+				&:hover,&:focus{
+					outline: none;
+				}
+				span{
+					background: $mainOrange;
+					&:hover,&:focus{
+						outline: none;
+					}
+				}
+			} 
+		} 
+	} 
 }

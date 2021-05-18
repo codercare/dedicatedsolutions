@@ -77,7 +77,7 @@ if ( ! empty( $banner_image ) ) {
 					$i = 1;
 					while ( have_rows( 'satisfied_customer' ) ) :
 						the_row();
-						if($i > 3){ break; }
+						// if($i > 3){ break; }
 						$sc_bg_image_url = '';
 						$satisfied_customer_background_color = get_sub_field( 'satisfied_customer_background_color' );
 						$satisfied_customer_background_image = get_sub_field( 'satisfied_customer_background_image' );
@@ -262,9 +262,9 @@ if ( ! empty( $banner_image ) ) {
 			<header class="section-header u-txt-center">
 				<h2 class="section-header__title"><?php the_field( 'services_section_title' ); ?></h2>
 				<span class="section-header__decoration-element"></span>
-				<?php /* if( get_field('services_section_sub_title') ): ?>
+				<?php  if( get_field('services_section_sub_title') ): ?>
 				<p class="section-header__sub-title"><?php the_field( 'services_section_sub_title' ); ?></p>
-				<?php endif;  */?>
+				<?php endif;  ?>
 			</header>
 			<div class="rows rows--gutters-small">
 				<?php
@@ -309,9 +309,9 @@ if ( ! empty( $banner_image ) ) {
 			<header class="section-header u-txt-center">
 				<h2 class="section-header__title"><?php the_field( 'feature_content_section_title' ); ?></h2>
 				<span class="section-header__decoration-element"></span>
-				<?php /* if( get_field('feature_content_section_sub_title') ): ?>
+				<?php  if( get_field('feature_content_section_sub_title') ): ?>
 				<p class="section-header__sub-title"><?php the_field( 'feature_content_section_sub_title' ); ?></p>
-				<?php endif; */ ?>
+				<?php endif;  ?>
 
 			</header>
 			<div class="rows rows--gutters-smaller">
@@ -320,7 +320,7 @@ if ( ! empty( $banner_image ) ) {
 			if ( have_rows( 'feature_content_blocks' ) ) :
 				while ( have_rows( 'feature_content_blocks' ) ) :
 					the_row();
-					if($count_p > 4){ break; }
+					// if($count_p > 4){ break; }
 					$product_image = get_sub_field( 'feature_block_icon_image' );
 					?>
 				<div class="rows__medium-3">

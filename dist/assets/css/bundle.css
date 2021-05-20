@@ -1070,6 +1070,110 @@ a {
           left: 0;
           top: -.1rem; }
 
+.dedicated-solutions {
+  text-align: center; }
+  .dedicated-solutions .section-header__Orangesub-title {
+    margin: 0 0 2.5rem; }
+  .dedicated-solutions .dedicated-solutons-detail {
+    text-align: left;
+    font-size: 1.8rem;
+    font-weight: 300;
+    line-height: 3.4rem; }
+    .dedicated-solutions .dedicated-solutons-detail .first-detail p, .dedicated-solutions .dedicated-solutons-detail .second-detail p {
+      padding: 0 4rem 0 0; }
+
+.global-network-section {
+  background: #00020A;
+  text-align: center;
+  color: #fff; }
+  .global-network-section ul {
+    margin: 2rem 0 0;
+    padding: 0; }
+    .global-network-section ul li {
+      list-style-type: none;
+      position: relative;
+      text-align: left;
+      float: left;
+      width: 50%;
+      padding: 0 7rem 0 3.1rem;
+      margin: 0 0 1.5rem; }
+      .global-network-section ul li span {
+        position: absolute;
+        left: 0;
+        top: 0; }
+
+.dedicated-solution-grid-section .inner-decicated-grid {
+  position: relative;
+  margin: 0 0 3rem; }
+  .dedicated-solution-grid-section .inner-decicated-grid .thumbnail {
+    width: 15rem;
+    height: 15rem;
+    border-radius: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0; }
+    .dedicated-solution-grid-section .inner-decicated-grid .thumbnail img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover; }
+  .dedicated-solution-grid-section .inner-decicated-grid .inner-decicated-content {
+    padding: 0 0 0 17rem;
+    min-height: 21rem; }
+    .dedicated-solution-grid-section .inner-decicated-grid .inner-decicated-content h2 {
+      font-family: "Product Sans", sans-serif;
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin: 0 0 2rem; }
+    .dedicated-solution-grid-section .inner-decicated-grid .inner-decicated-content ul {
+      margin: 0;
+      padding: 0; }
+      .dedicated-solution-grid-section .inner-decicated-grid .inner-decicated-content ul li {
+        list-style-type: none;
+        position: relative;
+        font-size: 1.4rem;
+        padding: 0 0 0 3.7rem; }
+        .dedicated-solution-grid-section .inner-decicated-grid .inner-decicated-content ul li span {
+          position: absolute;
+          top: 0;
+          left: 0; }
+
+.dedictaed-multi-col-grid {
+  background: #ff8800;
+  color: #fff;
+  position: relative; }
+  .dedictaed-multi-col-grid .multi-dedicated-inner-content {
+    position: relative;
+    z-index: 1;
+    padding: 6rem; }
+    .dedictaed-multi-col-grid .multi-dedicated-inner-content.first {
+      padding-left: 0; }
+    .dedictaed-multi-col-grid .multi-dedicated-inner-content h2 {
+      font-size: 3rem;
+      font-family: "Product Sans", sans-serif;
+      font-weight: 700;
+      margin: 0 0 3.5rem; }
+    .dedictaed-multi-col-grid .multi-dedicated-inner-content ul {
+      margin: 0;
+      padding: 0; }
+      .dedictaed-multi-col-grid .multi-dedicated-inner-content ul li {
+        list-style-type: none;
+        position: relative;
+        padding: 0 0 0 3.1rem;
+        margin: 0 0 2rem; }
+        .dedictaed-multi-col-grid .multi-dedicated-inner-content ul li span {
+          position: absolute;
+          top: 0;
+          left: 0; }
+  .dedictaed-multi-col-grid::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: #00020A; }
+
 .customer-cards {
   padding: 3.5rem 4rem 3.5rem 3rem;
   color: #fff;

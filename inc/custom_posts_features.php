@@ -34,7 +34,7 @@ function required_custom_post_types(){
     register_post_type('why-us', array(
         'labels' => array('name' => 'Why Us'),
         'public' => true,
-        'menu_position'=> 21,
+        'menu_position'=> 18,
         'supports' => array('title','editor','thumbnail','excerpt'),
         'rewrite'=> array('slug'=> 'services'),
         'menu_icon' => 'dashicons-awards'
@@ -66,11 +66,47 @@ function required_custom_post_types(){
    register_post_type('awards', array(
        'labels' => array('name' => 'Awards'),
        'public' => true,
-       'menu_position'=> 24,
+       'menu_position'=> 23,
        'supports' => array('title','editor','thumbnail','excerpt'),
        'rewrite'=> array('slug'=> 'awards'),
        'menu_icon' => 'dashicons-awards'
    )); 
+
+
+
+
+    $dedicated_labels = array(
+        'name'                  => _x( 'Dedicated Servers', 'Post type general name', 'textdomain' ),
+        'singular_name'         => _x( 'Dedicated Server', 'Post type singular name', 'textdomain' ),
+        'menu_name'             => _x( 'Dedicated Servers', 'Admin Menu text', 'textdomain' ),
+        'name_admin_bar'        => _x( 'Dedicated Server', 'Add New on Toolbar', 'textdomain' ),
+        'add_new'               => __( 'Add Server', 'textdomain' ),
+        'add_new_item'          => __( 'Add New Dedicated Server', 'textdomain' ),
+        'new_item'              => __( 'New Dedicated Server', 'textdomain' ),
+        'edit_item'             => __( 'Edit Dedicated Server', 'textdomain' ),
+        'view_item'             => __( 'View Dedicated Server', 'textdomain' ),
+        'all_items'             => __( 'All Dedicated Servers', 'textdomain' ),
+        'items_list_navigation' => _x( 'Dedicated Servers list navigation', 'Screen reader text for the pagination heading on the post type listing screen. Default “Posts list navigation”/”Pages list navigation”. Added in 4.4', 'textdomain' ),
+        'items_list'            => _x( 'Dedicated Servers list', 'Screen reader text for the items list heading on the post type listing screen. Default “Posts list”/”Pages list”. Added in 4.4', 'textdomain' ),
+    );
+
+    $dedicated_args = array(
+        'labels'             => $dedicated_labels,
+        'public'             => true,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'query_var'          => true,
+        'rewrite'            => array( 'slug' => 'dedicated-servers' ),
+        'capability_type'    => 'post',
+        'has_archive'        => true,
+        'hierarchical'       => false,
+        'menu_position'      => 19,
+        'menu_icon' => 'dashicons-database-view',
+        'supports'           => array( 'title'),
+    );
+
+    register_post_type( 'dedicated-servers', $dedicated_args );
 }
 add_action('init','required_custom_post_types');
 
@@ -92,6 +128,26 @@ function manage_img_column($column_name, $post_id) {
    }
    else if($column_name == 'company'){
        echo get_post_meta($post_id, 'comapany_detail', true );
+   }
+   return $column_name;
+}
+
+
+/**
+ * 
+ * List Custom meta for Our Most Popular Dedicated Server Page
+ * custom post type = dedicated-servers
+ */
+add_filter('manage_dedicated-servers_posts_columns', 'add_servertype_column');
+add_filter('manage_dedicated-servers_posts_custom_column', 'manage_servertype_column', 10, 2);
+function add_servertype_column($columns) {
+   $columns = array_slice($columns, 0, 1, true) +  array("title" => "Server Title") + array("server_type" => "Server Type")+ array_slice($columns, 1, count($columns) - 1, true);
+   return $columns;
+}
+
+function manage_servertype_column($column_name, $post_id) {
+   if($column_name == 'server_type'){
+       echo get_post_meta($post_id, 'server_type', true );
    }
    return $column_name;
 }

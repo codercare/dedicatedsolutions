@@ -39,7 +39,7 @@ get_header();
 		$reseller_bg_image = $bg_image['url'];
 	}
 	?>
-	<section class="reseller-program-work page-section section fp-auto-height" style="background-image:url('<?php echo $reseller_bg_image; ?>')">
+	<section class="reseller-program-work page-section section" style="background-image:url('<?php echo $reseller_bg_image; ?>')">
 		<div class="wrapper">
 			<h2 class="section-header__title"><?php the_field( 'reseller_program_works_title' ); ?></h2>
 			<span class="section-header__decoration-element--dark"></span>
@@ -79,7 +79,7 @@ get_header();
 		</div>
 	</section>
 
-	<section class="why-choose-dedicatedSolutions page-section section fp-auto-height">
+	<section class="why-choose-dedicatedSolutions page-section section">
 		<div class="wrapper">
 			<h2 class="section-header__title"><?php the_field('why_choose_our_dedicated_title'); ?></h2>
 			<span class="section-header__decoration-element"></span>

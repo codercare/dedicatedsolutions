@@ -26,14 +26,15 @@ get_header();?>
 			<h2 class="section-header__title"><?php the_field( 'global_networks_title' ); ?></h2>
 			<span class="section-header__decoration-element--dark"></span>
 			<ul class="clearfix">
-			<?php if ( have_rows( 'global_networks_features' ) ) :
+			    <?php 
+				if ( have_rows( 'global_networks_features' ) ) :
 					$counter = 1;
 					while ( have_rows( 'global_networks_features' ) ) :
 					the_row();
 				?>
 				<li><span><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/check.png'; ?>" alt="check-icon"></span><?php the_sub_field( 'features' ); ?></li>
 				<?php 
-					$counter++;
+					$counQter++;
 					endwhile;
 				endif;  
 				?>				

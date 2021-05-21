@@ -4,12 +4,15 @@
 get_header();?>
 
 
-
-<section class="client-showcase">
-	<div class="wrapper">
-	<h1>Plesk Server Management Tool</h1>
-	</div>
-</section>
-
+<main id="site-main" class="site-main">
+	<section class="page-banner about-page-banner" style="background-image:url('<?php echo get_template_directory_uri() . '/dist/assets/images/about-banner.jpg'; ?>')">
+		<div class="wrapper">
+			<div class="page-banner-content">
+				<h1 class="large-banner__heading">Plesk Server Management Tool</h1>
+				<p>Simple, Secure, and Reliable Website and Web Server Management Tool</p>				
+			</div>
+		</div>
+	</section>
+</main>
 
 <?php get_footer(); ?>

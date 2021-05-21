@@ -9,7 +9,7 @@
 
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.0.0' );
+	define( '_S_VERSION', '1.0.1' );
 }
 
 if ( ! function_exists( 'dedicatedsolutions_setup' ) ) :
@@ -185,5 +185,5 @@ function cc_mime_types($mimes) {
 add_filter('upload_mimes', 'cc_mime_types');
 
 
-require_once 'lib/enqueue-assets.php';
-require_once 'lib/navigation.php';
+require_once get_template_directory() .'/lib/enqueue-assets.php';
+require_once get_template_directory() .'/lib/navigation.php';

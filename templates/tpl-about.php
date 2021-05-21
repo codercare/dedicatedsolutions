@@ -106,30 +106,6 @@ get_header();?>
 					endwhile;
 					endif;
 					?>
-					<!-- <div class="col-md-6">
-						<div class="quick-fact-block">
-							<div class="quick-fact-icon">
-								<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/quick-fact-icon2.png'; ?>" alt="quick-fact-icon2">
-							</div>
-							<h3>Awesome Guarantees</h3>
-						</div>
-					</div>
-					<div class="col-md-6">
-						<div class="quick-fact-block">
-							<div class="quick-fact-icon">
-								<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/quick-fact-icon3.png'; ?>" alt="quick-fact-icon3">
-							</div>
-							<h3>5 World-wide Office Locations</h3>
-						</div>
-					</div>
-					<div class="col-md-6">
-						<div class="quick-fact-block">
-							<div class="quick-fact-icon">
-								<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/quick-fact-icon3.png'; ?>" alt="quick-fact-icon3">
-							</div>
-							<h3>2 Datacenter Locations (2 more coming soon)</h3>
-						</div>
-					</div> -->
 				</div>
 			</div>
 		</div>
@@ -142,7 +118,16 @@ get_header();?>
 				<span class="section-header__decoration-element"></span>
 			</div>
 			<figure class="thumbnail-img">
-				<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/location-map.png'; ?>" alt="location-map">
+				<?php 
+				$location_map = ''; 
+				$location_image     = get_field( 'our_location_image' );
+				if ( ! empty( $location_image ) ) {
+					$location_map = $location_image['url'];
+				}
+				
+				?>
+				<img src="<?php echo $location_map; ?>" alt="location-map">
+				<!-- <img src="<?php echo get_template_directory_uri() . '/dist/assets/images/location-map.png'; ?>" alt="location-map"> -->
 			</figure>
 			<div class="location-detail">
 				<ul>

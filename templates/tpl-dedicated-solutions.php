@@ -28,7 +28,7 @@ get_header();?>
 			<ul class="clearfix">
 			    <?php 
 				if ( have_rows( 'global_networks_features' ) ) :
-					$counter = 1;
+					$counQter = 1;
 					while ( have_rows( 'global_networks_features' ) ) :
 					the_row();
 				?>

@@ -1,0 +1,162 @@
+
+.contact-page-banner{
+    padding: 15rem 0 7rem;
+    .page-banner-content{
+        p{
+            margin: 0;
+        }
+    }
+}
+
+.services-section{
+    .service-block{
+        padding: 4rem;
+        border-radius: .5rem;
+        color: #fff;
+        background-repeat: no-repeat;
+        background-position: center;
+        .service-icon-box {
+            height: 8rem;
+            width: 8rem;
+            background: #fff;
+            border-radius: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 0 2rem;
+        }
+        h3{
+            font-family: 'Product Sans', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin: 0 0 1.2rem;
+        }
+        p{
+            font-size: 1.4rem;
+            margin: 0 0 2.2rem;
+        }
+        .btn--orange{
+            text-transform: inherit;
+            height: auto;
+            max-height: none;
+            padding: .8rem 2.2rem;
+            max-width: 12.8rem;
+            justify-content: center;
+            .fas {
+                margin: 0 0 0 1rem;
+            }
+        }
+        &.block-1{
+            background-color: #982890;
+        }
+        &.block-2{
+            background-color: #4591DA;
+            .btn--orange{
+                background: #000;
+            }
+        }
+        &.block-3{
+            background-color: #284970;
+        }
+    }
+
+}
+
+.conatct-form-setion{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: $darkGrey;
+    .get-in-touch{
+        color: #fff;
+        padding: 14.6rem 0;
+        .section-header__title{
+            position: relative;
+            padding-bottom: 2rem;
+            margin: 0 0 3rem;
+            &::before{
+                content: '';
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 4.5rem;
+                border-bottom: .5rem solid $mainOrange;
+            }
+        }
+        p{
+            font-size: 1.8rem;
+            padding: 0 8rem 0 0;
+            margin: 0 0 7rem;
+        }
+        ul{
+            margin: 0;
+            padding: 0;
+            li{
+                list-style-type: none;
+                position: relative;
+                margin: 0 0 3rem;
+                padding: 0 0 0 7rem;
+                .touch-icon{
+                    position: absolute;
+                    top: 1rem;
+                    left: 0;
+                }
+                h3{
+                    font-size: 2rem;
+                    font-weight: 300;
+                    line-height: 3.2rem;
+                    span{
+                        display: block;
+                        font-size: 1.6rem;
+                        font-weight: 700;
+                        color: $mainOrange;
+                    }
+                }
+                &:last-child{
+                    margin: 0;
+                }
+            }
+        }
+    }
+    .contact-form{
+        background: #fff;
+        padding: 8rem 9rem;
+        margin: 0 0 0 2rem;
+        .form-group{
+            margin-bottom: 1.8rem;
+        }
+        .form-control{
+            font-size: 1.5rem;
+            height: 5.2rem;
+            border: none;
+            background: #F5F5F5;
+            padding: 1.5rem 1.2rem;
+            border-radius: .3rem;
+            font-weight: 300;
+            color: $darkGrey;
+        }
+        textarea.form-control{
+            resize: none;
+            height: 14.4rem;
+        }
+        .captcha {
+            text-align: center;
+        }
+        .btn-center{
+            text-align: center;
+            margin: 7rem 0 0;
+            .btn--orange{
+                display: inline-block;
+                height: auto;
+                max-height: none;
+                max-width: none;
+                text-transform: capitalize;
+                font-size: 2rem;
+                padding: 1.1rem 3.8rem;
+               .fas{
+                   font-size: 1.4rem;
+                   margin: 0 0 0 0.3rem;
+               }
+            }
+        }
+    }
+}

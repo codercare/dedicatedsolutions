@@ -1,15 +1,25 @@
 <?php
 /* Template Name: Contact Us */ 
 
-get_header();?>
+get_header();
+?>
+
+<?php
+	$contact_banner = '';
+	$bg_image     = get_field( 'banner_bg_image' );
+	if ( ! empty( $bg_image ) ) {
+		$contact_banner = $bg_image['sizes']['banner_image'];
+	}
+?>
+
 
 
 <main id="site-main" class="site-main">
-	<section class="page-banner contact-page-banner" style="background-image:url('<?php echo get_template_directory_uri() . '/dist/assets/images/contact-banner.jpg'; ?>')">
+	<section class="page-banner contact-page-banner" style="background-image:url('<?php echo $contact_banner; ?>')">
 		<div class="wrapper">
 			<div class="page-banner-content">
-				<h1 class="large-banner__heading">Contact Us</h1>
-				<p>We Are Happy To Assist You At Any Time!</p>
+				<h1 class="large-banner__heading"><?php the_field( 'contact_us_title' ); ?></h1>
+				<p><?php the_field( 'contact_us_sub_title' ); ?></p>
 			</div>
 		</div> 
 	</section>
@@ -17,36 +27,57 @@ get_header();?>
 	<section class="services-section page-section">
 		<div class="wrapper">
 			<div class="rows rows--gutters-small">
-				<div class="rows__medium-4">
+			    <div class="rows__medium-4">
 					<div class="service-block block-1" style="background-image: url('<?php echo get_template_directory_uri() . '/dist/assets/images/live-support.svg'; ?>')">
 						<div class="service-icon-box">
-							<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/support-1.png'; ?>" alt="support-1">
+							<?php
+							$support_icon = '';
+							$sup_image     = get_field( 'live_support_block_icon' );
+							if ( ! empty( $sup_image ) ) {
+								$support_icon = $sup_image['sizes']['mid_icon'];
+							}
+							?>
+							<img src="<?php echo $support_icon; ?>" alt="<?php the_field( 'live_support_block_title' ); ?>">
 						</div>
-						<h3>24/7 LIVE SUPPORT</h3>
-						<p>Lorem Ipsum is simply dummy text of the printing  and typesetting industry.</p>
-						<a href="" class="btn--orange">Chat Now <i class="fas fa-arrow-right"></i></a>
+						<h3><?php the_field( 'live_support_block_title' ); ?></h3>
+						<p><?php the_field( 'live_support_detail' ); ?></p>
+						<a href="<?php the_field( 'live_support_button_link' ); ?>" class="btn--orange"><?php the_field( 'live_support_button_label' ); ?> <i class="fas fa-arrow-right"></i></a>
 					</div>
 				</div>
 				<div class="rows__medium-4">
 					<div class="service-block block-2" style="background-image: url('<?php echo get_template_directory_uri() . '/dist/assets/images/request-call.svg'; ?>')">
 						<div class="service-icon-box">
-							<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/support-2.png'; ?>" alt="support-2">
+							<?php
+							$reqest_icon = '';
+							$req_image     = get_field( 'request_call_back_icon' );
+							if ( ! empty( $req_image ) ) {
+								$reqest_icon = $req_image['sizes']['mid_icon'];
+							}
+							?>
+							<img src="<?php echo $reqest_icon; ?>" alt="<?php the_field( 'request_call_back_title' ); ?>">
 						</div>
-						<h3>Request Call Back</h3>
-						<p>Lorem Ipsum is simply dummy text of the printing  and typesetting industry.</p>
-						<a href="" class="btn--orange">Request <i class="fas fa-arrow-right"></i></a>
+						<h3><?php the_field( 'request_call_back_title' ); ?></h3>
+						<p><?php the_field( 'request_call_back_detail' ); ?></p>
+						<a href="<?php the_field( 'request_call_back_button_url' ); ?>" class="btn--orange"><?php the_field( 'request_call_back_button' ); ?> <i class="fas fa-arrow-right"></i></a>
 					</div>
 				</div>
 				<div class="rows__medium-4">
 					<div class="service-block block-3" style="background-image: url('<?php echo get_template_directory_uri() . '/dist/assets/images/user.svg'; ?>')">
 						<div class="service-icon-box">
-							<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/support-3.png'; ?>" alt="support-3">
+						    <?php
+							$existing_user_icon = '';
+							$user_icon_image     = get_field( 'already_user_icon' );
+							if ( ! empty( $user_icon_image ) ) {
+								$existing_user_icon = $user_icon_image['sizes']['mid_icon'];
+							}
+							?>
+							<img src="<?php echo $existing_user_icon; ?>" alt="<?php the_field( 'already_user_title' ); ?>">
 						</div>
-						<h3>Already a User</h3>
-						<p>Lorem Ipsum is simply dummy text of the printing  and typesetting industry.</p>
-						<a href="" class="btn--orange">Login <i class="fas fa-arrow-right"></i></a>
+						<h3><?php the_field( 'already_user_title' ); ?></h3>
+						<p><?php the_field( 'already_user_description' ); ?></p>
+						<a href="<?php the_field( 'already_user_button_link' ); ?>" class="btn--orange"><?php the_field( 'already_user_button_label' ); ?> <i class="fas fa-arrow-right"></i></a>
 					</div>
-				</div>
+				</div> 
 			</div>
 		</div>
 	</section>
@@ -56,28 +87,28 @@ get_header();?>
 			<div class="row">
 				<div class="col-md-5">
 					<div class="get-in-touch">
-						<h2 class="section-header__title">Get In Touch</h2>
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+						<h2 class="section-header__title"><?php the_field( 'get_in_touch_title' ); ?></h2>
+						<p><?php the_field( 'get_in_touch_short_detail' ); ?></p>
 						<ul>
 							<li>
 								<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/map-marker.png'; ?>" alt="map-marker" class="touch-icon">
 								<h3>
 									<span>Location</span>
-									535 Scherers Ct <br/>43085 Columbus, Ohio USA
+									<?php the_field( 'location' ); ?>
 								</h3>
 							</li>
 							<li>
 								<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/globe.png'; ?>" alt="globe" class="touch-icon">
 								<h3>
 									<span>Visit Us</span>
-									DedicatedSolutions.com
+									<?php the_field( 'visit_us' ); ?>
 								</h3>
 							</li>
 							<li>
 								<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/time.png'; ?>" alt="time" class="touch-icon">
 								<h3>
 									<span>Our Support Team</span>
-									Billing & Sales, 9am to 6pm EST
+									<?php the_field( 'our_support_team' ); ?>
 								</h3>
 							</li>
 						</ul>
@@ -86,9 +117,9 @@ get_header();?>
 				<div class="col-md-7">
 					<div class="contact-form">
 						<div class="section-header u-txt-center">
-							<h2 class="section-header__title">Send Us A Message</h2>
+							<h2 class="section-header__title"><?php the_field( 'send_us_message_title' ); ?></h2>
 							<span class="section-header__decoration-element"></span>
-							<h4 class="section-header__Orangesub-title">Please leave us your message and we will contact you as soon as possible.</h4>
+							<h4 class="section-header__Orangesub-title"><?php the_field( 'send_us_message_sub_title' ); ?> </h4>
 						</div>
 						<form action="">
 							<div class="rows rows--gutters-small">

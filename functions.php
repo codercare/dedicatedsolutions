@@ -111,7 +111,7 @@ add_action( 'after_setup_theme', 'dedicatedsolutions_setup' );
  * @global int $content_width
  */
 function dedicatedsolutions_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'dedicatedsolutions_content_width', 750 );
+	$GLOBALS['content_width'] = apply_filters( 'dedicatedsolutions_content_width', 1920 );
 }
 add_action( 'after_setup_theme', 'dedicatedsolutions_content_width', 0 );
 
@@ -187,3 +187,5 @@ add_filter('upload_mimes', 'cc_mime_types');
 
 require_once get_template_directory() .'/lib/enqueue-assets.php';
 require_once get_template_directory() .'/lib/navigation.php';
+
+

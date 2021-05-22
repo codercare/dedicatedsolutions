@@ -5,17 +5,23 @@
  */
 
 
-// if ( function_exists( 'add_theme_support' ) ) {
-//     add_theme_support( 'post-thumbnails' );
-    // set_post_thumbnail_size( 150, 150, true ); // default Featured Image dimensions (cropped)
- 
-    // // additional image sizes
-    // add_image_size( 'press_image', 600, 270, true );
-    // add_image_size('banner_image', 1920,400, true);
-    // add_image_size('banner_small_image', 1920,240, true);
-    // add_image_size( 'press_image_c', 600, 270, array( 'center', 'center' ) );
+ /*
+* Add Image sizes
+*/
+if ( !function_exists('dedicated_add_image_sizes') ){
 
-//  }
+	function dedicated_add_image_sizes() {
+        
+        // Add your own image sizes
+        add_image_size( 'small_icon', 40, 40);
+        add_image_size( 'mid_icon', 80, 80);
+        add_image_size( 'press_image', 600, 270);
+        add_image_size( 'press_image_center', 600, 270, array( 'center', 'center' ) );       
+        add_image_size( 'banner_small_height', 1920,240,true);
+        add_image_size( 'banner_image', 1920,400,true);       
+    }
+}
+add_action( 'after_setup_theme', 'dedicated_add_image_sizes' );
 
 
 function required_custom_post_types(){

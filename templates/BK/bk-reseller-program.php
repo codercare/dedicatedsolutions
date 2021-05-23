@@ -1,6 +1,4 @@
 <?php
-/* Template Name: Reseller Program BK */ 
-
 get_header();?>
 
 

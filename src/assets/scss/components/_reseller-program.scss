@@ -16,10 +16,11 @@
             font-weight: 500;
             margin: 0 0 4rem;
         }
-        .btn--white{
+        .btn--white, .btn--orange{
             max-width: none;
             display: inline-block;
             height: auto;
+            text-transform: inherit;
         }
     }
     &::before{

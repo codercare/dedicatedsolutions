@@ -1,0 +1,240 @@
+
+.customSol-page-banner{
+    padding: 13rem 0 6rem;
+    .page-banner-content{
+        p{
+            margin: 0 0 3.5rem;
+        }
+        a{
+           margin: 0 1.2rem; 
+        }
+        .btn--white{
+            color: $mainOrange;
+            &:hover{
+                color: #fff;
+            }
+        }
+    } 
+}
+
+.customSol-overview{
+    padding: 8rem 0;
+    .customSol-overview-content{
+        padding: 0 13rem 0 0;
+        .section-header__Orangesub-title{
+            margin: 0 0 4rem;
+        }
+        p{
+            font-size: 1.8rem;
+            line-height: 3.4rem;
+            font-weight: 300;
+        }
+    }
+    .customSol-overview-grid{
+        .cs-block{
+            padding: 2rem 0;
+            .icon-box{
+               width: 18rem;
+               height: 12rem;
+               display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: .5rem;
+                background: #fff;
+                box-shadow: 0 .6rem 2rem 0 rgba(0, 0, 0, .07);
+            }
+            .cs-block-content {
+                display: flex;
+                align-items: center;
+                height: 100%;
+                justify-content: flex-start;
+                h3{
+                    font-size: 1.8rem;
+                    font-family: 'Product Sans', sans-serif;
+                    font-weight: 700;
+                }
+                p{
+                    font-weight: 300;
+                    margin: 0;
+                }
+            }
+            &:nth-of-type(even){
+                padding-left: 5rem;
+                .cs-block-content{
+                    padding: 0 0 0 2rem;;
+                }
+            }
+        }
+    }
+}
+
+.premium-server-features{
+    padding: 10rem 0;
+    background: $darkGrey;
+    color: #fff;
+    .section-header{
+        margin-bottom: 7rem;
+        .section-header__title{
+            color: #fff;
+        }
+        .section-header__Orangesub-title{
+            max-width: 50rem;
+            margin: 0 auto;
+        }
+    }
+    .p-server-feat-block{
+        position: relative;
+        margin: 0 0 8rem;
+        .p-server-feat-icon{
+            width: 14.5rem;
+            height: 14.5rem;
+            border-radius: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .p-server-feat-content{
+            padding: 0 0 0 21.5rem;
+            h2{
+                font-size: 2.7rem;
+                font-family: 'Product Sans', sans-serif;
+                font-weight: 700;
+                text-transform: uppercase;
+                margin-bottom: 1rem;
+            }
+            ul{
+                margin: 0;
+                padding: 0;
+                li{
+                    list-style-type: none;
+                    margin: 0 0 1.8rem;
+                    padding: 0 0 0 2.7rem;
+                    &:last-child{
+                        margin: 0;
+                    }
+                }
+            }
+        }
+        &:last-child{
+            margin: 0;
+        }
+        &.server{
+            .p-server-feat-icon{
+                background: #98068D;
+            }
+            .p-server-feat-content{
+                ul{
+                    li{
+                        background: url(../images/serve-check.png) no-repeat top .5rem left;
+                    }
+                }
+            }
+        }
+        &.storage{
+            .p-server-feat-icon{
+                background: #48B2D8;
+            }
+            .p-server-feat-content{
+                ul{
+                    li{
+                        background: url(../images/storage-check.png) no-repeat top .5rem left;
+                    }
+                }
+            }
+        }
+        &.networking{
+            .p-server-feat-icon{
+                background: #11A39F;
+            }
+            .p-server-feat-content{
+                ul{
+                    li{
+                        background: url(../images/network-check.png) no-repeat top .5rem left;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.additional-features{
+    padding: 16rem 0 11rem;
+    .section-header{
+        margin-bottom: 7rem;
+        .section-header__Orangesub-title{
+            max-width: 60rem;
+            margin: 0 auto;
+        }
+    }
+    .add-feat-block{
+        position: relative;
+        padding: 0 0 0 15rem;
+        margin: 0 0 5rem;
+        .add-feat-icon{
+            width: 11rem;
+            height: 11rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .add-feat-content{
+            padding: 0 5rem 0 0;
+            h2{
+                font-family: 'Product Sans', sans-serif;
+                font-size: 2.2rem;
+                font-weight: 700;
+                margin-bottom: 2rem;
+            }
+            ul{
+                margin: 0;
+                padding: 0;
+                li{
+                    list-style-type: none;
+                    background: url(../images/check.png) no-repeat top .5rem left;
+                    padding: 0 0 0 3.1rem;
+                    font-weight: 300;
+                    line-height: 3rem;
+                    margin: 0 0 1rem;
+                    &:last-child{
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.custom-support{
+    background: $mainOrange;
+    color: #fff;
+    padding: 9rem 0 7.5rem;
+    .custom-support-content{
+        padding: 3.5rem 0;
+        .section-header__title{
+            margin-bottom: 2.6rem;
+        }
+        ul{
+            margin: 0;
+            padding: 0;
+            li{
+                list-style-type: none;
+                background: url(../images/check-white.png) no-repeat top .5rem left;
+                padding: 0 0 0 3.3rem;
+                font-size: 1.8rem;
+                margin: 0 0 1rem;
+                &:last-child{
+                    margin: 0;
+                }
+            }
+        }
+    }
+    .thumbnail-img{
+        text-align: right;
+    }
+}

@@ -56,7 +56,6 @@ get_header();
 						if ( ! empty( $product_icon ) ) {
 							$package_icon = $product_icon['url'];
 						}
-
 						?>
 						<div class="rows__medium-3">
 						<div class="product-work-card card-<?php echo $counter_card;?>">

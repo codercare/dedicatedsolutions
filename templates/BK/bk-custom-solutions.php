@@ -1,25 +1,14 @@
 <?php
-/* Template Name: Custom Solutions */ 
-
 get_header();?>
 
-
-<?php
-	$banner_image_url = '';
-	$banner_image     = get_field( 'banner_bg_image' );
-	if ( ! empty( $banner_image ) ) {
-		$banner_image_url = $banner_image['sizes']['banner_image'];
-	}
-?>
-
 <main id="site-main" class="site-main">
-	<section class="page-banner customSol-page-banner" style="background-image:url('<?php echo $banner_image_url; ?>')">
+	<section class="page-banner customSol-page-banner" style="background-image:url('<?php echo get_template_directory_uri() . '/dist/assets/images/custom-sol-bg.jpg'; ?>')">
 		<div class="wrapper">
 			<div class="page-banner-content">
-				<h1 class="large-banner__heading"><?php the_field( 'cs_banner_title' ); ?></h1>
-				<p><?php the_field( 'cs_banner_sub_title' ); ?></p>
-				<a href="<?php the_field( 'cs_left_button_link' ); ?>" class="btn--orange"><?php the_field( 'cs_left_button_label' ); ?></a>
-				<a href="<?php the_field( 'cs_right_button_link' ); ?>" class="btn--white"><?php the_field( 'cs_right_button_label' ); ?></a>
+				<h1 class="large-banner__heading">Custom Solutions</h1>
+				<p>Tell us what you need and we’ll build it.</p>
+				<a href="" class="btn--orange">Custom Solutions Overview</a>
+				<a href="" class="btn--white">Premium Features</a>
 			</div>
 		</div>
 	</section>
@@ -29,54 +18,64 @@ get_header();?>
 			<div class="row">
 				<div class="col-md-6">
 					<div class="customSol-overview-content">
-						<h2 class="section-header__title"><?php the_field( 'cs_overview_title' ); ?></h2>
-						<h4 class="section-header__Orangesub-title"><?php the_field( 'cs_overview_sub_title' ); ?></h4>
-						<p><?php the_field( 'cs_overview_detail' ); ?></p>
+						<h2 class="section-header__title">Custom Solutions Overview</h2>
+						<h4 class="section-header__Orangesub-title">Tell Us What You Need & We BuildD It</h4>
+						<p>Dedicated Solutions offers a wide range of quality hosting products, all designed to give you the very best possible conditions to host your site or to run your business. From small shared accounts, through reseller accounts, virtual private servers and up to fully managed dedicated servers, you can find it with us.</p>
 					</div>
 				</div>
 				<div class="col-md-6">
 					<div class="customSol-overview-grid">
-					<?php
-					if ( have_rows( 'custom_solution_types' ) ) : 
-					$counter_card = 1;
-					while ( have_rows( 'custom_solution_types' ) ) :
-						the_row();
-
-						$package_icon = '';
-						$product_icon     = get_sub_field( 'product_icon' );
-						if ( ! empty( $product_icon ) ) {
-							$package_icon = $product_icon['url'];
-						}
-						?>
 						<div class="cs-block">
 							<div class="row">
 								<div class="col-md-4">
 									<div class="icon-box">
-										<?php
-										$feature_icon = '';
-										$icon_image     = get_sub_field( 'cs_type_icon' );
-										if ( ! empty( $icon_image ) ) {
-											$feature_icon = $icon_image['sizes']['mid_icon'];
-										}
-										?>
-										<img src="<?php echo $feature_icon; ?>" alt="<?php the_sub_field( 'cs_custom_solution_type_title' ); ?>">
+										<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/big-data.png'; ?>" alt="big-data">
 									</div>
 								</div>
 								<div class="col-md-8">
 									<div class="cs-block-content">
 										<div class="cs-flex-content">
-											<h3><?php the_sub_field( 'cs_custom_solution_type_title' ); ?></h3>
-											<p><?php the_sub_field( 'cs_type_detail' ); ?></p>
+											<h3>Big Data</h3>
+											<p>Enterprise Hardware RAID 1/10/5/50/6.</p>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>	
-						<?php 
-						$counter_card++;
-					endwhile; 
-					endif;
-					?>
+						<div class="cs-block">
+							<div class="row">
+								<div class="col-md-4">
+									<div class="icon-box">
+										<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/multi-server.png'; ?>" alt="multi-server">
+									</div>
+								</div>
+								<div class="col-md-8">
+									<div class="cs-block-content">
+										<div class="cs-flex-content">
+											<h3>Multiserver/Private Rack</h3>
+											<p>Cloud too crowded for you? Build, manage, and have total control over your own cloud of virtual servers.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>	
+						<div class="cs-block">
+							<div class="row">
+								<div class="col-md-4">
+									<div class="icon-box">
+										<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/hosting.png'; ?>" alt="hosting">
+									</div>
+								</div>
+								<div class="col-md-8">
+									<div class="cs-block-content">
+										<div class="cs-flex-content">
+											<h3>SAN/NAS Hosting</h3>
+											<p>Provide a low-latency, high-bandwidth interconnect that can span large distances.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>	
 					</div>
 				</div>
 			</div>
@@ -86,37 +85,18 @@ get_header();?>
 	<section class="premium-server-features">
 		<div class="wrapper">
 			<div class="section-header u-txt-center">
-				<h2 class="section-header__title"><?php the_field( 'premium_server_feature_title' ); ?></h2>
+				<h2 class="section-header__title">Premium Server Features</h2>
 				<span class="section-header__decoration-element--dark"></span>
-				<h4 class="section-header__Orangesub-title"><?php the_field( 'premium_server_feature_sub_title' ); ?></h4>
+				<h4 class="section-header__Orangesub-title">Customize a server to meet your specifications with our premium features.</h4>
 			</div>
 			<div class="p-feat-content">
 				<div class="row">
 					<div class="col-md-6 order-md-1">
-						<?php
-						$premium_server_image = '';
-						$premium_image     = get_field( 'premium_server_feature_image' );
-						if ( ! empty( $premium_image ) ) {
-							$premium_server_image = $premium_image['url'];
-						}
-						?>
 						<figure class="thumbnail-img">
-							<img src="<?php echo $premium_server_image; ?>" alt="<?php the_field( 'premium_server_feature_title' ); ?>">
+							<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/server-vector.png'; ?>" alt="server-vector">
 						</figure>
 					</div>
 					<div class="col-md-6">
-					<?php
-					if ( have_rows( 'premium_features' ) ) : 
-					$counter_card = 1;
-					while ( have_rows( 'premium_features' ) ) :
-						the_row();
-
-						$package_icon = '';
-						$product_icon     = get_sub_field( 'premium_feature_icons' );
-						if ( ! empty( $product_icon ) ) {
-							$package_icon = $product_icon['url'];
-						}
-						?>
 						<div class="p-server-feat-block server">
 							<div class="p-server-feat-icon">
 								<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/p-server.png'; ?>" alt="p-server">
@@ -130,12 +110,7 @@ get_header();?>
 								</ul>
 							</div>
 						</div>
-					<?php 
-					$counter_card++;
-					endwhile; 
-					endif;
-					?>
-						<!-- <div class="p-server-feat-block storage">
+						<div class="p-server-feat-block storage">
 							<div class="p-server-feat-icon">
 								<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/storage.png'; ?>" alt="storage">
 							</div>
@@ -160,7 +135,7 @@ get_header();?>
 									<li>Advanced IDS/WAF appliances.</li>
 								</ul>
 							</div>
-						</div> -->
+						</div>
 					</div>
 				</div>
 			</div>

@@ -107,60 +107,46 @@ get_header();?>
 					<div class="col-md-6">
 					<?php
 					if ( have_rows( 'premium_features' ) ) : 
-					$counter_card = 1;
+					$counter_premium = 1;
 					while ( have_rows( 'premium_features' ) ) :
-						the_row();
-
-						$package_icon = '';
-						$product_icon     = get_sub_field( 'premium_feature_icons' );
-						if ( ! empty( $product_icon ) ) {
-							$package_icon = $product_icon['url'];
-						}
+						the_row();	
+						if($counter_premium == 1 ){
+							$icon_class = 'server';
+						}else if($counter_premium == 2){
+							$icon_class = 'storage';
+						}else{ $icon_class = 'networking';
+						}					
 						?>
-						<div class="p-server-feat-block server">
+						<div class="p-server-feat-block <?php echo $icon_class;?>">
 							<div class="p-server-feat-icon">
-								<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/p-server.png'; ?>" alt="p-server">
+								<?php
+								$premium_icon = '';
+								$pre_icon     = get_sub_field( 'premium_feature_icons' );
+								if ( ! empty( $pre_icon ) ) {
+									$premium_icon = $pre_icon['url'];
+								}
+								?>
+								<img src="<?php echo $premium_icon; ?>" alt="<?php the_sub_field( 'premium_feature_title' ); ?>">
 							</div>
 							<div class="p-server-feat-content">
-								<h2>Servers</h2>
+								<h2><?php the_sub_field( 'premium_feature_title' ); ?></h2>
 								<ul>
-									<li>Up to 4 sockets.</li>
-									<li>32 processor cores.</li>
-									<li>1.5 TB of RAM computing Power</li>
+								    <?php 
+									while ( have_rows( 'premium_features_lists' ) ) :
+										the_row();
+									?>
+									<li><?php the_sub_field( 'list_items' ); ?></li>
+									<?php 
+									endwhile;
+									?>
 								</ul>
 							</div>
 						</div>
 					<?php 
-					$counter_card++;
+					$counter_premium++;
 					endwhile; 
 					endif;
 					?>
-						<!-- <div class="p-server-feat-block storage">
-							<div class="p-server-feat-icon">
-								<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/storage.png'; ?>" alt="storage">
-							</div>
-							<div class="p-server-feat-content">
-								<h2>Storages</h2>
-								<ul>
-									<li>SATA, SAS, SSD, or PCI-e Flash.</li>
-									<li>Up to 24TB DAS, SAN, NAS.</li>
-									<li>High-availability Clustering.</li>
-								</ul>
-							</div>
-						</div>
-						<div class="p-server-feat-block networking">
-							<div class="p-server-feat-icon">
-								<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/molecular.png'; ?>" alt="molecular">
-							</div>
-							<div class="p-server-feat-content">
-								<h2>Networking</h2>
-								<ul>
-									<li>Up to 10Gbps network port speeds.</li>
-									<li>Load balancing from Brocade or F5.</li>
-									<li>Advanced IDS/WAF appliances.</li>
-								</ul>
-							</div>
-						</div> -->
 					</div>
 				</div>
 			</div>
@@ -170,76 +156,49 @@ get_header();?>
 	<section class="additional-features">
 		<div class="wrapper">
 			<div class="section-header u-txt-center">
-				<h2 class="section-header__title">Additional Features</h2>
+				<h2 class="section-header__title"><?php the_field( 'additional_feature_title' ); ?></h2>
 				<span class="section-header__decoration-element"></span>
-				<h4 class="section-header__Orangesub-title">Further customize and get your server meeting your exact needs using the following features.</h4>
+				<h4 class="section-header__Orangesub-title"><?php the_field( 'additional_feature_sub_title' ); ?></h4>
 			</div>
 			<div class="additional-feat-grid">
-				<div class="row">
+				<div class="row">					
+				<?php
+				if ( have_rows( 'additional_features_list' ) ) : 
+				while ( have_rows( 'additional_features_list' ) ) :
+					the_row();											
+					?>
 					<div class="col-md-6">
 						<div class="add-feat-block">
 							<div class="add-feat-icon">
-								<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/add-feat-icon-1.png'; ?>" alt="add-feat-icon-1">
+								<?php 
+								$additional_server_image = '';
+								$add_image     = get_sub_field( 'additional_feature_icon' );
+								if ( ! empty( $add_image ) ) {
+									$additional_server_image = $add_image['url'];
+								}
+								?>
+								<img src="<?php echo $additional_server_image; ?>" alt="add-feat-icon-1">
 							</div>
 							<div class="add-feat-content">
-								<h2>Custom Storage (SAN) & DR site</h2>
+								<h2><?php the_sub_field( 'additional_feature_list_title' ); ?></h2>
 								<ul>
-									<li>EMC/3Par/HP VMA / Violin Memory / EqualLogic , Hitachi available.</li>
-									<li>From SATA up to Pure SSD High Performance SAN.</li>
-									<li>Shared SAN up to Dedicated SAN.</li>
+									<?php 
+									while ( have_rows( 'addition_feature_lists' ) ) :
+										the_row();	
+									?>
+									<li><?php the_sub_field( 'list_items' ); ?></li>
+									<?php 
+									endwhile;
+									?>
+									
 								</ul>
 							</div>
 						</div>
 					</div>
-					<div class="col-md-6">
-						<div class="add-feat-block">
-							<div class="add-feat-icon">
-								<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/add-feat-icon-2.png'; ?>" alt="add-feat-icon-2">
-							</div>
-							<div class="add-feat-content">
-								<h2>Custom Critical Application Services</h2>
-								<ul>
-									<li>Microsoft Platform (SQL/Exchange/AD/Terminal Services,..).</li>
-									<li>Managed Database & Clustering (mySQL, PostgreSQL, MS SQL, Hadoop).</li>
-									<li>Linux, UNIX and Network Platform support.</li>
-									<li>Mail & Comunication Applications.</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6">
-						<div class="add-feat-block">
-							<div class="add-feat-icon">
-								<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/add-feat-icon-3.png'; ?>" alt="add-feat-icon-3">
-							</div>
-							<div class="add-feat-content">
-								<h2>Custom Public Cloud</h2>
-								<ul>
-									<li>Hourly or Monthly billing available.</li>
-									<li>Single VM or Resource Pool available.</li>
-									<li>From SATA to SSD SAN to choose from.</li>
-									<li>Migration and Managed Service Optional.</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6">
-						<div class="add-feat-block">
-							<div class="add-feat-icon">
-								<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/add-feat-icon-4.png'; ?>" alt="add-feat-icon-4">
-							</div>
-							<div class="add-feat-content">
-								<h2>Custom Private Cloud</h2>
-								<ul>
-									<li>VMware, Citrix XenServer, HyperV.</li>
-									<li>Cloud Stack, Onapp, Openstack and more.</li>
-									<li>From 3 Servers up to 100s of Server Nodes.</li>
-									<li>Compliance hosting.</li>
-									<li>Multiple Datacenter Locations available!</li>
-								</ul>
-							</div>
-						</div>
-					</div>
+					<?php 					
+					endwhile; 
+					endif;
+					?>
 				</div>
 			</div>
 		</div>
@@ -250,20 +209,31 @@ get_header();?>
 			<div class="row">
 				<div class="col-md-7">
 					<div class="custom-support-content">
-						<h2 class="section-header__title">Custom Support</h2>
+						<h2 class="section-header__title"><?php the_field( 'custom_support_title' ); ?></h2>
 						<ul>
-							<li>24/7 Staffed Datacenter and System Administrator team.</li>
-							<li>24/7 Chat, Ticket & Phone Support.</li>
-							<li>Hourly based, Dedicated Staff up to 24/7 Dedicated TeamsHigh.</li>
-							<li>Motivated and Certified L1-L3 System & Network Administrators.</li>
-							<li>Infrastructure Consulting to help with planing and Architecture.</li>
-							<li>Managed Helpdesk and Windows Client Support.</li>
+						<?php
+							if ( have_rows( 'custom_support_features' ) ) : 
+							while ( have_rows( 'custom_support_features' ) ) :
+							the_row();											
+							?>
+							<li><?php the_sub_field('support_lists');?></li>
+							<?php 					
+							endwhile; 
+							endif;
+							?>							
 						</ul>
 					</div>
 				</div>
 				<div class="col-md-5">
+				    <?php 
+					$custom_support_image = '';
+					$custom_support_image     = get_field( 'custom_support_image' );
+					if ( ! empty( $custom_support_image ) ) {
+						$custom_support_image = $custom_support_image['url'];
+					}
+					?>
 					<figure class="thumbnail-img">
-						<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/custom-support-img.png'; ?>" alt="custom-support-img">
+						<img src="<?php echo $custom_support_image; ?>" alt="<?php the_field( 'custom_support_title' ); ?>">
 					</figure>
 				</div> 
 			</div>

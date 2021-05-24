@@ -1,8 +1,5 @@
 <?php
-/* Template Name: Test2 */ 
-
 get_header();?>
-?>
 
 <main id="site-main" class="site-main">
 	<section class="page-banner customSol-page-banner" style="background-image:url('<?php echo get_template_directory_uri() . '/dist/assets/images/custom-sol-bg.jpg'; ?>')">
@@ -250,3 +247,4 @@ get_header();?>
 </main>
 
 <?php get_footer(); ?>
+

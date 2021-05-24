@@ -49,18 +49,18 @@ function required_custom_post_types(){
    // Testimonials 
 
     $testimonial_labels = array(
-        'name'                  => _x( 'Testimonials', 'Post type general name', 'textdomain' ),
-        'singular_name'         => _x( 'Testimonial', 'Post type singular name', 'textdomain' ),
-        'menu_name'             => _x( 'Testimonials', 'Admin Menu text', 'textdomain' ),
-        'name_admin_bar'        => _x( 'Testimonial', 'Add New on Toolbar', 'textdomain' ),
-        'add_new'               => __( 'Add Testimonial', 'textdomain' ),
-        'add_new_item'          => __( 'Add New Testimonial', 'textdomain' ),
-        'new_item'              => __( 'New Testimonial', 'textdomain' ),
-        'edit_item'             => __( 'Edit Testimonial', 'textdomain' ),
-        'view_item'             => __( 'View Testimonial', 'textdomain' ),
-        'all_items'             => __( 'All Testimonials', 'textdomain' ),
-        'items_list_navigation' => _x( 'Testimonials list navigation', 'Screen reader text for the pagination heading on the post type listing screen. Default “Posts list navigation”/”Pages list navigation”. Added in 4.4', 'textdomain' ),
-        'items_list'            => _x( 'Testimonials list', 'Screen reader text for the items list heading on the post type listing screen. Default “Posts list”/”Pages list”. Added in 4.4', 'textdomain' ),
+        'name'                  => _x( 'Testimonials', 'Post type general name', 'dedicatedsolutions' ),
+        'singular_name'         => _x( 'Testimonial', 'Post type singular name', 'dedicatedsolutions' ),
+        'menu_name'             => _x( 'Testimonials', 'Admin Menu text', 'dedicatedsolutions' ),
+        'name_admin_bar'        => _x( 'Testimonial', 'Add New on Toolbar', 'dedicatedsolutions' ),
+        'add_new'               => __( 'Add Testimonial', 'dedicatedsolutions' ),
+        'add_new_item'          => __( 'Add New Testimonial', 'dedicatedsolutions' ),
+        'new_item'              => __( 'New Testimonial', 'dedicatedsolutions' ),
+        'edit_item'             => __( 'Edit Testimonial', 'dedicatedsolutions' ),
+        'view_item'             => __( 'View Testimonial', 'dedicatedsolutions' ),
+        'all_items'             => __( 'All Testimonials', 'dedicatedsolutions' ),
+        'items_list_navigation' => _x( 'Testimonials list navigation', 'Screen reader text for the pagination heading on the post type listing screen. Default “Posts list navigation”/”Pages list navigation”. Added in 4.4', 'dedicatedsolutions' ),
+        'items_list'            => _x( 'Testimonials list', 'Screen reader text for the items list heading on the post type listing screen. Default “Posts list”/”Pages list”. Added in 4.4', 'dedicatedsolutions' ),
     );
 
     $testimonial_args = array(
@@ -99,18 +99,18 @@ function required_custom_post_types(){
 
 
     $dedicated_labels = array(
-        'name'                  => _x( 'Dedicated Servers', 'Post type general name', 'textdomain' ),
-        'singular_name'         => _x( 'Dedicated Server', 'Post type singular name', 'textdomain' ),
-        'menu_name'             => _x( 'Dedicated Servers', 'Admin Menu text', 'textdomain' ),
-        'name_admin_bar'        => _x( 'Dedicated Server', 'Add New on Toolbar', 'textdomain' ),
-        'add_new'               => __( 'Add Server', 'textdomain' ),
-        'add_new_item'          => __( 'Add New Dedicated Server', 'textdomain' ),
-        'new_item'              => __( 'New Dedicated Server', 'textdomain' ),
-        'edit_item'             => __( 'Edit Dedicated Server', 'textdomain' ),
-        'view_item'             => __( 'View Dedicated Server', 'textdomain' ),
-        'all_items'             => __( 'All Dedicated Servers', 'textdomain' ),
-        'items_list_navigation' => _x( 'Dedicated Servers list navigation', 'Screen reader text for the pagination heading on the post type listing screen. Default “Posts list navigation”/”Pages list navigation”. Added in 4.4', 'textdomain' ),
-        'items_list'            => _x( 'Dedicated Servers list', 'Screen reader text for the items list heading on the post type listing screen. Default “Posts list”/”Pages list”. Added in 4.4', 'textdomain' ),
+        'name'                  => _x( 'Dedicated Servers', 'Post type general name', 'dedicatedsolutions' ),
+        'singular_name'         => _x( 'Dedicated Server', 'Post type singular name', 'dedicatedsolutions' ),
+        'menu_name'             => _x( 'Dedicated Servers', 'Admin Menu text', 'dedicatedsolutions' ),
+        'name_admin_bar'        => _x( 'Dedicated Server', 'Add New on Toolbar', 'dedicatedsolutions' ),
+        'add_new'               => __( 'Add Server', 'dedicatedsolutions' ),
+        'add_new_item'          => __( 'Add New Dedicated Server', 'dedicatedsolutions' ),
+        'new_item'              => __( 'New Dedicated Server', 'dedicatedsolutions' ),
+        'edit_item'             => __( 'Edit Dedicated Server', 'dedicatedsolutions' ),
+        'view_item'             => __( 'View Dedicated Server', 'dedicatedsolutions' ),
+        'all_items'             => __( 'All Dedicated Servers', 'dedicatedsolutions' ),
+        'items_list_navigation' => _x( 'Dedicated Servers list navigation', 'Screen reader text for the pagination heading on the post type listing screen. Default “Posts list navigation”/”Pages list navigation”. Added in 4.4', 'dedicatedsolutions' ),
+        'items_list'            => _x( 'Dedicated Servers list', 'Screen reader text for the items list heading on the post type listing screen. Default “Posts list”/”Pages list”. Added in 4.4', 'dedicatedsolutions' ),
     );
 
     $dedicated_args = array(
@@ -167,4 +167,8 @@ function manage_servertype_column($column_name, $post_id) {
        echo get_post_meta($post_id, 'server_type', true );
    }
    return $column_name;
+}
+
+function trim_testimonials(){
+    
 }

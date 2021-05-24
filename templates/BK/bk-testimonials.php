@@ -1,15 +1,12 @@
-<?php
-/* Template Name: Testimonials */ 
-
-get_header();?>
+<?php get_header();?>
 
 <main id="site-main" class="site-main">
 	<section class="testimonial-section">
 		<div class="wrapper">
 			<div class="section-header u-txt-center">
-				<h2 class="section-header__title"><?php the_field( 'testimonial_block_title' ); ?></h2>
+				<h2 class="section-header__title">What Our Customers Say About Us</h2>
 				<span class="section-header__decoration-element"></span>
-				<p class="section-header__sub-title"><?php the_field( 'testimonial_block_sub_title' ); ?></p>
+				<p class="section-header__sub-title">We are proud to share what our customers think about us.</p>
 			</div>
 			<div class="testimonial-block-wrap">
 				<div class="row">

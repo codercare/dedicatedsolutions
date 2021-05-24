@@ -47,16 +47,33 @@ function required_custom_post_types(){
     ));
 
    // Testimonials 
-   register_post_type('testimonials', array(
-       'labels' => array('name' => 'Testimonials'),
-       'public' => true,
-       'menu_position'=> 22,
-       'supports' => array('title','editor','thumbnail','excerpt'),
-       'rewrite'=> array('slug'=> 'testimonials'),
-       'menu_icon' => 'dashicons-twitch'
-   ));
 
-  
+    $testimonial_labels = array(
+        'name'                  => _x( 'Testimonials', 'Post type general name', 'textdomain' ),
+        'singular_name'         => _x( 'Testimonial', 'Post type singular name', 'textdomain' ),
+        'menu_name'             => _x( 'Testimonials', 'Admin Menu text', 'textdomain' ),
+        'name_admin_bar'        => _x( 'Testimonial', 'Add New on Toolbar', 'textdomain' ),
+        'add_new'               => __( 'Add Testimonial', 'textdomain' ),
+        'add_new_item'          => __( 'Add New Testimonial', 'textdomain' ),
+        'new_item'              => __( 'New Testimonial', 'textdomain' ),
+        'edit_item'             => __( 'Edit Testimonial', 'textdomain' ),
+        'view_item'             => __( 'View Testimonial', 'textdomain' ),
+        'all_items'             => __( 'All Testimonials', 'textdomain' ),
+        'items_list_navigation' => _x( 'Testimonials list navigation', 'Screen reader text for the pagination heading on the post type listing screen. Default “Posts list navigation”/”Pages list navigation”. Added in 4.4', 'textdomain' ),
+        'items_list'            => _x( 'Testimonials list', 'Screen reader text for the items list heading on the post type listing screen. Default “Posts list”/”Pages list”. Added in 4.4', 'textdomain' ),
+    );
+
+    $testimonial_args = array(
+        'labels'             => $testimonial_labels,
+        'public'             => true,
+        'rewrite'            => array( 'slug' => 'testimonials' ),
+        'capability_type'    => 'post',
+        'menu_position'      => 19,
+        'menu_icon' => 'dashicons-twitch',
+        'supports'           => array( 'title','editor','thumbnail'),
+    );
+    register_post_type( 'testimonials', $testimonial_args );
+
 
    // Press Releases 
    register_post_type('press-release', array(
@@ -99,14 +116,8 @@ function required_custom_post_types(){
     $dedicated_args = array(
         'labels'             => $dedicated_labels,
         'public'             => true,
-        'publicly_queryable' => true,
-        'show_ui'            => true,
-        'show_in_menu'       => true,
-        'query_var'          => true,
         'rewrite'            => array( 'slug' => 'dedicated-servers' ),
         'capability_type'    => 'post',
-        'has_archive'        => true,
-        'hierarchical'       => false,
         'menu_position'      => 19,
         'menu_icon' => 'dashicons-database-view',
         'supports'           => array( 'title'),

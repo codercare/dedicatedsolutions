@@ -168,7 +168,3 @@ function manage_servertype_column($column_name, $post_id) {
    }
    return $column_name;
 }
-
-function trim_testimonials(){
-    
-}

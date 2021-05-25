@@ -108,7 +108,7 @@ get_header();
 								<?php															
 								while ( have_rows( 'features_lists' ) ) : the_row();								
 								?>
-								<li><span><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/check.png'; ?>" alt="check-icon"></span><?php the_sub_field( 'list' ); ?></li>
+								<li><?php the_sub_field( 'list' ); ?></li>
 								<?php 
 								endwhile;
 								?>

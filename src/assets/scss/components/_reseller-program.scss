@@ -205,26 +205,12 @@
                         li{
                             font-weight: 300;
                             list-style-type: none;
-                            position: relative;
+                            background: url(../images/check.png) no-repeat top left;
                             line-height: initial;
                             margin: 0 0 2.5rem;
                             padding: 0 0 0 2.6rem;
                             &:last-child{
                                 margin: 0;
-                            }
-                            // &::before{
-                            //     content: '\f058';
-                            //     font-family: 'FontAwesome';
-                            //     font-size: 1.8rem;
-                            //     color: $mainOrange;
-                            //     position: absolute;
-                            //     left: 0;
-                            //     top: 0
-                            // }
-                            span{
-                                position: absolute;
-                                left: 0;
-                                top: -.1rem;
                             }
                         }
                     }

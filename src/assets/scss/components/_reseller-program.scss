@@ -50,6 +50,7 @@
 
 .site-main{
     min-height: 85rem;
+    margin-bottom: 5rem;
     .page-section{
         padding: 14rem 0;
     }
@@ -79,7 +80,7 @@
         background-size: cover;
         background-repeat: no-repeat;
         text-align: center;
-        padding: 4rem 0 0;
+        padding: 0;
         .section-header__title{
             color: #fff;
             // max-width: 80rem;
@@ -163,7 +164,7 @@
     
     .why-choose-dedicatedSolutions{
         text-align: center;
-        padding: 4rem 0 0;
+        padding: 0;
         .section-header__title{
             // max-width: 80rem;
             margin: 0 auto 2rem;

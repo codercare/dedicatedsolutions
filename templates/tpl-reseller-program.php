@@ -127,6 +127,6 @@ get_header();
 		</div>
 	</section>
 </main>
-<?php get_footer('inner'); ?>
+<?php get_footer(); ?>
 
 

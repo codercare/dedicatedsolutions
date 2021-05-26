@@ -1,4 +1,4 @@
-		<footer class="site-footer section fp-auto-height">
+		<footer class="site-footer">
 			<div class="wrapper">
 				<div class="site-footer__content">
 					<div class="payment-methods">
@@ -58,6 +58,13 @@
 					fitToSection: true,
 					navigation: true,
 					navigationPosition: 'right',
+					onLeave: function(index, next, direction) {
+						if (next.index != 0) {
+						$('.site-header').addClass('site-header--on-scroll');
+						} else {
+						$('.site-header').removeClass('site-header--on-scroll');
+						}
+					}
 				});
 			});
 		</script>

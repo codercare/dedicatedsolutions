@@ -12,7 +12,7 @@
 
 		<header role="header" class="site-header">
 			<div class="wrapper">
-				<div class="rows rows--t-padding rows--b-padding rows--item-vertical-center">
+				<div class="rows rows--item-vertical-center inner-head-wrapper">
 					<div class="rows__small-8 rows__medium-3">
 						<div class="site-header__logo">
 						<?php if ( has_custom_logo()) : ?>

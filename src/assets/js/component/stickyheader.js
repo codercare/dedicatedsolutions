@@ -12,7 +12,7 @@ class StickyHeader {
 	}
 
 	showStickyOnScroll() {
-		if (window.scrollY > 400) {
+		if (window.scrollY > 100) {
 			this.siteHeader.classList.add("site-header--on-scroll");
 		} else {
 			this.siteHeader.classList.remove("site-header--on-scroll");

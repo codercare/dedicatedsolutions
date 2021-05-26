@@ -21,6 +21,7 @@
             display: block;
             color: $darkGrey;
             transition: 0.2s color ease;
+            font-size: 1.4rem;
         }
         &:hover a, &.open > a {
             color: $mainOrange;

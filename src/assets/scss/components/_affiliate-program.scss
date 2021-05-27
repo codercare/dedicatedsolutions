@@ -1,0 +1,154 @@
+.affiliate-page-banner {
+    padding: 10rem 0 0;
+    .page-banner-content{
+        .large-banner__heading{
+            margin: 0 0 .5rem;
+        }
+        p{
+            max-width: 48.8rem;
+            margin: 0 auto 1rem;
+        }
+    } 
+}
+
+.recommend-dedicatedSolution {
+    padding: 3rem 0;
+    .section-header__title{
+        max-width: 86.4rem;
+        margin: 0 auto 1.5rem;
+    }
+    .recom-block {
+        padding: 1rem 3rem;
+        margin: 0 0 2rem;
+        border-radius: .6rem;
+        transition: background .3s ease;
+        .recom-icon {
+            width: 5rem;
+            height: 5rem;
+            margin: 0 0 1rem;
+            svg {
+                width: 100%;
+            }
+        }
+        h2{
+            font-family: 'Product Sans', sans-serif;
+            line-height: 3.2rem;
+            font-weight: 700;
+            margin: 0;
+            padding: 0 5rem 0 0;
+            min-height: 6.4rem;
+        }
+        &:hover{
+            background: $mainOrange;
+            color: #fff;
+            .recom-icon{
+                svg{
+                    path{
+                        fill: #fff;
+                    }
+                    path.orange--path{
+                        fill: $darkGrey;
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+.signup-section{
+    background-color: $darkGrey;
+    color: #fff;
+    position: relative;
+    .signup-affiliate-program {
+        padding: 2rem 0 2.6rem;
+         h1 {
+             font-family: "Product Sans", sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 5.8rem;
+            margin: 0 0 1rem;
+        }
+        .btn--orange{
+            text-transform: capitalize;
+            font-size: 2rem;
+            padding: 1.4rem 4rem;
+            height: auto;
+            max-height: none;
+            max-width: none;
+            display: inline-block;
+            border-radius: .6rem;
+            .fas{
+                margin-left: .5rem;
+                font-size: 1.4rem;
+            }
+        }
+    }
+    .signup-thumbnail-img{
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 50%;
+        background-size: cover;
+        background-position: center center;
+    }
+}
+
+.pay-out-terms{
+    padding: 5rem 0;
+    .section-header__sub-title{
+        width: 68.4rem;
+        font-weight: 400;
+        margin: 0 auto;
+    }
+    .payout-terms-table{
+        margin: 0;
+        thead{
+            &.table-dark{
+                background: $mainOrange;
+            }
+            th{
+                border: none;
+                font-size: 2.5rem;
+                font-family: "Product Sans", sans-serif;
+                font-weight: 700;
+                padding: 1.5rem 5rem;
+                &:first-child{
+                    width: 29.4rem;
+                }
+                &:nth-of-type(2){
+                    width: 40.8rem;
+                }
+                &:last-child{
+                    width: 49.8rem;
+                }
+            }
+        }
+    }
+    tbody{
+        tr{
+            &:nth-of-type(even){
+                background: #FCFCFC;
+            }
+            td{
+                border: none;
+                vertical-align: middle;
+                padding: 2.1rem 5rem;
+                &:first-child{
+                    font-size: 2rem;
+                    line-height: 2.6rem;
+                    color: $darkGrey;
+                    font-weight: 700;
+                    padding: 2.1rem 2.3rem;
+                    span{
+                        padding-left: 2.8rem;
+                        position: relative;
+                        background: url(../images/check.png) no-repeat top .4rem left;
+                        display: block;
+                    }
+                }
+            }   
+        }
+    }
+}

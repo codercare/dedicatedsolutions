@@ -21,6 +21,7 @@
             display: inline-block;
             height: auto;
             text-transform: inherit;
+            max-height: none;
         }
     }
     &::before{

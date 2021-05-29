@@ -4,14 +4,18 @@
 get_header();
 ?>
 
+
+<main id="site-main" class="site-main">
 <?php
+
+while ( have_posts() ) : the_post(); 
+
 	$contact_banner = '';
 	$bg_image     = get_field( 'banner_bg_image' );
 	if ( ! empty( $bg_image ) ) {
 		$contact_banner = $bg_image['sizes']['banner_image'];
 	}
 ?>
-<main id="site-main" class="site-main">
 	<section class="page-banner contact-page-banner" style="background-image:url('<?php echo $contact_banner; ?>')">
 		<div class="wrapper">
 			<div class="page-banner-content">
@@ -127,5 +131,5 @@ get_header();
 		</div>
 	</section>
 </main>
-
+<?php endwhile; // end of the loop. ?>
 <?php get_footer(); ?>

@@ -1,8 +1,7 @@
 <?php
-/* Template Name: Test2 */ 
+/* Press Announcement And Award */ 
 
 get_header();?>
-?>
 <main class="site-main">
 	<section class="page-banner pressAnnouncement-page-banner">
 		<div class="wrapper">

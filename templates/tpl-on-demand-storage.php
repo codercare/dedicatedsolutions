@@ -13,9 +13,6 @@ get_header();?>
 			</div>
 		</div>
 	</section>
-
-
-
 	<section class="welcom-section page-section">
 		<div class="wrapper">
 			<div class="section-header u-txt-center">
@@ -50,19 +47,6 @@ get_header();?>
 				endwhile;
 				endif;
 				?>
-
-				<!-- <tr>
-				<th scope="row">2</th>
-				<td>Jacob</td>
-				<td>Thornton</td>
-				<td>@fat</td>
-				</tr>
-				<tr>
-				<th scope="row">3</th>
-				<td>Larry</td>
-				<td>the Bird</td>
-				<td>@twitter</td>
-				</tr> -->
 			</tbody>
 			</table>
 				</div>				

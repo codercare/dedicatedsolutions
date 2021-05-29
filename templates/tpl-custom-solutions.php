@@ -1,18 +1,20 @@
 <?php
 /* Template Name: Custom Solutions */ 
 
-get_header();?>
+get_header();
+?>
 
-
+<main id="site-main" class="site-main">
 <?php
+
+while ( have_posts() ) : the_post(); 
+
 	$banner_image_url = '';
 	$banner_image     = get_field( 'banner_bg_image' );
 	if ( ! empty( $banner_image ) ) {
 		$banner_image_url = $banner_image['sizes']['banner_image'];
 	}
 ?>
-
-<main id="site-main" class="site-main">
 	<section class="page-banner customSol-page-banner" style="background-image:url('<?php echo $banner_image_url; ?>')">
 		<div class="wrapper">
 			<div class="page-banner-content">
@@ -41,7 +43,6 @@ get_header();?>
 					$counter_card = 1;
 					while ( have_rows( 'custom_solution_types' ) ) :
 						the_row();
-
 						$package_icon = '';
 						$product_icon     = get_sub_field( 'product_icon' );
 						if ( ! empty( $product_icon ) ) {
@@ -239,7 +240,7 @@ get_header();?>
 			</div>
 		</div>
 	</section>
+<?php endwhile; // end of the loop. ?>
 </main>
 
 <?php get_footer(); ?>
-

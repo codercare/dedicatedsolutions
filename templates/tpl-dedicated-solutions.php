@@ -1,8 +1,13 @@
 <?php
-/* Template Name: Dedicated Solutions */ 
+/* Template Name: Dedicated Solutions Secure Networks */ 
 
-get_header();?>
+get_header();
+
+?>
 <main id="site-main" class="site-main">
+<?php
+while ( have_posts() ) : the_post(); 
+?>
 	<section class="dedicated-solutions page-section">
 		<div class="wrapper">
 			<h2 class="section-header__title"><?php the_field( 'dedicated_solutions_networks_title' ); ?></h2>
@@ -131,5 +136,6 @@ get_header();?>
 			</div>
 		</div>
 	</section>
+<?php endwhile; // end of the loop. ?>
 </main>
 <?php get_footer(); ?>

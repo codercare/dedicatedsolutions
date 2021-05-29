@@ -3,15 +3,16 @@
 
 get_header();?>
 
+<main id="site-main" class="site-main">
 <?php
+while ( have_posts() ) : the_post(); 
+
 	$banner_image_url = '';
 	$banner_image     = get_field( 'about_dedicated_solutions_banner' );
 	if ( ! empty( $banner_image ) ) {
 		$banner_image_url = $banner_image['sizes']['banner_image'];
 	}
 ?>
-
-<main id="site-main" class="site-main">
 	<section class="page-banner about-page-banner" style="background-image:url('<?php echo $banner_image_url; ?>')">
 		<div class="wrapper">
 			<div class="page-banner-content">
@@ -109,31 +110,6 @@ get_header();?>
 					endwhile; 
 					endif;
 					?>
-
-					<!-- <div class="col-md-6">
-						<div class="quick-fact-block">
-							<div class="quick-fact-icon">
-								<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/quick-fact-icon2.png'; ?>" alt="quick-fact-icon2">
-							</div>
-							<h3>Awesome Guarantees</h3>
-						</div>
-					</div>
-					<div class="col-md-6">
-						<div class="quick-fact-block">
-							<div class="quick-fact-icon">
-								<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/quick-fact-icon3.png'; ?>" alt="quick-fact-icon3">
-							</div>
-							<h3>5 World-wide Office Locations</h3>
-						</div>
-					</div>
-					<div class="col-md-6">
-						<div class="quick-fact-block">
-							<div class="quick-fact-icon">
-								<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/quick-fact-icon3.png'; ?>" alt="quick-fact-icon3">
-							</div>
-							<h3>2 Datacenter Locations (2 more coming soon)</h3>
-						</div>
-					</div> -->
 				</div>
 			</div>
 		</div>
@@ -192,7 +168,7 @@ get_header();?>
 			<a href="<?php the_field( 'speak_with_expert_button_link' ); ?>" class="btn--orange"><?php the_field( 'speak_with_expert_button' ); ?></a>
 		</div>
 	</section>
+<?php endwhile; // end of the loop. ?>
 </main>
-
 
 <?php get_footer(); ?>

@@ -21,7 +21,6 @@ get_header();?>
 			</div>
 		</div>
 	</section>
-
 	<section class="press-release">
 		<div class="wrapper">
 			<div class="section-header u-txt-center">
@@ -91,7 +90,9 @@ get_header();?>
 						<div class="awards-block award-1">
 							<div class="awards-block-content">
 								<div class="award-logo">
-								    <?php the_post_thumbnail( 'full' );?>		
+								    <?php 
+									
+									the_post_thumbnail('full');?>		
 								</div>
 								<h3><?php the_title(); ?></h3>
 								<a href="<?php the_permalink(); ?>" class="btn--orange">Read Full Review</a>
@@ -103,40 +104,7 @@ get_header();?>
 				endforeach;
 				wp_reset_postdata();
 				}
-				?>
-					<!-- <div class="col-md-4">
-						<div class="awards-block award-1">
-							<div class="awards-block-content">
-								<div class="award-logo">
-									<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/award-img2.png'; ?>" alt="award-img2">
-								</div>
-								<h3>Listed #1 For Dedicated Servers</h3>
-								<a href="" class="btn--orange">Read Full Review</a>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="awards-block award-2">
-							<div class="awards-block-content">
-								<div class="award-logo">
-									<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/award-img1.png'; ?>" alt="award-img1">
-								</div>
-								<h3>Excellent Service Award 2015</h3>
-								<a href="" class="btn--orange">Read Full Review</a>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="awards-block award-3">
-							<div class="awards-block-content">
-								<div class="award-logo">
-									<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/award-img3.png'; ?>" alt="award-img3">
-								</div>
-								<h3>Hosting I Cloud</h3>
-								<a href="" class="btn--orange">Read Full Review</a>
-							</div>
-						</div>
-					</div> -->
+				?>				
 				</div>
 			</div>
 		</div>

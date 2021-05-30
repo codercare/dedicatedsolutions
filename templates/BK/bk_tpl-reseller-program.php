@@ -1,5 +1,5 @@
 <?php
-/* Template Name: Reseller Program */ 
+/* Reseller Program */ 
 
 get_header();
 ?>
@@ -14,8 +14,7 @@ get_header();
 
 
 <main id="fullpage" class="site-main">
-<section class="section ">
-	<section class="page-banner reseller-page-banner" style="background-image:url('<?php echo $banner_image_url; ?>')">
+	<section class="page-banner reseller-page-banner section fp-auto-height" style="background-image:url('<?php echo $banner_image_url; ?>')">
 		<div class="wrapper">
 			<div class="page-banner-content">
 				<h1 class="large-banner__heading"><?php the_field( 'reseller_program_title' ); ?></h1>
@@ -25,7 +24,7 @@ get_header();
 		</div>
 	</section>
 	
-	<section class="reseller-exclusive page-section">
+	<section class="reseller-exclusive page-section section fp-auto-height">
 		<div class="wrapper">
 			<h2 class="section-header__title"><?php the_field( 'exclusive_reseller_title' ); ?></h2>
 			<span class="section-header__decoration-element"></span>
@@ -33,7 +32,6 @@ get_header();
 			<p><?php the_field( 'exclusive_reseller_short_detail' ); ?></p>
 		</div>
 	</section>
-</section>
 	<?php
 	$reseller_bg_image = '';
 	$bg_image     = get_field( 'how_reseller_works_bg_image' );

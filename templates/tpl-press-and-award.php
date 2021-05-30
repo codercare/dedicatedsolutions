@@ -51,7 +51,7 @@ get_header();?>
 								<h2><?php the_title(); ?></h2>
 								<h4><i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/calendar.png'; ?>" alt="calendar"></i>
 								<?php $press_post_date = get_the_date( 'j F, Y' ); echo $press_post_date;  ?></h4>
-								<p><?php echo wp_trim_words( get_the_content(), 30, '' );  ?></p>
+								<p><?php echo wp_trim_words( get_the_excerpt(), 30, '' );  ?></p>
 								<a href="<?php the_permalink(); ?>" class="btn--orange">Read More</a>
 							</div>
 						</div>

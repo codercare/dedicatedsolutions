@@ -156,7 +156,13 @@ require get_template_directory() . '/inc/template-functions.php';
 require get_template_directory() . '/inc/acf/acf-init.php';
 
 /* Menu functions and filters. */
-require get_template_directory() . '/inc/menu-functions.php';
+// require get_template_directory() . '/inc/menu-functions.php';
+
+
+/**
+ * Contact 7 Form Customized  Error message
+ */
+require get_template_directory() . '/inc/contact7_form_validation.php';
 
 
 
@@ -187,5 +193,6 @@ add_filter('upload_mimes', 'cc_mime_types');
 
 require_once get_template_directory() .'/lib/enqueue-assets.php';
 require_once get_template_directory() .'/lib/navigation.php';
+
 
 

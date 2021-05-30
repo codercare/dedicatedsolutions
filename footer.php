@@ -39,7 +39,7 @@
 						</li>
 					</ul>
 					<div class="site-footer__btn-container">
-						<a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Contactus' ) ) ); ?>" class="btn--orange u-mb-untill-small u-mr">
+						<a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Contact Us' ) ) ); ?>" class="btn--orange u-mb-untill-small u-mr">
 							<span class="btn-label">Contact Us</span>
 						</a>
 						<a href="<?php the_field( 'banner_dedicated_server_button_link' ); ?>" class="btn--orange u-mb-untill-small">

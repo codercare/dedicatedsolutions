@@ -4,11 +4,11 @@
 get_header();
 
 ?>
-<main id="site-main" class="site-main">
+<main id="fullpage" class="site-main">
 <?php
 while ( have_posts() ) : the_post(); 
 ?>
-	<section class="dedicated-solutions page-section">
+	<section class="dedicated-solutions section">
 		<div class="wrapper">
 			<h2 class="section-header__title"><?php the_field( 'dedicated_solutions_networks_title' ); ?></h2>
 			<span class="section-header__decoration-element"></span>

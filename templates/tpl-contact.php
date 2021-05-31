@@ -16,36 +16,6 @@ while ( have_posts() ) : the_post();
 		$contact_banner = $bg_image['sizes']['banner_image'];
 	}
 ?>
-<<<<<<< HEAD
-	<section class="page-banner contact-page-banner" style="background-image:url('<?php echo $contact_banner; ?>')">
-		<div class="wrapper">
-			<div class="page-banner-content">
-				<h1 class="large-banner__heading"><?php the_field( 'contact_us_title' ); ?></h1>
-				<p><?php the_field( 'contact_us_sub_title' ); ?></p>
-			</div>
-		</div> 
-	</section>
-
-	<section class="services-section page-section">
-		<div class="wrapper">
-			<div class="rows rows--gutters-small">
-			    <div class="rows__medium-4">
-					<div class="service-block block-1" style="background-image: url('<?php echo get_template_directory_uri() . '/dist/assets/images/live-support.svg'; ?>')">
-						<div class="service-icon-box">
-							<?php
-							$support_icon = '';
-							$sup_image     = get_field( 'live_support_block_icon' );
-							if ( ! empty( $sup_image ) ) {
-								$support_icon = $sup_image['sizes']['mid_icon'];
-							}
-							?>
-							<img src="<?php echo $support_icon; ?>" alt="<?php the_field( 'live_support_block_title' ); ?>">
-						</div>
-						<h3><?php the_field( 'live_support_block_title' ); ?></h3>
-						<p><?php the_field( 'live_support_detail' ); ?></p>
-						<a href="<?php the_field( 'live_support_button_link' ); ?>" class="btn--orange"><?php the_field( 'live_support_button_label' ); ?> <i class="fas fa-arrow-right"></i></a>
-					</div>
-=======
 <main id="fullpage" class="site-main">
 	<section class="section">
 		<section class="page-banner contact-page-banner" style="background-image:url('<?php echo $contact_banner; ?>')">
@@ -53,7 +23,6 @@ while ( have_posts() ) : the_post();
 				<div class="page-banner-content">
 					<h1 class="large-banner__heading"><?php the_field( 'contact_us_title' ); ?></h1>
 					<p><?php the_field( 'contact_us_sub_title' ); ?></p>
->>>>>>> innerpage
 				</div>
 			</div> 
 		</section>

@@ -3,88 +3,90 @@
 
 get_header();?>
 
-<main id="site-main" class="site-main">
-	<section class="page-banner customSol-page-banner" style="background-image:url('<?php echo get_template_directory_uri() . '/dist/assets/images/custom-sol-bg.jpg'; ?>')">
-		<div class="wrapper">
-			<div class="page-banner-content">
-				<h1 class="large-banner__heading">Custom Solutions</h1>
-				<p>Tell us what you need and we’ll build it.</p>
-				<a href="" class="btn--orange">Custom Solutions Overview</a>
-				<a href="" class="btn--white">Premium Features</a>
-			</div>
-		</div>
-	</section>
-
-	<section class="customSol-overview">
-		<div class="wrapper">
-			<div class="row">
-				<div class="col-md-6">
-					<div class="customSol-overview-content">
-						<h2 class="section-header__title">Custom Solutions Overview</h2>
-						<h4 class="section-header__Orangesub-title">Tell Us What You Need & We BuildD It</h4>
-						<p>Dedicated Solutions offers a wide range of quality hosting products, all designed to give you the very best possible conditions to host your site or to run your business. From small shared accounts, through reseller accounts, virtual private servers and up to fully managed dedicated servers, you can find it with us.</p>
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="customSol-overview-grid">
-						<div class="cs-block">
-							<div class="row">
-								<div class="col-md-4">
-									<div class="icon-box">
-										<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/big-data.png'; ?>" alt="big-data">
-									</div>
-								</div>
-								<div class="col-md-8">
-									<div class="cs-block-content">
-										<div class="cs-flex-content">
-											<h3>Big Data</h3>
-											<p>Enterprise Hardware RAID 1/10/5/50/6.</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>	
-						<div class="cs-block">
-							<div class="row">
-								<div class="col-md-4">
-									<div class="icon-box">
-										<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/multi-server.png'; ?>" alt="multi-server">
-									</div>
-								</div>
-								<div class="col-md-8">
-									<div class="cs-block-content">
-										<div class="cs-flex-content">
-											<h3>Multiserver/Private Rack</h3>
-											<p>Cloud too crowded for you? Build, manage, and have total control over your own cloud of virtual servers.</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>	
-						<div class="cs-block">
-							<div class="row">
-								<div class="col-md-4">
-									<div class="icon-box">
-										<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/hosting.png'; ?>" alt="hosting">
-									</div>
-								</div>
-								<div class="col-md-8">
-									<div class="cs-block-content">
-										<div class="cs-flex-content">
-											<h3>SAN/NAS Hosting</h3>
-											<p>Provide a low-latency, high-bandwidth interconnect that can span large distances.</p>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>	
-					</div>
+<main id="fullpage" class="site-main">
+	<section class="section">
+		<section class="page-banner customSol-page-banner" style="background-image:url('<?php echo get_template_directory_uri() . '/dist/assets/images/custom-sol-bg.jpg'; ?>')">
+			<div class="wrapper">
+				<div class="page-banner-content">
+					<h1 class="large-banner__heading">Custom Solutions</h1>
+					<p>Tell us what you need and we’ll build it.</p>
+					<a href="" class="btn--orange">Custom Solutions Overview</a>
+					<a href="" class="btn--white">Premium Features</a>
 				</div>
 			</div>
-		</div>
+		</section>
+	
+		<section class="customSol-overview">
+			<div class="wrapper">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="customSol-overview-content">
+							<h2 class="section-header__title">Custom Solutions Overview</h2>
+							<h4 class="section-header__Orangesub-title">Tell Us What You Need & We BuildD It</h4>
+							<p>Dedicated Solutions offers a wide range of quality hosting products, all designed to give you the very best possible conditions to host your site or to run your business. From small shared accounts, through reseller accounts, virtual private servers and up to fully managed dedicated servers, you can find it with us.</p>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="customSol-overview-grid">
+							<div class="cs-block">
+								<div class="row">
+									<div class="col-md-4">
+										<div class="icon-box">
+											<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/big-data.png'; ?>" alt="big-data">
+										</div>
+									</div>
+									<div class="col-md-8">
+										<div class="cs-block-content">
+											<div class="cs-flex-content">
+												<h3>Big Data</h3>
+												<p>Enterprise Hardware RAID 1/10/5/50/6.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>	
+							<div class="cs-block">
+								<div class="row">
+									<div class="col-md-4">
+										<div class="icon-box">
+											<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/multi-server.png'; ?>" alt="multi-server">
+										</div>
+									</div>
+									<div class="col-md-8">
+										<div class="cs-block-content">
+											<div class="cs-flex-content">
+												<h3>Multiserver/Private Rack</h3>
+												<p>Cloud too crowded for you? Build, manage, and have total control over your own cloud of virtual servers.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>	
+							<div class="cs-block">
+								<div class="row">
+									<div class="col-md-4">
+										<div class="icon-box">
+											<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/hosting.png'; ?>" alt="hosting">
+										</div>
+									</div>
+									<div class="col-md-8">
+										<div class="cs-block-content">
+											<div class="cs-flex-content">
+												<h3>SAN/NAS Hosting</h3>
+												<p>Provide a low-latency, high-bandwidth interconnect that can span large distances.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>	
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 	</section>
 
-	<section class="premium-server-features">
+	<section class="premium-server-features section">
 		<div class="wrapper">
 			<div class="section-header u-txt-center">
 				<h2 class="section-header__title">Premium Server Features</h2>
@@ -92,7 +94,7 @@ get_header();?>
 				<h4 class="section-header__Orangesub-title">Customize a server to meet your specifications with our premium features.</h4>
 			</div>
 			<div class="p-feat-content">
-				<div class="row">
+				<div class="row align-items-center">
 					<div class="col-md-6 order-md-1">
 						<figure class="thumbnail-img">
 							<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/server-vector.png'; ?>" alt="server-vector">
@@ -144,7 +146,7 @@ get_header();?>
 		</div>
 	</section>
 
-	<section class="additional-features">
+	<section class="additional-features section">
 		<div class="wrapper">
 			<div class="section-header u-txt-center">
 				<h2 class="section-header__title">Additional Features</h2>
@@ -222,7 +224,7 @@ get_header();?>
 		</div>
 	</section>
 
-	<section class="custom-support">
+	<section class="custom-support section">
 		<div class="wrapper">
 			<div class="row">
 				<div class="col-md-7">

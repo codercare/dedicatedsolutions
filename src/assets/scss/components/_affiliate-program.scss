@@ -152,3 +152,14 @@
         }
     }
 }
+
+@media(min-width:1680px){
+    .recommend-dedicatedSolution, .pay-out-terms{
+        padding: 0;
+    }
+    .signup-section{
+        .signup-affiliate-program {
+            padding: 8rem 0;
+        }
+    } 
+}

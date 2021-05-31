@@ -161,7 +161,7 @@
 }
 
 .additional-features{
-    padding: 16rem 0 11rem;
+    padding: 10rem 0 8rem;
     .section-header{
         margin-bottom: 7rem;
         .section-header__Orangesub-title{
@@ -213,7 +213,7 @@
 .custom-support{
     background: $mainOrange;
     color: #fff;
-    padding: 9rem 0 7.5rem;
+    // padding: 9rem 0 7.5rem;
     .custom-support-content{
         padding: 3.5rem 0;
         .section-header__title{
@@ -236,5 +236,48 @@
     }
     .thumbnail-img{
         text-align: right;
+    }
+}
+
+@media(min-width: 1680px){
+	.customSol-page-banner {
+        padding: 6rem 0 2rem;
+    }
+    .customSol-overview {
+        padding: 4rem 0;
+        .customSol-overview-grid{
+            .cs-block{
+                padding: 1rem 0;
+            }
+        }
+    }
+    .premium-server-features{
+        padding: 0;
+        .section-header{
+            margin-bottom: 4rem;
+        }
+        .p-server-feat-block {
+            margin: 0 0 4rem;
+        }
+        .thumbnail-img{
+            img{
+                max-width: 75%;
+            }
+        }    
+    }
+    .additional-features{
+        padding: 0;
+        .additional-feat-grid{
+            [class^="col-"]{
+                &:nth-last-of-type(3),&:last-child{
+                    .add-feat-block{
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+    .custom-support{
+        padding: 0;
     }
 }

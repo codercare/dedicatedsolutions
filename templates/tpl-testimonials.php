@@ -3,8 +3,8 @@
 
 get_header();?>
 
-<main id="site-main" class="site-main">
-	<section class="testimonial-section">
+<main id="fullpage" class="site-main">
+	<section class="testimonial-section section">
 		<div class="wrapper">
 			<div class="section-header u-txt-center">
 				<h2 class="section-header__title">What Our Customers Say About Us</h2>
@@ -49,9 +49,17 @@ get_header();?>
 							<div class="testimonial-profile">
 								<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/testi-profile-3.jpg'; ?>" alt="testi-profile-3">
 							</div>
-							<h3>Ellie Williams <span>Grom.com</span></h3>
+							<h3>Eddie Carlos <span>Grom.com</span></h3>
 						</div>
 					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="testimonial-section section">
+		<div class="wrapper">
+			<div class="testimonial-block-wrap">
+				<div class="row">
 					<div class="col-md-4">
 						<div class="testimonial-block">
 							<i class="quote">
@@ -91,6 +99,14 @@ get_header();?>
 							<h3>Eddie Carlos <span>Grom.com</span></h3>
 						</div>
 					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="testimonial-section section">
+		<div class="wrapper">
+			<div class="testimonial-block-wrap">
+				<div class="row">
 					<div class="col-md-4">
 						<div class="testimonial-block">
 							<i class="quote">

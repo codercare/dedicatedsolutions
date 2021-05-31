@@ -1,5 +1,5 @@
 .server-features{
-	// padding-top: 4rem;
+	padding: 12rem 0;
 	// padding-bottom: 12rem;
 
 	// @include respond(small){
@@ -16,6 +16,9 @@
 	// 	padding-top: 17rem;
 	// 	padding-bottom: 15rem;
 	// }
+	.section-header{
+		margin: 0 0 2rem; 
+	}
 
 	&__text{
 		font-size: 1.7rem;
@@ -52,5 +55,11 @@
 		img{
 			object-fit: cover;
 		}
+	}
+}
+
+@media(min-width: 1680px){
+    .server-features{
+		padding: 4rem 0 4.5rem
 	}
 }

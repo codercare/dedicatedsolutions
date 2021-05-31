@@ -1,6 +1,5 @@
 .section-services{
-	// padding-top: 4rem;
-	// padding-bottom: 12rem;
+	padding: 10rem 0;
 
 	// @include respond(small){
 	// 	padding-top: 13rem;
@@ -16,4 +15,10 @@
 	// 	padding-top: 17rem;
 	// 	padding-bottom: 15rem;
 	// }
+}
+
+@media(min-width: 1680px){
+	.section-services{
+		padding: 0
+	}
 }

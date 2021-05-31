@@ -5,8 +5,8 @@ get_header();?>
 
 
 
-<main id="site-main" class="site-main">
-	<section class="page-banner about-page-banner" style="background-image:url('<?php echo get_template_directory_uri() . '/dist/assets/images/about-banner.jpg'; ?>')">
+<main id="fullpage" class="site-main">
+	<section class="page-banner about-page-banner section fp-auto-height" style="background-image:url('<?php echo get_template_directory_uri() . '/dist/assets/images/about-banner.jpg'; ?>')">
 		<div class="wrapper">
 			<div class="page-banner-content">
 				<h1 class="large-banner__heading">About Dedicated Solutions</h1>
@@ -15,8 +15,8 @@ get_header();?>
 			</div>
 		</div>
 	</section>
-
-	<section class="welcom-section page-section">
+	
+	<section class="welcom-section page-section section">
 		<div class="wrapper">
 			<div class="section-header u-txt-center">
 				<h2 class="section-header__title">Welcome to DedicatedSolutions.com</h2>
@@ -42,70 +42,72 @@ get_header();?>
 		</div>
 	</section>
 
-	<section class="ceo-detail page-section" style="background-image:url('<?php echo get_template_directory_uri() . '/dist/assets/images/ceo-bg.jpg'; ?>')">
-		<div class="wrapper">
-			<div class="row">
-				<div class="col-md-5">
-					<figure class="thumbnal-img">
-						<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/ceo-profile.jpg'; ?>" alt="ceo-profile">
-					</figure>
-				</div>
-				<div class="col-md-7">
-					<div class="ceo-content">
-						<h1>Christoph Schmolmueller <span>CEO / Founder</span></h1>
-						<p>Christoph is the driving force here at DedicatedSolutions.com. His aim is to deliver outstanding dedicated server solutions at an affordable price.</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section class="quick-fact page-section">
-		<div class="wrapper">
-			<div class="quick-fact-inner-content">
-				<div class="section-header u-txt-center">
-					<h2 class="section-header__title">Quick Facts</h2>
-					<span class="section-header__decoration-element"></span>
-				</div>
+	<section class="section">
+		<section class="ceo-detail page-section" style="background-image:url('<?php echo get_template_directory_uri() . '/dist/assets/images/ceo-bg.jpg'; ?>')">
+			<div class="wrapper">
 				<div class="row">
-					<div class="col-md-6">
-						<div class="quick-fact-block">
-							<div class="quick-fact-icon">
-								<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/quick-fact-icon1.png'; ?>" alt="quick-fact-icon1">
-							</div>
-							<h3>Self Service Control Panel</h3>
-						</div>
+					<div class="col-md-5">
+						<figure class="thumbnal-img">
+							<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/ceo-profile.jpg'; ?>" alt="ceo-profile">
+						</figure>
 					</div>
-					<div class="col-md-6">
-						<div class="quick-fact-block">
-							<div class="quick-fact-icon">
-								<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/quick-fact-icon2.png'; ?>" alt="quick-fact-icon2">
-							</div>
-							<h3>Awesome Guarantees</h3>
-						</div>
-					</div>
-					<div class="col-md-6">
-						<div class="quick-fact-block">
-							<div class="quick-fact-icon">
-								<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/quick-fact-icon3.png'; ?>" alt="quick-fact-icon3">
-							</div>
-							<h3>5 World-wide Office Locations</h3>
-						</div>
-					</div>
-					<div class="col-md-6">
-						<div class="quick-fact-block">
-							<div class="quick-fact-icon">
-								<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/quick-fact-icon3.png'; ?>" alt="quick-fact-icon3">
-							</div>
-							<h3>2 Datacenter Locations (2 more coming soon)</h3>
+					<div class="col-md-7">
+						<div class="ceo-content">
+							<h1>Christoph Schmolmueller <span>CEO / Founder</span></h1>
+							<p>Christoph is the driving force here at DedicatedSolutions.com. His aim is to deliver outstanding dedicated server solutions at an affordable price.</p>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+		</section>
+	
+		<section class="quick-fact page-section">
+			<div class="wrapper">
+				<div class="quick-fact-inner-content">
+					<div class="section-header u-txt-center">
+						<h2 class="section-header__title">Quick Facts</h2>
+						<span class="section-header__decoration-element"></span>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<div class="quick-fact-block">
+								<div class="quick-fact-icon">
+									<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/quick-fact-icon1.png'; ?>" alt="quick-fact-icon1">
+								</div>
+								<h3>Self Service Control Panel</h3>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="quick-fact-block">
+								<div class="quick-fact-icon">
+									<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/quick-fact-icon2.png'; ?>" alt="quick-fact-icon2">
+								</div>
+								<h3>Awesome Guarantees</h3>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="quick-fact-block">
+								<div class="quick-fact-icon">
+									<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/quick-fact-icon3.png'; ?>" alt="quick-fact-icon3">
+								</div>
+								<h3>5 World-wide Office Locations</h3>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="quick-fact-block">
+								<div class="quick-fact-icon">
+									<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/quick-fact-icon3.png'; ?>" alt="quick-fact-icon3">
+								</div>
+								<h3>2 Datacenter Locations (2 more coming soon)</h3>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 	</section>
 
-	<section class="our-locations">
+	<section class="our-locations section">
 		<div class="wrapper">
 			<div class="section-header u-txt-center">
 				<h2 class="section-header__title">Our Locations World-Wide</h2>
@@ -141,7 +143,7 @@ get_header();?>
 		</div>
 	</section>
 
-	<section class="speak-with-expert">
+	<section class="speak-with-expert section fp-auto-height">
 		<div class="wrapper">
 			<div class="section-header u-txt-center">
 				<h2 class="section-header__title">Speak With An Expert</h2>

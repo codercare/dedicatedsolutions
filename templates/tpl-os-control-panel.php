@@ -3,126 +3,130 @@
 
 get_header();?>
 
-<main class="site-main">
-	<section class="page-banner os-control-page-banner" style="background-image:url('<?php echo get_template_directory_uri() . '/dist/assets/images/os-control-panel-banner.jpg'; ?>')">
-		<div class="wrapper">
-			<div class="page-banner-content">
-				<h1 class="large-banner__heading">OS And Control Panels</h1>
-				<p>The operating systems and control panel software you need</p>
-				<div class="os-control-panl__btn-wrap">
-					<a href="" class="btn--orange">
-						<i class="btn-icon">
-							<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/secure@2x.png'; ?>" alt="secure">
-						</i>
-						<span class="btn-label">Operating System</span>
-					</a>
-					<a href="" class="btn--orange">
-						<i class="btn-icon">
-							<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/dserver.png'; ?>" alt="dserver">
-						</i>
-						<span class="btn-label">Virtualization OS</span>
-					</a>
-					<a href="" class="btn--orange">
-						<i class="btn-icon">
-							<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/server@2x.png'; ?>" alt="server">
-						</i>
-						<span class="btn-label">Control Panel</span>
-					</a>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section class="operating-system">
-		<div class="wrapper">
-			<div class="row align-items-center">
-				<div class="col-md-6 order-md-1">
-					<figure class="thumbnail-img">
-						<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/operating-system.jpg'; ?>" alt="os-box">
-					</figure>
-				</div>
-				<div class="col-md-6">
-					<div class="os-inner-content">
-						<h2 class="section-header__title">Operating Systems</h2>
-						<p class="section-header__sub-title">Choose from a wide range of Linux, Windows and other operating systems with every server you order at Dedicated Solutions.</p>
-						<ul class="orange--list black-check">
-							<li>Websites</li>
-							<li>Operating System</li>
-							<li>System Hardware</li>
-						</ul>
+<main id="fullpage" class="site-main">
+	<section class="section">
+		<section class="page-banner os-control-page-banner" style="background-image:url('<?php echo get_template_directory_uri() . '/dist/assets/images/os-control-panel-banner.jpg'; ?>')">
+			<div class="wrapper">
+				<div class="page-banner-content">
+					<h1 class="large-banner__heading">OS And Control Panels</h1>
+					<p>The operating systems and control panel software you need</p>
+					<div class="os-control-panl__btn-wrap">
+						<a href="" class="btn--orange">
+							<i class="btn-icon">
+								<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/secure@2x.png'; ?>" alt="secure">
+							</i>
+							<span class="btn-label">Operating System</span>
+						</a>
+						<a href="" class="btn--orange">
+							<i class="btn-icon">
+								<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/dserver.png'; ?>" alt="dserver">
+							</i>
+							<span class="btn-label">Virtualization OS</span>
+						</a>
+						<a href="" class="btn--orange">
+							<i class="btn-icon">
+								<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/server@2x.png'; ?>" alt="server">
+							</i>
+							<span class="btn-label">Control Panel</span>
+						</a>
 					</div>
 				</div>
 			</div>
-		</div>
-	</section>
-
-	<section class="linux-os-section">
-		<div class="wrapper">
-			<div class="row">
-				<div class="col-md-3 order-md-1">
-					<div class="linux-os-type--block">
-						<div class="linux-block centos">
-							<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/centos.png'; ?>" alt="centos">
-						</div>
-						<div class="linux-block debian">
-							<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/debian.png'; ?>" alt="debian">
-						</div>
-						<div class="linux-block ubuntu">
-							<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/ubuntu.png'; ?>" alt="ubuntu">
-						</div>
-						<div class="linux-block fedora">
-							<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/fedora.png'; ?>" alt="fedora">
-						</div>
+		</section>
+	
+		<section class="operating-system">
+			<div class="wrapper">
+				<div class="row align-items-center">
+					<div class="col-md-6 order-md-1">
+						<figure class="thumbnail-img">
+							<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/operating-system.jpg'; ?>" alt="os-box">
+						</figure>
 					</div>
-				</div>
-				<div class="col-md-9">
-					<div class="linux-os-inner-content">
-						<h2 class="section-header__title">Linux Server OS</h2>
-						<p class="section-header__sub-title">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, Lorem Ipsum has been the industry.</p>
-						<ul class="orange--list white">
-							<li>Ubuntu</li>
-							<li>Fedora</li>
-							<li>LinuxMint</li>
-							<li>openSUSE</li>
-							<li>PCLinuxOS</li>
-							<li>Debian</li>
-							<li>Mandriva</li>
-							<li>Sabayon/Gentoo</li>
-							<li>Arch Linux</li>
-						</ul>
+					<div class="col-md-6">
+						<div class="os-inner-content">
+							<h2 class="section-header__title">Operating Systems</h2>
+							<p class="section-header__sub-title">Choose from a wide range of Linux, Windows and other operating systems with every server you order at Dedicated Solutions.</p>
+							<ul class="orange--list black-check">
+								<li>Websites</li>
+								<li>Operating System</li>
+								<li>System Hardware</li>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+		</section>
 	</section>
 
-	<section class="windows-os-section">
-		<div class="wrapper">
-			<div class="row align-items-center">
-				<div class="col-md-4">
-					<figure class="thumbnail-img">
-						<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/microsoft-logo.png'; ?>" alt="microsoft-logo">
-					</figure>
-				</div>
-				<div class="col-md-8">
-					<div class="os-inner-content">
-						<div class="section-header">
-							<h2 class="section-header__title">Windows Server OS</h2>
-							<span class="section-header__decoration-element"></span>
-							<p class="section-header__sub-title">Lorem Ipsum is simply dummy text of the printing and typesetting industry. the industry's standard dummy text ever since the 1500s, Lorem Ipsum has been the industry.</p>
+	<section class="section">
+		<section class="linux-os-section">
+			<div class="wrapper">
+				<div class="row">
+					<div class="col-md-3 order-md-1">
+						<div class="linux-os-type--block">
+							<div class="linux-block centos">
+								<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/centos.png'; ?>" alt="centos">
+							</div>
+							<div class="linux-block debian">
+								<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/debian.png'; ?>" alt="debian">
+							</div>
+							<div class="linux-block ubuntu">
+								<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/ubuntu.png'; ?>" alt="ubuntu">
+							</div>
+							<div class="linux-block fedora">
+								<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/fedora.png'; ?>" alt="fedora">
+							</div>
 						</div>
-						<ul  class="orange--list black reverse">
-							<li>Windows Server 2008 R2</li>
-							<li>Windows Server 2012 R2</li>
-							<li>Windows Server 2016</li>
-						</ul>
+					</div>
+					<div class="col-md-9">
+						<div class="linux-os-inner-content">
+							<h2 class="section-header__title">Linux Server OS</h2>
+							<p class="section-header__sub-title">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, Lorem Ipsum has been the industry.</p>
+							<ul class="orange--list white">
+								<li>Ubuntu</li>
+								<li>Fedora</li>
+								<li>LinuxMint</li>
+								<li>openSUSE</li>
+								<li>PCLinuxOS</li>
+								<li>Debian</li>
+								<li>Mandriva</li>
+								<li>Sabayon/Gentoo</li>
+								<li>Arch Linux</li>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+		</section>
+	
+		<section class="windows-os-section">
+			<div class="wrapper">
+				<div class="row align-items-center">
+					<div class="col-md-4">
+						<figure class="thumbnail-img">
+							<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/microsoft-logo.png'; ?>" alt="microsoft-logo">
+						</figure>
+					</div>
+					<div class="col-md-8">
+						<div class="os-inner-content">
+							<div class="section-header">
+								<h2 class="section-header__title">Windows Server OS</h2>
+								<span class="section-header__decoration-element"></span>
+								<p class="section-header__sub-title">Lorem Ipsum is simply dummy text of the printing and typesetting industry. the industry's standard dummy text ever since the 1500s, Lorem Ipsum has been the industry.</p>
+							</div>
+							<ul  class="orange--list black reverse">
+								<li>Windows Server 2008 R2</li>
+								<li>Windows Server 2012 R2</li>
+								<li>Windows Server 2016</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 	</section>
 
-	<section class="find-your-os" style="background-image:url('<?php echo get_template_directory_uri() . '/dist/assets/images/find-your-os-bg.jpg'; ?>')">
+	<section class="find-your-os section fp-auto-height" style="background-image:url('<?php echo get_template_directory_uri() . '/dist/assets/images/find-your-os-bg.jpg'; ?>')">
 		<div class="wrapper">
 			<div class="find-your-os--inner-content">
 				<h2 class="section-header__title">Can’t find your Operating System?</h2>
@@ -132,7 +136,7 @@ get_header();?>
 		</div>
 	</section>
 
-	<section class="virtulization-os">
+	<section class="virtulization-os section">
 		<div class="wrapper">
 			<div class="section-header u-txt-center">
 				<h2 class="section-header__title">Virtualization OS</h2>
@@ -184,7 +188,7 @@ get_header();?>
 		</div>
 	</section>
 
-	<section class="virtulization-detail page-section">
+	<section class="virtulization-detail page-section section">
 		<div class="wrapper">
 			<div class="single-virtulzation-row vmware">
 				<div class="row">
@@ -263,7 +267,7 @@ get_header();?>
 		</div>
 	</section>
 
-	<section class="control-panels-section">
+	<section class="control-panels-section section">
 		<div class="wrapper">
 			<div class="section-header u-txt-center">
 				<h2 class="section-header__title">Control Panels</h2>
@@ -379,10 +383,12 @@ get_header();?>
 					</ul>
 				</div>
 			</div>
-			<div class="ask-to-expert">
-				<h2 class="section-header__title">Deciding Between cPanel and Plesk?</h2>
-				<a href="" class="btn--orange">Ask our expert engineers <i class="fas fa-arrow-right"></i></a>
-			</div>
+		</div>
+	</section>
+	<section class="ask-to-expert section fp-auto-height">
+		<div class="wrapper">
+			<h2 class="section-header__title">Deciding Between cPanel and Plesk?</h2>
+			<a href="" class="btn--orange">Ask our expert engineers <i class="fas fa-arrow-right"></i></a>
 		</div>
 	</section>
 </main>

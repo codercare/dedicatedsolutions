@@ -1,18 +1,38 @@
 .datacenter{
-	padding-top: 4rem;
+	padding: 2rem 0;
 	// padding-bottom: 4rem;
 	background-color: #f9f9f9;
+	p:empty{
+		display: none;
+	}
+	p{
+		margin: 0;
+	}
+	.section-header__title{
+		margin-top: 2rem;
+	}
 
 	&__image-container{
 		width: 100%;
-		height: 29rem;
+		height: 26rem;
 		overflow: hidden;
-		margin-bottom: 2rem;
+		// margin-bottom: 2rem;
 
 		img{
 			object-fit: cover;
 			height: 100%;
 			width: 100%;
+		}
+	}
+}
+
+@media(min-width: 1680px){
+    .datacenter{
+		.section-header__title{
+			margin-top: 0;
+		}
+		&__image-container{
+			height: 17rem;
 		}
 	}
 }

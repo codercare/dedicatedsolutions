@@ -26,8 +26,16 @@
 	&__content{
     transform: translateY(0);
     @include respond(tab-land){
-      transform: translateY(70%);
+      transform: translateY(18%);
     }
 
+	}
+}
+
+@media(min-width: 1680px){
+	.tech-support{
+		&__content{
+			transform: translateY(55%)
+		}
 	}
 }

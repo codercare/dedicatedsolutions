@@ -85,7 +85,7 @@ while ( have_posts() ) : the_post();
 					</div>
 				</div>
 			</div>
-		</div>
+		</section>
 	</section>
 
 	<section class="linux-os-section">
@@ -176,10 +176,10 @@ while ( have_posts() ) : the_post();
 					</div>
 				</div>
 			</div>
-		</div>
+		</section>
 	</section>
 
-	<section class="find-your-os" style="background-image:url('<?php echo get_template_directory_uri() . '/dist/assets/images/find-your-os-bg.jpg'; ?>')">
+	<section class="find-your-os section fp-auto-height" style="background-image:url('<?php echo get_template_directory_uri() . '/dist/assets/images/find-your-os-bg.jpg'; ?>')">
 		<div class="wrapper">
 			<div class="find-your-os--inner-content">
 				<h2 class="section-header__title"><?php the_field( 'cant_find_os_title' ); ?></h2>
@@ -189,7 +189,7 @@ while ( have_posts() ) : the_post();
 		</div>
 	</section>
 
-	<section class="virtulization-os">
+	<section class="virtulization-os section">
 		<div class="wrapper">
 			<div class="section-header u-txt-center">
 				<h2 class="section-header__title"><?php the_field( 'virtulization_os_title' ); ?></h2>
@@ -234,7 +234,7 @@ while ( have_posts() ) : the_post();
 		</div>
 	</section>
 
-	<section class="virtulization-detail page-section">
+	<section class="virtulization-detail page-section section">
 		<div class="wrapper">
 		   <?php
 			if ( have_rows( 'vmware_promax_block' ) ) : 
@@ -295,7 +295,7 @@ while ( have_posts() ) : the_post();
 		</div>
 	</section>
 
-	<section class="control-panels-section">
+	<section class="control-panels-section section">
 		<div class="wrapper">
 			<div class="section-header u-txt-center">
 				<h2 class="section-header__title"><?php the_field('control_panels_title'); ?></h2>

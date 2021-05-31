@@ -22,8 +22,8 @@ while ( have_posts() ) : the_post();
 			</div>
 		</div>
 	</section>
-
-	<section class="welcom-section page-section">
+	
+	<section class="welcom-section page-section section">
 		<div class="wrapper">
 			<div class="section-header u-txt-center">
 				<h2 class="section-header__title"><?php the_field( 'weclome_block_title' ); ?></h2>
@@ -112,10 +112,10 @@ while ( have_posts() ) : the_post();
 					?>
 				</div>
 			</div>
-		</div>
+		</section>
 	</section>
 
-	<section class="our-locations">
+	<section class="our-locations section">
 		<div class="wrapper">
 			<div class="section-header u-txt-center">
 				<h2 class="section-header__title"><?php the_field( 'speak_with_expert_title' ); ?></h2>
@@ -158,7 +158,7 @@ while ( have_posts() ) : the_post();
 		</div>
 	</section>
 
-	<section class="speak-with-expert">
+	<section class="speak-with-expert section fp-auto-height">
 		<div class="wrapper">
 			<div class="section-header u-txt-center">
 				<h2 class="section-header__title"><?php the_field( 'speak_with_expert_title' ); ?></h2>

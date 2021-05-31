@@ -26,12 +26,12 @@ while ( have_posts() ) : the_post();
 		</div>
 	</section>
 
-	<section class="global-network-section page-section">
+	<section class="global-network-section section">
 		<div class="wrapper">
 			<h2 class="section-header__title"><?php the_field( 'global_networks_title' ); ?></h2>
 			<span class="section-header__decoration-element--dark"></span>
 			<ul class="clearfix">
-			    <?php 
+				<?php 
 				if ( have_rows( 'global_networks_features' ) ) :
 					$counQter = 1;
 					while ( have_rows( 'global_networks_features' ) ) :
@@ -47,10 +47,10 @@ while ( have_posts() ) : the_post();
 		</div>
 	</section>
 
-	<section class="dedicated-solution-grid-section page-section">
+	<section class="dedicated-solution-grid-section section">
 		<div class="wrapper">
 			<div class="rows rows--gutters-small">
-			    <?php 
+				<?php 
 				if ( have_rows( 'four_blocks' ) ) :
 					$counter_block = 1;
 					while ( have_rows( 'four_blocks' ) ) :
@@ -72,7 +72,7 @@ while ( have_posts() ) : the_post();
 						<div class="inner-decicated-content">
 							<h2><?php the_sub_field( 'block_title' ); ?></h2>
 							<ul>
-							    <?php															
+								<?php															
 								while ( have_rows( 'block_feature_lists' ) ) : the_row();								
 								?>
 								<li><span><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/check.png'; ?>" alt="check-icon"></span><?php the_sub_field( 'features' ); ?></li>
@@ -92,7 +92,7 @@ while ( have_posts() ) : the_post();
 		</div>
 	</section>
 
-	<section class="dedictaed-multi-col-grid">
+	<section class="dedictaed-multi-col-grid section">
 		<div class="wrapper">
 			<div class="multi-dedicated-col">
 				<div class="rows rows--gutters-small">
@@ -117,7 +117,7 @@ while ( have_posts() ) : the_post();
 						<div class="multi-dedicated-inner-content second">
 							<h2><?php the_field( 'routing_equipement_block_title' ); ?></h2>
 							<ul>
-							    <?php 
+								<?php 
 								if ( have_rows( 'routing_equipment_block_feature_list' ) ) :								
 								while ( have_rows( 'routing_equipment_block_feature_list' ) ) :
 								the_row();

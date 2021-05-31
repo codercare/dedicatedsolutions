@@ -2,6 +2,7 @@
 /* Template Name: Affiliate Program */ 
 
 get_header();?>
+<<<<<<< HEAD
 
 <main class="site-main">
 <?php while ( have_posts() ) : the_post(); 
@@ -13,6 +14,10 @@ get_header();?>
 	}
 ?>
 	<section class="page-banner affiliate-page-banner" style="background-image:url('<?php echo $banner_image_url; ?>')">
+=======
+<main id="fullpage" class="site-main">
+	<section class="page-banner affiliate-page-banner section fp-auto-height" style="background-image:url('<?php echo get_template_directory_uri() . '/dist/assets/images/affiliate-banner.jpg'; ?>')">
+>>>>>>> innerpage
 		<div class="wrapper">
 			<div class="page-banner-content">
 				<h1 class="large-banner__heading"><?php the_field( 'affiliate_banner_title' ); ?></h1>
@@ -22,7 +27,7 @@ get_header();?>
 		</div>
 	</section>
 
-	<section class="recommend-dedicatedSolution">
+	<section class="recommend-dedicatedSolution section">
 		<div class="wrapper">
 			<div class="section-header u-txt-center">
 				<h2 class="section-header__title" style="text-align: center!important; margin:0 auto!important;"><?php the_field( 'pays_to_recommend_title' ); ?></h2>
@@ -63,7 +68,12 @@ get_header();?>
 			</div>
 		</div>
 	</section>
+<<<<<<< HEAD
 	<section class="signup-section" style="background-image:url('<?php echo get_template_directory_uri() . '/dist/assets/images/signup-background.png'; ?>')">
+=======
+
+	<section class="signup-section section fp-auto-height" style="background-image:url('<?php echo get_template_directory_uri() . '/dist/assets/images/signup-background.png'; ?>')">
+>>>>>>> innerpage
 		<div class="wrapper">
 			<div class="row">
 				<div class="col-md-6">
@@ -84,7 +94,7 @@ get_header();?>
 		<div class="signup-thumbnail-img" style="background-image:url('<?php echo $signup_form_banner_image; ?>')"></div>
 	</section>
 
-	<section class="pay-out-terms">
+	<section class="pay-out-terms section">
 		<div class="wrapper">
 			<div class="section-header u-txt-center">
 				<h2 class="section-header__title"><?php the_field( 'pay_out_terms_title' ); ?></h2>

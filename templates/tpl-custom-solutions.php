@@ -81,10 +81,10 @@ while ( have_posts() ) : the_post();
 					</div>
 				</div>
 			</div>
-		</div>
+		</section>
 	</section>
 
-	<section class="premium-server-features">
+	<section class="premium-server-features section">
 		<div class="wrapper">
 			<div class="section-header u-txt-center">
 				<h2 class="section-header__title"><?php the_field( 'premium_server_feature_title' ); ?></h2>
@@ -92,7 +92,7 @@ while ( have_posts() ) : the_post();
 				<h4 class="section-header__Orangesub-title"><?php the_field( 'premium_server_feature_sub_title' ); ?></h4>
 			</div>
 			<div class="p-feat-content">
-				<div class="row">
+				<div class="row align-items-center">
 					<div class="col-md-6 order-md-1">
 						<?php
 						$premium_server_image = '';
@@ -154,7 +154,7 @@ while ( have_posts() ) : the_post();
 		</div>
 	</section>
 
-	<section class="additional-features">
+	<section class="additional-features section">
 		<div class="wrapper">
 			<div class="section-header u-txt-center">
 				<h2 class="section-header__title"><?php the_field( 'additional_feature_title' ); ?></h2>
@@ -205,7 +205,7 @@ while ( have_posts() ) : the_post();
 		</div>
 	</section>
 
-	<section class="custom-support">
+	<section class="custom-support section">
 		<div class="wrapper">
 			<div class="row">
 				<div class="col-md-7">

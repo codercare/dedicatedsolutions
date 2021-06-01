@@ -125,57 +125,10 @@ while ( have_posts() ) : the_post();
 							<span class="section-header__decoration-element"></span>
 							<h4 class="section-header__Orangesub-title"><?php the_field( 'send_us_message_sub_title' ); ?> </h4>
 						</div>						
-						<!-- <div class="rows rows--gutters-small"> -->
-							<?php //echo do_shortcode('[contact-form-7 id="1186" title="Contact form 1"]');?>
-						<!-- </div> -->
-						<form action="">
-							<div class="rows rows--gutters-small">
-								<div class="rows__medium-6">
-									<div class="form-group">
-										<input type="text" name="first-name" class="form-control" placeholder="First Name">
-									</div>
-								</div>
-								<div class="rows__medium-6">
-									<div class="form-group">
-										<input type="text" name="last-name" class="form-control" placeholder="Last Name">
-									</div>
-								</div>
-								<div class="rows__medium-6">
-									<div class="form-group">
-										<input type="text" name="phone" class="form-control" placeholder="Phone Number">
-									</div>
-								</div>
-								<div class="rows__medium-6">
-									<div class="form-group">
-										<input type="text" name="email" class="form-control" placeholder="E-mail Address">
-									</div>
-								</div>
-								<div class="rows__medium-12">
-									<div class="form-group">
-										<textarea class="form-control" name="message" placeholder="Message"></textarea>
-									</div>
-								</div>
-								<div class="rows__medium-12">
-									<div class="form-group">
-										<div class="captcha">
-											<div class="rows rows--gutters-small">
-												<div class="rows__medium-6">
-													<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/capthca.jpg'; ?>" alt="capthca">
-												</div>
-												<div class="rows__medium-6">
-													<input type="text" name="capthca" class="form-control">
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="rows__medium-12">
-									<div class="btn-center">
-										<button type="submit" class="btn--orange">Submit <i class="fas fa-arrow-right"></i></button>
-									</div>
-								</div>
-							</div>
-						</form>
+						<div class="rows rows--gutters-small">
+							<?php echo do_shortcode('[contact-form-7 id="1186" title="Contact form 1"]');?>
+						</div>
+						
 					</div>
 				</div>
 			</div>

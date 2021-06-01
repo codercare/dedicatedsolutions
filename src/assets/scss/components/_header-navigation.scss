@@ -71,6 +71,17 @@
 
 }
 
+.header-navigation .menu {
+    padding: 10px;
+    margin:10px;
+}
+.header-navigation .menu ul li{
+    padding: 10px;
+    margin: 10px;
+}
+.header-navigation .menu ul li a:hover{
+    color:#000;
+}
 // Header Mobile Navigation
 
 .header-mobile-navigation{

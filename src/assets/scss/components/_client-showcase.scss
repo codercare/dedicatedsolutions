@@ -1,7 +1,6 @@
 .client-showcase{
 	background-color: #F6F6F6;
-	padding-top: 3rem;
-	padding-bottom: 3rem;
+	padding: 3.1rem 0;
 
 	&__logo-list{
 		list-style: none;
@@ -10,13 +9,12 @@
 		align-items: center;
 		flex-wrap: wrap;
 		padding: 0;
+		margin: 0;
 	}
 
 	&__logo{
 		max-width: 100px;
 		overflow: hidden;
-		margin-bottom: 2rem;
-    	margin-right: 1rem;
 
 		img{
 			object-fit: conver;

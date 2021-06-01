@@ -1,12 +1,18 @@
 
 .testimonial-section{
-    padding: 16rem 0 3rem;
+    padding: 1.5rem 0;
+    &:first-child{
+        padding: 16rem 0 0;
+    }
+    &:last-child{
+        padding: 0 0 3rem;
+    }
     .testimonial-block-wrap{
         .testimonial-block {
             text-align: center;
             background: #FAFAFA;
             padding: 4rem 4.3rem;
-            margin: 0 0 3rem;
+            // margin: 0 0 3rem;
             min-height: 53rem;
             transition: all .3s ease;
             .quote {
@@ -57,6 +63,18 @@
                     }
                 }
             }
+        }
+    }
+}
+
+@media(min-width: 1680px){
+    .testimonial-section{
+        padding: 0;
+        &:first-child{
+            padding: 0;
+        }
+        &:last-child{
+            padding: 0;
         }
     }
 }

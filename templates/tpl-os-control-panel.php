@@ -3,7 +3,7 @@
 
 get_header();?>
 
-<main class="site-main">
+<main id="fullpage" class="site-main">
 <?php
 while ( have_posts() ) : the_post(); 
 
@@ -13,173 +13,177 @@ while ( have_posts() ) : the_post();
 		$banner_image_url = $banner_image['sizes']['banner_image'];
 	}
 ?>
-	<section class="page-banner os-control-page-banner" style="background-image:url('<?php echo $banner_image_url; ?>')">
-		<div class="wrapper">
-			<div class="page-banner-content">
-				<h1 class="large-banner__heading"><?php the_field( 'os_and_control_panels' ); ?></h1>
-				<p><?php the_field( 'os_and_control_panels_sub_title' ); ?></p>
-				<div class="os-control-panl__btn-wrap">
-				    <?php
-					if ( have_rows( 'buttons_and_links' ) ) : 
-					while ( have_rows( 'buttons_and_links' ) ) :
-						the_row();
-						$button_link_icon = '';
-						$button_icon     = get_sub_field( 'button_icon' );
-						if ( ! empty( $button_icon ) ) {
-							$button_link_icon = $button_icon['sizes']['small_icon'];
-						}
-						?>
-						<a href="<?php the_field( 'button_link' ); ?>" class="btn--orange">
-							<i class="btn-icon">
-								<img src="<?php echo $button_link_icon; ?>" alt="<?php the_sub_field( 'button_lable' ); ?>">
-							</i>
-							<span class="btn-label"><?php the_sub_field( 'button_lable' ); ?></span>
-						</a>
+	<section class="section">
+		<section class="page-banner os-control-page-banner" style="background-image:url('<?php echo $banner_image_url; ?>')">
+			<div class="wrapper">
+				<div class="page-banner-content">
+					<h1 class="large-banner__heading"><?php the_field( 'os_and_control_panels' ); ?></h1>
+					<p><?php the_field( 'os_and_control_panels_sub_title' ); ?></p>
+					<div class="os-control-panl__btn-wrap">
 						<?php
-					endwhile;
-				    endif;
-					?>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section class="operating-system">
-		<div class="wrapper">
-			<div class="row align-items-center">
-				<div class="col-md-6 order-md-1">
-				    <?php 
-					$os_image_url = '';
-					$os_feature_image     = get_field( 'operating_system_block_image' );
-					if ( ! empty( $os_feature_image ) ) {
-						$os_image_url = $os_feature_image['url'];
-					}
-					if($os_image_url){
-					?>
-					<figure class="thumbnail-img">					
-						<img src="<?php echo $os_image_url; ?>" alt="<?php the_field( 'operating_systems_title' ); ?>">
-					</figure>
-					<?php
-					}?>
-				</div>
-				<div class="col-md-6">
-					<div class="os-inner-content">
-						<h2 class="section-header__title"><?php the_field( 'operating_systems_title' ); ?></h2>
-						<p class="section-header__sub-title"><?php the_field( 'operating_systems_short_info' ); ?></p>
-						<?php
-						if ( have_rows( 'operating_system_solutions' ) ) : 
-						?>
-						<ul class="orange--list black-check">
-						    <?php
-							while ( have_rows( 'operating_system_solutions' ) ) :
+						if ( have_rows( 'buttons_and_links' ) ) : 
+						while ( have_rows( 'buttons_and_links' ) ) :
 							the_row();
+							$button_link_icon = '';
+							$button_icon     = get_sub_field( 'button_icon' );
+							if ( ! empty( $button_icon ) ) {
+								$button_link_icon = $button_icon['sizes']['small_icon'];
+							}
 							?>
-							<li><?php the_sub_field('solutions');?></li>
+							<a href="<?php the_field( 'button_link' ); ?>" class="btn--orange">
+								<i class="btn-icon">
+									<img src="<?php echo $button_link_icon; ?>" alt="<?php the_sub_field( 'button_lable' ); ?>">
+								</i>
+								<span class="btn-label"><?php the_sub_field( 'button_lable' ); ?></span>
+							</a>
 							<?php
-							endwhile;
-							?>
-						</ul>
-						<?php
+						endwhile;
 						endif;
 						?>
 					</div>
 				</div>
 			</div>
-		</div>
-	</section>
-
-	<section class="linux-os-section">
-		<div class="wrapper">
-			<div class="row">
-				<div class="col-md-3 order-md-1">
-					<div class="linux-os-type--block">					
+		</section>
+		
+		<section class="operating-system">
+			<div class="wrapper">
+				<div class="row align-items-center">
+					<div class="col-md-6 order-md-1">
 						<?php 
-						$linums_os_image_url = '';
-						$linux_feature_image     = get_field( 'linux_server_os_image' );
-						if ( ! empty( $linux_feature_image ) ) {
-							$linums_os_image_url = $linux_feature_image['url'];
+						$os_image_url = '';
+						$os_feature_image     = get_field( 'operating_system_block_image' );
+						if ( ! empty( $os_feature_image ) ) {
+							$os_image_url = $os_feature_image['url'];
 						}
-						if($linums_os_image_url){
+						if($os_image_url){
 						?>
-						<img src="<?php echo $linums_os_image_url; ?>" alt="<?php the_field( 'operating_systems_title' ); ?>">
+						<figure class="thumbnail-img">					
+							<img src="<?php echo $os_image_url; ?>" alt="<?php the_field( 'operating_systems_title' ); ?>">
+						</figure>
 						<?php
 						}?>
 					</div>
-				</div>
-				<div class="col-md-9">
-					<div class="linux-os-inner-content">
-						<h2 class="section-header__title"><?php the_field( 'linux_server_os_title' ); ?></h2>
-						<p class="section-header__sub-title"><?php the_field( 'linux_server_os_detail' ); ?></p>
-						<?php
-						if ( have_rows( 'linux_server_type_lists' ) ) : 
-						?>
-						<ul class="orange--list white">
+					<div class="col-md-6">
+						<div class="os-inner-content">
+							<h2 class="section-header__title"><?php the_field( 'operating_systems_title' ); ?></h2>
+							<p class="section-header__sub-title"><?php the_field( 'operating_systems_short_info' ); ?></p>
 							<?php
-							while ( have_rows( 'linux_server_type_lists' ) ) :
-							the_row();
+							if ( have_rows( 'operating_system_solutions' ) ) : 
 							?>
-							<li><?php the_sub_field('lists');?></li>
+							<ul class="orange--list black-check">
+								<?php
+								while ( have_rows( 'operating_system_solutions' ) ) :
+								the_row();
+								?>
+								<li><?php the_sub_field('solutions');?></li>
+								<?php
+								endwhile;
+								?>
+							</ul>
 							<?php
-							endwhile;
+							endif;
 							?>
-						</ul>
-						<?php
-						endif;
-						?>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section class="windows-os-section">
-		<div class="wrapper">
-			<div class="row align-items-center">
-				<div class="col-md-4">
-				    <?php 
-					$windows_os_image_url = '';
-					$windows_feature_image     = get_field( 'widows_server_os_image' );
-					if ( ! empty( $windows_feature_image ) ) {
-						$windows_os_image_url = $windows_feature_image['url'];					
-						if($windows_os_image_url){
-						?>
-						<figure class="thumbnail-img">		
-						<img src="<?php echo $windows_os_image_url; ?>" alt="<?php the_field( 'widows_server_os_title' ); ?>">
-						</figure>
-						<?php
-						}
-					}?>
-				</div>
-				<div class="col-md-8">
-					<div class="os-inner-content">
-						<div class="section-header">
-							<h2 class="section-header__title"><?php the_field( 'widows_server_os_title' ); ?></h2>
-							<span class="section-header__decoration-element"></span>
-							<p class="section-header__sub-title"><?php the_field( 'widows_server_detail' ); ?></p>
 						</div>
-						<?php
-						if ( have_rows( 'widows_server_type_lists' ) ) : 
-						?>
-						<ul class="orange--list black reverse">
-							<?php
-							while ( have_rows( 'widows_server_type_lists' ) ) :
-							the_row();
+					</div>
+				</div>
+			</section>
+		</section>
+	</section>
+	
+	<section class="section">
+		<section class="linux-os-section">
+			<div class="wrapper">
+				<div class="row">
+					<div class="col-md-3 order-md-1">
+						<div class="linux-os-type--block">					
+							<?php 
+							$linums_os_image_url = '';
+							$linux_feature_image     = get_field( 'linux_server_os_image' );
+							if ( ! empty( $linux_feature_image ) ) {
+								$linums_os_image_url = $linux_feature_image['url'];
+							}
+							if($linums_os_image_url){
 							?>
-							<li><?php the_sub_field('lists');?></li>
+							<img src="<?php echo $linums_os_image_url; ?>" alt="<?php the_field( 'operating_systems_title' ); ?>">
 							<?php
-							endwhile;
+							}?>
+						</div>
+					</div>
+					<div class="col-md-9">
+						<div class="linux-os-inner-content">
+							<h2 class="section-header__title"><?php the_field( 'linux_server_os_title' ); ?></h2>
+							<p class="section-header__sub-title"><?php the_field( 'linux_server_os_detail' ); ?></p>
+							<?php
+							if ( have_rows( 'linux_server_type_lists' ) ) : 
 							?>
-						</ul>
-						<?php
-						endif;
-						?>
+							<ul class="orange--list white">
+								<?php
+								while ( have_rows( 'linux_server_type_lists' ) ) :
+								the_row();
+								?>
+								<li><?php the_sub_field('lists');?></li>
+								<?php
+								endwhile;
+								?>
+							</ul>
+							<?php
+							endif;
+							?>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+		</section>
+	
+		<section class="windows-os-section">
+			<div class="wrapper">
+				<div class="row align-items-center">
+					<div class="col-md-4">
+						<?php 
+						$windows_os_image_url = '';
+						$windows_feature_image     = get_field( 'widows_server_os_image' );
+						if ( ! empty( $windows_feature_image ) ) {
+							$windows_os_image_url = $windows_feature_image['url'];					
+							if($windows_os_image_url){
+							?>
+							<figure class="thumbnail-img">		
+							<img src="<?php echo $windows_os_image_url; ?>" alt="<?php the_field( 'widows_server_os_title' ); ?>">
+							</figure>
+							<?php
+							}
+						}?>
+					</div>
+					<div class="col-md-8">
+						<div class="os-inner-content">
+							<div class="section-header">
+								<h2 class="section-header__title"><?php the_field( 'widows_server_os_title' ); ?></h2>
+								<span class="section-header__decoration-element"></span>
+								<p class="section-header__sub-title"><?php the_field( 'widows_server_detail' ); ?></p>
+							</div>
+							<?php
+							if ( have_rows( 'widows_server_type_lists' ) ) : 
+							?>
+							<ul class="orange--list black reverse">
+								<?php
+								while ( have_rows( 'widows_server_type_lists' ) ) :
+								the_row();
+								?>
+								<li><?php the_sub_field('lists');?></li>
+								<?php
+								endwhile;
+								?>
+							</ul>
+							<?php
+							endif;
+							?>
+						</div>
+					</div>
+				</div>
+			</section>
+		</section>
 	</section>
 
-	<section class="find-your-os" style="background-image:url('<?php echo get_template_directory_uri() . '/dist/assets/images/find-your-os-bg.jpg'; ?>')">
+	<section class="find-your-os section fp-auto-height" style="background-image:url('<?php echo get_template_directory_uri() . '/dist/assets/images/find-your-os-bg.jpg'; ?>')">
 		<div class="wrapper">
 			<div class="find-your-os--inner-content">
 				<h2 class="section-header__title"><?php the_field( 'cant_find_os_title' ); ?></h2>
@@ -189,7 +193,7 @@ while ( have_posts() ) : the_post();
 		</div>
 	</section>
 
-	<section class="virtulization-os">
+	<section class="virtulization-os section">
 		<div class="wrapper">
 			<div class="section-header u-txt-center">
 				<h2 class="section-header__title"><?php the_field( 'virtulization_os_title' ); ?></h2>
@@ -234,7 +238,7 @@ while ( have_posts() ) : the_post();
 		</div>
 	</section>
 
-	<section class="virtulization-detail page-section">
+	<section class="virtulization-detail page-section section">
 		<div class="wrapper">
 		   <?php
 			if ( have_rows( 'vmware_promax_block' ) ) : 
@@ -295,7 +299,7 @@ while ( have_posts() ) : the_post();
 		</div>
 	</section>
 
-	<section class="control-panels-section">
+	<section class="control-panels-section section">
 		<div class="wrapper">
 			<div class="section-header u-txt-center">
 				<h2 class="section-header__title"><?php the_field('control_panels_title'); ?></h2>
@@ -383,11 +387,11 @@ while ( have_posts() ) : the_post();
 					</ul>
 				</div>
 			</div>
-			<div class="ask-to-expert">
-				<h2 class="section-header__title"><?php the_field('deciding_between_cpanel_and_plesk'); ?></h2>
-				<a href="<?php the_field('ask_our_expert_button_link'); ?>" class="btn--orange"><?php the_field('ask_our_expert_button_label'); ?><i class="fas fa-arrow-right"></i></a>
-			</div>
 		</div>
+	</section>
+	<section class="ask-to-expert section fp-auto-height">
+		<h2 class="section-header__title"><?php the_field('deciding_between_cpanel_and_plesk'); ?></h2>
+		<a href="<?php the_field('ask_our_expert_button_link'); ?>" class="btn--orange"><?php the_field('ask_our_expert_button_label'); ?><i class="fas fa-arrow-right"></i></a>
 	</section>
 </main>
 <?php endwhile; // end of the loop. ?>

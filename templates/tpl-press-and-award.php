@@ -2,8 +2,8 @@
 /* Template Name: Press Announcement And Award */ 
 
 get_header();?>
-<main class="site-main">
-	<section class="page-banner pressAnnouncement-page-banner">
+<main id="fullpage" class="site-main">
+	<section class="page-banner pressAnnouncement-page-banner section fp-auto-height">
 		<div class="wrapper">
 			<div class="page-banner-content">
 				<h1 class="large-banner__heading"><?php the_field( 'press_announcement_title' ); ?></h1>
@@ -67,7 +67,7 @@ get_header();?>
 		</div>
 	</section>
 
-	<section class="award-section" style="background-image:url('<?php echo get_template_directory_uri() . '/dist/assets/images/awards-bg.jpg'; ?>')">
+	<section class="award-section section" style="background-image:url('<?php echo get_template_directory_uri() . '/dist/assets/images/awards-bg.jpg'; ?>')">
 		<div class="wrapper">
 			<div class="section-header u-txt-center">
 				<h2 class="section-header__title"><?php the_field( 'awards_section_title' ); ?></h2>

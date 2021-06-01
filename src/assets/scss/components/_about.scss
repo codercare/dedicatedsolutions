@@ -204,3 +204,37 @@
         }
     }
 }
+
+@media(min-width:1680px){
+    .site-main{
+        .welcom-section,.our-locations{
+            padding: 0;
+        }
+        .ceo-detail {
+            padding: 3rem 0;
+            .thumbnal-img{
+                img {
+                    width: 75%;
+                }
+            } 
+            .ceo-content {
+                padding-top: 2rem;
+                padding-bottom: 2rem;
+            }
+        }
+        .quick-fact {
+            padding: 2rem 0;
+            .quick-fact-inner-content{
+                .section-header {
+                    margin: 0 0 1rem;
+                }
+                .quick-fact-block {
+                    margin: 0 0 2rem;
+                }
+            } 
+        }
+        .speak-with-expert {
+            padding-bottom: 10rem;
+        }
+    } 
+}

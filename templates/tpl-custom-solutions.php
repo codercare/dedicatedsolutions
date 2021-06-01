@@ -4,7 +4,7 @@
 get_header();
 ?>
 
-<main id="site-main" class="site-main">
+<main id="fullpage" class="site-main">
 <?php
 
 while ( have_posts() ) : the_post(); 
@@ -15,76 +15,78 @@ while ( have_posts() ) : the_post();
 		$banner_image_url = $banner_image['sizes']['banner_image'];
 	}
 ?>
-	<section class="page-banner customSol-page-banner" style="background-image:url('<?php echo $banner_image_url; ?>')">
-		<div class="wrapper">
-			<div class="page-banner-content">
-				<h1 class="large-banner__heading"><?php the_field( 'cs_banner_title' ); ?></h1>
-				<p><?php the_field( 'cs_banner_sub_title' ); ?></p>
-				<a href="<?php the_field( 'cs_left_button_link' ); ?>" class="btn--orange"><?php the_field( 'cs_left_button_label' ); ?></a>
-				<a href="<?php the_field( 'cs_right_button_link' ); ?>" class="btn--white"><?php the_field( 'cs_right_button_label' ); ?></a>
-			</div>
-		</div>
-	</section>
-
-	<section class="customSol-overview">
-		<div class="wrapper">
-			<div class="row">
-				<div class="col-md-6">
-					<div class="customSol-overview-content">
-						<h2 class="section-header__title"><?php the_field( 'cs_overview_title' ); ?></h2>
-						<h4 class="section-header__Orangesub-title"><?php the_field( 'cs_overview_sub_title' ); ?></h4>
-						<p><?php the_field( 'cs_overview_detail' ); ?></p>
-					</div>
+	<section class="section">
+		<section class="page-banner customSol-page-banner" style="background-image:url('<?php echo $banner_image_url; ?>')">
+			<div class="wrapper">
+				<div class="page-banner-content">
+					<h1 class="large-banner__heading"><?php the_field( 'cs_banner_title' ); ?></h1>
+					<p><?php the_field( 'cs_banner_sub_title' ); ?></p>
+					<a href="<?php the_field( 'cs_left_button_link' ); ?>" class="btn--orange"><?php the_field( 'cs_left_button_label' ); ?></a>
+					<a href="<?php the_field( 'cs_right_button_link' ); ?>" class="btn--white"><?php the_field( 'cs_right_button_label' ); ?></a>
 				</div>
-				<div class="col-md-6">
-					<div class="customSol-overview-grid">
-					<?php
-					if ( have_rows( 'custom_solution_types' ) ) : 
-					$counter_card = 1;
-					while ( have_rows( 'custom_solution_types' ) ) :
-						the_row();
-						$package_icon = '';
-						$product_icon     = get_sub_field( 'product_icon' );
-						if ( ! empty( $product_icon ) ) {
-							$package_icon = $product_icon['url'];
-						}
-						?>
-						<div class="cs-block">
-							<div class="row">
-								<div class="col-md-4">
-									<div class="icon-box">
-										<?php
-										$feature_icon = '';
-										$icon_image     = get_sub_field( 'cs_type_icon' );
-										if ( ! empty( $icon_image ) ) {
-											$feature_icon = $icon_image['sizes']['mid_icon'];
-										}
-										?>
-										<img src="<?php echo $feature_icon; ?>" alt="<?php the_sub_field( 'cs_custom_solution_type_title' ); ?>">
+			</div>
+		</section>
+	
+		<section class="customSol-overview">
+			<div class="wrapper">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="customSol-overview-content">
+							<h2 class="section-header__title"><?php the_field( 'cs_overview_title' ); ?></h2>
+							<h4 class="section-header__Orangesub-title"><?php the_field( 'cs_overview_sub_title' ); ?></h4>
+							<p><?php the_field( 'cs_overview_detail' ); ?></p>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="customSol-overview-grid">
+						<?php
+						if ( have_rows( 'custom_solution_types' ) ) : 
+						$counter_card = 1;
+						while ( have_rows( 'custom_solution_types' ) ) :
+							the_row();
+							$package_icon = '';
+							$product_icon     = get_sub_field( 'product_icon' );
+							if ( ! empty( $product_icon ) ) {
+								$package_icon = $product_icon['url'];
+							}
+							?>
+							<div class="cs-block">
+								<div class="row">
+									<div class="col-md-4">
+										<div class="icon-box">
+											<?php
+											$feature_icon = '';
+											$icon_image     = get_sub_field( 'cs_type_icon' );
+											if ( ! empty( $icon_image ) ) {
+												$feature_icon = $icon_image['sizes']['mid_icon'];
+											}
+											?>
+											<img src="<?php echo $feature_icon; ?>" alt="<?php the_sub_field( 'cs_custom_solution_type_title' ); ?>">
+										</div>
 									</div>
-								</div>
-								<div class="col-md-8">
-									<div class="cs-block-content">
-										<div class="cs-flex-content">
-											<h3><?php the_sub_field( 'cs_custom_solution_type_title' ); ?></h3>
-											<p><?php the_sub_field( 'cs_type_detail' ); ?></p>
+									<div class="col-md-8">
+										<div class="cs-block-content">
+											<div class="cs-flex-content">
+												<h3><?php the_sub_field( 'cs_custom_solution_type_title' ); ?></h3>
+												<p><?php the_sub_field( 'cs_type_detail' ); ?></p>
+											</div>
 										</div>
 									</div>
 								</div>
-							</div>
-						</div>	
-						<?php 
-						$counter_card++;
-					endwhile; 
-					endif;
-					?>
+							</div>	
+							<?php 
+							$counter_card++;
+						endwhile; 
+						endif;
+						?>
+						</div>
 					</div>
 				</div>
-			</div>
-		</div>
+			</section>
+		</section>
 	</section>
 
-	<section class="premium-server-features">
+	<section class="premium-server-features section">
 		<div class="wrapper">
 			<div class="section-header u-txt-center">
 				<h2 class="section-header__title"><?php the_field( 'premium_server_feature_title' ); ?></h2>
@@ -92,7 +94,7 @@ while ( have_posts() ) : the_post();
 				<h4 class="section-header__Orangesub-title"><?php the_field( 'premium_server_feature_sub_title' ); ?></h4>
 			</div>
 			<div class="p-feat-content">
-				<div class="row">
+				<div class="row align-items-center">
 					<div class="col-md-6 order-md-1">
 						<?php
 						$premium_server_image = '';
@@ -154,7 +156,7 @@ while ( have_posts() ) : the_post();
 		</div>
 	</section>
 
-	<section class="additional-features">
+	<section class="additional-features section">
 		<div class="wrapper">
 			<div class="section-header u-txt-center">
 				<h2 class="section-header__title"><?php the_field( 'additional_feature_title' ); ?></h2>
@@ -205,7 +207,7 @@ while ( have_posts() ) : the_post();
 		</div>
 	</section>
 
-	<section class="custom-support">
+	<section class="custom-support section">
 		<div class="wrapper">
 			<div class="row">
 				<div class="col-md-7">

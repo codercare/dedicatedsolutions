@@ -6,6 +6,10 @@
 	// height: 80vh;
 	// width: 100%;
 	position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	padding: 10rem 0;
 
 	// @include respond(small){
 	// 	height: 90vh;
@@ -13,10 +17,10 @@
 	// }
 
 	&__container{
-		@include absCenter;
-		min-width: 80vw;
-		text-align: center;
-		padding: 4rem 0 0;
+		// @include absCenter;
+		// min-width: 80vw;
+		// text-align: center;
+		padding: 9.7rem 0 0;
 	}
 
 	&__heading{
@@ -93,5 +97,12 @@
 			margin-right: 7px;
 			color: $mainOrange;
 		}
+	}
+}
+
+@media(min-width: 1680px){
+    .large-banner{
+		height: calc(100vh - 14.5rem);
+		padding: 0;
 	}
 }

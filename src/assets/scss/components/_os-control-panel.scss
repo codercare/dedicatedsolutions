@@ -7,6 +7,25 @@
     }
 }
 
+.check-list-group{
+    margin: 0;
+    padding: 0;
+    li{
+        list-style-type: none;
+        padding-left: 3rem;
+    }
+    &.black-check{
+        li{
+            background: url(../images/check-black.png) no-repeat top .4rem left;
+        }
+    }
+    &.orange-check{
+        li{
+            background: url(../images/check.png) no-repeat top .4rem left;
+        }
+    }
+}
+
 .site-main{
     .os-control-page-banner{
         padding: 12rem 0 4rem;

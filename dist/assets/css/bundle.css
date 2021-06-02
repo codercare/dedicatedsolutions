@@ -830,7 +830,8 @@ a {
   position: fixed;
   bottom: 0;
   left: 0;
-  width: 100%; }
+  width: 100%;
+  z-index: 1; }
   .site-footer.site-inner-footer {
     position: fixed;
     bottom: 0;
@@ -1437,7 +1438,7 @@ a {
   .site-main .welcom-section, .site-main .our-locations {
     padding: 0; }
   .site-main .ceo-detail {
-    padding: 3rem 0; }
+    padding: 3.3rem 0; }
     .site-main .ceo-detail .thumbnal-img img {
       width: 75%; }
     .site-main .ceo-detail .ceo-content {
@@ -2007,6 +2008,17 @@ a {
 .section-header .section-header__decoration-element, .section-header .section-header__decoration-element--dark {
   margin: 0 0 1rem; }
 
+.check-list-group {
+  margin: 0;
+  padding: 0; }
+  .check-list-group li {
+    list-style-type: none;
+    padding-left: 3rem; }
+  .check-list-group.black-check li {
+    background: url(../images/check-black.png) no-repeat top 0.4rem left; }
+  .check-list-group.orange-check li {
+    background: url(../images/check.png) no-repeat top 0.4rem left; }
+
 .site-main .os-control-page-banner {
   padding: 12rem 0 4rem; }
   .site-main .os-control-page-banner .page-banner-content .large-banner__heading {
@@ -2488,6 +2500,163 @@ a {
 @media (min-width: 1680px) {
   .press-release, .award-section {
     padding: 0; } }
+
+.site-main .our-dc-banner .page-banner-content {
+  padding: 17rem 0 8rem; }
+  .site-main .our-dc-banner .page-banner-content .large-banner__heading {
+    margin: 0; }
+
+.site-main .our-dc-banner .dc-address-block-wrap {
+  margin: 0 0 5rem; }
+
+.site-main .our-dc-banner .dc-address-block {
+  text-align: center; }
+  .site-main .our-dc-banner .dc-address-block h3 {
+    font-size: 2.6rem;
+    color: #fff;
+    font-family: "Product Sans", sans-serif;
+    font-weight: 700;
+    margin: 0 0 2rem; }
+    .site-main .our-dc-banner .dc-address-block h3 span {
+      display: block;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #ff8800;
+      padding: .5rem 0 0; }
+  .site-main .our-dc-banner .dc-address-block .btn--orange, .site-main .our-dc-banner .dc-address-block .btn--white {
+    border-radius: 0;
+    font-weight: 400;
+    font-size: 1.4rem;
+    max-height: none;
+    max-width: none;
+    height: auto;
+    padding: 1rem 2.6rem;
+    margin: 0 1rem; }
+    .site-main .our-dc-banner .dc-address-block .btn--orange i, .site-main .our-dc-banner .dc-address-block .btn--white i {
+      margin: 0 0 0 .4rem; }
+  .site-main .our-dc-banner .dc-address-block.dc-add-2 h3 {
+    font-size: 3rem;
+    font-weight: 400;
+    margin: 0 0 .5rem; }
+    .site-main .our-dc-banner .dc-address-block.dc-add-2 h3 i {
+      margin-left: 3rem; }
+  .site-main .our-dc-banner .dc-address-block.dc-add-2 p {
+    margin: 0;
+    color: #375C72;
+    font-size: 1.8rem;
+    font-weight: 400; }
+
+.site-main .our-dc-banner .dc-location-map .btn--orange {
+  max-height: none;
+  max-width: none;
+  height: auto;
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  font-weight: 400;
+  border-radius: 0;
+  padding: 1.9rem 8rem; }
+
+.site-main .data-center-comparision .section-header {
+  margin: 0 0 8rem; }
+
+.site-main .data-center-comparision .dc-comarision-table table {
+  margin: 0;
+  border-top: none;
+  border-left: none;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #00020A; }
+  .site-main .data-center-comparision .dc-comarision-table table thead th {
+    text-align: center;
+    font-size: 2rem;
+    font-family: "Product Sans", sans-serif;
+    font-weight: 700;
+    color: #fff;
+    border: none;
+    padding: 1.2rem 2.5rem; }
+    .site-main .data-center-comparision .dc-comarision-table table thead th:nth-of-type(2) {
+      background: #ff8800;
+      width: 29.9rem; }
+    .site-main .data-center-comparision .dc-comarision-table table thead th:last-child {
+      background: #00020A;
+      width: 30rem; }
+  .site-main .data-center-comparision .dc-comarision-table table tbody tr td {
+    padding: 1.1rem 2.5rem;
+    vertical-align: middle;
+    background: #F6F6F6;
+    border-color: #ABABAB; }
+    .site-main .data-center-comparision .dc-comarision-table table tbody tr td .check-yes {
+      display: block;
+      text-align: center;
+      font-size: 3rem;
+      line-height: initial;
+      color: #57BC3B; }
+    .site-main .data-center-comparision .dc-comarision-table table tbody tr td .dash {
+      display: block;
+      height: .4rem;
+      width: 3rem;
+      background: #878787;
+      margin: 0 auto; }
+  .site-main .data-center-comparision .dc-comarision-table table tbody tr:nth-of-type(odd) td:first-child, .site-main .data-center-comparision .dc-comarision-table table tbody tr:nth-of-type(odd) td:last-child {
+    background: none; }
+  .site-main .data-center-comparision .dc-comarision-table table tbody tr:nth-of-type(even) td:nth-of-type(2) {
+    background: none; }
+
+.site-main .dc-address-details {
+  padding: 8rem 0;
+  position: relative;
+  color: #fff;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center; }
+  .site-main .dc-address-details::before {
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.95); }
+  .site-main .dc-address-details .dc-detail-block-wrap {
+    margin: 0 0 7rem; }
+    .site-main .dc-address-details .dc-detail-block-wrap .dc-detail-block .section-header__title {
+      margin-bottom: 1rem; }
+    .site-main .dc-address-details .dc-detail-block-wrap .dc-detail-block h3 {
+      font-size: 3rem;
+      color: #ff8800;
+      font-weight: 500;
+      margin: 0 0 1rem; }
+    .site-main .dc-address-details .dc-detail-block-wrap .dc-detail-block h4 {
+      font-size: 3rem;
+      font-family: "Product Sans", sans-serif;
+      font-weight: 700; }
+    .site-main .dc-address-details .dc-detail-block-wrap .dc-detail-block .check-list-group {
+      padding: 1.5rem 0 0 0;
+      column-count: 2;
+      column-gap: 2rem; }
+      .site-main .dc-address-details .dc-detail-block-wrap .dc-detail-block .check-list-group li {
+        margin-bottom: .4rem; }
+    .site-main .dc-address-details .dc-detail-block-wrap:last-child {
+      margin: 0; }
+      .site-main .dc-address-details .dc-detail-block-wrap:last-child .dc-detail-block .check-list-group {
+        column-count: unset;
+        column-gap: unset; }
+
+@media (min-width: 1680px) {
+  .site-main .our-dc-banner .page-banner-content {
+    padding: 8rem 0 4rem; }
+    .site-main .our-dc-banner .page-banner-content p {
+      margin: 0 0 2rem; }
+  .site-main .our-dc-banner .dc-address-block-wrap {
+    margin: 0 0 1rem; }
+  .site-main .data-center-comparision {
+    padding: 0; }
+    .site-main .data-center-comparision .section-header {
+      margin: 0 0 5rem; }
+  .site-main .dc-address-details {
+    padding: 0; }
+    .site-main .dc-address-details .dc-detail-block-wrap {
+      margin: 0 0 4rem; } }
 
 .customer-cards {
   padding: 3.5rem 4rem 3.5rem 3rem;

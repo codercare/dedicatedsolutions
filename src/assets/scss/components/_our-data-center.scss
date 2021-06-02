@@ -1,0 +1,226 @@
+.site-main{
+    .our-dc-banner{
+        .page-banner-content{
+            padding: 17rem 0 8rem;
+            .large-banner__heading{
+                margin: 0;
+            }
+        }
+        .dc-address-block-wrap {
+            margin: 0 0 5rem;
+        }
+        .dc-address-block{
+            text-align: center;
+            h3{
+                font-size: 2.6rem;
+                color: #fff;
+                font-family: "Product Sans", sans-serif;
+                font-weight: 700;
+                margin: 0 0 2rem;
+                span{
+                    display: block;
+                    font-size: 1.6rem;
+                    font-weight: 700;
+                    color: $mainOrange;
+                    padding: .5rem 0 0;
+                }
+            }
+            .btn--orange, .btn--white{
+                border-radius: 0;
+                font-weight: 400;
+                font-size: 1.4rem;
+                max-height: none;
+                max-width: none;
+                height: auto;
+                padding: 1rem 2.6rem;
+                margin: 0 1rem;
+                i{
+                    margin: 0 0 0 .4rem;
+                }
+            }
+            &.dc-add-2{
+                h3{
+                    font-size: 3rem;
+                    font-weight: 400;
+                    margin: 0 0 .5rem;
+                    i{
+                        margin-left: 3rem;
+                    }
+                }
+                p{
+                    margin: 0;
+                    color: #375C72;
+                    font-size: 1.8rem;
+                    font-weight: 400;
+                }
+            }
+        }
+        .dc-location-map{
+            .btn--orange{
+                max-height: none;
+                max-width: none;
+                height: auto;
+                text-transform: uppercase;
+                font-size: 1.8rem;
+                font-weight: 400;
+                border-radius: 0;
+                padding: 1.9rem 8rem;
+            }
+        }
+    }
+
+    .data-center-comparision{
+        .section-header{
+            margin: 0 0 8rem;
+        }
+        .dc-comarision-table{
+            table{
+                margin: 0;
+                border-top: none;
+                border-left: none;
+                font-size: 1.8rem;
+                font-weight: 500;
+                color: $darkGrey;
+                thead{
+                    th{
+                        text-align: center;
+                        font-size: 2rem;
+                        font-family: "Product Sans", sans-serif;
+                        font-weight: 700;
+                        color: #fff;
+                        border: none;
+                        padding: 1.2rem 2.5rem;
+                        &:nth-of-type(2){
+                            background: $mainOrange;
+                            width: 29.9rem;
+                        }
+                        &:last-child{
+                            background: $darkGrey;
+                            width: 30rem;
+                        }
+                    }
+                }
+                tbody{
+                    tr{
+                        td{
+                            padding: 1.1rem 2.5rem;
+                            vertical-align: middle;
+                            background: #F6F6F6;
+                            border-color: #ABABAB;
+                            .check-yes{
+                                display: block;
+                                text-align: center;
+                                font-size: 3rem;
+                                line-height: initial;
+                                color: #57BC3B;
+                            }
+                            .dash{
+                                display: block;
+                                height: .4rem;
+                                width: 3rem;
+                                background: #878787;
+                                margin: 0 auto;
+                            }
+                        }
+                        &:nth-of-type(odd){
+                            td{
+                                &:first-child, &:last-child{
+                                    background: none;
+                                }
+                            }
+                        }
+                        &:nth-of-type(even){
+                            td{
+                                &:nth-of-type(2){
+                                    background: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .dc-address-details{
+        padding: 8rem 0;
+        position: relative;
+        color: #fff;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        &::before{
+            content: '';
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: rgba($color: #000000, $alpha: .95);
+        }
+        .dc-detail-block-wrap{
+            margin: 0 0 7rem;
+            .dc-detail-block{
+                .section-header__title{
+                    margin-bottom: 1rem;
+                }
+                h3{
+                    font-size: 3rem;
+                    color: $mainOrange;
+                    font-weight: 500;
+                    margin: 0 0 1rem;
+                }
+                h4{
+                    font-size: 3rem;
+                    font-family: "Product Sans", sans-serif;
+                    font-weight: 700;
+                }
+                .check-list-group {
+                    padding: 1.5rem 0 0 0;
+                    column-count: 2;
+                    column-gap: 2rem;
+                    li{
+                        margin-bottom: .4rem;
+                    }
+                }
+            }
+            &:last-child{
+                margin: 0;
+                .dc-detail-block{
+                    .check-list-group{
+                        column-count: unset;
+                        column-gap: unset;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(min-width: 1680px){
+    .site-main{
+        .our-dc-banner{
+            .page-banner-content {
+                padding: 8rem 0 4rem;
+                p{
+                    margin: 0 0 2rem;
+                }
+            }
+            .dc-address-block-wrap {
+                margin: 0 0 1rem;
+            }
+        } 
+        .data-center-comparision{
+            padding: 0;
+            .section-header {
+                margin: 0 0 5rem;
+            }
+        }
+        .dc-address-details{
+            padding: 0;
+            .dc-detail-block-wrap {
+                margin: 0 0 4rem;
+            }
+        }
+    } 
+}

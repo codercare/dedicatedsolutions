@@ -3,7 +3,7 @@
 
 get_header();?>
 
-<main id="site-main" class="site-main">
+<main id="fullpage" class="site-main">
 <?php
 while ( have_posts() ) : the_post(); 
 
@@ -13,7 +13,7 @@ while ( have_posts() ) : the_post();
 		$banner_image_url = $banner_image['sizes']['banner_image'];
 	}
 ?>
-	<section class="page-banner about-page-banner" style="background-image:url('<?php echo $banner_image_url; ?>')">
+	<section class="page-banner about-page-banner section fp-auto-height" style="background-image:url('<?php echo $banner_image_url; ?>')">
 		<div class="wrapper">
 			<div class="page-banner-content">
 				<h1 class="large-banner__heading"><?php the_field( 'about_dedicated_title' ); ?></h1>
@@ -51,67 +51,69 @@ while ( have_posts() ) : the_post();
 			</div>
 		</div>
 	</section>
-
-	<section class="ceo-detail page-section" style="background-image:url('<?php echo get_template_directory_uri() . '/dist/assets/images/ceo-bg.jpg'; ?>')">
-		<div class="wrapper">
-			<div class="row">
-				<div class="col-md-5">
-					<figure class="thumbnal-img">
-					    <?php
-						$ceo_image_url = '';
-						$ceo_image     = get_field( 'ceo_image' );
-						if ( ! empty( $ceo_image ) ) {
-						$ceo_image_url = $ceo_image['url'];
-						}
-						?>
-						<img src="<?php echo $ceo_image_url; ?>" alt="<?php the_field( 'ceo_name' ); ?>">
-					</figure>
-				</div>
-				<div class="col-md-7">
-					<div class="ceo-content">
-						<h1><?php the_field( 'ceo_name' ); ?><span><?php the_field( 'designation_detail' ); ?></span></h1>
-						<p><?php the_field( 'ceo_short' ); ?></p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section class="quick-fact page-section">
-		<div class="wrapper">
-			<div class="quick-fact-inner-content">
-				<div class="section-header u-txt-center">
-					<h2 class="section-header__title">Quick Facts</h2>
-					<span class="section-header__decoration-element"></span>
-				</div>
+	
+	<section class="section">
+		<section class="ceo-detail page-section" style="background-image:url('<?php echo get_template_directory_uri() . '/dist/assets/images/ceo-bg.jpg'; ?>')">
+			<div class="wrapper">
 				<div class="row">
-				    <?php
-					if ( have_rows( 'quick_facts' ) ) : 
-					$counter_card = 1;
-					while ( have_rows( 'quick_facts' ) ) :
-						the_row();
-
-						$fact_icon = '';
-						$quick_fact_icon     = get_sub_field( 'facts_icon' );
-						if ( ! empty( $quick_fact_icon ) ) {
-							$fact_icon = $quick_fact_icon['sizes']['small_icon'];
-						}
-						?>
-					<div class="col-md-6">
-						<div class="quick-fact-block">
-							<div class="quick-fact-icon">
-								<img src="<?php echo $fact_icon; ?>" alt="quick-fact-icon1">
-							</div>
-							<h3><?php the_sub_field( 'facts_label' ); ?></h3>
+					<div class="col-md-5">
+						<figure class="thumbnal-img">
+							<?php
+							$ceo_image_url = '';
+							$ceo_image     = get_field( 'ceo_image' );
+							if ( ! empty( $ceo_image ) ) {
+							$ceo_image_url = $ceo_image['url'];
+							}
+							?>
+							<img src="<?php echo $ceo_image_url; ?>" alt="<?php the_field( 'ceo_name' ); ?>">
+						</figure>
+					</div>
+					<div class="col-md-7">
+						<div class="ceo-content">
+							<h1><?php the_field( 'ceo_name' ); ?><span><?php the_field( 'designation_detail' ); ?></span></h1>
+							<p><?php the_field( 'ceo_short' ); ?></p>
 						</div>
 					</div>
-					<?php 
-						$counter_card++;
-					endwhile; 
-					endif;
-					?>
 				</div>
 			</div>
+		</section>
+
+		<section class="quick-fact page-section">
+			<div class="wrapper">
+				<div class="quick-fact-inner-content">
+					<div class="section-header u-txt-center">
+						<h2 class="section-header__title">Quick Facts</h2>
+						<span class="section-header__decoration-element"></span>
+					</div>
+					<div class="row">
+						<?php
+						if ( have_rows( 'quick_facts' ) ) : 
+						$counter_card = 1;
+						while ( have_rows( 'quick_facts' ) ) :
+							the_row();
+
+							$fact_icon = '';
+							$quick_fact_icon     = get_sub_field( 'facts_icon' );
+							if ( ! empty( $quick_fact_icon ) ) {
+								$fact_icon = $quick_fact_icon['sizes']['small_icon'];
+							}
+							?>
+						<div class="col-md-6">
+							<div class="quick-fact-block">
+								<div class="quick-fact-icon">
+									<img src="<?php echo $fact_icon; ?>" alt="quick-fact-icon1">
+								</div>
+								<h3><?php the_sub_field( 'facts_label' ); ?></h3>
+							</div>
+						</div>
+						<?php 
+							$counter_card++;
+						endwhile; 
+						endif;
+						?>
+					</div>
+				</div>
+			</section>
 		</section>
 	</section>
 

@@ -24,6 +24,11 @@
             background: url(../images/check.png) no-repeat top .4rem left;
         }
     }
+    &.white-check{
+        li{
+            background: url(../images/check-white.png) no-repeat top .4rem left;
+        }
+    }
 }
 
 .site-main{

@@ -1,0 +1,47 @@
+.dg-server-banner{
+    ul{
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        li{
+            list-style: none;
+            padding: 0 1rem;
+        }
+    }
+}
+
+.game-server-section{
+    padding: 13rem 0  9rem;
+    .game-server-content {
+        padding: 0 2rem 0 0;
+    }
+    .game-server-block {
+        margin-left: 4rem;
+    }
+}
+
+@media(min-width: 1680px){
+    .dg-server-banner{
+        .page-banner-content {
+            padding: 10rem 0 4rem;
+        }
+    } 
+
+    .game-server-section {
+        padding: 4rem 0  1rem;
+    }
+
+    .game-room-section{
+        img {
+            height: 560px;
+            width: 100%;
+            object-fit: cover;
+            object-position: bottom;
+        }
+    } 
+
+    .get-game-server {
+        padding: 3rem 0;
+    }
+}

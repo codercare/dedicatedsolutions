@@ -1,0 +1,19 @@
+.plesk-usage{
+    padding: 3rem 0 1rem;
+    ul{
+        text-align: left;
+        column-count: 2;
+        column-gap: 10rem;
+        li{
+            color: $darkGrey;
+            line-height: 2.4rem;
+            margin: 0 0 2rem;
+        }
+    }
+}
+
+@media(min-width: 1680px){
+    .plesk-usage{
+        padding: 7rem 0 5rem;
+    }
+}

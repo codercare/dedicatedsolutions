@@ -1,8 +1,8 @@
 <?php
-/* Template Name: Test2 */ 
+/* Cpanel Server Hosting */ 
 
 get_header();?>
-?>
+
 <main id="fullpage" class="site-main">
 	<section class="page-banner cp-sh-page-banner section fp-auto-height" style="background-image:url('<?php echo get_template_directory_uri() . '/dist/assets/images/custom-sol-bg.jpg'; ?>')">
 		<div class="wrapper">
@@ -414,4 +414,5 @@ get_header();?>
 		</div>
 	</section>
 </main>
+
 <?php get_footer(); ?>

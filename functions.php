@@ -135,6 +135,16 @@ function dedicatedsolutions_widgets_init() {
 }
 add_action( 'widgets_init', 'dedicatedsolutions_widgets_init' );
 
+/* Add Global javascript ajax url to call ajax function from jQuery
+*/
+function ds_ajaxurl(){ 
+	?>
+	<script>
+	var ajaxurl = '<?php echo admin_url('admin-ajax.php') ?>';
+	</script>
+	<?php
+}
+add_action('wp_head','ds_ajaxurl');
 
 
 /**
@@ -191,8 +201,9 @@ function cc_mime_types($mimes) {
 add_filter('upload_mimes', 'cc_mime_types');
 
 
-require_once get_template_directory() .'/lib/enqueue-assets.php';
-require_once get_template_directory() .'/lib/navigation.php';
+require_once get_template_directory() .'/inc/enqueue-assets.php';
+require_once get_template_directory() .'/inc/navigation.php';
 
 
-
+require_once get_template_directory() .'/inc/login-registration.php';
+require_once get_template_directory() .'/inc/woocommerce_customization.php';

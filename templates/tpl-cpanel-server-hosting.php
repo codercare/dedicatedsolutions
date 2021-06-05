@@ -65,21 +65,21 @@ while ( have_posts() ) : the_post();
 	<section class="cpanel-dashboard-carousel section">
 		<div class="wrapper">
 			<div id="cpanelDashboardCarousel" class="carousel carousel-fade" data-ride="carousel">
-				<div class="carousel-inner">
-					
-						<?php 
-						$images = get_field('dashboard_image_slider');
-						$size = 'full'; // (thumbnail, medium, large, full or custom size)
-						if( $images ): 
-						$couter_gallery_image =1;
-						foreach( $images as $image_id ): ?>
-						<div class="carousel-item <?php if($couter_gallery_image== 1){ echo'active'; }?>">
-						<?php echo wp_get_attachment_image( $image_id, $size ); ?>
-						</div>						
-						<?php 
-						$couter_gallery_image++;
-						endforeach; 
-						endif; ?>
+				<div class="carousel-inner">					
+					<?php 
+					$images = get_field('dashboard_image_slider');
+					$size = 'full'; 
+					if( $images ): 
+					$couter_gallery_image =1;
+					foreach( $images as $image_id ): ?>
+					<div class="carousel-item <?php if($couter_gallery_image== 1){ echo'active'; }?>">
+					<?php echo wp_get_attachment_image( $image_id, $size ); ?>
+					</div>						
+					<?php 
+					$couter_gallery_image++;
+					endforeach; 
+					endif; 
+					?>
 				</div>
 				<div class="carousel-counter">
 					<div class="row">
@@ -103,7 +103,7 @@ while ( have_posts() ) : the_post();
 								<ol class="carousel-indicators">
 									<?php 
 									$images = get_field('dashboard_image_slider');
-									$size = 'medium'; // (thumbnail, medium, large, full or custom size)
+									$size = 'medium'; 
 									if( $images ): 
 									$couter_gal =0;
 									foreach( $images as $image_id ): ?>									
@@ -146,7 +146,7 @@ while ( have_posts() ) : the_post();
 			<div class="row">
 				<div class="col-xl-4 col-lg-6">
 					<div class="server-type-block-wrap">
-						<h3><i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/servers.png'; ?>" alt="servers"></i>Budget Srvers</h3>
+						<h3><i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/servers.png'; ?>" alt="servers"></i>Budget Servers</h3>
 						<h4>Our Best Selling Budget Servers</h4>
 						<div class="row">
 							<?php
@@ -171,20 +171,13 @@ while ( have_posts() ) : the_post();
 											</div>
 											<div class="server-type-logo">
 												<?php
-												/*
 												$server_list_icon = '';
-												$serv_icon_image = get_field( 'server_icon', get_the_ID());
-												print_r($serv_icon_image);
+												$serv_icon_image = get_field('server_icon', get_the_ID());
 												if ( ! empty( $serv_icon_image ) ) {
 													$server_list_icon = $serv_icon_image['url'];
 												}
 												?>
-												<span><img src="<?php echo $server_list_icon; ?>" alt=""></span>
-												<?php
-												*/
-												?>
-												<span><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/hp-logo.png'; ?>" alt="hp-logo"></span>
-												<span><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/dell-logo.png'; ?>" alt="dell-logo"></span>												
+												<span><img src="<?php echo $server_list_icon; ?>" alt="<?php the_title(); ?>"  class="server-icon-image"></span>
 											</div>
 											<ul>
 											<?php
@@ -214,7 +207,7 @@ while ( have_posts() ) : the_post();
 				</div>
 				<div class="col-xl-4 col-lg-6">
 					<div class="server-type-block-wrap">
-						<h3><i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/servers.png'; ?>" alt="servers"></i>Pro Srvers</h3>
+						<h3><i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/servers.png'; ?>" alt="servers"></i>Pro Servers</h3>
 						<h4>Our Best Selling Pro Servers</h4>
 						<div class="row">
 							<?php
@@ -237,8 +230,14 @@ while ( have_posts() ) : the_post();
 										<h5><?php the_title(); ?> <span><?php the_field( 'server_ghz' ); ?></span></h5>
 									</div>
 									<div class="server-type-logo">
-										<span><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/hp-logo.png'; ?>" alt="hp-logo"></span>
-										<span><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/dell-logo.png'; ?>" alt="dell-logo"></span>
+										<?php
+										$server_list_icon = '';
+										$serv_icon_image = get_field('server_icon', get_the_ID());
+										if ( ! empty( $serv_icon_image ) ) {
+											$server_list_icon = $serv_icon_image['url'];
+										}
+										?>
+										<span><img src="<?php echo $server_list_icon; ?>" alt="<?php the_title(); ?>"  class="server-icon-image"></span>
 									</div>
 									<ul>
 									    <?php
@@ -268,7 +267,7 @@ while ( have_posts() ) : the_post();
 				</div>
 				<div class="col-xl-4 col-lg-6">
 					<div class="server-type-block-wrap">
-						<h3><i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/servers.png'; ?>" alt="servers"></i>Enterprise Srvers</h3>
+						<h3><i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/servers.png'; ?>" alt="servers"></i>Enterprise Servers</h3>
 						<h4>Our Best Selling Enterprise Servers</h4>
 						<div class="row">
 						    <?php
@@ -292,8 +291,14 @@ while ( have_posts() ) : the_post();
 										<h5><?php the_title(); ?> <span><?php the_field( 'server_ghz' ); ?></span></h5>
 									</div>
 									<div class="server-type-logo">
-										<span><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/hp-logo.png'; ?>" alt="hp-logo"></span>
-										<span><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/dell-logo.png'; ?>" alt="dell-logo"></span>
+										<?php
+										$server_list_icon = '';
+										$serv_icon_image = get_field('server_icon', get_the_ID());
+										if ( ! empty( $serv_icon_image ) ) {
+											$server_list_icon = $serv_icon_image['url'];
+										}
+										?>
+										<span><img src="<?php echo $server_list_icon; ?>" alt="<?php the_title(); ?>" class="server-icon-image"></span>
 									</div>
 									<ul>
 									    <?php
@@ -325,7 +330,7 @@ while ( have_posts() ) : the_post();
 		</div>
 	</section>
 	<?php } ?>
-	<?php endwhile; // end of the loop. ?>
+<?php endwhile; // end of the loop. ?>
 </main>
 
 <?php get_footer(); ?>

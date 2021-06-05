@@ -1,8 +1,9 @@
 <?php
-/* Template Name: Test2 */ 
+/*  Our Data Centers */ 
 
 get_header();?>
-?>
+
+
 <main id="fullpage" class="site-main">
 	<section class="page-banner our-dc-banner section" style="background-image:url('<?php echo get_template_directory_uri() . '/dist/assets/images/speed-test-bg.jpg'; ?>')">
 		<div class="wrapper">
@@ -168,6 +169,8 @@ get_header();?>
 				</div>
 			</div>
 		</div>
-	</section>	
+	</section>
+	
 </main>
+
 <?php get_footer(); ?>

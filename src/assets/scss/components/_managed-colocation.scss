@@ -1,0 +1,269 @@
+.mc-page-banner{
+    .page-banner-content {
+        padding: 15rem 0 3rem;
+        .large-banner__heading{
+            margin: 0 0 .8rem;
+        }
+        p{
+            margin: 0 0 1rem;
+        }
+    }
+} 
+
+.managed-colocation{
+    padding: 6rem 0 .15rem;
+    .managed-colocation-block {
+        margin: 0 0 2.3rem;
+        padding: 3rem 1rem;
+        text-align: center;
+        min-height: 20.5rem;
+        background: #fff;
+        transition: all 0.3s ease;
+        .mc-icon-box {
+            margin: 0 0 1.5rem;
+        }
+        h3 {
+            margin: 0 0 .3rem;
+            text-transform: uppercase;
+            font-family: 'Product Sans', sans-serif;
+            font-weight: 700;
+        }
+        p{
+            margin: 0;
+            padding: 0 2rem;
+        }  
+        &:hover{
+            box-shadow: 0 .03rem 1.5rem 0 rgba($color: #000000, $alpha: .08);
+        }      
+    }
+    [class^="col-"]{
+        &:last-child{
+            .managed-colocation-block{
+                margin: 0;
+            }
+        }
+    }
+}
+
+.mc-plans-pricing {
+    padding: 3rem 0 4rem;
+    background: #F2F2F2;
+    .select-your-location {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 0 3.5rem;
+        .form-check-label{
+            margin: 0 1.5rem;
+            span{
+                position: relative;
+                font-size: 2rem;
+                text-transform: uppercase;
+                font-weight: 500;
+                background: #fff;
+                border-radius: .4rem;
+                padding: 1.2rem 2.5rem 1.2rem 5.4rem;
+                cursor: pointer;
+                min-width: 29rem;
+                text-align: center;
+                display: inline-block;
+                &::before{
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    left: 2.5rem;
+                    width: 3rem;
+                    height: 3rem;
+                    border-radius: .4rem;
+                    margin-top: -1.5rem;
+                    border: .2rem solid $mainOrange;
+                }
+                &::after{
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    margin-top: -1rem;
+                    left: 3rem;
+                    width: 2rem;
+                    height: 2rem;
+                    background: url(../images/checkbox-check.png) no-repeat center center;
+                    display: none;
+                }
+                i{
+                    font-size: 1.6rem;
+                    font-style: normal;
+                }
+            }
+            input[type="checkbox"]{
+                position: absolute;
+                margin: 0;
+                opacity: 0;
+                z-index: -1;
+                &:checked{
+                    ~ span{
+                        color: #fff;
+                        background: $mainOrange;
+                        &::before{
+                            background: #fff;
+                        }
+                        &::after{
+                            display: block;
+                        }
+                    }
+                }
+            }
+            &:last-child{
+                span{
+                    &::before{
+                        left: 4.4rem;
+                    }
+                    &::after{
+                        left: 5rem;
+                    }
+                }
+            }
+        }
+    }
+
+    .mc-plan-pricing-table{
+        margin: 0 0 .5rem;
+        ul{
+            margin: 0;
+            padding: 0;
+            li{
+                list-style-type: none;
+            }
+        }
+        .mc-pp-table-head{
+            ul {
+                display: flex;
+                justify-content: flex-end;
+                li {
+                    text-transform: uppercase;
+                    font-size: 2rem;
+                    font-weight: 500;
+                    color: rgba($color: #000000, $alpha: .75);
+                    margin: 0 3rem 0 0;
+                    &:last-child{
+                        margin: 0 8.5rem 0 0;
+                    }
+                }
+            }
+        } 
+        .mc-pp-table-block{
+            padding: 1.5rem 2rem;
+            background: #fff;
+            margin: 0 0 2rem;
+            box-shadow: 0 .3rem .6rem 0 rgba($color: #000000, $alpha: .16);
+            border-radius: .2rem;
+            .mc-pp-table-row {
+                display: flex;
+                align-items: center;
+                .mc-pp-table-col {
+                    flex: 1 0;
+                    .section-header__Orangesub-title{
+                        font-size: 3rem;
+                        margin: 0;
+                        padding: 0 3rem;
+                    }
+                    &:first-child {
+                        flex: .29 0;
+                        text-align: center;
+                        display: flex;
+                        align-self: stretch;
+                        align-items: center;
+                        border-right: .1rem solid rgba($color: #707070, $alpha: .68);
+                    }
+                    ul{
+                        padding-left: 1.5rem;
+                        li{
+                            font-size: 1.8rem;
+                            font-weight: 500;
+                            color: rgba($color: #000000, $alpha: .75);
+                            border-bottom: .1rem solid rgba($color: #000000, $alpha: .11);
+                            display: flex;
+                            align-items: center;
+                            padding: .45rem 4rem .45rem 1rem;
+                            .mc-pp-item{
+                                .fas{
+                                    width: 2.8rem;
+                                    height: 2.8rem;
+                                    border-radius: 100%;
+                                    background: $mainOrange;
+                                    color: #fff;
+                                    font-size: 1.2rem;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    margin: 0 auto;
+                                }
+                                &:first-child{
+                                    flex: 1 0;
+                                }
+                                &:not(:first-child){
+                                    flex: 0.24 0;
+                                    text-align: center;
+                                    font-size: 1.6rem;
+                                    font-weight: normal;
+                                    margin: 0 1.5rem;
+                                }
+                            }
+                            &:last-child{
+                                border: none;
+                            }
+                        }
+                    }
+                }
+            }
+            &:last-child{
+                margin: 0;
+            }
+        } 
+    }
+}
+
+.mc-benefits {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    color: #fff;
+    z-index: 1;
+    padding: 8rem 0;
+    &::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba($color: #292C2D, $alpha: .5);
+        z-index: -1;
+    }
+    .section-header{
+        .section-header__title{
+            font-size: 3rem;
+            color: #fff;
+        }
+        .section-header__sub-title{
+            color: #fff;
+        }
+    }
+    ul{
+        column-count: 2;
+        column-gap: 10rem;
+        li {
+            font-weight: 300;
+            margin: 0 0 1.5rem;
+            &:last-child{
+                margin: 0;
+            }
+        }
+    }
+}
+
+@media(min-width: 1680px){
+    .managed-colocation, .mc-benefits{
+        padding: 0;
+    }
+}

@@ -1,5 +1,4 @@
 @mixin  clearfix{
-
     &::after{
         display: table;
         clear: both;
@@ -15,7 +14,6 @@
 }
 
 @mixin respond($breakpoint) {
-
     @if $breakpoint == small{
         @media (min-width: 576px) {
 			@content;
@@ -38,5 +36,15 @@
         @media (min-width: 1200px) {
 			@content;
 		  }
+    }
+    @if $breakpoint == screen-md-laptop{
+        @media (max-width: 1200px - 1px) and (min-width: 992px) {
+			@content;
+        }
+    }
+    @if $breakpoint == large-desktop{
+        @media (min-width: 1680px) {
+			@content;
+        }
     }
 }

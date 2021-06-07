@@ -1,173 +1,176 @@
-%header-on-scroll{
-  border-top-width: 0;
-  .inner-head-wrapper{
-    padding: .4rem 0;
-  }
-  .site-header__logo{
-    width: 175px;
-  }
-  .header-navigation{
-    .menu{
-      margin-top: 0;
-      margin-bottom: 0;
-      padding-top: 0;
-      padding-bottom: 0; 
-    }
-  } 
-  .btn--orange{
-    height: auto;
-    max-height: none;
-    font-size: 1.2rem;
-    padding: .5rem 1.4rem;
-    max-width: none;
-    .btn-icon{
-      width: 1.8rem;
-    }
-  } 
+@mixin header-on-scroll{
+	border-top-width: 0;
+	border-bottom-width: .1rem;
+	.inner-head-wrapper{
+		padding: .4rem 0;
+	}
+	.site-header__logo{
+		width: 175px;
+	}
+	.header-navigation{
+		.menu{
+			margin-top: 0;
+			margin-bottom: 0;
+			padding-top: 0;
+			padding-bottom: 0; 
+		}
+	} 
+	.btn--orange{
+		font-size: 1.2rem;
+		padding: .5rem 1.4rem;
+		.btn-icon{
+			width: 1.8rem;
+		}
+	} 
+	&::before{
+		border-bottom-width: .1rem;
+	}
 }
 
 .site-header {
-  border-bottom: 3px solid $mainOrange;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 3;
-  width: 100%;
-  background: #fff;
-  transition: .05s all ease-in-out;
-  border-top: 2.5rem solid $darkGrey;
+	border-bottom: .3rem solid $mainOrange;
+	background: #fff;
+	transition: .05s all ease-in-out;
+	border-top: none;
+	&::before {
+		content: "";
+		border-bottom: .3rem solid $mainOrange;
+		display: block;
+	}
+	.inner-head-wrapper{
+		padding: .8rem 0;
+	}
 
-  @include respond(tab-land){
-    // position: relative;
-    // border-bottom: 3px solid $mainOrange;
-    
-    &--on-scroll{
-      border-bottom: 1px solid $mainOrange;
-      position: fixed;
-      box-shadow: 0 10px 20px rgba(#3f3f3f, 0.09);
-  
-      &::before {
-        border-bottom: 1px solid $mainOrange!important;
-        height: 0!important;
-        height: 25px;
-        border-bottom: 3px solid $mainOrange;
-      }
-    }
-  }
-  .inner-head-wrapper{
-    padding: .8rem 0;
-  }
+	.container {
+		padding-top: 7px;
+		padding-bottom: 7px;
+	}
 
-  .container {
-    padding-top: 7px;
-    padding-bottom: 7px;
-  }
+	&__logo {
+		width: 175px;
+		overflow: hidden;
 
-  &::before {
-    content: "";
-    border-bottom: 3px solid $mainOrange;
-    display: block;
-    height: 0;
-    width: 100%;
-    background-color: $black;
-    transition: .5s all ease-out;
-  }
+		@include respond(tab-land) {
+			width: 230px;
+		}
 
-  &__logo {
-    width: 175px;
-    overflow: hidden;
+		img {
+			object-fit: cover;
+		}
+	}
 
-    @include respond(small) {
-      width: 230px;
-    }
+	.btn--orange{
+		padding: .7rem 1rem;
+		max-width: none;
+		max-height: none;
+		height: auto;
+		box-shadow: none;
+		.btn-icon{
+			margin: 0;
+		}
+		@include respond(tab-land){
+			padding: 1.1rem 2.45rem;
+			max-width: none;
+			max-height: none;
+			height: auto;
+			box-shadow: none;
+			.btn-icon {
+				margin-right: 1rem;
+			}
+		}
+	}
 
-    img {
-      object-fit: cover;
-    }
-  }
+	&__menu-icon {
+		width: 20px;
+		height: 19px;
+		position: relative;
+		z-index: 2;
+		margin-left: 7px;
 
-  &__menu-icon {
-    width: 20px;
-    height: 19px;
-    position: relative;
-    z-index: 2;
-    margin-left: 7px;
+		@include respond(tab-land) {
+			display: none;
+		}
 
-    @include respond(tab-land) {
-      display: none;
-    }
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 20px;
+			background-color: $mainOrange;
+			height: 3px;
+			transform-origin: 0 0;
+			transition: transform 0.4s ease-out;
+		}
 
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 20px;
-      background-color: $mainOrange;
-      height: 3px;
-      transform-origin: 0 0;
-      transition: transform 0.4s ease-out;
-    }
+		&__middle {
+			position: absolute;
+			top: 8px;
+			left: 0;
+			width: 20px;
+			background-color: $mainOrange;
+			height: 3px;
+			transition: all 0.4s ease-out;
+			transform-origin: 0 0;
+		}
 
-    &__middle {
-      position: absolute;
-      top: 8px;
-      left: 0;
-      width: 20px;
-      background-color: $mainOrange;
-      height: 3px;
-      transition: all 0.4s ease-out;
-      transform-origin: 0 0;
-    }
+		&::after {
+			content: "";
+			position: absolute;
+			bottom: 0px;
+			left: 0;
+			width: 20px;
+			background-color: $mainOrange;
+			height: 3px;
+			transform-origin: 0 100%;
+			transition: transform 0.4s ease-out;
+		}
+	}
 
-    &::after {
-      content: "";
-      position: absolute;
-      bottom: 0px;
-      left: 0;
-      width: 20px;
-      background-color: $mainOrange;
-      height: 3px;
-      transform-origin: 0 100%;
-      transition: transform 0.4s ease-out;
-    }
-  }
+	&__menu-icon--close-x {
+		&::before {
+			transform: rotate(45deg) scaleX(1.25);
+		}
 
-  &__menu-icon--close-x {
-    &::before {
-      transform: rotate(45deg) scaleX(1.25);
-    }
+		.site-header__menu-icon__middle {
+			opacity: 0;
+			transform: scaleX(0);
+		}
 
-    .site-header__menu-icon__middle {
-      opacity: 0;
-      transform: scaleX(0);
-    }
+		&::after {
+			transform: rotate(-45deg) scaleX(1.25) translateY(1px);
+		}
+	}
 
-    &::after {
-      transform: rotate(-45deg) scaleX(1.25) translateY(1px);
-    }
-  }
+	&__mobile-menu-content {
+		display: none;
+		transform: scale(1.2);
+		text-align: center;
+		transition: all 0.3s ease-out;
+		position: fixed;
+		top: 0;
+		left: 0;
+		height: 100vh;
+		width: 100vw;
+		background-color: #fafafa;
+		border-bottom: 3px solid $mainOrange;
 
-  &__mobile-menu-content {
-    display: none;
-    transform: scale(1.2);
-    text-align: center;
-    transition: all 0.3s ease-out;
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100vw;
-    background-color: #fafafa;
-    border-bottom: 3px solid $mainOrange;
+		&--is-visible {
+			transform: scale(1);
+			display: block;
+			z-index: 2;
+		}
+	}
+	@include respond(big-desktop){
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 999;
+		width: 100%;
+		border-top: 2.5rem solid $darkGrey;
+		&--on-scroll{
+			@include header-on-scroll;
+		}
+	}
 
-    &--is-visible {
-      transform: scale(1);
-      display: block;
-      z-index: 2;
-    }
-  }
-  &.site-header--on-scroll{
-    @extend %header-on-scroll;
-  }
 }

@@ -1,0 +1,170 @@
+.page-banner{
+    .page-banner-content{
+        @include respond(large-desktop){
+            padding: 2rem 0;
+        }   
+    }
+} 
+.site-main{
+    .about-page-banner{
+        &.bmc-page-banner{
+            @include respond(large-desktop){
+                padding: 4rem 0 0;
+            }  
+        }
+    }
+} 
+
+.navTabs-pills-wrap{
+    background: #F6F6F6;
+    .nav{
+        .nav-item{
+            text-align: center;
+            .nav-link{
+                font-size: 1.8rem;
+                font-weight: 500;
+                text-transform: uppercase;
+                color: $darkGrey;
+                border-radius: 0;
+                padding: 1.4rem;
+                display: flex;
+                justify-content: center;
+                height: 100%;
+                align-items: center;
+                &:hover{
+                    color: $mainOrange;
+                }
+                &.active{
+                    background: $mainOrange;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+
+.bare-metal-navtabs{
+    .navTabs-pills-wrap{
+        .nav{
+            .nav-item{
+                width: 33.33%;
+            }
+        }
+    }
+    .tab-content{
+        padding: 6rem 0;
+        @include respond(large-desktop){
+            padding: 4rem 0;
+        }  
+    }
+    .why-bmc-block-wrap{
+        .bmc-block{
+            padding: 4rem 3rem;
+            background: #fff;
+            box-shadow: 0 0 1.5rem 0 rgba($color: #000000, $alpha: .06);
+            border-radius: .5rem;
+            transition: all .3s ease;
+            margin: 0 0 5rem;
+            @include respond(large-desktop){
+                margin: 0 0 3rem;
+            }  
+            .nmc-icon-box {
+                width: 11rem;
+                margin: 0 0 7rem;
+                @include respond(large-desktop){
+                    width: 9rem;
+                    margin: 0 0 2rem;
+                }  
+                svg {
+                    width: 100%;
+                    height: auto;
+                    fill: $mainOrange;
+                    transition: all .3s ease;
+                }
+            }
+            h2{
+                font-size: 2.2rem;
+                font-family: "Product Sans", sans-serif;
+                font-weight: 700;
+                margin: 0 0 1.5rem;
+            }
+            p{
+                margin: 0;
+                font-weight: 300;
+            }
+            &:hover{
+                background: $mainOrange;
+                color: #fff;
+                .nmc-icon-box{
+                    svg {
+                        fill: #fff;
+                    }
+                }
+            }
+        }
+        .btn--orange{
+            max-width: 56.1rem;
+            max-height: none;
+            height: auto;
+            display: block;
+            font-size: 2rem;
+            text-align: center;
+            margin: 0 auto;
+            box-shadow: none;
+        }
+    }
+}
+
+
+.bare-metal-power{
+    background: $darkGrey;
+    padding: 10rem 0 14rem;
+    @include respond(large-desktop){
+        padding: 0
+    }  
+    .section-header{
+        margin: 0 0 14rem;
+        @include respond(large-desktop){
+            margin: 0 0 8rem;
+        }  
+        .section-header__title{
+            color: #fff;
+        }
+        .section-header__Orangesub-title{
+            padding: 0 4rem;
+        }
+    }
+    .thumbnail-img{
+        text-align: center;
+    }
+    .bmc-power-instant-content{
+        padding: 0 0 0 3rem;
+        .bmc-power-instant-block{
+            display: flex;
+            align-items: center;
+            margin: 0 0 4rem;
+            .bmc-power-instant-icon{
+                margin: 0 1rem 0 0;
+                &--inner{
+                    width: 8rem;
+                    height: 8rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background: $mainOrange;
+                    border-radius: 100%;
+                }
+            }
+            h3{
+                color: #fff;
+                font-family: 'Product Sans', sans-serif;
+                font-weight: 700;
+                line-height: 2.4rem;
+                margin: 0;
+            }
+            &:last-child{
+                margin: 0;
+            }
+        }
+    }
+}

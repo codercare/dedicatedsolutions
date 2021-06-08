@@ -1,8 +1,8 @@
 <?php
-/* Template Name: Test2 */ 
+/*  Data Migration Services */ 
 
 get_header();?>
-?>
+
 
 <main id="fullpage" class="site-main">
 	<section class="page-banner about-page-banner dm-service-banner section fp-auto-height" style="background-image:url('<?php echo get_template_directory_uri() . '/dist/assets/images/about-banner.jpg'; ?>')">
@@ -115,4 +115,6 @@ get_header();?>
 		</div>
 	</section>
 </main>
+
+
 <?php get_footer(); ?>

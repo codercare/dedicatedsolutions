@@ -3,7 +3,9 @@
         margin: 0;
     }
     .about-page-banner{
-        padding: 9.2rem 0 0;
+        @include respond(big-desktop){
+            padding: 9.2rem 0 0;
+        }
         .page-banner-content{
             p{
                 margin: 0 0 1.5rem;

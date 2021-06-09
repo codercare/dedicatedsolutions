@@ -1,0 +1,96 @@
+
+.wh-eh-hosting-feat-adv{
+    padding: 5rem 0;
+    @include respond(large-desktop){
+        &.ss-web-hosting{
+            padding: 17rem 0;
+        }
+        &.mlb-server, &.mg-data-center{
+            padding: 0;
+        }
+    }
+    .wrapper{
+        overflow: visible;
+        @include respond(large-desktop){
+            max-width: 178rem;
+        }
+    }
+    .thumbnail-img{
+        text-align: center;
+        margin: 0 0 3rem;
+        @include respond(tab-land){
+            margin: 0;
+        }
+    }
+    .wh-eh-hosting-content{
+        margin: 0 0 3rem;
+        @include respond(large-desktop){
+            padding: 0 2rem 0 7rem;
+            margin: 0;
+        }
+        .section-header{
+            margin: 0 0 0.5rem;
+            .section-header__title{
+                font-size: 6rem;
+                color: $mainOrange;
+                margin: 0 0 3rem;
+            }
+        }
+        p {
+            line-height: 3rem;
+            margin: 0 0 2.5rem;
+        }
+        .btn--orange{
+            max-width: none;
+            max-height: none;
+            height: auto;
+            text-transform: inherit;
+            display: inline-block;
+            box-shadow: none;
+            padding: 1.1rem 3.2rem;
+            font-size: 1.5rem;
+            .fas{
+                margin: 0 0 0 1.3rem;
+            }
+        }
+    }
+    .wh-eh-hosting-adv {
+        background: #fff;
+        box-shadow: 0 0 1rem 0 rgba($color: #CFCFCF, $alpha: 1.0);
+        @include respond(large-desktop){
+            margin: 0 8.1rem 0 3rem;
+        }
+        h2 {
+            margin: 0;
+            text-transform: uppercase;
+            font-size: 2.2rem;
+            padding: 2.7rem 2rem;
+            background: $mainOrange;
+            color: #fff;
+        }
+        ul{
+            li{
+                padding: 2.1rem 2rem 2.1rem 4.8rem;
+                background-position: left 2rem center;
+                &:nth-of-type(even){
+                    background-color: #FFFCF9;
+                }
+            }
+        }
+    }
+    &.ss-web-hosting, &.mg-data-center{
+        background: #F2F2F2;
+    }
+    &.mlb-server{
+        .wh-eh-hosting-adv {
+            @include respond(large-desktop){
+                margin: 0 4.1rem 0 7rem;
+            }
+        }
+        .wh-eh-hosting-content {
+            @include respond(large-desktop){
+                padding: 0 5rem 0 3rem;
+            }
+        }
+    }
+}

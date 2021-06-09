@@ -1,0 +1,267 @@
+.site-main{
+    .os-control-page-banner {
+        &.managed-services-page-banner{
+            @include respond(large-desktop){
+                padding: 4rem 0 0;
+            }
+        }
+    }
+} 
+
+.managed-service-layer{
+    padding: 3rem 0 1rem;
+    .managed-layer-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .thumbnail-img{
+            margin: 0 2.5rem 0 0;
+            display: none;
+            text-align: right;
+            @include respond(tab-port){
+                display: block;
+                width: 47%;
+            }
+            @include respond(tab-land){
+                width: 39%
+            }
+            @include respond(big-desktop){
+                width: auto;
+            }
+        }
+        ul{
+            padding: 0;
+            margin: 0;
+            @include respond(tab-port){
+                margin: -4.7rem 0 0;
+            }
+            li{
+                list-style-type: none;
+                font-size: 2rem;
+                font-weight: 500;
+                margin: 1rem 0;
+                position: relative;
+                padding-left: 3rem;
+                @include respond(tab-port){
+                    padding-left: 0;
+                    margin: 2rem 0;
+                }
+                &::before{
+                    content: '';
+                    position: absolute;
+                    top: 1rem;
+                    left: 0;
+                    width: 1.2rem;
+                    height: 1.2rem;
+                    border-radius: 100%;
+                    display: block;
+                    @include respond(tab-port){
+                        display: none;
+                    }
+                }
+                &:nth-of-type(1)::before{
+                    background: #F2AE1F;
+                }
+                &:nth-of-type(2)::before{
+                    background: #EF2034;
+                }
+                &:nth-of-type(3)::before{
+                    background: #D65616;
+                }
+                &:nth-of-type(4)::before{
+                    background: #A0287C;
+                }
+                &:nth-of-type(5)::before{
+                    background: #522F84;
+                }
+                &:nth-of-type(6)::before{
+                    background: #0E7F8E;
+                }
+            }
+        }
+    } 
+}
+
+.linux-server-os{
+    padding: 6rem 0;
+    background: #F2F2F2;
+    @include respond(large-desktop){
+        padding: 0;
+    }
+    ul {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        li {
+            list-style-type: none;
+            flex: 1 1 25rem;
+            text-align: center;
+            margin: 4rem 0;
+        }
+    }
+}
+
+.manage-service-plan{
+    padding: 3rem 0 0;
+    @include respond(large-desktop){
+       padding: 0;
+    }
+    .section-header{
+        margin: 0 0 2rem;
+    }
+    .managed-service-plan-viewWrap{
+        .nav{
+            justify-content: center;
+            .nav-item{
+                margin: 0 1rem;
+                .nav-link {
+                    background: $darkGrey;
+                    font-size: 2rem;
+                    color: #fff;
+                    font-weight: 500;
+                    border-radius: .4rem;
+                    padding: .6rem 2.8rem;
+                    @include respond(large-desktop){
+                        padding: .3rem 2.8rem;
+                    }
+                    &:hover{
+                        background: $mainOrange;
+                    }
+                    &.active{
+                        background: $mainOrange;
+                    }
+                }
+            } 
+        }
+        .tab-content{
+            padding: 2.5rem 0 1rem;
+        }
+        .managed-service-plan-table{
+            .ms-plan-list{
+                margin: 0;
+                padding: 0;
+                li{
+                    list-style-type: none;
+                    list-style-type: none;
+                    display: flex;
+                    flex-wrap: nowrap;
+                    border-top: 1px solid #C6C6C6;
+                    .ms-plan-col {
+                        flex: 1 1;
+                        display: flex;
+                        align-items: center;
+                        padding: .55rem 1rem .55rem 4rem;
+                        .ms-plan-blnc--inner{
+                            width: 14rem;
+                            padding: 0 1.5rem 0 0;
+                        }
+                        &:first-child {
+                            flex-direction: row-reverse;
+                            border-right: 1px solid #C6C6C6;
+                            text-align: right;
+                            padding: .55rem 4rem .55rem 1rem;
+                            .ms-plan-blnc--inner{
+                                padding: 0 0 0 1.5rem;
+                            }
+                        }
+                        .big-txt {
+                            font-size: 4.9rem;
+                            line-height: initial;
+                            @include respond(large-desktop){
+                                font-size: 4rem;
+                            }
+                            &.orange-txt{
+                                color: $mainOrange;
+                            }
+                            &.dark-txt{
+                                color: $darkGrey;
+                            }
+                        }
+                        h2{
+                            margin: 0;
+                            font-weight: 400;
+                            color: rgba(0, 0, 0, 0.75);
+                        }
+                        p{
+                            margin: 0;
+                            font-size: 1.4rem;
+                            line-height: 2.2rem;
+                            color: rgba(0, 0, 0, 0.75);
+                        }
+                    }
+                    &:first-child {
+                       border: none;
+                        .ms-plan-col {
+                            padding: 0;
+                        }
+                    }
+                    &:last-child {
+                        .ms-plan-col {
+                            padding: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.ask-for-quotation {
+    text-align: center;
+    padding: 2rem 0;
+    @include respond(large-desktop){
+        padding: 7rem 0;
+    }
+    .section-header__title {
+        font-size: 3rem;
+        margin: 0 0 1.3rem;
+    }
+    .btn--orange {
+        max-height: none;
+        max-width: none;
+        height: auto;
+        display: inline-block;
+        box-shadow: none;
+        text-transform: inherit;
+        padding: 1.2rem 3.7rem;
+        .fas {
+            margin-left: 1rem;
+        }
+    }
+}
+
+.ms-tech-support{
+    .tech-support__content{
+        @include respond(big-desktop){
+            transform: translateY(25%);
+        }
+        @include respond(large-desktop){
+            transform: translateY(65%);
+        }
+    }
+    .tech-support-block-wrap{
+        max-width: 100rem;
+        margin: 0 auto;
+        .tech-support-card{
+            background-color: $mainOrange;
+            &__title{
+                font-size: 2.6rem;
+                text-transform: uppercase;
+            }
+            .btn--outline{
+                border-radius: 0;
+                font-family: "Product Sans";
+                font-size: 1.6rem;
+                padding: .2rem 2.1rem;
+                height: auto;
+            }
+        }
+        [class^="col-"]:last-child{
+            .tech-support-card{
+                background-color: #363636;
+            }
+        }
+    }
+}

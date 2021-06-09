@@ -1,6 +1,8 @@
 .mc-page-banner{
     .page-banner-content {
-        padding: 15rem 0 3rem;
+        @include respond(big-desktop){
+            padding: 15rem 0 3rem;
+        }
         .large-banner__heading{
             margin: 0 0 .8rem;
         }

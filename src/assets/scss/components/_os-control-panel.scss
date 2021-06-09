@@ -33,7 +33,12 @@
 
 .site-main{
     .os-control-page-banner{
-        padding: 12rem 0 4rem;
+        @include respond(big-desktop){
+            padding: 12rem 0 4rem;
+        }
+        @include respond(large-desktop){
+            padding: 12rem 0 4rem;
+        }
         .page-banner-content{
             .large-banner__heading{
                 margin: 0;
@@ -44,13 +49,13 @@
         }
         .os-control-panl__btn-wrap {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
-            max-width: 65rem;
             margin: 0 auto;
             flex-direction: row;
             .btn--orange{
                 text-transform: uppercase;
+                margin: 0 1rem;
                 .btn-icon{
                     display: inline-flex;
                     height: 2.5rem;

@@ -1,10 +1,3 @@
-.page-banner{
-    .page-banner-content{
-        @include respond(large-desktop){
-            padding: 2rem 0;
-        }   
-    }
-} 
 .site-main{
     .about-page-banner{
         &.bmc-page-banner{

@@ -52,8 +52,12 @@
 }
 
 .site-main{
-    min-height: 85rem;
-    margin-bottom: 5rem;
+    @include respond(tab-port){
+        min-height: 85rem;
+    }
+    @include respond(big-desktop){
+        margin-bottom: 5rem;
+    }
     .page-section{
         padding: 14rem 0;
     }

@@ -2,13 +2,7 @@
 /* Template Name: Dedicated Game Server */ 
 
 get_header();?>
-<?php
-	$banner_image_url = get_template_directory_uri().'/dist/assets/images/custom-sol-bg.jpg';
-	$banner_image     = get_field( 'reseller_program_bg_image' );
-	if ( ! empty( $banner_image ) ) {
-		$banner_image_url = $banner_image['url'];
-	}
-?>
+
 <main id="fullpage" class="site-main">
 <?php
 while ( have_posts() ) : the_post(); 

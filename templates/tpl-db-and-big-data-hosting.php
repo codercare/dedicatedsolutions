@@ -5,12 +5,21 @@ get_header();?>
 
 
 <main id="fullpage" class="site-main">
+<?php
+while ( have_posts() ) : the_post(); 
+
+	$banner_image_url = get_template_directory_uri() . '/dist/assets/images/bare-metal-cloud-banner.jpg';
+	$banner_image     = get_field( 'database_and_big_data_bg_banner' );
+	if ( ! empty( $banner_image ) ) {
+		$banner_image_url = $banner_image['sizes']['banner_image'];
+	}
+?>
 	<section class="section">
-		<section class="page-banner db-bd-sh-page-banner" style="background-image:url('<?php echo get_template_directory_uri() . '/dist/assets/images/bare-metal-cloud-banner.jpg'; ?>')">
+		<section class="page-banner db-bd-sh-page-banner" style="background-image:url('<?php echo $banner_image_url; ?>')">
 			<div class="wrapper">
 				<div class="page-banner-content">
-					<h1 class="large-banner__heading">Database & Big Data Server Hosting</h1>
-					<a href="" class="btn--orange">Learn More <i class="fas fa-arrow-right"></i></a>
+					<h1 class="large-banner__heading"><?php the_field( 'database_and_big_data_server_hosting_title' ); ?></h1>
+					<a href="<?php the_field( 'database_and_big_data_button_link' ); ?>" class="btn--orange"><?php the_field( 'database_and_big_data_button_label' ); ?> <i class="fas fa-arrow-right"></i></a>
 				</div>
 			</div>
 		</section>
@@ -19,10 +28,21 @@ get_header();?>
 			<div class="navTabs-pills-wrap">
 				<div class="wrapper">
 					<ul class="nav nav-pills" id="db-bd-hosting-pills-tab" role="tablist">
+						<?php
+						if ( have_rows( 'database_server_types_features' ) ) : 
+						$count_tab = 1;
+						while ( have_rows( 'database_server_types_features' ) ) :
+						the_row();								
+						?>
 						<li class="nav-item" role="presentation">
-							<a class="nav-link" id="mysql-tab" data-toggle="pill" href="#mysql" role="tab" aria-controls="mysql" aria-selected="false">MySQL</a>
+							<a class="nav-link <?php if($count_tab == '3'){ echo'active'; }?>" id="tab-<?php echo $counter_feature;?>" data-toggle="pill" href="#tab_id_<?php echo $counter_feature;?>" role="tab" aria-controls="mysql" aria-selected="false"><?php the_sub_field( 'database_title' ); ?></a>
 						</li>
-						<li class="nav-item" role="presentation">
+						<?php 
+						$count_tab++;
+						endwhile; 
+						endif;
+						?>
+						<!-- <li class="nav-item" role="presentation">
 							<a class="nav-link" id="oracle-db-tab" data-toggle="pill" href="#oracle-db" role="tab" aria-controls="oracle-db" aria-selected="false">Oracle Database</a>
 						</li>
 						<li class="nav-item" role="presentation">
@@ -33,13 +53,19 @@ get_header();?>
 						</li>
 						<li class="nav-item" role="presentation">
 							<a class="nav-link" id="nosql-tab" data-toggle="pill" href="#nosql" role="tab" aria-controls="nosql" aria-selected="false">NoSQL</a>
-						</li>
+						</li> -->
 					</ul>
 				</div>
 			</div>
 			<div class="wrapper">
 				<div class="tab-content" id="bmc-pills-tabContent">
-					<div class="tab-pane fade" id="mysql" role="tabpanel" aria-labelledby="mysql-tab">
+					<?php
+					if ( have_rows( 'beta_features' ) ) : 
+					$counter_feature = 1;
+					while ( have_rows( 'beta_features' ) ) :
+					the_row();								
+					?>
+					<div class="tab-pane fade <?php if($counter_feature == '3'){ echo'show active'; }?>" id="tab_id_<?php echo $counter_feature;?>" role="tabpanel" aria-labelledby="mysql-tab">
 						<h2 class="section-header__title">MySQL</h2>
 						<div class="row">
 							<div class="col-lg-6">
@@ -67,7 +93,13 @@ get_header();?>
 							</div>
 						</div>     
 					</div>
-					<div class="tab-pane fade" id="oracle-db" role="tabpanel" aria-labelledby="oracle-db-tab">
+					<?php 
+					$counter_feature++;
+					endwhile; 
+					endif;
+					?>
+					
+					<!-- <div class="tab-pane fade" id="oracle-db" role="tabpanel" aria-labelledby="oracle-db-tab">
 						<h2 class="section-header__title">Oracle Database</h2>
 						<div class="row">
 							<div class="col-lg-6">
@@ -178,7 +210,7 @@ get_header();?>
 								</div>
 							</div>
 						</div>     
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</section>
@@ -864,6 +896,7 @@ get_header();?>
 			</div>
 		</div>
 	</section>
+<?php endwhile; // end of the loop. ?>
 </main>
 
 <?php get_footer(); ?>

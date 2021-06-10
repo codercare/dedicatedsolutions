@@ -1,8 +1,9 @@
 <?php
-/* Template Name: Test2 */ 
+/*  Database & Big Data Server Hosting */ 
 
 get_header();?>
-?>
+
+
 <main id="fullpage" class="site-main">
 	<section class="section">
 		<section class="page-banner db-bd-sh-page-banner" style="background-image:url('<?php echo get_template_directory_uri() . '/dist/assets/images/bare-metal-cloud-banner.jpg'; ?>')">
@@ -864,4 +865,5 @@ get_header();?>
 		</div>
 	</section>
 </main>
+
 <?php get_footer(); ?>

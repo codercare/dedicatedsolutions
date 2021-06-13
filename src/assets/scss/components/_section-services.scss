@@ -1,24 +1,24 @@
 .section-services{
-	padding: 10rem 0;
+	// padding: 10vmin 0;
 
 	// @include respond(small){
-	// 	padding-top: 13rem;
-	// 	padding-bottom: 13rem;
+	// 	padding-top: 13vmin;
+	// 	padding-bottom: 13vmin;
 	// }
 
 	// @include respond(tab-port){
-	// 	padding-top: 14rem;
-	// 	padding-bottom: 14rem;
+	// 	padding-top: 14vmin;
+	// 	padding-bottom: 14vmin;
 	// }
 
 	// @include respond(tab-land){
-	// 	padding-top: 17rem;
-	// 	padding-bottom: 15rem;
+	// 	padding-top: 17vmin;
+	// 	padding-bottom: 15vmin;
 	// }
 }
 
-@media(min-width: 1680px){
-	.section-services{
-		padding: 0
-	}
-}
+// @media(min-width: 1680px){
+// 	.section-services{
+// 		padding: 0
+// 	}
+// }

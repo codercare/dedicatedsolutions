@@ -1,6 +1,6 @@
 .section-header {
   color: $black;
-  margin-bottom: 4vmin;
+  margin-bottom: 4rem;
 
   &--on-dark-bg {
     color: #fff;
@@ -8,7 +8,7 @@
 
   &__title {
     font-family: "Product Sans", sans-serif;
-    font-size: 4vmin;
+    font-size: 4rem;
     font-weight: 700;
     color: inherit;
   }
@@ -17,11 +17,11 @@
     border-bottom: solid 1px #1a1a1a;
     border-top: solid 1px #1a1a1a;
     height: 10px;
-    width: 4.4vmin;
+    width: 4.4rem;
     display: inline-block;
     position: relative;
     margin-top: 7px;
-    margin-bottom: 1.8vmin;
+    margin-bottom: 1.8rem;
     color: inherit;
 
     &::after {
@@ -40,7 +40,7 @@
 
   &__sub-title {
     font-family: "Roboto", sans-serif;
-    font-size: 1.8vmin;
+    font-size: 1.8rem;
     font-weight: 300;
   }
 }
@@ -51,11 +51,11 @@
     border-bottom: solid 1px #fff;
     border-top: solid 1px #fff;
     height: 10px;
-    width: 4.4vmin;
+    width: 4.4rem;
     display: inline-block;
     position: relative;
     margin-top: 7px;
-    margin-bottom: 1.8vmin;
+    margin-bottom: 1.8rem;
     color: inherit;
 
     &::after {

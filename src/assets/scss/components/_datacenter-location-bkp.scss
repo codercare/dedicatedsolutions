@@ -2,7 +2,7 @@
 	background-color: $black;
 	background-position: center;
 	background-repeat: no-repeat;
-	padding: 11vmin 0 9vmin;
+	padding: 12rem 0 10rem;
 	// background-attachment: fixed;
 	// padding-top: 4rem;
 	// padding-bottom: 12rem;
@@ -23,8 +23,8 @@
 	// }
 }
 
-// @media(min-width: 1680px){
-//     .datacenter-location{
-// 		padding: 10vmin 0 8vmin;
-// 	}
-// }
+@media(min-width: 1680px){
+    .datacenter-location{
+		padding: 8rem 0 5rem;
+	}
+}

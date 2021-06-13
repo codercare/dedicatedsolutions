@@ -1,25 +1,25 @@
 .customer-cards{
-	padding: 3.5vmin 4vmin 3.5vmin 3vmin;
+	padding: 3.5rem 4rem 3.5rem 3rem;
 	color: #fff;
 	background-repeat: no-repeat;
     background-position: center;
-    border-radius: .05vmin;
+    border-radius: 5px;
 	width: 100%;
-	min-height: 27vmin;
-	margin-bottom: 2.5vmin;
+	min-height: 27rem;
+	margin-bottom: 2.5rem;
 
 	&__title{
 		font-family: 'Product Sans', sans-serif;
-		font-size: 1.8vmin;
+		font-size: 1.8rem;
 		color: #fff;
 		font-weight: 700;
-		margin-bottom: 1.8vmin;
+		margin-bottom: 1.8rem;
 	}
 
 	&__details{
 		font-family: 'Roboto', sans-serif;
-		font-size: 1.4vmin;
+		font-size: 1.4rem;
 		font-weight: 400;
-		margin-bottom: 2.8vmin;
+		margin-bottom: 2.8rem;
 	}
 }

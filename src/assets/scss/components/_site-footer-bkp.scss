@@ -1,7 +1,7 @@
 .site-footer{
 	background-color: $black;
 	color: #fff;
-	padding: 2vmin 0;
+	padding: 2rem 0;
 	&.site-inner-footer{
 		position: fixed;
 		bottom: 0;
@@ -14,7 +14,7 @@
 		bottom: 0;
 		left: 0;
 		width: 100%;
-		padding: .3vmin 0;
+		padding: .3rem 0;
 		z-index: 999;
 	}
 
@@ -23,7 +23,6 @@
 		align-items: center;
 		flex-direction: column;
 		flex-wrap: wrap;
-		justify-content: center;
 
 		@include respond(tab-land){
 			flex-direction: row;
@@ -36,14 +35,14 @@
 			height: auto;
 			max-height: none;
 			max-width: none;
-			padding: .6vmin 2.2vmin;
+			padding: .6rem 2.2rem;
 			text-transform: capitalize;
-			font-size: 1.6vmin;
+			font-size: 1.6rem;
 			.btn-icon{
 				margin: 0;
 			}
 			&:last-child{
-				padding: .6vmin 1.3vmin;
+				padding: .6rem 1.3rem;
 			}
 		}
 	}
@@ -51,28 +50,28 @@
 
 .payment-methods{
 	display: block;
-	margin: 0 0 2vmin;
+	margin: 0 0 2rem;
 
 	@include respond(tab-land){
 		display: flex;
 		align-items: center;
-		margin: 0 3vmin 0 0;
+		margin: 0 3rem 0 0;
 	}
 	@include respond(screen-md-laptop){
-		margin: 0 2vmin 0 0;
+		margin: 0 2rem 0 0;
 	}
 
 	&__title{
 		font-family: 'Product Sans', sans-serif;
-		font-size: 1.6vmin;
+		font-size: 1.6rem;
 		font-weight: 700;
 		display: block;
-		margin: 0 0 1vmin;
+		margin: 0 0 1rem;
 		text-align: center;
 		@include respond(tab-land){
 			display: flex;
 			flex-direction: column;
-			margin: 0 1vmin 0;
+			margin: 0 1rem 0;
 			text-align: left;
 		}
 	}
@@ -85,42 +84,42 @@
 	}
 
 	&__item{
-		width: 4.5vmin;
+		width: 4.5rem;
 
 		img{
-			height: 3vmin;
+			height: 3rem;
 			object-fit: cover;
 		}
 
 		&:not(:last-child){
-			margin-right: .5vmin;
+			margin-right: 5px;
 		}
 	}
 }
 
 .us-support{
 	position: relative;
-	padding-left: 5vmin;
-	margin: 0 0 2vmin;
+	padding-left: 5rem;
+	margin: 0 0 2rem;
 
 	@include respond(tab-land){
-		margin: 0 3vmin 0 0;
+		margin: 0 3rem 0 0;
 	}
 
 	@include respond(screen-md-laptop){
-		margin: 0 2vmin 0 0;
+		margin: 0 2rem 0 0;
 	}
 
 	&__title{
 		font-family: 'Product Sans', sans-serif;
-		font-size: 1.6vmin;
+		font-size: 1.6rem;
 		font-weight: 700;
 		text-transform: uppercase;
 		margin: 0;
 	}
 
 	&__text{
-		font-size: 1.4vmin;
+		font-size: 1.4rem;
 		margin: 0;
 	}
 
@@ -129,7 +128,7 @@
 		left: 0;
 
 		.fas{
-			font-size: 3.5vmin;
+			font-size: 3.5rem;
 		}
 	}
 }
@@ -138,39 +137,39 @@
 	list-style: none;
 	display: flex;
 	padding: 0;
-	margin: 0 0 2vmin;
+	margin: 0 0 2rem;
 
 	@include respond(tab-land){
-		margin: 0 3vmin 0 0;
+		margin: 0 3rem 0 0;
 	}
 	@include respond(screen-md-laptop){
-		margin: 0 2vmin 0 0;
+		margin: 0 2rem 0 0;
 	}
 
 	&__item{
 		&:not(:last-child){
-			margin-right: 1vmin;
+			margin-right: 1rem;
 		}
 	}
 
 	&__title{
 		font-family: 'Product Sans', sans-serif;
-		font-size: 1.2vmin;
+		font-size: 1.2rem;
 		font-weight: 700;
 		text-transform: uppercase;
 	}
 
 	&__link{
-		font-size: 1vmin;
-		line-height: 1vmin;
+		font-size: 1rem;
+		line-height: 1rem;
 		display: block;
 		color: #fff;
 
 		@include respond(tab-port){
-			max-width: 15vmin;
+			max-width: 15rem;
 		}
 		@include respond(screen-md-laptop){
-			max-width: 13vmin;
+			max-width: 13rem;
 		}
 
 		&:hover{

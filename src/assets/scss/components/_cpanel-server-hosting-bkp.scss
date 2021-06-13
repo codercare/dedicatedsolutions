@@ -1,18 +1,18 @@
 .cp-sh-page-banner{
     .page-banner-content{
-        padding: 8vmin 0 3vmin;
+        padding: 15rem 0 4rem;
         p{
-            margin: 0 0 2vmin;
+            margin: 0 0 2rem;
         }
     }
 }
 
 .cpanel-features{
-    padding: 2vmin 0 1vmin;
+    padding: 4rem 0 1rem;
     .section-header{
-        margin: 0 0 3vmin;
+        margin: 0 0 5rem;
         .section-header__Orangesub-title{
-            max-width: 98.4vmin;
+            max-width: 98.4rem;
             margin: 0 auto;
         }
     }
@@ -20,32 +20,28 @@
 
 .cp-features-block{
     position: relative;
-    padding: 0 0 0 21.5vmin;
+    padding: 0 0 0 21.5rem;
     display: flex;
     flex-direction: column;
-    min-height: 12vmin;
+    min-height: 12rem;
     justify-content: center;
-    margin: 0 0 3vmin;
+    margin: 0 0 4rem;
     .cp-feat-icon{
        position: absolute;
        left: 0;
        top: 0;
-       width: 18vmin;
-       height: 12vmin;
+       width: 18rem;
+       height: 12rem;
        display: flex;
        align-items: center;
        justify-content: center;
        background: #fff;
-       border-radius: .5vmin;
-       box-shadow: 0 .06vmin 2vmin 0 rgba($color: #000000, $alpha: .07);
-        img {
-            height: 60%;
-        }
+       border-radius: .5rem;
+       box-shadow: 0 .06rem 2rem 0 rgba($color: #000000, $alpha: .07);
     }
     h3{
         font-family: "Product Sans", sans-serif;
         font-weight: 700;
-        font-size: 1.8vmin;
     }
     p{
         font-weight: 300;
@@ -55,32 +51,27 @@
 
 .cpanel-dashboard-carousel{
     background: #00020A;
-    padding: 5vmin 0;
+    padding: 5rem 0 8rem;
     color: #fff;
     .carousel-inner{
-        max-width: 86vmin;
-        margin: 0 auto 4.5vmin;
-        .carousel-item{
-            img{
-                width: 100%;
-            }
-        }
+        max-width: 86rem;
+        margin: 0 auto 4.5rem;
     }
     .db-carousel-txt{
         text-align: right;
-        max-width: 22vmin;
+        max-width: 22rem;
         .section-header__title{
-            margin: 0 0 1vmin;
+            margin: 0 0 1rem;
         }
         .carousel-control-next, .carousel-control-prev {
             position: static;
             display: inline-block;
-            width: 3.5vmin;
-            height: 3.5vmin;
+            width: 3.5rem;
+            height: 3.5rem;
             border-radius: 100%;
             background: $mainOrange;
             opacity: 1;
-            line-height: 3.1vmin;
+            line-height: 3.1rem;
             transition: all 0.3s ease;
             svg{
                 path{
@@ -99,7 +90,7 @@
             }
         }
         .carousel-control-prev{
-            margin-right: 1.5vmin;
+            margin-right: 1.5rem;
         }
         .carousel-control-next{
             svg{
@@ -115,14 +106,14 @@
             li{
                 flex: none;
                 opacity: 1;
-                width: 21.3vmin;
-                height: 10.8vmin;
+                width: 21.4rem;
+                height: 10.8rem;
                 text-indent: unset;
                 margin: 0;
                 border: 2px solid transparent;
                 background-clip: unset;
                 display: inline-block;
-                margin: 0 0.1vmin;
+                margin: 0 0.1rem;
                 background: none;
                 box-sizing: unset;
                 &.active{
@@ -132,7 +123,7 @@
                 img{
                     object-fit: cover;
                     width: 100%;
-                    height: 10.8vmin;
+                    height: 10.8rem;
                 }
             }
         }
@@ -143,11 +134,11 @@
     background: $mainOrange;
     text-align: center;
     color: #fff;
-    padding: 2vmin 0 5vmin;
+    padding: 3rem 0;
     .section-header{
-        margin: 0 0 2vmin;
+        margin: 0 0 3.5rem;
         .section-header__title{
-            font-size: 3.4vmin;
+            font-size: 3.4rem;
         }
         .section-header__Orangesub-title{
             color: #fff;
@@ -158,53 +149,53 @@
         max-width: none;
         height: auto;
         color: $mainOrange;
-        font-size: 1.6vmin;
-        padding: 1.2vmin 3.1vmin;
+        font-size: 1.6rem;
+        padding: 1.2rem 3.1rem;
         &:hover{
             background: $darkGrey;
         }
     }
     p{
-        margin: 2vmin 0 0;
+        margin: 3.5rem 0 0;
         font-weight: 500;
     }
 }
 
 .popular-dedicated-server {
-    // padding: 3vmin 0;
+    padding: 3rem 0;
     .section-header {
-        margin: 0 0 .5vmin;
+        margin: 0 0 .5rem;
     }
     .server-type-block-wrap{
-        padding: 1.2vmin 2vmin;
+        padding: 1.2rem 2rem;
         border: 1px solid #BDBCBC;
         text-align: center;
         h3{
-            font-size: 2.5vmin;
+            font-size: 2.5rem;
             font-weight: 400;
-            margin: 0 0 1vmin;
+            margin: 0 0 1rem;
             i {
-                margin-right: 1.2vmin;
+                margin-right: 1.2rem;
             }
         }
         h4 {
-            font-size: 2vmin;
+            font-size: 2rem;
             font-weight: 400;
             margin: 0;
         }
         .server-type-block {
             border: 1px solid #C2C2C2;
-            margin: 2vmin 0 0;
+            margin: 2rem 0 0;
             .server-tye-header{
                 background: $darkGrey;
                 color: #fff;
-                padding: .8vmin 0;
+                padding: .8rem 0;
                 h5{
-                    font-size: 1.6vmin;
+                    font-size: 1.6rem;
                     font-weight: 500;
                     margin: 0;
                     span{
-                        font-size: 1.4vmin;
+                        font-size: 1.4rem;
                         font-weight: 400;
                         display: block;
                     }
@@ -214,13 +205,13 @@
                 padding: 0;
                 margin: 0;
                 background: #F5F5F5;
-                padding: 0 1.5vmin;
+                padding: 0 1.5rem;
                 li{
                     list-style-type: none;
-                    font-size: 1.4vmin;
+                    font-size: 1.4rem;
                     color: #5D5D5D;
                     border-bottom: 1px solid #AEACAC;
-                    padding: .3vmin 0;
+                    padding: .3rem 0;
                     &:last-child{
                         border: none
                     }
@@ -231,13 +222,13 @@
                 max-height: none;
                 height: auto;
                 display: block;
-                margin: 1vmin;
-                font-size: 1.4vmin;
-                padding: .7vmin 1vmin;
+                margin: 1rem;
+                font-size: 1.4rem;
+                padding: .7rem 1rem;
                 text-transform: capitalize;
                 i{
-                    font-size: 1.2vmin;
-                    margin: 0 0 0 .5vmin;
+                    font-size: 1.2rem;
+                    margin: 0 0 0 .5rem;
                 }
                 &.success{
                     background: #56BC3A;
@@ -255,3 +246,41 @@
         }
     }
 }
+
+@media(min-width: 1680px){
+    .cpanel-features, .cpanel-dashboard-carousel, .popular-dedicated-server{
+        padding: 0;
+    }
+    .get-cp-server{
+        padding: 7rem 0;
+    }
+
+    .popular-dedicated-server{
+        .server-type-block-wrap{
+            h3 {
+                font-size: 2rem;
+                margin: 0 0 .5rem;
+                i {
+                    width: 3.4rem;
+                    display: inline-block;
+                }
+            }
+            h4 {
+                font-size: 1.6rem;
+            } 
+            .server-type-block {
+                border: 1px solid #C2C2C2;
+                margin: 1rem 0 0;
+                .btn--orange {
+                    margin: 1.2rem 2.5rem;
+                    font-size: 1.6rem;
+                    padding: .7rem 2.2rem;
+                    i{
+                        margin: 0 0 0 1.5rem;
+                    }
+                }
+            }           
+        } 
+    }
+}
+

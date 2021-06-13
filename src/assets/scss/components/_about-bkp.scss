@@ -4,50 +4,39 @@
     }
     .about-page-banner{
         @include respond(big-desktop){
-            padding: 7vmin 0 0;
+            padding: 9.2rem 0 0;
         }
         .page-banner-content{
             p{
-                margin: 0 0 1.5vmin;
+                margin: 0 0 1.5rem;
             }
             .btn--orange {
                 max-width: none;
                 height: auto;
                 display: inline-block;
                 text-transform: capitalize;
-                padding: 1.2vmin 3.5vmin;
+                padding: 1.2rem 3.5rem;
                 .fas{
-                    margin: 0 0 0 1vmin;
+                    margin: 0 0 0 1rem;
                 }
             }
         } 
     }
     
     .welcom-section{
-        padding: 3vmin 0;
-        .section-header{
-            margin: 0 0 2vmin;
-            &__title, &__decoration-element{
-                margin: 0;
-            }
-        }
+        padding: 6rem 0;
         .welcome-content{
             p{
-                margin: 0 0 2vmin;
+                margin: 0 0 3rem;
                 &:last-child{
                     margin: 0;
                 }
             }
         }
-        .thumbnail-img{
-            img{
-                width: 90%;
-            }
-        }
     }
     
     .ceo-detail{
-        padding: 5vmin 0;
+        padding: 6rem 0;
         background-repeat: no-repeat;
         background-size: cover;
         background-position:center;
@@ -55,25 +44,22 @@
         color: #fff;
         .thumbnal-img {
             text-align: right;
-            img{
-                width: 75%;
-            }
         }
         .ceo-content {
-            padding: 0 8vmin;
+            padding: 4rem 8rem;
             h1{
-                font-size: 3.2vmin;
+                font-size: 3.2rem;
                 font-weight: 400;
-                margin: 0 0 3vmin;
+                margin: 0 0 3rem;
                 span{
                     display: block;
                     font-weight: 700;
-                    padding: 1.5vmin 0 0;
+                    padding: 1.5rem 0 0;
                 }
             }
             p{
-                font-size: 2.2vmin;
-                line-height: 4vmin;
+                font-size: 2.2rem;
+                line-height: 4rem;
             }
         }
         &::before{
@@ -88,14 +74,14 @@
     }
 
     .quick-fact{
-        padding: 3vmin 0;
+        padding: 6rem 0;
         .quick-fact-inner-content{
             background: $mainOrange;
-            padding: 3.5vmin 12vmin 1vmin;
-            margin: 0 7.5vmin;
+            padding: 3.5rem 15rem 1rem;
+            margin: 0 7.5rem;
             color: #fff;
             .section-header{
-                margin: 0 0 1vmin;
+                margin: 0 0 3rem;
             }
             .section-header__title{
                 color: #fff;
@@ -109,42 +95,30 @@
             }
             .quick-fact-block {
                 text-align: center;
-                margin: 0 0 3vmin;
+                margin: 0 0 5rem;
                 .quick-fact-icon {
-                    width: 6vmin;
-                    height: 6vmin;
+                    width: 6rem;
+                    height: 6rem;
                     border: 1px solid #fff;
-                    border-radius: .6vmin;
+                    border-radius: .6rem;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    margin: 0 auto 1.5vmin;
-                    img{
-                        width: 60%;
-                    }
+                    margin: 0 auto 1.5rem;
                 }
                 h3{
-                    font-size: 2.2vmin;
+                    font-size: 2.2rem;
                     font-weight: 500;
-                    padding: 0 5vmin;
+                    padding: 0 5rem;
                 }
             }
         }
     }
 
     .our-locations{
-        padding: 2vmin 0;
-        .section-header{
-            margin: 0 0 1vmin;
-            &__title{
-                margin: 0 0 .5vmin;
-            }
-        }
+        padding: 6rem 0;
         .thumbnail-img{
             text-align: center;
-            img{
-                width: 100vmin;
-            }
         }
         .location-detail{
             text-align: center;
@@ -156,14 +130,14 @@
                     display: inline-block;
                     text-align: left;
                     position: relative;
-                    padding: 0 5vmin 0 5.5vmin;
+                    padding: 0 5rem 0 5.5rem;
                     vertical-align: top;
-                    margin: 0 0 2vmin;
+                    margin: 0 0 2rem;
                     .location-marker {
-                        width: 4vmin;
-                        height: 4vmin;
+                        width: 4rem;
+                        height: 4rem;
                         position: absolute;
-                        top: -.1vmin;
+                        top: -.1rem;
                         left: 0;
                         background: #000;
                         &.usa{
@@ -189,12 +163,12 @@
                     }
                     h3{
                         margin: 0;
-                        font-size: 1.4vmin;
+                        font-size: 1.4rem;
                         font-weight: 400;
                         span{
                             text-transform: uppercase;
                             font-weight: 800;
-                            font-size: 1.8vmin;
+                            font-size: 1.8rem;
                             display: block;
                         }
                     }
@@ -204,14 +178,11 @@
     }
 
     .speak-with-expert{
-        padding: 2vmin 0;
+        padding: 6rem 0;
         background: rgba($color: #000000, $alpha: .03);
         text-align: center;
         .section-header{
-            margin-bottom: 3vmin;
-            &__title{
-                margin: 0 0 .5vmin;
-            }
+            margin-bottom: 3rem;
             .section-header__decoration-element{
                 &::after{
                     background-color: #1a1a1a;
@@ -228,44 +199,44 @@
             height: auto;
             display: inline-block;
             text-transform: inherit;
-            font-size: 2.4vmin;
+            font-size: 2.4rem;
             max-height: none;
             font-family: 'Product Sans', sans-serif;
-            padding: 1.5vmin 5.3vmin;
+            padding: 1.5rem 5.3rem;
         }
     }
 }
 
-// @media(min-width:1680px){
-//     .site-main{
-//         .welcom-section,.our-locations{
-//             padding: 0;
-//         }
-//         .ceo-detail {
-//             padding: 3.3vmin 0;
-//             .thumbnal-img{
-//                 img {
-//                     width: 75%;
-//                 }
-//             } 
-//             .ceo-content {
-//                 padding-top: 2vmin;
-//                 padding-bottom: 2vmin;
-//             }
-//         }
-//         .quick-fact {
-//             padding: 2vmin 0;
-//             .quick-fact-inner-content{
-//                 .section-header {
-//                     margin: 0 0 1vmin;
-//                 }
-//                 .quick-fact-block {
-//                     margin: 0 0 2vmin;
-//                 }
-//             } 
-//         }
-//         .speak-with-expert {
-//             padding-bottom: 10vmin;
-//         }
-//     } 
-// }
+@media(min-width:1680px){
+    .site-main{
+        .welcom-section,.our-locations{
+            padding: 0;
+        }
+        .ceo-detail {
+            padding: 3.3rem 0;
+            .thumbnal-img{
+                img {
+                    width: 75%;
+                }
+            } 
+            .ceo-content {
+                padding-top: 2rem;
+                padding-bottom: 2rem;
+            }
+        }
+        .quick-fact {
+            padding: 2rem 0;
+            .quick-fact-inner-content{
+                .section-header {
+                    margin: 0 0 1rem;
+                }
+                .quick-fact-block {
+                    margin: 0 0 2rem;
+                }
+            } 
+        }
+        .speak-with-expert {
+            padding-bottom: 10rem;
+        }
+    } 
+}

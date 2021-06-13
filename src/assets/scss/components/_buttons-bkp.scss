@@ -1,16 +1,16 @@
 %btn{
-	border-radius: .5vmin;
+	border-radius: 5px;
 	border: none;
-	padding: 1.2vmin 2.2vmin;
-	border-radius: .5vmin;
+	padding: 1.2rem 2.2rem;
+	border-radius: 5px;
 	font-family: 'Roboto', sans-serif;
-	font-size: 1.4vmin;
+	font-size: 1.4rem;
 	font-weight: 500;
 	display: flex;
 	align-items: center;
 	max-width: max-content;
-	max-height: 5vmin;
-	height: 50vmin;
+	max-height: 50px;
+	height: 50rem;
 }
 
 .btn--orange{
@@ -19,7 +19,7 @@
 	color: #fff;
 	text-transform: uppercase;
 	transition: all .3s ease-in;
-	// box-shadow: 0 1vmin 2vmin rgba(#3f3f3f, 0.2);
+	box-shadow: 0 10px 20px rgba(#3f3f3f, 0.2);
 
 	.btn-txt-um{
 		display: none;
@@ -30,22 +30,22 @@
 	}
 
 	.fas{
-		margin-right: .7vmin;
+		margin-right: .7rem;
 	}
 
 	&:hover{
 		text-decoration: none;
 		color: #fff;
 		background-color: $darkOrange;
-		transform: translateY(-.02vmin);
-        // box-shadow: 0 1vmin 2vmin rgba(#3f3f3f, 0.2);
+		transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(#3f3f3f, 0.2);
 	}
 
 	&:active,
     &:focus{
         outline: none;
-        transform: translateY(-.01vmin);
-        // box-shadow: 0 5px 10px rgba(#3f3f3f, 0.2);
+        transform: translateY(-1px);
+        box-shadow: 0 5px 10px rgba(#3f3f3f, 0.2);
     }
 }
 
@@ -54,48 +54,48 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	width: 39vmin;
-	height: 8vmin;
+	width: 39rem;
+	height: 8rem;
 	background-color: rgba( #3f3f3f, 0.1);
 	color: #fff;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 4vmin;
+	margin-top: 4rem;
 	cursor: pointer;
 	transition: transform .3s;
 
 	span{
-		margin-bottom: .7vmin;
+		margin-bottom: 7px;
 		font-family: 'Roboto', sans-serif;
-		font-size: 1.5vmin;
+		font-size: 1.5rem;
 		font-weight: 500;
 		text-transform: uppercase;
 	}
 
 	&:hover{
-		transform: translateY(-.5vmin);
-        // box-shadow: 0 10px 20px rgba(#3f3f3f, 0.09);
+		transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(#3f3f3f, 0.09);
 	}
 
 	&:active,
     &:focus{
         outline: none;
-        transform: translateY(-.01vmin);
-        // box-shadow: 0 5px 10px rgba(#3f3f3f, 0.09);
+        transform: translateY(-1px);
+        box-shadow: 0 5px 10px rgba(#3f3f3f, 0.09);
     }
 }
 
 .btn--outline{
 	@extend %btn;
 	color: #fff;
-	border: solid .01vmin #fff;
+	border: solid 1px #fff;
 	background-color: transparent;
 	transition: all .2s ease-in-out;
 	text-decoration: none;
 
 	.fas{
-		font-size: 1.1vmin;
-		margin-left: .7vmin;
+		font-size: 11px;
+		margin-left: 7px;
 		transition: all .2s ease-in-out;
 	}
 
@@ -103,13 +103,13 @@
 	&:active,
     &:focus{
 		border: #fff;
-		border: solid .01vmin #fff;
+		border: solid 1px #fff;
 		color: $mainOrange;
 		text-decoration: none;
 		background-color: #fff;
 
 		.fas{
-			margin-left: 1.3vmin;
+			margin-left: 13px;
 		}
 	}
 }
@@ -117,14 +117,14 @@
 .btn--outline-dark{
 	@extend %btn;
 	color: $black;
-	border: solid .01vmin $black;
+	border: solid 1px $black;
 	background-color: transparent;
 	transition: all .2s ease-in-out;
 	text-decoration: none;
 
 	.fas{
-		font-size: 1.1vmin;
-		margin-left: .07vmin;
+		font-size: 11px;
+		margin-left: 7px;
 		transition: all .2s ease-in-out;
 	}
 
@@ -132,20 +132,20 @@
 	&:active,
     &:focus{
 		border: #fff;
-		border: solid .01vmin $mainOrange;
+		border: solid 1px $mainOrange;
 		color: $mainOrange;
 		text-decoration: none;
 		background-color: #fff;
 
 		.fas{
-			margin-left: 1.3vmin;
+			margin-left: 13px;
 		}
 	}
 }
 
 .btn-icon{
-	width: 2.5vmin;
-	margin-right: 1vmin;
+	width: 2.5rem;
+	margin-right: 1rem;
 	overflow: hidden;
 
 	img{
@@ -167,6 +167,6 @@
 		outline: none;
 	}
 	.fas{
-		margin: 0 0 0 1vmin;
+		margin: 0 0 0 1rem;
 	}
 }

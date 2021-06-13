@@ -38,6 +38,9 @@
        background: #fff;
        border-radius: .5vmin;
        box-shadow: 0 .06vmin 2vmin 0 rgba($color: #000000, $alpha: .07);
+        img {
+            height: 60%;
+        }
     }
     h3{
         font-family: "Product Sans", sans-serif;

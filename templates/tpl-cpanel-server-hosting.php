@@ -124,63 +124,6 @@ while ( have_posts() ) : the_post();
 				</div>
 			</div>
 		</section>
-		<!-- <section class="cpanel-dashboard-carousel">
-			<div class="wrapper">
-				<div id="cpanelDashboardCarousel" class="carousel carousel-fade" data-ride="carousel">
-					<div class="carousel-inner">
-						<div class="carousel-item active">
-							<img src="<?php //echo get_template_directory_uri() . '/dist/assets/images/cpanel-dashboard-img.jpg'; ?>" alt="cpanel-dashboard-img">
-						</div>
-						<div class="carousel-item">
-							<img src="<?php //echo get_template_directory_uri() . '/dist/assets/images/cpanel-dashboard-img2.jpg'; ?>" alt="cpanel-dashboard-img2">
-						</div>
-						<div class="carousel-item">
-							<img src="<?php //echo get_template_directory_uri() . '/dist/assets/images/cpanel-dashboard-img3.jpg'; ?>" alt="cpanel-dashboard-img3">
-						</div>
-						<div class="carousel-item">
-							<img src="<?php // get_template_directory_uri() . '/dist/assets/images/cpanel-dashboard-img4.jpg'; ?>" alt="cpanel-dashboard-img4">
-						</div>
-					</div>
-					<div class="carousel-counter">
-						<div class="row">
-							<div class="col-md-3">
-								<div class="db-carousel-txt">
-									<h2 class="section-header__title">cPanel New Dash Baord</h2>
-									<a class="carousel-control-prev" href="#cpanelDashboardCarousel" role="button" data-slide="prev">
-										<svg xmlns="http://www.w3.org/2000/svg" width="7.103" height="12.186" viewBox="0 0 7.103 12.186">
-											<path id="Path_4310" data-name="Path 4310" d="M330.781,90.9l5.826-5.461a.407.407,0,0,1,.549,0,.348.348,0,0,1,0,.515l-5.163,4.84c-.379.341-.289.47,0,.728l5.163,4.84a.348.348,0,0,1,0,.515.407.407,0,0,1-.549,0l-5.827-5.461A.348.348,0,0,1,330.781,90.9Z" transform="translate(-330.667 -85.333)" stroke="#1a1a1a" stroke-width="0.5"/>
-										</svg>
-									</a>
-									<a class="carousel-control-next" href="#cpanelDashboardCarousel" role="button" data-slide="next">
-										<svg xmlns="http://www.w3.org/2000/svg" width="7.103" height="12.186" viewBox="0 0 7.103 12.186">
-											<path id="Path_4310" data-name="Path 4310" d="M330.781,90.9l5.826-5.461a.407.407,0,0,1,.549,0,.348.348,0,0,1,0,.515l-5.163,4.84c-.379.341-.289.47,0,.728l5.163,4.84a.348.348,0,0,1,0,.515.407.407,0,0,1-.549,0l-5.827-5.461A.348.348,0,0,1,330.781,90.9Z" transform="translate(-330.667 -85.333)" stroke="#1a1a1a" stroke-width="0.5"/>
-										</svg>
-									</a>
-								</div>
-							</div>
-							<div class="col-md-9">
-								<div class="db-carousel-indicators-wrap">
-									<ol class="carousel-indicators">
-										<li data-target="#cpanelDashboardCarousel" data-slide-to="0" class="active">
-											<img src="<?php //echo get_template_directory_uri() . '/dist/assets/images/cpanel-dashboard-img.jpg'; ?>" alt="cpanel-dashboard-img">
-										</li>
-										<li data-target="#cpanelDashboardCarousel" data-slide-to="1">
-											<img src="<?php //echo get_template_directory_uri() . '/dist/assets/images/cpanel-dashboard-img2.jpg'; ?>" alt="cpanel-dashboard-img2">
-										</li>
-										<li data-target="#cpanelDashboardCarousel" data-slide-to="2">
-											<img src="<?php //echo get_template_directory_uri() . '/dist/assets/images/cpanel-dashboard-img3.jpg'; ?>" alt="cpanel-dashboard-img3">
-										</li>
-										<li data-target="#cpanelDashboardCarousel" data-slide-to="3">
-											<img src="<?php //echo get_template_directory_uri() . '/dist/assets/images/cpanel-dashboard-img4.jpg'; ?>" alt="cpanel-dashboard-img4">
-										</li>
-									</ol>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section> -->
 
 		<section class="get-cp-server">
 			<div class="wrapper">

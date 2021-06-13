@@ -1,6 +1,6 @@
 .cp-sh-page-banner{
     .page-banner-content{
-        padding: 11vmin 0 4vmin;
+        padding: 8vmin 0 3vmin;
         p{
             margin: 0 0 2vmin;
         }
@@ -8,9 +8,9 @@
 }
 
 .cpanel-features{
-    padding: 4vmin 0 1vmin;
+    padding: 2vmin 0 1vmin;
     .section-header{
-        margin: 0 0 5vmin;
+        margin: 0 0 3vmin;
         .section-header__Orangesub-title{
             max-width: 98.4vmin;
             margin: 0 auto;
@@ -25,7 +25,7 @@
     flex-direction: column;
     min-height: 12vmin;
     justify-content: center;
-    margin: 0 0 4vmin;
+    margin: 0 0 3vmin;
     .cp-feat-icon{
        position: absolute;
        left: 0;
@@ -52,11 +52,16 @@
 
 .cpanel-dashboard-carousel{
     background: #00020A;
-    padding: 5vmin 0 8vmin;
+    padding: 5vmin 0;
     color: #fff;
     .carousel-inner{
         max-width: 86vmin;
         margin: 0 auto 4.5vmin;
+        .carousel-item{
+            img{
+                width: 100%;
+            }
+        }
     }
     .db-carousel-txt{
         text-align: right;
@@ -107,7 +112,7 @@
             li{
                 flex: none;
                 opacity: 1;
-                width: 21.4vmin;
+                width: 21.3vmin;
                 height: 10.8vmin;
                 text-indent: unset;
                 margin: 0;
@@ -135,9 +140,9 @@
     background: $mainOrange;
     text-align: center;
     color: #fff;
-    padding: 3vmin 0;
+    padding: 2vmin 0 5vmin;
     .section-header{
-        margin: 0 0 3.5vmin;
+        margin: 0 0 2vmin;
         .section-header__title{
             font-size: 3.4vmin;
         }
@@ -157,7 +162,7 @@
         }
     }
     p{
-        margin: 3.5vmin 0 0;
+        margin: 2vmin 0 0;
         font-weight: 500;
     }
 }

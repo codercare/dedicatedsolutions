@@ -1,11 +1,11 @@
 @mixin header-on-scroll{
 	border-top-width: 0;
-	border-bottom-width: .1vmin;
+	border-bottom-width: .1rem;
 	.inner-head-wrapper{
-		padding: .4vmin 0;
+		padding: .4rem 0;
 	}
 	.site-header__logo{
-		width: 17.5vmin;
+		width: 175px;
 	}
 	.header-navigation{
 		.menu{
@@ -16,55 +16,51 @@
 		}
 	} 
 	.btn--orange{
-		font-size: 1.2vmin;
-		padding: .5vmin 1.4vmin;
+		font-size: 1.2rem;
+		padding: .5rem 1.4rem;
 		.btn-icon{
-			width: 1.8vmin;
+			width: 1.8rem;
 		}
 	} 
 	&::before{
-		border-bottom-width: .1vmin;
+		border-bottom-width: .1rem;
 	}
 }
 
 .site-header {
-	border-bottom: .3vmin solid $mainOrange;
+	border-bottom: .3rem solid $mainOrange;
 	background: #fff;
 	transition: .05s all ease-in-out;
 	border-top: none;
-	z-index: 999;
-	position: relative;
 	&::before {
 		content: "";
-		border-bottom: .3vmin solid $mainOrange;
+		border-bottom: .3rem solid $mainOrange;
 		display: block;
 	}
 	.inner-head-wrapper{
-		padding: .8vmin 0;
+		padding: .8rem 0;
 	}
 
 	.container {
-		padding-top: .7vmin;
-		padding-bottom: .7vmin;
+		padding-top: 7px;
+		padding-bottom: 7px;
 	}
 
 	&__logo {
-		width: 17.5vmin;
+		width: 175px;
 		overflow: hidden;
 
 		@include respond(tab-land) {
-			width: 23vmin;
+			width: 230px;
 		}
 
 		img {
-			// object-fit: cover;
-			width: auto;
-    		height: auto;
+			object-fit: cover;
 		}
 	}
 
 	.btn--orange{
-		padding: .7vmin 1vmin;
+		padding: .7rem 1rem;
 		max-width: none;
 		max-height: none;
 		height: auto;
@@ -74,23 +70,23 @@
 			margin: 0;
 		}
 		@include respond(tab-land){
-			padding: 1.1vmin 2.45vmin;
+			padding: 1.1rem 2.45rem;
 			max-width: none;
 			max-height: none;
 			height: auto;
 			box-shadow: none;
 			.btn-icon {
-				margin-right: 1vmin;
+				margin-right: 1rem;
 			}
 		}
 	}
 
 	&__menu-icon {
-		width: 2vmin;
-		height: 1.9vmin;
+		width: 20px;
+		height: 19px;
 		position: relative;
 		z-index: 2;
-		margin-left: .7vmin;
+		margin-left: 7px;
 
 		@include respond(tab-land) {
 			display: none;
@@ -101,20 +97,20 @@
 			position: absolute;
 			top: 0;
 			left: 0;
-			width: 2vmin;
+			width: 20px;
 			background-color: $mainOrange;
-			height: .3vmin;
+			height: 3px;
 			transform-origin: 0 0;
 			transition: transform 0.4s ease-out;
 		}
 
 		&__middle {
 			position: absolute;
-			top: .8vmin;
+			top: 8px;
 			left: 0;
-			width: 2vmin;
+			width: 20px;
 			background-color: $mainOrange;
-			height: .3vmin;
+			height: 3px;
 			transition: all 0.4s ease-out;
 			transform-origin: 0 0;
 		}
@@ -122,11 +118,11 @@
 		&::after {
 			content: "";
 			position: absolute;
-			bottom: 0;
+			bottom: 0px;
 			left: 0;
-			width: 2vmin;
+			width: 20px;
 			background-color: $mainOrange;
-			height: .3vmin;
+			height: 3px;
 			transform-origin: 0 100%;
 			transition: transform 0.4s ease-out;
 		}
@@ -158,7 +154,7 @@
 		height: 100vh;
 		width: 100vw;
 		background-color: #fafafa;
-		border-bottom: .3vmin solid $mainOrange;
+		border-bottom: 3px solid $mainOrange;
 
 		&--is-visible {
 			transform: scale(1);
@@ -172,7 +168,7 @@
 		left: 0;
 		z-index: 999;
 		width: 100%;
-		border-top: 2.5vmin solid $darkGrey;
+		border-top: 2.5rem solid $darkGrey;
 		&--on-scroll{
 			@include header-on-scroll;
 		}

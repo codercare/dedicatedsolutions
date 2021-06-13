@@ -1,33 +1,31 @@
 .tech-support-card{
-	padding: 5vmin 4vmin 6vmin 5vmin;
+	padding: 5rem 4rem 6rem 5rem;
 	background-position: center;
 	background-repeat: no-repeat;
 	color: #fff;
 	position: relative;
-	margin-bottom: 1vmin;
-	background-size: 30vmin;
+	margin-bottom: 1rem;
 	
 
 	&__title{
 		font-family: 'Product Sans', sans-serif;
 		font-weight: 700;
-		font-size: 3.6vmin;
-		margin-bottom: 2vmin;
+		font-size: 3.6rem;
+		margin-bottom: 2rem;
 	}
 
 	&__description{
-		margin-bottom: 4.5vmin;
+		margin-bottom: 4.5rem;
 	}
 
 	&__icon-container{
 		position: absolute;
-		right: 4vmin;
-		bottom: 6vmin;
-		width: 6vmin;
+		right: 4rem;
+		bottom: 6rem;
+		width: 6rem;
 		overflow: hidden;
 		img{
 			object-fit: cover;
-			width: 100%;
 		}
 	}
 }

@@ -10,6 +10,7 @@
     align-items: center;
     justify-content: center;
 	padding: 10vmin 0;
+	height: calc(100vh - 14vmin);
 
 	// @include respond(small){
 	// 	height: 90vh;
@@ -51,7 +52,7 @@
 		align-items: center;
 
 		@include respond(small){
-			max-width: 435px;
+			max-width: 43.5vmin;
 			justify-content: space-between;
 			flex-direction: row;
 			align-items: center;
@@ -94,15 +95,15 @@
 		}
 
 		.fas{
-			margin-right: 7px;
+			margin-right: .07vmin;
 			color: $mainOrange;
 		}
 	}
 }
 
-@media(min-width: 1680px){
-    .large-banner{
-		height: calc(100vh - 14.5vmin);
-		padding: 0;
-	}
-}
+// @media(min-width: 1680px){
+//     .large-banner{
+		
+// 		padding: 0;
+// 	}
+// }

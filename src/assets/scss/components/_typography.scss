@@ -14,19 +14,19 @@
   }
 
   &__decoration-element {
-    border-bottom: solid 1px #1a1a1a;
-    border-top: solid 1px #1a1a1a;
-    height: 10px;
+    border-bottom: solid .1vmin #1a1a1a;
+    border-top: solid .1vmin #1a1a1a;
+    height: 1vmin;
     width: 4.4vmin;
     display: inline-block;
     position: relative;
-    margin-top: 7px;
+    margin-top: .7vmin;
     margin-bottom: 1.8vmin;
     color: inherit;
 
     &::after {
       content: "";
-      height: 1px;
+      height: .1vmin;
       width: 70%;
       text-align: center;
       display: block;
@@ -48,19 +48,19 @@
 
 
   .section-header__decoration-element--dark {
-    border-bottom: solid 1px #fff;
-    border-top: solid 1px #fff;
-    height: 10px;
+    border-bottom: solid .1vmin #fff;
+    border-top: solid .1vmin #fff;
+    height: 1vmin;
     width: 4.4vmin;
     display: inline-block;
     position: relative;
-    margin-top: 7px;
+    margin-top: .7vmin;
     margin-bottom: 1.8vmin;
     color: inherit;
 
     &::after {
       content: "";
-      height: 1px;
+      height: .1vmin;
       width: 70%;
       text-align: center;
       display: block;

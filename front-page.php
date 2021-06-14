@@ -87,7 +87,7 @@ if ( ! empty( $banner_image ) ) {
 							$sc_bg_image_url = 'background-image: url(' . $satisfied_customer_background_image['url'] . ');';
 						}
 						?>
-					<div class="rows__medium-4">
+					<div class="rows__medium-4 rows__small-6">
 						<div class="customer-cards" style="background-color: <?php echo $satisfied_customer_background_color.'; '; echo $sc_bg_image_url; ?>">
 							<h4 class="customer-cards__title"><?php the_sub_field( 'satisfied_customer_title' ); ?></h4>
 							<p class="customer-cards__details"><?php the_sub_field( 'satisfied_customer_content' ); ?></p>						
@@ -130,7 +130,7 @@ if ( ! empty( $banner_image ) ) {
 							while ( have_rows( 'data_center_locations_content_blocks' ) ) :
 								the_row();
 								?>
-							<div class="rows__medium-6">
+							<div class="rows__medium-6 rows__small-6">
 								<div class="datalocation-card">
 									<div class="datalocation-card__header">
 										<div class="datalocation-card__icon">
@@ -170,7 +170,7 @@ if ( ! empty( $banner_image ) ) {
 									if ( ! empty( $data_center_image ) ) {
 										$data_center_image_url = $data_center_image['url'];
 										?>
-								<div class="rows__medium-3">
+								<div class="rows__medium-3 rows__small-3">
 									<div class="datacenter__image-container">
 										<img src="<?php echo $data_center_image_url; ?>" alt="data-center-img" />
 									</div>
@@ -242,7 +242,7 @@ if ( ! empty( $banner_image ) ) {
 						if ( ! empty( $icon_feature_block_image ) ) {
 							$icon_block_image = $icon_feature_block_image['url'];
 							?>
-						<div class="rows__medium-4">
+						<div class="rows__medium-4 rows__small-4">
 							<div class="feature-highlight-card">
 								<div class="feature-highlight-card__image-container">
 									<img src="<?php echo $icon_block_image; ?>" alt="" srcset="">
@@ -278,7 +278,7 @@ if ( ! empty( $banner_image ) ) {
 						the_row();
 						$section_background_color = get_sub_field( 'section_background_color' );
 						?>
-					<div class="rows__medium-6">
+					<div class="rows__medium-6 rows__small-6">
 						<div class="services-card" style="background-color:<?php echo $section_background_color; ?>">
 							<div class="services-card__image-container">
 								<?php
@@ -327,7 +327,7 @@ if ( ! empty( $banner_image ) ) {
 					// if($count_p > 4){ break; }
 					$product_image = get_sub_field( 'feature_block_icon_image' );
 					?>
-				<div class="rows__medium-3">
+				<div class="rows__medium-3 rows__small-6">
 					<div class="product-card">
 						<div class="product-card__image-container">
 							<img src="<?php echo $product_image['url']; ?>" alt="<?php the_sub_field( 'feature_block_title' ); ?>" >

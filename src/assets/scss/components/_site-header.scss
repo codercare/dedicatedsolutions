@@ -5,7 +5,12 @@
 		padding: .4vmin 0;
 	}
 	.site-header__logo{
-		width: 17.5vmin;
+		img{
+			@include respond(tab-land){
+				width: 60%;
+			}
+		}
+		// width: 17.5vmin;
 	}
 	.header-navigation{
 		.menu{
@@ -31,9 +36,15 @@
 	border-bottom: .3vmin solid $mainOrange;
 	background: #fff;
 	transition: .05s all ease-in-out;
-	border-top: none;
+	position: fixed;
+	top: 0;
+	left: 0;
 	z-index: 999;
-	position: relative;
+	width: 100%;
+	border-top: 2.5vmin solid $darkGrey;
+	&.site-header--on-scroll{
+		@include header-on-scroll;
+	}
 	&::before {
 		content: "";
 		border-bottom: .3vmin solid $mainOrange;
@@ -49,17 +60,20 @@
 	}
 
 	&__logo {
-		width: 17.5vmin;
-		overflow: hidden;
+		// width: 17.5vmin;
+		// overflow: hidden;
 
-		@include respond(tab-land) {
-			width: 23vmin;
-		}
+		// @include respond(tab-land) {
+		// 	width: 23vmin;
+		// }
 
 		img {
 			// object-fit: cover;
-			width: auto;
-    		height: auto;
+			height: auto;
+			width: 45%;
+			@include respond(tab-land){
+				width: 81%;
+			}
 		}
 	}
 
@@ -166,16 +180,16 @@
 			z-index: 2;
 		}
 	}
-	@include respond(big-desktop){
-		position: fixed;
-		top: 0;
-		left: 0;
-		z-index: 999;
-		width: 100%;
-		border-top: 2.5vmin solid $darkGrey;
-		&--on-scroll{
-			@include header-on-scroll;
-		}
-	}
+	// @include respond(big-desktop){
+	// 	// position: fixed;
+	// 	// top: 0;
+	// 	// left: 0;
+	// 	// z-index: 999;
+	// 	// width: 100%;
+	// 	// border-top: 2.5vmin solid $darkGrey;
+	// 	&--on-scroll{
+	// 		@include header-on-scroll;
+	// 	}
+	// }
 
 }

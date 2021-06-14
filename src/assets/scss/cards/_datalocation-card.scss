@@ -10,12 +10,13 @@
 	}
 
 	&__icon{
-		max-width: 4.5vmin;
+		width: 4.5vmin;
 		overflow: hidden;
 		margin-right: 1vmin;
 
 		img{
 			object-fit: cover;
+			width: 100%;
 		}
 	}
 

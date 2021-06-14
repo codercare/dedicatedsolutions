@@ -10,7 +10,7 @@
     align-items: center;
     justify-content: center;
 	padding: 10vmin 0;
-	height: calc(100vh - 14vmin);
+	height: calc(100vh - 15vmin);
 
 	// @include respond(small){
 	// 	height: 90vh;
@@ -62,6 +62,7 @@
 
 	&__features{
 		margin-top: 3vmin;
+		text-align: center;
 
 		@include respond(small){
 			margin-top: 7vmin;

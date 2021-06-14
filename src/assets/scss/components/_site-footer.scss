@@ -2,6 +2,12 @@
 	background-color: $black;
 	color: #fff;
 	padding: 2vmin 0;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	padding: .3vmin 0;
+	z-index: 999;
 	&.site-inner-footer{
 		position: fixed;
 		bottom: 0;
@@ -9,25 +15,25 @@
 		width: 100%;
 	}
 
-	@include respond(big-desktop){
-		position: fixed;
-		bottom: 0;
-		left: 0;
-		width: 100%;
-		padding: .3vmin 0;
-		z-index: 999;
-	}
+	// @include respond(big-desktop){
+	// 	position: fixed;
+	// 	bottom: 0;
+	// 	left: 0;
+	// 	width: 100%;
+	// 	padding: .3vmin 0;
+	// 	z-index: 999;
+	// }
 
 	&__content{
 		display: flex;
 		align-items: center;
-		flex-direction: column;
+		flex-direction: row;
 		flex-wrap: wrap;
 		justify-content: center;
 
-		@include respond(tab-land){
-			flex-direction: row;
-		}
+		// @include respond(tab-land){
+		// 	flex-direction: row;
+		// }
 	}
 
 	&__btn-container{
@@ -50,31 +56,33 @@
 }
 
 .payment-methods{
-	display: block;
-	margin: 0 0 2vmin;
+	display: flex;
+	align-items: center;
+	margin: 0 3vmin 0 0;
 
-	@include respond(tab-land){
-		display: flex;
-		align-items: center;
-		margin: 0 3vmin 0 0;
-	}
-	@include respond(screen-md-laptop){
-		margin: 0 2vmin 0 0;
-	}
+	// @include respond(tab-land){
+	// 	display: flex;
+	// 	align-items: center;
+	// 	margin: 0 3vmin 0 0;
+	// }
+	// @include respond(screen-md-laptop){
+	// 	margin: 0 2vmin 0 0;
+	// }
 
 	&__title{
 		font-family: 'Product Sans', sans-serif;
 		font-size: 1.6vmin;
 		font-weight: 700;
-		display: block;
-		margin: 0 0 1vmin;
-		text-align: center;
-		@include respond(tab-land){
-			display: flex;
-			flex-direction: column;
-			margin: 0 1vmin 0;
-			text-align: left;
-		}
+		display: flex;
+		margin: 0 1vmin 0;
+		text-align: left;
+		flex-direction: column
+		// @include respond(tab-land){
+		// 	display: flex;
+		// 	flex-direction: column;
+		// 	margin: 0 1vmin 0;
+		// 	text-align: left;
+		// }
 	}
 
 	&__list{
@@ -101,15 +109,15 @@
 .us-support{
 	position: relative;
 	padding-left: 5vmin;
-	margin: 0 0 2vmin;
+	margin: 0 3vmin 0 0;
 
-	@include respond(tab-land){
-		margin: 0 3vmin 0 0;
-	}
+	// @include respond(tab-land){
+	// 	margin: 0 3vmin 0 0;
+	// }
 
-	@include respond(screen-md-laptop){
-		margin: 0 2vmin 0 0;
-	}
+	// @include respond(screen-md-laptop){
+	// 	margin: 0 2vmin 0 0;
+	// }
 
 	&__title{
 		font-family: 'Product Sans', sans-serif;
@@ -138,14 +146,14 @@
 	list-style: none;
 	display: flex;
 	padding: 0;
-	margin: 0 0 2vmin;
+	margin: 0 3vmin 0 0;
 
-	@include respond(tab-land){
-		margin: 0 3vmin 0 0;
-	}
-	@include respond(screen-md-laptop){
-		margin: 0 2vmin 0 0;
-	}
+	// @include respond(tab-land){
+	// 	margin: 0 3vmin 0 0;
+	// }
+	// @include respond(screen-md-laptop){
+	// 	margin: 0 2vmin 0 0;
+	// }
 
 	&__item{
 		&:not(:last-child){
@@ -165,13 +173,14 @@
 		line-height: 1vmin;
 		display: block;
 		color: #fff;
+		max-width: 15vmin;
 
-		@include respond(tab-port){
-			max-width: 15vmin;
-		}
-		@include respond(screen-md-laptop){
-			max-width: 13vmin;
-		}
+		// @include respond(tab-port){
+		// 	max-width: 15vmin;
+		// }
+		// @include respond(screen-md-laptop){
+		// 	max-width: 13vmin;
+		// }
 
 		&:hover{
 			color: inherit;

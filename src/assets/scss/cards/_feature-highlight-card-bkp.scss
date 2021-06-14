@@ -3,26 +3,26 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	border-right: .1vmin solid #484848;
+	border-right: 1px solid #484848;
 
 	&__image-container{
-		width: 5vmin;
+		width: 5rem;
 		img{
 			object-fit: cover;
 		}
 	}
 
 	&__title{
-		font-size: 1.4vmin;
+		font-size: 1.4rem;
 		font-weight: 500;
 		color: #fff;
-		margin-top: 2.3vmin;
-		margin-bottom: 1.2vmin;
+		margin-top: 2.3rem;
+		margin-bottom: 1.2rem;
 	}
 
 	&__description{
 		color: #fff;
 		font-weight: 400;
-		font-size: 2.4vmin;
+		font-size: 2.4rem;
 	}
 }

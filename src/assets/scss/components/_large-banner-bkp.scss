@@ -9,8 +9,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-	padding: 10vmin 0;
-	height: calc(100vh - 15vmin);
+	padding: 10rem 0;
 
 	// @include respond(small){
 	// 	height: 90vh;
@@ -21,26 +20,26 @@
 		// @include absCenter;
 		// min-width: 80vw;
 		// text-align: center;
-		padding: 9.7vmin 0 0;
+		padding: 9.7rem 0 0;
 	}
 
 	&__heading{
 		font-family: "Product Sans", sans-serif;
 		font-weight: 700;
-		font-size: 3.6vmin;
-		margin-bottom: 2vmin;
+		font-size: 3.6rem;
+		margin-bottom: 2rem;
 		text-align: center;
 		color: #fff;
-		padding: 0 3vmin;
+		padding: 0 3rem;
 
 		@include respond(small){
-			font-size: 4.8vmin;
-			margin-bottom: 2.5vmin;
+			font-size: 4.8rem;
+			margin-bottom: 2.5rem;
 		}
 
 		@include respond(tab-port){
-			font-size: 6vmin;
-			margin-bottom: 2.5vmin;
+			font-size: 6rem;
+			margin-bottom: 2.5rem;
 		}
 	}
 
@@ -52,7 +51,7 @@
 		align-items: center;
 
 		@include respond(small){
-			max-width: 43.5vmin;
+			max-width: 435px;
 			justify-content: space-between;
 			flex-direction: row;
 			align-items: center;
@@ -61,11 +60,10 @@
 	}
 
 	&__features{
-		margin-top: 3vmin;
-		text-align: center;
+		margin-top: 3rem;
 
 		@include respond(small){
-			margin-top: 7vmin;
+			margin-top: 7rem;
 		}
 	}
 
@@ -82,29 +80,29 @@
 	}
 
 	&__features-item{
-		font-size: 1.8vmin;
+		font-size: 1.8rem;
 		font-family: 'Roboto', sans-serif;
 		font-weight: 500;
 		color: #fff;
 		&:not(:last-child){
 			margin-right: 0;
-			margin-bottom: 1vmin;
+			margin-bottom: 1rem;
 
 			@include respond(small){
-				margin-right: 3vmin;
+				margin-right: 3rem;
 			}
 		}
 
 		.fas{
-			margin-right: .07vmin;
+			margin-right: 7px;
 			color: $mainOrange;
 		}
 	}
 }
 
-// @media(min-width: 1680px){
-//     .large-banner{
-		
-// 		padding: 0;
-// 	}
-// }
+@media(min-width: 1680px){
+    .large-banner{
+		height: calc(100vh - 14.5rem);
+		padding: 0;
+	}
+}

@@ -13,15 +13,15 @@
     } 
 
     > .menu-item {
-        margin: 0 2vmin;
+        margin: 0 2rem;
         > a {
             border-bottom: none;
             display: block;
             color: #292828;
             transition: 0.2s color ease;
-            font-size: 1.4vmin;
+            font-size: 1.4rem;
             text-decoration: none;
-            letter-spacing: .025vmin;
+            letter-spacing: .025rem;
         }
         &:hover a, &.open > a {
             color: $mainOrange;
@@ -32,8 +32,8 @@
             list-style: none;
             background: #fff;
             display: none;
-            min-width: 200vmin;
-            border: .01vmin solid #efefef;
+            min-width: 200px;
+            border: 1px solid #efefef;
             border-top-color: #fff;
             z-index: 10;
         }
@@ -46,7 +46,7 @@
                 list-style: none;
                 background: #fff;
                 display: none;
-                min-width: 20vmin;
+                min-width: 200px;
                 left: 100%;
                 font-size: 100%;
                 top: 0px;
@@ -56,7 +56,7 @@
                 margin: 0;
                 position: relative;
                 a {
-                    border-bottom: .01vmin solid #efefef;
+                    border-bottom: 1px solid #efefef;
                     display: block;
                 }
                 &:hover > a {
@@ -72,8 +72,8 @@
 }
 
 .header-navigation .menu ul li{
-    padding: 1vmin;
-    margin: 1vmin;
+    padding: 10px;
+    margin: 10px;
 }
 .header-navigation .menu ul li a:hover{
     color:#000;
@@ -98,7 +98,7 @@
     > .menu-item {
         margin: 0;
         &:not(:last-child){
-            margin-bottom: 1.8vmin;
+            margin-bottom: 18px;
         }
         > a {
             border-bottom: none;

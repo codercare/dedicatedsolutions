@@ -2,11 +2,11 @@
   @include clearfix;
 
   &--t-padding {
-    padding-top: 1vmin;
+    padding-top: 10px;
   }
 
   &--b-padding {
-    padding-bottom: 1vmin;
+    padding-bottom: 10px;
   }
 
   &__display-none-um {
@@ -22,39 +22,39 @@
   }
 
   &--gutters {
-    margin-right: -6vmin;
+    margin-right: -60px;
   }
 
   &--gutters-large {
-    margin-right: -10vmin;
+    margin-right: -100px;
   }
 
   &--gutters-small {
-    margin-right: -2.5vmin;
+    margin-right: -25px;
   }
 
   &--gutters-smaller{
-    margin-right: -1vmin;
+    margin-right: -10px;
   }
 
   &--gutters > div {
-    padding-right: 6vmin;
+    padding-right: 60px;
   }
 
   &--gutters-large > div {
-    padding-right: 10vmin;
+    padding-right: 100px;
   }
 
   &--gutters-small > div {
-    padding-right: 2.5vmin;
+    padding-right: 25px;
   }
 
   &--gutters-smaller > div {
-    padding-right: 1vmin;
+    padding-right: 10px;
   }
 
   &__b-margin-until-medium {
-    margin-bottom: 1vmin;
+    margin-bottom: 1rem;
   }
 
   &__small-2 {

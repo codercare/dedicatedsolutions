@@ -1,5 +1,5 @@
-.section-products{
-	// padding: 5rem 0 12rem;
+.section-services{
+	padding: 10rem 0;
 
 	// @include respond(small){
 	// 	padding-top: 13rem;
@@ -17,8 +17,8 @@
 	// }
 }
 
-// @media(min-width: 1680px){
-// 	.section-products{
-// 		padding: 0
-// 	}
-// }
+@media(min-width: 1680px){
+	.section-services{
+		padding: 0
+	}
+}

@@ -3,7 +3,7 @@
         margin: 0;
     }
     .about-page-banner{
-        @include respond(big-desktop){
+        @include respond(tab-land){
             padding: 7vmin 0 0;
         }
         .page-banner-content{

@@ -13,11 +13,14 @@
 	}
 
 	&__logo{
-		max-width: 10vmin;
+		// max-width: 10vmin;
+		width: 11.2vmin;
 		overflow: hidden;
+		text-align: center;
 
 		img{
-			object-fit: conver;
+			// object-fit: cover;
+			width: 100%;
 		}
 	}
 }

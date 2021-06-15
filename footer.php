@@ -58,7 +58,7 @@
 					fitToSection: true,
 					navigation: true,
 					navigationPosition: 'right',
-					// responsiveWidth: 1680,
+					responsiveWidth: 768,
 					onLeave: function(index, next, direction) {
 						if (next.index != 0) {
 						$('.site-header').addClass('site-header--on-scroll');

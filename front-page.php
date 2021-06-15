@@ -73,7 +73,7 @@ if ( ! empty( $banner_image ) ) {
 				<?php endif; ?>
 			</header>
 			<div class="section-customer__content">
-				<div class="rows rows--gutters-small">
+				<div class="row">
 				<?php
 				if ( have_rows( 'satisfied_customer' ) ) :
 					$i = 1;
@@ -87,7 +87,7 @@ if ( ! empty( $banner_image ) ) {
 							$sc_bg_image_url = 'background-image: url(' . $satisfied_customer_background_image['url'] . ');';
 						}
 						?>
-					<div class="rows__medium-4 rows__small-6">
+					<div class="col-md-4">
 						<div class="customer-cards" style="background-color: <?php echo $satisfied_customer_background_color.'; '; echo $sc_bg_image_url; ?>">
 							<h4 class="customer-cards__title"><?php the_sub_field( 'satisfied_customer_title' ); ?></h4>
 							<p class="customer-cards__details"><?php the_sub_field( 'satisfied_customer_content' ); ?></p>						
@@ -124,13 +124,13 @@ if ( ! empty( $banner_image ) ) {
 				</header>
 				<div class="datacenter-location__content">
 					<div class="wrapper wrapper--medium">
-						<div class="rows rows--gutters-small">
+						<div class="row">
 						<?php
 						if ( have_rows( 'data_center_locations_content_blocks' ) ) :
 							while ( have_rows( 'data_center_locations_content_blocks' ) ) :
 								the_row();
 								?>
-							<div class="rows__medium-6 rows__small-6">
+							<div class="col-md-6">
 								<div class="datalocation-card">
 									<div class="datalocation-card__header">
 										<div class="datalocation-card__icon">
@@ -153,14 +153,14 @@ if ( ! empty( $banner_image ) ) {
 
 		<section class="datacenter">
 			<div class="wrapper">
-				<div class="rows rows--gutters">
-					<div class="rows__medium-4">
+				<div class="row">
+					<div class="col-md-4">
 						<h2 class="section-header__title"><?php the_field( 'our_data_center_title' ); ?></h2>
 						<p class="datacenter__description"><?php the_field( 'our_data_center_content' ); ?></p>
 					</div>
-					<div class="rows__medium-8">
+					<div class="col-md-8">
 						<div class="wrapper">
-							<div class="rows rows--gutters-smaller">
+							<div class="row">
 							<?php
 							if ( have_rows( 'our_data_center_images' ) ) :
 								while ( have_rows( 'our_data_center_images' ) ) :
@@ -170,7 +170,7 @@ if ( ! empty( $banner_image ) ) {
 									if ( ! empty( $data_center_image ) ) {
 										$data_center_image_url = $data_center_image['url'];
 										?>
-								<div class="rows__medium-3 rows__small-3">
+								<div class="col-3">
 									<div class="datacenter__image-container">
 										<img src="<?php echo $data_center_image_url; ?>" alt="data-center-img" />
 									</div>
@@ -199,8 +199,8 @@ if ( ! empty( $banner_image ) ) {
 					<p class="section-header__sub-title"><?php the_field( 'unlimited_bandwidth_section_sub_title' ); ?></p>
 					<?php endif; ?>
 				</header>
-				<div class="rows rows--gutters">
-					<div class="rows__medium-6">
+				<div class="row">
+					<div class="col-md-6">
 						<p class="server-features__text"><?php the_field( 'unlimited_bandwidth_content' ); ?></p>
 						<ul class="server-features__list">
 						<?php
@@ -218,7 +218,7 @@ if ( ! empty( $banner_image ) ) {
 						?>
 						</ul>
 					</div>
-					<div class="rows__medium-6">
+					<div class="col-md-6">
 						<div class="server-features__image-container">
 							<?php $bandwidth_feature_image = get_field( 'unlimited_bandwidth_feature_image' ); ?> 
 							<img src="<?php echo $bandwidth_feature_image['url']; ?>" > 
@@ -230,7 +230,7 @@ if ( ! empty( $banner_image ) ) {
 	
 		<section class="features-highlight">
 			<div class="wrapper">
-				<div class="rows">
+				<div class="row">
 				<?php
 				// Check rows exists.
 				if ( have_rows( 'icon_feature_blocks' ) ) :
@@ -242,7 +242,7 @@ if ( ! empty( $banner_image ) ) {
 						if ( ! empty( $icon_feature_block_image ) ) {
 							$icon_block_image = $icon_feature_block_image['url'];
 							?>
-						<div class="rows__medium-4 rows__small-4">
+						<div class="col-md-4">
 							<div class="feature-highlight-card">
 								<div class="feature-highlight-card__image-container">
 									<img src="<?php echo $icon_block_image; ?>" alt="" srcset="">
@@ -270,7 +270,7 @@ if ( ! empty( $banner_image ) ) {
 				<p class="section-header__sub-title"><?php the_field( 'services_section_sub_title' ); ?></p>
 				<?php endif;  ?>
 			</header>
-			<div class="rows rows--gutters-small">
+			<div class="row">
 				<?php
 				if ( have_rows( 'section_content_blocks' ) ) :
 					$i = 1;
@@ -278,7 +278,7 @@ if ( ! empty( $banner_image ) ) {
 						the_row();
 						$section_background_color = get_sub_field( 'section_background_color' );
 						?>
-					<div class="rows__medium-6 rows__small-6">
+					<div class="col-md-6">
 						<div class="services-card" style="background-color:<?php echo $section_background_color; ?>">
 							<div class="services-card__image-container">
 								<?php
@@ -318,7 +318,7 @@ if ( ! empty( $banner_image ) ) {
 				<?php endif;  ?>
 
 			</header>
-			<div class="rows rows--gutters-smaller">
+			<div class="row">
 			<?php
 			$count_p = 1;
 			if ( have_rows( 'feature_content_blocks' ) ) :
@@ -327,7 +327,7 @@ if ( ! empty( $banner_image ) ) {
 					// if($count_p > 4){ break; }
 					$product_image = get_sub_field( 'feature_block_icon_image' );
 					?>
-				<div class="rows__medium-3 rows__small-6">
+				<div class="col-md-3">
 					<div class="product-card">
 						<div class="product-card__image-container">
 							<img src="<?php echo $product_image['url']; ?>" alt="<?php the_sub_field( 'feature_block_title' ); ?>" >
@@ -357,7 +357,7 @@ if ( ! empty( $banner_image ) ) {
 	<section id="tech-support" class="tech-support page-section section" style="<?php echo $t_and_s_bg_image_url; ?>">
 		<div class="tech-support__content">
 			<div class="wrapper wrapper--medium">
-				<div class="rows rows--gutters-small">
+				<div class="row">
 				<?php
 				if ( have_rows( 'technology_and_support_blocks' ) ) :
 					while ( have_rows( 'technology_and_support_blocks' ) ) :
@@ -373,7 +373,7 @@ if ( ! empty( $banner_image ) ) {
 							$tnsupport_block_bg_image_url = 'background-image: url(' . $technology_and_support_block_bg_image['url'] . ');';
 						}
 						?>
-					<div class="rows__medium-6">
+					<div class="col-md-6">
 						<div class="tech-support-card" style="background-color:<?php the_sub_field( 'technology_and_support_block_color_code' ); ?>;<?php echo $tnsupport_block_bg_image_url; ?>">
 							<h4 class="tech-support-card__title"><?php the_sub_field( 'technology_and_support_block_title' ); ?></h4>
 							<p class="tech-support-card__description"><?php the_sub_field( 'technology_and_support_block_content' ); ?></p>

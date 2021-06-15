@@ -1,30 +1,16 @@
 .datacenter-location{
 	background-color: $black;
-	background-position: center;
-	background-repeat: no-repeat;
-	padding: 11vmin 0 9vmin;
-	// background-attachment: fixed;
-	// padding-top: 4rem;
-	// padding-bottom: 12rem;
-
-	// @include respond(small){
-	// 	padding-top: 13rem;
-	// 	padding-bottom: 13rem;
-	// }
-
-	// @include respond(tab-port){
-	// 	padding-top: 14rem;
-	// 	padding-bottom: 14rem;
-	// }
-
-	// @include respond(tab-land){
-	// 	padding-top: 17rem;
-	// 	padding-bottom: 15rem;
-	// }
+	padding: 3rem 0;
+	background-size: 0;
+	[class^="col-"]:last-child{
+		.datalocation-card{
+			margin: 0;
+		}
+	}
+	@include respond(tab-port){
+		background-position: center;
+		background-repeat: no-repeat;
+		padding: 11vmin 0 9vmin;
+		background-size: 60%;
+	}
 }
-
-// @media(min-width: 1680px){
-//     .datacenter-location{
-// 		padding: 10vmin 0 8vmin;
-// 	}
-// }

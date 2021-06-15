@@ -1,6 +1,9 @@
 .client-showcase{
 	background-color: #F6F6F6;
-	padding: 3.1vmin 0;
+	padding: 1rem 0;
+	@include respond(tab-port){
+		padding: 3.1vmin 0;
+	}
 
 	&__logo-list{
 		list-style: none;
@@ -13,14 +16,20 @@
 	}
 
 	&__logo{
-		// max-width: 10vmin;
-		width: 11.2vmin;
 		overflow: hidden;
 		text-align: center;
+		flex: 1 1 11rem;
+    	padding: 1rem 1.5rem;
+		@include respond(tab-port){
+			width: 11.2vmin;
+			padding: 0;
+			flex: initial;
+		}
 
 		img{
-			// object-fit: cover;
-			width: 100%;
+			@include respond(tab-port){
+				width: 100%;
+			}
 		}
 	}
 }

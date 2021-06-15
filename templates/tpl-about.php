@@ -32,7 +32,7 @@ while ( have_posts() ) : the_post();
 					<p class="section-header__sub-title"><?php the_field( 'weclome_block_sub_title' ); ?></p>
 				</div>
 				<div class="row">
-					<div class="col-4">
+					<div class="col-md-4">
 						<figure class="thumbnail-img">
 							<?php
 							$welcome_url = '';
@@ -44,7 +44,7 @@ while ( have_posts() ) : the_post();
 							<img src="<?php echo $welcome_url; ?>" alt="<?php the_field( 'weclome_block_title' ); ?>">
 						</figure>
 					</div>
-					<div class="col-8">
+					<div class="col-md-8">
 						<div class="welcome-content">
 							<?php the_field( 'weclome_block_content' ); ?>
 						</div>
@@ -58,7 +58,7 @@ while ( have_posts() ) : the_post();
 		<section class="ceo-detail" style="background-image:url('<?php echo get_template_directory_uri() . '/dist/assets/images/ceo-bg.jpg'; ?>')">
 			<div class="wrapper">
 				<div class="row align-items-center">
-					<div class="col-5">
+					<div class="col-md-5">
 						<figure class="thumbnal-img">
 							<?php
 							$ceo_image_url = '';
@@ -70,7 +70,7 @@ while ( have_posts() ) : the_post();
 							<img src="<?php echo $ceo_image_url; ?>" alt="<?php the_field( 'ceo_name' ); ?>">
 						</figure>
 					</div>
-					<div class="col-7">
+					<div class="col-md-7">
 						<div class="ceo-content">
 							<h1><?php the_field( 'ceo_name' ); ?><span><?php the_field( 'designation_detail' ); ?></span></h1>
 							<p><?php the_field( 'ceo_short' ); ?></p>
@@ -100,7 +100,7 @@ while ( have_posts() ) : the_post();
 								$fact_icon = $quick_fact_icon['sizes']['small_icon'];
 							}
 							?>
-						<div class="col-6">
+						<div class="col-md-6">
 							<div class="quick-fact-block">
 								<div class="quick-fact-icon">
 									<img src="<?php echo $fact_icon; ?>" alt="quick-fact-icon1">

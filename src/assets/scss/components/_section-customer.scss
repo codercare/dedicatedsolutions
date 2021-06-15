@@ -1,30 +1,11 @@
 .section-customer{
-	// padding: 10vmin 0;
-	// padding-top: 4rem;
-	// padding-bottom: 12rem;
-
-	// @include respond(small){
-	// 	padding-top: 13rem;
-	// 	padding-bottom: 13rem;
-	// }
-
-	// @include respond(tab-port){
-	// 	padding-top: 12rem;
-	// 	padding-bottom: 12rem;
-	// }
-
-	// @include respond(tab-land){
-	// 	padding-top: 17rem;
-	// 	padding-bottom: 15rem;
-	// }
-
-	&__content{
-		margin-top: 4vmin;
+	padding: 3rem 0;
+	[class^="col-"]:last-child{
+		.customer-cards{
+			margin: 0;
+		}
+	}
+	@include respond(tab-port){
+		padding: 0;
 	}
 }
-
-// @media(min-width: 1680px){
-//     .section-customer{
-// 		padding: 0;
-// 	}
-// }

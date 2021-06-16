@@ -4,19 +4,29 @@
 	flex-direction: column;
 	justify-content: center;
 	text-align: center;
-	padding: 4vmin;
-	max-height: 32vmin;
-	box-shadow: 0 1vmin 2vmin rgba(#3f3f3f, 0.02);
+	padding: 2rem;
 	transition: box-shadow .5s ease;
+	@include respond(tab-port){
+		padding: 4vmin;
+		max-height: 32vmin;
+	}
 
 	&:hover{
-		box-shadow: 0 1vmin 2vmin rgba(#3f3f3f, 0.09);
+		box-shadow: 0 .3rem 1.5rem 0 rgba(#000, .08);
+		@include respond(tab-port){
+			box-shadow: 0 .3vmin 1.5vmin 0 rgba(#000, .08);
+		}
 	}
 
 	&__image-container{
-		height: 9vmin;
-		width: 9vmin;
-		margin-bottom: 2vmin;
+		height: 8rem;
+		width: 8rem;
+		margin-bottom: 2rem;
+		@include respond(tab-port){
+			height: 9vmin;
+			width: 9vmin;
+			margin-bottom: 2vmin;
+		}
 
 		img{
 			height: 100%;
@@ -28,13 +38,20 @@
 	&__title{
 		font-family: 'Product Sans', sans-serif;
 		font-weight: 700;
-		font-size: 1.8vmin;
-		margin-bottom: 1vmin;
+		font-size: 1.8rem;
+		margin-bottom: 1rem;
+		@include respond(tab-port){
+			font-size: 1.8vmin;
+			margin-bottom: 1vmin;
+		}
 	}
 
 	&__description{
-		font-size: 1.5vmin;
 		line-height: 1.6;
-		margin-bottom: 2.5vmin;
+		margin-bottom: 1.5rem;
+		@include respond(tab-port){
+			font-size: 1.5vmin;
+			margin-bottom: 2.5vmin;
+		}
 	}
 }

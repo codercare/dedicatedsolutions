@@ -1,30 +1,43 @@
 .tech-support-card{
-	padding: 5vmin 4vmin 6vmin 5vmin;
+	padding: 2rem;
 	background-position: center;
 	background-repeat: no-repeat;
 	color: #fff;
 	position: relative;
-	margin-bottom: 1vmin;
-	background-size: 30vmin;
-	
+	@include respond(tab-port){
+		padding: 5vmin 4vmin 6vmin 5vmin;
+		background-size: 30vmin;
+	}
 
 	&__title{
 		font-family: 'Product Sans', sans-serif;
 		font-weight: 700;
-		font-size: 3.6vmin;
-		margin-bottom: 2vmin;
+		font-size: 1.8rem;
+		margin-bottom: 1rem;
+		@include respond(tab-port){
+			font-size: 3.6vmin;
+			margin-bottom: 2vmin;	
+		}
 	}
 
 	&__description{
-		margin-bottom: 4.5vmin;
+		margin-bottom: 1.5rem;
+		@include respond(tab-port){
+			margin-bottom: 4.5vmin;
+		}
 	}
 
 	&__icon-container{
 		position: absolute;
-		right: 4vmin;
-		bottom: 6vmin;
-		width: 6vmin;
+		right: 2em;
+		bottom: 2.6rem;
+		width: 3.4rem;
 		overflow: hidden;
+		@include respond(tab-port){
+			right: 4vmin;
+			bottom: 6vmin;
+			width: 6vmin;
+		}
 		img{
 			object-fit: cover;
 			width: 100%;

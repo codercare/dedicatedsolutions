@@ -48,7 +48,7 @@ get_header();
 			<span class="section-header__decoration-element--dark"></span>
 			<div class="pogram-work-grid">
 			<?php if ( have_rows( 'reseller_package_list' ) ) : ?>
-				<div class="rows rows--gutters-small">
+				<div class="row">
 					<?php
 					$counter_card = 1;
 					while ( have_rows( 'reseller_package_list' ) ) :
@@ -60,7 +60,7 @@ get_header();
 							$package_icon = $product_icon['url'];
 						}
 						?>
-						<div class="rows__medium-3">
+						<div class="col-md-3">
 						<div class="product-work-card card-<?php echo $counter_card;?>">
 							<div class="product-icon-box">
 								<img src="<?php echo $package_icon; ?>" alt="server-icon-1">
@@ -87,7 +87,7 @@ get_header();
 			<span class="section-header__decoration-element"></span>
 			<h4 class="section-header__Orangesub-title"><?php the_field( 'why_choose_our_dedicated_sub_title' ); ?></h4>
 			<div class="why-choose-grid">
-				<div class="rows rows--gutters-small">					
+				<div class="row">					
 					<?php
 					$counter_why_feature = 1;
 					if ( have_rows( 'why_choose_features' ) ) : 
@@ -100,7 +100,7 @@ get_header();
 						$reseller_image = $feature_block_image['url'];
 					}
 					?>
-					<div class="rows__medium-4">
+					<div class="col-md-4">
 						<div class="why-choose-card">						   
 							<figure class="thumbnail-image">
 								<img src="<?php echo $reseller_image; ?>" alt="<?php the_sub_field( 'feature_title' ); ?>">

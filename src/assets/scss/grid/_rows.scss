@@ -2,11 +2,17 @@
   @include clearfix;
 
   &--t-padding {
-    padding-top: 1vmin;
+    padding-top: 1px;
+    @include respond(tab-port) {
+      padding-top: 1vmin;
+    }
   }
 
   &--b-padding {
-    padding-bottom: 1vmin;
+    padding-bottom: 1px;
+    @include respond(tab-port) {
+      padding-bottom: 1vmin;
+    }
   }
 
   &__display-none-um {
@@ -22,39 +28,66 @@
   }
 
   &--gutters {
-    margin-right: -6vmin;
+    margin-right: 60px;
+    @include respond(tab-port) {
+      margin-right: -6vmin;
+    }
   }
 
   &--gutters-large {
-    margin-right: -10vmin;
+    margin-right: 100px;
+    @include respond(tab-port) {
+      margin-right: -10vmin;
+    }
   }
 
   &--gutters-small {
-    margin-right: -2.5vmin;
+    margin-right: -25px;
+    @include respond(tab-port) {
+      margin-right: -2.5vmin;
+    }
   }
 
   &--gutters-smaller{
-    margin-right: -1vmin;
+    margin-right: -10px;
+    @include respond(tab-port) {
+      margin-right: -1vmin;
+    }
   }
 
   &--gutters > div {
-    padding-right: 6vmin;
+    padding-right: 60px;
+    @include respond(tab-port) {
+      padding-right: 6vmin;
+    }
   }
 
   &--gutters-large > div {
-    padding-right: 10vmin;
+    padding-right: 100px;
+    @include respond(tab-port) {
+      padding-right: 10vmin;
+    }
   }
 
   &--gutters-small > div {
-    padding-right: 2.5vmin;
+    padding-right: 25px;
+    @include respond(tab-port) {
+      padding-right: 2.5vmin;
+    }
   }
 
   &--gutters-smaller > div {
-    padding-right: 1vmin;
+    padding-right: 10px;
+    @include respond(tab-port) {
+      padding-right: 1vmin;
+    }
   }
 
   &__b-margin-until-medium {
-    margin-bottom: 1vmin;
+    margin-bottom: 10px;
+    @include respond(tab-port) {
+      margin-bottom: 1vmin;
+    }
   }
 
   &__small-2 {

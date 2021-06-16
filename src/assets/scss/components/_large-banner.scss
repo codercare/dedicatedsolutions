@@ -3,44 +3,33 @@
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: cover;
-	// height: 80vh;
-	// width: 100%;
 	position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-	padding: 10vmin 0;
-	height: calc(100vh - 15vmin);
-
-	// @include respond(small){
-	// 	height: 90vh;
-	// 	width: 100%;
-	// }
+	padding: 3rem 0;
+	@include respond(tab-port){
+		padding: 10vmin 0;
+		height: calc(100vh - 15vmin);
+	}
 
 	&__container{
-		// @include absCenter;
-		// min-width: 80vw;
-		// text-align: center;
-		padding: 9.7vmin 0 0;
+		@include respond(tab-port){
+			padding: 9.7vmin 0 0;
+		}
 	}
 
 	&__heading{
 		font-family: "Product Sans", sans-serif;
 		font-weight: 700;
-		font-size: 3.6vmin;
-		margin-bottom: 2vmin;
+		font-size: 2.4rem;
+		margin-bottom: 2rem;
 		text-align: center;
 		color: #fff;
-		padding: 0 3vmin;
-
-		@include respond(small){
-			font-size: 4.8vmin;
-			margin-bottom: 2.5vmin;
-		}
-
 		@include respond(tab-port){
 			font-size: 6vmin;
 			margin-bottom: 2.5vmin;
+			padding: 0 3vmin;
 		}
 	}
 
@@ -50,8 +39,13 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-
-		@include respond(small){
+		.btn--orange:not(:last-child){
+			margin: 0 0 1rem;
+			@include respond(tab-port){
+				margin: 0;
+			}
+		}
+		@include respond(tab-port){
 			max-width: 43.5vmin;
 			justify-content: space-between;
 			flex-direction: row;
@@ -61,10 +55,9 @@
 	}
 
 	&__features{
-		margin-top: 3vmin;
+		margin-top: 2rem;
 		text-align: center;
-
-		@include respond(small){
+		@include respond(tab-port){
 			margin-top: 7vmin;
 		}
 	}
@@ -75,36 +68,34 @@
 		list-style: none;
 		flex-direction: column;
 		padding: 0;
+		margin: 0;
 
-		@include respond(small){
+		@include respond(tab-port){
 			flex-direction: row;
 		}
 	}
 
 	&__features-item{
-		font-size: 1.8vmin;
+		font-size: 1.4rem;
 		font-family: 'Roboto', sans-serif;
 		font-weight: 500;
 		color: #fff;
+		@include respond(tab-port){
+			font-size: 1.8vmin;
+		}
 		&:not(:last-child){
-			margin-right: 0;
-			margin-bottom: 1vmin;
-
-			@include respond(small){
-				margin-right: 3vmin;
+			margin: 0 0 .6rem;
+			@include respond(tab-port){
+				margin: 0 1rem 0 0;
 			}
 		}
 
 		.fas{
-			margin-right: .07vmin;
+			margin-right: .7rem;
 			color: $mainOrange;
+			@include respond(tab-port){
+				margin-right: .7vmin;
+			}
 		}
 	}
 }
-
-// @media(min-width: 1680px){
-//     .large-banner{
-		
-// 		padding: 0;
-// 	}
-// }

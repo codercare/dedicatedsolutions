@@ -1,13 +1,18 @@
 .wrapper {
-	padding-left: 1.8vmin;
-	padding-right: 1.8vmin;
-	max-width: 123.6vmin;
-	margin-left: auto;
-	margin-right: auto;
+	padding-left: 15px;
+	padding-right: 15px;
 	overflow: hidden;
-  
+	@include respond(tab-port){
+		max-width: 123.6vmin;
+		margin-left: auto;
+		margin-right: auto;
+		padding-left: 1.8vmin;
+		padding-right: 1.8vmin;
+	}
 	&--medium {
-	  max-width: 100vmin;
+		@include respond(tab-port){
+			max-width: 100vmin;
+		}
 	}
 
 	.wrapper{

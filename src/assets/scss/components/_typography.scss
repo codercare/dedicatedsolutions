@@ -1,74 +1,106 @@
 .section-header {
-  color: $black;
-  margin-bottom: 4vmin;
+	color: $black;
+	margin-bottom: 2rem;
+	@include respond(tab-port){
+		margin-bottom: 4vmin;
+	}
 
-  &--on-dark-bg {
-    color: #fff;
-  }
+	&--on-dark-bg {
+		color: #fff;
+	}
 
-  &__title {
-    font-family: "Product Sans", sans-serif;
-    font-size: 4vmin;
-    font-weight: 700;
-    color: inherit;
-  }
+	&__title {
+		font-family: "Product Sans", sans-serif;
+		font-size: 2.4rem;
+		font-weight: 700;
+		color: inherit;
+		@include respond(tab-port){
+			font-size: 4vmin;
+		}
+		@include respond(mobile){
+			margin: 0 0 1rem;
+		}
+	}
 
-  &__decoration-element {
-    border-bottom: solid .1vmin #1a1a1a;
-    border-top: solid .1vmin #1a1a1a;
-    height: 1vmin;
-    width: 4.4vmin;
-    display: inline-block;
-    position: relative;
-    margin-top: .7vmin;
-    margin-bottom: 1.8vmin;
-    color: inherit;
+	&__decoration-element {
+		border-bottom: solid .1rem #1a1a1a;
+		border-top: solid .1rem #1a1a1a;
+		height: 1rem;
+		width: 4.4rem;
+		display: inline-block;
+		position: relative;
+		margin-top: .5rem;
+		margin-bottom: 1rem;
+		color: inherit;
+		@include respond(tab-port){
+			border-bottom-width: .1vmin;
+			border-top-width: .1vmin;
+			height: 1vmin;
+			width: 4.4vmin;
+			margin-top: .7vmin;
+			margin-bottom: 1.8vmin;
+		}
 
-    &::after {
-      content: "";
-      height: .1vmin;
-      width: 70%;
-      text-align: center;
-      display: block;
-      background-color: $mainOrange;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-  }
+		&::after {
+			content: "";
+			height: .1rem;
+			width: 70%;
+			text-align: center;
+			display: block;
+			background-color: $mainOrange;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			@include respond(tab-port){
+				height: .1vmin;
+			}
+		}
+	}
 
-  &__sub-title {
-    font-family: "Roboto", sans-serif;
-    font-size: 1.8vmin;
-    font-weight: 300;
-  }
+	&__sub-title {
+		font-family: "Roboto", sans-serif;
+		font-size: 1.4rem;
+		font-weight: 300;
+		@include respond(tab-port){
+			font-size: 1.8vmin;
+		}
+	}
 }
 
-
-
-  .section-header__decoration-element--dark {
-    border-bottom: solid .1vmin #fff;
-    border-top: solid .1vmin #fff;
-    height: 1vmin;
-    width: 4.4vmin;
+.section-header__decoration-element--dark {
+    border-bottom: solid .1rem #fff;
+    border-top: solid .1rem #fff;
+    height: 1rem;
+    width: 4.4rem;
     display: inline-block;
     position: relative;
-    margin-top: .7vmin;
-    margin-bottom: 1.8vmin;
+    margin-top: .7rem;
+    margin-bottom: 1.8rem;
     color: inherit;
+	@include respond(tab-port){
+		border-bottom-width: .1vmin;
+    	border-top-width: .1vmin;
+		height: 1vmin;
+    	width: 4.4vmin;
+		margin-top: .7vmin;
+    	margin-bottom: 1.8vmin;
+	}
 
     &::after {
-      content: "";
-      height: .1vmin;
-      width: 70%;
-      text-align: center;
-      display: block;
-      background-color: $mainOrange;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+		content: "";
+		height: .1rem;
+		width: 70%;
+		text-align: center;
+		display: block;
+		background-color: $mainOrange;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		@include respond(tab-port){
+			height: .1vmin;
+		}
     }
-  }
+}
 

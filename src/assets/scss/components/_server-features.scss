@@ -1,66 +1,60 @@
 .server-features{
-	padding: 8vmin 0;
-	// padding-bottom: 12vmin;
-
-	// @include respond(small){
-	// 	padding-top: 13vmin;
-	// 	padding-bottom: 13vmin;
-	// }
-
-	// @include respond(tab-port){
-	// 	padding-top: 14vmin;
-	// 	padding-bottom: 14vmin;
-	// }
-
-	// @include respond(tab-land){
-	// 	padding-top: 17vmin;
-	// 	padding-bottom: 15vmin;
-	// }
+	padding: 3rem 0;
+	@include respond(tab-port){
+		padding: 8vmin 0;
+	}
 	.section-header{
-		margin: 0 0 2vmin; 
+		@include respond(tab-port){
+			margin: 0 0 2vmin; 
+		}
 	}
 
 	&__text{
-		font-size: 1.7vmin;
 		font-weight: 500;
-		margin-bottom: 3.5vmin;
+		margin-bottom: 1.5rem;
+		@include respond(tab-port){
+			font-size: 1.7vmin;
+			margin-bottom: 3.5vmin;
+		}
 	}
 
 	&__list{
 		list-style: none;
 		padding: 0;
 		margin: 0;
-		font-size: 1.5vmin;
 		font-weight: 500;
+		@include respond(tab-port){
+			font-size: 1.5vmin;
+		}
 	}
 
 	&__item{
-		margin-bottom: 3vmin;
+		margin-bottom: 1.5rem;
 		position: relative;
-		padding-left: 5vmin;
+		padding-left: 4rem;
+		@include respond(tab-port){
+			padding-left: 5vmin;
+			margin-bottom: 3vmin;
+		}
 		img{
 			position: absolute;
 			left: 0;
 			top: 50%;
 			transform: translateY(-50%);	
-			width: 4vmin;
+			width: 3.2rem;
 			object-fit: cover;
+			@include respond(tab-port){
+				width: 4vmin;
+			}
 		}
 	}
 
 	&__image-container{
-		width: 100%;
-		overflow: hidden;
-
+		text-align: center;
 		img{
-			object-fit: cover;
-			width: 100%;
+			@include respond(tab-port){
+				width: 100%;
+			}
 		}
 	}
 }
-
-// @media(min-width: 1680px){
-//     .server-features{
-// 		padding: 8vmin 0
-// 	}
-// }

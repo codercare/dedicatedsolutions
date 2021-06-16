@@ -3,77 +3,120 @@
         margin: 0;
     }
     .about-page-banner{
-        @include respond(tab-land){
+        @include respond(tab-port){
             padding: 7vmin 0 0;
         }
         .page-banner-content{
             p{
-                margin: 0 0 1.5vmin;
+                @include respond(tab-port){
+                    margin: 0 0 1.5vmin;
+                }
             }
             .btn--orange {
                 max-width: none;
                 height: auto;
                 display: inline-block;
                 text-transform: capitalize;
-                padding: 1.2vmin 3.5vmin;
+                @include respond(tab-port){
+                    padding: 1.2vmin 3.5vmin;
+                }
                 .fas{
-                    margin: 0 0 0 1vmin;
+                    @include respond(tab-port){
+                        margin: 0 0 0 1vmin;
+                    }
                 }
             }
         } 
     }
     
     .welcom-section{
-        padding: 3vmin 0;
+        padding: 3rem 0;
+        @include respond(tab-port){
+            padding: 3vmin 0;
+        }
         .section-header{
-            margin: 0 0 2vmin;
+            @include respond(tab-port){
+                margin: 0 0 2vmin;
+            }
             &__title, &__decoration-element{
-                margin: 0;
+                @include respond(tab-port){
+                    margin: 0;
+                }
             }
         }
         .welcome-content{
             p{
-                margin: 0 0 2vmin;
+                @include respond(tab-port){
+                    margin: 0 0 2vmin;
+                }
                 &:last-child{
                     margin: 0;
                 }
             }
         }
         .thumbnail-img{
+            @include respond(mobile){
+                text-align: center;
+                margin: 0 0 2rem;
+            }
             img{
-                width: 90%;
+                @include respond(tab-port){
+                    width: 90%;
+                }
             }
         }
     }
     
     .ceo-detail{
-        padding: 5vmin 0;
+        padding: 3rem 0;
         background-repeat: no-repeat;
-        background-size: cover;
+        background-size: 0;
         background-position:center;
         position: relative;
         color: #fff;
+        @include respond(tab-port){
+            padding: 5vmin 0;
+            background-size: cover;
+        }
         .thumbnal-img {
-            text-align: right;
+            text-align: center;
+            margin: 0 0 2rem;
+            @include respond(tab-port){
+                text-align: right;
+                margin: 0;
+            }
             img{
-                width: 75%;
+                @include respond(tab-port){
+                    width: 75%;
+                }
             }
         }
         .ceo-content {
-            padding: 0 8vmin;
+            @include respond(tab-port){
+                padding: 0 8vmin;
+            }
             h1{
-                font-size: 3.2vmin;
+                font-size: 2rem;
                 font-weight: 400;
-                margin: 0 0 3vmin;
+                margin: 0 0 1rem;
+                @include respond(tab-port){
+                    font-size: 3.2vmin;
+                    margin: 0 0 3vmin;
+                }
                 span{
                     display: block;
                     font-weight: 700;
-                    padding: 1.5vmin 0 0;
+                    padding: .5rem 0 0;
+                    @include respond(tab-port){
+                        padding: 1.5vmin 0 0;
+                    }
                 }
             }
             p{
-                font-size: 2.2vmin;
-                line-height: 4vmin;
+                @include respond(tab-port){
+                    font-size: 2.2vmin;
+                    line-height: 4vmin;
+                }
             }
         }
         &::before{
@@ -88,14 +131,25 @@
     }
 
     .quick-fact{
-        padding: 3vmin 0;
-        .quick-fact-inner-content{
+        @include respond(mobile){
             background: $mainOrange;
-            padding: 3.5vmin 12vmin 1vmin;
-            margin: 0 7.5vmin;
+        }
+        @include respond(tab-port){
+            padding: 3vmin 0;
+        }
+        .quick-fact-inner-content{
+            padding: 3rem 0;
+            margin: 0;
             color: #fff;
+            @include respond(tab-port){
+                padding: 3.5vmin 12vmin 1vmin;
+                margin: 0 7.5vmin;
+                background: $mainOrange;
+            }
             .section-header{
-                margin: 0 0 1vmin;
+                @include respond(tab-port){
+                    margin: 0 0 1vmin;
+                }
             }
             .section-header__title{
                 color: #fff;
@@ -107,37 +161,60 @@
                     margin-left: -35%;
                 }
             }
+            [class^="col-"]:not(:last-child){
+                .quick-fact-block {
+                    margin: 0 0 2rem;
+                }
+            }
             .quick-fact-block {
                 text-align: center;
-                margin: 0 0 3vmin;
+                @include respond(tab-port){
+                    margin: 0 0 3vmin;
+                }
                 .quick-fact-icon {
-                    width: 6vmin;
-                    height: 6vmin;
+                    width: 5rem;
+                    height: 5rem;
                     border: 1px solid #fff;
-                    border-radius: .6vmin;
+                    border-radius: .6rem;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    margin: 0 auto 1.5vmin;
+                    margin: 0 auto 1.5rem;
+                    @include respond(tab-port){
+                        width: 6vmin;
+                        height: 6vmin;
+                        border-radius: .6vmin;
+                        margin: 0 auto 1.5vmin;
+                    }
                     img{
                         width: 60%;
                     }
                 }
                 h3{
-                    font-size: 2.2vmin;
+                    font-size: 1.6rem;
                     font-weight: 500;
-                    padding: 0 5vmin;
+                    @include respond(tab-port){
+                        font-size: 2.2vmin;
+                        padding: 0 5vmin;
+                    }
                 }
             }
         }
     }
 
     .our-locations{
-        padding: 2vmin 0;
+        padding: 3rem 0;
+        @include respond(tab-port){
+            padding: 2vmin 0;
+        }
         .section-header{
-            margin: 0 0 1vmin;
+            @include respond(tab-port){
+                margin: 0 0 1vmin;
+            }
             &__title{
-                margin: 0 0 .5vmin;
+                @include respond(tab-port){
+                    margin: 0 0 .5vmin;
+                }
             }
         }
         .thumbnail-img{
@@ -153,19 +230,30 @@
                 margin: 0;
                 li{
                     list-style-type: none;
-                    display: inline-block;
                     text-align: left;
                     position: relative;
-                    padding: 0 5vmin 0 5.5vmin;
+                    padding: 0 1rem 0 4rem;
                     vertical-align: top;
-                    margin: 0 0 2vmin;
+                    &:not(:last-child){
+                        margin: 0 0 1.5rem;
+                    }
+                    @include respond(tab-port){
+                        display: inline-block;
+                        padding: 0 5vmin 0 5.5vmin;
+                        margin: 0 0 2vmin;
+                    }
                     .location-marker {
-                        width: 4vmin;
-                        height: 4vmin;
+                        width: 3rem;
+                        height: 3rem;
                         position: absolute;
-                        top: -.1vmin;
+                        top: 0;
                         left: 0;
                         background: #000;
+                        @include respond(tab-port){
+                            width: 4vmin;
+                            height: 4vmin;
+                            top: -.1vmin;
+                        }
                         &.usa{
                             background: rgb(255,99,110);
                             background: linear-gradient(145deg, rgba(255,99,110,1) 0%, rgba(255,64,111,1) 100%);
@@ -189,13 +277,19 @@
                     }
                     h3{
                         margin: 0;
-                        font-size: 1.4vmin;
+                        font-size: 1.3rem;
                         font-weight: 400;
+                        @include respond(tab-port){
+                            font-size: 1.4vmin;
+                        }
                         span{
                             text-transform: uppercase;
                             font-weight: 800;
-                            font-size: 1.8vmin;
+                            font-size: 1.4rem;
                             display: block;
+                            @include respond(tab-port){
+                                font-size: 1.8vmin;
+                            }
                         }
                     }
                 }
@@ -204,13 +298,20 @@
     }
 
     .speak-with-expert{
-        padding: 2vmin 0;
+        padding: 3rem 0;
         background: rgba($color: #000000, $alpha: .03);
         text-align: center;
+        @include respond(tab-port){
+            padding: 2vmin 0;
+        }
         .section-header{
-            margin-bottom: 3vmin;
+            @include respond(tab-port){
+                margin-bottom: 3vmin;
+            }
             &__title{
-                margin: 0 0 .5vmin;
+                @include respond(tab-port){
+                    margin: 0 0 .5vmin;
+                }
             }
             .section-header__decoration-element{
                 &::after{
@@ -228,44 +329,12 @@
             height: auto;
             display: inline-block;
             text-transform: inherit;
-            font-size: 2.4vmin;
             max-height: none;
-            font-family: 'Product Sans', sans-serif;
-            padding: 1.5vmin 5.3vmin;
+            @include respond(tab-port){
+                padding: 1.5vmin 5.3vmin;
+                font-size: 2.4vmin;
+                font-family: 'Product Sans', sans-serif;
+            }
         }
     }
 }
-
-// @media(min-width:1680px){
-//     .site-main{
-//         .welcom-section,.our-locations{
-//             padding: 0;
-//         }
-//         .ceo-detail {
-//             padding: 3.3vmin 0;
-//             .thumbnal-img{
-//                 img {
-//                     width: 75%;
-//                 }
-//             } 
-//             .ceo-content {
-//                 padding-top: 2vmin;
-//                 padding-bottom: 2vmin;
-//             }
-//         }
-//         .quick-fact {
-//             padding: 2vmin 0;
-//             .quick-fact-inner-content{
-//                 .section-header {
-//                     margin: 0 0 1vmin;
-//                 }
-//                 .quick-fact-block {
-//                     margin: 0 0 2vmin;
-//                 }
-//             } 
-//         }
-//         .speak-with-expert {
-//             padding-bottom: 10vmin;
-//         }
-//     } 
-// }

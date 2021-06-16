@@ -4,37 +4,44 @@
 get_header();?>
 
 <main id="fullpage" class="site-main">
+<?php
+while ( have_posts() ) : the_post(); 
+
+	$banner_image_url = get_template_directory_uri() . '/dist/assets/images/os-control-panel-banner.jpg';
+	$banner_image     = get_field( 'managed_services_banner_bg_image' );
+	if ( ! empty( $banner_image ) ) {
+		$banner_image_url = $banner_image['sizes']['banner_image'];
+	}
+	?>
 	<section class="section">
-		<section class="page-banner os-control-page-banner managed-services-page-banner" style="background-image:url('<?php echo get_template_directory_uri() . '/dist/assets/images/os-control-panel-banner.jpg'; ?>')">
+		<section class="page-banner os-control-page-banner managed-services-page-banner" style="background-image:url('<?php echo $banner_image_url; ?>')">
 			<div class="wrapper">
 				<div class="page-banner-content">
-					<h1 class="large-banner__heading">Managed Services</h1>
-					<p>Get a managed cloud solution for your needs and get focused on your business</p>
+					<h1 class="large-banner__heading"><?php the_field( 'managed_services_title' ); ?></h1>
+					<p><?php the_field( 'managed_services_sub_title' ); ?></p>
 					<div class="os-control-panl__btn-wrap">
-						<a href="" class="btn--orange">
-							<i class="btn-icon">
-								<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/customer-support.png'; ?>" alt="customer-support">
-							</i>
-							<span class="btn-label">Managed Features</span>
+						<?php
+						if ( have_rows( 'managed_services_buttons' ) ) : 
+						while ( have_rows( 'managed_services_buttons' ) ) :
+						the_row();											
+						?>
+						<a href="<?php the_sub_field('button_link');?>" class="btn--orange">
+						<?php
+						$button_icon_image = get_template_directory_uri() . '/dist/assets/images/customer-support.png';
+						$btn_icon_image     = get_sub_field( 'button_icon' );
+						if ( ! empty( $btn_icon_image ) ) {
+							$button_icon_image = $btn_icon_image['sizes']['small_icon'];
+						}
+						?>
+						<i class="btn-icon">
+							<img src="<?php echo $button_icon_image; ?>" alt="customer-support">
+						</i>
+						<span class="btn-label"><?php the_sub_field('button_label');?></span>
 						</a>
-						<a href="" class="btn--orange">
-							<i class="btn-icon">
-								<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/secure@2x.png'; ?>" alt="secure">
-							</i>
-							<span class="btn-label">Managed Services Plan</span>
-						</a>
-						<a href="" class="btn--orange">
-							<i class="btn-icon">
-								<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/dserver.png'; ?>" alt="dserver">
-							</i>
-							<span class="btn-label">Software Add-On</span>
-						</a>
-						<a href="" class="btn--orange">
-							<i class="btn-icon">
-								<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/server@2x.png'; ?>" alt="server">
-							</i>
-							<span class="btn-label">Custome Managed & Consulting</span>
-						</a>
+						<?php 					
+						endwhile; 
+						endif;
+						?>						
 					</div>
 				</div>
 			</div>
@@ -44,16 +51,15 @@ get_header();?>
 			<div class="wrapper">
 				<div class="managed-layer-content">
 					<figure class="thumbnail-img">
-						<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/managed-layers-img.png'; ?>" alt="managed-layers-img">
-					</figure>
-					<ul>
-						<li>Installation of Supported cPanel Add-ons</li>
-						<li>Server Hardening and Ongoing Security Audits</li>
-						<li>Firewall and Brute Force Detection</li>
-						<li>Priority Support</li>
-						<li>Critical Alerts</li>
-						<li>OS Updates and Patches</li>
-					</ul>
+						<?php
+						$feature_image = '';
+						$feature_box_image     = get_field( 'managed_services_feature_image' );
+						if ( ! empty( $feature_box_image ) ) {
+							$feature_image = $feature_box_image['url'];
+						}
+						?>
+						<img src="<?php echo $feature_image; ?>" alt="managed-layers-img">
+					</figure>					
 				</div>
 			</div>
 		</section>
@@ -62,245 +68,98 @@ get_header();?>
 	<section class="linux-server-os section">
 		<div class="wrapper">
 			<div class="section-header u-txt-center">
-				<h2 class="section-header__title">Linux Server OS</h2>
+				<h2 class="section-header__title"><?php the_field( 'linux_server_os_title' ); ?></h2>
 				<span class="section-header__decoration-element"></span>
 			</div>
-			<ul>
+			<?php 
+			$server_logo_icon = get_field('server_logos');
+			if( $server_logo_icon ): 
+			?>
+			<ul>			   
+				<?php foreach( $server_logo_icon as $image ): ?>
 				<li>
-					<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/software-it1.png'; ?>" alt="software-it1">
+				<img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
 				</li>
-				<li>
-					<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/software-it11.png'; ?>" alt="software-it11">
-				</li>
-				<li>
-					<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/software-it13.png'; ?>" alt="software-it13">
-				</li>
-				<li>
-					<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/software-it12.png'; ?>" alt="software-it12">
-				</li>
-				<li>
-					<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/software-it10.png'; ?>" alt="software-it10">
-				</li>
-				<li>
-					<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/software-it9.png'; ?>" alt="software-it9">
-				</li>
-				<li>
-					<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/software-it8.png'; ?>" alt="software-it8">
-				</li>
-				<li>
-					<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/software-it7.png'; ?>" alt="software-it7">
-				</li>
-				<li>
-					<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/software-it4.png'; ?>" alt="software-it4">
-				</li>
-				<li>
-					<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/software-it5.png'; ?>" alt="software-it5">
-				</li>
-				<li>
-					<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/software-it6.png'; ?>" alt="software-it6">
-				</li>
-				<li>
-					<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/software-it2.png'; ?>" alt="software-it2">
-				</li>
-				<li>
-					<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/software-it3.png'; ?>" alt="software-it3">
-				</li>
+				<?php endforeach; ?>				
 			</ul>
+			<?php 					
+			endif;
+			?>	
 		</div>
 	</section>
 
 	<section class="manage-service-plan section">
 		<div class="wrapper">
 			<div class="section-header u-txt-center">
-				<h2 class="section-header__title">Manage Services Plan</h2>
+				<h2 class="section-header__title"><?php the_field( 'linux_server_os_title' ); ?></h2>
 				<span class="section-header__decoration-element"></span>
-				<p class="section-header__sub-title">COMAPISON OF PLANS AND FEATURES</p>
+				<p class="section-header__sub-title"><?php the_field( 'linux_server_os_title' ); ?></p>
 			</div>
 			<div class="managed-service-plan-viewWrap">
 				<ul class="nav nav-pills" id="ms-plan-pills-tab" role="tablist">
+					<?php
+					$counter_service = 1;
+					if ( have_rows('managed_service_plans')) : 
+					while ( have_rows('managed_service_plans')) :
+					the_row();
+					?>
 					<li class="nav-item" role="presentation">
-						<a class="nav-link active" id="silver-tab" data-toggle="pill" href="#silver" role="tab" aria-controls="silver" aria-selected="true">Silver</a>
+						<a class="nav-link <?php if($counter_service ==1){ echo'active'; } ?> " id="#tab_id_<?php echo $counter_service;?>-tab" data-toggle="pill" href="#tab_id_<?php echo $counter_service;?>" role="tab" aria-controls="tab_id_<?php echo $counter_service;?>" aria-selected="true"><?php the_sub_field('comparison_plan_type'); ?></a>
 					</li>
-					<li class="nav-item" role="presentation">
-						<a class="nav-link" id="gold-tab" data-toggle="pill" href="#gold" role="tab" aria-controls="gold" aria-selected="false">Gold</a>
-					</li>
-					<li class="nav-item" role="presentation">
-						<a class="nav-link" id="platinum-tab" data-toggle="pill" href="#platinum" role="tab" aria-controls="platinum" aria-selected="false">Platinum</a>
-					</li>
-					<li class="nav-item" role="presentation">
-						<a class="nav-link" id="custom-tab" data-toggle="pill" href="#custom" role="tab" aria-controls="custom" aria-selected="false">Custom</a>
-					</li>
+					<?php
+					$counter_service++;					
+					endwhile; 
+					endif;
+					?>
 				</ul>
 				<div class="tab-content" id="ms-paln-tabContent">
-					<div class="tab-pane fade show active" id="silver" role="tabpanel" aria-labelledby="silver-tab">
+					<?php
+					$count_service = 1;
+					if ( have_rows('managed_service_plans')) : 
+					while ( have_rows('managed_service_plans')) :
+					the_row();
+					?>
+					<div class="tab-pane fade  <?php if($count_service ==1){ echo'show active'; } ?>" id="tab_id_<?php echo $count_service;?>" role="tabpanel" aria-labelledby="tab_id_<?php echo $count_service;?>-tab">
 						<div class="managed-service-plan-table">
 							<ul class="ms-plan-list">
 								<li>
 									<div class="ms-plan-col">&nbsp;</div>
 									<div class="ms-plan-col">&nbsp;</div>
 								</li>
+								<?php
+								if ( have_rows('feature_icon_and_detail')) : 
+								while ( have_rows('feature_icon_and_detail')) :
+								the_row();
+								?>
 								<li>
 									<div class="ms-plan-col">
 										<div class="ms-plan-icon">
 											<div class="ms-plan-blnc--inner">
-												<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/controller.png'; ?>" alt="controller">
+											<?php
+											$spec_icon_image = get_template_directory_uri() . '/dist/assets/images/surface1.png';
+											$specificition_icon_image     = get_sub_field( 'icon' );
+											if ( ! empty( $specificition_icon_image ) ) {
+												$spec_icon_image = $specificition_icon_image['sizes']['mid_icon'];
+											}
+											?>
+											<img src="<?php echo $spec_icon_image; ?>" alt="controller">
 											</div>
 										</div>
-										<h2>100% Automated Remote Reboot</h2>
+										<h2><?php the_sub_field('feature_title');  $yes_or_no = get_sub_field('yesno_info'); ?></h2>
 									</div>
 									<div class="ms-plan-col">
 										<div class="ms-plan-big-text">
 											<div class="ms-plan-blnc--inner">
-												<span class="big-txt orange-txt">Yes</span>
+												<span class="big-txt <?php if(strtolower($yes_or_no) =='no'){ echo'dark-txt';  }else{ echo'orange-txt'; } ?>"><?php echo $yes_or_no; ?></span>
 											</div>
 										</div>
-										<p>Reboot your server quickly and easily through your user console.</p>
+										<p><?php the_sub_field('detail'); ?></p>
 									</div>
 								</li>
-								<li>
-									<div class="ms-plan-col">
-										<div class="ms-plan-icon">
-											<div class="ms-plan-blnc--inner">
-												<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/repair.png'; ?>" alt="repair">
-											</div>
-										</div>
-										<h2>100% Automated OS Reinstallation</h2>
-									</div>
-									<div class="ms-plan-col">
-										<div class="ms-plan-big-text">
-											<div class="ms-plan-blnc--inner">
-												<span class="big-txt orange-txt">Yes</span>
-											</div>
-										</div>
-										<p>Start fresh with an OS reinstall, completely automated!</p>
-									</div>
-								</li>
-								<li>
-									<div class="ms-plan-col">
-										<div class="ms-plan-icon">
-											<div class="ms-plan-blnc--inner">
-												<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/updated.png'; ?>" alt="updated">
-											</div>
-										</div>
-										<h2>Operating System Updates & Support</h2>
-									</div>
-									<div class="ms-plan-col">
-										<div class="ms-plan-big-text">
-											<div class="ms-plan-blnc--inner">
-												<span class="big-txt orange-txt">Yes</span>
-											</div>
-										</div>
-										<p>Let our team of experts manage your OS updates and assist you with OS-related issues.</p>
-									</div>
-								</li>
-								<li>
-									<div class="ms-plan-col">
-										<div class="ms-plan-icon">
-											<div class="ms-plan-blnc--inner">
-												<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/line-graph.png'; ?>" alt="line-graph">
-											</div>
-										</div>
-										<h2>Reactive Monitoring</h2>
-									</div>
-									<div class="ms-plan-col">
-										<div class="ms-plan-big-text">
-											<div class="ms-plan-blnc--inner">
-												<span class="big-txt orange-txt">Yes</span>
-											</div>
-										</div>
-										<p>We collect and analyze information suggesting failures in health, safety and environmental performances, providing out-of-the-box</p>
-									</div>
-								</li>
-								<li>
-									<div class="ms-plan-col">
-										<div class="ms-plan-icon">
-											<div class="ms-plan-blnc--inner">
-												<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/report.png'; ?>" alt="report">
-											</div>
-										</div>
-										<h2>Proactive Monitoring</h2>
-									</div>
-									<div class="ms-plan-col">
-										<div class="ms-plan-big-text">
-											<div class="ms-plan-blnc--inner">
-												<span class="big-txt orange-txt">Yes</span>
-											</div>
-										</div>
-										<p>Our monitoring system can detect issues as they begin so we can start taking action before they have an impact.</p>
-									</div>
-								</li>
-								<li>
-									<div class="ms-plan-col">
-										<div class="ms-plan-icon">
-											<div class="ms-plan-blnc--inner">
-												<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/graph-bar.png'; ?>" alt="graph-bar">
-											</div>
-										</div>
-										<h2>vManaged Controlpanel (cPanel/Plesk)</h2>
-									</div>
-									<div class="ms-plan-col">
-										<div class="ms-plan-big-text">
-											<div class="ms-plan-blnc--inner">
-												<span class="big-txt dark-txt">No</span>
-											</div>
-										</div>
-										<p></p>
-									</div>
-								</li>
-								<li>
-									<div class="ms-plan-col">
-										<div class="ms-plan-icon">
-											<div class="ms-plan-blnc--inner">
-												<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/surface1.png'; ?>" alt="surface1">
-											</div>
-										</div>
-										<h2>Application Support</h2>
-									</div>
-									<div class="ms-plan-col">
-										<div class="ms-plan-big-text">
-											<div class="ms-plan-blnc--inner">
-												<span class="big-txt dark-txt">No</span>
-											</div>
-										</div>
-										<p></p>
-									</div>
-								</li>
-								<li>
-									<div class="ms-plan-col">
-										<div class="ms-plan-icon">
-											<div class="ms-plan-blnc--inner">
-												<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/team.png'; ?>" alt="team">
-											</div>
-										</div>
-										<h2>3rd Party Application Installation and Configuration</h2>
-									</div>
-									<div class="ms-plan-col">
-										<div class="ms-plan-big-text">
-											<div class="ms-plan-blnc--inner">
-												<span class="big-txt dark-txt">No</span>
-											</div>
-										</div>
-										<p></p>
-									</div>
-								</li>
-								<li>
-									<div class="ms-plan-col">
-										<div class="ms-plan-icon">
-											<div class="ms-plan-blnc--inner">
-												<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/clock.png'; ?>" alt="clock">
-											</div>
-										</div>
-										<h2>Ticket Response Time</h2>
-									</div>
-									<div class="ms-plan-col">
-										<div class="ms-plan-big-text">
-											<div class="ms-plan-blnc--inner">
-												<span class="big-txt orange-txt">2hr</span>
-											</div>
-										</div>
-										<p>Get faster ticket response time for increasing your support package.</p>
-									</div>
-								</li>
+								<?php			
+								endwhile; 
+								endif;
+								?>
 								<li>
 									<div class="ms-plan-col">&nbsp;</div>
 									<div class="ms-plan-col">&nbsp;</div>
@@ -308,41 +167,65 @@ get_header();?>
 							</ul>
 						</div>
 					</div>
-					<div class="tab-pane fade" id="gold" role="tabpanel" aria-labelledby="gold-tab">...</div>
-					<div class="tab-pane fade" id="platinum" role="tabpanel" aria-labelledby="platinum-tab">...</div>
-					<div class="tab-pane fade" id="custom" role="tabpanel" aria-labelledby="custom">...</div>
+					<?php
+					$count_service++;					
+					endwhile; 
+					endif;
+					?>					
 				</div>
 			</div>
 		</div>
 	</section>
 
 	<section class="ask-for-quotation section fp-auto-height">
-		<h2 class="section-header__title">Ask For Quotation</h2>
-		<a href="" class="btn--orange">Ask our expert engineers <i class="fas fa-arrow-right"></i></a>
+		<h2 class="section-header__title"><?php the_field( 'ask_quotation_label' ); ?></h2>
+		<a href="<?php the_field( 'ask_quotation_button_link' ); ?>" class="btn--orange"><?php the_field( 'ask_quotation_button_label' ); ?> <i class="fas fa-arrow-right"></i></a>
 	</section>
-
-	<section class="tech-support ms-tech-support section" style="background-image:url('<?php echo get_template_directory_uri() . '/dist/assets/images/ms-support-bg.jpg'; ?>')">
+	
+	<?php
+	$service_bg_images = '';
+	$box_bg_image     = get_field( 'custom_or_consulting_service_bg_image' );
+	if ( ! empty( $box_bg_image ) ) {
+		$service_bg_images = $box_bg_image['url'];
+	}
+	?>	
+	<section class="tech-support ms-tech-support section" style="background-image:url('<?php echo $service_bg_images; ?>')">
 		<div class="tech-support__content">
 			<div class="wrapper">
 				<div class="tech-support-block-wrap">
-					<div class="row">
+					<div class="row">						
 						<div class="col-lg-6">
 							<div class="tech-support-card" style="background-image:url('<?php echo get_template_directory_uri() . '/dist/assets/images/server-bg-1.svg'; ?>')">
-								<h4 class="tech-support-card__title">Custom Managed Services</h4>
-								<p class="tech-support-card__description">From a simple Webserver up to Complex Enterprise Solutions such as Database Clusters, Terminal Server and Communication Software – we got you covered!</p>
-								<a href="" class="btn--outline">Custom Solutions</a>
+								<h4 class="tech-support-card__title"><?php the_field( 'custom_service_title' ); ?></h4>
+								<p class="tech-support-card__description"><?php the_field( 'custom_service_detail' ); ?></p>
+								<a href="<?php the_field( 'custom_service_button_link' ); ?>" class="btn--outline"><?php the_field( 'custom_service_button_label' ); ?></a>
 								<div class="tech-support-card__icon-container">
-									<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/server-sub-icon.png'; ?>" alt="server-sub-icon">
+									<?php
+									$managed_image = get_template_directory_uri() . '/dist/assets/images/server-sub-icon.png'; 
+									$managed_box_image     = get_field( 'custom_service_icon' );
+									if ( ! empty( $managed_box_image ) ) {
+										$managed_image = $managed_box_image['sizes']['small_icon'];
+									}
+									?>
+									<img src="<?php echo $managed_image; ?>" alt="server-sub-icon">
 								</div>
 							</div>
 						</div>
+						
 						<div class="col-lg-6">
 							<div class="tech-support-card" style="background-image:url('<?php echo get_template_directory_uri() . '/dist/assets/images/support-bg-1.svg'; ?>')">
-								<h4 class="tech-support-card__title">Consulting Servics</h4>
-								<p class="tech-support-card__description">You have not decided yet how to build your Infrastructure? We will be glad to discuss your Project Together!</p>
-								<a href="" class="btn--outline">Contact Us Today</a>
+								<h4 class="tech-support-card__title"><?php the_field( 'consulting_service_title' ); ?></h4>
+								<p class="tech-support-card__description"><?php the_field( 'consulting_service_detail' ); ?></p>
+								<a href="<?php the_field( 'consulting_service_button_link' ); ?>" class="btn--outline"><?php the_field( 'consulting_service_button_label' ); ?></a>
 								<div class="tech-support-card__icon-container">
-									<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/support.png'; ?>" alt="support">
+									<?php
+									$consulting_image = get_template_directory_uri() . '/dist/assets/images/support.png';
+									$consulting_box_image     = get_field( 'consulting_service_icon' );
+									if ( ! empty( $consulting_box_image ) ) {
+										$consulting_image = $consulting_box_image['sizes']['small_icon'];
+									}
+									?>
+									<img src="<?php echo $consulting_image; ?>" alt="support">
 								</div>
 							</div>
 						</div>
@@ -351,6 +234,6 @@ get_header();?>
 			</div>
 		</div>
 	</section>
+<?php endwhile; // end of the loop. ?>
 </main>
-
 <?php get_footer(); ?>

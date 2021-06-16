@@ -33,14 +33,14 @@ while ( have_posts() ) : the_post();
 			<ul class="clearfix">
 				<?php 
 				if ( have_rows( 'global_networks_features' ) ) :
-					$counQter = 1;
-					while ( have_rows( 'global_networks_features' ) ) :
-					the_row();
+				$counQter = 1;
+				while ( have_rows( 'global_networks_features' ) ) :
+				the_row();
 				?>
 				<li><span><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/check.png'; ?>" alt="check-icon"></span><?php the_sub_field( 'features' ); ?></li>
 				<?php 
-					$counQter++;
-					endwhile;
+				$counQter++;
+				endwhile;
 				endif;  
 				?>				
 			</ul>

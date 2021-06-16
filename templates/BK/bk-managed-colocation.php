@@ -1,22 +1,16 @@
 <?php
-/* Template Name: Managed Colocation */ 
-get_header();
-?>
+/* Managed Colocation */ 
+
+get_header();?>
+
+
 <main id="fullpage" class="site-main">
-<?php
-while ( have_posts() ) : the_post(); 
-	$banner_image_url = get_template_directory_uri() . '/dist/assets/images/about-banner.jpg';
-	$banner_image     = get_field( 'managed_services_banner_bg_image' );
-	if ( ! empty( $banner_image ) ) {
-		$banner_image_url = $banner_image['sizes']['banner_image'];
-	}
-	?>
-	<section class="page-banner mc-page-banner section fp-auto-height" style="background-image:url('<?php echo $banner_image_url; ?>')">
+	<section class="page-banner mc-page-banner section fp-auto-height" style="background-image:url('<?php echo get_template_directory_uri() . '/dist/assets/images/about-banner.jpg'; ?>')">
 		<div class="wrapper">
 			<div class="page-banner-content">
-				<h1 class="large-banner__heading"><?php the_field( 'managed_colocation_title' ); ?></h1>
-				<p><?php the_field( 'managed_colocation_short' ); ?></p>
-				<a href="<?php the_field( 'managed_colocation_button_link' ); ?>" class="btn--orange"><?php the_field( 'managed_colocation_button_label' ); ?> <i class="fas fa-arrow-right"></i></a>
+				<h1 class="large-banner__heading">Managed Colocation</h1>
+				<p>The Platform Built to Perform</p>
+				<a href="" class="btn--orange">Learn More <i class="fas fa-arrow-right"></i></a>
 			</div>
 		</div>
 	</section>
@@ -24,31 +18,114 @@ while ( have_posts() ) : the_post();
 	<section class="managed-colocation section">
 		<div class="wrapper">
 			<div class="row">
-				<?php
-				if ( have_rows( 'managed_colocation_lists' ) ) : 
-				while ( have_rows( 'managed_colocation_lists' ) ) :
-				the_row();											
-				?>
 				<div class="col-lg-3">
 					<div class="managed-colocation-block">
 						<div class="mc-icon-box">
-							<?php
-							$colocation_feature_img = get_template_directory_uri() . '/dist/assets/images/energy.png';
-							$colo_icon_image     = get_sub_field( 'colocation_icon' );
-							if ( ! empty( $colo_icon_image ) ) {
-								$colocation_feature_img = $colo_icon_image['sizes']['mid_icon'];
-							}
-							?>
-							<img src="<?php echo $colocation_feature_img; ?>" alt="energy">
+							<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/energy.png'; ?>" alt="energy">
 						</div>
-						<h3><?php the_sub_field('colocation_title');?></h3>
-						<p><?php the_sub_field('colocation_short_detail');?></p>
+						<h3>Reliable Power</h3>
+						<p>100% Power Uptime SLA</p>
 					</div>
 				</div>
-				<?php 					
-				endwhile; 
-				endif;
-				?>	
+				<div class="col-lg-3">
+					<div class="managed-colocation-block">
+						<div class="mc-icon-box">
+							<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/light-bulb.png'; ?>" alt="light-bulb">
+						</div>
+						<h3>Reliable Support</h3>
+						<p>24/7 Onsite Staff</p>
+					</div>
+				</div>
+				<div class="col-lg-3">
+					<div class="managed-colocation-block">
+						<div class="mc-icon-box">
+							<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/network.png'; ?>" alt="network">
+						</div>
+						<h3>Reliable Network</h3>
+						<p>100% Network Uptime SLA</p>
+					</div>
+				</div>
+				<div class="col-lg-3">
+					<div class="managed-colocation-block">
+						<div class="mc-icon-box">
+							<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/dollar.png'; ?>" alt="dollar">
+						</div>
+						<h3>Less Expensive</h3>
+						<p>Colocation starting from $49/month</p>
+					</div>
+				</div>
+				<div class="col-lg-3">
+					<div class="managed-colocation-block">
+						<div class="mc-icon-box">
+							<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/map-marker-outline.png'; ?>" alt="map-marker-outline">
+						</div>
+						<h3>Point to Point Connected</h3>
+						<p>Data Center to Data Center Fiber</p>
+					</div>
+				</div>
+				<div class="col-lg-3">
+					<div class="managed-colocation-block">
+						<div class="mc-icon-box">
+							<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/settings-gear.png'; ?>" alt="settings-gear">
+						</div>
+						<h3>Manage Services</h3>
+						<p>Contact Us for a Quote</p>
+					</div>
+				</div>
+				<div class="col-lg-3">
+					<div class="managed-colocation-block">
+						<div class="mc-icon-box">
+							<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/layer.png'; ?>" alt="layer">
+						</div>
+						<h3>Compliance Colo</h3>
+						<p>HIPAA, PCI & IRS1705</p>
+					</div>
+				</div>
+				<div class="col-lg-3">
+					<div class="managed-colocation-block">
+						<div class="mc-icon-box">
+							<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/calculator.png'; ?>" alt="calculator">
+						</div>
+						<h3>AUdited</h3>
+						<p>SOC10/SSAE16/SOC2v</p>
+					</div>
+				</div>
+				<div class="col-lg-3">
+					<div class="managed-colocation-block">
+						<div class="mc-icon-box">
+							<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/square-menu.png'; ?>" alt="square-menu">
+						</div>
+						<h3>More Carriers</h3>
+						<p>Carrier Neutral 900+ Carrier</p>
+					</div>
+				</div>
+				<div class="col-lg-3">
+					<div class="managed-colocation-block">
+						<div class="mc-icon-box">
+							<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/id-card.png'; ?>" alt="id-card">
+						</div>
+						<h3>BGPV4</h3>
+						<p>Customer BGP Announcing</p>
+					</div>
+				</div>
+				<div class="col-lg-3">
+					<div class="managed-colocation-block">
+						<div class="mc-icon-box">
+							<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/dimension.png'; ?>" alt="dimension">
+						</div>
+						<h3>Mix & Match</h3>
+						<p>Combine Colo & Cloud Hosting</p>
+					</div>
+				</div>
+				<div class="col-lg-3">
+					<div class="managed-colocation-block">
+						<div class="mc-icon-box">
+							<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/clipboard.png'; ?>" alt="clipboard">
+						</div>
+						<h3>Addon Services</h3>
+						<p>DDoS Protection, Firewall, IPS</p>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>	
@@ -182,36 +259,31 @@ while ( have_posts() ) : the_post();
 				</div>
 			</div>
 		</div>
-	</section>				
-	
-	<?php
-	$benifits_bg = get_template_directory_uri() . '/dist/assets/images/mc-benefits-bg.jpg';
-	$benefit_bg_image     = get_field( 'benifit_background_image' );
-	if ( ! empty( $benefit_bg_image ) ) {
-		$benifits_bg = $benefit_bg_image['url'];
-	}
-	?>
-	<section class="mc-benefits section"  style="background-image:url('<?php echo $benifits_bg; ?>')">
+	</section>
+
+	<section class="mc-benefits section"  style="background-image:url('<?php echo get_template_directory_uri() . '/dist/assets/images/mc-benefits-bg.jpg'; ?>')">
 		<div class="wrapper">
 			<div class="section-header u-txt-center">
-				<h2 class="section-header__title"><?php the_field( 'the_benifits_title' ); ?></h2>
+				<h2 class="section-header__title">The Benefits</h2>
 				<span class="section-header__decoration-element--dark"></span>
-				<h4 class="section-header__sub-title"><?php the_field( 'the_benifits_sub_title' ); ?></h4>
+				<h4 class="section-header__sub-title">HOW COLOCATION HELP YOU</h4>
 			</div>
 			<ul class="check-list-group orange-check">
-				<?php
-				if ( have_rows( 'benifits_list_items' ) ) : 
-				while ( have_rows( 'benifits_list_items' ) ) :
-				the_row();											
-				?>
-				<li><?php the_sub_field('items');?></li>
-				<?php 					
-				endwhile; 
-				endif;
-				?>	
+				<li>Your Support Team Including a Network Architect and</li>
+				<li>Deployment Engineer</li>
+				<li>Growth Planning of Your Architecture</li>
+				<li>We Own the Hardware and All Parts of Hardware Life Cycle Management</li>
+				<li>24x7x365 Data Center and Account Management Support</li>
+				<li>Growth Planning of Your Architecture</li>
+				<li>Highly Secure and Redundant Data Centers and Network</li>
+				<li>On-demand Managed and Professional Services</li>
+				<li>Tools to Remotely Manage Your Environment</li>
+				<li>Industry-leading Service Level Agreements around</li>
+				<li>Infrastructure Support</li>
+				<li>Promising 100% Support</li>
 			</ul>
 		</div>
 	</section>
-<?php endwhile; // end of the loop. ?>
 </main>
+
 <?php get_footer(); ?>

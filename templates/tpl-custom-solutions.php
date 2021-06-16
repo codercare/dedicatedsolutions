@@ -192,8 +192,7 @@ while ( have_posts() ) : the_post();
 									<li><?php the_sub_field( 'list_items' ); ?></li>
 									<?php 
 									endwhile;
-									?>
-									
+									?>									
 								</ul>
 							</div>
 						</div>

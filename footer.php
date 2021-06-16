@@ -52,6 +52,7 @@
 		</footer>
 		<?php wp_footer(); ?>
 		<script>
+			/*
 			jQuery(document).ready(function($) {
 				$('#fullpage').fullpage({
 					licenseKey: '71051AA7-77BC4D43-BEDAB639-090EF836',
@@ -68,6 +69,7 @@
 					}
 				});
 			});
+			*/
 		</script>
 	</body>
 </html>

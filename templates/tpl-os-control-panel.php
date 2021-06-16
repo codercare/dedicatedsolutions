@@ -354,7 +354,6 @@ while ( have_posts() ) : the_post();
 							<ul class="orange--list black">
 								<?php
 								if ( have_rows( 'plesk_key_feature' ) ) : 
-								$counter_card = 1;
 								while ( have_rows( 'plesk_key_feature' ) ) :
 									the_row();
 									?>
@@ -367,7 +366,6 @@ while ( have_posts() ) : the_post();
 						</li>
 						<?php
 						if ( have_rows( 'cpanel_and_plex_comparison' ) ) : 
-						$counter_card = 1;
 						while ( have_rows( 'cpanel_and_plex_comparison' ) ) :
 						the_row();
 							$plesk_yes_no = get_sub_field('plesk_yes_no');

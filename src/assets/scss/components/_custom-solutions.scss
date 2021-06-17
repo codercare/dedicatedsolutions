@@ -1,12 +1,19 @@
 
 .customSol-page-banner{
-    padding: 13rem 0 6rem;
+    @include respond(tab-port){
+        padding: 6vmin 0 2vmin;
+    }
     .page-banner-content{
         p{
-            margin: 0 0 3.5rem;
+            @include respond(tab-port){
+                margin: 0 0 3.5vmin;
+            }
         }
         a{
-           margin: 0 1.2rem; 
+           margin: 0 .5rem; 
+           @include respond(tab-port){
+            margin: 0 1.2vmin; 
+           }
         }
         .btn--white{
             color: $mainOrange;
@@ -18,50 +25,90 @@
 }
 
 .customSol-overview{
-    padding: 8rem 0;
+    padding: 3rem 0;
+    @include respond(tab-port){
+        padding: 5vmin 0;
+    }
     .customSol-overview-content{
-        padding: 0 13rem 0 0;
+        @include respond(mobile){
+            margin: 0 0 2rem;
+        }
+        @include respond(tab-port){
+            padding: 0 13vmin 0 0;
+        }
         .section-header__Orangesub-title{
-            margin: 0 0 4rem;
+            @include respond(tab-port){
+                margin: 0 0 4vmin;
+            }
         }
         p{
-            font-size: 1.8rem;
-            line-height: 3.4rem;
             font-weight: 300;
+            @include respond(tab-port){
+                font-size: 1.8vmin;
+                line-height: 3.4vmin;
+            }
         }
     }
     .customSol-overview-grid{
         .cs-block{
-            padding: 2rem 0;
             .icon-box{
-               width: 18rem;
-               height: 12rem;
-               display: flex;
+                width: 10rem;
+                height: 7rem;
+                display: flex;
                 align-items: center;
                 justify-content: center;
                 border-radius: .5rem;
                 background: #fff;
                 box-shadow: 0 .6rem 2rem 0 rgba(0, 0, 0, .07);
+                @include respond(mobile){
+                    margin: 0 auto 1.5rem;
+                }
+                @include respond(tab-port){
+                    width: 18vmin;
+                    height: 12vmin;
+                    border-radius: .5vmin;
+                    box-shadow: 0 .6vmin 2vmin 0 rgba(0, 0, 0, .07);
+                    img{
+                        width: 47%;
+                    }
+                }
+                img{
+                    width: 47%;
+                }
             }
             .cs-block-content {
-                display: flex;
-                align-items: center;
-                height: 100%;
-                justify-content: flex-start;
+                @include respond(tab-port){
+                    display: flex;
+                    align-items: center;
+                    height: 100%;
+                    justify-content: flex-start;
+                }
                 h3{
                     font-size: 1.8rem;
                     font-family: 'Product Sans', sans-serif;
                     font-weight: 700;
+                    @include respond(tab-port){
+                        font-size: 1.8vmin;
+                    }
                 }
                 p{
                     font-weight: 300;
                     margin: 0;
                 }
             }
-            &:nth-of-type(even){
-                padding-left: 5rem;
-                .cs-block-content{
-                    padding: 0 0 0 2rem;;
+            @include respond(mobile){
+                text-align: center;
+                &:not(:last-child){
+                    margin: 0 0 2rem;
+                }
+            }
+            @include respond(tab-port){
+                padding: 2vmin 0;
+                &:nth-of-type(even){
+                    padding-left: 5vmin;
+                    .cs-block-content{
+                        padding: 0 0 0 2vmin;;
+                    }
                 }
             }
         }
@@ -69,25 +116,42 @@
 }
 
 .premium-server-features{
-    padding: 10rem 0;
     background: $darkGrey;
     color: #fff;
+    @include respond(mobile){
+        padding: 3rem 0;
+    }
     .section-header{
-        margin-bottom: 7rem;
         .section-header__title{
             color: #fff;
         }
         .section-header__Orangesub-title{
-            max-width: 50rem;
-            margin: 0 auto;
+            @include respond(tab-port){
+                max-width: 50vmin;
+                margin: 0 auto;
+            }
+        }
+    }
+    .thumbnail-img{
+        @include respond(mobile){
+            margin: 0 0 2rem;
+            text-align: center;
+        }
+        img{
+            @include respond(tab-port){
+                width: 90%;
+            }
         }
     }
     .p-server-feat-block{
         position: relative;
-        margin: 0 0 8rem;
+        margin: 0 0 2rem;
+        @include respond(tab-port){
+            margin: 0 0 6vmin;
+        }
         .p-server-feat-icon{
-            width: 14.5rem;
-            height: 14.5rem;
+            width: 7rem;
+            height: 7rem;
             border-radius: 100%;
             display: flex;
             align-items: center;
@@ -95,23 +159,41 @@
             position: absolute;
             top: 0;
             left: 0;
+            @include respond(tab-port){
+                width: 14.5vmin;
+                height: 14.5vmin;
+                img{
+                    width: 100%;
+                }
+            }
         }
         .p-server-feat-content{
-            padding: 0 0 0 21.5rem;
+            padding: 0 0 0 8.5rem;
+            @include respond(tab-port){
+                padding: 0 0 0 21.5vmin;
+            }
             h2{
-                font-size: 2.7rem;
+                font-size: 1.8rem;
                 font-family: 'Product Sans', sans-serif;
                 font-weight: 700;
                 text-transform: uppercase;
                 margin-bottom: 1rem;
+                @include respond(tab-port){
+                    font-size: 2.7vmin;
+                    margin-bottom: 1vmin;
+                }
             }
             ul{
                 margin: 0;
                 padding: 0;
                 li{
                     list-style-type: none;
-                    margin: 0 0 1.8rem;
+                    margin: 0 0 .7rem;
                     padding: 0 0 0 2.7rem;
+                    @include respond(tab-port){
+                        margin: 0 0 1.8vmin;
+                        padding: 0 0 0 2.7vmin;
+                    }
                     &:last-child{
                         margin: 0;
                     }
@@ -128,7 +210,12 @@
             .p-server-feat-content{
                 ul{
                     li{
-                        background: url(../images/serve-check.png) no-repeat top .5rem left;
+                        background: url(../images/serve-check.png) no-repeat;
+                        background-position: top .5rem left;
+                        @include respond(tab-port){
+                            background-position: top .5vmin left;
+                            background-size: 5.2%;
+                        }
                     }
                 }
             }
@@ -140,7 +227,12 @@
             .p-server-feat-content{
                 ul{
                     li{
-                        background: url(../images/storage-check.png) no-repeat top .5rem left;
+                        background: url(../images/storage-check.png) no-repeat;
+                        background-position: top .5rem left;
+                        @include respond(tab-port){
+                            background-position: top .5vmin left;
+                            background-size: 5.2%;
+                        }
                     }
                 }
             }
@@ -152,7 +244,12 @@
             .p-server-feat-content{
                 ul{
                     li{
-                        background: url(../images/network-check.png) no-repeat top .5rem left;
+                        background: url(../images/network-check.png) no-repeat;
+                        background-position: top .5rem left;
+                        @include respond(tab-port){
+                            background-position: top .5vmin left;
+                            background-size: 5.2%;
+                        }
                     }
                 }
             }
@@ -161,35 +258,64 @@
 }
 
 .additional-features{
-    padding: 10rem 0 8rem;
+    @include respond(mobile){
+        padding: 3rem 0;
+    }
     .section-header{
-        margin-bottom: 7rem;
+        @include respond(tab-port){
+            margin-bottom: 7vmin;
+        }
         .section-header__Orangesub-title{
-            max-width: 60rem;
-            margin: 0 auto;
+            @include respond(tab-port){
+                max-width: 60vmin;
+                margin: 0 auto;
+            }
+        }
+    }
+    [class^="col-"]:not(:last-child){
+        .add-feat-block{
+            margin: 0 0 2rem;
+            @include respond(tab-port){
+                margin: 0 0 5vmin;
+            }
         }
     }
     .add-feat-block{
         position: relative;
-        padding: 0 0 0 15rem;
-        margin: 0 0 5rem;
+        padding: 0 0 0 8.5rem;
+        @include respond(tab-port){
+            padding: 0 0 0 15vmin;
+        }
         .add-feat-icon{
-            width: 11rem;
-            height: 11rem;
+            width: 7rem;
+            height: 7rem;
             display: flex;
             align-items: center;
             justify-content: center;
             position: absolute;
             top: 0;
             left: 0;
+            @include respond(tab-port){
+                width: 11vmin;
+                height: 11vmin;
+                img{
+                    width: 100%;
+                }
+            }
         }
         .add-feat-content{
-            padding: 0 5rem 0 0;
+            @include respond(tab-port){
+                padding: 0 5vmin 0 0;
+            }
             h2{
                 font-family: 'Product Sans', sans-serif;
-                font-size: 2.2rem;
+                font-size: 1.8rem;
                 font-weight: 700;
-                margin-bottom: 2rem;
+                margin-bottom: 1rem;
+                @include respond(tab-port){
+                    font-size: 2.2vmin;
+                    margin-bottom: 2vmin;
+                }
             }
             ul{
                 margin: 0;
@@ -197,10 +323,16 @@
                 li{
                     list-style-type: none;
                     background: url(../images/check.png) no-repeat top .5rem left;
-                    padding: 0 0 0 3.1rem;
+                    padding: 0 0 0 2.8rem;
                     font-weight: 300;
-                    line-height: 3rem;
-                    margin: 0 0 1rem;
+                    margin: 0 0 .7rem;
+                    @include respond(tab-port){
+                        line-height: 3vmin;
+                        background-position: top .5vmin left;
+                        padding: 0 0 0 3.1vmin;
+                        margin: 0 0 1vmin;
+                        background-size: 5%;
+                    }
                     &:last-child{
                         margin: 0;
                     }
@@ -213,71 +345,46 @@
 .custom-support{
     background: $mainOrange;
     color: #fff;
-    // padding: 9rem 0 7.5rem;
+    @include respond(mobile){
+        padding: 3rem 0;
+    }
+    .thumbnail-img{
+        text-align: right;
+        @include respond(mobile){
+            margin: 0 0 2rem;
+            text-align: center;
+        }
+        img{
+            @include respond(tab-port){
+                width: 100%;
+            }
+        }
+    }
     .custom-support-content{
-        padding: 3.5rem 0;
         .section-header__title{
-            margin-bottom: 2.6rem;
+            @include respond(tab-port){
+                margin-bottom: 2.6vmin;
+            }
         }
         ul{
             margin: 0;
             padding: 0;
             li{
                 list-style-type: none;
-                background: url(../images/check-white.png) no-repeat top .5rem left;
-                padding: 0 0 0 3.3rem;
-                font-size: 1.8rem;
-                margin: 0 0 1rem;
+                background: url(../images/check-white.png) no-repeat top .3rem left;
+                padding: 0 0 0 2.8rem;
+                margin: 0 0 .7rem;
+                @include respond(tab-port){
+                    font-size: 1.8vmin;
+                    margin: 0 0 1vmin;
+                    padding: 0 0 0 3.3vmin;
+                    background-size: 3.1%;
+                    background-position: top .5vmin left;
+                }
                 &:last-child{
                     margin: 0;
                 }
             }
         }
-    }
-    .thumbnail-img{
-        text-align: right;
-    }
-}
-
-@media(min-width: 1680px){
-	.customSol-page-banner {
-        padding: 6rem 0 2rem;
-    }
-    .customSol-overview {
-        padding: 4rem 0;
-        .customSol-overview-grid{
-            .cs-block{
-                padding: 1rem 0;
-            }
-        }
-    }
-    .premium-server-features{
-        padding: 0;
-        .section-header{
-            margin-bottom: 4rem;
-        }
-        .p-server-feat-block {
-            margin: 0 0 4rem;
-        }
-        .thumbnail-img{
-            img{
-                max-width: 75%;
-            }
-        }    
-    }
-    .additional-features{
-        padding: 0;
-        .additional-feat-grid{
-            [class^="col-"]{
-                &:nth-last-of-type(3),&:last-child{
-                    .add-feat-block{
-                        margin-bottom: 0;
-                    }
-                }
-            }
-        }
-    }
-    .custom-support{
-        padding: 0;
     }
 }

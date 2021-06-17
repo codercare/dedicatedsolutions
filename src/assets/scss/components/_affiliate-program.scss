@@ -1,42 +1,87 @@
 .affiliate-page-banner {
-    padding: 10rem 0 0;
+    @include respond(tab-port){
+        padding: 8vmin 0 0;
+    }
     .page-banner-content{
+        @include respond(tab-port){
+            padding: 0 0 2vmin;
+        }
         .large-banner__heading{
-            margin: 0 0 .5rem;
+            @include respond(tab-port){
+                margin: 0;
+            }
         }
         p{
-            max-width: 48.8rem;
-            margin: 0 auto 1rem;
+            @include respond(tab-port){
+                max-width: 48.8vmin;
+                margin: 0 auto 1vmin;
+            }
         }
     } 
 }
 
 .recommend-dedicatedSolution {
     padding: 3rem 0;
-    .section-header__title{
-        max-width: 86.4rem;
-        margin: 0 auto 1.5rem;
+    @include respond(tab-port){
+        padding: 2vmin 0;   
+    }
+    .section-header{
+        @include respond(tab-port){
+            margin: 0 0 2vmin;
+        }
+        &__title{
+            @include respond(tab-port){
+                max-width: 86.4vmin;
+                margin: 0 auto 1.5vmin;
+            }
+        }
+        &__Orangesub-title{
+            @include respond(tab-port){
+                margin: 0;
+            }
+        }
+    }
+    [class^="col-"]:not(:last-child){
+        .recom-block{
+            margin: 0 0 1vmin;
+            @include respond(mobile){
+                margin: 0;
+            }
+        }
     }
     .recom-block {
-        padding: 1rem 3rem;
-        margin: 0 0 2rem;
+        padding: 2rem;
         border-radius: .6rem;
         transition: background .3s ease;
+        @include respond(tab-port){
+            padding: 1vmin 3vmin;
+            border-radius: .6vmin;
+        }
         .recom-icon {
-            width: 5rem;
-            height: 5rem;
-            margin: 0 0 1rem;
+            width: 4rem;
+            height: 4rem;
+            margin: 0 0 1.5rem;
+            @include respond(tab-port){
+                width: 5vmin;
+                height: 5vmin;
+                margin: 0 0 1vmin;
+            }
             svg {
                 width: 100%;
+                height: 100%;
             }
         }
         h2{
             font-family: 'Product Sans', sans-serif;
-            line-height: 3.2rem;
             font-weight: 700;
             margin: 0;
-            padding: 0 5rem 0 0;
-            min-height: 6.4rem;
+            font-size: 1.8rem;
+            @include respond(tab-port){
+                line-height: 2.5vmin;
+                padding: 0 3vmin 0 0;
+                min-height: 4.9vmin;
+                font-size: 1.8vmin;
+            }
         }
         &:hover{
             background: $mainOrange;
@@ -61,105 +106,167 @@
     color: #fff;
     position: relative;
     .signup-affiliate-program {
-        padding: 2rem 0 2.6rem;
+        padding: 3rem 0;
+        @include respond(tab-port){
+            padding: 2vmin 0 2.6vmin;
+        }
          h1 {
-             font-family: "Product Sans", sans-serif;
-            font-size: 3.5rem;
+            font-family: "Product Sans", sans-serif;
+            font-size: 2.4rem;
             font-weight: 700;
-            line-height: 5.8rem;
-            margin: 0 0 1rem;
+            margin: 0 0 1.5rem;
+            @include respond(tab-port){
+                font-size: 3.5vmin;
+                line-height: 5.8vmin;
+                margin: 0 0 1vmin;
+            }
         }
         .btn--orange{
             text-transform: capitalize;
-            font-size: 2rem;
-            padding: 1.4rem 4rem;
-            height: auto;
-            max-height: none;
-            max-width: none;
             display: inline-block;
-            border-radius: .6rem;
+            @include respond(tab-port){
+                font-size: 2vmin;
+                padding: 1.4vmin 4vmin;
+                border-radius: .6vmin;
+            }
             .fas{
-                margin-left: .5rem;
-                font-size: 1.4rem;
+                margin: 0 0 0 .5rem;
+                @include respond(tab-port){
+                    margin: 0 0 0 .5vmin;
+                    font-size: 1.4vmin;
+                }
             }
         }
     }
     .signup-thumbnail-img{
-        position: absolute;
-        top: 0;
-        right: 0;
-        height: 100%;
-        width: 50%;
+        height: 12rem;
+        width: 100%;
         background-size: cover;
         background-position: center center;
+        @include respond(tab-port){
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 50%;
+        }
     }
 }
 
 .pay-out-terms{
-    padding: 5rem 0;
-    .section-header__sub-title{
-        width: 68.4rem;
-        font-weight: 400;
-        margin: 0 auto;
+    padding: 3rem 0;
+    @include respond(tab-port){
+        padding: 2vmin 0;
+    }
+    .section-header{
+        @include respond(tab-port){
+            margin: 0 0 2vmin;
+        }
+        &__sub-title{
+            @include respond(tab-port){
+                width: 68.4vmin;
+                font-weight: 400;
+                margin: 0 auto;
+            }
+        }
     }
     .payout-terms-table{
         margin: 0;
+        @include respond(mobile){
+            table, thead, tbody, th, td, tr{
+                display: block;
+            }
+            thead tr{
+                position: absolute;
+                top: -9999rem;
+                left: -9999rem;
+            }
+        }
         thead{
             &.table-dark{
                 background: $mainOrange;
             }
-            th{
-                border: none;
-                font-size: 2.5rem;
-                font-family: "Product Sans", sans-serif;
-                font-weight: 700;
-                padding: 1.5rem 5rem;
-                &:first-child{
-                    width: 29.4rem;
-                }
-                &:nth-of-type(2){
-                    width: 40.8rem;
-                }
-                &:last-child{
-                    width: 49.8rem;
+            tr{
+                th{
+                    border: none;
+                    font-size: 2.2vmin;
+                    font-family: "Product Sans", sans-serif;
+                    font-weight: 700;
+                    padding: 1vmin 3vmin;
+                    &:first-child{
+                        width: 29.4vmin;
+                    }
+                    &:nth-of-type(2){
+                        width: 40.8vmin;
+                    }
+                    &:last-child{
+                        width: 49.8vmin;
+                    }
                 }
             }
         }
     }
     tbody{
         tr{
+            @include respond(mobile){
+                border-top: 1px solid rgba(0, 0, 0, 0.05);
+                &:last-child{
+                    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+                }
+            }
             &:nth-of-type(even){
                 background: #FCFCFC;
             }
             td{
                 border: none;
                 vertical-align: middle;
-                padding: 2.1rem 5rem;
+                padding: .8rem 1rem .8rem 50%;
+                position: relative;
+                @include respond(mobile){
+                    &::before{
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 45%;
+                        height: 100%;
+                        padding: .8rem 1rem;
+                        font-size: 1.4rem;
+                        font-family: "Product Sans", sans-serif;
+                        font-weight: 700;
+                        line-height: initial;
+                        display: flex;
+                        align-items: center;
+                        color: $mainOrange;
+                    }
+                    &:nth-of-type(1)::before{ content: "Services"}
+                    &:nth-of-type(2)::before{ content: "One-Time Commission"}
+                    &:nth-of-type(3)::before{ content: "Monthly-Recurring Commission"}
+                }
+                @include respond(tab-port){
+                    padding: 1.3vmin 3vmin;
+                }
                 &:first-child{
-                    font-size: 2rem;
-                    line-height: 2.6rem;
+                    font-size: 1.4rem;
                     color: $darkGrey;
                     font-weight: 700;
-                    padding: 2.1rem 2.3rem;
+                    @include respond(tab-port){
+                        font-size: 2vmin;
+                        line-height: 2.6vmin;
+                        padding: 2.1vmin 2.3vmin;
+                    }
                     span{
-                        padding-left: 2.8rem;
+                        padding-left: 2.5rem;
                         position: relative;
                         background: url(../images/check.png) no-repeat top .4rem left;
                         display: block;
+                        @include respond(tab-port){
+                            padding-left: 2.8vmin;
+                            background-size: 7.6%;
+                            background-position: top .4vmin left;
+                        }
                     }
                 }
             }   
         }
     }
-}
-
-@media(min-width:1680px){
-    .recommend-dedicatedSolution, .pay-out-terms{
-        padding: 0;
-    }
-    .signup-section{
-        .signup-affiliate-program {
-            padding: 8rem 0;
-        }
-    } 
 }

@@ -1,42 +1,81 @@
 .our-guarantee{
-    padding: 14rem 0 3rem;
+    padding: 3rem 0;
+    @include respond(tab-port){
+        padding: 3vmin 0 0;
+    }
+    .wrapper{
+        overflow: visible;
+    }
     .section-header{
+        @include respond(tab-port){
+            margin: 0 0 2vmin;
+        }
         .section-header__Orangesub-title{
-            margin: 0 0 2rem;
+            @include respond(tab-port){
+                margin: 0 0 .5vmin;
+            }
         }
         p{
-            max-width: 65rem;
-            margin: 0 auto;
-            font-size: 1.8rem;
             font-weight: 300;
+            @include respond(tab-port){
+                max-width: 65vmin;
+                margin: 0 auto;
+                font-size: 1.8vmin;
+            }
+            br{
+                display: none;
+            }
+        }
+    }
+    [class^="col-"]:not(:last-child){
+        .our-guarantee-block{
+            margin: 0 0 3vmin;
+            @include respond(mobile){
+                margin: 0 0 2rem;
+            }
         }
     }
     .our-guarantee-block{
-        padding: 3rem;
+        padding: 2rem;
         background: #fff;
         border-radius: .5rem;
         box-shadow: 0 0 1.5rem 0 rgba(0,0,0, .06);
-        margin: 0 0 3rem;
         transition: all .3s ease;
+        @include respond(tab-port){
+            padding: 3vmin;
+            border-radius: .5vmin;
+            box-shadow: 0 0 1.5vmin 0 rgba(0,0,0, .06);
+        }
         .guarantee-icon-box{
-            width: 7rem;
-            height: 7rem;
+            width: 5rem;
+            height: 5rem;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 0 1.5rem;
+            @include respond(tab-port){
+                width: 6vmin;
+                height: 6vmin;
+                margin: 0 0 1.5vmin;
+            }
         }
         h3{
-            font-size: 2.2rem;
+            font-size: 1.8rem;
             font-family: 'Product Sans', sans-serif;
             font-weight: 700;
             margin: 0 0 1rem;
+            @include respond(tab-port){
+                font-size: 2.2vmin;
+                margin: 0 0 1vmin;
+            }
         }
         p{
-            line-height: 3rem;
             font-weight: 300;
             margin: 0;
-            min-height: 12rem;
+            @include respond(tab-port){
+                min-height: 12vmin;
+                line-height: 3vmin;
+            }
             a{
                 color: $darkGrey;
                 font-weight: 500;

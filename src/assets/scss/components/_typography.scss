@@ -16,9 +16,10 @@
 		color: inherit;
 		@include respond(tab-port){
 			font-size: 4vmin;
+			margin: 0 auto 1vmin;
 		}
 		@include respond(mobile){
-			margin: 0 0 1rem;
+			margin: 0 auto 1rem;
 		}
 	}
 
@@ -38,7 +39,7 @@
 			height: 1vmin;
 			width: 4.4vmin;
 			margin-top: .7vmin;
-			margin-bottom: 1.8vmin;
+			margin-bottom: 1vmin;
 		}
 
 		&::after {
@@ -76,7 +77,7 @@
     display: inline-block;
     position: relative;
     margin-top: .7rem;
-    margin-bottom: 1.8rem;
+    margin-bottom: 1rem;
     color: inherit;
 	@include respond(tab-port){
 		border-bottom-width: .1vmin;
@@ -84,7 +85,7 @@
 		height: 1vmin;
     	width: 4.4vmin;
 		margin-top: .7vmin;
-    	margin-bottom: 1.8vmin;
+    	margin-bottom: 1vmin;
 	}
 
     &::after {

@@ -1,8 +1,10 @@
 <?php
-/* Template Name: Test2 */ 
+/* Web Hosting And Ecommerce Hosting */ 
 
 get_header();?>
-?>
+
+
+
 <main id="fullpage" class="site-main">
 	<section class="page-banner about-page-banner wh-eh-page-banner section fp-auto-height" style="background-image:url('<?php echo get_template_directory_uri() . '/dist/assets/images/about-banner.jpg'; ?>')">
 		<div class="wrapper">
@@ -388,4 +390,5 @@ get_header();?>
 		</div>
 	</section>
 </main>
+
 <?php get_footer(); ?>

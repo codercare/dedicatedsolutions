@@ -33,12 +33,10 @@ while ( have_posts() ) : the_post();
 						<div class="col-md-6">
 							<div class="dc-address-block dc-add-2">																
 								<?php 
-								 $data_center_usa = get_field('data_centers_in_us');
-								 
-								 ?>
+								$data_center_usa = get_field('data_centers_in_us');								 
+								?>
 								<h3><?php echo $data_center_usa['heading'];?> <i><img src="<?php echo $data_center_usa['heading_country_map']['sizes']['small_icon'];?>" alt="us-flag"></i></h3>
-								<p><?php echo $data_center_usa['sub_heading_text'];?></p>
-								 
+								<p><?php echo $data_center_usa['sub_heading_text'];?></p>								 
 							</div>
 						</div>
 						<div class="col-md-3 text-md-right">
@@ -61,7 +59,7 @@ while ( have_posts() ) : the_post();
 				<div class="dc-location-map">
 					<div class="thumbnail-img">
 					<?php
-					$data_center_map = ''; // get_template_directory_uri().'/dist/assets/images/map_network.png';
+					$data_center_map = get_template_directory_uri().'/dist/assets/images/map_network.png';
 					$data_center     = get_field( 'available_locations_map_mid' );
 					if ( ! empty( $data_center ) ) {
 						$data_center_map = $data_center['url'];

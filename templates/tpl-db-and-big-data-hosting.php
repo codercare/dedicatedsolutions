@@ -66,8 +66,11 @@ while ( have_posts() ) : the_post();
 									if ( ! empty( $db_logo_image ) ) {
 										$db_image = $db_logo_image['url'];
 									}
+									if(!empty($db_image)){
 									?>
 									<img src="<?php echo $db_image; ?>" alt="<?php the_sub_field( 'database_title' ); ?>">
+									<?php
+									}?>
 								</div>
 							</div>
 							<div class="col-lg-6">

@@ -121,7 +121,7 @@ while ( have_posts() ) : the_post();
 							<span class="section-header__decoration-element"></span>
 							<h4 class="section-header__Orangesub-title"><?php the_field( 'send_us_message_sub_title' ); ?> </h4>
 						</div>						
-						<div class="row">
+						<div class="contact_form">
 							<?php echo do_shortcode('[contact-form-7 id="1186" title="Contact form 1"]');?>
 						</div>
 					</div>

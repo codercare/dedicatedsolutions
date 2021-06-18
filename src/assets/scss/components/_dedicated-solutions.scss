@@ -1,17 +1,27 @@
 .site-main{
     .dedicated-solutions{
         text-align: center;
+        padding: 3rem 0;
+        @include respond(tab-port){
+            padding: 7vmin 0 3.5vmin;
+        }
         .section-header__Orangesub-title{
-            margin: 0 0 2.5rem;
+            @include respond(tab-port){
+                margin: 0 0 2.5vmin;
+            }
         }
         .dedicated-solutons-detail{
             text-align: left;
-            font-size: 1.8rem;
             font-weight: 300;
-            line-height: 3.4rem;
+            @include respond(tab-port){
+                font-size: 1.8vmin;
+                line-height: 3.4vmin;
+            }
             .first-detail, .second-detail{
                 p{
-                    padding: 0 4rem 0 0;
+                    @include respond(tab-port){
+                        padding: 0 4vmin 0 0;
+                    }
                 }
             }
         }
@@ -21,39 +31,78 @@
         background: $darkGrey;
         text-align: center;
         color: #fff;
-        padding: 3rem 0 0;
+        padding: 3rem 0;
+        @include respond(tab-port){
+            padding: 3vmin 0;
+        }
         ul{
-            margin: 2rem 0 0;
+            margin: 0;
             padding: 0;
             li{
                 list-style-type: none;
                 position: relative;
+                padding: 0 0 0 2.8rem;
                 text-align: left;
-                float: left;
-                width: 50%;
-                padding: 0 7rem 0 3.1rem;
-                margin: 0 0 1.5rem;
+                @include respond(mobile){
+                    &:not(:last-child){
+                        margin: 0 0 .8rem;
+                    }
+                }
+                @include respond(tab-port){
+                    float: left;
+                    width: 50%;
+                    padding: 0 7vmin 0 3.1vmin;
+                    margin: 0 0 1vmin;
+                }
                 span{
                     position: absolute;
                     left: 0;
                     top: 0;
+                    @include respond(tab-port){
+                        width: 1.92vmin;
+                    }
+                    img{
+                        @include respond(tab-port){
+                            width: 100%;
+                        }
+                    }
                 }
             }
         }
     }
     
     .dedicated-solution-grid-section{
+        padding: 3rem 0;
+        @include respond(tab-port){
+            padding: 3vmin 0;
+        }
+        @include respond(mobile){
+            [class^="col-"]:not(:last-child){
+                .inner-decicated-grid{
+                    margin: 0 0 2rem;
+                }
+            }
+        }
         .inner-decicated-grid{
             position: relative;
-            margin: 0 0 3rem;
+            @include respond(tab-port){
+                margin: 0 0 3vmin;
+            }
             .thumbnail{
-                width: 15rem;
-                height: 15rem;
+                width: 10rem;
+                height: 10rem;
                 border-radius: 100%;
                 overflow: hidden;
-                position: absolute;
-                top: 0;
-                left: 0;
+                @include respond(mobile){
+                    margin: 0 0 1.5rem;
+                }
+                @include respond(tab-port){
+                    width: 15vmin;
+                    height: 15vmin;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                }
                 img{
                     height: 100%;
                     width: 100%;
@@ -61,13 +110,19 @@
                 }
             }
             .inner-decicated-content {
-                padding: 0 0 0 17rem;
-                min-height: 21rem;
+                @include respond(tab-port){
+                    padding: 0 0 0 17vmin;
+                    min-height: 13vmin;
+                }
                 h2{
                     font-family: "Product Sans", sans-serif;
-                    font-size: 2.8rem;
+                    font-size: 1.8rem;
                     font-weight: 700;
-                    margin: 0 0 2rem;
+                    margin: 0 0 1rem;
+                    @include respond(tab-port){
+                        font-size: 2.8vmin;
+                        margin: 0 0 2vmin;
+                    }
                 }
                 ul{
                     margin:0;
@@ -75,12 +130,28 @@
                     li{
                         list-style-type: none;
                         position: relative;
-                        font-size: 1.4rem;
-                        padding: 0 0 0 3.7rem;
+                        padding: 0 0 0 2.8rem;
+                        @include respond(mobile){
+                            &:not(:last-child){
+                                margin: 0 0 .8rem;
+                            }
+                        }
+                        @include respond(tab-port){
+                            font-size: 1.4vmin;
+                            padding: 0 0 0 3vmin;
+                        }
                         span{
                             position: absolute;
                             top: 0;
                             left: 0;
+                            @include respond(tab-port){
+                                width: 1.92vmin;
+                            }
+                            img{
+                                @include respond(tab-port){
+                                    width: 100%;
+                                }
+                            }
                         }
                     }
                 }
@@ -89,21 +160,42 @@
     }
     
     .dedictaed-multi-col-grid{
-        background: $mainOrange;
         color: #fff;
         position: relative;
+        @include respond(tab-port){
+            background: $mainOrange;
+        }
+        [class^="col-"]{
+            &:first-child{
+                @include respond(mobile){
+                    background: $darkGrey;
+                }
+            }
+            &:last-child{
+                @include respond(mobile){
+                    background: $mainOrange;
+                }
+            }
+        }
         .multi-dedicated-inner-content{
             position: relative;
             z-index: 1;
-            padding: 6rem;
-            &.first{
-                padding-left: 0;
+            padding: 3rem 0;
+            @include respond(tab-port){
+                padding: 4vmin 6vmin;
+                &.first{
+                    padding-left: 0;
+                }
             }
             h2{
-                font-size: 3rem;
+                font-size: 2.2rem;
                 font-family: "Product Sans", sans-serif;
                 font-weight: 700;
-                margin: 0 0 3.5rem;
+                margin: 0 0 1.5rem;
+                @include respond(tab-port){
+                    font-size: 3vmin;
+                    margin: 0 0 3.5vmin;
+                }
             }
             ul{
                 margin: 0;
@@ -111,30 +203,44 @@
                 li{
                     list-style-type: none;
                     position: relative;
-                    padding: 0 0 0 3.1rem;
-                    margin: 0 0 2rem;
+                    padding: 0 0 0 2.8rem;
+                    @include respond(mobile){
+                        &:not(:last-child){
+                            margin: 0 0 .8rem;
+                        }
+                    }
+                    @include respond(tab-port){
+                        padding: 0 0 0 3.1vmin;
+                        &:not(:last-child){
+                            margin: 0 0 2vmin;
+                        }
+                    }
                     span{
                         position: absolute;
                         top: 0;
                         left: 0;
+                        @include respond(tab-port){
+                            width: 1.92vmin;
+                        }
+                        img{
+                            @include respond(tab-port){
+                                width: 100%;
+                            }
+                        }
                     }
                 }
             }
         }
-        &::before{
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 50%;
-            height: 100%;
-            background: $darkGrey;
+        @include respond(tab-port){
+            &::before{
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 50%;
+                height: 100%;
+                background: $darkGrey;
+            }
         }
-    }
-}
-
-@media(min-width: 1680px){
-	.global-network-section, .dedicated-solutions {
-        padding: 0;
     }
 }

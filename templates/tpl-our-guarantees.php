@@ -2,8 +2,8 @@
 /* Template Name: Our Guarantees */ 
 
 get_header();?>
-<main id="site-main" class="site-main">
-	<section class="our-guarantee">
+<main id="fullpage" class="site-main">
+	<section class="our-guarantee section">
 		<div class="wrapper">
 			<div class="section-header u-txt-center">
 				<h2 class="section-header__title"><?php the_field( 'guarantees_title' ); ?></h2>
@@ -25,7 +25,7 @@ get_header();?>
 							$guarantee_icon = $guarantee_bg_image['sizes']['mid_icon'];
 						}
 					?>
-					<div class=" <?php if($counter < 4){ echo "col-md-4";}else{ echo "col-md-6"; }?>">
+					<div class="<?php if($counter < 4){ echo "col-md-4";}else{ echo "col-md-6"; }?>">
 						<div class="our-guarantee-block">
 							<div class="guarantee-icon-box">
 								<img src="<?php echo $guarantee_icon; ?>" alt="our-g-icon1">

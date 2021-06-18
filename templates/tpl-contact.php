@@ -1,13 +1,10 @@
 <?php
 /* Template Name: Contact Us */ 
 
-get_header();
-?>
+get_header();?>
 
-
-<main id="site-main" class="site-main">
+<main id="fullpage" class="site-main">
 <?php
-
 while ( have_posts() ) : the_post(); 
 
 	$contact_banner = '';
@@ -16,7 +13,6 @@ while ( have_posts() ) : the_post();
 		$contact_banner = $bg_image['sizes']['banner_image'];
 	}
 ?>
-<main id="fullpage" class="site-main">
 	<section class="section">
 		<section class="page-banner contact-page-banner" style="background-image:url('<?php echo $contact_banner; ?>')">
 			<div class="wrapper">
@@ -29,8 +25,8 @@ while ( have_posts() ) : the_post();
 	
 		<section class="services-section page-section">
 			<div class="wrapper">
-				<div class="rows rows--gutters-small">
-					<div class="rows__medium-4">
+				<div class="row">
+					<div class="col-md-4">
 						<div class="service-block block-1" style="background-image: url('<?php echo get_template_directory_uri() . '/dist/assets/images/live-support.svg'; ?>')">
 							<div class="service-icon-box">
 								<?php
@@ -47,7 +43,7 @@ while ( have_posts() ) : the_post();
 							<a href="<?php the_field( 'live_support_button_link' ); ?>" class="btn--orange"><?php the_field( 'live_support_button_label' ); ?> <i class="fas fa-arrow-right"></i></a>
 						</div>
 					</div>
-					<div class="rows__medium-4">
+					<div class="col-md-4">
 						<div class="service-block block-2" style="background-image: url('<?php echo get_template_directory_uri() . '/dist/assets/images/request-call.svg'; ?>')">
 							<div class="service-icon-box">
 								<?php
@@ -64,7 +60,7 @@ while ( have_posts() ) : the_post();
 							<a href="<?php the_field( 'request_call_back_button_url' ); ?>" class="btn--orange"><?php the_field( 'request_call_back_button' ); ?> <i class="fas fa-arrow-right"></i></a>
 						</div>
 					</div>
-					<div class="rows__medium-4">
+					<div class="col-md-4">
 						<div class="service-block block-3" style="background-image: url('<?php echo get_template_directory_uri() . '/dist/assets/images/user.svg'; ?>')">
 							<div class="service-icon-box">
 								<?php
@@ -125,15 +121,14 @@ while ( have_posts() ) : the_post();
 							<span class="section-header__decoration-element"></span>
 							<h4 class="section-header__Orangesub-title"><?php the_field( 'send_us_message_sub_title' ); ?> </h4>
 						</div>						
-						<div class="rows rows--gutters-small">
+						<div class="row">
 							<?php echo do_shortcode('[contact-form-7 id="1186" title="Contact form 1"]');?>
 						</div>
-						
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
+	<?php endwhile; // end of the loop. ?>
 </main>
-<?php endwhile; // end of the loop. ?>
 <?php get_footer(); ?>

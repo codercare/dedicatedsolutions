@@ -46,7 +46,6 @@
     }
     &.reseller-page-banner{
         .page-banner-content{
-            padding: 2rem 0;
             @include respond(tab-port){
                 padding: 10vmin 0 8vmin;
             }
@@ -81,11 +80,6 @@
         padding: 3rem 0;
         @include respond(tab-port){
             padding: 14vmin 0;
-        }
-    }
-    .section-header__title{
-        @include respond(tab-port){
-            font-size: 4vmin;
         }
     }
     .reseller-exclusive{

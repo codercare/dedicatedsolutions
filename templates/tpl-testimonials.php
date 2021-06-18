@@ -131,14 +131,6 @@ get_header();?>
 							<h3>Eddie Carlos <span>Grom.com</span></h3>
 						</div>
 					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<section class="testimonial-section section">
-		<div class="wrapper">
-			<div class="testimonial-block-wrap">
-				<div class="row">
 					<div class="col-md-4">
 						<div class="testimonial-block">
 							<i class="quote">
@@ -182,6 +174,15 @@ get_header();?>
 			</div>
 		</div>
 	</section>
+	<!-- <section class="testimonial-section section">
+		<div class="wrapper">
+			<div class="testimonial-block-wrap">
+				<div class="row">
+					
+				</div>
+			</div>
+		</div>
+	</section> -->
 </main>
 
 <?php get_footer(); ?>

@@ -181,17 +181,17 @@ while ( have_posts() ) : the_post();
 				</div>
 			</section>
 		</section>
+		<section class="find-your-os" style="background-image:url('<?php echo get_template_directory_uri() . '/dist/assets/images/find-your-os-bg.jpg'; ?>')">
+			<div class="wrapper">
+				<div class="find-your-os--inner-content">
+					<h2 class="section-header__title"><?php the_field( 'cant_find_os_title' ); ?></h2>
+					<p class="section-header__sub-title"><?php the_field( 'cant_find_os_detail' ); ?></p>
+					<a href="<?php the_field( 'cant_find_os_button_link' ); ?>" class="btn--orange"><?php the_field( 'cant_find_os_button_label' ); ?> <i class="fas fa-arrow-right"></i></a>
+				</div>
+			</div>
+		</section>
 	</section>
 
-	<section class="find-your-os section fp-auto-height" style="background-image:url('<?php echo get_template_directory_uri() . '/dist/assets/images/find-your-os-bg.jpg'; ?>')">
-		<div class="wrapper">
-			<div class="find-your-os--inner-content">
-				<h2 class="section-header__title"><?php the_field( 'cant_find_os_title' ); ?></h2>
-				<p class="section-header__sub-title"><?php the_field( 'cant_find_os_detail' ); ?></p>
-				<a href="<?php the_field( 'cant_find_os_button_link' ); ?>" class="btn--orange"><?php the_field( 'cant_find_os_button_label' ); ?> <i class="fas fa-arrow-right"></i></a>
-			</div>
-		</div>
-	</section>
 
 	<section class="virtulization-os section">
 		<div class="wrapper">
@@ -238,7 +238,7 @@ while ( have_posts() ) : the_post();
 		</div>
 	</section>
 
-	<section class="virtulization-detail page-section section">
+	<section class="virtulization-detail section">
 		<div class="wrapper">
 		   <?php
 			if ( have_rows( 'vmware_promax_block' ) ) : 
@@ -299,97 +299,99 @@ while ( have_posts() ) : the_post();
 		</div>
 	</section>
 
-	<section class="control-panels-section section">
-		<div class="wrapper">
-			<div class="section-header u-txt-center">
-				<h2 class="section-header__title"><?php the_field('control_panels_title'); ?></h2>
-				<span class="section-header__decoration-element"></span>
-				<p class="section-header__sub-title"><?php the_field('control_panels_sub_heading'); ?></p>
-			</div>
-			<div class="cp-camparison-table">
-				<div class="cp-camprasion-block cpanel--block">
-					<ul class="cp-detail-list">
-						<li>
-							<div class="cp-logo">
-								<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/cpanel-logo.png'; ?>" alt="cpanel-logo">
-							</div>
-							<ul class="orange--list black">
-								<?php
-								if ( have_rows( 'cpanel_key_feature' ) ) : 
-								while ( have_rows( 'cpanel_key_feature' ) ) :
-								the_row();?>
-									<li><?php the_sub_field('feature')?></li>
-								<?php
-								endwhile; 
-								endif;
-								?>
-							</ul>
-						</li>
-						<?php
-						if ( have_rows( 'cpanel_and_plex_comparison' ) ) : 
-						while ( have_rows( 'cpanel_and_plex_comparison' ) ) :
-						the_row();
-							$cpanel_yes_no = get_sub_field('cpanel_yes_no');
-							?>
-							<li>
-								<div class="cp-decision">
-									<p><span class="<?php if(strtolower($cpanel_yes_no) =='yes'){ echo'yes '; } else if(strtolower($cpanel_yes_no) =='no'){ echo'no '; } ?>"><?php the_sub_field('cpanel_yes_no');?></span> <?php the_sub_field('feature');?></p>
-								</div>
-								<div class="cp-decision-detail">
-									<p><?php the_sub_field('cpanel');?></p>
-								</div>
-							</li>
-							<?php
-						endwhile; 
-						endif;
-						?>						
-					</ul>
+	<section class="section">
+		<section class="control-panels-section">
+			<div class="wrapper">
+				<div class="section-header u-txt-center">
+					<h2 class="section-header__title"><?php the_field('control_panels_title'); ?></h2>
+					<span class="section-header__decoration-element"></span>
+					<p class="section-header__sub-title"><?php the_field('control_panels_sub_heading'); ?></p>
 				</div>
-				<div class="cp-camprasion-block plesk--block">
-					<ul class="cp-detail-list">
-						<li>
-							<div class="cp-logo">
-								<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/plesk-logo.png'; ?>" alt="plesk-logo">
-							</div>
-							<ul class="orange--list black">
-								<?php
-								if ( have_rows( 'plesk_key_feature' ) ) : 
-								while ( have_rows( 'plesk_key_feature' ) ) :
-									the_row();
-									?>
+				<div class="cp-camparison-table">
+					<div class="cp-camprasion-block cpanel--block">
+						<ul class="cp-detail-list">
+							<li>
+								<div class="cp-logo">
+									<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/cpanel-logo.png'; ?>" alt="cpanel-logo">
+								</div>
+								<ul class="orange--list black">
+									<?php
+									if ( have_rows( 'cpanel_key_feature' ) ) : 
+									while ( have_rows( 'cpanel_key_feature' ) ) :
+									the_row();?>
 										<li><?php the_sub_field('feature')?></li>
 									<?php
-								endwhile; 
-								endif;
-								?>
-							</ul>
-						</li>
-						<?php
-						if ( have_rows( 'cpanel_and_plex_comparison' ) ) : 
-						while ( have_rows( 'cpanel_and_plex_comparison' ) ) :
-						the_row();
-							$plesk_yes_no = get_sub_field('plesk_yes_no');
-							?>
-							<li>
-								<div class="cp-decision">
-									<p><span class="<?php if(strtolower($plesk_yes_no) =='yes'){ echo'yes '; } else if(strtolower($plesk_yes_no) =='no'){ echo'no '; } ?>"><?php the_sub_field('plesk_yes_no');?></span> <?php the_sub_field('feature');?></p>
-								</div>
-								<div class="cp-decision-detail">
-									<p><?php the_sub_field('plesk');?></p>
-								</div>
+									endwhile; 
+									endif;
+									?>
+								</ul>
 							</li>
 							<?php
-						endwhile; 
-						endif;
-						?>
-					</ul>
+							if ( have_rows( 'cpanel_and_plex_comparison' ) ) : 
+							while ( have_rows( 'cpanel_and_plex_comparison' ) ) :
+							the_row();
+								$cpanel_yes_no = get_sub_field('cpanel_yes_no');
+								?>
+								<li>
+									<div class="cp-decision">
+										<p><span class="<?php if(strtolower($cpanel_yes_no) =='yes'){ echo'yes '; } else if(strtolower($cpanel_yes_no) =='no'){ echo'no '; } ?>"><?php the_sub_field('cpanel_yes_no');?></span> <?php the_sub_field('feature');?></p>
+									</div>
+									<div class="cp-decision-detail">
+										<p><?php the_sub_field('cpanel');?></p>
+									</div>
+								</li>
+								<?php
+							endwhile; 
+							endif;
+							?>						
+						</ul>
+					</div>
+					<div class="cp-camprasion-block plesk--block">
+						<ul class="cp-detail-list">
+							<li>
+								<div class="cp-logo">
+									<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/plesk-logo.png'; ?>" alt="plesk-logo">
+								</div>
+								<ul class="orange--list black">
+									<?php
+									if ( have_rows( 'plesk_key_feature' ) ) : 
+									while ( have_rows( 'plesk_key_feature' ) ) :
+										the_row();
+										?>
+											<li><?php the_sub_field('feature')?></li>
+										<?php
+									endwhile; 
+									endif;
+									?>
+								</ul>
+							</li>
+							<?php
+							if ( have_rows( 'cpanel_and_plex_comparison' ) ) : 
+							while ( have_rows( 'cpanel_and_plex_comparison' ) ) :
+							the_row();
+								$plesk_yes_no = get_sub_field('plesk_yes_no');
+								?>
+								<li>
+									<div class="cp-decision">
+										<p><span class="<?php if(strtolower($plesk_yes_no) =='yes'){ echo'yes '; } else if(strtolower($plesk_yes_no) =='no'){ echo'no '; } ?>"><?php the_sub_field('plesk_yes_no');?></span> <?php the_sub_field('feature');?></p>
+									</div>
+									<div class="cp-decision-detail">
+										<p><?php the_sub_field('plesk');?></p>
+									</div>
+								</li>
+								<?php
+							endwhile; 
+							endif;
+							?>
+						</ul>
+					</div>
+				</div>
+				<div class="ask-to-expert">
+					<h2 class="section-header__title"><?php the_field('deciding_between_cpanel_and_plesk'); ?></h2>
+					<a href="<?php the_field('ask_our_expert_button_link'); ?>" class="btn--orange"><?php the_field('ask_our_expert_button_label'); ?><i class="fas fa-arrow-right"></i></a>
 				</div>
 			</div>
-		</div>
-	</section>
-	<section class="ask-to-expert section fp-auto-height">
-		<h2 class="section-header__title"><?php the_field('deciding_between_cpanel_and_plesk'); ?></h2>
-		<a href="<?php the_field('ask_our_expert_button_link'); ?>" class="btn--orange"><?php the_field('ask_our_expert_button_label'); ?><i class="fas fa-arrow-right"></i></a>
+		</section>
 	</section>
 </main>
 <?php endwhile; // end of the loop. ?>

@@ -1,6 +1,8 @@
 
 .contact-page-banner{
-    padding: 15rem 0 7rem;
+    @include respond(tab-port){
+        padding: 15vmin 0 7vmin;
+    }
     .page-banner-content{
         p{
             margin: 0;
@@ -13,41 +15,91 @@
 }
 .site-main{
     .services-section{
+        [class^="col-"]:not(:last-child){
+            .service-block{
+                @include respond(mobile){
+                    margin: 0 0 2rem;
+                }
+            }
+        }
         .service-block{
-            padding: 4rem;
+            padding: 2rem;
             border-radius: .5rem;
             color: #fff;
             background-repeat: no-repeat;
             background-position: center;
+            background-size: auto;
+            @include respond(tab-port){
+                padding: 4vmin;
+                border-radius: .5vmin;
+                background-size: 19vmin;
+                &.block-1{
+                    .service-icon-box{
+                        img{
+                            width: 52%;
+                        }
+                    }
+                }
+                &.block-2{
+                    .service-icon-box{
+                        img{
+                            width: 55%;
+                        }
+                    }
+                }
+                &.block-3{
+                    .service-icon-box{
+                        img{
+                            width: 47%;
+                        }
+                    }
+                }
+            }
             .service-icon-box {
-                height: 8rem;
-                width: 8rem;
+                height: 7rem;
+                width: 7rem;
                 background: #fff;
                 border-radius: 100%;
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 margin: 0 0 2rem;
+                @include respond(tab-port){
+                    height: 8vmin;
+                    width: 8vmin;
+                    margin: 0 0 2vmin;
+                }
             }
             h3{
                 font-family: 'Product Sans', sans-serif;
                 font-weight: 700;
                 text-transform: uppercase;
-                margin: 0 0 1.2rem;
+                margin: 0 0 .8rem;
+                font-size: 1.8rem;
+                @include respond(tab-port){
+                    font-size: 1.8vmin;
+                    margin: 0 0 1.2vmin;
+                }
             }
             p{
-                font-size: 1.4rem;
-                margin: 0 0 2.2rem;
+                margin: 0 0 1.5rem;
+                @include respond(tab-port){
+                    font-size: 1.4vmin;
+                    margin: 0 0 2.2vmin;
+                }
             }
             .btn--orange{
                 text-transform: inherit;
-                height: auto;
-                max-height: none;
-                padding: .8rem 2.2rem;
-                max-width: 12.8rem;
                 justify-content: center;
+                @include respond(tab-port){
+                    padding: .8vmin 2.2vmin;
+                    max-width: 12.8vmin;
+                }
                 .fas {
                     margin: 0 0 0 1rem;
+                    @include respond(tab-port){
+                        margin: 0 0 0 1vmin;
+                    }
                 }
             }
             &.block-1{
@@ -70,50 +122,101 @@
         background-repeat: no-repeat;
         background-size: cover;
         background-color: $darkGrey;
-        padding: 10rem 0;
+        padding: 3rem 0;
+        @include respond(tab-port){
+            padding: 0;
+        }
         .get-in-touch{
             color: #fff;
-            // padding: 14.6rem 0;
+            @include respond(mobile){
+                margin: 0 0 2rem;
+            }
             .section-header__title{
                 position: relative;
-                padding-bottom: 2rem;
-                margin: 0 0 3rem;
+                padding-bottom: .8rem;
+                margin: 0 0 1.5rem;
+                @include respond(tab-port){
+                    padding-bottom: 2vmin;
+                    margin: 0 0 3vmin;
+                }
                 &::before{
                     content: '';
                     position: absolute;
                     top: 100%;
                     left: 0;
-                    width: 4.5rem;
-                    border-bottom: .5rem solid $mainOrange;
+                    width: 4rem;
+                    border-bottom: .3rem solid $mainOrange;
+                    @include respond(tab-port){
+                        width: 4.5vmin;
+                        border-bottom-width: .5vmin;
+                    }
                 }
             }
             p{
-                font-size: 1.8rem;
-                padding: 0 8rem 0 0;
-                margin: 0 0 7rem;
+                margin: 0 0 2rem;
+                @include respond(tab-port){
+                    font-size: 1.8vmin;
+                    padding: 0 8vmin 0 0;
+                    margin: 0 0 7vmin;
+                }
             }
             ul{
                 margin: 0;
                 padding: 0;
                 li{
                     list-style-type: none;
-                    position: relative;
-                    margin: 0 0 3rem;
-                    padding: 0 0 0 7rem;
+                    @include respond(mobile){
+                        &:not(:last-child){
+                            margin: 0 0 1.5rem;
+                        }
+                    }
+                    @include respond(tab-port){
+                        position: relative;
+                        margin: 0 0 3vmin;
+                        padding: 0 0 0 7vmin;
+                    }
                     .touch-icon{
-                        position: absolute;
-                        top: 1rem;
-                        left: 0;
+                        @include respond(mobile){
+                            width: 2.8rem;
+                            margin: 0 0 1rem;
+                        }
+                        @include respond(tab-port){
+                            position: absolute;
+                            top: 1vmin;
+                            left: 0;
+                            width: 7.5%;
+                        }
+                    }
+                    &:nth-of-type(2){
+                        .touch-icon{
+                            @include respond(tab-port){
+                                width: 8.8%;
+                            }
+                        }
+                    }
+                    &:last-child{
+                        .touch-icon{
+                            @include respond(tab-port){
+                                width: 9.1%;
+                            }
+                        }
                     }
                     h3{
-                        font-size: 2rem;
+                        font-size: 1.4rem;
                         font-weight: 300;
-                        line-height: 3.2rem;
+                        line-height: 2.2rem;
+                        @include respond(tab-port){
+                            font-size: 2vmin;
+                            line-height: 3.2vmin;
+                        }
                         span{
                             display: block;
-                            font-size: 1.6rem;
+                            font-size: 1.2rem;
                             font-weight: 700;
                             color: $mainOrange;
+                            @include respond(tab-port){
+                                font-size: 1.6vmin;
+                            }
                         }
                     }
                     &:last-child{
@@ -124,64 +227,68 @@
         }
         .contact-form{
             background: #fff;
-            padding: 8rem 9rem;
-            margin: 0 0 0 2rem;
+            padding: 2rem;
+            @include respond(tab-port){
+                padding: 8vmin 9vmin;
+                margin: 0 0 0 2vmin;
+            }
             .form-group{
-                margin-bottom: 1.8rem;
-                padding-right: 25px;
+                margin-bottom: 1.5rem;
+                @include respond(tab-port){
+                    margin-bottom: 1.8vmin;
+                }
             }
             .form-control{
-                font-size: 1.5rem;
-                height: 5.2rem;
+                font-size: 1.4rem;
+                height: 4rem;
                 border: none;
                 background: #F5F5F5;
-                padding: 1.5rem 1.2rem;
+                padding: 1rem 1.5rem;
                 border-radius: .3rem;
                 font-weight: 300;
                 color: $darkGrey;
+                @include respond(tab-port){
+                    font-size: 1.5vmin;
+                    height: 5.2vmin;
+                    padding: 1.5vmin 1.2vmin;
+                    border-radius: .3vmin;
+                }
             }
             textarea.form-control{
                 resize: none;
-                height: 14.4rem;
+                height: 14rem;
+                @include respond(tab-port){
+                    height: 14.4vmin;
+                }
             }
             .captcha {
                 text-align: center;
+                img {
+                    @include respond(tab-port){
+                        width: 33%;
+                    }
+                }
             }
             .btn-center{
                 text-align: center;
-                margin: 7rem 0 0;
+                @include respond(tab-port){
+                    margin: 5vmin 0 0;
+                }
                 .btn--orange{
                     display: inline-block;
-                    height: auto;
-                    max-height: none;
-                    max-width: none;
                     text-transform: capitalize;
-                    font-size: 2rem;
-                    padding: 1.1rem 3.8rem;
-                   .fas{
-                       font-size: 1.4rem;
-                       margin: 0 0 0 0.3rem;
-                   }
+                    @include respond(tab-port){
+                        font-size: 2vmin;
+                        padding: 1.1vmin 3.8vmin;
+                    }
+                    .fas{
+                        margin: 0 0 0 1rem;
+                        @include respond(tab-port){
+                            font-size: 1.4vmin;
+                            margin: 0 0 0 0.3vmin;
+                        }
+                    }
                 }
-            }
-        }
-    }
-}
-
-
-@media(min-width: 1680px){
-    .contact-page-banner {
-        padding: 8rem 0 4rem;
-    }
-    .site-main{
-        .services-section{
-            padding: 11rem 0;
-        }
-        .conatct-form-setion{
-            padding: 0;
-            .contact-form{
-                padding-top:5rem;
-                padding-bottom:5rem;
             }
         }
     }

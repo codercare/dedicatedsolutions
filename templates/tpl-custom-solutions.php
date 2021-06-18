@@ -208,7 +208,19 @@ while ( have_posts() ) : the_post();
 
 	<section class="custom-support section">
 		<div class="wrapper">
-			<div class="row">
+			<div class="row align-items-center">
+				<div class="col-md-5 order-md-1">
+				    <?php 
+					$custom_support_image = '';
+					$custom_support_image     = get_field( 'custom_support_image' );
+					if ( ! empty( $custom_support_image ) ) {
+						$custom_support_image = $custom_support_image['url'];
+					}
+					?>
+					<figure class="thumbnail-img">
+						<img src="<?php echo $custom_support_image; ?>" alt="<?php the_field( 'custom_support_title' ); ?>">
+					</figure>
+				</div> 
 				<div class="col-md-7">
 					<div class="custom-support-content">
 						<h2 class="section-header__title"><?php the_field( 'custom_support_title' ); ?></h2>
@@ -226,18 +238,6 @@ while ( have_posts() ) : the_post();
 						</ul>
 					</div>
 				</div>
-				<div class="col-md-5">
-				    <?php 
-					$custom_support_image = '';
-					$custom_support_image     = get_field( 'custom_support_image' );
-					if ( ! empty( $custom_support_image ) ) {
-						$custom_support_image = $custom_support_image['url'];
-					}
-					?>
-					<figure class="thumbnail-img">
-						<img src="<?php echo $custom_support_image; ?>" alt="<?php the_field( 'custom_support_title' ); ?>">
-					</figure>
-				</div> 
 			</div>
 		</div>
 	</section>

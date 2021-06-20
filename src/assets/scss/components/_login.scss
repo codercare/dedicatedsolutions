@@ -1,0 +1,547 @@
+.ds-form-banner{
+    background: $darkGrey;
+    color: #fff;
+    &__heading{
+        text-align: left;
+        font-size: 2.4rem;
+        font-weight: 700;
+        span{
+            font-weight: 400;
+        }
+    }
+    @include respond(tab-port){
+        padding: 4vmin 0 0;
+        &__heading{
+            font-size: 3.6vmin;
+        }
+    }
+    .breadcrumb{
+        background: none;
+        padding: 0;
+        margin: 0;
+        .breadcrumb-item{
+            a{
+                color: #fff;
+                text-decoration: none;
+                &:hover{
+                    color: $mainOrange;
+                }
+            }
+            &.active{
+                color: $mainOrange;
+            }
+            &+.breadcrumb-item{
+                padding-left: 1rem;
+                @include respond(tab-port){
+                    padding-left: 1.7vmin;
+                }
+                &::before{
+                    content: "";
+                    background: url('../images/angle-right.png')no-repeat center center;
+                    width: 0.6rem;
+                    height: 1.4rem;
+                    float: none;
+                    padding: 0;
+                    display: inline-block;
+                    position: relative;
+                    color: inherit;
+                    margin: 0 1rem 0 0;
+                    top: .4rem;
+                    background-size: 100%;
+                    @include respond(tab-port){
+                        width: .9vmin;
+                        height: 1.7vmin;
+                        margin: 0 1.7vmin 0 0;
+                        top: .4vmin;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.ds-form-order-section{
+    padding: 3rem 0;
+    @include respond(tab-port){
+        padding: 1.5vmin 0;
+    }
+    .ds-login-form{
+        @include respond(mobile){
+            margin: 0 0 3rem;
+        }
+        @include respond(tab-port){
+            padding-right: 4.5vmin;
+            &.ds-login{
+                padding-top: 5vmin;
+                padding-bottom: 5vmin;
+            }
+        }
+        .section-header{
+            &__title{
+                @include respond(tab-port){
+                    margin: 0 0 .5vmin;
+                }
+            }
+            &__sub-title{
+                font-family: 'Product Sans';
+                font-weight: 400;
+                @include respond(tab-port){
+                    margin: 0 0 1rem;
+                }
+            }
+        }
+        .form-check-label{
+            cursor: pointer;
+            position: relative;
+            padding-left: 3.4rem;
+            user-select: none;
+            @include respond(tab-port){
+                padding-left: 4.4vmin;
+            }
+            > span{
+                border: .1rem solid rgba($color: #000000, $alpha: .25);
+                height: 2.4rem;
+                width: 2.4rem;
+                border-radius: .3rem;
+                position: absolute;
+                top: 0;
+                left: 0;
+                @include respond(tab-port){
+                    border-width: .1vmin;
+                    height: 2.4vmin;
+                    width: 2.4vmin;
+                    border-radius: .3vmin;
+                    top: .1vmin;
+                }
+                &::before{
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    margin-left: -.3rem;
+                    margin-top: -.8rem;
+                    width: .6rem;
+                    height: 1.2rem;
+                    border-width: 0 .2rem .2rem 0;
+                    border-style: solid;
+                    border-color: $mainOrange;
+                    -webkit-transform: rotate(45deg);
+                    transform: rotate(45deg);
+                    display: none;
+                    @include respond(tab-port){
+                        margin-left: -.3vmin;
+                        margin-top: -.8vmin;
+                        width: .6vmin;
+                        height: 1.2vmin;
+                        border-width: 0 .2vmin .2vmin 0;
+                    }
+                }
+            }
+            > input[type="checkbox"] {
+                position: absolute;
+                height: 0;
+                width: 0;
+                opacity: 0;
+                visibility: hidden;
+                &:checked{
+                    ~ span{
+                        &::before{
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+        .btn--orange{
+            text-transform: none;
+            @include respond(tab-port){
+                font-size: 1.5vmin;
+                padding: 1.2vmin 3vmin;
+            }
+            .fas{
+                margin: 0 0 0 .8rem;
+                @include respond(tab-port){
+                    margin: 0 0 0 1.5vmin;
+                }
+            }
+        }
+        p{
+            @include respond(tab-port){
+                margin: 2.5vmin 0 4vmin;
+            }
+        }
+        .login-with-other{
+            .section-header__title{
+                font-size: 1.8rem;
+                margin: 0 0 1.5rem;
+                @include respond(tab-port){
+                    font-size: 1.8vmin;
+                    margin: 0 0 3vmin;
+                }
+            }
+            ul {
+                margin: 0;
+                padding: 0;
+                list-style-type: none;
+                display: flex;
+                align-items: center;
+                li{
+                    margin: 0 1rem 0 0;
+                    @include respond(tab-port){
+                        margin: 0 3vmin 0 0;
+                    }
+                    .btn--outline{
+                        height: 4rem;
+                        width: 4rem;
+                        padding: 0;
+                        max-width: none;
+                        display: block;
+                        border: .2rem solid transparent;
+                        border-radius: .7rem;
+                        @include respond(tab-port){
+                            height: 6vmin;
+                            width: 6vmin;
+                            border-radius: .7vmin;
+                            border-width: .2vmin;
+                        }
+                        &.facebook{
+                            border-color: #3B5999;
+                            img{
+                                width: 30.5%;
+                            }
+                            @include respond(tab-port){
+                                img{
+                                    width: 30.5%;
+                                }
+                            }
+                        }
+                        &.google{
+                            border-color: #3C79E6;
+                            img{
+                                width: 48%;
+                            }
+                            @include respond(tab-port){
+                                img{
+                                    width: 48%;
+                                }
+                            }
+                        }
+                        &.apple{
+                            border-color: $darkGrey;
+                            img{
+                                width: 46%;
+                            }
+                            @include respond(tab-port){
+                                img{
+                                    width: 46%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .ds-order-aside{
+        background: $darkGrey;
+        color: #fff;
+        .section-header__title{
+            font-weight: 400;
+            margin: 0;
+            padding: 1.5rem 2rem;
+            @include respond(tab-port){
+                font-size: 3vmin;
+                padding: 1.9vmin 2vmin;
+            }
+        }
+        .server-type {
+            background: #F5F5F5;
+            display: flex;
+            padding: 1rem 2rem;
+            align-items: center;
+            @include respond(tab-port){
+                padding: 1vmin 2vmin;
+            }
+            .server-type-logo{
+                width: 3rem;
+                height: 3rem;
+                @include respond(tab-port){
+                    width: 3vmin;
+                    height: 3vmin;
+                }
+            }
+            h3{
+                font-size: 1.6rem;
+                margin: 0 0 0 1rem;
+                color: $darkGrey;
+                font-weight: 700;
+                @include respond(tab-port){
+                    font-size: 1.8vmin;
+                    margin: 0 0 0 1.5vmin;
+                }
+            }
+        }
+        .your-order-list {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            li{
+                display: flex;
+                padding: .8rem 2rem;
+                border-bottom: .1rem solid rgba($color: #ffffff, $alpha: .22);
+                align-items: center;
+                @include respond(tab-port){
+                    padding: .8vmin  2vmin;
+                    font-size: 1.4vmin;
+                }
+                .order-list__item {
+                    flex: 1 0;
+                    &:last-child {
+                        flex: .6 0;
+                    }
+                }
+                &:last-child{
+                    border: none;
+                    .order-list__item{
+                        font-size: 1.6rem;
+                        font-weight: 700;
+                        font-family: "Product Sans";
+                        color: $mainOrange;
+                        @include respond(tab-port){
+                            font-size: 2vmin;
+                        }
+                        &:last-child {
+                            font-size: 1.8rem;
+                            color: #fff;
+                            text-align: right;
+                            @include respond(tab-port){
+                                font-size: 2.6vmin;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .total-item-price {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 2rem;
+            border-top: .1rem solid #fff;
+            @include respond(tab-port){
+                padding: 1vmin 5vmin;
+                border-top-width: .1vmin;
+            }
+            h2{
+                margin: 0;
+                font-family: "Product Sans";
+                font-size: 1.6rem;
+                font-weight: 400;
+                @include respond(tab-port){
+                    font-size: 2.2vmin;
+                }
+            }
+            .total-amount{
+                font-size: 1.8rem;
+                font-weight: 700;
+                @include respond(tab-port){
+                    font-size: 3vmin;
+                }
+            }
+        }
+        .accordion{
+            padding: 0 2rem;
+            @include respond(tab-port){
+                padding: 0 2vmin;
+                margin: 0 0 .5vmin;
+            }
+            .card{
+                background: none;
+                border: none;
+                border-radius: 0;
+                margin: 0 0 1rem;
+                @include respond(tab-port){
+                    margin: 0 0 1vmin;
+                }
+                .card-header{
+                    border:none;
+                    background: none;
+                    margin: 0;
+                    padding: 0;
+                    position: relative;
+                    .btn{
+                        border: none;
+                        border-radius: 0;
+                        color: #fff;
+                        text-align: left;
+                        background: $mainOrange;
+                        font-size: 1.2rem;
+                        padding: .7rem 4rem;
+                        position: relative;
+                        @include respond(tab-port){
+                            font-size: 1.5vmin;
+                            padding: .95vmin 5vmin;
+                        }
+                        &:focus{
+                            outline: none;
+                            box-shadow: none;
+                        }
+                        &::before{
+                            content: "+";
+                            position: absolute;
+                            top: 50%;
+                            left: 1.5rem;
+                            width: 1.6rem;
+                            height: 1.6rem;
+                            border-radius: 100%;
+                            color: $mainOrange;
+                            background: #fff;
+                            font-size: 1.6rem;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            margin-top: -.8rem;
+                            @include respond(tab-port){
+                                width: 2vmin;
+                                height: 2vmin;
+                                font-size: 2vmin;
+                                margin-top: -1vmin;
+                                left: 2vmin;
+                            }
+                        }
+                        &[aria-expanded="true"]{
+                            &::before{
+                                content: "-";
+                                font-size: 2.4rem;
+                                @include respond(tab-port){
+                                    font-size: 2.8vmin;
+                                }
+                            }
+                        }
+                    }
+                    .remove-accordion {
+                        position: absolute;
+                        top: 50%;
+                        right: 1.5rem;
+                        color: #000;
+                        line-height: initial;
+                        font-size: 1.6rem;
+                        margin-top: -.95rem;
+                        z-index: 99;
+                        cursor: pointer;
+                        &:hover{
+                            color: #fff;
+                        }
+                        @include respond(tab-port){
+                            right: 2vmin;
+                            font-size: 2vmin;
+                            margin-top: -1.2vmin;
+                        }
+                    }
+                }
+                .card-body {
+                    min-height: auto;
+                    padding: 0.6rem 4rem 0;
+                    @include respond(tab-port){
+                        padding: 0.6vmin 5vmin 0;
+                    }
+                    p {
+                        margin: 0 0 .2vmin;
+                        @include respond(mobile){
+                            font-size: 1.2rem;
+                            margin: 0 0 .5rem;
+                        }
+                    }
+                    .free{
+                        margin: 0;
+                        text-transform: uppercase;
+                        font-size: 1.2rem;
+                        font-weight: 700;
+                        color: $mainOrange;
+                        @include respond(tab-port){
+                            font-size: 1.4vmin;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.promotional-code-banner{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center center;
+    position: relative;
+    z-index: 1;
+    @include respond(tab-port){
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: calc(100vh - 17.5vmin);
+    }
+    @include respond(mobile){
+        padding: 3rem 0;
+    }
+    &::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background: rgba($color: #000609, $alpha: 0.5) ;
+    }
+    .section-header{
+        &__title{
+            color: #fff;
+        }
+    }
+    .promotionl-code-content{
+        @include respond(tab-port){
+            width: 79.2vmin;
+            margin: 0 auto;
+        }
+        .appy-promotional-code{
+            position: relative;
+            .form-control{
+                background: #fff;
+                height: 4.4rem;
+                font-size: 1.4rem;
+                padding: 1rem 10rem 1rem 2rem;
+                @include respond(tab-port){
+                    height: 6vmin;
+                    font-size: 1.6vmin;
+                    padding: 1vmin 6.7vmin 1vmin 2.5vmin;
+                }
+            }
+            .btn--orange{
+                position: absolute;
+                top: 0;
+                right: 0;
+                height: 100%;
+                transform: inherit;
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+                text-transform: none;
+                font-size: 1.6rem;
+                padding: 1rem 2rem;
+                @include respond(tab-port){
+                    font-size: 2vmin;
+                    padding: 1.2vmin 4.7vmin;
+                }
+            }
+        }
+    }
+}
+
+.payment-system {
+    background: #FAFAFA;
+    text-align: center;
+    @include respond(tab-port){
+        img{
+            width: 40.7%;
+        }
+    }
+}

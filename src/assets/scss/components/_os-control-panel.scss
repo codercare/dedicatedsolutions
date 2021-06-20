@@ -54,33 +54,72 @@
 .operating-system{
     padding: 3rem 0;
     @include respond(tab-port){
-        padding: 7vmin 0​;
+        padding: 7vmin 0;
+    }
+    .thumbnail-img{
+        text-align: center;
+        @include respond(tab-port){
+            img{
+                width: 100%;
+            }
+        }
+        @include respond(mobile){
+            margin: 0 0 2rem;
+        }
     }
     .os-inner-content{
-        padding: 0 7vmin 0 0;
+        @include respond(tab-port){
+            padding: 0 7vmin 0 0;
+        }
         .section-header__title{
-            margin: 0 0 3vmin;
+            @include respond(tab-port){
+                margin: 0 0 3vmin;
+            }
         }
         .section-header__sub-title{
-            margin: 0 0 2.3vmin
+            @include respond(tab-port){
+                margin: 0 0 2.3vmin
+            }
         }
     }
 }
 
 .linux-os-section{
-    padding: 6vmin 0 3.5vmin;
+    padding: 3rem 0;
+    @include respond(tab-port){
+        padding: 2.5vmin 0;
+    }
     background: $darkGrey;
     color: #fff;
+    .linux-os-type--block{
+        margin: 0 0 2rem;
+        text-align: center;
+        @include respond(tab-port){
+            margin: 0;
+            img{
+                width: 100%;
+            }
+        }
+    }
     .linux-os-inner-content{
-        padding: 0 10vmin 0 0;
+        @include respond(tab-port){
+            padding: 0 10vmin 0 0;
+        }
         .section-header__title{
-            margin: 0 0 2.5vmin;
+            @include respond(tab-port){
+                margin: 0 0 2.5vmin;
+            }
         }
         .section-header__sub-title{
-            margin: 0 0 3vmin;
+            @include respond(tab-port){
+                margin: 0 0 3vmin;
+            }
         }
         ul{
-            column-count: 3;
+            column-count: 2;
+            @include respond(tab-port){
+                column-count: 3;
+            }
         }
     }
     .linux-os-type--block{
@@ -104,27 +143,45 @@
 }
 
 .windows-os-section{
-    padding: 4vmin 0;
+    padding: 3rem 0;
+    @include respond(tab-port){
+        padding: 2.5vmin 0;
+    }
+    .thumbnail-img{
+        margin: 0 0 2rem;
+        text-align: center;
+        @include respond(tab-port){
+            margin: 0;
+            img{
+                width: 100%;
+            }
+        }
+    }
     .os-inner-content {
-        text-align: right;
-        padding: 0 0 0 9vmin;
-        .section-header{
-            margin-bottom: 2vmin;
-            .section-header__decoration-element{
-                margin-bottom: 1vmin;
+        @include respond(tab-port){
+            text-align: right;
+            padding: 0 0 0 9vmin;
+            .section-header{
+                margin-bottom: 2vmin;
+                .section-header__decoration-element{
+                    margin-bottom: 1vmin;
+                }
             }
         }
     }
 }
 
 .find-your-os{
-    padding: 4vmin 0;
+    padding: 3rem 0;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
     text-align: center;
     position: relative;
     color: #fff;
+    @include respond(tab-port){
+        padding: 2vmin 0 3vmin;
+    }
     &::before{
         content: '';
         position: absolute;
@@ -137,12 +194,14 @@
     .find-your-os--inner-content {
         position: relative;
         z-index: 1;
-        .section-header__title{
-            margin: 0 0 2.5vmin;
-        }
-        .section-header__sub-title{
-            max-width: 81.9vmin;
-            margin: 0 auto 3.5vmin;
+        @include respond(tab-port){
+            .section-header__title{
+                margin: 0 0 2.5vmin;
+            }
+            .section-header__sub-title{
+                max-width: 81.9vmin;
+                margin: 0 auto 3.5vmin;
+            }
         }
         .btn--orange{
             max-width: none;
@@ -150,37 +209,79 @@
             height: auto;
             display: inline-block;
             text-transform: capitalize;
-            padding: 1.2vmin 3.7vmin;
+            @include respond(tab-port){
+                padding: 1.2vmin 3.7vmin;
+            }
             .fas{
-                margin-left: 1vmin;
+                margin-left: 1rem;
+                @include respond(tab-port){
+                    margin-left: 1vmin;
+                }
             }
         }
     }
 }
 
 .virtulization-os{
-    padding: 7vmin 0;
-    .section-header{
-        .section-header__sub-title{
-            max-width: 76vmin;
-            margin: 0 auto;
+    @include respond(mobile){
+        padding: 3rem 0;
+    }
+    @include respond(tab-port){
+        .section-header{
+            margin: 0 0 2vmin;
+            .section-header__sub-title{
+                max-width: 76vmin;
+                margin: 0 auto;
+            }
         }
     }
     .virtulization-table{
         margin: 0;
-        text-align: center;
+        @include respond(tab-port){
+            text-align: center;
+        }
+        @include respond(mobile){
+            border-color: #808080;
+            table, thead, tbody, tr, th,  td{
+                display: block;
+            }
+            thead tr{
+                position: absolute;
+                top: -9999rem;
+                left: -9999rem;
+            }
+        }
         thead{
             th{
                 border-bottom: none;
-                padding: 2.2vmin 2vmin;
+                padding: 1rem;
+                vertical-align: middle;
+                @include respond(tab-port){
+                    padding: 2.2vmin 2vmin;
+                }
                 &:first-child{
                     width: 30.7vmin;
+                    @include respond(tab-port){
+                        img{
+                            width: 39.5%;
+                        }
+                    }
                 }
                 &:nth-of-type(2){
                     width: 45vmin;
+                    @include respond(tab-port){
+                        img{
+                            width: 44.4%;
+                        }
+                    }
                 }
                 &:last-child{
                     width: 44.6vmin;
+                    @include respond(tab-port){
+                        img{
+                            width: 53%;
+                        }
+                    }
                 }
             }
         }
@@ -190,27 +291,81 @@
                     background: #F6F6F6 ;
                 }
                 td{
-                    padding: 2vmin 4vmin;
+                    padding: .7rem 1rem .7rem 50%;
+                    position: relative;
+                    @include respond(mobile){
+                        &::before{
+                            content: "";
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 45%;
+                            height: 100%;
+                        }
+                        &:nth-of-type(1)::before { 
+                            background: url('../images/citrix-logo-1.png')no-repeat center left 1rem;
+                            background-size: 5rem;
+                        }
+                        &:nth-of-type(2)::before { 
+                            background: url('../images/vmware-logo.png')no-repeat center left 1rem;
+                            background-size: 8rem;
+                        }
+                        &:nth-of-type(3)::before { 
+                            background: url('../images/proxmox-logo-1.png')no-repeat center left 1rem;
+                            background-size: 10rem;
+                        }
+                    }
+                    @include respond(tab-port){
+                        padding: 1.5vmin 4vmin;
+                    }
                     .yes{
                         display: block;
                         text-transform: uppercase;
-                        font-size: 2.4vmin;
+                        font-size: 1.4rem;
                         color: $mainOrange;
+                        @include respond(mobile){
+                            line-height: initial;
+                        }
+                        @include respond(tab-port){
+                            font-size: 2.4vmin;
+                        }
                     }
                     .no, .unknown{
                         display: block;
                         text-transform: uppercase;
-                        font-size: 2.4vmin;
+                        font-size: 1.4rem;
                         color: rgba($color: #1a1a1a, $alpha: 0.65);
+                        @include respond(mobile){
+                            line-height: initial;
+                        }
+                        @include respond(tab-port){
+                            font-size: 2.4vmin;
+                        }
                     }
                     p{
-                        max-width: 22vmin;
-                        margin: 0 auto;
+                        @include respond(tab-port){
+                            max-width: 22vmin;
+                            margin: 0 auto;
+                        }
+                    }
+                }
+                @include respond(mobile){
+                    &:first-child{
+                        td{
+                            &:first-child{
+                                border-top: none;
+                            }
+                        }
                     }
                 }
             }
         }
         td, th{
+            @include respond(mobile){
+                border-bottom: none;
+                border-right: none;
+                border-left: none;
+            }
             border-color: #808080;
         }
     }
@@ -218,27 +373,56 @@
 
 .virtulization-detail{
     background: #F8F8F8;
+    @include respond(mobile){
+        padding: 3rem 0;
+    }
     .single-virtulzation-row{
-        margin: 0 0 10vmin;
+        @include respond(mobile){
+            &:not(:last-child){
+                margin: 0 0 2rem;
+            }
+        }
+        @include respond(tab-port){
+            margin: 0 0 10vmin;
+        }
         .virtulization-logo {
-            width: 17.8vmin;
-            height: 17.8vmin;
+            width: 10rem;
+            height: 10rem;
             display: flex;
             align-items: center;
             justify-content: center;
             background: #fff;
             border-radius: 100%;
-            box-shadow: 0 0 2vmin 0 rgba($color: #000000, $alpha: .02);
+            box-shadow: 0 0 2rem 0 rgba($color: #000000, $alpha: .02);
+            overflow: hidden;
+            @include respond(mobile){
+                margin: 0 0 1.5rem;
+            }
+            @include respond(tab-port){
+                width: 17.8vmin;
+                height: 17.8vmin;
+                box-shadow: 0 0 2vmin 0 rgba($color: #000000, $alpha: .02);
+                img{
+                    width: 100%;
+                }
+            }
         }
         .virtulization-detail-content {
-            padding: 0 6vmin;
-            .section-header__title{
-                margin: 0 0 2.5vmin;
+            @include respond(mobile){
+                margin: 0 0 1rem;
+            }
+            @include respond(tab-port){
+                padding: 0 6vmin;
+                .section-header__title{
+                    margin: 0 0 2.5vmin;
+                }
             }
         }
         .virtulization-detail-list{
-            display: flex;
-            justify-content: flex-end;
+            @include respond(tab-port){
+                display: flex;
+                justify-content: flex-end;
+            }
         }
         &.citrix{
             .virtulization-logo{
@@ -250,7 +434,9 @@
         }
         .flex-row-reverse{
             .virtulization-detail-list{
-                justify-content: flex-start;
+                @include respond(tab-port){
+                    justify-content: flex-start;
+                }
             }
         }
     }
@@ -272,9 +458,16 @@
         }
     }
     .cp-camparison-table{
-        display: flex;
+        @include respond(tab-port){
+            display: flex;
+        }
         .cp-camprasion-block{
-            width: 50%;
+            @include respond(mobile){
+                margin: 0 0 2rem;
+            }
+            @include respond(tab-port){
+                width: 50%;
+            }
             p{
                 color: rgba($color: #000000, $alpha: .75);
             }
@@ -283,59 +476,94 @@
                 padding: 0;
                 > li{
                     list-style-type: none;
-                    padding: 1vmin 2.5vmin;
+                    padding: 1rem 1.5rem;
                     border-top: 1px solid #C6C6C6;
                     display: flex;
                     align-items: center;
+                    @include respond(tab-port){
+                        padding: 1vmin 2.5vmin;
+                    }
                     .cp-decision{
-                        text-align: center;
-                        width: 22%;
+                        @include respond(mobile){
+                            flex: .6 0;
+                        }
+                        @include respond(tab-port){
+                            text-align: center;
+                            width: 22%;
+                        }
                         p{
                             margin: 0;
-                            font-size: 1.5vmin;
+                            @include respond(tab-port){
+                                font-size: 1.5vmin;
+                            }
                             .yes{
                                 display: block;
-                                font-size: 4vmin;
+                                font-size: 1.8rem;
                                 color: $mainOrange;
                                 line-height: initial;
+                                @include respond(tab-port){
+                                    font-size: 4vmin;
+                                }
                             }
                             .no{
                                 display: block;
-                                font-size: 4vmin;
+                                font-size: 1.8rem;
+                                @include respond(tab-port){
+                                    font-size: 4vmin;
+                                }
                                 color: black;
                                 line-height: initial;
                             }
                         }
                     }
                     .cp-decision-detail {
-                        width: 78%;
-                        padding: 0 1vmin 0 5vmin;
+                        @include respond(mobile){
+                            flex: 1 0;
+                        }
+                        @include respond(tab-port){
+                            width: 78%;
+                            padding: 0 1vmin 0 5vmin;
+                        }
                         p{
                             margin: 0;
-                            font-size: 1.4vmin;
-                            line-height: 2.2vmin;
+                            @include respond(tab-port){
+                                font-size: 1.4vmin;
+                                line-height: 2.2vmin;
+                            }
                         }
                     }
                     &:first-child{
-                        flex-direction: column;
                         border: none;
-                        min-height: 9.5vmin;
-                        padding: 1vmin 7vmin;
-                        align-items: flex-start;
+                        @include respond(mobile){
+                            display: block;
+                        }
+                        @include respond(tab-port){
+                            flex-direction: column;
+                            min-height: 9.5vmin;
+                            padding: 1vmin 7vmin;
+                            align-items: flex-start;
+                        }
                     }
                     &:last-child{
                         padding-bottom: 0;
                     }
                     .cp-logo {
-                        margin: 0 0 1vmin;
-                        width: 10vmin;
+                        margin: 0 0 1.5rem;
+                        width: 10rem;
+                        @include respond(tab-port){
+                            margin: 0 0 1vmin;
+                            width: 10vmin;
+                        }
                     }
                     .orange--list{
                         column-count: 2;
                         li{
                             color: rgba($color: #000000, $alpha: .75);
-                            margin: 0;
-                            font-size: 1.4vmin;
+                            margin: 0 0 .5rem;
+                            @include respond(tab-port){
+                                font-size: 1.4vmin;
+                                margin: 0;
+                            }
                             &::before{
                                 background: $mainOrange;
                             }
@@ -344,21 +572,31 @@
                 }
             }
             &.cpanel--block{
-                border-right: 1px solid #C6C6C6;
+                @include respond(tab-port){
+                    border-right: 1px solid #C6C6C6;
+                }
                 .cp-detail-list{
                     > li{
-                        flex-direction: row-reverse;
+                        @include respond(tab-port){
+                            flex-direction: row-reverse;
+                        }
                         &:first-child{
-                            flex-direction: column;
-                            align-items: flex-end;
+                            @include respond(tab-port){
+                                flex-direction: column;
+                                align-items: flex-end;
+                            }
                         }
                         .orange--list{
-                            column-count: auto;
+                            @include respond(tab-port){
+                                column-count: auto;
+                            }
                         }
                     }
                     .cp-decision-detail{
-                        text-align: right;
-                        padding: 0 5vmin 0 1vmin;
+                        @include respond(tab-port){
+                            text-align: right;
+                            padding: 0 5vmin 0 1vmin;
+                        }
                     }
                 } 
             }
@@ -368,10 +606,12 @@
 
 .ask-to-expert {
     text-align: center;
-    padding: 3vmin 0 1vmin;
-    .section-header__title{
-        font-size: 3vmin;
-        margin: 0 0 1.5vmin;
+    @include respond(tab-port){
+        padding: 3vmin 0 1vmin;
+        .section-header__title{
+            font-size: 3vmin;
+            margin: 0 0 1.5vmin;
+        }
     }
     .btn--orange{
         max-height: none;
@@ -380,9 +620,14 @@
         display: inline-block;
         box-shadow: none;
         text-transform: inherit;
-        padding: 1.2vmin 3.7vmin;
+        @include respond(tab-port){
+            padding: 1.2vmin 3.7vmin;
+        }
         .fas{
-            margin-left: 1vmin;
+            margin-left: 1rem;
+            @include respond(tab-port){
+                margin-left: 1vmin;
+            }
         }
     }
 }

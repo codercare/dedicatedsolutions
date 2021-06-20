@@ -44,6 +44,10 @@
 @import 'components/web-hosting-ecommerce-hosting';
 @import 'components/managed-services';
 @import 'components/on-demand-storage';
+@import 'components/login';
+@import 'components/register';
+@import 'components/configure-payment';
+@import 'components/configure-product';
 
 @import 'cards/customer-cards';
 @import 'cards/datalocation-card';
@@ -51,4 +55,3 @@
 @import 'cards/services-card';
 @import 'cards/product-card';
 @import 'cards/tech-support-card';
-@import 'components/login_registration';

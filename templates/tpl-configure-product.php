@@ -1,20 +1,13 @@
 <?php
-/* Template Name: Customer Register */ 
+/* Template Name: Configure Product */ 
 
 /* Redirect user to home page if already registered
    Changed needed when we want redirect to login page
 */
-if(is_user_logged_in()) {
-	wp_safe_redirect( home_url(), 302 );
-	exit();
-}
 get_header();
 ?>
 
 <main id="fullpage" class="site-main">
-<?php
-	while ( have_posts() ) : the_post(); 
-?>
 	<section class="section">
 		<section class="page-banner ds-form-banner">
 			<div class="wrapper">
@@ -22,8 +15,8 @@ get_header();
 					<h1 class="ds-form-banner__heading">Dedicated<span>Solutions</span></h1>
 					<nav aria-label="breadcrumb">
 						<ol class="breadcrumb">
-							<li class="breadcrumb-item"><a href="#">Configure Product</a></li>
-							<li class="breadcrumb-item active" aria-current="page">Login or Register</li>
+							<li class="breadcrumb-item active" aria-current="page">Configure Product</li>
+							<li class="breadcrumb-item"><a href="#">Login or Register</a></li>
 							<li class="breadcrumb-item"><a href="#">Configure Payment Method</a></li>
 							<li class="breadcrumb-item"><a href="#">Checkout</a></li>
 						</ol>
@@ -35,130 +28,71 @@ get_header();
 		<section class="ds-form-order-section">
 			<div class="wrapper">
 				<div class="row">				
-					<div class="col-md-7">
-						<div class="ds-login-form ds-register">
-							<div class="section-header">
-								<h2 class="section-header__title">Register</h2>
-								<p class="section-header__sub-title">Already have an account? <a href="">Login</a></p>
+					<div class="col-md-7">					
+						<div class="ds-login-form ds-config-product">
+							<div class="product-header">
+								<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/dell-logo.png'; ?>" alt="dell-logo" class="product-logo">
+								<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/hp-logo.png'; ?>" alt="hp-logo" class="product-logo">
+								<h1 class="product-header__title">Server 823B</h1>
 							</div>
-							<form name="wp_signup_form"  id="wp_signup_form" method="post">  
-								<div class="row">
-									<!-- <div class="rows__medium-12"><div id="error-message"></div></div> -->
-									<div class="col-md-6">
-										<div class="form-group">									
-											<label class="form-label" for="firstName"><?php _e( 'First Name', 'dedicatedsolutions' ); ?></label>
-											<input type="text" id="firstName" name="firstName" class="form-control" placeholder="Enter Your First Name">
-										</div>
-									</div>
-									
-									<div class="col-md-6">
-										<div class="form-group">									
-											<label class="form-label" for="lastName"><?php _e( 'Last Name', 'dedicatedsolutions' ); ?></label>
-											<input type="text" id="lastName" name="lastName" class="form-control" placeholder="Enter Your Last Name">
-										</div>
-									</div>
-		
-									<div class="col-md-6">
-										<div class="form-group">									
-											<label class="form-label" for="email"><?php _e( 'Email', 'dedicatedsolutions' ); ?></label>
-											<input type="text" id="email" name="email" class="form-control" placeholder="Enter Your Email">
-										</div>
-									</div>
-		
-									<div class="col-md-6">
-										<div class="form-group">									
-											<label class="form-label" for="altEmail"><?php _e( 'Alternative  Email', 'dedicatedsolutions' ); ?></label>
-											<input type="text" id="altEmail" name="altEmail" class="form-control" placeholder="Enter Your Alternative Email">
-										</div>
-									</div>
-		
-									<div class="col-md-6">
-										<div class="form-group">									
-											<label class="form-label" for="phone"><?php _e( 'Phone Number', 'dedicatedsolutions' ); ?></label>
-											<input type="text" id="phone" name="phone" class="form-control" placeholder="Enter Your Phone Number">
-										</div>
-									</div>
-									
-									<div class="col-md-6">
-										<div class="form-group">									
-											<label class="form-label" for="altPhone"><?php _e( 'Alternative Phone Number', 'dedicatedsolutions' ); ?></label>
-											<input type="text" id="altPhone" name="altPhone" class="form-control" placeholder="Enter Your Alternative Phone Number">
-										</div>
-									</div>
-		
-									<div class="col-md-6">
-										<div class="form-group">									
-											<label class="form-label" for="country"><?php _e( 'Country', 'dedicatedsolutions' ); ?></label>
-											<select id="country" name="country"  class="form-control">
-												<option value="US">United State</option>
-												<option value="NP">Nepal</option>
-											</select>
-										</div>
-									</div>
-									<div class="col-md-6">
-										<div class="form-group">									
-											<label class="form-label" for="state"><?php _e( 'State', 'dedicatedsolutions' ); ?></label>
-											<select id="state" name="state"  class="form-control">
-												<option value="AZ">Albama</option>
-												<option value="CA">Kathmandu</option>
-											</select>
-										</div>
-									</div>
-		
-									<div class="col-md-12">
-										<div class="form-group">									
-											<label class="form-label" for="address"><?php _e( 'Address', 'dedicatedsolutions' ); ?></label>
-											<input type="text" id="address" name="address" class="form-control" placeholder="Enter Your Full Address">
-										</div>
-									</div>
-									<div class="col-md-6">
-										<div class="form-group">									
-											<label class="form-label" for="city"><?php _e( 'City', 'dedicatedsolutions' ); ?></label>
-											<input type="text" id="city" name="city" class="form-control" placeholder="Enter Your City Name">
-										</div>
-									</div>
-									<div class="col-md-6">
-										<div class="form-group">									
-											<label class="form-label" for="zipCode"><?php _e( 'Zip Code', 'dedicatedsolutions' ); ?></label>
-											<input type="text" id="zipCode" name="zipCode" class="form-control" placeholder="Enter Your Zip Code">
-										</div>
-									</div>
-		
-									<div class="col-md-6">
-										<div class="form-group">									
-											<label class="form-label" for="companyName"><?php _e( 'Company Name', 'dedicatedsolutions' ); ?></label>
-											<input type="text" id="companyName" name="companyName" class="form-control" placeholder="Enter Your Company Name">
-										</div>
-									</div>
-									<div class="col-md-6">
-										<div class="form-group">									
-											<label class="form-label" for="companyUrl"><?php _e( 'Company URL', 'dedicatedsolutions' ); ?></label>
-											<input type="text" id="companyUrl" name="companyUrl" class="form-control" placeholder="Enter Your Company URL">
-										</div>
-									</div>
-		
-									<div class="col-md-6">
-										<div class="form-group">									
-											<label class="form-label" for="userpassword"><?php _e( 'Password', 'dedicatedsolutions' ); ?></label>
-											<input type="password" id="userpassword" name="userpassword" class="form-control" placeholder="Enter Password">
-										</div>
-									</div>
-		
-									<div class="col-md-6">
-										<div class="form-group">									
-											<label class="form-label" for="confirmPassword"><?php _e( 'Confirm Password', 'dedicatedsolutions' ); ?></label>
-											<input type="password" id="confirmPassword" name="confirmPassword" class="form-control" placeholder="Enter Confirm Password">
-										</div>
-									</div>						
-	
-									<div class="col-md-12">
-										<div class="btn-center">
-											<button id="register" value="Register"  class="btn--orange">Register </button>
-										</div>
-									</div>
-								</div>
-							</form>	
-						</div>					
+							<div class="form-group">									
+								<label class="form-label" for="billingCycle">Billing Cycle</label>
+								<select id="billingCycle" name="billingCycle"  class="form-control">
+									<option value="AZ">$59.00 / Month - 1 Month(s) Payment (Total $59.00)</option>
+								</select>
+							</div>
+							<div class="form-group">									
+								<label class="form-label" for="os">Select OS</label>
+								<select id="os" name="os"  class="form-control">
+									<option value="" selected disabled>Select Your Server OS</option>
+									<option value="AZ">$59.00 / Month - 1 Month(s) Payment (Total $59.00)</option>
+								</select>
+							</div>
+							<div class="form-group">									
+								<label class="form-label" for="netStorage">Network Attached Storage (NFS/FTP/SCP/SMB)</label>
+								<select id="netStorage" name="netStorage"  class="form-control">
+									<option value="AZ">Network Attached Storage (NFS/FTP/SCP/SMB)</option>
+								</select>
+							</div>
+							<div class="form-group">									
+								<label class="form-label" for="ipv4add">IPv4 Addresses</label>
+								<select id="ipv4add" name="ipv4add"  class="form-control">
+									<option value="" selected disabled>Choose how many IPv4 Addresses are included in your server</option>
+									<option value="AZ">Network Attached Storage (NFS/FTP/SCP/SMB)</option>
+								</select>
+							</div>
+							<div class="form-group">									
+								<label class="form-label" for="addOnProduct">Other Add-On Products</label>
+								<select id="addOnProduct" name="addOnProduct"  class="form-control">
+									<option value="AZ">Additonal Add-On we offer</option>
+								</select>
+							</div>
+							<div class="form-group">									
+								<label class="form-label" for="serverAccess">Server Remote Access</label>
+								<select id="serverAccess" name="serverAccess"  class="form-control">
+									<option value="AZ">Server Access & Automatisation</option>
+								</select>
+							</div>
+							<div class="form-group">									
+								<label class="form-label" for="cpanel">Control Panel</label>
+								<select id="cpanel" name="cpanel"  class="form-control">
+									<option value="" selected disabled>Choose your Server Control Panel</option>
+									<option value="AZ">Server Access & Automatisation</option>
+								</select>
+							</div>
+							<div class="form-group">									
+								<label class="form-label" for="cpanelAddOn">Control Panel Add-On Software</label>
+								<select id="cpanelAddOn" name="cpanelAddOn"  class="form-control">
+									<option value="AZ">Add-On Software we offer</option>
+								</select>
+							</div>
+							<div class="form-group">									
+								<label class="form-label" for="managedService">Managed Services</label>
+								<select id="managedService" name="managedService"  class="form-control">
+									<option value="AZ">Our Managed Server Plans</option>
+								</select>
+							</div>
+						</div>
 					</div>
 					<div class="col-md-5">
 						<div class="ds-order-aside">
@@ -292,5 +226,4 @@ get_header();
 	</section>
 </main>
 
-<?php endwhile; // end of the loop. ?>
 <?php get_footer(); ?>

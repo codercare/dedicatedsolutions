@@ -1,20 +1,13 @@
 <?php
-/* Template Name: Customer Register */ 
+/* Template Name: Custmoer Login 1 */ 
 
 /* Redirect user to home page if already registered
    Changed needed when we want redirect to login page
 */
-if(is_user_logged_in()) {
-	wp_safe_redirect( home_url(), 302 );
-	exit();
-}
 get_header();
 ?>
 
 <main id="fullpage" class="site-main">
-<?php
-	while ( have_posts() ) : the_post(); 
-?>
 	<section class="section">
 		<section class="page-banner ds-form-banner">
 			<div class="wrapper">
@@ -36,128 +29,56 @@ get_header();
 			<div class="wrapper">
 				<div class="row">				
 					<div class="col-md-7">
-						<div class="ds-login-form ds-register">
+						<div class="ds-login-form ds-login">
 							<div class="section-header">
-								<h2 class="section-header__title">Register</h2>
-								<p class="section-header__sub-title">Already have an account? <a href="">Login</a></p>
+								<h2 class="section-header__title">Login</h2>
+								<p class="section-header__sub-title">Don't have an account? <a href="">Register</a></p>
 							</div>
-							<form name="wp_signup_form"  id="wp_signup_form" method="post">  
-								<div class="row">
-									<!-- <div class="rows__medium-12"><div id="error-message"></div></div> -->
-									<div class="col-md-6">
-										<div class="form-group">									
-											<label class="form-label" for="firstName"><?php _e( 'First Name', 'dedicatedsolutions' ); ?></label>
-											<input type="text" id="firstName" name="firstName" class="form-control" placeholder="Enter Your First Name">
+							<form action="" method="post">
+								<div class="form-group">
+									<input type="email" name="email" id="email" class="form-control" placeholder="Enter Your Email">
+								</div>
+								<div class="form-group">
+									<input type="password" name="password" id="password" class="form-control" placeholder="Password">
+								</div>
+								<div class="form-group">
+									<label class="form-check-label">
+										<input type="checkbox" class="form-check-input" name="remember" id="remember" value="checkedValue"> Remember Me
+										<span></span>
+									</label>
+								</div>
+								<div class="form-group">
+									<div class="row align-items-center">
+										<div class="col-6">
+											<button type="submit" class="btn--orange">Login <i class="fas fa-arrow-right"></i></button>
 										</div>
-									</div>
-									
-									<div class="col-md-6">
-										<div class="form-group">									
-											<label class="form-label" for="lastName"><?php _e( 'Last Name', 'dedicatedsolutions' ); ?></label>
-											<input type="text" id="lastName" name="lastName" class="form-control" placeholder="Enter Your Last Name">
-										</div>
-									</div>
-		
-									<div class="col-md-6">
-										<div class="form-group">									
-											<label class="form-label" for="email"><?php _e( 'Email', 'dedicatedsolutions' ); ?></label>
-											<input type="text" id="email" name="email" class="form-control" placeholder="Enter Your Email">
-										</div>
-									</div>
-		
-									<div class="col-md-6">
-										<div class="form-group">									
-											<label class="form-label" for="altEmail"><?php _e( 'Alternative  Email', 'dedicatedsolutions' ); ?></label>
-											<input type="text" id="altEmail" name="altEmail" class="form-control" placeholder="Enter Your Alternative Email">
-										</div>
-									</div>
-		
-									<div class="col-md-6">
-										<div class="form-group">									
-											<label class="form-label" for="phone"><?php _e( 'Phone Number', 'dedicatedsolutions' ); ?></label>
-											<input type="text" id="phone" name="phone" class="form-control" placeholder="Enter Your Phone Number">
-										</div>
-									</div>
-									
-									<div class="col-md-6">
-										<div class="form-group">									
-											<label class="form-label" for="altPhone"><?php _e( 'Alternative Phone Number', 'dedicatedsolutions' ); ?></label>
-											<input type="text" id="altPhone" name="altPhone" class="form-control" placeholder="Enter Your Alternative Phone Number">
-										</div>
-									</div>
-		
-									<div class="col-md-6">
-										<div class="form-group">									
-											<label class="form-label" for="country"><?php _e( 'Country', 'dedicatedsolutions' ); ?></label>
-											<select id="country" name="country"  class="form-control">
-												<option value="US">United State</option>
-												<option value="NP">Nepal</option>
-											</select>
-										</div>
-									</div>
-									<div class="col-md-6">
-										<div class="form-group">									
-											<label class="form-label" for="state"><?php _e( 'State', 'dedicatedsolutions' ); ?></label>
-											<select id="state" name="state"  class="form-control">
-												<option value="AZ">Albama</option>
-												<option value="CA">Kathmandu</option>
-											</select>
-										</div>
-									</div>
-		
-									<div class="col-md-12">
-										<div class="form-group">									
-											<label class="form-label" for="address"><?php _e( 'Address', 'dedicatedsolutions' ); ?></label>
-											<input type="text" id="address" name="address" class="form-control" placeholder="Enter Your Full Address">
-										</div>
-									</div>
-									<div class="col-md-6">
-										<div class="form-group">									
-											<label class="form-label" for="city"><?php _e( 'City', 'dedicatedsolutions' ); ?></label>
-											<input type="text" id="city" name="city" class="form-control" placeholder="Enter Your City Name">
-										</div>
-									</div>
-									<div class="col-md-6">
-										<div class="form-group">									
-											<label class="form-label" for="zipCode"><?php _e( 'Zip Code', 'dedicatedsolutions' ); ?></label>
-											<input type="text" id="zipCode" name="zipCode" class="form-control" placeholder="Enter Your Zip Code">
-										</div>
-									</div>
-		
-									<div class="col-md-6">
-										<div class="form-group">									
-											<label class="form-label" for="companyName"><?php _e( 'Company Name', 'dedicatedsolutions' ); ?></label>
-											<input type="text" id="companyName" name="companyName" class="form-control" placeholder="Enter Your Company Name">
-										</div>
-									</div>
-									<div class="col-md-6">
-										<div class="form-group">									
-											<label class="form-label" for="companyUrl"><?php _e( 'Company URL', 'dedicatedsolutions' ); ?></label>
-											<input type="text" id="companyUrl" name="companyUrl" class="form-control" placeholder="Enter Your Company URL">
-										</div>
-									</div>
-		
-									<div class="col-md-6">
-										<div class="form-group">									
-											<label class="form-label" for="userpassword"><?php _e( 'Password', 'dedicatedsolutions' ); ?></label>
-											<input type="password" id="userpassword" name="userpassword" class="form-control" placeholder="Enter Password">
-										</div>
-									</div>
-		
-									<div class="col-md-6">
-										<div class="form-group">									
-											<label class="form-label" for="confirmPassword"><?php _e( 'Confirm Password', 'dedicatedsolutions' ); ?></label>
-											<input type="password" id="confirmPassword" name="confirmPassword" class="form-control" placeholder="Enter Confirm Password">
-										</div>
-									</div>						
-	
-									<div class="col-md-12">
-										<div class="btn-center">
-											<button id="register" value="Register"  class="btn--orange">Register </button>
+										<div class="col-6 text-right">
+											<a href="">Forgot Password?</a>
 										</div>
 									</div>
 								</div>
-							</form>	
+							</form>
+							<p>* By logging in, you agree to our <a href="">Terms of Use</a> and to receive Wix emails & updates and acknowledge that you read our <a href="">Privacy Policy.</a></p>
+							<div class="login-with-other">
+								<h2 class="section-header__title">OR</h2>
+								<ul>
+									<li>
+										<button type="button" class="btn--outline facebook">
+											<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/facebook.png'; ?>" alt="facebook-logo">
+										</button>
+									</li>
+									<li>
+										<button type="button" class="btn--outline google">
+											<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/google.png'; ?>" alt="google-logo">
+										</button>
+									</li>
+									<li>
+										<button type="button" class="btn--outline apple">
+											<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/apple.png'; ?>" alt="apple-logo">
+										</button>
+									</li>
+								</ul>
+							</div>
 						</div>					
 					</div>
 					<div class="col-md-5">
@@ -292,5 +213,4 @@ get_header();
 	</section>
 </main>
 
-<?php endwhile; // end of the loop. ?>
 <?php get_footer(); ?>

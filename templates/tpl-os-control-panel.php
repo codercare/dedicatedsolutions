@@ -86,7 +86,7 @@ while ( have_posts() ) : the_post();
 						</div>
 					</div>
 				</div>
-			</section>
+			</div>
 		</section>
 	</section>
 	
@@ -179,7 +179,7 @@ while ( have_posts() ) : the_post();
 						</div>
 					</div>
 				</div>
-			</section>
+			</div>
 		</section>
 		<section class="find-your-os" style="background-image:url('<?php echo get_template_directory_uri() . '/dist/assets/images/find-your-os-bg.jpg'; ?>')">
 			<div class="wrapper">

@@ -1,5 +1,5 @@
 
-/*
+
 .site-main .page-wrap{
     margin: 80px auto;
 }
@@ -7,7 +7,18 @@
 .woocommerce{
     margin: 25px auto;
 }
-*/
+
+.pages-inner{
+    margin: 90px auto 0px;
+}
+
+.success_message{
+    color:rgb(3, 172, 59);
+}
+
+.error_message{
+    color:rgb(201, 25, 25);
+}
 
 .woocommerce-MyAccount-navigation ul{
     padding: 0px;

@@ -5,7 +5,7 @@
    Changed needed when we want redirect to login page
 */
 if(is_user_logged_in()) {
-	wp_safe_redirect( home_url(), 302 );
+	wp_safe_redirect(site_url('/my-account'), 302 );
 	exit();
 }
 get_header();
@@ -39,11 +39,11 @@ get_header();
 						<div class="ds-login-form ds-register">
 							<div class="section-header">
 								<h2 class="section-header__title">Register</h2>
-								<p class="section-header__sub-title">Already have an account? <a href="">Login</a></p>
+								<p class="section-header__sub-title">Already have an account? <a href="<?php echo site_url('/login');?>">Login</a></p>
 							</div>
 							<form name="wp_signup_form"  id="wp_signup_form" method="post">  
 								<div class="row">
-									<!-- <div class="rows__medium-12"><div id="error-message"></div></div> -->
+									<div class="col-md-12"><div id="message"></div></div>
 									<div class="col-md-6">
 										<div class="form-group">									
 											<label class="form-label" for="firstName"><?php _e( 'First Name', 'dedicatedsolutions' ); ?></label>

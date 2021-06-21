@@ -38,3 +38,12 @@ function checkout_message() {
 // 	return $address_fields;
 // }
 
+/* Customization of global wrapper class of product page */
+// remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
+// remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
+
+
+/**  
+ * Remove related product listing woocommerce
+ */
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );

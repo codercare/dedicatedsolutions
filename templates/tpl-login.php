@@ -1,9 +1,15 @@
 <?php
-/* Template Name: Custmoer Login 1 */ 
+/* Template Name: Customer Login */ 
 
-/* Redirect user to home page if already registered
+/* Redirect user to dashboard if user is already loged in to system
+   home page if already registered
    Changed needed when we want redirect to login page
 */
+if(is_user_logged_in()) {
+	wp_safe_redirect( site_url('/my-account'), 302 );
+	exit();
+}
+
 get_header();
 ?>
 
@@ -15,10 +21,10 @@ get_header();
 					<h1 class="ds-form-banner__heading">Dedicated<span>Solutions</span></h1>
 					<nav aria-label="breadcrumb">
 						<ol class="breadcrumb">
-							<li class="breadcrumb-item"><a href="#">Configure Product</a></li>
+							<li class="breadcrumb-item"><a href="<?php echo site_url('/');?>">Configure Product</a></li>
 							<li class="breadcrumb-item active" aria-current="page">Login or Register</li>
-							<li class="breadcrumb-item"><a href="#">Configure Payment Method</a></li>
-							<li class="breadcrumb-item"><a href="#">Checkout</a></li>
+							<li class="breadcrumb-item"><a href="<?php echo site_url('/');?>">Configure Payment Method</a></li>
+							<li class="breadcrumb-item"><a href="<?php echo site_url('/');?>">Checkout</a></li>
 						</ol>
 					</nav>					
 				</div>
@@ -32,28 +38,29 @@ get_header();
 						<div class="ds-login-form ds-login">
 							<div class="section-header">
 								<h2 class="section-header__title">Login</h2>
-								<p class="section-header__sub-title">Don't have an account? <a href="">Register</a></p>
+								<p class="section-header__sub-title">Don't have an account? <a href="<?php echo site_url('/register');?>">Register</a></p>
+								<div id="message" class="error_message"></div>		
 							</div>
-							<form action="" method="post">
+							<form name="wp_login_form"  id="wp_login_form" method="post">
 								<div class="form-group">
-									<input type="email" name="email" id="email" class="form-control" placeholder="Enter Your Email">
+									<input type="email" name="userEmail" id="userEmail" class="form-control" placeholder="Enter Your Email">
 								</div>
 								<div class="form-group">
 									<input type="password" name="password" id="password" class="form-control" placeholder="Password">
 								</div>
 								<div class="form-group">
 									<label class="form-check-label">
-										<input type="checkbox" class="form-check-input" name="remember" id="remember" value="checkedValue"> Remember Me
+										<input type="checkbox" class="form-check-input" name="remember" id="remember" value="1"> Remember Me
 										<span></span>
 									</label>
 								</div>
 								<div class="form-group">
 									<div class="row align-items-center">
 										<div class="col-6">
-											<button type="submit" class="btn--orange">Login <i class="fas fa-arrow-right"></i></button>
+											<button id="login" value="login" class="btn--orange">Login <i class="fas fa-arrow-right"></i></button>
 										</div>
 										<div class="col-6 text-right">
-											<a href="">Forgot Password?</a>
+											<a href="<?php echo site_url('my-account/lost-password/');?>">Forgot Password?</a>
 										</div>
 									</div>
 								</div>

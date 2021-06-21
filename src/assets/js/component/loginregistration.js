@@ -51,11 +51,18 @@ $('#register').on('click',function(e){
         data : ajaxdata,
         success: function(response) {
             if(response.success =="1") {   
-                jQuery("#error-message").html(response.message);
-                jQuery('#wp_signup_form').trigger("reset");
+                jQuery("#message").removeClass('error_message').addClass('success_message');
+                jQuery("#message").html(response.message);
+                setTimeout(function(){
+                    jQuery('#wp_signup_form').trigger("reset");
+                    window.location.href = response.redirect_url;
+                }, 3000);
+
+               
             }
             else{
-                jQuery("#error-message").html(response.message_data); 
+                jQuery("#message").removeClass('success_message').addClass('error_message');
+                jQuery("#message").html(response.message_data); 
             }            
         }
     });			
@@ -84,12 +91,18 @@ $('#login').on('click',function(e){
         url : ajaxurl,
         data : ajaxdata,
         success: function(response) {
-            if(response.success =="1") {   
-                jQuery("#message").html(response.message);
-                jQuery('#wp_login_form').trigger("reset");
-                window.location.href = response.redirect_url;
+            if(response.success =="1") {                  
+                jQuery("#message").removeClass('error_message').addClass('success_message');
+                jQuery("#message").html(response.message+' '+response.message_data);               
+                setTimeout(function(){
+                    jQuery('#wp_login_form').trigger("reset"); 
+                    window.location.href = response.redirect_url;
+                }, 2000);
+
+                
             }
             else{
+                jQuery("#message").removeClass('success_message').addClass('error_message');
                 jQuery("#message").html(response.message_data); 
             }            
         }

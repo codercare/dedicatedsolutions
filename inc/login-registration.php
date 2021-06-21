@@ -73,29 +73,29 @@ function ds_handle_registration(){
 	/** Server side validation of registration form */
 	
 	if( empty($firstName) )
-	 	 '<p class="error">Enter First Name</p>';
+	 	 '<li class="error">Enter First Name</li>';
 	 elseif( !preg_match("/^[a-zA-Z'-]+$/",$firstName) )
-	 	$error .= '<p class="error">Enter Valid First Name</p>';
+	 	$error .= '<li class="error">Enter Valid First Name</li>';
 	
 	if( empty( $lastName ) )
-		$error .= '<p class="error">Enter Last Name</p>';
+		$error .= '<li class="error">Enter Last Name</li>';
 	elseif( !preg_match("/^[a-zA-Z'-]+$/",$lastName) )
-		$error .= '<p class="error">Enter Valid Last Name</p>';
+		$error .= '<li class="error">Enter Valid Last Name</li>';
 	
 
 	if( empty( $email) )
-	 $error .= '<p class="error">Enter Email Address</p>';
+	 $error .= '<li class="error">Enter Email Address</li>';
 	 elseif( !filter_var($email, FILTER_VALIDATE_EMAIL) )
-	 $error .= '<p class="error">Enter Valid Email</p>';
+	 $error .= '<li class="error">Enter Valid Email</li>';
 	
 	if( empty( $password ) )
-	 $error .= '<p class="error">Password should not be blank</p>';
+	 $error .= '<li class="error">Password should not be blank</li>';
 
 	if( empty( $confirmPassword ) )
-	 $error .= '<p class="error">Confirm Password should not be blank</p>';
+	 $error .= '<li class="error">Confirm Password should not be blank</li>';
 	
 	 if($password  != $confirmPassword )
-	  $error .= '<p class="error">Password and Confirm Password must be matched</p>';
+	  $error .= '<li class="error">Password and Confirm Password must be matched</li>';
 	
 	
 
@@ -156,9 +156,11 @@ function ds_handle_registration(){
 		
 			update_user_meta( $user_id, 'billing_company',$companyName);
 			
-			update_user_meta( $user_id, 'company_url',$companyUrl);			
+			update_user_meta( $user_id, 'company_url',$companyUrl);		
 			
-			echo json_encode(array('success' => 1, 'message' =>'Registration Successful'));
+			$redirect_url = site_url('/login');
+			
+			echo json_encode(array('success' => 1, 'message' =>'Registration Successfull redirected to login','redirect_url'=>$redirect_url));
 		}
 	
 	}

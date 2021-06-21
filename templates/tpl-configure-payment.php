@@ -1,20 +1,13 @@
 <?php
-/* Template Name: Customer Register */ 
+/* Template Name: Configure Payment Method */ 
 
 /* Redirect user to home page if already registered
    Changed needed when we want redirect to login page
 */
-if(is_user_logged_in()) {
-	wp_safe_redirect( home_url(), 302 );
-	exit();
-}
 get_header();
 ?>
 
 <main id="fullpage" class="site-main">
-<?php
-	while ( have_posts() ) : the_post(); 
-?>
 	<section class="section">
 		<section class="page-banner ds-form-banner">
 			<div class="wrapper">
@@ -23,8 +16,8 @@ get_header();
 					<nav aria-label="breadcrumb">
 						<ol class="breadcrumb">
 							<li class="breadcrumb-item"><a href="#">Configure Product</a></li>
-							<li class="breadcrumb-item active" aria-current="page">Login or Register</li>
-							<li class="breadcrumb-item"><a href="#">Configure Payment Method</a></li>
+							<li class="breadcrumb-item"><a href="#">Login or Register</a></li>
+							<li class="breadcrumb-item active" aria-current="page">Configure Payment Method</li>
 							<li class="breadcrumb-item"><a href="#">Checkout</a></li>
 						</ol>
 					</nav>					
@@ -35,130 +28,99 @@ get_header();
 		<section class="ds-form-order-section">
 			<div class="wrapper">
 				<div class="row">				
-					<div class="col-md-7">
-						<div class="ds-login-form ds-register">
-							<div class="section-header">
-								<h2 class="section-header__title">Register</h2>
-								<p class="section-header__sub-title">Already have an account? <a href="">Login</a></p>
-							</div>
-							<form name="wp_signup_form"  id="wp_signup_form" method="post">  
-								<div class="row">
-									<!-- <div class="rows__medium-12"><div id="error-message"></div></div> -->
-									<div class="col-md-6">
-										<div class="form-group">									
-											<label class="form-label" for="firstName"><?php _e( 'First Name', 'dedicatedsolutions' ); ?></label>
-											<input type="text" id="firstName" name="firstName" class="form-control" placeholder="Enter Your First Name">
-										</div>
+					<div class="col-md-7">					
+						<div class="ds-login-form ds-config-payment">
+							<div class="configure-payment-content">
+								<ul class="nav nav-pills" id="pills-tab" role="tablist">
+									<li class="nav-item" role="presentation">
+										<a class="nav-link active" id="billing-tab" data-toggle="pill" href="#billing" role="tab" aria-controls="billing" aria-selected="true">Billing Details</a>
+									</li>
+									<li class="nav-item" role="presentation">
+										<a class="nav-link" id="credait-card-tab" data-toggle="pill" href="#credait-card" role="tab" aria-controls="credait-card" aria-selected="false">Credit Card Details</a>
+									</li>
+								</ul>
+								<div class="tab-content" id="pills-tabContent">
+									<div class="tab-pane fade show active" id="billing" role="tabpanel" aria-labelledby="billing-tab">
+										<form action="" method="post">
+											<div class="row">
+												<div class="col-md-6">
+													<div class="form-group">
+														  <label class="form-label" for="fName">
+														  First Name <span class="required">*</span>
+														</label>
+														  <input type="text" name="fName" id="fName" class="form-control">
+													</div>
+												</div>
+												<div class="col-md-6">
+													<div class="form-group">
+														  <label class="form-label" for="lName">
+														  Last Name <span class="required">*</span>
+														</label>
+														  <input type="text" name="lName" id="lName" class="form-control">
+													</div>
+												</div>
+												<div class="col-md-12">
+													<div class="form-group">
+														  <label class="form-label" for="address">Address</label>
+														  <input type="text" name="address" id="address" class="form-control">
+													</div>
+												</div>
+												<div class="col-md-12">
+													<div class="form-group">
+															  <label class="form-label" for="country">
+																Country <span class="required">*</span>
+															  </label>
+														  <input type="text" name="country" id="country" class="form-control">
+													</div>
+												</div>
+												<div class="col-md-12">
+													<div class="form-group">
+														  <label class="form-label" for="streetAddress">
+														  Street address <span class="required">*</span>
+														</label>
+														  <input type="text" name="streetAddress" id="streetAddress" class="form-control">
+													</div>
+													<div class="form-group">
+														  <input type="text" name="streetAddress" id="streetAddress" class="form-control">
+													</div>
+												</div>
+												<div class="col-md-6">
+													<div class="form-group">
+														  <label class="form-label" for="city">
+														  Town / City <span class="required">*</span>
+														</label>
+														  <input type="text" name="city" id="city" class="form-control">
+													</div>
+												</div>
+												<div class="col-md-6">
+													<div class="form-group">
+														  <label class="form-label" for="country">
+														  State / Country <span class="required">*</span>
+														</label>
+														  <input type="text" name="state" id="state" class="form-control">
+													</div>
+												</div>
+												<div class="col-md-12">
+													<div class="form-group">
+														  <label class="form-label" for="country">
+														  Postcode / Zip <span class="required">*</span>
+														</label>
+														  <input type="text" name="zipcode" id="zipcode" class="form-control">
+													</div>
+												</div>
+												<div class="col-md-12">
+													<div class="form-group">
+														  <button type="submit" class="btn--orange">Continue to Shipping</button>
+													</div>
+												</div>
+											</div>
+										</form>
 									</div>
-									
-									<div class="col-md-6">
-										<div class="form-group">									
-											<label class="form-label" for="lastName"><?php _e( 'Last Name', 'dedicatedsolutions' ); ?></label>
-											<input type="text" id="lastName" name="lastName" class="form-control" placeholder="Enter Your Last Name">
-										</div>
-									</div>
-		
-									<div class="col-md-6">
-										<div class="form-group">									
-											<label class="form-label" for="email"><?php _e( 'Email', 'dedicatedsolutions' ); ?></label>
-											<input type="text" id="email" name="email" class="form-control" placeholder="Enter Your Email">
-										</div>
-									</div>
-		
-									<div class="col-md-6">
-										<div class="form-group">									
-											<label class="form-label" for="altEmail"><?php _e( 'Alternative  Email', 'dedicatedsolutions' ); ?></label>
-											<input type="text" id="altEmail" name="altEmail" class="form-control" placeholder="Enter Your Alternative Email">
-										</div>
-									</div>
-		
-									<div class="col-md-6">
-										<div class="form-group">									
-											<label class="form-label" for="phone"><?php _e( 'Phone Number', 'dedicatedsolutions' ); ?></label>
-											<input type="text" id="phone" name="phone" class="form-control" placeholder="Enter Your Phone Number">
-										</div>
-									</div>
-									
-									<div class="col-md-6">
-										<div class="form-group">									
-											<label class="form-label" for="altPhone"><?php _e( 'Alternative Phone Number', 'dedicatedsolutions' ); ?></label>
-											<input type="text" id="altPhone" name="altPhone" class="form-control" placeholder="Enter Your Alternative Phone Number">
-										</div>
-									</div>
-		
-									<div class="col-md-6">
-										<div class="form-group">									
-											<label class="form-label" for="country"><?php _e( 'Country', 'dedicatedsolutions' ); ?></label>
-											<select id="country" name="country"  class="form-control">
-												<option value="US">United State</option>
-												<option value="NP">Nepal</option>
-											</select>
-										</div>
-									</div>
-									<div class="col-md-6">
-										<div class="form-group">									
-											<label class="form-label" for="state"><?php _e( 'State', 'dedicatedsolutions' ); ?></label>
-											<select id="state" name="state"  class="form-control">
-												<option value="AZ">Albama</option>
-												<option value="CA">Kathmandu</option>
-											</select>
-										</div>
-									</div>
-		
-									<div class="col-md-12">
-										<div class="form-group">									
-											<label class="form-label" for="address"><?php _e( 'Address', 'dedicatedsolutions' ); ?></label>
-											<input type="text" id="address" name="address" class="form-control" placeholder="Enter Your Full Address">
-										</div>
-									</div>
-									<div class="col-md-6">
-										<div class="form-group">									
-											<label class="form-label" for="city"><?php _e( 'City', 'dedicatedsolutions' ); ?></label>
-											<input type="text" id="city" name="city" class="form-control" placeholder="Enter Your City Name">
-										</div>
-									</div>
-									<div class="col-md-6">
-										<div class="form-group">									
-											<label class="form-label" for="zipCode"><?php _e( 'Zip Code', 'dedicatedsolutions' ); ?></label>
-											<input type="text" id="zipCode" name="zipCode" class="form-control" placeholder="Enter Your Zip Code">
-										</div>
-									</div>
-		
-									<div class="col-md-6">
-										<div class="form-group">									
-											<label class="form-label" for="companyName"><?php _e( 'Company Name', 'dedicatedsolutions' ); ?></label>
-											<input type="text" id="companyName" name="companyName" class="form-control" placeholder="Enter Your Company Name">
-										</div>
-									</div>
-									<div class="col-md-6">
-										<div class="form-group">									
-											<label class="form-label" for="companyUrl"><?php _e( 'Company URL', 'dedicatedsolutions' ); ?></label>
-											<input type="text" id="companyUrl" name="companyUrl" class="form-control" placeholder="Enter Your Company URL">
-										</div>
-									</div>
-		
-									<div class="col-md-6">
-										<div class="form-group">									
-											<label class="form-label" for="userpassword"><?php _e( 'Password', 'dedicatedsolutions' ); ?></label>
-											<input type="password" id="userpassword" name="userpassword" class="form-control" placeholder="Enter Password">
-										</div>
-									</div>
-		
-									<div class="col-md-6">
-										<div class="form-group">									
-											<label class="form-label" for="confirmPassword"><?php _e( 'Confirm Password', 'dedicatedsolutions' ); ?></label>
-											<input type="password" id="confirmPassword" name="confirmPassword" class="form-control" placeholder="Enter Confirm Password">
-										</div>
-									</div>						
-	
-									<div class="col-md-12">
-										<div class="btn-center">
-											<button id="register" value="Register"  class="btn--orange">Register </button>
-										</div>
-									</div>
+									<div class="tab-pane fade" id="credait-card" role="tabpanel" aria-labelledby="credait-card-tab">...</div>
 								</div>
-							</form>	
-						</div>					
+							</div>
+							<a href="" class="return-to-cart"><i class="fas fa-angle-left"></i> Return To Cart</a>
+						</div>
 					</div>
 					<div class="col-md-5">
 						<div class="ds-order-aside">
@@ -292,5 +254,4 @@ get_header();
 	</section>
 </main>
 
-<?php endwhile; // end of the loop. ?>
 <?php get_footer(); ?>

@@ -1,0 +1,89 @@
+.ds-form-order-section{
+    .ds-config-payment{
+        .form-label{
+            @include respond(tab-port){
+                font-size: 1.5vmin;
+            }
+        }
+        .form-group{
+            @include respond(tab-port){
+                margin: 0 0 1vmin;
+            }
+        }
+        .form-control{
+            border-radius: 0;
+            border: .1rem solid #d6d6d6;
+            @include respond(tab-port){
+                border-width: .1vmin;
+            }
+        }
+        .btn--orange{
+            border-radius: 0;
+            background: #329ADC;
+            text-transform: none;
+            font-weight: 400;
+            @include respond(tab-port){
+                font-size: 1.5vmin;
+            }
+        }
+        .configure-payment-content{
+            margin: 0 0 1rem;
+            @include respond(tab-port){
+                margin: 0 0 .6vmin;
+            }
+            .nav{   
+                margin: 0 0 1.5rem;
+                @include respond(tab-port){
+                    margin: 0 0 2vmin;
+                }
+                .nav-item{
+                    width: 50%;
+                    .nav-link{
+                        border-radius: 0;
+                        text-transform: uppercase;
+                        font-family: "Product Sans";
+                        font-size: 1.4rem;
+                        font-weight: 700;
+                        text-align: center;
+                        border: .1rem solid $mainOrange;
+                        padding: .7rem 1rem;
+                        @include respond(tab-port){
+                            font-size: 1.8vmin;
+                            border-width: .1vmin;
+                            padding: .8vmin 1vmin;
+                        }
+                        &:hover{
+                            color: $mainOrange;
+                        }
+                        &.active{
+                            background: $mainOrange;
+                            &:hover{
+                                color: #fff;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .return-to-cart{
+            color: #4A4949;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            &:hover{
+                color: $mainOrange;
+            }
+            .fas{
+                font-size: 2rem;
+                margin-right: 1rem;
+                @include respond(tab-port){
+                    font-size: 2.2vmin;
+                    margin-right: 2vmin;
+                }
+            }
+            @include respond(tab-port){
+                font-size: 1.6vmin;
+            }
+        }
+    }
+}

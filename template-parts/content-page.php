@@ -8,7 +8,7 @@
  */
 
 ?>
-<section id="post-<?php the_ID(); ?>" class="wrapper">
+<section id="post-<?php the_ID(); ?>" class="wrapper section page-wrap">
 
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>

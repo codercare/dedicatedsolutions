@@ -189,19 +189,20 @@ while ( have_posts() ) : the_post();
 				</div>
 				<div class="col-xl-3 order-xl-2 col-lg-6">
 					<div class="storage-based-feat-block">
-					    <?php if( have_rows('redundant_nas_right') ): ?>
-						<?php while( have_rows('redundant_nas_right') ): the_row(); ?>
+					    <?php 
+						if( have_rows('redundant_nas_right') ): 
+						while( have_rows('redundant_nas_right') ): the_row(); ?>
 						<h2><?php echo get_sub_field('feature_heading');?></h2>
-						<ul class="check-list-group orange-check">
-							<?php 
-							$features =  get_sub_field('features');
-							foreach($features as $row){
-							?>
-							<li><?php echo $row['lists']; ?></li>
-							<?php
-							}
-							?>
-						</ul>
+							<ul class="check-list-group orange-check">
+								<?php 
+								$features =  get_sub_field('features');
+								foreach($features as $row){
+								?>
+								<li><?php echo $row['lists']; ?></li>
+								<?php
+								}
+								?>
+							</ul>
 						<?php 
 						endwhile; 
 						endif; ?>

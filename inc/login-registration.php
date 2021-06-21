@@ -172,4 +172,51 @@ function ds_handle_registration(){
 
 add_action( 'wp_ajax_register_action', 'ds_handle_registration' );
 add_action( 'wp_ajax_nopriv_register_action', 'ds_handle_registration' );
+
+
+
+function ds_handle_login(){
+
+	if( $_POST['action'] == 'login_action' ) {
 	
+	$error = '';
+
+	$url = site_url('/my-account');
+	
+	$userLogin = esc_attr(trim( $_POST['userLogin'] ));
+	$password = esc_attr(trim( $_POST['password'] ));
+	$remember = esc_attr(trim( $_POST['remember'] ));
+
+	/** Server side validation of registration form */
+	
+	if( empty( $userLogin) )
+	 $error .= '<p class="error">Enter Email Address</p>';
+	 elseif( !filter_var($userLogin, FILTER_VALIDATE_EMAIL) )
+	 $error .= '<p class="error">Enter Valid Email Address</p>';
+	
+	if( empty( $password ) )
+	 $error .= '<p class="error">Password should not be blank</p>';
+	 
+	 $creds = array();
+	 $creds['user_login'] = $userLogin;
+	 $creds['user_password'] = $password;
+	 $creds['remember'] = $remember;
+	 
+	 $user = wp_signon( $creds, false );
+	 
+	 if ( is_wp_error($user) )
+	 {
+		 $msg =  __('Username or password is incorrect', 'dedicatedsolutions');
+		 echo json_encode(array('success' => 0, 'message' =>'Error!','message_data'=>$msg));
+		 exit;
+	 }
+	 else
+	 {
+		 $msg = 'Logged in successfully! Redirecting ...';
+		 echo json_encode(array('success' => 1, 'message' =>'Ok!','message_data'=>$msg,'redirect_url'=>$url));
+		 exit;
+
+	 }
+	 }
+}
+add_action( 'wp_ajax_nopriv_login_action', 'ds_handle_login' );

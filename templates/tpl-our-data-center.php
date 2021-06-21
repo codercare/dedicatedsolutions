@@ -138,18 +138,6 @@ while ( have_posts() ) : the_post();
 								endwhile; 
 								endif;
 								?>
-								<!-- <li>24 X 7 manned facility</li>
-								<li>911-rated facility with no Emergency Power Off (no EPO stations)</li>
-								<li>Built to Miami Dade hurricane standards to withstand 146 MPH winds</li>
-								<li>Highest carrier concentration in Ohio, Carrier Neutral</li>
-								<li>Double roofs, cement barriers hardened facility</li>
-								<li>On the East / West Fiber route between New York – Pittsburgh – Columbus – Indianapolis – St Louis – Denver – LA</li>
-								<li>Site Geographic High Point in Columbus Area, no flood plane rating</li>
-								<li>On the North / South Fiber route from Chicago – Columbus – Atlanta – Dallas</li>
-								<li>On power grid backbone from Cleveland to Cincinnati</li>
-								<li>8 acre facility</li>
-								<li>All 88 Ohio counties have fiber that home to the Cologix Columbus facility</li>
-								<li>Columbus, Ohio is the Capital of Ohio</li> -->
 							</ul>
 						</div>
 					</div>
@@ -166,8 +154,10 @@ while ( have_posts() ) : the_post();
 								$dallas_map_image_url = $dillas_map_image['url'];
 							}
 							?>
+							<?php 
+							if(!empty($dallas_map_image_url)){?>
 							<img src="<?php echo $dallas_map_image_url; ?>" alt="<?php the_field( 'dallas_texasts_title' ); ?>">
-							<!-- <img src="<?php echo get_template_directory_uri() . '/dist/assets/images/texas-map.png'; ?>" alt="texas-map"> -->
+							<?php } ?>
 						</figure>
 					</div>
 					<div class="col-md-9">
@@ -185,12 +175,7 @@ while ( have_posts() ) : the_post();
 								<?php 
 								endwhile; 
 								endif;
-								?>
-								<!-- <li>Dedicated to our customer’s hosting needs only.</li>
-								<li>One of the Top Network convergence Points in the USA. The North / South central USA backbone: Chicago – Atlanta – Dallas meets the East to West (New York – Dallas – LA) plus the South America connections.</li>
-								<li>All the Carrier connections are 10/40 and even 100 Gig.</li>
-								<li>Minimum of 10 Gig waves, diverse rings connecting CPG Cities for Intercity Routing</li>
-								<li>Fiber carriers enter at disparate points to guard against failure</li> -->
+								?>								
 							</ul>
 						</div>
 					</div>

@@ -60,3 +60,38 @@ $('#register').on('click',function(e){
         }
     });			
 });   
+
+/* Login Customer - Ajax */
+$('#login').on('click',function(e){
+    e.preventDefault();
+    var action = 'login_action';
+    
+    var userEmail = jQuery("#userEmail").val();
+    var password = jQuery("#password").val();
+    var remember = jQuery("#remember").val();
+   
+    var ajaxdata = {    
+        action: action,
+        userLogin: userEmail,
+        password: password,
+        remember: remember
+    };
+    
+
+    jQuery.ajax({
+        type : "post",
+        dataType : "json",
+        url : ajaxurl,
+        data : ajaxdata,
+        success: function(response) {
+            if(response.success =="1") {   
+                jQuery("#message").html(response.message);
+                jQuery('#wp_login_form').trigger("reset");
+                window.location.href = response.redirect_url;
+            }
+            else{
+                jQuery("#message").html(response.message_data); 
+            }            
+        }
+    });			
+});   

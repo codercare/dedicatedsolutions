@@ -1,0 +1,25 @@
+
+/*
+.site-main .page-wrap{
+    margin: 80px auto;
+}
+
+.woocommerce{
+    margin: 25px auto;
+}
+*/
+
+.woocommerce-MyAccount-navigation ul{
+    padding: 0px;
+    margin: 0px;
+}
+.woocommerce-MyAccount-navigation ul li {
+    list-style: none;
+    border: 1px dashed #ccc;
+    padding: 9px;
+    margin: 5px;
+}
+
+@media(min-width:1680px){
+   
+}

@@ -1,22 +1,32 @@
-img.server-icon-image{
-    height:50px;
-}
-.plesk-usage{
-    padding: 3rem 0 1rem;
-    ul{
-        text-align: left;
-        column-count: 2;
-        column-gap: 10rem;
-        li{
-            color: $darkGrey;
-            line-height: 2.4rem;
-            margin: 0 0 2rem;
+.cpanel-dashboard-carousel{
+    &.plesk-dashboard-carousel{
+        @include respond(tab-port){
+            padding: 5vmin 0 3vmin;
         }
     }
 }
 
-@media(min-width: 1680px){
-    .plesk-usage{
-        padding: 7rem 0 5rem;
+.plesk-usage{
+    @include respond(tab-port){
+        padding: 2vmin 0 5vmin;
+    }
+    ul{
+        text-align: left;
+        @include respond(tab-port){
+            column-count: 2;
+            column-gap: 10vmin;
+        }
+        li{
+            color: $darkGrey;
+            @include respond(mobile){
+                &:not(:last-child){
+                    margin: 0 0 .7rem;
+                }
+            }
+            @include respond(tab-port){
+                line-height: 2.4vmin;
+                margin: 1vmin 0 0;
+            }
+        }
     }
 }

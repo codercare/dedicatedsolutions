@@ -113,6 +113,7 @@ a {
             background: url(../images/check.png) no-repeat top .4rem left;
 			@include respond(tab-port){
 				background-position: top .4vmin left;
+				background-size: 3.4%;
 			}
         }
     }
@@ -121,6 +122,7 @@ a {
             background: url(../images/check-white.png) no-repeat top .4rem left;
 			@include respond(tab-port){
 				background-position: top .4vmin left;
+				background-size: 3.8%;
 			}
         }
     }

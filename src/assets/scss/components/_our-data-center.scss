@@ -1,125 +1,234 @@
-.site-main{
+
     .our-dc-banner{
+        &.page-banner{
+            @include respond(mobile){
+                background-size: auto;
+            }
+        }
         .page-banner-content{
-            padding: 17rem 0 8rem;
-            .large-banner__heading{
-                margin: 0;
+            @include respond(tab-port){
+                padding: 8vmin 0 4vmin;
+                p{
+                    margin: 0 0 2vmin;
+                }
+                .large-banner__heading{
+                    margin: 0;
+                }
             }
         }
         .dc-address-block-wrap {
-            margin: 0 0 5rem;
+            margin: 0 0 1rem;
+            @include respond(mobile){
+                [class^="col-"]:not(:last-child){
+                    .dc-address-block{
+                        margin: 0 0 2rem;
+                    }
+                }
+            }
+            @include respond(tab-port){
+                margin: 0 0 1vmin;
+            }
         }
         .dc-address-block{
             text-align: center;
             h3{
-                font-size: 2.6rem;
+                font-size: 1.8rem;
                 color: #fff;
                 font-family: "Product Sans", sans-serif;
                 font-weight: 700;
-                margin: 0 0 2rem;
+                margin: 0 0 1.5rem;
+                @include respond(tab-port){
+                    font-size: 2.6vmin;
+                    margin: 0 0 2vmin;
+                }
                 span{
                     display: block;
-                    font-size: 1.6rem;
+                    font-size: 1.4rem;
                     font-weight: 700;
                     color: $mainOrange;
                     padding: .5rem 0 0;
+                    @include respond(tab-port){
+                        font-size: 1.6vmin;
+                        padding: .5vmin 0 0;
+                    }
                 }
             }
             .btn--orange, .btn--white{
                 border-radius: 0;
                 font-weight: 400;
-                font-size: 1.4rem;
-                max-height: none;
-                max-width: none;
-                height: auto;
-                padding: 1rem 2.6rem;
-                margin: 0 1rem;
+                margin: 0 .5rem;
+                @include respond(tab-port){
+                    font-size: 1.4vmin;
+                    padding: 1vmin 2.6vmin;
+                    margin: 0 1vmin;
+                }
                 i{
                     margin: 0 0 0 .4rem;
+                    @include respond(tab-port){
+                        margin: 0 0 0 .4vmin;
+                    }
                 }
             }
             &.dc-add-2{
                 h3{
-                    font-size: 3rem;
+                    font-size: 2.2rem;
                     font-weight: 400;
                     margin: 0 0 .5rem;
+                    @include respond(tab-port){
+                        font-size: 3vmin;
+                        margin: 0 0 .5vmin;
+                    }
                     i{
-                        margin-left: 3rem;
+                        margin-left: 1rem;
+                        @include respond(tab-port){
+                            margin-left: 3vmin;
+                            img{
+                                width: 7.5%;
+                            }
+                        }
                     }
                 }
                 p{
                     margin: 0;
                     color: #375C72;
-                    font-size: 1.8rem;
                     font-weight: 400;
+                    @include respond(tab-port){
+                        font-size: 1.8vmin;
+                    }
                 }
             }
         }
         .dc-location-map{
+            @include respond(tab-port){
+                .thumbnail-img{
+                    img{
+                        width: 59.3%;
+                    }
+                }
+            }
             .btn--orange{
-                max-height: none;
-                max-width: none;
-                height: auto;
                 text-transform: uppercase;
-                font-size: 1.8rem;
                 font-weight: 400;
                 border-radius: 0;
-                padding: 1.9rem 8rem;
+                @include respond(tab-port){
+                    font-size: 1.8vmin;
+                    padding: 1.9vmin 8vmin;
+                }
             }
         }
     }
 
     .data-center-comparision{
+        @include respond(mobile){
+            padding: 3rem 0;
+        }
         .section-header{
-            margin: 0 0 8rem;
+            @include respond(tab-port){
+                margin: 0 0 5vmin;
+            }
         }
         .dc-comarision-table{
+            @include respond(mobile){
+                table, thead, tbody, tr, th, td{
+                    display: block;
+                }
+            }
             table{
                 margin: 0;
                 border-top: none;
                 border-left: none;
-                font-size: 1.8rem;
                 font-weight: 500;
                 color: $darkGrey;
+                @include respond(mobile){
+                    border: .1rem solid #ABABAB
+                }
+                @include respond(tab-port){
+                    font-size: 1.8vmin;
+                }
                 thead{
+                    @include respond(mobile){
+                        tr{
+                            position: absolute;
+                            top: -9999rem;
+                            left: -9999rem;
+                        }
+                    }
                     th{
                         text-align: center;
-                        font-size: 2rem;
                         font-family: "Product Sans", sans-serif;
                         font-weight: 700;
                         color: #fff;
                         border: none;
-                        padding: 1.2rem 2.5rem;
+                        padding: 1rem;
+                        @include respond(tab-port){
+                            padding: 1.2vmin 2.5vmin;
+                            font-size: 2vmin;
+                        }
                         &:nth-of-type(2){
                             background: $mainOrange;
-                            width: 29.9rem;
+                            width: 29.9vmin;
                         }
                         &:last-child{
                             background: $darkGrey;
-                            width: 30rem;
+                            width: 30vmin;
                         }
                     }
                 }
                 tbody{
                     tr{
+                        @include respond(mobile){
+                            &:not(:last-child){
+                                border-bottom: .1rem solid #ABABAB;
+                            }
+                        }
                         td{
-                            padding: 1.1rem 2.5rem;
+                            padding: .8rem 1rem .8rem 50%;
                             vertical-align: middle;
-                            background: #F6F6F6;
                             border-color: #ABABAB;
+                            position: relative;
+                            background: #F6F6F6;
+                            @include respond(mobile){
+                                border: none;
+                                min-height: 4rem;
+                                display: flex;
+                                align-items: center;
+                                &::before{
+                                    content: '';
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                    width: 45%;
+                                    height: 100%;
+                                    padding: 1rem;
+                                    color: $mainOrange;
+                                    white-space: nowrap;
+                                }
+                                &:nth-of-type(2)::before{ content: 'Columbus, Ohio (OH)';}
+                                &:nth-of-type(3)::before{ content: 'Dallas, Texas (TX)';}
+                            }
+                            @include respond(tab-port){
+                                padding: 1.1vmin 2.5vmin;
+                            }
                             .check-yes{
                                 display: block;
-                                text-align: center;
-                                font-size: 3rem;
+                                font-size: 1.6rem;
                                 line-height: initial;
                                 color: #57BC3B;
+                                @include respond(tab-port){
+                                    font-size: 3vmin;
+                                    text-align: center;
+                                }
                             }
                             .dash{
                                 display: block;
-                                height: .4rem;
-                                width: 3rem;
+                                height: .2rem;
+                                width: 2rem;
                                 background: #878787;
-                                margin: 0 auto;
+                                @include respond(tab-port){
+                                    height: .4vmin;
+                                    width: 3vmin;
+                                    margin: 0 auto;
+                                }
                             }
                         }
                         &:nth-of-type(odd){
@@ -143,12 +252,14 @@
     }
 
     .dc-address-details{
-        padding: 8rem 0;
         position: relative;
         color: #fff;
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center center;
+        @include respond(mobile){
+            padding: 3rem 0;
+        }
         &::before{
             content: '';
             height: 100%;
@@ -159,28 +270,60 @@
             background: rgba($color: #000000, $alpha: .95);
         }
         .dc-detail-block-wrap{
-            margin: 0 0 7rem;
+            margin: 0 0 2rem;
+            @include respond(tab-port){
+                margin: 0 0 4vmin;
+            }
+            .thumbnail-img{
+                @include respond(mobile){
+                    text-align: center;
+                    margin: 0 0 2rem;
+                }
+                @include respond(tab-port){
+                    img{
+                        width: 100%;
+                    }
+                }
+            }
             .dc-detail-block{
                 .section-header__title{
-                    margin-bottom: 1rem;
+                    @include respond(tab-port){
+                        margin-bottom: 1vmin;
+                    }
                 }
                 h3{
-                    font-size: 3rem;
+                    font-size: 1.6rem;
                     color: $mainOrange;
                     font-weight: 500;
                     margin: 0 0 1rem;
+                    @include respond(tab-port){
+                        font-size: 3vmin;
+                        margin: 0 0 1vmin;
+                    }
                 }
                 h4{
-                    font-size: 3rem;
+                    font-size: 1.6rem;
                     font-family: "Product Sans", sans-serif;
                     font-weight: 700;
+                    @include respond(mobile){
+                        margin: 0 0 1.5rem;
+                    }
+                    @include respond(tab-port){
+                        font-size: 3vmin;
+                    }
                 }
                 .check-list-group {
-                    padding: 1.5rem 0 0 0;
-                    column-count: 2;
-                    column-gap: 2rem;
+                    @include respond(tab-port){
+                        column-count: 2;
+                        column-gap: 2vmin;
+                        padding: 1.5vmin 0 0 0;
+                    }
                     li{
-                        margin-bottom: .4rem;
+                        margin-bottom: .7rem;
+                        @include respond(tab-port){
+                            margin-bottom: .4vmin;
+                            background-size: 4.5%;
+                        }
                     }
                 }
             }
@@ -190,37 +333,13 @@
                     .check-list-group{
                         column-count: unset;
                         column-gap: unset;
+                        @include respond(tab-port){
+                            li{
+                                background-size: 2.2%;
+                            }
+                        }
                     }
                 }
             }
         }
     }
-}
-
-@media(min-width: 1680px){
-    .site-main{
-        .our-dc-banner{
-            .page-banner-content {
-                padding: 8rem 0 4rem;
-                p{
-                    margin: 0 0 2rem;
-                }
-            }
-            .dc-address-block-wrap {
-                margin: 0 0 1rem;
-            }
-        } 
-        .data-center-comparision{
-            padding: 0;
-            .section-header {
-                margin: 0 0 5rem;
-            }
-        }
-        .dc-address-details{
-            padding: 0;
-            .dc-detail-block-wrap {
-                margin: 0 0 4rem;
-            }
-        }
-    } 
-}

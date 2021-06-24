@@ -74,7 +74,7 @@ while ( have_posts() ) : the_post();
 			</div>
 		</div>
 	</section> 
-	<section class="data-center-comparision page-section section">
+	<section class="data-center-comparision section">
 		<div class="wrapper">
 			<div class="section-header u-txt-center">
 				<h2 class="section-header__title"><?php the_field( 'our_data_center_quick_comparison_title' ); ?></h2>

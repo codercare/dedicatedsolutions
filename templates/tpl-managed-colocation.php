@@ -11,49 +11,51 @@ while ( have_posts() ) : the_post();
 		$banner_image_url = $banner_image['sizes']['banner_image'];
 	}
 	?>
-	<section class="page-banner mc-page-banner section fp-auto-height" style="background-image:url('<?php echo $banner_image_url; ?>')">
-		<div class="wrapper">
-			<div class="page-banner-content">
-				<h1 class="large-banner__heading"><?php the_field( 'managed_colocation_title' ); ?></h1>
-				<p><?php the_field( 'managed_colocation_short' ); ?></p>
-				<a href="<?php the_field( 'managed_colocation_button_link' ); ?>" class="btn--orange"><?php the_field( 'managed_colocation_button_label' ); ?> <i class="fas fa-arrow-right"></i></a>
+	<section class="section">
+		<section class="page-banner mc-page-banner" style="background-image:url('<?php echo $banner_image_url; ?>')">
+			<div class="wrapper">
+				<div class="page-banner-content">
+					<h1 class="large-banner__heading"><?php the_field( 'managed_colocation_title' ); ?></h1>
+					<p><?php the_field( 'managed_colocation_short' ); ?></p>
+					<a href="<?php the_field( 'managed_colocation_button_link' ); ?>" class="btn--orange"><?php the_field( 'managed_colocation_button_label' ); ?> <i class="fas fa-arrow-right"></i></a>
+				</div>
 			</div>
-		</div>
+		</section>
+	
+		<section class="managed-colocation">
+			<div class="wrapper">
+				<div class="row">
+					<?php
+					if ( have_rows( 'managed_colocation_lists' ) ) : 
+					while ( have_rows( 'managed_colocation_lists' ) ) :
+					the_row();											
+					?>
+					<div class="col-md-3">
+						<div class="managed-colocation-block">
+							<div class="mc-icon-box">
+								<?php
+								$colocation_feature_img = get_template_directory_uri() . '/dist/assets/images/energy.png';
+								$colo_icon_image     = get_sub_field( 'colocation_icon' );
+								if ( ! empty( $colo_icon_image ) ) {
+									$colocation_feature_img = $colo_icon_image['sizes']['mid_icon'];
+								}
+								?>
+								<img src="<?php echo $colocation_feature_img; ?>" alt="energy">
+							</div>
+							<h3><?php the_sub_field('colocation_title');?></h3>
+							<p><?php the_sub_field('colocation_short_detail');?></p>
+						</div>
+					</div>
+					<?php 					
+					endwhile; 
+					endif;
+					?>	
+				</div>
+			</div>
+		</section>	
 	</section>
 
-	<section class="managed-colocation section">
-		<div class="wrapper">
-			<div class="row">
-				<?php
-				if ( have_rows( 'managed_colocation_lists' ) ) : 
-				while ( have_rows( 'managed_colocation_lists' ) ) :
-				the_row();											
-				?>
-				<div class="col-lg-3">
-					<div class="managed-colocation-block">
-						<div class="mc-icon-box">
-							<?php
-							$colocation_feature_img = get_template_directory_uri() . '/dist/assets/images/energy.png';
-							$colo_icon_image     = get_sub_field( 'colocation_icon' );
-							if ( ! empty( $colo_icon_image ) ) {
-								$colocation_feature_img = $colo_icon_image['sizes']['mid_icon'];
-							}
-							?>
-							<img src="<?php echo $colocation_feature_img; ?>" alt="energy">
-						</div>
-						<h3><?php the_sub_field('colocation_title');?></h3>
-						<p><?php the_sub_field('colocation_short_detail');?></p>
-					</div>
-				</div>
-				<?php 					
-				endwhile; 
-				endif;
-				?>	
-			</div>
-		</div>
-	</section>	
-
-	<section class="mc-plans-pricing section fp-auto-height">
+	<section class="mc-plans-pricing section">
 		<div class="wrapper">
 			<div class="section-header u-txt-center">
 				<h2 class="section-header__title">Plans & Pricing</h2>

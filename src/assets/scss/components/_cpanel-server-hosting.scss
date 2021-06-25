@@ -1,54 +1,85 @@
 .cp-sh-page-banner{
-    .page-banner-content{
-        padding: 8vmin 0 3vmin;
-        p{
-            margin: 0 0 2vmin;
-        }
-        img {
-            width: 20%;
+    img {
+        width: 15rem;
+    }
+    @include respond(tab-port){
+        .page-banner-content{
+            padding: 8vmin 0 3vmin;
+            p{
+                margin: 0 0 2vmin;
+            }
+            img {
+                width: 20%;
+            }
         }
     }
 }
 
 .cpanel-features{
-    padding: 2vmin 0 1vmin;
-    .section-header{
-        margin: 0 0 3vmin;
-        .section-header__Orangesub-title{
-            max-width: 98.4vmin;
-            margin: 0 auto;
+    padding: 3rem 0;
+    @include respond(tab-port){
+        padding: 2vmin 0 1vmin;
+        .section-header{
+            margin: 0 0 3vmin;
+            .section-header__Orangesub-title{
+                max-width: 98.4vmin;
+                margin: 0 auto;
+            }
+        }
+    }
+    @include respond(mobile){
+        [class^="col-"]:not(:last-child){
+            .cp-features-block{
+                margin: 0 0 2rem;
+            }
         }
     }
 }
 
 .cp-features-block{
     position: relative;
-    padding: 0 0 0 21.5vmin;
     display: flex;
     flex-direction: column;
-    min-height: 12vmin;
     justify-content: center;
-    margin: 0 0 3vmin;
+    @include respond(tab-port){
+        padding: 0 0 0 21.5vmin;
+        min-height: 12vmin;
+        margin: 0 0 3vmin;
+    }
     .cp-feat-icon{
-       position: absolute;
-       left: 0;
-       top: 0;
-       width: 18vmin;
-       height: 12vmin;
-       display: flex;
-       align-items: center;
-       justify-content: center;
-       background: #fff;
-       border-radius: .5vmin;
-       box-shadow: 0 .06vmin 2vmin 0 rgba($color: #000000, $alpha: .07);
+        width: 9rem;
+        height: 7rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #fff;
+        border-radius: .5rem;
+        box-shadow: 0 .06rem 2rem 0 rgba($color: #000000, $alpha: .07);
+        margin: 0 0 1.5rem;
         img {
             height: 60%;
+        }
+        @include respond(tab-port){
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 18vmin;
+            height: 12vmin;
+            border-radius: .5vmin;
+            box-shadow: 0 .06vmin 2vmin 0 rgba($color: #000000, $alpha: .07);
+            margin: 0;
+           img {
+               height: 60%;
+           }
         }
     }
     h3{
         font-family: "Product Sans", sans-serif;
         font-weight: 700;
-        font-size: 1.8vmin;
+        font-size: 1.8rem;
+        @include respond(tab-port){
+            font-size: 1.8vmin;
+        }
     }
     p{
         font-weight: 300;
@@ -58,11 +89,17 @@
 
 .cpanel-dashboard-carousel{
     background: #00020A;
-    padding: 5vmin 0;
+    padding: 3rem 0;
     color: #fff;
+    @include respond(tab-port){
+        padding: 5vmin 0;
+    }
     .carousel-inner{
-        max-width: 86vmin;
-        margin: 0 auto 4.5vmin;
+        margin: 0 0 1.5rem;
+        @include respond(tab-port){
+            max-width: 86vmin;
+            margin: 0 auto 4.5vmin;
+        }
         .carousel-item{
             img{
                 width: 100%;
@@ -70,24 +107,36 @@
         }
     }
     .db-carousel-txt{
-        text-align: right;
-        max-width: 22vmin;
-        .section-header__title{
-            margin: 0 0 1vmin;
+        text-align: center;
+        margin: 0 0 1.5rem;
+        @include respond(tab-port){
+            text-align: right;
+            max-width: 22vmin;
+            margin: 0;
+            .section-header__title{
+                margin: 0 0 1vmin;
+            }
         }
         .carousel-control-next, .carousel-control-prev {
             position: static;
             display: inline-block;
-            width: 3.5vmin;
-            height: 3.5vmin;
+            width: 3rem;
+            height: 3rem;
             border-radius: 100%;
             background: $mainOrange;
             opacity: 1;
-            line-height: 3.1vmin;
+            line-height: 3rem;
             transition: all 0.3s ease;
+            @include respond(tab-port){
+                width: 3.5vmin;
+                height: 3.5vmin;
+                line-height: 3.1vmin;
+            }
             svg{
-                width: 40%;
-                height: 40%;
+                @include respond(tab-port){
+                    width: 40%;
+                    height: 40%;
+                }
                 path{
                     stroke: #fff;
                     stroke-width: 1;
@@ -104,7 +153,10 @@
             }
         }
         .carousel-control-prev{
-            margin-right: 1.5vmin;
+            margin-right: .3rem;
+            @include respond(tab-port){
+                margin-right: 1.5vmin;
+            }
         }
         .carousel-control-next{
             svg{
@@ -116,20 +168,29 @@
         .carousel-indicators{
             position: static;
             margin: 0;
-            display: block;
+            display: flex;
+            @include respond(tab-port){
+                display: block;
+            }
             li{
                 flex: none;
                 opacity: 1;
-                width: 21.3vmin;
-                height: 10.8vmin;
+                width: 25%;
+                height: 7rem;
                 text-indent: unset;
                 margin: 0;
-                border: 2px solid transparent;
+                border: .2rem solid transparent;
                 background-clip: unset;
                 display: inline-block;
-                margin: 0 0.1vmin;
+                margin: 0 0.1rem;
                 background: none;
                 box-sizing: unset;
+                @include respond(tab-port){
+                    width: 21.3vmin;
+                    height: 10.8vmin;
+                    border-width: .2vmin;
+                    margin: 0 0.1vmin;
+                }
                 &.active{
                     border-color: $mainOrange;
                     background: $mainOrange;
@@ -137,7 +198,7 @@
                 img{
                     object-fit: cover;
                     width: 100%;
-                    height: 10.8vmin;
+                    height: 100%;
                 }
             }
         }
@@ -148,73 +209,143 @@
     background: $mainOrange;
     text-align: center;
     color: #fff;
-    padding: 2vmin 0 5vmin;
+    padding: 3rem 0;
+    @include respond(tab-port){
+        padding: 2vmin 0 5vmin;
+    }
     .section-header{
-        margin: 0 0 2vmin;
+        @include respond(tab-port){
+            margin: 0 0 2vmin;
+        }
         .section-header__title{
-            font-size: 3.4vmin;
+            @include respond(tab-port){
+                font-size: 3.4vmin;
+            }
         }
         .section-header__Orangesub-title{
             color: #fff;
         }
     }
     .btn--white{
-        max-height: none;
-        max-width: none;
-        height: auto;
         color: $mainOrange;
-        font-size: 1.6vmin;
-        padding: 1.2vmin 3.1vmin;
+        @include respond(tab-port){
+            font-size: 1.6vmin;
+            padding: 1.2vmin 3.1vmin;
+        }
         &:hover{
             background: $darkGrey;
         }
     }
     p{
-        margin: 2vmin 0 0;
+        margin: 1rem 0 0;
         font-weight: 500;
+        @include respond(tab-port){
+            margin: 2vmin 0 0;
+        }
     }
 }
 
 .popular-dedicated-server {
-    // padding: 3vmin 0;
-    .section-header {
-        margin: 0 0 .5vmin;
+    @include respond(mobile){
+        padding: 3rem 0;
+    }
+    @include respond(tab-port){
+        .section-header {
+            margin: 0 0 .5vmin;
+        }
+    }
+    @include respond(mobile){
+        [class^="col-"]:not(:last-child){
+            .server-type-block-wrap{
+                margin: 0 0 2rem;
+            }
+        }
     }
     .server-type-block-wrap{
-        padding: 1.2vmin 2vmin;
-        border: 1px solid #BDBCBC;
+        padding: 1.5rem;
+        border: .1rem solid #BDBCBC;
         text-align: center;
+        @include respond(tab-port){
+            padding: 1.2vmin 2vmin;
+            border-width: .1vmin;
+        }
         h3{
-            font-size: 2.5vmin;
+            font-size: 1.8rem;
             font-weight: 400;
-            margin: 0 0 1vmin;
+            margin: 0 0 1rem;
             i {
-                margin-right: 1.2vmin;
+                margin-right: .8rem;
                 img{
-                    width: 7%;
+                    width: 3rem;
+                }
+            }
+            @include respond(tab-port){
+                font-size: 2.5vmin;
+                margin: 0 0 1vmin;
+                i {
+                    margin-right: 1.2vmin;
+                    img{
+                        width: 7%;
+                    }
                 }
             }
         }
         h4 {
-            font-size: 2vmin;
+            font-size: 1.6rem;
             font-weight: 400;
-            margin: 0;
+            margin: 0 0 1rem;
+            @include respond(tab-port){
+                margin: 0;
+                font-size: 2vmin;
+            }
+        }
+        @include respond(mobile){
+            [class^="col-"]:not(:last-child){
+                .server-type-block{
+                    margin: 0 0 1.5rem;
+                }
+            }
         }
         .server-type-block {
-            border: 1px solid #C2C2C2;
-            margin: 2vmin 0 0;
+            border: .1rem solid #C2C2C2;
+            @include respond(tab-port){
+                border-width: .1vmin;
+                margin: 2vmin 0 0;
+            }
             .server-tye-header{
                 background: $darkGrey;
                 color: #fff;
-                padding: .8vmin 0;
+                padding: 1rem 0;
+                @include respond(tab-port){
+                    padding: .8vmin 0;
+                }
                 h5{
-                    font-size: 1.6vmin;
+                    font-size: 1.4rem;
                     font-weight: 500;
                     margin: 0;
+                    @include respond(tab-port){
+                        font-size: 1.6vmin;
+                    }
                     span{
-                        font-size: 1.4vmin;
+                        font-size: 1.2rem;
                         font-weight: 400;
                         display: block;
+                        @include respond(tab-port){
+                            font-size: 1.4vmin;
+                        }
+                    }
+                }
+            }
+            .server-type-logo{
+                text-align: center;
+                padding: .5rem 0;
+                @include respond(tab-port){
+                    padding: .3vmin 0;
+                }
+                .server-icon-image{
+                    width: 3rem;
+                    @include respond(tab-port){
+                        width: 11.38%;
                     }
                 }
             }
@@ -222,30 +353,43 @@
                 padding: 0;
                 margin: 0;
                 background: #F5F5F5;
-                padding: 0 1.5vmin;
+                padding: 0 1rem;
+                @include respond(tab-port){
+                    padding: 0 1.5vmin;
+                }
                 li{
                     list-style-type: none;
-                    font-size: 1.4vmin;
+                    font-size: 1.3rem;
                     color: #5D5D5D;
-                    border-bottom: 1px solid #AEACAC;
-                    padding: .3vmin 0;
+                    border-bottom: .1rem solid #AEACAC;
+                    padding: .3rem 0;
+                    @include respond(tab-port){
+                        font-size: 1.4vmin;
+                        padding: .3vmin 0;
+                        border-bottom-width: .1vmin;
+                    }
                     &:last-child{
                         border: none
                     }
                 }
             }
             .btn--orange{
-                max-width: none;
-                max-height: none;
-                height: auto;
                 display: block;
-                margin: 1vmin;
-                font-size: 1.4vmin;
-                padding: .7vmin 1vmin;
+                margin: 1rem;
                 text-transform: capitalize;
+                max-width: none;
+                @include respond(tab-port){
+                    margin: 1vmin;
+                    font-size: 1.4vmin;
+                    padding: .7vmin 1vmin;
+                }
                 i{
-                    font-size: 1.2vmin;
-                    margin: 0 0 0 .5vmin;
+                    font-size: 1.2rem;
+                    margin: 0 0 0 .5rem;
+                    @include respond(tab-port){
+                        font-size: 1.2vmin;
+                        margin: 0 0 0 .5vmin;
+                    }
                 }
                 &.success{
                     background: #56BC3A;

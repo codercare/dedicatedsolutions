@@ -25,7 +25,7 @@ while ( have_posts() ) : the_post();
 		<section class="game-server-section plesk-server-section">
 			<div class="wrapper">
 				<div class="row">
-					<div class="col-lg-6">
+					<div class="col-md-6">
 						<div class="game-server-content">
 							<div class="section-header">
 								<h2 class="section-header__title"><?php the_field( 'choice_of_web_professionals_title' ); ?></h2>
@@ -34,7 +34,7 @@ while ( have_posts() ) : the_post();
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-6">
+					<div class="col-md-6">
 						<?php
 						if ( have_rows( 'choice_of_web_professionals_features' ) ) : 
 						$counter_card = 1;
@@ -64,86 +64,88 @@ while ( have_posts() ) : the_post();
 		</section>
 	</section>
 
-	<section class="cpanel-dashboard-carousel plesk-dashboard-carousel section">
-		<div class="wrapper">
-			<div id="pleskDashboardCarousel" class="carousel carousel-fade" data-ride="carousel">
-				<div class="carousel-inner">
-					<?php 
-					$images = get_field('plesk_dashboard_slider_images');
-					$size = 'full'; 
-					if( $images ): 
-					$couter_gallery_image = 1;
-					foreach( $images as $image_id ): ?>
-					<div class="carousel-item <?php if($couter_gallery_image== 1){ echo'active'; }?>">
-						<?php echo wp_get_attachment_image( $image_id, $size ); ?>
+	<section class="section">
+		<section class="cpanel-dashboard-carousel plesk-dashboard-carousel">
+			<div class="wrapper">
+				<div id="pleskDashboardCarousel" class="carousel carousel-fade" data-ride="carousel">
+					<div class="carousel-inner">
+						<?php 
+						$images = get_field('plesk_dashboard_slider_images');
+						$size = 'full'; 
+						if( $images ): 
+						$couter_gallery_image = 1;
+						foreach( $images as $image_id ): ?>
+						<div class="carousel-item <?php if($couter_gallery_image== 1){ echo'active'; }?>">
+							<?php echo wp_get_attachment_image( $image_id, $size ); ?>
+						</div>
+						<?php 
+						$couter_gallery_image++;
+						endforeach; 
+						endif; 
+						?>
 					</div>
-					<?php 
-					$couter_gallery_image++;
-					endforeach; 
-					endif; 
+					<div class="carousel-counter">
+						<div class="row">
+							<div class="col-md-3">
+								<div class="db-carousel-txt">
+									<h2 class="section-header__title">Plesk New Dash Baord</h2>
+									<a class="carousel-control-prev" href="#pleskDashboardCarousel" role="button" data-slide="prev">
+										<svg xmlns="http://www.w3.org/2000/svg" width="7.103" height="12.186" viewBox="0 0 7.103 12.186">
+											<path id="Path_4310" data-name="Path 4310" d="M330.781,90.9l5.826-5.461a.407.407,0,0,1,.549,0,.348.348,0,0,1,0,.515l-5.163,4.84c-.379.341-.289.47,0,.728l5.163,4.84a.348.348,0,0,1,0,.515.407.407,0,0,1-.549,0l-5.827-5.461A.348.348,0,0,1,330.781,90.9Z" transform="translate(-330.667 -85.333)" stroke="#1a1a1a" stroke-width="0.5"/>
+										</svg>
+									</a>
+									<a class="carousel-control-next" href="#pleskDashboardCarousel" role="button" data-slide="next">
+										<svg xmlns="http://www.w3.org/2000/svg" width="7.103" height="12.186" viewBox="0 0 7.103 12.186">
+											<path id="Path_4310" data-name="Path 4310" d="M330.781,90.9l5.826-5.461a.407.407,0,0,1,.549,0,.348.348,0,0,1,0,.515l-5.163,4.84c-.379.341-.289.47,0,.728l5.163,4.84a.348.348,0,0,1,0,.515.407.407,0,0,1-.549,0l-5.827-5.461A.348.348,0,0,1,330.781,90.9Z" transform="translate(-330.667 -85.333)" stroke="#1a1a1a" stroke-width="0.5"/>
+										</svg>
+									</a>
+								</div>
+							</div>
+							<div class="col-md-9">
+								<div class="db-carousel-indicators-wrap">
+									<ol class="carousel-indicators">
+										<?php 
+										$images = get_field('plesk_dashboard_slider_images');
+										$size = 'medium'; 
+										if( $images ): 
+										$couter_gal =0;
+										foreach( $images as $image_id ): ?>	
+										<li data-target="#pleskDashboardCarousel" data-slide-to="<?php echo $couter_gal;?>" class="<?php if($couter_gal== 0){ echo'active'; }?>">
+											<?php echo wp_get_attachment_image( $image_id, $size ); ?>
+										</li>
+										<?php 
+										$couter_gal++;
+										endforeach; 
+										endif; 
+										?>
+									</ol>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	
+		<section class="get-cp-server plesk-usage">
+			<div class="wrapper">
+				<div class="section-header u-txt-center">
+					<h2 class="section-header__title"><?php the_field( 'what_can_you_do_with_plesk_title' ); ?></h2>
+				</div>
+				<ul class="check-list-group white-check">				
+					<?php
+					if ( have_rows( 'what_can_you_do_with_plesk_features' ) ) : 
+					while ( have_rows( 'what_can_you_do_with_plesk_features' ) ) :
+					the_row();
 					?>
-				</div>
-				<div class="carousel-counter">
-					<div class="row">
-						<div class="col-md-3">
-							<div class="db-carousel-txt">
-								<h2 class="section-header__title">Plesk New Dash Baord</h2>
-								<a class="carousel-control-prev" href="#pleskDashboardCarousel" role="button" data-slide="prev">
-									<svg xmlns="http://www.w3.org/2000/svg" width="7.103" height="12.186" viewBox="0 0 7.103 12.186">
-										<path id="Path_4310" data-name="Path 4310" d="M330.781,90.9l5.826-5.461a.407.407,0,0,1,.549,0,.348.348,0,0,1,0,.515l-5.163,4.84c-.379.341-.289.47,0,.728l5.163,4.84a.348.348,0,0,1,0,.515.407.407,0,0,1-.549,0l-5.827-5.461A.348.348,0,0,1,330.781,90.9Z" transform="translate(-330.667 -85.333)" stroke="#1a1a1a" stroke-width="0.5"/>
-									</svg>
-								</a>
-								<a class="carousel-control-next" href="#pleskDashboardCarousel" role="button" data-slide="next">
-									<svg xmlns="http://www.w3.org/2000/svg" width="7.103" height="12.186" viewBox="0 0 7.103 12.186">
-										<path id="Path_4310" data-name="Path 4310" d="M330.781,90.9l5.826-5.461a.407.407,0,0,1,.549,0,.348.348,0,0,1,0,.515l-5.163,4.84c-.379.341-.289.47,0,.728l5.163,4.84a.348.348,0,0,1,0,.515.407.407,0,0,1-.549,0l-5.827-5.461A.348.348,0,0,1,330.781,90.9Z" transform="translate(-330.667 -85.333)" stroke="#1a1a1a" stroke-width="0.5"/>
-									</svg>
-								</a>
-							</div>
-						</div>
-						<div class="col-md-9">
-							<div class="db-carousel-indicators-wrap">
-								<ol class="carousel-indicators">
-								    <?php 
-									$images = get_field('plesk_dashboard_slider_images');
-									$size = 'medium'; 
-									if( $images ): 
-									$couter_gal =0;
-									foreach( $images as $image_id ): ?>	
-									<li data-target="#pleskDashboardCarousel" data-slide-to="<?php echo $couter_gal;?>" class="<?php if($couter_gal== 0){ echo'active'; }?>">
-										<?php echo wp_get_attachment_image( $image_id, $size ); ?>
-									</li>
-									<?php 
-									$couter_gal++;
-									endforeach; 
-								    endif; 
-									?>
-								</ol>
-							</div>
-						</div>
-					</div>
-				</div>
+					<li><?php the_sub_field( 'features' ); ?></li>
+					<?php 
+					endwhile; 
+					endif;
+					?>
+				</ul>
 			</div>
-		</div>
-	</section>
-
-	<section class="get-cp-server plesk-usage section fp-auto-height">
-		<div class="wrapper">
-			<div class="section-header u-txt-center">
-				<h2 class="section-header__title"><?php the_field( 'what_can_you_do_with_plesk_title' ); ?></h2>
-			</div>
-			<ul class="check-list-group white-check">				
-				<?php
-				if ( have_rows( 'what_can_you_do_with_plesk_features' ) ) : 
-				while ( have_rows( 'what_can_you_do_with_plesk_features' ) ) :
-				the_row();
-				?>
-				<li><?php the_sub_field( 'features' ); ?></li>
-				<?php 
-				endwhile; 
-				endif;
-				?>
-			</ul>
-		</div>
+		</section>
 	</section>
 
 	<?php if(get_field('showhide_popular_dedicated_server')){ ?>
@@ -156,7 +158,7 @@ while ( have_posts() ) : the_post();
 		</div>
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-xl-4 col-lg-6">
+				<div class="col-md-4">
 					<div class="server-type-block-wrap">
 						<h3><i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/servers.png'; ?>" alt="servers"></i>Budget Servers</h3>
 						<h4>Our Best Selling Budget Servers</h4>
@@ -176,7 +178,7 @@ while ( have_posts() ) : the_post();
 							foreach ( $budget_server as $post ) : 
 							setup_postdata( $post ); 
 									?>
-									<div class="col-lg-6">
+									<div class="col-md-6">
 										<div class="server-type-block">
 											<div class="server-tye-header">
 												<h5><?php the_title(); ?> <span><?php the_field( 'server_ghz' ); ?></span></h5>
@@ -217,7 +219,7 @@ while ( have_posts() ) : the_post();
 						</div>
 					</div>
 				</div>
-				<div class="col-xl-4 col-lg-6">
+				<div class="col-md-4">
 					<div class="server-type-block-wrap">
 						<h3><i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/servers.png'; ?>" alt="servers"></i>Pro Servers</h3>
 						<h4>Our Best Selling Pro Servers</h4>
@@ -236,7 +238,7 @@ while ( have_posts() ) : the_post();
 							foreach ( $budget_server as $post ) : 
 							setup_postdata( $post ); 
 							?>
-							<div class="col-lg-6">
+							<div class="col-md-6">
 								<div class="server-type-block">
 									<div class="server-tye-header">
 										<h5><?php the_title(); ?> <span><?php the_field( 'server_ghz' ); ?></span></h5>
@@ -277,7 +279,7 @@ while ( have_posts() ) : the_post();
 						</div>
 					</div>
 				</div>
-				<div class="col-xl-4 col-lg-6">
+				<div class="col-md-4">
 					<div class="server-type-block-wrap">
 						<h3><i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/servers.png'; ?>" alt="servers"></i>Enterprise Servers</h3>
 						<h4>Our Best Selling Enterprise Servers</h4>
@@ -297,7 +299,7 @@ while ( have_posts() ) : the_post();
 							foreach ( $budget_server as $post ) : 
 							setup_postdata( $post ); 
 							?>
-							<div class="col-lg-6">
+							<div class="col-md-6">
 								<div class="server-type-block">
 									<div class="server-tye-header">
 										<h5><?php the_title(); ?> <span><?php the_field( 'server_ghz' ); ?></span></h5>

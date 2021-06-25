@@ -45,7 +45,7 @@ while ( have_posts() ) : the_post();
 		<section class="game-server-section">
 			<div class="wrapper">
 				<div class="row">
-					<div class="col-lg-6">
+					<div class="col-md-6">
 						<div class="game-server-content">
 							<div class="section-header">
 								<h2 class="section-header__title"><?php the_field( 'game_server_title' ); ?></h2>
@@ -54,7 +54,7 @@ while ( have_posts() ) : the_post();
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-6">
+					<div class="col-md-6">
 						<?php
 						if ( have_rows( 'game_server_features' ) ) : 
 						$counter_card = 1;
@@ -96,7 +96,7 @@ while ( have_posts() ) : the_post();
 			<img src="<?php echo $game_server_feature_image_url;  ?>" alt="game-server-room-image">
 		</section>
 	
-		<section class="get-cp-server get-game-server section fp-auto-height">
+		<section class="get-cp-server get-game-server">
 			<div class="wrapper">
 				<div class="section-header u-txt-center">
 					<h2 class="section-header__title"><?php the_field( 'ready_to_go_block_title' ); ?></h2>
@@ -118,7 +118,7 @@ while ( have_posts() ) : the_post();
 		</div>
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-xl-4 col-lg-6">
+				<div class="col-md-4">
 					<div class="server-type-block-wrap">
 						<h3><i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/servers.png'; ?>" alt="servers"></i>Budget Servers</h3>
 						<h4>Our Best Selling Budget Servers</h4>
@@ -138,7 +138,7 @@ while ( have_posts() ) : the_post();
 							foreach ( $budget_server as $post ) : 
 							setup_postdata( $post ); 
 									?>
-							<div class="col-lg-6">
+							<div class="col-md-6">
 								<div class="server-type-block">
 									<div class="server-tye-header">
 										<h5><?php the_title(); ?> <span><?php the_field( 'server_ghz' ); ?></span></h5>
@@ -179,7 +179,7 @@ while ( have_posts() ) : the_post();
 						</div>
 					</div>
 				</div>
-				<div class="col-xl-4 col-lg-6">
+				<div class="col-md-4">
 					<div class="server-type-block-wrap">
 						<h3><i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/servers.png'; ?>" alt="servers"></i>Pro Servers</h3>
 						<h4>Our Best Selling Pro Servers</h4>
@@ -198,7 +198,7 @@ while ( have_posts() ) : the_post();
 							foreach ( $budget_server as $post ) : 
 							setup_postdata( $post ); 
 							?>
-							<div class="col-lg-6">
+							<div class="col-md-6">
 								<div class="server-type-block">
 									<div class="server-tye-header">
 										<h5><?php the_title(); ?> <span><?php the_field( 'server_ghz' ); ?></span></h5>
@@ -239,7 +239,7 @@ while ( have_posts() ) : the_post();
 						</div>
 					</div>
 				</div>
-				<div class="col-xl-4 col-lg-6">
+				<div class="col-md-4">
 					<div class="server-type-block-wrap">
 						<h3><i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/servers.png'; ?>" alt="servers"></i>Enterprise Servers</h3>
 						<h4>Our Best Selling Enterprise Servers</h4>
@@ -259,7 +259,7 @@ while ( have_posts() ) : the_post();
 							foreach ( $budget_server as $post ) : 
 							setup_postdata( $post ); 
 							?>
-							<div class="col-lg-6">
+							<div class="col-md-6">
 								<div class="server-type-block">
 									<div class="server-tye-header">
 										<h5><?php the_title(); ?> <span><?php the_field( 'server_ghz' ); ?></span></h5>

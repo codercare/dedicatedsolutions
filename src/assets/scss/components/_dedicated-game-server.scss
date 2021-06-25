@@ -1,47 +1,64 @@
 .dg-server-banner{
-    ul{
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        li{
-            list-style: none;
-            padding: 0 1rem;
+    .page-banner-content {
+        ul{
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            li{
+                list-style: none;
+                padding: 0 .2rem;
+                img{
+                    width: auto;
+                 }
+                @include respond(tab-port){
+                    padding: 0 1vmin;
+                    img{
+                       width: 100%;
+                    }
+                }
+            }
         }
     }
 }
 
 .game-server-section{
-    padding: 13rem 0  9rem;
+    padding: 3rem 0;
+    @include respond(tab-port){
+        padding: 8vmin 0;
+    }
     .game-server-content {
-        padding: 0 2rem 0 0;
+        @include respond(tab-port){
+            padding: 0 2vmin 0 0;
+        }
     }
     .game-server-block {
-        margin-left: 4rem;
+        @include respond(mobile){
+            &:not(:last-child){
+                margin: 0 0 2rem;
+            }
+        }
+        @include respond(tab-port){
+            margin-left: 4vmin;
+        }
     }
 }
 
-@media(min-width: 1680px){
-    .dg-server-banner{
-        .page-banner-content {
-            padding: 10rem 0 4rem;
-        }
-    } 
-
-    .game-server-section {
-        padding: 4rem 0  1rem;
+.game-room-section{
+    height: 22rem;
+    @include respond(tab-port){
+        height: calc(100vh - 34vmin);
     }
+    img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: bottom;
+    }
+} 
 
-    .game-room-section{
-        img {
-            height: 560px;
-            width: 100%;
-            object-fit: cover;
-            object-position: bottom;
-        }
-    } 
-
-    .get-game-server {
-        padding: 3rem 0;
+.get-game-server {
+    @include respond(tab-port){
+        padding: 3vmin 0;
     }
 }

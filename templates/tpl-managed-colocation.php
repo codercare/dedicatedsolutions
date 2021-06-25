@@ -58,130 +58,60 @@ while ( have_posts() ) : the_post();
 	<section class="mc-plans-pricing section">
 		<div class="wrapper">
 			<div class="section-header u-txt-center">
-				<h2 class="section-header__title">Plans & Pricing</h2>
+				<h2 class="section-header__title"><?php the_field( 'plans_pricing_title' ); ?></h2>
 				<span class="section-header__decoration-element"></span>
-				<h4 class="section-header__Orangesub-title">CHOOSE YOUR DESIRED LOCATION OR COMPARE</h4>
+				<h4 class="section-header__Orangesub-title"><?php the_field( 'plans_pricing_sub_title' ); ?></h4>
 			</div>
 			<div class="select-your-location">
-				<label class="form-check-label">
-					<input type="checkbox" class="form-check-input" id="COLUMBUS" value="COLUMBUS,OH" checked> 
+				<label  class="form-check-label">
+					<input type="checkbox" class="form-check-input showLocation" id="COLUMBUS" value="columbus" checked> 
 					<span>COLUMBUS,OH <i>TIER IV</i></span>
 				</label>
 				<label class="form-check-label">
-					<input type="checkbox" class="form-check-input" id="DALLAS" value="COLUMBUS,OH">
+					<input type="checkbox" class="form-check-input showLocation" id="DALLAS" value="dallas" checked>
 					<span>DALLAS,TX <i>TIER III</i></span>
 				</label>
 			</div>
 			<div class="mc-plan-pricing-table">
 				<div class="mc-pp-table-head">
 					<ul>
-						<li>Columbus, OH</li>
-						<li>Dallas, TX</li>
+						<li class="columbus">Columbus, OH</li>
+						<li class="dallas">Dallas, TX</li>
 					</ul>
 				</div>
+				<?php
+				if ( have_rows( 'plans_and_pricing_comparison' ) ) : 
+				while ( have_rows( 'plans_and_pricing_comparison' ) ) :
+				the_row();						
+				$sub_group = get_sub_field( 'columbus_dallas_comparisons' );				
+				$feature_lists = $sub_group['feature_topics'];
+				?>
 				<div class="mc-pp-table-block">
 					<div class="mc-pp-table-row">
 						<div class="mc-pp-table-col">
-							<h4 class="section-header__Orangesub-title">Our Managed Services</h4>
+							<h4 class="section-header__Orangesub-title"><?php echo esc_attr( $sub_group['main_feature_heading'] ); ?></h4>
 						</div>
 						<div class="mc-pp-table-col">
 							<ul>
+								<?php 
+								foreach($feature_lists as $row){
+								?>
 								<li>
-									<span class="mc-pp-item">Internet Uplinks</span>
-									<span class="mc-pp-item">Multiple 10G</span>
-									<span class="mc-pp-item">Multiple 10G</span>
+									<span class="mc-pp-item"><?php echo $row['feature_topic_title'];?></span>
+									<span class="mc-pp-item columbus"><?php if(strtolower($row['columbus_oh']) =='yes'){ echo'<i class="fas fa-check"></i>'; }else{ echo $row['columbus_oh']; }?></span>
+									<span class="mc-pp-item dallas"><?php if(strtolower($row['dallas_tx']) =='yes'){ echo'<i class="fas fa-check"></i>'; }else{ echo $row['dallas_tx']; }?></span>
 								</li>
-								<li>
-									<span class="mc-pp-item">Datacenter to Datacenter Fiber Ring</span>
-									<span class="mc-pp-item"><i class="fas fa-check"></i></span>
-									<span class="mc-pp-item"><i class="fas fa-check"></i></span>
-								</li>
-								<li>
-									<span class="mc-pp-item">Private Datacenter to Datacenter Available</span>
-									<span class="mc-pp-item"><i class="fas fa-check"></i></span>
-									<span class="mc-pp-item"><i class="fas fa-check"></i></span>
-								</li>
-								<li>
-									<span class="mc-pp-item">Internet Uplink Blend</span>
-									<span class="mc-pp-item">8+ Carriers</span>
-									<span class="mc-pp-item">8+ Carriers</span>
-								</li>
-								<li>
-									<span class="mc-pp-item">24/7 NOC</span>
-									<span class="mc-pp-item"><i class="fas fa-check"></i></span>
-									<span class="mc-pp-item"><i class="fas fa-check"></i></span>
-								</li>
+								<?php
+								}
+								?>
 							</ul>
 						</div>
 					</div>
 				</div>
-				<div class="mc-pp-table-block">
-					<div class="mc-pp-table-row">
-						<div class="mc-pp-table-col">
-							<h4 class="section-header__Orangesub-title">Datacenter Features</h4>
-						</div>
-						<div class="mc-pp-table-col">
-							<ul>
-								<li>
-									<span class="mc-pp-item">Carrier Neutral Facility</span>
-									<span class="mc-pp-item"><i class="fas fa-check"></i></span>
-									<span class="mc-pp-item"><i class="fas fa-check"></i></span>
-								</li>
-								<li>
-									<span class="mc-pp-item">Carriers Available at the DC</span>
-									<span class="mc-pp-item">40+</span>
-									<span class="mc-pp-item">300+</span>
-								</li>
-								<li>
-									<span class="mc-pp-item">Power Voltage</span>
-									<span class="mc-pp-item">110v/208v</span>
-									<span class="mc-pp-item">110v/208v</span>
-								</li>
-								<li>
-									<span class="mc-pp-item">3 Phase Power Available</span>
-									<span class="mc-pp-item"><i class="fas fa-check"></i></span>
-									<span class="mc-pp-item"><i class="fas fa-check"></i></span>
-								</li>
-								<li>
-									<span class="mc-pp-item">Tier</span>
-									<span class="mc-pp-item">Tier-IV</span>
-									<span class="mc-pp-item">Tier-III+</span>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="mc-pp-table-block">
-					<div class="mc-pp-table-row">
-						<div class="mc-pp-table-col">
-							<h4 class="section-header__Orangesub-title">Example Pricing</h4>
-						</div>
-						<div class="mc-pp-table-col">
-							<ul>
-								<li>
-									<span class="mc-pp-item">1U One Server (2A redundant A+B 110v) / 1Gbits 10TB</span>
-									<span class="mc-pp-item">ASK</span>
-									<span class="mc-pp-item">ASK</span>
-								</li>
-								<li>
-									<span class="mc-pp-item">21U Half Rack (10A redundant A+B 110v) / 1Gbits, 100TB</span>
-									<span class="mc-pp-item">$799.00</span>
-									<span class="mc-pp-item">$699.00</span>
-								</li>
-								<li>
-									<span class="mc-pp-item">42U Full Rack (20A Redundant A+B 110v) / 1Gbits Unlimited</span>
-									<span class="mc-pp-item">$1,699.00</span>
-									<span class="mc-pp-item">$1,499.00</span>
-								</li>
-								<li>
-									<span class="mc-pp-item">Custom Cage Available</span>
-									<span class="mc-pp-item"><i class="fas fa-check"></i></span>
-									<span class="mc-pp-item"><i class="fas fa-check"></i></span>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
+				<?php 					
+				endwhile; 
+				endif;
+				?>	
 			</div>
 		</div>
 	</section>				

@@ -174,8 +174,17 @@ $loginform.validate({
         });	
     }
   });
-
-
+  
+  
+//jQuery(".showLocation").click(function(){
+jQuery('.showLocation').on('click',function(e){
+    var recent = $(this).val();
+    if ($(this).is(":checked")){
+        $("."+recent).show();
+    }else{
+        $("."+recent).hide();
+    }
+});
 /* Registration Ajax */
 /*
 $('#register').on('click',function(e){

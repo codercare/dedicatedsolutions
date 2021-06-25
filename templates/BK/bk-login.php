@@ -1,5 +1,5 @@
 <?php
-/* Template Name: Customer Login */ 
+/* Customer Login */ 
 
 /* Redirect user to dashboard if user is already loged in to system
    home page if already registered
@@ -71,10 +71,9 @@ get_header();
 							</form>
 							<p>* By logging in, you agree to our <a href="">Terms of Use</a> and to receive Wix emails & updates and acknowledge that you read our <a href="">Privacy Policy.</a></p>
 							<div class="login-with-other">
-								<h2 class="section-header__title">OR</h2>
-								
-									<?php echo do_shortcode('[miniorange_social_login]');?>
-									<!--<ul> <li>
+								<h2 class="section-header__title">OR</h2>							
+									
+									<ul> <li>
 										<button type="button" class="btn--outline facebook">
 											<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/facebook.png'; ?>" alt="facebook-logo">
 										</button>
@@ -88,7 +87,7 @@ get_header();
 										<button type="button" class="btn--outline apple">
 											<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/apple.png'; ?>" alt="apple-logo">
 										</button>
-									</li> </ul>-->
+									</li> </ul>
 								
 							</div>
 						</div>					

@@ -40,6 +40,27 @@
     color: #e74c3c;
 }
 
+#checkoutfield p{
+    width: 47%;
+    clear: none!important;
+}
+
+#checkoutfield p label{
+    width: 100%;
+}
+
+#checkoutfield p #billing_country_field{
+    float:right;
+} 
+#checkoutfield p #billing_country_field{
+    float:right;
+} 
+.payment_method_cod label{ color: #000; } 
+.woocommerce-privacy-policy-text p{ color: #000; }
+#place_order {
+    background-color: #329ADC;
+    padding: 10px 20px;
+}
 
 @media(min-width:1680px){
    

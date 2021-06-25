@@ -214,7 +214,7 @@ function ds_handle_login(){
 	 }
 	 else
 	 {
-		 $msg = 'Logged in successfully! Redirecting ...';
+		 $msg = 'Loged in successfully! Redirecting ...';
 		 echo json_encode(array('success' => 1, 'message' =>'Ok!','message_data'=>$msg,'redirect_url'=>$url));
 		 exit;
 

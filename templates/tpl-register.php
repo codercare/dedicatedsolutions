@@ -41,9 +41,14 @@ get_header();
 								<h2 class="section-header__title">Register</h2>
 								<p class="section-header__sub-title">Already have an account? <a href="<?php echo site_url('/login');?>">Login</a></p>
 							</div>
-							<form name="wp_signup_form"  id="wp_signup_form" method="post">  
+							    <form name="wp_signup_form"  id="wp_signup_form" role="form" method="post">  
 								<div class="row">
-									<div class="col-md-12"><div id="message"></div></div>
+									<div class="col-md-12">
+										<div id="message" class="alert alert-success">
+										<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+										<span id="msg"><strong>Successfully registered!</strong> Please login with created email and password.</span>
+										</div>
+									</div>
 									<div class="col-md-6">
 										<div class="form-group">									
 											<label class="form-label" for="firstName"><?php _e( 'First Name', 'dedicatedsolutions' ); ?></label>
@@ -60,7 +65,7 @@ get_header();
 		
 									<div class="col-md-6">
 										<div class="form-group">									
-											<label class="form-label" for="email"><?php _e( 'Email', 'dedicatedsolutions' ); ?></label>
+											<label class="form-label" for="email"><?php _e( 'Email (used as login username)', 'dedicatedsolutions' ); ?></label>
 											<input type="text" id="email" name="email" class="form-control" placeholder="Enter Your Email">
 										</div>
 									</div>
@@ -89,18 +94,52 @@ get_header();
 									<div class="col-md-6">
 										<div class="form-group">									
 											<label class="form-label" for="country"><?php _e( 'Country', 'dedicatedsolutions' ); ?></label>
+											<?php
+											global $woocommerce;
+											$countries_obj   = new WC_Countries();
+											$countries   = $countries_obj->__get('countries');
+											/*
+											woocommerce_form_field('country', array(
+												'type'       => 'select',
+												'class'      => array( 'form-control' ),
+												'id'=>'country',
+												'options'    => $countries
+											)
+											); */
+											
+											?>
 											<select id="country" name="country"  class="form-control">
-												<option value="US">United State</option>
-												<option value="NP">Nepal</option>
+												<?php foreach($countries as $key => $con_row){ ?>
+												<option value="<?php echo $key;?>"><?php echo $con_row;?></option>
+												<?php } ?>
 											</select>
 										</div>
 									</div>
 									<div class="col-md-6">
 										<div class="form-group">									
 											<label class="form-label" for="state"><?php _e( 'State', 'dedicatedsolutions' ); ?></label>
-											<select id="state" name="state"  class="form-control">
-												<option value="AZ">Albama</option>
-												<option value="CA">Kathmandu</option>
+											<?php
+											 global $woocommerce;
+											 $countries_obj   = new WC_Countries();
+											 $countries   = $countries_obj->__get('countries');
+											 $default_country = $countries_obj->get_base_country();
+											 $default_county_states = $countries_obj->get_states( $default_country );
+										 											 
+											 /*woocommerce_form_field('state', array(
+												'type'       => 'select',
+												'class'      => array( 'form-control' ),
+												'id'=>'state',
+												'placeholder'    => __('Enter something'),
+												'options'    => $default_county_states
+											 )
+											 );
+											 */
+											
+											?>
+										    <select id="state" name="state"  class="form-control">
+											<?php foreach($default_county_states as $key => $state){ ?>
+												<option value="<?php echo $key;?>"><?php echo $state;?></option>
+												<?php } ?>
 											</select>
 										</div>
 									</div>
@@ -153,11 +192,12 @@ get_header();
 	
 									<div class="col-md-12">
 										<div class="btn-center">
-											<button id="register" value="Register"  class="btn--orange">Register </button>
+											<button id="register" type="submit" value="Register"  class="btn--orange">Register </button>
 										</div>
 									</div>
 								</div>
-							</form>	
+							</form>	 
+							
 						</div>					
 					</div>
 					<div class="col-md-5">

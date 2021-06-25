@@ -9,15 +9,20 @@ function ds_assets() {
 	wp_enqueue_script( 'ds-jquery-slim', get_template_directory_uri() . '/assets/js/jquery-3.3.1.slim.min.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'ds-fullpage-scroll-asset', get_template_directory_uri() . '/assets/js/fullpage.min.js', array(), _S_VERSION, true );
 	*/
+
+	
 	/**Local link of js and css */
 	wp_enqueue_style( 'bootstrap-loc', get_template_directory_uri() . '/public/css/bootstrap.min.css', array(), _S_VERSION, 'all' );
 	wp_enqueue_style( 'font-awesome-loc', get_template_directory_uri() . '/public/css/all.min.css', array(), _S_VERSION, 'all' );
 	wp_enqueue_style( 'fullpage-css', get_template_directory_uri() . '/public/css/fullpage.min.css', array(), _S_VERSION, 'all' );
 	wp_enqueue_style( 'ds-stylesheet', get_template_directory_uri() . '/dist/assets/css/bundle.css', array(), _S_VERSION, 'all' );
 
-	wp_enqueue_script( 'ds-jquery-min', get_template_directory_uri() . '/public/js/jquery-3.5.1.min.js', array(), _S_VERSION, true );
-	// wp_enqueue_script( 'ds-jquery-slim', get_template_directory_uri() . '/public/js/jquery-3.3.1.slim.min.js', array(), _S_VERSION, true );
+    // wp_enqueue_script( 'ds-jquery-min', get_template_directory_uri() . '/public/js/jquery-3.5.1.min.js', array(), _S_VERSION, true );
+	wp_enqueue_style( 'jquery2.2.4', get_template_directory_uri() . '/public/js/jquery-2.2.4.min.js', array(), _S_VERSION, 'all' );
+	
+	//// wp_enqueue_script( 'ds-jquery-slim', get_template_directory_uri() . '/public/js/jquery-3.3.1.slim.min.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'bootstrap-js-loc', get_template_directory_uri() . '/public/js/bootstrap.bundle.min.js', array( 'jquery' ), true );
+	wp_enqueue_script( 'validate-js-loc', get_template_directory_uri() . '/public/js/validate.min.js',_S_VERSION, true );
 	wp_enqueue_script( 'ds-fullpage-scroll', get_template_directory_uri() . '/public/js/fullpage.min.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'ds-scripts', get_template_directory_uri() . '/dist/assets/js/bundle.js', array( 'jquery' ), _S_VERSION, true );
 

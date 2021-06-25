@@ -39,7 +39,11 @@ get_header();
 							<div class="section-header">
 								<h2 class="section-header__title">Login</h2>
 								<p class="section-header__sub-title">Don't have an account? <a href="<?php echo site_url('/register');?>">Register</a></p>
-								<div id="message" class="error_message"></div>		
+								
+								<div id="message" class="alert alert-success">
+								<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+								<span id="msg"><strong>Successfully logedin!</strong> redirected to dashboard.</span>
+								</div>	
 							</div>
 							<form name="wp_login_form"  id="wp_login_form" method="post">
 								<div class="form-group">

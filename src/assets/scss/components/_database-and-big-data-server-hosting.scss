@@ -1,17 +1,19 @@
 .db-bd-sh-page-banner{
-    // padding: 11.5rem 0 4.5rem;
-    @include respond(big-desktop){
-        padding: 11.5rem 0 3.5rem;
-    }
-    @include respond(large-desktop){
-        padding: 4rem 0 1rem;
+    @include respond(tab-port){
+        padding: 4vmin 0 2vmin;
     }
     .page-banner-content{
         .btn--orange{
-            padding: 1.2rem 3.5rem;
+            @include respond(tab-port){
+                padding: 1.2vmin 3.5vmin;
+            }
             i{
                 font-size: 1.2rem;
-                margin: 0 0 0 1rem;
+                margin: 0 0 0 .7rem;
+                @include respond(tab-port){
+                    font-size: 1.2vmin;
+                    margin: 0 0 0 1vmin;
+                }
             }
         }
     } 
@@ -26,36 +28,60 @@
         } 
     }
     .tab-content{
-        padding: 6rem 0 10rem;
-        @include respond(large-desktop){
-            padding: 4rem 0;
+        padding: 3rem 0;
+        @include respond(tab-port){
+            padding: 5vmin 0;
         }
     }
-    .section-header__title{
-        margin: 0 0 4rem;
-    } 
-    .section-header__Orangesub-title{
-        margin: 0 0 1.5rem;
+    @include respond(tab-port){
+        .section-header__title{
+            margin: 0 0 4vmin;
+        } 
+        .section-header__Orangesub-title{
+            margin: 0 0 1.5vmin;
+        }
     }
     .server-hosting-content{
-        padding: 0 5rem 0 0;
+        @include respond(mobile){
+            margin: 0 0 2rem;
+        }
+        @include respond(tab-port){
+            padding: 0 5vmin 0 0;
+        }
         .section-header__sub-title{
-            margin: 0 0 3rem;
-            line-height: 3.4rem;
+            @include respond(tab-port){
+                margin: 0 0 3vmin;
+                line-height: 3.4vmin;
+                ~ img{
+                    width: 48.5%;
+                }
+            }
         }
     }
     .server-hosting-support-list{
-        padding: 0 0 0 1rem;
+        @include respond(tab-port){
+            padding: 0 0 0 1vmin;
+        }
         ul{
             margin: 0;
-            padding: 1rem 0 0;
+            padding: 0;
+            @include respond(tab-port){
+                padding: 1vmin 0 0;
+            }
             li{
                 list-style: none;
-                font-size: 1.8rem;
                 font-weight: 500;
                 background: url('../images/tick.png')no-repeat left top .7rem;
-                padding: 0 0 0 5rem;
+                padding: 0 0 0 2.8rem;
                 margin: 0 0 .5rem;
+                background-size: 1.8rem;
+                @include respond(tab-port){
+                    padding: 0 0 0 5vmin;
+                    margin: 0 0 .5vmin;
+                    font-size: 1.8vmin;
+                    background-position: left top .7vmin;
+                    background-size: 5.2%;
+                }
                 &:last-child{
                     margin: 0;
                 }
@@ -68,11 +94,10 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position:center center;
-    padding: 4rem 0;
     position: relative;
     z-index: 1;
-    @include respond(large-desktop){
-        padding: 0;
+    @include respond(mobile){
+        padding: 3rem 0;
     }
     &::before{
         content: '';
@@ -84,58 +109,71 @@
         z-index: -1;
         background: rgba($color: $darkGrey, $alpha: .7);
     }
-    .section-header{
-        margin: 0 0 2rem;
-        .section-header__title{
-            color: #fff;
+    @include respond(tab-port){
+        .section-header{
+            margin: 0 0 2vmin;
+            .section-header__Orangesub-title{
+                padding: 0 3vmin;
+            }
         }
-        .section-header__Orangesub-title{
-            padding: 0 3rem;
+    }
+    .section-header__title{
+        color: #fff;
+    }
+    @include respond(mobile){
+        [class^="col-"]:not(:last-child){
+            .ss-db-cluster-block{
+                margin: 0 0 2rem;
+            }
         }
     }
     .ss-db-cluster-block {
         text-align: center;
         background: #fff;
-        padding: 3rem 2rem;
-        @include respond(large-desktop){
-            padding: 2rem;
+        padding: 2rem;
+        @include respond(tab-port){
+            padding: 2vmin;
         }
         .thumbnail-img {
-            margin: 0 0 2.5rem;
-            @include respond(large-desktop){
-                margin: 0 0 1rem;
+            margin: 0 0 1.5rem;
+            @include respond(tab-port){
+                margin: 0 0 2vmin;
                 img{
-                    max-width: 40%;
+                    width: 55%;
                 }
             }
         }
         h2{
-            font-size: 2.4rem;
+            font-size: 1.8rem;
             font-family: 'Product Sans', sans-serif;
             font-weight: 700;
             margin: 0 0 1.5rem;
-            @include respond(large-desktop){
-                margin:  0 0 1rem;
+            @include respond(tab-port){
+                font-size: 2.4vmin;
+                margin:  0 0 1.5vmin;
             }
         }
         .ss-db-cluster-content{
-            min-height: 17.6rem;
             margin: 0 0 1rem;
-            @include respond(large-desktop){
+            @include respond(tab-port){
+                min-height: 17.6vmin;
                 margin: 0;
             }
             p{
-                font-size: 1.4rem;
                 margin: 0;
-                line-height: 2.2rem;
+                @include respond(tab-port){
+                    font-size: 1.4vmin;
+                    line-height: 2.2vmin;
+                }
             }
         }
         .cluster-options-list{
+            margin: 0 auto .5rem;
             max-width: 35rem;
-            margin: 0 auto 3rem;
-            min-height: 15.7rem;
-            @include respond(large-desktop){
-                margin-bottom:  1rem;
+            @include respond(tab-port){
+                min-height: 15.3vmin;
+                max-width: 35vmin;
+                margin: 0 auto 2vmin;
             }
             ul {
                 margin: 0;
@@ -144,18 +182,35 @@
                 li {
                     list-style-type: none;
                     font-weight: 500;
-                    border-bottom: 1px solid rgba($color: #707070, $alpha: .46);
-                    padding: .55rem 1.5rem;
+                    border-bottom: .1rem solid rgba($color: #707070, $alpha: .46);
+                    padding: .7rem 0;
                     text-align: left;
-                    display: flex;
-                    justify-content: center;
+                    @include respond(tab-port){
+                        border-bottom-width: .1vmin;
+                        padding: .55vmin 1.5vmin;
+                        display: flex;
+                        justify-content: center;
+                    }
                     .icon-txt-item{
-                        width: 18rem;
+                        @include respond(tab-port){
+                            width: 19vmin;
+                        }
                     }
                     .icon--item{
-                        width: 20px;
+                        width: 1.8rem;
                         display: inline-block;
-                        margin: 0 1.4rem 0 0;
+                        margin: 0 1rem 0 0;
+                        text-align: center;
+                        @include respond(tab-port){
+                            width: 2vmin;
+                            margin: 0 1.4vmin 0 0;
+                            img{
+                                width: 100%;
+                                &[alt="cancel"]{
+                                    width: 79%;
+                                }
+                            }
+                        }
                     }
                     &:last-child{
                         border: none;
@@ -164,16 +219,17 @@
             }
         } 
         .btn--outline-dark{
-            max-width: none;
-            max-height: none;
-            height: auto;
             display: inline-block;
             border-radius: 0;
-            padding: .2rem 1.42rem;
-            font-size: 1.6rem;
             font-family: 'Product Sans';
             font-weight: 400;
             letter-spacing: .06rem;
+            padding: .2rem 1.42rem;
+            @include respond(tab-port){
+                padding: .2vmin 1.42vmin;
+                font-size: 1.6vmin;
+                letter-spacing: .06vmin;
+            }
         }
     }
     [class^="col-"]{
@@ -195,28 +251,39 @@
 }
 
 .hadoop-data-server{
-    padding: 10rem 0;
     background: #FCFCFC;
-    @include respond(large-desktop){
-        padding: 0;
+    @include respond(mobile){
+        padding: 3rem 0;
     }
-    .section-header{
-        margin: 0 0 8rem;
-        .section-header__Orangesub-title{
-            padding: 0 4rem;
+    @include respond(tab-port){
+        .section-header{
+            margin: 0 0 8vmin;
+            .section-header__Orangesub-title{
+                padding: 0 4vmin;
+            }
         }
     }
     .hadoop-server-feat{
-        .hadoop-server-feat--block {
+        &--block {
             background: #fff;
             border-radius: .5rem;
             box-shadow: 0 0 1.5rem 0 rgba($color: #000000, $alpha: .06);
             transition: all .3s ease;
-            padding: 3rem;
-            margin: 0 0 8rem;
+            padding: 2rem;
+            margin: 0 0 2rem;
+            @include respond(tab-port){
+                padding: 3vmin;
+                margin: 0 0 8vmin;
+                box-shadow: 0 0 1.5vmin 0 rgba($color: #000000, $alpha: .06);
+                border-radius: .5vmin;
+            }
             &__icon{
-                width: 7rem;
-                margin: 0 0 1rem;
+                width: 5rem;
+                margin: 0 0 1.5rem;
+                @include respond(tab-port){
+                    width: 7vmin;
+                    margin: 0 0 1vmin;
+                }
                 svg{
                     width: 100%;
                     height: auto;
@@ -225,15 +292,20 @@
                 }
             }
             h2{
-                font-size: 2.2rem;
+                font-size: 1.8rem;
                 font-family: "Product Sans";
                 font-weight: 700;
+                @include respond(tab-port){
+                    font-size: 2.2vmin;
+                }
             }
             p{
                 font-weight: 300;
-                line-height: 3rem;
                 margin: 0;
-                min-height: 15rem;
+                @include respond(tab-port){
+                    min-height: 15vmin;
+                    line-height: 3vmin;
+                }
             }
             &:hover{
                 background: $mainOrange;
@@ -243,28 +315,26 @@
                 }
             }
         }
-        [class^="col-"]{
-            &:last-child {
-                .hadoop-server-feat--block{
-                    margin: 0;
-                }
-            }
-        }
         .btn--orange{
-            max-width: 28.4rem;
-            max-height: none;
-            height: auto;
-            display: block;
             margin: 0 auto;
             text-transform: inherit;
             text-align: center;
             border-radius: .2rem;
             box-shadow: none;
-            font-size: 1.5rem;
-            padding: 1.1rem 2.2rem;
+            @include respond(tab-port){
+                max-width: 28.4vmin;
+                display: block;
+                border-radius: .2vmin;
+                font-size: 1.5vmin;
+                padding: 1.1vmin 2.2vmin;
+            }
             .fas{
-                font-size: 1.4rem;
-                margin: 0 0 0 2rem;
+                font-size: 1.2rem;
+                margin: 0 0 0 1rem;
+                @include respond(tab-port){
+                    font-size: 1.4vmin;
+                    margin: 0 0 0 2vmin;
+                }
             }
         }
     }

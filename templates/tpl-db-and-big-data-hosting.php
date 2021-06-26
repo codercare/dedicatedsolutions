@@ -56,7 +56,7 @@ while ( have_posts() ) : the_post();
 					<div class="tab-pane fade <?php if($counter_feature == '3'){ echo'show active'; }?>" id="tab_id_<?php echo $counter_feature;?>" role="tabpanel" aria-labelledby="tab_id_<?php echo $counter_feature;?>-tab">
 						<h2 class="section-header__title"><?php the_sub_field( 'database_title' ); ?></h2>
 						<div class="row">
-							<div class="col-lg-6">
+							<div class="col-md-6">
 								<div class="server-hosting-content">
 									<h4 class="section-header__Orangesub-title"><?php the_sub_field( 'database_feature_sub_title' ); ?></h4>
 									<p class="section-header__sub-title"><?php the_sub_field( 'left_text_box' ); ?></p>
@@ -73,7 +73,7 @@ while ( have_posts() ) : the_post();
 									}?>
 								</div>
 							</div>
-							<div class="col-lg-6">
+							<div class="col-md-6">
 								<div class="server-hosting-support-list">
 									<?php 
 									$feature_group = get_sub_field('feature_title_and_feature_listing');									
@@ -121,7 +121,7 @@ while ( have_posts() ) : the_post();
 					$sig_clus_image = $single_cluster_db['url'];
 				}
 				?>
-				<div class="col-lg-6">
+				<div class="col-md-6">
 					<div class="ss-db-cluster-block">
 						<figure class="thumbnail-img">
 							<img src="<?php echo $sig_clus_image; ?>" alt="<?php the_sub_field('title');?>">
@@ -179,7 +179,7 @@ while ( have_posts() ) : the_post();
 		</div>
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-4">
+				<div class="col-md-4">
 					<div class="server-type-block-wrap">
 						<h3><i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/servers.png'; ?>" alt="servers"></i>Budget Servers</h3>
 						<h4>Our Best Selling Budget Servers</h4>
@@ -199,7 +199,7 @@ while ( have_posts() ) : the_post();
 							foreach ( $budget_server as $post ) : 
 							setup_postdata( $post ); 
 									?>
-									<div class="col-lg-6">
+									<div class="col-md-6">
 										<div class="server-type-block">
 											<div class="server-tye-header">
 												<h5><?php the_title(); ?> <span><?php the_field( 'server_ghz' ); ?></span></h5>
@@ -240,7 +240,7 @@ while ( have_posts() ) : the_post();
 						</div>
 					</div>
 				</div>
-				<div class="col-4">
+				<div class="col-md-4">
 					<div class="server-type-block-wrap">
 						<h3><i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/servers.png'; ?>" alt="servers"></i>Pro Servers</h3>
 						<h4>Our Best Selling Pro Servers</h4>
@@ -259,7 +259,7 @@ while ( have_posts() ) : the_post();
 							foreach ( $budget_server as $post ) : 
 							setup_postdata( $post ); 
 							?>
-							<div class="col-lg-6">
+							<div class="col-md-6">
 								<div class="server-type-block">
 									<div class="server-tye-header">
 										<h5><?php the_title(); ?> <span><?php the_field( 'server_ghz' ); ?></span></h5>
@@ -300,7 +300,7 @@ while ( have_posts() ) : the_post();
 						</div>
 					</div>
 				</div>
-				<div class="col-4">
+				<div class="col-md-4">
 					<div class="server-type-block-wrap">
 						<h3><i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/servers.png'; ?>" alt="servers"></i>Enterprise Servers</h3>
 						<h4>Our Best Selling Enterprise Servers</h4>
@@ -320,7 +320,7 @@ while ( have_posts() ) : the_post();
 							foreach ( $budget_server as $post ) : 
 							setup_postdata( $post ); 
 							?>
-							<div class="col-lg-6">
+							<div class="col-md-6">
 								<div class="server-type-block">
 									<div class="server-tye-header">
 										<h5><?php the_title(); ?> <span><?php the_field( 'server_ghz' ); ?></span></h5>
@@ -380,7 +380,7 @@ while ( have_posts() ) : the_post();
 					while ( have_rows( 'hadoop_plus_big_data_server_equals_blocks' ) ) :
 					the_row();											
 					?>
-					<div class="col-lg-4">
+					<div class="col-md-4">
 						<div class="hadoop-server-feat--block">
 							<div class="hadoop-server-feat--block__icon">
 								<?php the_sub_field('block_svg_code');?>

@@ -47,7 +47,7 @@ while ( have_posts() ) : the_post();
 						$block_image = $block_bg_image['url'];
 					}
 					?>
-					<div class="col-lg-6">
+					<div class="col-md-6">
 						<div class="demand-storage-block-content">
 							<div class="deman-storage-block-icon">
 								<img src="<?php echo $block_image; ?>" alt="binary-code">
@@ -73,7 +73,7 @@ while ( have_posts() ) : the_post();
 				<p><?php the_field( 'cloud_storage_detail' ); ?></p>
 			</div>
 			<div class="row">
-				<div class="col-xl-6 order-xl-1">
+				<div class="col-md-6 order-md-1">
 					<div class="storage-based-thumb-content">
 					<?php 
 					if( have_rows('nas_mid_block') ): 
@@ -95,7 +95,7 @@ while ( have_posts() ) : the_post();
 				    endif; ?>
 					</div>
 				</div>
-				<div class="col-xl-3 col-lg-6">
+				<div class="col-md-3">
 					<?php if( have_rows('nas_features_block_left') ): ?>
 					<?php while( have_rows('nas_features_block_left') ): the_row(); ?>
 					<div class="storage-based-feat-block">
@@ -114,7 +114,7 @@ while ( have_posts() ) : the_post();
 					endwhile; 
 				    endif; ?>
 				</div>
-				<div class="col-xl-3 order-xl-2 col-lg-6">
+				<div class="col-md-3 order-md-2">
 					<div class="storage-based-feat-block">
 					<?php if( have_rows('nas_features_block_right') ): ?>
 					<?php while( have_rows('nas_features_block_right') ): the_row(); ?>
@@ -145,7 +145,7 @@ while ( have_posts() ) : the_post();
 				<?php the_field( 'redundant_nas_detail_top' ); ?>
 			</div>
 			<div class="row">
-				<div class="col-xl-6 order-xl-1">
+				<div class="col-md-6 order-md-1">
 					<div class="storage-based-thumb-content">
 					<?php 
 					if( have_rows('redundant_nas_mid') ): 
@@ -167,7 +167,7 @@ while ( have_posts() ) : the_post();
 				    endif; ?>
 					</div>
 				</div>
-				<div class="col-xl-3 col-lg-6">
+				<div class="col-md-3">
 					<div class="storage-based-feat-block">						
 						<?php if( have_rows('nas_features_block_left') ): ?>
 						<?php while( have_rows('nas_features_block_left') ): the_row(); ?>
@@ -187,7 +187,7 @@ while ( have_posts() ) : the_post();
 						endif; ?>
 					</div>
 				</div>
-				<div class="col-xl-3 order-xl-2 col-lg-6">
+				<div class="col-md-3 order-md-2">
 					<div class="storage-based-feat-block">
 					    <?php 
 						if( have_rows('redundant_nas_right') ): 
@@ -220,7 +220,7 @@ while ( have_posts() ) : the_post();
 				<?php the_field( 'storage_area_network_description' ); ?>
 			</div>
 			<div class="row">
-				<div class="col-xl-6 order-xl-1">
+				<div class="col-md-6 order-md-1">
 					<div class="storage-based-thumb-content">
 						<?php 
 						if( have_rows('redundant_nas_mid') ): 
@@ -240,7 +240,7 @@ while ( have_posts() ) : the_post();
 						endif; ?>
 					</div>
 				</div>
-				<div class="col-xl-3 col-lg-6">
+				<div class="col-md-3">
 					<div class="storage-based-feat-block">
 					    <?php if( have_rows('san_left') ): ?>
 						<?php while( have_rows('san_left') ): the_row(); ?>
@@ -260,7 +260,7 @@ while ( have_posts() ) : the_post();
 						endif; ?>
 					</div>
 				</div>
-				<div class="col-xl-3 order-xl-2 col-lg-6">
+				<div class="col-md-3 order-md-2">
 					<div class="storage-based-feat-block">
 					    <?php if( have_rows('san_right') ): ?>
 						<?php while( have_rows('san_right') ): the_row(); ?>
@@ -349,7 +349,7 @@ while ( have_posts() ) : the_post();
 		</div>
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-4">
+				<div class="col-md-4">
 					<div class="server-type-block-wrap">
 						<h3><i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/servers.png'; ?>" alt="servers"></i>Budget Servers</h3>
 						<h4>Our Best Selling Budget Servers</h4>
@@ -369,7 +369,7 @@ while ( have_posts() ) : the_post();
 							foreach ( $budget_server as $post ) : 
 							setup_postdata( $post ); 
 									?>
-									<div class="col-lg-6">
+									<div class="col-md-6">
 										<div class="server-type-block">
 											<div class="server-tye-header">
 												<h5><?php the_title(); ?> <span><?php the_field( 'server_ghz' ); ?></span></h5>
@@ -410,7 +410,7 @@ while ( have_posts() ) : the_post();
 						</div>
 					</div>
 				</div>
-				<div class="col-4">
+				<div class="col-md-4">
 					<div class="server-type-block-wrap">
 						<h3><i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/servers.png'; ?>" alt="servers"></i>Pro Servers</h3>
 						<h4>Our Best Selling Pro Servers</h4>
@@ -429,7 +429,7 @@ while ( have_posts() ) : the_post();
 							foreach ( $budget_server as $post ) : 
 							setup_postdata( $post ); 
 							?>
-							<div class="col-lg-6">
+							<div class="col-md-6">
 								<div class="server-type-block">
 									<div class="server-tye-header">
 										<h5><?php the_title(); ?> <span><?php the_field( 'server_ghz' ); ?></span></h5>
@@ -470,7 +470,7 @@ while ( have_posts() ) : the_post();
 						</div>
 					</div>
 				</div>
-				<div class="col-4">
+				<div class="col-md-4">
 					<div class="server-type-block-wrap">
 						<h3><i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/servers.png'; ?>" alt="servers"></i>Enterprise Servers</h3>
 						<h4>Our Best Selling Enterprise Servers</h4>
@@ -490,7 +490,7 @@ while ( have_posts() ) : the_post();
 							foreach ( $budget_server as $post ) : 
 							setup_postdata( $post ); 
 							?>
-							<div class="col-lg-6">
+							<div class="col-md-6">
 								<div class="server-type-block">
 									<div class="server-tye-header">
 										<h5><?php the_title(); ?> <span><?php the_field( 'server_ghz' ); ?></span></h5>
@@ -547,7 +547,7 @@ while ( have_posts() ) : the_post();
 						$block_counter = 0;
 						if( have_rows('footer_three_blocks') ): ?>
 						<?php while( have_rows('footer_three_blocks') ): the_row(); ?>
-						<div class="col-lg-4">
+						<div class="col-md-4">
 							<div class="tech-support-card" style="background-image:url('<?php echo get_template_directory_uri() . '/dist/assets/images/'.$bg_image[$block_counter]; ?>')">
 								<div class="tech-support-card__icon">
 								    <?php

@@ -12,9 +12,8 @@
             padding: 3vmin 0;
         }
         .large-banner__heading{
-            line-height: initial;
-            margin: 0 0 .8rem;
             @include respond(tab-port){
+                line-height: initial;
                 margin: 0 0 1.2vmin;
             }
         }

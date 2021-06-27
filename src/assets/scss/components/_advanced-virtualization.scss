@@ -39,4 +39,298 @@
 
 .av-feature-compare{
     background: #F2F2F2;
+    padding: 3rem 0;
+    @include respond(tab-port){
+        .wrapper{
+            max-width: 175.2vmin;
+            overflow: visible;
+        }
+    }
+    .av-gridder {
+        .gridder-list{
+            cursor: pointer;
+            @include respond(mobile){
+                &:not(:last-child){
+                    margin: 0 0 2rem;
+                }
+            }
+            &.selectedItem{
+                @include respond(mobile){
+                    margin: 0 0 .5rem;
+                }
+                .av-gridder-block{
+                    box-shadow: 0 .3rem .6rem 0 rgba($color: $mainOrange, $alpha: 1.0);
+                    @include respond(tab-port){
+                        position: relative;
+                        box-shadow: 0 .3vmin .6vmin 0 rgba($color: $mainOrange, $alpha: 1.0);
+                        &::before{
+                            content: '';
+                            position: absolute;
+                            top: 100%;
+                            left: 0;
+                            width: 100%;
+                            background: #fff;
+                            height: 2vmin;
+                            z-index: 1;
+                        }
+                    }
+                }
+            }
+            @include respond(tab-port){
+                display: inline-block;
+                vertical-align: top;
+                width: 19.7%;
+                padding: 0 1vmin;
+                margin: 0 0 1vmin;
+            }
+            @include respond(large-desktop){
+                width: 19.8%;
+            }
+            .av-gridder-block {
+                background: #fff;
+                .av-gridder-header {
+                    background: #F8F8F8;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 1rem 1.5rem;
+                    @include respond(tab-port){
+                        min-height: 12vmin;
+                        padding: 1.5vmin;
+                    }
+                    &__title{
+                        font-size: 1.8rem;
+                        text-transform: uppercase;
+                        color: $mainOrange;
+                        font-weight: 500;
+                        @include respond(tab-port){
+                            font-size: 2.8vmin;
+                        }
+                    }
+                    &__Sub-title{
+                        font-size: 1.5rem;
+                        font-weight: 400;
+                        color: #AEAEAE;
+                        margin: 0;
+                        @include respond(tab-port){
+                            font-size: 2.2vmin;
+                        }
+                    }
+                }
+                .av-gridder-content{
+                    .av-gridder-content-item{
+                        display: flex;
+                        align-items: center;
+                        padding: 1rem 1.5rem;
+                        &:nth-of-type(even){
+                            background: #FFFCF9;
+                        }
+                        @include respond(tab-port){
+                            min-height: 10vmin;
+                            padding: 1vmin 4vmin;
+                        }
+                        ul{
+                            margin: 0;
+                            padding: 0;
+                            li{
+                                list-style-type: none;
+                                display: flex;
+                                align-items: center;
+                                font-weight: 500;
+                                margin: .5rem 0;
+                                @include respond(tab-port){
+                                    margin: .7vmin 0;
+                                }
+                                .av-content-icon{
+                                    width: 2.2rem;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    margin: 0 1rem 0 0;
+                                    @include respond(tab-port){
+                                        width: 2.8vmin;
+                                        margin: 0 1.5vmin 0 0;
+                                        img{
+                                            width: 100%;
+                                        }   
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .av-gridder-button {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 1rem 1.5rem;
+                    @include respond(tab-port){
+                        padding: 1.5vmin 2vmin;
+                        min-height: 12vmin;
+                    }
+                    .btn--orange{
+                        text-transform: none;
+                        @include respond(tab-port){
+                            font-size: 1.6vmin;
+                            font-weight: 500;
+                            padding: 1.07vmin 3.7vmin;
+                        }
+                    }
+                }
+            }
+        }
+        .gridder-show {
+            @include respond(mobile){
+                margin: 0 0 2rem;
+            }
+            @include respond(tab-port){
+                display: block;
+                float: left;
+                width: 100%;
+                position: relative;
+                padding: 0 1vmin;
+            }
+        }
+        .gridder-inner-content {
+            background: #fff;
+            padding: 2rem;
+            box-shadow: .1rem .1rem .6rem 0 rgba($color: $mainOrange, $alpha: 1.0);
+            @include respond(tab-port){
+                padding: 2vmin;
+                box-shadow: .1vmin .1vmin .6vmin 0 rgba($color: $mainOrange, $alpha: 1.0);
+            }
+            .sample-config-block{
+                @include respond(mobile){
+                    padding: 0 0 2rem;
+                    border-bottom: .1rem solid #707070;
+                    [class^="col-"]:not(:last-child){
+                        .sample-config-item{
+                            margin: 0 0 2rem;
+                        }
+                    }
+                }
+                @include respond(tab-port){
+                    border-right: .1vmin solid #707070;
+                }
+                h3 {
+                    font-size: 1.8rem;
+                    font-family: "Product Sans";
+                    font-weight: 700;
+                    margin: 0 0 1.5rem;
+                    @include respond(tab-port){
+                        font-size: 2vmin;
+                        margin: 0 0 2.5vmin;
+                    }
+                }
+                .sample-config-item{
+                    &__icon{
+                        width: 3rem;
+                        margin: 0 0 1rem;
+                        @include respond(tab-port){
+                            width: 4vmin;
+                            margin: 0 0 1vmin;
+                            img{
+                                width: 100%;
+                            }
+                        }
+                    }
+                    h4{
+                        font-size: 1.6rem;
+                        font-family: "Product Sans";
+                        font-weight: 700;
+                        @include respond(tab-port){
+                            font-size: 1.8vmin;
+                        }
+                    }
+                    ul{
+                        margin: 0;
+                        padding: 0;
+                        list-style-type: none;
+                        li{
+                            font-size: 1.3rem;
+                            @include respond(tab-port){
+                                font-size: 1.4vmin;
+                            }
+                        }
+                    }
+                }
+                &.sc-feat-block{
+                    @include respond(mobile){
+                        padding-top:2rem;
+                    }
+                    h3{
+                        margin: 0 0 1.5rem;
+                        @include respond(tab-port){
+                            margin: 0 0 1.5vmin;
+                        }
+                    }
+                    ul li{
+                        &:not(:last-child){
+                            margin: 0 0 .5rem;
+                            @include respond(tab-port){
+                                margin: 0 0 .5vmin;
+                            }
+                        }
+                    }
+                }
+            }
+            .pricing-block {
+                text-align: center;
+                padding: 2rem 0 0;
+                @include respond(tab-port){
+                    padding: 1vmin 0;
+                }
+                h6 {
+                    font-size: 1.4rem;
+                    color: #333333;
+                    margin: 0;
+                    @include respond(tab-port){
+                        font-size: 1.6vmin;
+                    }
+                }
+                h1{
+                    font-size: 4rem;
+                    color: $mainOrange;
+                    font-weight: 500;
+                    margin: 0;
+                    @include respond(tab-port){
+                        font-size: 6vmin;
+                    }
+                }
+                h5 {
+                    font-size: 1.6rem;
+                    color: #030B12;
+                    margin: 0 0 1.5rem;
+                    @include respond(tab-port){
+                        font-size: 1.8vmin;
+                        margin: 0 0 2vmin;
+                    }
+                }
+                h4{
+                    font-size: 1.8rem;
+                    text-decoration: line-through;
+                    font-weight: 500;
+                    color: #858585;
+                    margin: 0 0 1.5rem;
+                    @include respond(tab-port){
+                        font-size: 2vmin;
+                        margin: 0 0 2vmin;
+                    }
+                }
+                .btn--orange{
+                    display: inline-block;
+                    text-transform: none;
+                    @include respond(tab-port){
+                        font-size: 1.6vmin;
+                        padding: 1.07vmin 3.5vmin;
+                    }
+                }
+            } 
+        }
+    }
+    .gridder-content{
+        display: none;
+    }
 }
+

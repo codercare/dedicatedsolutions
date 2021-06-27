@@ -68,9 +68,9 @@ get_header();?>
 				<h2 class="section-header__title">Budget Vs Pro Vs Enterprise Feature Compare</h2>
 				<span class="section-header__decoration-element"></span>
 			</div>
-			<div class="av-gridder-content-wrap">
-				<div class="av-gridder">
-					<div class="av-gridder-block" data-griddercontent="#av-gridder1">
+			<div class="av-gridder">
+				<div class="gridder-list" data-griddercontent="#av-gridder1">
+					<div class="av-gridder-block">
 						<div class="av-gridder-header">
 							<h1 class="av-gridder-header__title">VPS cloud</h1>
 							<h3 class="av-gridder-header__Sub-title">Private</h3>
@@ -101,7 +101,9 @@ get_header();?>
 							<a href="" class="btn--orange">View Budget Servers</a>
 						</div>
 					</div>
-					<div class="av-gridder-block" data-griddercontent="#av-gridder2">
+				</div>
+				<div class="gridder-list" data-griddercontent="#av-gridder2">
+					<div class="av-gridder-block">
 						<div class="av-gridder-header">
 							<h1 class="av-gridder-header__title">Cloud Starter</h1>
 							<h3 class="av-gridder-header__Sub-title">Private</h3>
@@ -138,7 +140,9 @@ get_header();?>
 							<a href="" class="btn--orange">View Budget Servers</a>
 						</div>
 					</div>
-					<div class="av-gridder-block" data-griddercontent="#av-gridder3">
+				</div>
+				<div class="gridder-list" data-griddercontent="#av-gridder3">
+					<div class="av-gridder-block">
 						<div class="av-gridder-header">
 							<h1 class="av-gridder-header__title">Cloud PRO</h1>
 							<h3 class="av-gridder-header__Sub-title">Private</h3>
@@ -181,7 +185,9 @@ get_header();?>
 							<a href="" class="btn--orange">View Budget Servers</a>
 						</div>
 					</div>
-					<div class="av-gridder-block" data-griddercontent="#av-gridder4">
+				</div>
+				<div class="gridder-list" data-griddercontent="#av-gridder4">
+					<div class="av-gridder-block">
 						<div class="av-gridder-header">
 							<h1 class="av-gridder-header__title">Cloud Enterprise</h1>
 							<h3 class="av-gridder-header__Sub-title">Private</h3>
@@ -224,7 +230,9 @@ get_header();?>
 							<a href="" class="btn--orange">View Budget Servers</a>
 						</div>
 					</div>
-					<div class="av-gridder-block" data-griddercontent="#av-gridder5">
+				</div>
+				<div class="gridder-list" data-griddercontent="#av-gridder5">
+					<div class="av-gridder-block">
 						<div class="av-gridder-header">
 							<h1 class="av-gridder-header__title">OWN cloud</h1>
 							<h3 class="av-gridder-header__Sub-title">Private</h3>
@@ -253,25 +261,332 @@ get_header();?>
 						</div>
 					</div>
 				</div>
-				<div id="av-gridder1" class="av-gridder-panel">
-					Content goes here... 
+			</div>
+			<div id="av-gridder1" class="gridder-content">
+				<div class="gridder-inner-content">
+					<div class="row">
+						<div class="col-md-5">
+							<div class="sample-config-block">
+								<h3>Sample Configuration</h3>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="sample-config-item">
+											<div class="sample-config-item__icon">
+												<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/vps.png'; ?>" alt="vps">
+											</div>
+											<h4>2x Hypervisor Server</h4>
+											<ul>
+												<li>Intel Xeon 12 Core</li>
+												<li>48GB RAM</li>
+												<li>2x 1TB SATA</li>
+												<li>Hardware RAID 1</li>
+												<li>2x 10Gbits Redundant NIC</li>
+											</ul>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="sample-config-item">
+											<div class="sample-config-item__icon">
+												<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/customer-support-2.png'; ?>" alt="cs-2">
+											</div>
+											<h4>1x Control Panel Server</h4>
+											<ul>
+												<li>Intel Xeon 12 Core</li>
+												<li>12GB RAM</li>
+												<li>2x 250GB SATA</li>
+												<li>Hardware RAID 1</li>
+												<li>2x 10Gbits Redundant NIC</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-5">
+							<div class="sample-config-block sc-feat-block">
+								<h3>Features</h3>
+								<ul class="check-list-group orange-check">
+									<li>Instant Virtual Machine Deployment</li>
+									<li>Local RAID1 disk on both Hypervisor Servers for Data ProtectionLocal </li>
+									<li>Perfect for Cloud VPS Environments with Proxmox, SolusVM, Virtuozzo and others</li>
+									<li>Easy to use GUI to manage your Virtual Infrastructure</li>
+									<li>Flexible Customer Web Interface</li>
+									<li>Node to Node VM Migrations</li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-md-2">
+							<div class="pricing-block">
+								<h6>Starting From</h6>
+								<h1>$139/mo</h1>
+								<h5>($139 setup)</h5>
+								<h4>$189//MO. ($189/ SETUP)</h4>
+								<a href="" class="btn--orange">Contact Us</a>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
-			<!-- <div class="av-gridder">
-				<li class="gridder-list" data-griddercontent="#content1">
-					VPS Cloud
-				</li>
-				<li class="gridder-list" data-griddercontent="#content2">
-					Cloud Starter
-				</li>
-				<li class="gridder-list" data-griddercontent="#content3">
-					Cloud Pro
-				</li>
-			</ul> -->
-
-			<!-- <div id="content1" class="gridder-content"> Content goes here... </div>
-			<div id="content2" class="gridder-content"> Content goes here... </div>
-			<div id="content3" class="gridder-content"> Content goes here... </div> -->
+			<div id="av-gridder2" class="gridder-content">
+				<div class="gridder-inner-content">
+					<div class="row">
+						<div class="col-md-5">
+							<div class="sample-config-block">
+								<h3>Sample Configuration</h3>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="sample-config-item">
+											<div class="sample-config-item__icon">
+												<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/vps.png'; ?>" alt="vps">
+											</div>
+											<h4>2x Hypervisor Server</h4>
+											<ul>
+												<li>Intel Xeon 12 Core</li>
+												<li>48GB RAM</li>
+												<li>2x 1TB SATA</li>
+												<li>Hardware RAID 1</li>
+												<li>2x 10Gbits Redundant NIC</li>
+											</ul>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="sample-config-item">
+											<div class="sample-config-item__icon">
+												<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/customer-support-2.png'; ?>" alt="cs-2">
+											</div>
+											<h4>1x Control Panel Server</h4>
+											<ul>
+												<li>Intel Xeon 12 Core</li>
+												<li>12GB RAM</li>
+												<li>2x 250GB SATA</li>
+												<li>Hardware RAID 1</li>
+												<li>2x 10Gbits Redundant NIC</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-5">
+							<div class="sample-config-block sc-feat-block">
+								<h3>Features</h3>
+								<ul class="check-list-group orange-check">
+									<li>Instant Virtual Machine Deployment</li>
+									<li>Local RAID1 disk on both Hypervisor Servers for Data ProtectionLocal </li>
+									<li>Perfect for Cloud VPS Environments with Proxmox, SolusVM, Virtuozzo and others</li>
+									<li>Easy to use GUI to manage your Virtual Infrastructure</li>
+									<li>Flexible Customer Web Interface</li>
+									<li>Node to Node VM Migrations</li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-md-2">
+							<div class="pricing-block">
+								<h6>Starting From</h6>
+								<h1>$139/mo</h1>
+								<h5>($139 setup)</h5>
+								<h4>$189//MO. ($189/ SETUP)</h4>
+								<a href="" class="btn--orange">Contact Us</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="av-gridder3" class="gridder-content">
+				<div class="gridder-inner-content">
+					<div class="row">
+						<div class="col-md-5">
+							<div class="sample-config-block">
+								<h3>Sample Configuration</h3>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="sample-config-item">
+											<div class="sample-config-item__icon">
+												<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/vps.png'; ?>" alt="vps">
+											</div>
+											<h4>2x Hypervisor Server</h4>
+											<ul>
+												<li>Intel Xeon 12 Core</li>
+												<li>48GB RAM</li>
+												<li>2x 1TB SATA</li>
+												<li>Hardware RAID 1</li>
+												<li>2x 10Gbits Redundant NIC</li>
+											</ul>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="sample-config-item">
+											<div class="sample-config-item__icon">
+												<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/customer-support-2.png'; ?>" alt="cs-2">
+											</div>
+											<h4>1x Control Panel Server</h4>
+											<ul>
+												<li>Intel Xeon 12 Core</li>
+												<li>12GB RAM</li>
+												<li>2x 250GB SATA</li>
+												<li>Hardware RAID 1</li>
+												<li>2x 10Gbits Redundant NIC</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-5">
+							<div class="sample-config-block sc-feat-block">
+								<h3>Features</h3>
+								<ul class="check-list-group orange-check">
+									<li>Instant Virtual Machine Deployment</li>
+									<li>Local RAID1 disk on both Hypervisor Servers for Data ProtectionLocal </li>
+									<li>Perfect for Cloud VPS Environments with Proxmox, SolusVM, Virtuozzo and others</li>
+									<li>Easy to use GUI to manage your Virtual Infrastructure</li>
+									<li>Flexible Customer Web Interface</li>
+									<li>Node to Node VM Migrations</li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-md-2">
+							<div class="pricing-block">
+								<h6>Starting From</h6>
+								<h1>$139/mo</h1>
+								<h5>($139 setup)</h5>
+								<h4>$189//MO. ($189/ SETUP)</h4>
+								<a href="" class="btn--orange">Contact Us</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="av-gridder4" class="gridder-content">
+				<div class="gridder-inner-content">
+					<div class="row">
+						<div class="col-md-5">
+							<div class="sample-config-block">
+								<h3>Sample Configuration</h3>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="sample-config-item">
+											<div class="sample-config-item__icon">
+												<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/vps.png'; ?>" alt="vps">
+											</div>
+											<h4>2x Hypervisor Server</h4>
+											<ul>
+												<li>Intel Xeon 12 Core</li>
+												<li>48GB RAM</li>
+												<li>2x 1TB SATA</li>
+												<li>Hardware RAID 1</li>
+												<li>2x 10Gbits Redundant NIC</li>
+											</ul>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="sample-config-item">
+											<div class="sample-config-item__icon">
+												<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/customer-support-2.png'; ?>" alt="cs-2">
+											</div>
+											<h4>1x Control Panel Server</h4>
+											<ul>
+												<li>Intel Xeon 12 Core</li>
+												<li>12GB RAM</li>
+												<li>2x 250GB SATA</li>
+												<li>Hardware RAID 1</li>
+												<li>2x 10Gbits Redundant NIC</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-5">
+							<div class="sample-config-block sc-feat-block">
+								<h3>Features</h3>
+								<ul class="check-list-group orange-check">
+									<li>Instant Virtual Machine Deployment</li>
+									<li>Local RAID1 disk on both Hypervisor Servers for Data ProtectionLocal </li>
+									<li>Perfect for Cloud VPS Environments with Proxmox, SolusVM, Virtuozzo and others</li>
+									<li>Easy to use GUI to manage your Virtual Infrastructure</li>
+									<li>Flexible Customer Web Interface</li>
+									<li>Node to Node VM Migrations</li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-md-2">
+							<div class="pricing-block">
+								<h6>Starting From</h6>
+								<h1>$139/mo</h1>
+								<h5>($139 setup)</h5>
+								<h4>$189//MO. ($189/ SETUP)</h4>
+								<a href="" class="btn--orange">Contact Us</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="av-gridder5" class="gridder-content">
+				<div class="gridder-inner-content">
+					<div class="row">
+						<div class="col-md-5">
+							<div class="sample-config-block">
+								<h3>Sample Configuration</h3>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="sample-config-item">
+											<div class="sample-config-item__icon">
+												<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/vps.png'; ?>" alt="vps">
+											</div>
+											<h4>2x Hypervisor Server</h4>
+											<ul>
+												<li>Intel Xeon 12 Core</li>
+												<li>48GB RAM</li>
+												<li>2x 1TB SATA</li>
+												<li>Hardware RAID 1</li>
+												<li>2x 10Gbits Redundant NIC</li>
+											</ul>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="sample-config-item">
+											<div class="sample-config-item__icon">
+												<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/customer-support-2.png'; ?>" alt="cs-2">
+											</div>
+											<h4>1x Control Panel Server</h4>
+											<ul>
+												<li>Intel Xeon 12 Core</li>
+												<li>12GB RAM</li>
+												<li>2x 250GB SATA</li>
+												<li>Hardware RAID 1</li>
+												<li>2x 10Gbits Redundant NIC</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-5">
+							<div class="sample-config-block sc-feat-block">
+								<h3>Features</h3>
+								<ul class="check-list-group orange-check">
+									<li>Instant Virtual Machine Deployment</li>
+									<li>Local RAID1 disk on both Hypervisor Servers for Data ProtectionLocal </li>
+									<li>Perfect for Cloud VPS Environments with Proxmox, SolusVM, Virtuozzo and others</li>
+									<li>Easy to use GUI to manage your Virtual Infrastructure</li>
+									<li>Flexible Customer Web Interface</li>
+									<li>Node to Node VM Migrations</li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-md-2">
+							<div class="pricing-block">
+								<h6>Starting From</h6>
+								<h1>$139/mo</h1>
+								<h5>($139 setup)</h5>
+								<h4>$189//MO. ($189/ SETUP)</h4>
+								<a href="" class="btn--orange">Contact Us</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</section>
 </main>

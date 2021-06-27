@@ -1,0 +1,42 @@
+.demand-storage-data-block{
+    &.av-private-cloud{
+        @include respond(tab-port){
+            padding: 2vmin 0 5vmin;
+            .section-header{
+                margin: 0 0 2vmin;
+                &__decoration-element{
+                    margin: 0;
+                }
+                &__sub-title{
+                    line-height: 2.8vmin;
+                }
+            }
+        }
+        .demand-storage-block-content{
+            @include respond(tab-port){
+                padding: 2vmin 5vmin;
+            }
+            ul{
+                @include respond(tab-port){
+                    min-height: 25.7vmin;
+                }
+                li{
+                    text-align: left;
+                    &:not(:last-child){
+                        margin: 0 0 .5rem;
+                        @include respond(tab-port){
+                            margin: 0 0 .5vmin;
+                        }        
+                    }
+                    @include respond(tab-port){
+                        background-size: 4%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.av-feature-compare{
+    background: #F2F2F2;
+}

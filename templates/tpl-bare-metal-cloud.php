@@ -51,7 +51,7 @@ while ( have_posts() ) : the_post();
 								while ( have_rows( 'beta_features' ) ) :
 								the_row();								
 								?>
-								<div class="col-lg-4">
+								<div class="col-md-4">
 									<div class="bmc-block">
 										<div class="nmc-icon-box">
 										<?php the_sub_field( 'svg_icon_value' ); ?>
@@ -76,7 +76,7 @@ while ( have_posts() ) : the_post();
 								while ( have_rows( 'why_features' ) ) :
 								the_row();								
 								?>
-								<div class="col-lg-4">
+								<div class="col-md-4">
 									<div class="bmc-block">
 										<div class="nmc-icon-box">
 										<?php the_sub_field( 'svg_icon_value' ); ?>
@@ -101,7 +101,7 @@ while ( have_posts() ) : the_post();
 								while ( have_rows( 'metal_features' ) ) :
 								the_row();								
 								?>
-								<div class="col-lg-4">
+								<div class="col-md-4">
 									<div class="bmc-block">
 										<div class="nmc-icon-box">
 										<?php the_sub_field( 'svg_icon_value' ); ?>
@@ -131,7 +131,7 @@ while ( have_posts() ) : the_post();
 				<h4 class="section-header__Orangesub-title"><?php the_field( 'get_the_power_in_an_instant_short_detail' ); ?></h4>
 			</div>
 			<div class="row align-items-center">
-				<div class="col-lg-7">
+				<div class="col-md-7">
 					<figure class="thumbnail-img">
 					
 						<?php	
@@ -144,7 +144,7 @@ while ( have_posts() ) : the_post();
 						<img src="<?php echo $power_instance_image_url; ?>" alt="bmc-instant-figure-2">
 					</figure>
 				</div>
-				<div class="col-lg-5">
+				<div class="col-md-5">
 					<div class="bmc-power-instant-content">
 						<?php
 						if ( have_rows( 'feature_lists' ) ) : 
@@ -186,7 +186,7 @@ while ( have_posts() ) : the_post();
 		</div>
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-xl-4 col-lg-6">
+				<div class="col-md-4">
 					<div class="server-type-block-wrap">
 						<h3><i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/servers.png'; ?>" alt="servers"></i>Budget Servers</h3>
 						<h4>Our Best Selling Budget Servers</h4>
@@ -206,7 +206,7 @@ while ( have_posts() ) : the_post();
 							foreach ( $budget_server as $post ) : 
 							setup_postdata( $post ); 
 									?>
-							<div class="col-lg-6">
+							<div class="col-md-6">
 								<div class="server-type-block">
 									<div class="server-tye-header">
 										<h5><?php the_title(); ?> <span><?php the_field( 'server_ghz' ); ?></span></h5>
@@ -247,7 +247,7 @@ while ( have_posts() ) : the_post();
 						</div>
 					</div>
 				</div>
-				<div class="col-xl-4 col-lg-6">
+				<div class="col-md-4">
 					<div class="server-type-block-wrap">
 						<h3><i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/servers.png'; ?>" alt="servers"></i>Pro Servers</h3>
 						<h4>Our Best Selling Pro Servers</h4>
@@ -266,7 +266,7 @@ while ( have_posts() ) : the_post();
 							foreach ( $budget_server as $post ) : 
 							setup_postdata( $post ); 
 							?>
-							<div class="col-lg-6">
+							<div class="col-md-6">
 								<div class="server-type-block">
 									<div class="server-tye-header">
 										<h5><?php the_title(); ?> <span><?php the_field( 'server_ghz' ); ?></span></h5>
@@ -307,7 +307,7 @@ while ( have_posts() ) : the_post();
 						</div>
 					</div>
 				</div>
-				<div class="col-xl-4 col-lg-6">
+				<div class="col-md-4">
 					<div class="server-type-block-wrap">
 						<h3><i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/servers.png'; ?>" alt="servers"></i>Enterprise Servers</h3>
 						<h4>Our Best Selling Enterprise Servers</h4>
@@ -327,7 +327,7 @@ while ( have_posts() ) : the_post();
 							foreach ( $budget_server as $post ) : 
 							setup_postdata( $post ); 
 							?>
-							<div class="col-lg-6">
+							<div class="col-md-6">
 								<div class="server-type-block">
 									<div class="server-tye-header">
 										<h5><?php the_title(); ?> <span><?php the_field( 'server_ghz' ); ?></span></h5>

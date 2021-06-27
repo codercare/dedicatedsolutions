@@ -88,98 +88,99 @@ while ( have_posts() ) : the_post();
 		</div>
 	</section>
 
-	<section class="manage-service-plan section">
-		<div class="wrapper">
-			<div class="section-header u-txt-center">
-				<h2 class="section-header__title"><?php the_field( 'linux_server_os_title' ); ?></h2>
-				<span class="section-header__decoration-element"></span>
-				<p class="section-header__sub-title"><?php the_field( 'linux_server_os_title' ); ?></p>
-			</div>
-			<div class="managed-service-plan-viewWrap">
-				<ul class="nav nav-pills" id="ms-plan-pills-tab" role="tablist">
-					<?php
-					$counter_service = 1;
-					if ( have_rows('managed_service_plans')) : 
-					while ( have_rows('managed_service_plans')) :
-					the_row();
-					?>
-					<li class="nav-item" role="presentation">
-						<a class="nav-link <?php if($counter_service ==1){ echo'active'; } ?> " id="#tab_id_<?php echo $counter_service;?>-tab" data-toggle="pill" href="#tab_id_<?php echo $counter_service;?>" role="tab" aria-controls="tab_id_<?php echo $counter_service;?>" aria-selected="true"><?php the_sub_field('comparison_plan_type'); ?></a>
-					</li>
-					<?php
-					$counter_service++;					
-					endwhile; 
-					endif;
-					?>
-				</ul>
-				<div class="tab-content" id="ms-paln-tabContent">
-					<?php
-					$count_service = 1;
-					if ( have_rows('managed_service_plans')) : 
-					while ( have_rows('managed_service_plans')) :
-					the_row();
-					?>
-					<div class="tab-pane fade  <?php if($count_service ==1){ echo'show active'; } ?>" id="tab_id_<?php echo $count_service;?>" role="tabpanel" aria-labelledby="tab_id_<?php echo $count_service;?>-tab">
-						<div class="managed-service-plan-table">
-							<ul class="ms-plan-list">
-								<li>
-									<div class="ms-plan-col">&nbsp;</div>
-									<div class="ms-plan-col">&nbsp;</div>
-								</li>
-								<?php
-								if ( have_rows('feature_icon_and_detail')) : 
-								while ( have_rows('feature_icon_and_detail')) :
-								the_row();
-								?>
-								<li>
-									<div class="ms-plan-col">
-										<div class="ms-plan-icon">
-											<div class="ms-plan-blnc--inner">
-											<?php
-											$spec_icon_image = get_template_directory_uri() . '/dist/assets/images/surface1.png';
-											$specificition_icon_image     = get_sub_field( 'icon' );
-											if ( ! empty( $specificition_icon_image ) ) {
-												$spec_icon_image = $specificition_icon_image['sizes']['mid_icon'];
-											}
-											?>
-											<img src="<?php echo $spec_icon_image; ?>" alt="controller">
+	<section class="section">
+		<section class="manage-service-plan">
+			<div class="wrapper">
+				<div class="section-header u-txt-center">
+					<h2 class="section-header__title"><?php the_field( 'linux_server_os_title' ); ?></h2>
+					<span class="section-header__decoration-element"></span>
+					<p class="section-header__sub-title"><?php the_field( 'linux_server_os_title' ); ?></p>
+				</div>
+				<div class="managed-service-plan-viewWrap">
+					<ul class="nav nav-pills" id="ms-plan-pills-tab" role="tablist">
+						<?php
+						$counter_service = 1;
+						if ( have_rows('managed_service_plans')) : 
+						while ( have_rows('managed_service_plans')) :
+						the_row();
+						?>
+						<li class="nav-item" role="presentation">
+							<a class="nav-link <?php if($counter_service ==1){ echo'active'; } ?> " id="#tab_id_<?php echo $counter_service;?>-tab" data-toggle="pill" href="#tab_id_<?php echo $counter_service;?>" role="tab" aria-controls="tab_id_<?php echo $counter_service;?>" aria-selected="true"><?php the_sub_field('comparison_plan_type'); ?></a>
+						</li>
+						<?php
+						$counter_service++;					
+						endwhile; 
+						endif;
+						?>
+					</ul>
+					<div class="tab-content" id="ms-paln-tabContent">
+						<?php
+						$count_service = 1;
+						if ( have_rows('managed_service_plans')) : 
+						while ( have_rows('managed_service_plans')) :
+						the_row();
+						?>
+						<div class="tab-pane fade  <?php if($count_service ==1){ echo'show active'; } ?>" id="tab_id_<?php echo $count_service;?>" role="tabpanel" aria-labelledby="tab_id_<?php echo $count_service;?>-tab">
+							<div class="managed-service-plan-table">
+								<ul class="ms-plan-list">
+									<li>
+										<div class="ms-plan-col">&nbsp;</div>
+										<div class="ms-plan-col">&nbsp;</div>
+									</li>
+									<?php
+									if ( have_rows('feature_icon_and_detail')) : 
+									while ( have_rows('feature_icon_and_detail')) :
+									the_row();
+									?>
+									<li>
+										<div class="ms-plan-col">
+											<div class="ms-plan-icon">
+												<div class="ms-plan-blnc--inner">
+												<?php
+												$spec_icon_image = get_template_directory_uri() . '/dist/assets/images/surface1.png';
+												$specificition_icon_image     = get_sub_field( 'icon' );
+												if ( ! empty( $specificition_icon_image ) ) {
+													$spec_icon_image = $specificition_icon_image['sizes']['mid_icon'];
+												}
+												?>
+												<img src="<?php echo $spec_icon_image; ?>" alt="controller">
+												</div>
 											</div>
+											<h2><?php the_sub_field('feature_title');  $yes_or_no = get_sub_field('yesno_info'); ?></h2>
 										</div>
-										<h2><?php the_sub_field('feature_title');  $yes_or_no = get_sub_field('yesno_info'); ?></h2>
-									</div>
-									<div class="ms-plan-col">
-										<div class="ms-plan-big-text">
-											<div class="ms-plan-blnc--inner">
-												<span class="big-txt <?php if(strtolower($yes_or_no) =='no'){ echo'dark-txt';  }else{ echo'orange-txt'; } ?>"><?php echo $yes_or_no; ?></span>
+										<div class="ms-plan-col">
+											<div class="ms-plan-big-text">
+												<div class="ms-plan-blnc--inner">
+													<span class="big-txt <?php if(strtolower($yes_or_no) =='no'){ echo'dark-txt';  }else{ echo'orange-txt'; } ?>"><?php echo $yes_or_no; ?></span>
+												</div>
 											</div>
+											<p><?php the_sub_field('detail'); ?></p>
 										</div>
-										<p><?php the_sub_field('detail'); ?></p>
-									</div>
-								</li>
-								<?php			
-								endwhile; 
-								endif;
-								?>
-								<li>
-									<div class="ms-plan-col">&nbsp;</div>
-									<div class="ms-plan-col">&nbsp;</div>
-								</li>
-							</ul>
+									</li>
+									<?php			
+									endwhile; 
+									endif;
+									?>
+									<li>
+										<div class="ms-plan-col">&nbsp;</div>
+										<div class="ms-plan-col">&nbsp;</div>
+									</li>
+								</ul>
+							</div>
 						</div>
+						<?php
+						$count_service++;					
+						endwhile; 
+						endif;
+						?>					
 					</div>
-					<?php
-					$count_service++;					
-					endwhile; 
-					endif;
-					?>					
+				</div>
+				<div class="ask-for-quotation">
+					<h2 class="section-header__title"><?php the_field( 'ask_quotation_label' ); ?></h2>
+					<a href="<?php the_field( 'ask_quotation_button_link' ); ?>" class="btn--orange"><?php the_field( 'ask_quotation_button_label' ); ?> <i class="fas fa-arrow-right"></i></a>
 				</div>
 			</div>
-		</div>
-	</section>
-
-	<section class="ask-for-quotation section fp-auto-height">
-		<h2 class="section-header__title"><?php the_field( 'ask_quotation_label' ); ?></h2>
-		<a href="<?php the_field( 'ask_quotation_button_link' ); ?>" class="btn--orange"><?php the_field( 'ask_quotation_button_label' ); ?> <i class="fas fa-arrow-right"></i></a>
+		</section>
 	</section>
 	
 	<?php
@@ -194,7 +195,7 @@ while ( have_posts() ) : the_post();
 			<div class="wrapper">
 				<div class="tech-support-block-wrap">
 					<div class="row">						
-						<div class="col-lg-6">
+						<div class="col-md-6">
 							<div class="tech-support-card" style="background-image:url('<?php echo get_template_directory_uri() . '/dist/assets/images/server-bg-1.svg'; ?>')">
 								<h4 class="tech-support-card__title"><?php the_field( 'custom_service_title' ); ?></h4>
 								<p class="tech-support-card__description"><?php the_field( 'custom_service_detail' ); ?></p>
@@ -212,7 +213,7 @@ while ( have_posts() ) : the_post();
 							</div>
 						</div>
 						
-						<div class="col-lg-6">
+						<div class="col-md-6">
 							<div class="tech-support-card" style="background-image:url('<?php echo get_template_directory_uri() . '/dist/assets/images/support-bg-1.svg'; ?>')">
 								<h4 class="tech-support-card__title"><?php the_field( 'consulting_service_title' ); ?></h4>
 								<p class="tech-support-card__description"><?php the_field( 'consulting_service_detail' ); ?></p>

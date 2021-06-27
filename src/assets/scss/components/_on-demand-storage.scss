@@ -1,19 +1,22 @@
 .site-main{
     .about-page-banner{
         &.demand-storage-banner{
-            @include respond(large-desktop){
-                padding: 3rem 0 0;
-            }
-            .page-banner-content{
-                .large-banner__heading, p{
-                    margin: 0 0 1rem;   
+            @include respond(tab-port){
+                padding: 3vmin 0 0;
+                .page-banner-content{
+                    .large-banner__heading, p{
+                        margin: 0 0 1vmin;   
+                    }
                 }
             }
             .btn--white{
                 color: $mainOrange;
-                padding: 1.1rem 3.3rem;
-                margin: 0 1rem;
-                font-size: 1.5rem;
+                margin: .5rem;
+                @include respond(tab-port){
+                    padding: 1.1vmin 3.3vmin;
+                    margin: 0 1vmin;
+                    font-size: 1.5vmin;
+                }
                 &:hover{
                     color: #fff;
                 }
@@ -23,98 +26,116 @@
 } 
 
 .demand-storage-data-block{
-    padding: 7rem 0 4rem;
-    @include respond(large-desktop){
-        padding: 2rem 0;
+    padding:3rem 0;
+    @include respond(tab-port){
+        padding: 3vmin 0;
     }
-    .demand-storage-block-content{
-        text-align: center;
-        padding: 2rem 1rem 6rem;
-        background: url('../images/binary-code-bg.svg')no-repeat center center #FFE3BC;
-        margin: 0 0 3rem;
-        @include respond(large-desktop){
-            padding-bottom: 2rem;
-            margin: 0;
-        }
-        .deman-storage-block-icon{
-            margin: 0 0 4rem;
-            @include respond(large-desktop){
+    @include respond(mobile){
+        [class^="col-"]:not(:last-child){
+            .demand-storage-block-content{
                 margin: 0 0 2rem;
             }
         }
+    }
+    .demand-storage-block-content{
+        text-align: center;
+        padding: 2rem;
+        background: url('../images/binary-code-bg.svg')no-repeat center center #FFE3BC;
+        @include respond(tab-port){
+            padding: 2vmin 1vmin 6vmin;
+            background-size: 54.8%;
+        }
+        .deman-storage-block-icon{
+            @include respond(mobile){
+                width: 7rem;
+                margin: 0 auto 1.5rem;
+            }
+            @include respond(tab-port){
+                margin: 0 0 2vmin;
+                img{
+                    width: 17.6%;
+                }
+            }
+        }
         h2{
-            font-size: 2.4rem;
+            font-size: 1.8rem;
             font-family: "Product Sans";
             font-weight: 700;
-            margin: 0 0 2rem;
+            margin: 0 0 1rem;
+            @include respond(tab-port){
+                font-size: 2.4vmin;
+                margin: 0 0 2vmin;
+            }
         }
         p {
-            line-height: 3rem;
-            padding: 0 4rem;
             margin: 0;
-            min-height: 33rem;
+            @include respond(tab-port){
+                min-height: 33vmin;
+                line-height: 3vmin;
+                padding: 0 4vmin;
+            }
         }
     }
     [class^="col-"]:last-child{
         .demand-storage-block-content{
             background: url('../images/technology-bg.svg')no-repeat center center #F3F3F3;
-            margin: 0;
+            @include respond(tab-port){
+                background-size: 54.8%;
+            }
         }
     }
 }
 
 .storage-based-section{
-    padding: 4rem .5rem;
-    @include respond(large-desktop){
-        padding: 0 .5rem;
+    padding: 3rem 0;
+    @include respond(tab-port){
+        padding: 0 .5vmin;
     }
     .section-header{
-        margin: 0 0 3rem;
-        @include respond(big-desktop){
-            margin: 0 0 2rem;
+        @include respond(tab-port){
+            margin: 0 0 3vmin;
         }
         &__title{
-            font-size: 6rem;
             color: $mainOrange;
-            @include respond(large-desktop){
-                font-size: 4.5rem;
+            @include respond(tab-port){
+                font-size: 5vmin;
             }
         }
         p{
-            font-size: 1.4rem;
-            line-height: 2rem;
             font-weight: 500;
+            @include respond(tab-port){
+                font-size: 1.4vmin;
+                line-height: 2vmin;
+            }
         }
     }
     .storage-based-thumb-content{
         text-align: center;
-        margin: 0 0 3rem;
-        @include respond(big-desktop){
-            margin: 7rem 0 0;
-            padding: 0 3rem;
-        }
-        @include respond(large-desktop){
-            margin: 4rem 0 0;
-            padding: 0 9rem;
+        margin: 0 0 2rem;
+        @include respond(tab-port){
+            margin: 5vmin 0 0;
+            padding: 0 9vmin;
         }
         h2{
             margin: 0 0 1rem;
+            font-size: 1.8rem;
+            @include respond(tab-port){
+                margin: 0 0 1vmin;
+                font-size: 2vmin;
+            }
         }
         p{
-            font-size: 1.4rem;
-            line-height: 2rem;
-            margin: 0 0 3rem;
-            @include respond(big-desktop){
-                margin: 0 0 7rem;
-            }
-            @include respond(large-desktop){
-                margin: 0 0 3rem;
+            margin: 0 0 1.5rem;
+            @include respond(tab-port){
+                margin: 0 0 3vmin;
+                font-size: 1.4vmin;
+                line-height: 2vmin;
             }
         }
         .thumbnail-img{
             img{
-                @include respond(large-desktop){
-                   max-width: 75%;
+                @include respond(tab-port){
+                   width: 75%;
                 } 
             }
         }
@@ -122,39 +143,37 @@
     .storage-based-feat-block {
         background: #fff;
         box-shadow: 0 .3rem .6rem 0 #CDCBC9;
-        margin: 0 0 3rem;
-        @include respond(big-desktop){
+        margin: 0 0 2rem;
+        @include respond(tab-port){
             text-align: right;
+            box-shadow: 0 .3vmin .6vmin 0 #CDCBC9;
+            margin: 0 0 3vmin;
         }
         h2{
             margin: 0;
-            font-size: 2.2rem;
+            font-size: 1.6rem;
             text-transform: uppercase;
             color: $mainOrange;
             background: #F8F8F8;
-            padding: 2.7rem 2rem;
-            @include respond(large-desktop){
-                font-size: 2.2rem;
-                padding: 1.5rem 2rem;
+            padding: 1rem 1.5rem;
+            @include respond(tab-port){
+                font-size: 2.2vmin;
+                padding: 1.5vmin 2vmin;
             }
         }
         .check-list-group {
             li{
-                padding: 1rem 2rem 1rem 4.8rem;
-                background-position: left 2rem center;
-                @include respond(tab-land){
-                    line-height: 1.7rem;
+                padding: .5rem 1.5rem .5rem 4.3rem;
+                background-position: left 1.5rem center;
+                @include respond(tab-port){
+                    line-height: 1.7vmin;
                     display: flex;
                     align-items: center;
-                    min-height: 7rem;
-                }
-                @include respond(big-desktop){
+                    min-height: 6vmin;
+                    background-position: right 2vmin center;
                     justify-content: flex-end;
-                    background-position: right 2rem center;
-                    padding: 1rem 4.8rem 1rem 2rem;
-                }
-                @include respond(large-desktop){
-                    min-height: 5rem;
+                    padding: 1vmin 4.8vmin 1vmin 2vmin;
+                    background-size: 4.1%;
                 }
                 &:nth-of-type(even){
                     background-color: #FFFCF9;
@@ -165,15 +184,15 @@
     [class^="col-"]:last-child{
         .storage-based-feat-block {
             margin: 0;
-            @include respond(big-desktop){
+            @include respond(tab-port){
                 text-align: left;
             }
             .check-list-group {
                 li{
-                    @include respond(big-desktop){
+                    @include respond(tab-port){
                         justify-content: flex-start;
-                        background-position: left 2rem center;
-                        padding: 1rem 2rem 1rem 4.8rem;
+                        background-position: left 2vmin center;
+                        padding: 1vmin 2vmin 1vmin 4.8vmin;
                     }
                 }
             }
@@ -183,34 +202,40 @@
         background: #F2F2F2;
         .section-header{
             p {
-                max-width: 138.4rem;
-                margin-left: auto;
-                margin-right: auto;
+                @include respond(tab-port){
+                    max-width: 138.4vmin;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
             }
         } 
     }
     &.redundant-nas{
         .section-header{
             p {
-                max-width: 169.8rem;
-                margin-left: auto;
-                margin-right: auto;
+                @include respond(tab-port){
+                    max-width: 169.8vmin;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
             }
         } 
     }
     &.san-dr-network{
         .section-header{
             p {
-                max-width: 72.2rem;
-                margin-left: auto;
-                margin-right: auto;
+                @include respond(tab-port){
+                    max-width: 72.2vmin;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
             }
         } 
         .thumbnail-img{
             text-align: center;
             img{
-                @include respond(large-desktop){
-                    max-width: 90%;
+                @include respond(tab-port){
+                    width: 90%;
                 } 
             }
         }
@@ -219,133 +244,111 @@
 
 .demand-storage-feat{
     background: #F2F2F2;
-    padding: 5rem 0;
-    @include respond(large-desktop){
-        padding: 0;
+    @include respond(mobile){
+        padding: 3rem 0;
      }
-    .section-header{
-        @include respond(large-desktop){
-           margin: 0 0 2rem;
+     @include respond(tab-port){
+        .section-header{
+           margin: 0 0 2vmin;
         }
         &__sub-title{
             font-weight: 400;
-            max-width: 94.2rem;
+            max-width: 94.2vmin;
             margin: 0 auto;
         }
     }
     .demand-storage-feat__table-content{
+        @include respond(mobile){
+            table,thead, tbody, tr, td, th{
+                display: block;
+            }
+            thead tr{
+                position: absolute;
+                top: -9999rem;
+                left: -9999rem;
+            }
+        }
         .table{
             margin: 0;
             line-height: initial;
-            display: block;
-            @include respond(tab-port){
-                display: table;
-            }
             thead{
-                margin-bottom: 1rem;
-                display: block;
-                @include respond(tab-port){
-                    display: table-header-group;
-                }
                 tr{
-                    display: block;
-                    position: absolute;
-                    top: -9999px;
-                    left: -9999px;
-                    @include respond(tab-port){
-                        display: table-row;
-                        position: relative;
-                        top: auto;
-                        left: auto;
-                    }
                     th{
                         border: none;
                         background: $mainOrange;
                         color: #fff;
-                        font-size: 2rem;
                         font-family: "Product Sans";
                         font-weight: 700;
-                        padding: 2.3rem 2rem;
-                        display: block;
+                        padding: .5rem 1rem;
                         &:nth-of-type(2){
                             @include respond(tab-port){
-                                width: 50rem;
-                            }
-                            @include respond(tab-land){
-                                width: 30rem;
+                                width: 50vmin;
                             }
                         }
                         @include respond(tab-port){
-                            display: table-cell;
-                            width: 30rem;
-                        }
-                        @include respond(big-desktop){
-                            font-size: 2.2rem;
-                        }
-                        @include respond(large-desktop){
-                            font-size: 2rem;
-                            padding: 1.2rem 2rem;
+                            width: 30vmin;
+                            font-size: 2vmin;
+                            padding: 1.2vmin 2vmin;
                         }
                     }
                 }
             }
             tbody{
-                display: block;
-                @include respond(tab-port){
-                    display: table-row-group;
-                }
                 tr{ 
                     background: #fff;
-                    display: block;
-                    border-bottom: 1px solid rgba(0, 0, 0, .05);
+                    border-bottom: .1rem solid rgba(0, 0, 0, .05);
                     @include respond(tab-port){
-                        display: table-row;
                         border: none;
+                        border-bottom-width: .1vmin;
                     }
                     td{
-                        padding: 1rem 1rem 1rem 50%;
+                        padding: .8rem 1rem .8rem 50%;
                         border: none;
-                        display: block;
                         position: relative;
-                        font-size: 1.4rem;
                         @include respond(tab-port){
-                            display: table-cell;
-                            height: 6.5rem;
-                            width: 30rem;
+                            height: 5vmin;
+                            width: 30vmin;
                             vertical-align: middle;
-                            padding: 1rem 2rem;
+                            padding: 1vmin 2vmin;
+                            font-size: 1.4vmin;
                         }
-                        @include respond(large-desktop){
-                            height: auto;
-                        }
-                        &::before{
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            width: 50%;
-                            padding: 1rem;
-                            font-family:"Product Sans";
-                            font-weight: 700;
-                            display: flex;
-                            align-items: center;
-                            height: 100%;
-                            @include respond(tab-port){
-                                display: none;
+                        @include respond(mobile){
+                            &::before{
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 45%;
+                                height: 100%;
+                                padding: .8rem;
+                                font-family:"Product Sans";
+                                font-weight: 700;
+                                display: flex;
+                                align-items: center;
+                                font-size: 1.3rem;
                             }
+                            &:nth-of-type(1)::before{ content: 'Features'}
+                            &:nth-of-type(2)::before{ content: 'Fibre Channel (FC) SAN'}
+                            &:nth-of-type(3)::before{ content: 'iSCSI SAN'}
+                            &:nth-of-type(4)::before{ content: 'NFS SAN'}
                         }
-                        &:nth-of-type(1)::before{ content: 'Features'}
-                        &:nth-of-type(2)::before{ content: 'Fibre Channel (FC) SAN'}
-                        &:nth-of-type(3)::before{ content: 'iSCSI SAN'}
-                        &:nth-of-type(4)::before{ content: 'NFS SAN'}
                         h2{
                             margin: 0;
-                            background: url('../images/check.png')no-repeat left top .2rem;
+                            background: url('../images/check.png')no-repeat left top;
                             padding: 0 0 0 2.4rem;
-                            font-size: 1.6rem;
-                            background-size: 1.5rem;
+                            font-size: 1.4rem;
+                            background-size: 1.6rem;
+                            @include respond(tab-port){
+                                font-size: 1.6vmin;
+                                padding: 0 0 0 2.4vmin;
+                                background-position: left top .2vmin;
+                                background-size: 1.5vmin;
+                            }
                         }
                         .big-txt{
-                            font-size: 1.8rem;
+                            font-size: 1.5rem;
+                            @include respond(tab-port){
+                                font-size: 1.8vmin;
+                            }
                         }
                     }
                     &:nth-of-type(even){
@@ -361,35 +364,44 @@
 }
 
 .demand-storage-support{
-    .tech-support__content{
-        @include respond(big-desktop){
-            transform: translateY(20%);
-        }
-        @include respond(large-desktop){
-            transform: translateY(55%);
-        }
-    }
     .tech-support-block-wrap{
-        @include respond(tab-land){
-            padding: 0 4.5rem;
+        @include respond(tab-port){
+            padding: 0 4.5vmin;
         }
     }
     .tech-support-card{
         background-color: $mainOrange;
         &__icon{
-            margin: 0 0 2.4rem;
+            margin: 0 0 1.5rem;
+            width: 6rem;
+            height: 6rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img{
+                width: 100%;
+            }
+            @include respond(tab-port){
+                width: 13vmin;
+                height: 13vmin;
+                margin: 0 0 2.4vmin;
+            }
         }
         &__title{
             text-transform: uppercase;
-            font-size: 2rem;
-            margin: 0 0 2.5rem;
+            @include respond(tab-port){
+                font-size: 2vmin;
+                margin: 0 0 2.5vmin;
+            }
         }
         .btn--outline{
             border-radius: 0;
             font-family: "Product Sans";
-            font-size: 1.6rem;
-            padding: .2rem 4.26rem;
-            height: auto;
+            padding: .2rem 2rem;
+            @include respond(tab-port){
+                font-size: 1.6vmin;
+                padding: .2vmin 4.26vmin;
+            }
         }
     }
     [class^="col-"]:nth-of-type(even){

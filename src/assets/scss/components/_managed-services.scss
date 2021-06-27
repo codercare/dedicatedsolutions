@@ -1,58 +1,65 @@
 .site-main{
     .os-control-page-banner {
         &.managed-services-page-banner{
-            @include respond(large-desktop){
-                padding: 4rem 0 0;
+            @include respond(tab-port){
+                padding: 4vmin 0 0;
             }
         }
     }
 } 
 
 .managed-service-layer{
-    padding: 3rem 0 1rem;
+    padding: 3rem 0;
+    @include respond(tab-port){
+        padding: 3vmin 0 1vmin;
+    }
     .managed-layer-content {
         display: flex;
         justify-content: center;
         align-items: center;
         .thumbnail-img{
-            margin: 0 2.5rem 0 0;
-            display: none;
-            text-align: right;
+            text-align: center;
+            // margin: 0 2.5vmin 0 0;
+            // display: none;
+            // text-align: right;
+            // @include respond(tab-port){
+            //     display: block;
+            //     width: 47%;
+            // }
+            // @include respond(tab-land){
+            //     width: 39%
+            // }
             @include respond(tab-port){
-                display: block;
-                width: 47%;
-            }
-            @include respond(tab-land){
-                width: 39%
-            }
-            @include respond(big-desktop){
-                width: auto;
+                width: 77.9%;
+                img{
+                    width: 100%;
+                }
             }
         }
         ul{
             padding: 0;
             margin: 0;
             @include respond(tab-port){
-                margin: -4.7rem 0 0;
+                margin: -4.7vmin 0 0;
             }
             li{
                 list-style-type: none;
-                font-size: 2rem;
+                font-size: 2vmin;
                 font-weight: 500;
-                margin: 1rem 0;
+                margin: 1vmin 0;
                 position: relative;
-                padding-left: 3rem;
+                padding-left: 3vmin;
                 @include respond(tab-port){
                     padding-left: 0;
-                    margin: 2rem 0;
+                    margin: 2vmin 0;
                 }
                 &::before{
                     content: '';
                     position: absolute;
-                    top: 1rem;
+                    top: 1vmin;
                     left: 0;
-                    width: 1.2rem;
-                    height: 1.2rem;
+                    width: 1.2vmin;
+                    height: 1.2vmin;
                     border-radius: 100%;
                     display: block;
                     @include respond(tab-port){
@@ -83,10 +90,9 @@
 }
 
 .linux-server-os{
-    padding: 6rem 0;
     background: #F2F2F2;
-    @include respond(large-desktop){
-        padding: 0;
+    @include respond(mobile){
+        padding: 3rem 0;
     }
     ul {
         padding: 0;
@@ -96,35 +102,45 @@
         align-items: center;
         li {
             list-style-type: none;
-            flex: 1 1 25rem;
+            flex: 1 1 15rem;
             text-align: center;
-            margin: 4rem 0;
+            margin: 2rem 0;
+            @include respond(tab-port){
+                flex: 1 1 25vmin;
+                margin: 4vmin 0;
+            }
         }
     }
 }
 
 .manage-service-plan{
-    padding: 3rem 0 0;
-    @include respond(large-desktop){
-       padding: 0;
+    @include respond(mobile){
+       padding: 3rem 0;
     }
-    .section-header{
-        margin: 0 0 2rem;
+    @include respond(tab-port){
+        .section-header{
+            margin: 0 0 2vmin;
+        }
     }
     .managed-service-plan-viewWrap{
         .nav{
             justify-content: center;
             .nav-item{
-                margin: 0 1rem;
+                margin: 0 .25rem;
+                @include respond(tab-port){
+                    margin: 0 1vmin;
+                }
                 .nav-link {
                     background: $darkGrey;
-                    font-size: 2rem;
                     color: #fff;
                     font-weight: 500;
                     border-radius: .4rem;
-                    padding: .6rem 2.8rem;
-                    @include respond(large-desktop){
-                        padding: .3rem 2.8rem;
+                    padding: .4rem 1rem;
+                    font-size: 1.2rem;
+                    @include respond(tab-port){
+                        padding: .3vmin 2.8vmin;
+                        font-size: 2vmin;
+                        border-radius: .4vmin;
                     }
                     &:hover{
                         background: $mainOrange;
@@ -136,7 +152,10 @@
             } 
         }
         .tab-content{
-            padding: 2.5rem 0 1rem;
+            padding: 2rem 0;
+            @include respond(tab-port){
+                padding: 2vmin 0 1vmin;
+            }
         }
         .managed-service-plan-table{
             .ms-plan-list{
@@ -152,25 +171,43 @@
                         flex: 1 1;
                         display: flex;
                         align-items: center;
-                        padding: .55rem 1rem .55rem 4rem;
+                        padding: .5rem 0 .5rem 1rem;
+                        @include respond(tab-port){
+                            padding: .55vmin 1vmin .55vmin 4vmin;
+                        }
                         .ms-plan-blnc--inner{
-                            width: 14rem;
                             padding: 0 1.5rem 0 0;
+                            img{
+                                width: 3rem;
+                            }
+                            @include respond(tab-port){
+                                width: 14vmin;
+                                padding: 0 1.5vmin 0 0;
+                                img{
+                                    width: 38%;
+                                }
+                            }
                         }
                         &:first-child {
                             flex-direction: row-reverse;
                             border-right: 1px solid #C6C6C6;
                             text-align: right;
-                            padding: .55rem 4rem .55rem 1rem;
+                            padding: .5rem 1rem .5rem 0;
+                            @include respond(tab-port){
+                                padding: .55vmin 4vmin .55vmin 1vmin;
+                            }
                             .ms-plan-blnc--inner{
                                 padding: 0 0 0 1.5rem;
+                                @include respond(tab-port){
+                                    padding: 0 0 0 1.5vmin;
+                                }
                             }
                         }
                         .big-txt {
-                            font-size: 4.9rem;
                             line-height: initial;
-                            @include respond(large-desktop){
-                                font-size: 4rem;
+                            font-size: 1.6rem;
+                            @include respond(tab-port){
+                                font-size: 3vmin;
                             }
                             &.orange-txt{
                                 color: $mainOrange;
@@ -183,12 +220,19 @@
                             margin: 0;
                             font-weight: 400;
                             color: rgba(0, 0, 0, 0.75);
+                            font-size: 1.3rem;
+                            @include respond(tab-port){
+                                font-size: 1.8vmin;
+                            }
                         }
                         p{
                             margin: 0;
-                            font-size: 1.4rem;
-                            line-height: 2.2rem;
                             color: rgba(0, 0, 0, 0.75);
+                            font-size: 1.3rem;
+                            @include respond(tab-port){
+                                font-size: 1.4vmin;
+                                line-height: 2.2vmin;
+                            }
                         }
                     }
                     &:first-child {
@@ -210,52 +254,52 @@
 
 .ask-for-quotation {
     text-align: center;
-    padding: 2rem 0;
-    @include respond(large-desktop){
-        padding: 7rem 0;
-    }
-    .section-header__title {
-        font-size: 3rem;
-        margin: 0 0 1.3rem;
+    @include respond(tab-port){
+        padding-bottom: 2vmin;
+        .section-header__title {
+            font-size: 3vmin;
+            margin: 0 0 1.3vmin;
+        }
     }
     .btn--orange {
-        max-height: none;
-        max-width: none;
-        height: auto;
         display: inline-block;
         box-shadow: none;
         text-transform: inherit;
-        padding: 1.2rem 3.7rem;
+        @include respond(tab-port){
+            padding: 1.2vmin 3.7vmin;
+        }
         .fas {
-            margin-left: 1rem;
+            margin-left: .7rem;
+            @include respond(tab-port){
+                margin-left: 1vmin;
+            }
         }
     }
 }
 
 .ms-tech-support{
-    .tech-support__content{
-        @include respond(big-desktop){
-            transform: translateY(25%);
-        }
-        @include respond(large-desktop){
-            transform: translateY(65%);
-        }
-    }
     .tech-support-block-wrap{
-        max-width: 100rem;
-        margin: 0 auto;
+        @include respond(tab-port){
+            max-width: 100vmin;
+            margin: 0 auto;
+        }
         .tech-support-card{
             background-color: $mainOrange;
             &__title{
-                font-size: 2.6rem;
+                font-size: 1.8rem;
                 text-transform: uppercase;
+                @include respond(tab-port){
+                    font-size: 2.6vmin;
+                }
             }
             .btn--outline{
                 border-radius: 0;
                 font-family: "Product Sans";
-                font-size: 1.6rem;
                 padding: .2rem 2.1rem;
-                height: auto;
+                @include respond(tab-port){
+                    padding: .2vmin 2.1vmin;
+                    font-size: 1.6vmin;
+                }
             }
         }
         [class^="col-"]:last-child{

@@ -22,7 +22,7 @@ function dedicated_add_woocommerce_support() {
 add_action( 'after_setup_theme', 'dedicated_add_woocommerce_support' );
 
 
-add_action( 'woocommerce_before_checkout_form', 'checkout_message' );
+//add_action( 'woocommerce_before_checkout_form', 'checkout_message' );
 function checkout_message() {
 	// echo '<p>Please fill all required fields to buy Server from Dedicated Servers Thank you!</p>';
 }
@@ -122,26 +122,26 @@ function woocommerce_countries_states( $checkout ) {
 */
 
 // Display the chosen delivery information
-add_filter( 'woocommerce_get_order_item_totals', 'chosen_delivery_item_order_totals', 10, 3 );
+// add_filter( 'woocommerce_get_order_item_totals', 'chosen_delivery_item_order_totals', 10, 3 );
 function chosen_delivery_item_order_totals( $total_rows, $order, $tax_display ) {;
     $new_total_rows = [];
 
     // Loop through Order total lines
-    // foreach($total_rows as $key => $total ){
+    foreach($total_rows as $key => $total ){
         // Get the chosen delivery values
-        // $delivery_option  = $order->get_meta('_delivery_option');
-        // $delivery_datetime = $order->get_meta('_delivery_datetime');
+        $delivery_option  = $order->get_meta('_delivery_option');
+        $delivery_datetime = $order->get_meta('_delivery_datetime');
 
         // Display delivery information before payment method
-        // if( ! empty($delivery_option) && 'payment_method' === $key ){
-        //     $label  = empty($delivery_datetime) ? __('Delivery') : __('Delivery Date');
-        //     $value  = empty($delivery_datetime) ? __('AZAP', $domain) : $delivery_datetime;
+        if( ! empty($delivery_option) && 'payment_method' === $key ){
+            $label  = empty($delivery_datetime) ? __('Delivery') : __('Delivery Date');
+            $value  = empty($delivery_datetime) ? __('AZAP', $domain) : $delivery_datetime;
 
             // Display 'Delivery method' line
             $new_total_rows['chosen_delivery'] = array( 'label' => $label,'value' => $value );
-        // }
+        }
         $new_total_rows[$key] = $total;
-    // }
+    }
 
     return $new_total_rows;
 }
@@ -219,4 +219,125 @@ function my_custom_checkout_field_display_admin_order_meta( $order ) {
         $value = wc_get_hearaboutus_options()[$hearaboutus];
         echo '<p><strong>'.__('How did you hear about us?').'</strong> ' . $value . '</p>';
     }
+}
+
+
+/**  Add detail in order page */
+
+add_action('wp_ajax_wdm_add_user_custom_data_options', 'wdm_add_user_custom_data_options_callback');
+add_action('wp_ajax_nopriv_wdm_add_user_custom_data_options', 'wdm_add_user_custom_data_options_callback');
+
+function wdm_add_user_custom_data_options_callback()
+{
+      //Custom data - Sent Via AJAX post method
+      $product_id = $_POST['id']; //This is product ID
+      $user_custom_data_values =  $_POST['user_data']; //This is User custom value sent via AJAX
+      session_start();
+      $_SESSION['wdm_user_custom_data'] = $user_custom_data_values;
+      die();
+}
+
+
+add_filter('woocommerce_add_cart_item_data','wdm_add_item_data',1,2);
+ 
+if(!function_exists('wdm_add_item_data'))
+{
+    function wdm_add_item_data($cart_item_data,$product_id)
+    {
+        /*Here, We are adding item in WooCommerce session with, wdm_user_custom_data_value name*/
+        global $woocommerce;
+        session_start();    
+        if (isset($_SESSION['wdm_user_custom_data'])) {
+            $option = $_SESSION['wdm_user_custom_data'];       
+            $new_value = array('wdm_user_custom_data_value' => $option);
+        }
+        if(empty($option))
+            return $cart_item_data;
+        else
+        {    
+            if(empty($cart_item_data))
+                return $new_value;
+            else
+                return array_merge($cart_item_data,$new_value);
+        }
+        unset($_SESSION['wdm_user_custom_data']); 
+        //Unset our custom session variable, as it is no longer needed.
+    }
+}
+
+add_filter('woocommerce_get_cart_item_from_session', 'wdm_get_cart_items_from_session', 1, 3 );
+if(!function_exists('wdm_get_cart_items_from_session'))
+{
+    function wdm_get_cart_items_from_session($item,$values,$key)
+    {
+        if (array_key_exists( 'wdm_user_custom_data_value', $values ) )
+        {
+        $item['wdm_user_custom_data_value'] = $values['wdm_user_custom_data_value'];
+        }       
+        return $item;
+    }
+}
+
+function the_product_price_show() {
+    global $product;
+    if( $product->is_on_sale() ) {
+        return $product->get_sale_price();
+    }
+    return $product->get_regular_price();
+}
+
+
+add_filter('woocommerce_checkout_cart_item_quantity','wdm_add_user_custom_option_from_session_into_cart',1,3);  
+add_filter('woocommerce_cart_item_price','wdm_add_user_custom_option_from_session_into_cart',1,3);
+if(!function_exists('wdm_add_user_custom_option_from_session_into_cart'))
+{
+ 
+function wdm_add_user_custom_option_from_session_into_cart($product_name, $values, $cart_item_key )
+    {
+        /*code to add custom data on Cart & checkout Page*/    
+        //  print_r($values);
+            $product_id = $values['product_id'];
+            $server_type = get_field('server_type', $product_id );
+            $server_ghz = get_field('server_ghz', $product_id );
+            $server_core_features_list = get_field('server_core_features_list', $product_id );
+
+            $return_string = $product_name . "</a>";
+            $return_string .='<ul class="your-order-list">';
+            
+            foreach($server_core_features_list as $key=> $row){  
+                $explode_str  = explode('-',$row['list']);   
+                $first_str  = '';
+                $second_str = '';
+
+                if(isset($explode_str[0])){
+                    $first_str = $explode_str[0];
+                }
+                if(isset($explode_str[1])){
+                    $second_str = $explode_str[1];
+                }    
+                $return_string .='<li><span class="order-list__item"><b>'.$first_str.':</b>'.$second_str.'</span></li>';
+            }
+
+            $return_string .='<li><span class="order-list__item">1 Month price</span><span class="order-list__item"> '.$values['line_subtotal'].'</span></li>';
+
+            $return_string .='</ul>';
+        
+            return $return_string;
+       
+    }
+}
+
+
+add_action('woocommerce_add_order_item_meta','wdm_add_values_to_order_item_meta',1,2);
+if(!function_exists('wdm_add_values_to_order_item_meta'))
+{
+  function wdm_add_values_to_order_item_meta($item_id, $values)
+  {
+        global $woocommerce,$wpdb;
+        $user_custom_values = $values['wdm_user_custom_data_value'];
+        if(!empty($user_custom_values))
+        {
+            wc_add_order_item_meta($item_id,'wdm_user_custom_data',$user_custom_values);  
+        }
+  }
 }

@@ -35,7 +35,32 @@ do_action( 'woocommerce_auth_page_header' ); ?>
 	?>
 </p>
 
-<form method="post" class="wc-auth-login">
+<form name="wp_login_form"  id="wp_login_form" method="post">
+	<div class="form-group">
+		<input type="email" name="userEmail" id="userEmail" class="form-control" placeholder="Enter Your Email">
+	</div>
+	<div class="form-group">
+		<input type="password" name="password" id="password" class="form-control" placeholder="Password">
+	</div>
+	<div class="form-group">
+		<label class="form-check-label">
+			<input type="checkbox" class="form-check-input" name="remember" id="remember" value="1"> Remember Me
+			<span></span>
+		</label>
+	</div>
+	<div class="form-group">
+		<div class="row align-items-center">
+			<div class="col-6">
+				<button id="login" value="login" class="btn--orange">Login  here<i class="fas fa-arrow-right"></i></button>
+			</div>
+			<div class="col-6 text-right">
+				<a href="<?php echo site_url('my-account/lost-password/');?>">Forgot Password?</a>
+			</div>
+		</div>
+	</div>
+</form>
+
+<!-- <form method="post" class="wc-auth-login">
 	<p class="form-row form-row-wide">
 		<label for="username"><?php esc_html_e( 'Username or email address', 'woocommerce' ); ?>&nbsp;<span class="required">*</span></label>
 		<input type="text" class="input-text" name="username" id="username" value="<?php echo ( ! empty( $_POST['username'] ) ) ? esc_attr( $_POST['username'] ) : ''; ?>" /><?php //@codingStandardsIgnoreLine ?>
@@ -49,6 +74,6 @@ do_action( 'woocommerce_auth_page_header' ); ?>
 		<button type="submit" class="button button-large button-primary wc-auth-login-button" name="login" value="<?php esc_attr_e( 'Login', 'woocommerce' ); ?>"><?php esc_html_e( 'Login', 'woocommerce' ); ?></button>
 		<input type="hidden" name="redirect" value="<?php echo esc_url( $redirect_url ); ?>" />
 	</p>
-</form>
+</form> -->
 
 <?php do_action( 'woocommerce_auth_page_footer' ); ?>

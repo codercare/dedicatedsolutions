@@ -8,6 +8,7 @@ var $form = $("#wp_signup_form"),
 });
 
 $form.validate({
+  errorElement: "span",
   rules: {
     firstName: {
       required: true,
@@ -118,6 +119,7 @@ var $loginform = $("#wp_login_form"),
 
 
 $loginform.validate({
+    errorElement: "span",
     rules: {
       userEmail: {
         required: true,

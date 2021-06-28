@@ -67,8 +67,21 @@
 						}
 					}
 				});
+<<<<<<< HEAD
 			});
 			*/					
+=======
+				$('.av-gridder').gridderExpander({
+					scroll: true,
+					scrollOffset: 30,
+					scrollTo: "panel",                  // panel or listitem
+					animationSpeed: 400,
+					animationEasing: "easeInOutExpo",
+					showNav: false,                      // Show Navigation
+				});
+			});	
+				
+>>>>>>> add/templating
 		</script>
 	</body>
 </html>

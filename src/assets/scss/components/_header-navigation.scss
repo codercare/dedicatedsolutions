@@ -32,7 +32,8 @@
             list-style: none;
             background: #fff;
             display: none;
-            min-width: 200vmin;
+            padding: 15px;
+            // min-width: 200vmin;
             border: .01vmin solid #efefef;
             border-top-color: #fff;
             z-index: 10;
@@ -46,7 +47,8 @@
                 list-style: none;
                 background: #fff;
                 display: none;
-                min-width: 20vmin;
+                // min-width: 20vmin;
+                padding:15px;
                 left: 100%;
                 font-size: 100%;
                 top: 0px;
@@ -60,7 +62,7 @@
                     display: block;
                 }
                 &:hover > a {
-                    color: #ffffff;
+                    // color: #ffffff;
                 }
             }
         }

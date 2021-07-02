@@ -1,53 +1,25 @@
 <?php
-/* Template Name: Dedicated Servers */ 
+/* Dedicated Servers */ 
 
 get_header();?>
 <main id="fullpage" class="site-main">
-<?php while ( have_posts() ) : the_post(); 
-
-	$banner_image_url = get_template_directory_uri() . '/dist/assets/images/bare-metal-cloud-banner.jpg';
-	$banner_image     = get_field( 'banner_bg' );
-	if ( ! empty( $banner_image ) ) {
-		$banner_image_url = $banner_image['sizes']['banner_image'];
-	}
-?>
-<section class="section">
-		<section class="page-banner dedicated-server-page-banner" style="background-image:url('<?php echo $banner_image_url; ?>')">
-			<div class="wrapper">			
+	<section class="section">
+		<section class="page-banner dedicated-server-page-banner" style="background-image:url('<?php echo get_template_directory_uri() . '/dist/assets/images/bare-metal-cloud-banner.jpg'; ?>')">
+			<div class="wrapper">
 				<div class="page-banner-content">
 					<h4>Starting from</h4>
 					<div class="starting-price">
-						<span class="price">
-						<?php 
-						$deci_arr = array();	
-						$deci_arr[0] = '00';
-						$deci_arr[1] = '00';
-							$price_doller = get_field('starting_from_price_per_month'); 
-							if(is_numeric($price_doller)){
-								$decimal_price = number_format($price_doller, 2, '.', '');
-								$deci_arr = explode('.',$decimal_price);								
-							}
-							
-							if(is_numeric($price_doller)){ echo"$".$deci_arr[0]; echo'<span class="subPrice">'.'.'.$deci_arr[1].'</span></span>'; }else{
-								echo $price_doller;
-							}
-							?>
+						<span class="price">$39<span class="subPrice">.00</span></span>
 						<span class="per-month">/month</span>
 					</div>
-					<h1 class="large-banner__heading"><?php the_field('dedicated_server_title');?></h1>
-					<p><?php the_field('dedicated_server_sub_title');?></p>
+					<h1 class="large-banner__heading">Dedicated Servers</h1>
+					<p>All Computing Options in one place – That is Bare-Metal Server Hosting!</p>
 					<div class="large-banner__features">
 						<ul class="large-banner__features-list">
-							<?php
-							if ( have_rows( 'dedicated_server_feature_lists' ) ) : 
-							while ( have_rows( 'dedicated_server_feature_lists' ) ) :
-							the_row();						
-							?>
-							<li class="large-banner__features-item"><i class="fas fa-check-circle"></i><?php the_sub_field('list');?></li>
-							<?php 
-							endwhile; 
-							endif;			
-							?>							
+							<li class="large-banner__features-item"><i class="fas fa-check-circle"></i>Linux & Windows Available</li>
+							<li class="large-banner__features-item"><i class="fas fa-check-circle"></i>Instant Server Provisioning</li>
+							<li class="large-banner__features-item"><i class="fas fa-check-circle"></i>Custom Server Available</li>
+							<li class="large-banner__features-item"><i class="fas fa-check-circle"></i>Remote Reboot/KVM/IPMI</li>
 						</ul>
 					</div>
 				</div>
@@ -58,65 +30,138 @@ get_header();?>
 			<div class="navTabs-pills-wrap">
 				<div class="wrapper">
 					<ul class="nav nav-pills" id="db-bd-hosting-pills-tab" role="tablist">
-						<?php
-						$counter = 1;
-						if ( have_rows( 'three_tab' ) ) : 
-						while ( have_rows( 'three_tab' ) ) :
-						the_row();						
-						?>
 						<li class="nav-item" role="presentation">
-							<a class="nav-link <?php if( $counter==2){ echo 'active'; } ?>"  id="server-<?php echo $counter;?>-tab" data-toggle="pill" href="#server-config-<?php echo $counter;?>" role="tab" aria-controls="#server-config-<?php echo $counter;?>" aria-selected="<?php if( $counter==2){ echo 'true'; }else{ echo 'false';}?>"><?php the_sub_field('tab_title');?></a>
+							<a class="nav-link" id="server-feat-tab" data-toggle="pill" href="#server-feat" role="tab" aria-controls="server-feat" aria-selected="false">Server Features</a>
 						</li>
-						<?php 
-						$counter++;
-						endwhile; 
-						endif;			
-						?>
+						<li class="nav-item" role="presentation">
+							<a class="nav-link active" id="server-config-tab" data-toggle="pill" href="#server-config" role="tab" aria-controls="server-config" aria-selected="true">Server Configurations</a>
+						</li>
+						<li class="nav-item" role="presentation">
+							<a class="nav-link" id="server-feat-tab2" data-toggle="pill" href="#server-feat2" role="tab" aria-controls="server-feat2" aria-selected="false">Server Features</a>
+						</li>
 					</ul>
 				</div>
 			</div>
 			<div class="wrapper">
-				<div class="tab-content" id="bmc-pills-tabContent">				
-					<?php
-					$tab_count = 1;
-					if ( have_rows( 'three_tab' ) ) : 
-					while ( have_rows( 'three_tab' ) ) :
-					the_row();						
-					?>
-						<div class="tab-pane fade <?php if($tab_count == 2){ echo"show active"; }?> " id="server-config-<?php echo $tab_count;?>" role="tabpanel" aria-labelledby="server-<?php echo $tab_count;?>-tab">
+				<div class="tab-content" id="bmc-pills-tabContent">
+					<div class="tab-pane fade" id="server-feat" role="tabpanel" aria-labelledby="server-feat-tab">
+					server-feat-tab
+					</div>
+					<div class="tab-pane fade show active" id="server-config" role="tabpanel" aria-labelledby="server-config-tab">
 						<div class="row">
-							<?php
-							if ( have_rows( 'block_feature_lists' ) ) : 
-							while ( have_rows( 'block_feature_lists' ) ) :
-							the_row();						
-							?>
 							<div class="col-md-3">
 								<div class="dedicated-server-block">
 									<div class="ds-icon-box">
-										<?php 
-										$feature_img_icon = get_template_directory_uri() . '/dist/assets/images/customer-support-2.png';
-										$feature_icon     = get_sub_field( 'feature_icon' );
-										if ( ! empty( $feature_icon ) ) {
-											$feature_img_icon = $feature_icon['sizes']['mid_icon'];
-										}
-										if(!empty($feature_img_icon)){ echo"<img src='".$feature_img_icon."'>"; }
-										?>
+										<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/up-arrow.png'; ?>" alt="up-arrow">
 									</div>
-									<h3><?php the_sub_field('title');?></h3>
-									<p><?php the_sub_field('short_detail');?></p>
+									<h3>100% UPTIME!</h3>
+									<p>We haven’t had any outage in over 5 years</p>
 								</div>
 							</div>
-							<?php 
-							endwhile; 
-							endif;			
-							?>
+							<div class="col-md-3">
+								<div class="dedicated-server-block">
+									<div class="ds-icon-box">
+										<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/badge.png'; ?>" alt="badge">
+									</div>
+									<h3>30 DAY MONEY BACK!</h3>
+									<p>Try us – you will like us.</p>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="dedicated-server-block">
+									<div class="ds-icon-box">
+										<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/data center.png'; ?>" alt="data center">
+									</div>
+									<h3>INSTANT SERVER SETUP!</h3>
+									<p>Your Server wil be ready within minutes</p>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="dedicated-server-block">
+									<div class="ds-icon-box">
+										<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/wall-clock.png'; ?>" alt="wall-clock">
+									</div>
+									<h3>24/7 EVERYTHING!</h3>
+									<p>24/7 Support & Engineering Staff</p>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="dedicated-server-block">
+									<div class="ds-icon-box">
+										<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/ds-key.png'; ?>" alt="ds-key">
+									</div>
+									<h3>PRIVATE CLOUD AVAILABLE!</h3>
+									<p>Contact us for a custom quote</p>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="dedicated-server-block">
+									<div class="ds-icon-box">
+										<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/ds-database.png'; ?>" alt="ds-database">
+									</div>
+									<h3>CUSTOM SERVERS AVAILABLE!</h3>
+									<p>Max.12 Hours Provisioning Guaranteed</p>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="dedicated-server-block">
+									<div class="ds-icon-box">
+										<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/speedometer.png'; ?>" alt="speedometer">
+									</div>
+									<h3>EXTREME SPEED!</h3>
+									<p>10GBit/s Servers available!</p>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="dedicated-server-block">
+									<div class="ds-icon-box">
+										<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/secure-data-center.png'; ?>" alt="secure-data-center">
+									</div>
+									<h3>DATA CENTER TO DATA CENTER!</h3>
+									<p>FREE Point-to-Point Network Connectivity</p>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="dedicated-server-block">
+									<div class="ds-icon-box">
+										<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/laptop.png'; ?>" alt="laptop">
+									</div>
+									<h3>HIGHEST STANDARDS!</h3>
+									<p>Tier-III & Tier-IV Data Center Locations</p>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="dedicated-server-block">
+									<div class="ds-icon-box">
+										<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/innovation.png'; ?>" alt="innovation">
+									</div>
+									<h3>SELF CONTROL PANEL!</h3>
+									<p>100% Automated Reboot & OS installation</p>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="dedicated-server-block">
+									<div class="ds-icon-box">
+										<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/computer networks.png'; ?>" alt="computer networks">
+									</div>
+									<h3>ADVANCED CONTROL PANEL!</h3>
+									<p>Intuitive way to Manage your Servers!</p>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<div class="dedicated-server-block">
+									<div class="ds-icon-box">
+										<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/server-management.png'; ?>" alt="server-management">
+									</div>
+									<h3>MULTI-SERVER MANAGEMENT!</h3>
+									<p>Manage all your servers, at any location</p>
+								</div>
+							</div>
 						</div>
 					</div>
-					<?php 
-					$tab_count++;
-					endwhile; 
-					endif;			
-					?>
+					<div class="tab-pane fade" id="server-feat2" role="tabpanel" aria-labelledby="server-feat-tab2">
+						server-feat-tab2
+					</div>
 				</div>
 			</div>
 		</section>
@@ -125,88 +170,130 @@ get_header();?>
 	<section class="ds-server-hosting-feat section">
 		<div class="wrapper">
 			<div class="section-header u-txt-center">
-				<h2 class="section-header__title"><?php the_field('heading_title');?></h2>
+				<h2 class="section-header__title">Our Server Hosting Features</h2>
 				<span class="section-header__decoration-element--dark"></span>
-				<h4 class="section-header__Orangesub-title"><?php the_field('sub_heading_title');?></h4>
+				<h4 class="section-header__Orangesub-title">See why you should rent your Dedicated Server Infrastructure from us!</h4>
 			</div>
 			<div class="row align-items-center">
 				<div class="col-md-4 order-md-1">
 					<div class="thumbnail-img">
-						<?php 
-						$hosting_feature = get_template_directory_uri() . '/dist/assets/images/ds-hosting-feat.png';
-						$img_hosting_feature     = get_sub_field( 'icon' );
-						if ( ! empty( $img_hosting_feature ) ) {
-							$hosting_feature = $img_hosting_feature['sizes']['mid_icon'];
-						}
-						if(!empty($hosting_feature)){ echo"<img src='".$hosting_feature."'>"; }
-						?>
-						<!-- <img src="<?php echo get_template_directory_uri() . '/dist/assets/images/ds-hosting-feat.png'; ?>" alt="ds-hosting-feat"> -->
+						<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/ds-hosting-feat.png'; ?>" alt="ds-hosting-feat">
 					</div>
 				</div>
 				<div class="col-md-4 order-md-0">
 					<div class="ds-hosting-feat-block">
-						<?php
-						$count = 1;
-						if ( have_rows( 'hosting_feature_list' ) ) : 
-						while ( have_rows( 'hosting_feature_list' ) ) :
-						the_row();
-						if($count %2 != 0){ 
-						?>
 						<div class="ds-hosting-feat-list">
 							<div class="ds-hosting-icon">
-								<?php 
-								$conf_icon = get_template_directory_uri() . '/dist/assets/images/ds-feat-icon1.png';
-								$img_conf_icon     = get_sub_field( 'icon' );
-								if ( ! empty( $img_conf_icon ) ) {
-									$conf_icon = $img_conf_icon['sizes']['mid_icon'];
-								}
-								if(!empty($conf_icon)){ echo"<img src='".$conf_icon."'>"; }
-								?>	
+								<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/ds-feat-icon1.png'; ?>" alt="ds-feat-icon1">
 							</div>
 							<div class="ds-hosting-content">
-								<h3><?php the_sub_field('title');?></h3>
-								<p><?php the_sub_field('short_detail');?></p>
+								<h3>100% UPTIME!</h3>
+								<p>We haven’t had any outage in over 5 years</p>
 							</div>
 						</div>
-						<?php 
-						}
-						$count++;
-						endwhile; 
-						endif;
-						?>
+						<div class="ds-hosting-feat-list">
+							<div class="ds-hosting-icon">
+								<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/ds-feat-icon2.png'; ?>" alt="ds-feat-icon2">
+							</div>
+							<div class="ds-hosting-content">
+								<h3>30 DAY MONEY BACK!</h3>
+								<p>Try us – you will like us</p>
+							</div>
+						</div>
+						<div class="ds-hosting-feat-list">
+							<div class="ds-hosting-icon">
+								<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/ds-feat-icon3.png'; ?>" alt="ds-feat-icon3">
+							</div>
+							<div class="ds-hosting-content">
+								<h3>INSTANT SERVER SETUP!</h3>
+								<p>Your Server wil be ready within minutes</p>
+							</div>
+						</div>
+						<div class="ds-hosting-feat-list">
+							<div class="ds-hosting-icon">
+								<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/ds-feat-icon4.png'; ?>" alt="ds-feat-icon4">
+							</div>
+							<div class="ds-hosting-content">
+								<h3>24/7 EVERYTHING!</h3>
+								<p>24/7 Support & Engineering Staff</p>
+							</div>
+						</div>
+						<div class="ds-hosting-feat-list">
+							<div class="ds-hosting-icon">
+								<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/ds-feat-icon5.png'; ?>" alt="ds-feat-icon5">
+							</div>
+							<div class="ds-hosting-content">
+								<h3>PRIVATE CLOUD AVAILABLE!</h3>
+								<p>Contact us for a custom quote.</p>
+							</div>
+						</div>
+						<div class="ds-hosting-feat-list">
+							<div class="ds-hosting-icon">
+								<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/ds-feat-icon6.png'; ?>" alt="ds-feat-icon6">
+							</div>
+							<div class="ds-hosting-content">
+								<h3>CUSTOM SERVERS AVAILABLE!</h3>
+								<p>Max.12 Hours Provisioning Guaranteed</p>
+							</div>
+						</div>
 					</div>
 				</div>
 				<div class="col-md-4 order-md-2">
 					<div class="ds-hosting-feat-block">
-					<?php
-						$count_right = 1;
-						if ( have_rows( 'hosting_feature_list' ) ) : 
-						while ( have_rows( 'hosting_feature_list' ) ) :
-						the_row();
-						if($count_right %2 == 0){ 
-						?>
 						<div class="ds-hosting-feat-list">
 							<div class="ds-hosting-icon">
-								<?php 
-								$conf_icon = get_template_directory_uri() . '/dist/assets/images/ds-feat-icon1.png';
-								$img_conf_icon     = get_sub_field( 'icon' );
-								if ( ! empty( $img_conf_icon ) ) {
-									$conf_icon = $img_conf_icon['sizes']['mid_icon'];
-								}
-								if(!empty($conf_icon)){ echo"<img src='".$conf_icon."'>"; }
-								?>	
+								<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/ds-feat-icon7.png'; ?>" alt="ds-feat-icon7">
 							</div>
 							<div class="ds-hosting-content">
-								<h3><?php the_sub_field('title');?></h3>
-								<p><?php the_sub_field('short_detail');?></p>
+								<h3>EXTREME SPEED!</h3>
+								<p>10GBit/s Servers available!</p>
 							</div>
 						</div>
-						<?php 
-						}
-						$count_right++;
-						endwhile; 
-						endif;
-						?>
+						<div class="ds-hosting-feat-list">
+							<div class="ds-hosting-icon">
+								<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/ds-feat-icon8.png'; ?>" alt="ds-feat-icon8">
+							</div>
+							<div class="ds-hosting-content">
+								<h3>DATA CENTER TO DATA CENTER!</h3>
+								<p>FREE Point-to-Point Network Connectivity</p>
+							</div>
+						</div>
+						<div class="ds-hosting-feat-list">
+							<div class="ds-hosting-icon">
+								<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/ds-feat-icon9.png'; ?>" alt="ds-feat-icon9">
+							</div>
+							<div class="ds-hosting-content">
+								<h3>HIGHEST STANDARDS!</h3>
+								<p>Tier-III & Tier-IV Data Center Locations</p>
+							</div>
+						</div>
+						<div class="ds-hosting-feat-list">
+							<div class="ds-hosting-icon">
+								<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/ds-feat-icon10.png'; ?>" alt="ds-feat-icon10">
+							</div>
+							<div class="ds-hosting-content">
+								<h3>SELF CONTROL PANEL!</h3>
+								<p>100% Automated Reboot & OS installation.</p>
+							</div>
+						</div>
+						<div class="ds-hosting-feat-list">
+							<div class="ds-hosting-icon">
+								<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/ds-feat-icon11.png'; ?>" alt="ds-feat-icon11">
+							</div>
+							<div class="ds-hosting-content">
+								<h3>ADVANCED CONTROL PANEL!</h3>
+								<p>Intuitive way to Manage your Servers!</p>
+							</div>
+						</div>
+						<div class="ds-hosting-feat-list">
+							<div class="ds-hosting-icon">
+								<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/ds-feat-icon12.png'; ?>" alt="ds-feat-icon12">
+							</div>
+							<div class="ds-hosting-content">
+								<h3>MULTI-SERVER MANAGEMENT!</h3>
+								<p>Manage all your servers, at any location</p>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -915,6 +1002,5 @@ get_header();?>
 			</div>
 		</div>
 	</section>
-<?php endwhile; // end of the loop. ?>
 </main>
 <?php get_footer(); ?>

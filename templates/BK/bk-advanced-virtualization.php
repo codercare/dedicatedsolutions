@@ -1,8 +1,9 @@
 <?php
-/* Template Name: Test2 */ 
+/* Advanced Virtualization */ 
 
 get_header();?>
-?>
+
+
 <main id="fullpage" class="site-main">
 	<section class="section">
 		<section class="page-banner about-page-banner av-page-banner" style="background-image:url('<?php echo get_template_directory_uri() . '/dist/assets/images/about-banner.jpg'; ?>')">
@@ -589,4 +590,6 @@ get_header();?>
 		</div>
 	</section>
 </main>
+
+
 <?php get_footer(); ?>

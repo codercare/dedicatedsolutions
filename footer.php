@@ -52,7 +52,7 @@
 		</footer>
 		<?php wp_footer(); ?>
 		<script>			
-			/*jQuery(document).ready(function($) {
+			jQuery(document).ready(function($) {
 				$('#fullpage').fullpage({
 					licenseKey: '71051AA7-77BC4D43-BEDAB639-090EF836',
 					fitToSection: true,
@@ -67,10 +67,6 @@
 						}
 					}
 				});
-<<<<<<< HEAD
-			});
-			*/					
-=======
 				$('.av-gridder').gridderExpander({
 					scroll: true,
 					scrollOffset: 30,
@@ -79,9 +75,9 @@
 					animationEasing: "easeInOutExpo",
 					showNav: false,                      // Show Navigation
 				});
+				$("#gridder_id_1").trigger("click");				
 			});	
 				
->>>>>>> add/templating
 		</script>
 	</body>
 </html>

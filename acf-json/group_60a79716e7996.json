@@ -317,6 +317,25 @@
             "endpoint": 0
         },
         {
+            "key": "field_60de7db95da70",
+            "label": "Budget Vs Pro Vs Enterprise Title",
+            "name": "budget_vs_pro_vs_enterprise_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_60a79b7225111",
             "label": "Server Details",
             "name": "server_details",
@@ -375,8 +394,8 @@
                     "sub_fields": [
                         {
                             "key": "field_60a79d5c25114",
-                            "label": "Configuration List",
-                            "name": "configuration_list",
+                            "label": "Configuration List Title",
+                            "name": "configuration_list_title",
                             "type": "text",
                             "instructions": "",
                             "required": 0,
@@ -523,7 +542,7 @@
                         {
                             "key": "field_60a79e8725119",
                             "label": "Control Panel Type Features",
-                            "name": "control_panel_type",
+                            "name": "control_panel_type_features",
                             "type": "repeater",
                             "instructions": "",
                             "required": 0,
@@ -698,5 +717,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1624129455
+    "modified": 1625193932
 }

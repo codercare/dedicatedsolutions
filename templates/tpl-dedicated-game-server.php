@@ -125,19 +125,23 @@ while ( have_posts() ) : the_post();
 						<div class="row">
 							<?php
 							global $post;
-
-							$budget_server = get_posts( array(
-								'posts_per_page' => 4,
-								'post_type'      => 'dedicated-servers',
-								'meta_key'         => 'server_type',
-								'meta_value'       => 'Budget Servers',
-							));
 							
-
-							if ( $budget_server ) {
-							foreach ( $budget_server as $post ) : 
-							setup_postdata( $post ); 
-									?>
+							$budget_query = array(
+								'posts_per_page' => 4,
+								'post_type'      => 'product',
+								'tax_query' => array(
+									array(
+										'taxonomy' => 'product_cat',
+										'field'    => 'slug',
+										'terms'    => array( 'budget-servers' ),
+									)
+								)
+							);		
+														
+							$budget_server = new WP_Query($budget_query);
+							if ( $budget_server->have_posts() ) :
+							while ( $budget_server->have_posts() ) : $budget_server->the_post(); 
+							?>
 							<div class="col-md-6">
 								<div class="server-type-block">
 									<div class="server-tye-header">
@@ -154,27 +158,19 @@ while ( have_posts() ) : the_post();
 										<span><img src="<?php echo $server_list_icon; ?>" alt="<?php the_title(); ?>"  class="server-icon-image"></span>
 									</div>
 									<ul>
-									<?php
-									$count_feature_list = 1;
-									if ( have_rows( 'server_core_features_list' ) ) : 											
-									while ( have_rows( 'server_core_features_list' ) ) :
-									the_row();
-									if($count_feature_list >5){ break; }
-									?>
-									<li><?php the_sub_field( 'list' ); ?></li>
-									<?php 		
-									$count_feature_list++;											
-									endwhile; 
-									endif;
-									?>
+										<li>Server - <?php the_field( 'server_ghz' ); ?></li>
+										<li>HDD - <?php $hdd = get_field( 'hdd' );  $raid = get_field( 'raid' ); echo strlimit($hdd.' '.$raid,'25','')?></li>
+										<li>RAM - <?php the_field( 'ram' ); ?></li>
+										<li>PORT - <?php the_field( 'port' ); ?></li>
+										<li>LOCATION  - <?php the_field( 'location' ); ?></li>
 									</ul>
 									<a href="<?php the_field( 'instance_order_link' ); ?>" class="btn--orange">Order (Instant) <i class="fas fa-arrow-right"></i></a>
 								</div>
 							</div>
-							<?php 
-							endforeach;
+							<?php
+							endwhile; 
 							wp_reset_postdata();
-							}
+							endif; 
 							?>
 						</div>
 					</div>
@@ -186,17 +182,22 @@ while ( have_posts() ) : the_post();
 						<div class="row">
 							<?php
 							global $post;
-
-							$budget_server = get_posts( array(
+							
+							$pro_query = array(
 								'posts_per_page' => 4,
-								'post_type'      => 'dedicated-servers',
-								'meta_key'         => 'server_type',
-								'meta_value'       => 'Pro Servers',
-							));							
-
-							if ( $budget_server ) {
-							foreach ( $budget_server as $post ) : 
-							setup_postdata( $post ); 
+								'post_type'      => 'product',
+								'tax_query' => array(
+									array(
+										'taxonomy' => 'product_cat',
+										'field'    => 'slug',
+										'terms'    => array( 'pro-servers' ),
+									)
+								)
+							);		
+														
+							$pro_server = new WP_Query($pro_query);
+							if ( $pro_server->have_posts() ) :
+							while ( $pro_server->have_posts() ) : $pro_server->the_post(); 
 							?>
 							<div class="col-md-6">
 								<div class="server-type-block">
@@ -214,27 +215,19 @@ while ( have_posts() ) : the_post();
 										<span><img src="<?php echo $server_list_icon; ?>" alt="<?php the_title(); ?>"  class="server-icon-image"></span>
 									</div>
 									<ul>
-									    <?php
-										$count_feature_list = 1;
-										if ( have_rows( 'server_core_features_list' ) ) : 											
-										while ( have_rows( 'server_core_features_list' ) ) :
-										the_row();
-										if($count_feature_list >5){ break; }
-										?>
-										<li><?php the_sub_field( 'list' ); ?></li>
-										<?php 		
-										$count_feature_list++;											
-										endwhile; 
-										endif;
-										?>
+										<li>Server - <?php the_field( 'server_ghz' ); ?></li>
+										<li>HDD - <?php the_field( 'hdd' );  the_field( 'raid' );?></li>
+										<li>RAM - <?php the_field( 'ram' ); ?></li>
+										<li>PORT - <?php the_field( 'port' ); ?></li>
+										<li>LOCATION  - <?php the_field( 'location' ); ?></li>
 									</ul>
 									<a href="<?php the_field( 'instance_order_link' ); ?>" class="btn--orange blue">Order (Instant) <i class="fas fa-arrow-right"></i></a>
 								</div>
 							</div>
 							<?php 
-							endforeach;
+							endwhile; 
 							wp_reset_postdata();
-							}
+							endif;
 							?>
 						</div>
 					</div>
@@ -246,18 +239,22 @@ while ( have_posts() ) : the_post();
 						<div class="row">
 						    <?php
 							global $post;
-
-							$budget_server = get_posts( array(
-								'posts_per_page' => 4,
-								'post_type'      => 'dedicated-servers',
-								'meta_key'         => 'server_type',
-								'meta_value'       => 'Enterprise Servers',
-							));
 							
-
-							if ( $budget_server ) {
-							foreach ( $budget_server as $post ) : 
-							setup_postdata( $post ); 
+							$enterprise_query = array(
+								'posts_per_page' => 4,
+								'post_type'      => 'product',
+								'tax_query' => array(
+									array(
+										'taxonomy' => 'product_cat',
+										'field'    => 'slug',
+										'terms'    => array( 'enterprise-servers' ),
+									)
+								)
+							);		
+														
+							$enterprise_server = new WP_Query($enterprise_query);
+							if ( $enterprise_server->have_posts() ) :
+							while ( $enterprise_server->have_posts() ) : $enterprise_server->the_post(); 
 							?>
 							<div class="col-md-6">
 								<div class="server-type-block">
@@ -275,27 +272,19 @@ while ( have_posts() ) : the_post();
 										<span><img src="<?php echo $server_list_icon; ?>" alt="<?php the_title(); ?>" class="server-icon-image"></span>
 									</div>
 									<ul>
-									    <?php
-										$count_feature_list = 1;
-										if ( have_rows( 'server_core_features_list' ) ) : 											
-										while ( have_rows( 'server_core_features_list' ) ) :
-										the_row();
-										if($count_feature_list >5){ break; }
-										?>
-										<li><?php the_sub_field( 'list' ); ?></li>
-										<?php 		
-										$count_feature_list++;											
-										endwhile; 
-										endif;
-										?>
+										<li>Server - <?php the_field( 'server_ghz' ); ?></li>
+										<li>HDD - <?php the_field( 'hdd' );  the_field( 'raid' );?></li>
+										<li>RAM - <?php the_field( 'ram' ); ?></li>
+										<li>PORT - <?php the_field( 'port' ); ?></li>
+										<li>LOCATION  - <?php the_field( 'location' ); ?></li>
 									</ul>
 									<a href="<?php the_field( 'instance_order_link' ); ?>" class="btn--orange success">Order (Instant) <i class="fas fa-arrow-right"></i></a>
 								</div>
 							</div>
 							<?php 
-							endforeach;
+							endwhile; 
 							wp_reset_postdata();
-							}
+							endif;
 							?>							
 						</div>
 					</div>

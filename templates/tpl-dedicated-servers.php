@@ -140,7 +140,6 @@ get_header();?>
 						}
 						if(!empty($hosting_feature)){ echo"<img src='".$hosting_feature."'>"; }
 						?>
-						<!-- <img src="<?php echo get_template_directory_uri() . '/dist/assets/images/ds-hosting-feat.png'; ?>" alt="ds-hosting-feat"> -->
 					</div>
 				</div>
 				<div class="col-md-4 order-md-0">
@@ -213,6 +212,7 @@ get_header();?>
 		</div>
 	</section>
 
+	<?php if(get_field('showhide_popular_dedicated_server')){ ?>
 	<section class="popular-dedicated-server section">
 		<div class="wrappper">
 			<div class="section-header u-txt-center">
@@ -224,259 +224,179 @@ get_header();?>
 			<div class="row">
 				<div class="col-md-4">
 					<div class="server-type-block-wrap">
-						<h3><i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/servers.png'; ?>" alt="servers"></i>Budget Srvers</h3>
+						<h3><i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/servers.png'; ?>" alt="servers"></i>Budget Servers</h3>
 						<h4>Our Best Selling Budget Servers</h4>
 						<div class="row">
+							<?php
+							global $post;
+							
+							$budget_query = array(
+								'posts_per_page' => 4,
+								'post_type'      => 'product',
+								'tax_query' => array(
+									array(
+										'taxonomy' => 'product_cat',
+										'field'    => 'slug',
+										'terms'    => array( 'budget-servers' ),
+									)
+								)
+							);		
+														
+							$budget_server = new WP_Query($budget_query);
+							if ( $budget_server->have_posts() ) :
+							while ( $budget_server->have_posts() ) : $budget_server->the_post(); 
+							?>
 							<div class="col-md-6">
 								<div class="server-type-block">
 									<div class="server-tye-header">
-										<h5>Intel Xeon 4/8 Core <span>4x 2.20GHz</span></h5>
+										<h5><?php the_title(); ?> <span><?php the_field( 'server_ghz' ); ?></span></h5>
 									</div>
 									<div class="server-type-logo">
-										<span><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/hp-logo.png'; ?>" alt="hp-logo"></span>
-										<span><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/dell-logo.png'; ?>" alt="dell-logo"></span>
+										<?php
+										$server_list_icon = '';
+										$serv_icon_image = get_field('server_icon', get_the_ID());
+										if ( ! empty( $serv_icon_image ) ) {
+											$server_list_icon = $serv_icon_image['url'];
+										}
+										?>
+										<span><img src="<?php echo $server_list_icon; ?>" alt="<?php the_title(); ?>"  class="server-icon-image"></span>
 									</div>
 									<ul>
-										<li>Server - 822B DELL/HP</li>
-										<li>HDD - 1x 250GB HDD NoRaid</li>
-										<li>RAM - 8GB RAM</li>
-										<li>PORT - 1Gbps</li>
-										<li>LOCATION - TX, Dallas TIER-III</li>
+										<li>Server - <?php the_field( 'server_ghz' ); ?></li>
+										<li>HDD - <?php $hdd = get_field( 'hdd' );  $raid = get_field( 'raid' ); echo strlimit($hdd.' '.$raid,'25','')?></li>
+										<li>RAM - <?php the_field( 'ram' ); ?></li>
+										<li>PORT - <?php the_field( 'port' ); ?></li>
+										<li>LOCATION  - <?php the_field( 'location' ); ?></li>
 									</ul>
-									<a href="" class="btn--orange">Order (Instant) <i class="fas fa-arrow-right"></i></a>
+									<a href="<?php the_field( 'instance_order_link' ); ?>" class="btn--orange">Order (Instant) <i class="fas fa-arrow-right"></i></a>
 								</div>
 							</div>
-							<div class="col-md-6">
-								<div class="server-type-block">
-									<div class="server-tye-header">
-										<h5>Intel Xeon 4/8 Core <span>4x 2.20GHz</span></h5>
-									</div>
-									<div class="server-type-logo">
-										<span><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/hp-logo.png'; ?>" alt="hp-logo"></span>
-										<span><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/dell-logo.png'; ?>" alt="dell-logo"></span>
-									</div>
-									<ul>
-										<li>Server - 822B DELL/HP</li>
-										<li>HDD - 1x 250GB HDD NoRaid</li>
-										<li>RAM - 8GB RAM</li>
-										<li>PORT - 1Gbps</li>
-										<li>LOCATION - TX, Dallas TIER-III</li>
-									</ul>
-									<a href="" class="btn--orange">Order (Instant) <i class="fas fa-arrow-right"></i></a>
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="server-type-block">
-									<div class="server-tye-header">
-										<h5>Intel Xeon 4/8 Core <span>4x 2.20GHz</span></h5>
-									</div>
-									<div class="server-type-logo">
-										<span><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/hp-logo.png'; ?>" alt="hp-logo"></span>
-										<span><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/dell-logo.png'; ?>" alt="dell-logo"></span>
-									</div>
-									<ul>
-										<li>Server - 822B DELL/HP</li>
-										<li>HDD - 1x 250GB HDD NoRaid</li>
-										<li>RAM - 8GB RAM</li>
-										<li>PORT - 1Gbps</li>
-										<li>LOCATION - TX, Dallas TIER-III</li>
-									</ul>
-									<a href="" class="btn--orange">Order (Instant) <i class="fas fa-arrow-right"></i></a>
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="server-type-block">
-									<div class="server-tye-header">
-										<h5>Intel Xeon 4/8 Core <span>4x 2.20GHz</span></h5>
-									</div>
-									<div class="server-type-logo">
-										<span><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/hp-logo.png'; ?>" alt="hp-logo"></span>
-										<span><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/dell-logo.png'; ?>" alt="dell-logo"></span>
-									</div>
-									<ul>
-										<li>Server - 822B DELL/HP</li>
-										<li>HDD - 1x 250GB HDD NoRaid</li>
-										<li>RAM - 8GB RAM</li>
-										<li>PORT - 1Gbps</li>
-										<li>LOCATION - TX, Dallas TIER-III</li>
-									</ul>
-									<a href="" class="btn--orange">Order (Instant) <i class="fas fa-arrow-right"></i></a>
-								</div>
-							</div>
+							<?php
+							endwhile; 
+							wp_reset_postdata();
+							endif; 
+							?>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-4">
 					<div class="server-type-block-wrap">
-						<h3><i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/servers.png'; ?>" alt="servers"></i>Pro Srvers</h3>
+						<h3><i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/servers.png'; ?>" alt="servers"></i>Pro Servers</h3>
 						<h4>Our Best Selling Pro Servers</h4>
 						<div class="row">
+							<?php
+							global $post;
+							
+							$pro_query = array(
+								'posts_per_page' => 4,
+								'post_type'      => 'product',
+								'tax_query' => array(
+									array(
+										'taxonomy' => 'product_cat',
+										'field'    => 'slug',
+										'terms'    => array( 'pro-servers' ),
+									)
+								)
+							);		
+														
+							$pro_server = new WP_Query($pro_query);
+							if ( $pro_server->have_posts() ) :
+							while ( $pro_server->have_posts() ) : $pro_server->the_post(); 
+							?>
 							<div class="col-md-6">
 								<div class="server-type-block">
 									<div class="server-tye-header">
-										<h5>Intel Xeon 4/8 Core <span>4x 2.20GHz</span></h5>
+										<h5><?php the_title(); ?> <span><?php the_field( 'server_ghz' ); ?></span></h5>
 									</div>
 									<div class="server-type-logo">
-										<span><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/hp-logo.png'; ?>" alt="hp-logo"></span>
-										<span><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/dell-logo.png'; ?>" alt="dell-logo"></span>
+										<?php
+										$server_list_icon = '';
+										$serv_icon_image = get_field('server_icon', get_the_ID());
+										if ( ! empty( $serv_icon_image ) ) {
+											$server_list_icon = $serv_icon_image['url'];
+										}
+										?>
+										<span><img src="<?php echo $server_list_icon; ?>" alt="<?php the_title(); ?>"  class="server-icon-image"></span>
 									</div>
 									<ul>
-										<li>Server - 822B DELL/HP</li>
-										<li>HDD - 1x 250GB HDD NoRaid</li>
-										<li>RAM - 8GB RAM</li>
-										<li>PORT - 1Gbps</li>
-										<li>LOCATION - TX, Dallas TIER-III</li>
+										<li>Server - <?php the_field( 'server_ghz' ); ?></li>
+										<li>HDD - <?php the_field( 'hdd' );  the_field( 'raid' );?></li>
+										<li>RAM - <?php the_field( 'ram' ); ?></li>
+										<li>PORT - <?php the_field( 'port' ); ?></li>
+										<li>LOCATION  - <?php the_field( 'location' ); ?></li>
 									</ul>
-									<a href="" class="btn--orange blue">Order (Instant) <i class="fas fa-arrow-right"></i></a>
+									<a href="<?php the_field( 'instance_order_link' ); ?>" class="btn--orange blue">Order (Instant) <i class="fas fa-arrow-right"></i></a>
 								</div>
 							</div>
-							<div class="col-md-6">
-								<div class="server-type-block">
-									<div class="server-tye-header">
-										<h5>Intel Xeon 4/8 Core <span>4x 2.20GHz</span></h5>
-									</div>
-									<div class="server-type-logo">
-										<span><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/hp-logo.png'; ?>" alt="hp-logo"></span>
-										<span><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/dell-logo.png'; ?>" alt="dell-logo"></span>
-									</div>
-									<ul>
-										<li>Server - 822B DELL/HP</li>
-										<li>HDD - 1x 250GB HDD NoRaid</li>
-										<li>RAM - 8GB RAM</li>
-										<li>PORT - 1Gbps</li>
-										<li>LOCATION - TX, Dallas TIER-III</li>
-									</ul>
-									<a href="" class="btn--orange blue">Order (Instant) <i class="fas fa-arrow-right"></i></a>
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="server-type-block">
-									<div class="server-tye-header">
-										<h5>Intel Xeon 4/8 Core <span>4x 2.20GHz</span></h5>
-									</div>
-									<div class="server-type-logo">
-										<span><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/hp-logo.png'; ?>" alt="hp-logo"></span>
-										<span><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/dell-logo.png'; ?>" alt="dell-logo"></span>
-									</div>
-									<ul>
-										<li>Server - 822B DELL/HP</li>
-										<li>HDD - 1x 250GB HDD NoRaid</li>
-										<li>RAM - 8GB RAM</li>
-										<li>PORT - 1Gbps</li>
-										<li>LOCATION - TX, Dallas TIER-III</li>
-									</ul>
-									<a href="" class="btn--orange blue">Order (Instant) <i class="fas fa-arrow-right"></i></a>
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="server-type-block">
-									<div class="server-tye-header">
-										<h5>Intel Xeon 4/8 Core <span>4x 2.20GHz</span></h5>
-									</div>
-									<div class="server-type-logo">
-										<span><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/hp-logo.png'; ?>" alt="hp-logo"></span>
-										<span><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/dell-logo.png'; ?>" alt="dell-logo"></span>
-									</div>
-									<ul>
-										<li>Server - 822B DELL/HP</li>
-										<li>HDD - 1x 250GB HDD NoRaid</li>
-										<li>RAM - 8GB RAM</li>
-										<li>PORT - 1Gbps</li>
-										<li>LOCATION - TX, Dallas TIER-III</li>
-									</ul>
-									<a href="" class="btn--orange blue">Order (Instant) <i class="fas fa-arrow-right"></i></a>
-								</div>
-							</div>
+							<?php 
+							endwhile; 
+							wp_reset_postdata();
+							endif;
+							?>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-4">
 					<div class="server-type-block-wrap">
-						<h3><i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/servers.png'; ?>" alt="servers"></i>Enterprise Srvers</h3>
+						<h3><i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/servers.png'; ?>" alt="servers"></i>Enterprise Servers</h3>
 						<h4>Our Best Selling Enterprise Servers</h4>
 						<div class="row">
+						    <?php
+							global $post;
+							
+							$enterprise_query = array(
+								'posts_per_page' => 4,
+								'post_type'      => 'product',
+								'tax_query' => array(
+									array(
+										'taxonomy' => 'product_cat',
+										'field'    => 'slug',
+										'terms'    => array( 'enterprise-servers' ),
+									)
+								)
+							);		
+														
+							$enterprise_server = new WP_Query($enterprise_query);
+							if ( $enterprise_server->have_posts() ) :
+							while ( $enterprise_server->have_posts() ) : $enterprise_server->the_post(); 
+							?>
 							<div class="col-md-6">
 								<div class="server-type-block">
 									<div class="server-tye-header">
-										<h5>Intel Xeon 4/8 Core <span>4x 2.20GHz</span></h5>
+										<h5><?php the_title(); ?> <span><?php the_field( 'server_ghz' ); ?></span></h5>
 									</div>
 									<div class="server-type-logo">
-										<span><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/hp-logo.png'; ?>" alt="hp-logo"></span>
-										<span><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/dell-logo.png'; ?>" alt="dell-logo"></span>
+										<?php
+										$server_list_icon = '';
+										$serv_icon_image = get_field('server_icon', get_the_ID());
+										if ( ! empty( $serv_icon_image ) ) {
+											$server_list_icon = $serv_icon_image['url'];
+										}
+										?>
+										<span><img src="<?php echo $server_list_icon; ?>" alt="<?php the_title(); ?>" class="server-icon-image"></span>
 									</div>
 									<ul>
-										<li>Server - 822B DELL/HP</li>
-										<li>HDD - 1x 250GB HDD NoRaid</li>
-										<li>RAM - 8GB RAM</li>
-										<li>PORT - 1Gbps</li>
-										<li>LOCATION - TX, Dallas TIER-III</li>
+										<li>Server - <?php the_field( 'server_ghz' ); ?></li>
+										<li>HDD - <?php the_field( 'hdd' );  the_field( 'raid' );?></li>
+										<li>RAM - <?php the_field( 'ram' ); ?></li>
+										<li>PORT - <?php the_field( 'port' ); ?></li>
+										<li>LOCATION  - <?php the_field( 'location' ); ?></li>
 									</ul>
-									<a href="" class="btn--orange success">Order (Instant) <i class="fas fa-arrow-right"></i></a>
+									<a href="<?php the_field( 'instance_order_link' ); ?>" class="btn--orange success">Order (Instant) <i class="fas fa-arrow-right"></i></a>
 								</div>
 							</div>
-							<div class="col-md-6">
-								<div class="server-type-block">
-									<div class="server-tye-header">
-										<h5>Intel Xeon 4/8 Core <span>4x 2.20GHz</span></h5>
-									</div>
-									<div class="server-type-logo">
-										<span><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/hp-logo.png'; ?>" alt="hp-logo"></span>
-										<span><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/dell-logo.png'; ?>" alt="dell-logo"></span>
-									</div>
-									<ul>
-										<li>Server - 822B DELL/HP</li>
-										<li>HDD - 1x 250GB HDD NoRaid</li>
-										<li>RAM - 8GB RAM</li>
-										<li>PORT - 1Gbps</li>
-										<li>LOCATION - TX, Dallas TIER-III</li>
-									</ul>
-									<a href="" class="btn--orange success">Order (Instant) <i class="fas fa-arrow-right"></i></a>
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="server-type-block">
-									<div class="server-tye-header">
-										<h5>Intel Xeon 4/8 Core <span>4x 2.20GHz</span></h5>
-									</div>
-									<div class="server-type-logo">
-										<span><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/hp-logo.png'; ?>" alt="hp-logo"></span>
-										<span><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/dell-logo.png'; ?>" alt="dell-logo"></span>
-									</div>
-									<ul>
-										<li>Server - 822B DELL/HP</li>
-										<li>HDD - 1x 250GB HDD NoRaid</li>
-										<li>RAM - 8GB RAM</li>
-										<li>PORT - 1Gbps</li>
-										<li>LOCATION - TX, Dallas TIER-III</li>
-									</ul>
-									<a href="" class="btn--orange success">Order (Instant) <i class="fas fa-arrow-right"></i></a>
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="server-type-block">
-									<div class="server-tye-header">
-										<h5>Intel Xeon 4/8 Core <span>4x 2.20GHz</span></h5>
-									</div>
-									<div class="server-type-logo">
-										<span><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/hp-logo.png'; ?>" alt="hp-logo"></span>
-										<span><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/dell-logo.png'; ?>" alt="dell-logo"></span>
-									</div>
-									<ul>
-										<li>Server - 822B DELL/HP</li>
-										<li>HDD - 1x 250GB HDD NoRaid</li>
-										<li>RAM - 8GB RAM</li>
-										<li>PORT - 1Gbps</li>
-										<li>LOCATION - TX, Dallas TIER-III</li>
-									</ul>
-									<a href="" class="btn--orange success">Order (Instant) <i class="fas fa-arrow-right"></i></a>
-								</div>
-							</div>
+							<?php 
+							endwhile; 
+							wp_reset_postdata();
+							endif;
+							?>							
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
+	<?php } ?>
 	
 	<section class="all-server-details section">
 		<div class="navTabs-pills-wrap">
@@ -513,245 +433,209 @@ get_header();?>
 							</tr>
 						</thead>
 						<tbody>
+						    <?php
+							global $post;
+							
+							$budget_query = array(
+								'posts_per_page' => 10,
+								'post_type'      => 'product',
+								'tax_query' => array(
+									array(
+										'taxonomy' => 'product_cat',
+										'field'    => 'slug',
+										'terms'    => array( 'budget-servers' ),
+									)
+								)
+							);		
+														
+							$budget_server = new WP_Query($budget_query);
+							if ( $budget_server->have_posts() ) :
+							while ( $budget_server->have_posts() ) : $budget_server->the_post(); 
+							
+							$price = get_post_meta( get_the_ID(), '_regular_price', true);
+							$price_sale = get_post_meta( get_the_ID(), '_sale_price', true);
+
+							?>									
 							<tr>
 								<td>
-									<span class="logo-type"><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/hp-logo.png'; ?>" alt="hp-logo"></span>
-									<span class="logo-type"><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/dell-logo.png'; ?>" alt="dell-logo"></span>
-									811B
+									<?php 
+									$server_icon = get_template_directory_uri() . '/dist/assets/images/customer-support-2.png';
+									$img_server_icon     = get_field( 'server_icon' );
+									if ( ! empty( $img_server_icon ) ) {
+										$server_icon = $img_server_icon['sizes']['mid_icon'];
+									}
+									if(!empty($server_icon)){ echo"<span class='logo-type'><img src='".$server_icon."'></span>"; }
+									?>										
+									<?php the_field( 'model' ); ?>
 								</td>
-								<td>Intel Xeon 4/8 Core <span class="orangeText">4x 2.20GHz</span></td>
-								<td>8GB <span class="orangeText">RAM</span></td>
-								<td>Yes <span class="orangeText">(512mb)</span></td>
-								<td>1x 250GB HDD</td>
-								<td>TX, Dallas</td>
-								<td>1Gbps</td>
+								<td><?php the_title(); ?> <span class="orangeText"><?php the_field( 'server_ghz' ); ?></span></td>
+								<td><?php the_field( 'ram' ); ?> <span class="orangeText">RAM</span></td>
+								<td><?php the_field( 'raid' ); ?></td>
+								<td><?php the_field( 'hdd' ); ?></td>
+								<td><?php the_field( 'location' ); ?></td>
+								<td><?php the_field( 'port' ); ?></td>
 								<td>
-									<span class="orangeText new-price">$90.00</span>
-									<span class="old-price">$102.00</span>
+								<span class="orangeText new-price"><?php $current_price = (float)$price_sale; echo"$".number_format($current_price, 2); ?></span>
+									<span class="old-price"><?php $old_price = (float)$price;  echo"$".number_format($old_price, 2);  ?></span>
 								</td>
-								<td>Instant</td>
+								<td><?php the_field( 'available' ); ?></td>
 								<td>
-									<a href="" class="btn--orange">Configure <i class="fas fa-arrow-right"></i></a>
+									<a href="<?php /* the_permalink();*/ ?>" class="btn--orange">Configure <i class="fas fa-arrow-right"></i></a>
 								</td>
 							</tr>
-							<tr>
-								<td>
-									<span class="logo-type"><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/hp-logo.png'; ?>" alt="hp-logo"></span>
-									<span class="logo-type"><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/dell-logo.png'; ?>" alt="dell-logo"></span>
-									811B
-								</td>
-								<td>Intel Xeon 4/8 Core <span class="orangeText">4x 2.20GHz</span></td>
-								<td>8GB <span class="orangeText">RAM</span></td>
-								<td>Yes <span class="orangeText">(512mb)</span></td>
-								<td>1x 250GB HDD</td>
-								<td>TX, Dallas</td>
-								<td>1Gbps</td>
-								<td>
-									<span class="orangeText new-price">$90.00</span>
-									<span class="old-price">$102.00</span>
-								</td>
-								<td>Instant</td>
-								<td>
-									<a href="" class="btn--orange">Configure <i class="fas fa-arrow-right"></i></a>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<span class="logo-type"><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/hp-logo.png'; ?>" alt="hp-logo"></span>
-									<span class="logo-type"><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/dell-logo.png'; ?>" alt="dell-logo"></span>
-									811B
-								</td>
-								<td>Intel Xeon 4/8 Core <span class="orangeText">4x 2.20GHz</span></td>
-								<td>8GB <span class="orangeText">RAM</span></td>
-								<td>Yes <span class="orangeText">(512mb)</span></td>
-								<td>1x 250GB HDD</td>
-								<td>TX, Dallas</td>
-								<td>1Gbps</td>
-								<td>
-									<span class="orangeText new-price">$90.00</span>
-									<span class="old-price">$102.00</span>
-								</td>
-								<td>Instant</td>
-								<td>
-									<a href="" class="btn--orange">Configure <i class="fas fa-arrow-right"></i></a>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<span class="logo-type"><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/hp-logo.png'; ?>" alt="hp-logo"></span>
-									<span class="logo-type"><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/dell-logo.png'; ?>" alt="dell-logo"></span>
-									811B
-								</td>
-								<td>Intel Xeon 4/8 Core <span class="orangeText">4x 2.20GHz</span></td>
-								<td>8GB <span class="orangeText">RAM</span></td>
-								<td>Yes <span class="orangeText">(512mb)</span></td>
-								<td>1x 250GB HDD</td>
-								<td>TX, Dallas</td>
-								<td>1Gbps</td>
-								<td>
-									<span class="orangeText new-price">$90.00</span>
-									<span class="old-price">$102.00</span>
-								</td>
-								<td>Instant</td>
-								<td>
-									<a href="" class="btn--orange">Configure <i class="fas fa-arrow-right"></i></a>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<span class="logo-type"><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/hp-logo.png'; ?>" alt="hp-logo"></span>
-									<span class="logo-type"><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/dell-logo.png'; ?>" alt="dell-logo"></span>
-									811B
-								</td>
-								<td>Intel Xeon 4/8 Core <span class="orangeText">4x 2.20GHz</span></td>
-								<td>8GB <span class="orangeText">RAM</span></td>
-								<td>Yes <span class="orangeText">(512mb)</span></td>
-								<td>1x 250GB HDD</td>
-								<td>TX, Dallas</td>
-								<td>1Gbps</td>
-								<td>
-									<span class="orangeText new-price">$90.00</span>
-									<span class="old-price">$102.00</span>
-								</td>
-								<td>Instant</td>
-								<td>
-									<a href="" class="btn--orange">Configure <i class="fas fa-arrow-right"></i></a>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<span class="logo-type"><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/hp-logo.png'; ?>" alt="hp-logo"></span>
-									<span class="logo-type"><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/dell-logo.png'; ?>" alt="dell-logo"></span>
-									811B
-								</td>
-								<td>Intel Xeon 4/8 Core <span class="orangeText">4x 2.20GHz</span></td>
-								<td>8GB <span class="orangeText">RAM</span></td>
-								<td>Yes <span class="orangeText">(512mb)</span></td>
-								<td>1x 250GB HDD</td>
-								<td>TX, Dallas</td>
-								<td>1Gbps</td>
-								<td>
-									<span class="orangeText new-price">$90.00</span>
-									<span class="old-price">$102.00</span>
-								</td>
-								<td>Instant</td>
-								<td>
-									<a href="" class="btn--orange">Configure <i class="fas fa-arrow-right"></i></a>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<span class="logo-type"><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/hp-logo.png'; ?>" alt="hp-logo"></span>
-									<span class="logo-type"><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/dell-logo.png'; ?>" alt="dell-logo"></span>
-									811B
-								</td>
-								<td>Intel Xeon 4/8 Core <span class="orangeText">4x 2.20GHz</span></td>
-								<td>8GB <span class="orangeText">RAM</span></td>
-								<td>Yes <span class="orangeText">(512mb)</span></td>
-								<td>1x 250GB HDD</td>
-								<td>TX, Dallas</td>
-								<td>1Gbps</td>
-								<td>
-									<span class="orangeText new-price">$90.00</span>
-									<span class="old-price">$102.00</span>
-								</td>
-								<td>Instant</td>
-								<td>
-									<a href="" class="btn--orange">Configure <i class="fas fa-arrow-right"></i></a>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<span class="logo-type"><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/hp-logo.png'; ?>" alt="hp-logo"></span>
-									<span class="logo-type"><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/dell-logo.png'; ?>" alt="dell-logo"></span>
-									811B
-								</td>
-								<td>Intel Xeon 4/8 Core <span class="orangeText">4x 2.20GHz</span></td>
-								<td>8GB <span class="orangeText">RAM</span></td>
-								<td>Yes <span class="orangeText">(512mb)</span></td>
-								<td>1x 250GB HDD</td>
-								<td>TX, Dallas</td>
-								<td>1Gbps</td>
-								<td>
-									<span class="orangeText new-price">$90.00</span>
-									<span class="old-price">$102.00</span>
-								</td>
-								<td>Instant</td>
-								<td>
-									<a href="" class="btn--orange">Configure <i class="fas fa-arrow-right"></i></a>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<span class="logo-type"><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/hp-logo.png'; ?>" alt="hp-logo"></span>
-									<span class="logo-type"><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/dell-logo.png'; ?>" alt="dell-logo"></span>
-									811B
-								</td>
-								<td>Intel Xeon 4/8 Core <span class="orangeText">4x 2.20GHz</span></td>
-								<td>8GB <span class="orangeText">RAM</span></td>
-								<td>Yes <span class="orangeText">(512mb)</span></td>
-								<td>1x 250GB HDD</td>
-								<td>TX, Dallas</td>
-								<td>1Gbps</td>
-								<td>
-									<span class="orangeText new-price">$90.00</span>
-									<span class="old-price">$102.00</span>
-								</td>
-								<td>Instant</td>
-								<td>
-									<a href="" class="btn--orange">Configure <i class="fas fa-arrow-right"></i></a>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<span class="logo-type"><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/hp-logo.png'; ?>" alt="hp-logo"></span>
-									<span class="logo-type"><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/dell-logo.png'; ?>" alt="dell-logo"></span>
-									811B
-								</td>
-								<td>Intel Xeon 4/8 Core <span class="orangeText">4x 2.20GHz</span></td>
-								<td>8GB <span class="orangeText">RAM</span></td>
-								<td>Yes <span class="orangeText">(512mb)</span></td>
-								<td>1x 250GB HDD</td>
-								<td>TX, Dallas</td>
-								<td>1Gbps</td>
-								<td>
-									<span class="orangeText new-price">$90.00</span>
-									<span class="old-price">$102.00</span>
-								</td>
-								<td>Instant</td>
-								<td>
-									<a href="" class="btn--orange">Configure <i class="fas fa-arrow-right"></i></a>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<span class="logo-type"><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/hp-logo.png'; ?>" alt="hp-logo"></span>
-									<span class="logo-type"><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/dell-logo.png'; ?>" alt="dell-logo"></span>
-									811B
-								</td>
-								<td>Intel Xeon 4/8 Core <span class="orangeText">4x 2.20GHz</span></td>
-								<td>8GB <span class="orangeText">RAM</span></td>
-								<td>Yes <span class="orangeText">(512mb)</span></td>
-								<td>1x 250GB HDD</td>
-								<td>TX, Dallas</td>
-								<td>1Gbps</td>
-								<td>
-									<span class="orangeText new-price">$90.00</span>
-									<span class="old-price">$102.00</span>
-								</td>
-								<td>Instant</td>
-								<td>
-									<a href="" class="btn--orange">Configure <i class="fas fa-arrow-right"></i></a>
-								</td>
-							</tr>
+							<?php 
+							endwhile; 
+							wp_reset_postdata();
+							endif; 
+							?>
 						</tbody>
 					</table>
 				</div>
 				<div class="tab-pane fade" id="pro-server" role="tabpanel" aria-labelledby="pro-server-tab">
-					View Pro Server
+				<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th>Model</th>
+								<th>CPU</th>
+								<th>RAM</th>
+								<th>RAID</th>
+								<th>HDD</th>
+								<th>LOCATION</th>
+								<th>PORT</th>
+								<th>PRICE</th>
+								<th>AVAILABLE</th>
+								<th>&nbsp;</th>
+							</tr>
+						</thead>
+						<tbody>
+						    <?php
+							global $post;
+							
+							$pro_query = array(
+								'posts_per_page' => 10,
+								'post_type'      => 'product',
+								'tax_query' => array(
+									array(
+										'taxonomy' => 'product_cat',
+										'field'    => 'slug',
+										'terms'    => array('pro-servers'),
+									)
+								)
+							);		
+														
+							$pro_server = new WP_Query($pro_query);
+							if ( $pro_server->have_posts() ) :
+							while ( $pro_server->have_posts() ) : $pro_server->the_post(); 
+								$price = get_post_meta( get_the_ID(), '_regular_price', true);
+								$price_sale = get_post_meta( get_the_ID(), '_sale_price', true);
+							?>									
+							<tr>
+								<td>
+									<?php 
+									$server_icon = get_template_directory_uri() . '/dist/assets/images/customer-support-2.png';
+									$img_server_icon     = get_field( 'server_icon' );
+									if ( ! empty( $img_server_icon ) ) {
+										$server_icon = $img_server_icon['sizes']['mid_icon'];
+									}
+									if(!empty($server_icon)){ echo"<span class='logo-type'><img src='".$server_icon."'></span>"; }
+									?>										
+									<?php the_field( 'model' );  ?>
+								</td>
+								<td><?php the_title(); ?> <span class="orangeText"><?php the_field( 'server_ghz' ); ?></span></td>
+								<td><?php the_field( 'ram' ); ?> <span class="orangeText">RAM</span></td>
+								<td><?php the_field( 'raid' ); ?></td>
+								<td><?php the_field( 'hdd' ); ?></td>
+								<td><?php the_field( 'location' ); ?></td>
+								<td><?php the_field( 'port' ); ?></td>
+								<td>
+								<span class="orangeText new-price"><?php $current_price = (float)$price_sale; echo"$".number_format($current_price, 2); ?></span>
+									<span class="old-price"><?php $old_price = (float)$price;  echo"$".number_format($old_price, 2);  ?></span>
+								</td>
+								<td><?php the_field( 'available' ); ?></td>
+								<td>
+									<a href="<?php /* the_permalink();*/ ?>" class="btn--orange">Configure <i class="fas fa-arrow-right"></i></a>
+								</td>
+							</tr>
+							<?php 
+							endwhile; 
+							wp_reset_postdata();
+							endif; 
+							?>
+						</tbody>
+					</table>
 				</div>
 				<div class="tab-pane fade" id="enterprise-server" role="tabpanel" aria-labelledby="enterprise-server-tab">
-					Enterprise Servers
+				<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th>Model</th>
+								<th>CPU</th>
+								<th>RAM</th>
+								<th>RAID</th>
+								<th>HDD</th>
+								<th>LOCATION</th>
+								<th>PORT</th>
+								<th>PRICE</th>
+								<th>AVAILABLE</th>
+								<th>&nbsp;</th>
+							</tr>
+						</thead>
+						<tbody>
+						    <?php
+							global $post;
+							
+							$enterprise_serv_query = array(
+								'posts_per_page' => 10,
+								'post_type'      => 'product',
+								'tax_query' => array(
+									array(
+										'taxonomy' => 'product_cat',
+										'field'    => 'slug',
+										'terms'    => array('enterprise-servers'),
+									)
+								)
+							);		
+														
+							$ent_server = new WP_Query($enterprise_serv_query);
+							if ( $ent_server->have_posts() ) :
+							while ( $ent_server->have_posts() ) : $ent_server->the_post(); 
+							    $price = get_post_meta( get_the_ID(), '_regular_price', true);
+								$price_sale = get_post_meta( get_the_ID(), '_sale_price', true);
+							?>									
+							<tr>
+								<td>
+									<?php 
+									$server_icon = get_template_directory_uri() . '/dist/assets/images/customer-support-2.png';
+									$img_server_icon     = get_field( 'server_icon' );
+									if ( ! empty( $img_server_icon ) ) {
+										$server_icon = $img_server_icon['sizes']['mid_icon'];
+									}
+									if(!empty($server_icon)){ echo"<span class='logo-type'><img src='".$server_icon."'></span>"; }
+									?>										
+									<?php the_field( 'model' ); ?>
+								</td>
+								<td><?php the_title(); ?> <span class="orangeText"><?php the_field( 'server_ghz' ); ?></span></td>
+								<td><?php the_field( 'ram' ); ?> <span class="orangeText">RAM</span></td>
+								<td><?php the_field( 'raid' ); ?></td>
+								<td><?php the_field( 'hdd' ); ?></td>
+								<td><?php the_field( 'location' ); ?></td>
+								<td><?php the_field( 'port' ); ?></td>
+								<td>
+								<span class="orangeText new-price"><?php $current_price = (float)$price_sale; echo"$".number_format($current_price, 2); ?></span>
+									<span class="old-price"><?php $old_price = (float)$price;  echo"$".number_format($old_price, 2);  ?></span>
+								</td>
+								<td><?php the_field( 'available' ); ?></td>
+								<td>
+									<a href="<?php /* the_permalink();*/ ?>" class="btn--orange">Configure <i class="fas fa-arrow-right"></i></a>
+								</td>
+							</tr>
+							<?php 
+							endwhile; 
+							wp_reset_postdata();
+							endif; 
+							?>
+						</tbody>
+					</table>
 				</div>
 			</div>
 		</div>
@@ -760,7 +644,7 @@ get_header();?>
 	<section class="ds-feature-compare section">
 		<div class="wrapper">
 			<div class="section-header u-txt-center">
-				<h2 class="section-header__title">Budget Vs Pro Vs Enterprise Feature Compare</h2>
+				<h2 class="section-header__title"><?php the_field('budget_vs_pro_vs_enterprise_title'); ?></h2>
 				<span class="section-header__decoration-element"></span>
 			</div>
 			<div class="ds-feature-table">
@@ -768,30 +652,21 @@ get_header();?>
 					<div class="ds-feature-table__block--header">&nbsp;</div>
 					<div class="ds-feature-table__block--content">
 						<ul>
-							<li>Virtualization Ready <i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/question.png'; ?>" alt="question"></i></li>
-							<li>Bare Metal Cloud Ready <i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/question.png'; ?>" alt="question"></i></li>
-							<li>Private Rack Ready <i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/question.png'; ?>" alt="question"></i></li>
-							<li>Hybrid Infrastructure Ready <i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/question.png'; ?>" alt="question"></i></li>
-							<li>Advanced Networking <i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/question.png'; ?>" alt="question"></i></li>
-							<li>NFS/SMB Backup Storage</li>
-							<li>Dedicated VLAN <i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/question.png'; ?>" alt="question"></i></li>
-							<li>Data Center Rating <i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/question.png'; ?>" alt="question"></i></li>
-							<li>Server Network Port(s)</li>
-							<li>Bandwidth (included)</li>
-							<li>Bandwidth Upgrades</li>
-							<li>IPv4/IPv6</li>
-							<li>Data Center Interconnect <i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/question.png'; ?>" alt="question"></i></li>
-							<li>Managed Services Available <i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/question.png'; ?>" alt="question"></i></li>
-							<li>Reseller & Affiliate Discounts</li>
-							<li>Uptime SLA (Network)</li>
-							<li>Uptime SLA (Power)</li>
-							<li>Maximum CPU Cores</li>
-							<li>Maximum RAM</li>
-							<li>SSD Disks</li>
+							<?php							
+							if ( have_rows( 'budget_vs_pro_vs_enterprise_comparison' ) ) : 
+							while ( have_rows( 'budget_vs_pro_vs_enterprise_comparison' ) ) :
+							the_row();						
+							?>
+							<li><?php the_sub_field('feature_heading');?> <?php if(!empty(get_sub_field('help_text'))){ ?> <i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/question.png'; ?>" alt="question"></i><?php  }?></li>							
+							<?php 
+							endwhile; 
+							endif;			
+							?>
 						</ul>
 					</div>
 					<div class="ds-feature-table__block--footer">&nbsp;</div>
 				</div>
+				
 				<div class="ds-feature-table__block">
 					<div class="ds-feature-table__block--header">
 						<div class="ds-feature-table-icon-box">
@@ -802,34 +677,53 @@ get_header();?>
 					</div>
 					<div class="ds-feature-table__block--content">
 						<ul>
-							<li><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/tick-green.png'; ?>" alt="tick-green" class="tick-green"></li>
-							<li><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/cancel.png'; ?>" alt="cancel" class="cancel"></li>
-							<li><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/cancel.png'; ?>" alt="cancel" class="cancel"></li>
-							<li><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/cancel.png'; ?>" alt="cancel" class="cancel"></li>
-							<li><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/cancel.png'; ?>" alt="cancel" class="cancel"></li>
-							<li>Optional</li>
-							<li><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/cancel.png'; ?>" alt="cancel" class="cancel"></li>
-							<li>Tier - Tier-III & IV</li>
-							<li>1x1Gbits</li>
-							<li>10TB</li>
-							<li>Up to 100TB</li>
-							<li>
-								<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/tick-green.png'; ?>" alt="tick-green" class="tick-green">
-								<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/cancel.png'; ?>" alt="cancel" class="cancel">
-							</li>
-							<li><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/cancel.png'; ?>" alt="cancel" class="cancel"></li>
-							<li>Optional</li>
-							<li><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/cancel.png'; ?>" alt="cancel" class="cancel"></li>
-							<li>99.50%</li>
-							<li>99.50%</li>
-							<li>12 cores</li>
-							<li>32gb</li>
-							<li><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/cancel.png'; ?>" alt="cancel" class="cancel"></li>
+							<?php						
+							if ( have_rows( 'budget_vs_pro_vs_enterprise_comparison' ) ) : 
+							while ( have_rows( 'budget_vs_pro_vs_enterprise_comparison' ) ) :
+							the_row();	
+							$yes_image = "<img src='".get_template_directory_uri(). "/dist/assets/images/tick-green.png' alt='tick-green' class='tick-green'>";
+							$no_image = "<img src='".get_template_directory_uri(). "/dist/assets/images/cancel.png' alt='cancel' class='cancel'>";
+							$yes_no_val = get_sub_field('budget_servers'); 
+							$yes_no = explode(',',$yes_no_val);							
+							?>
+							<li> 
+							<?php 
+							if(is_array($yes_no) && count($yes_no)>1){
+								foreach($yes_no as $row){
+									if(strtolower($row) =='yes'){
+										echo $yes_image;
+									}
+									else if(strtolower($row) =='no'){
+										echo $no_image;
+									}else{
+										echo $row;	
+									}
+								}
+							}else{
+								if(strtolower($yes_no_val) =='yes'){
+									echo $yes_image;
+								}
+								else if(strtolower($yes_no_val) =='no'){
+									echo $no_image;
+								}else{
+									$result = !empty($yes_no_val)?$yes_no_val:'&nbsp;';
+									echo $result;
+								}
+							} 							
+							?>
+							</li>							
+							<?php 
+							endwhile; 
+							endif;			
+							?>
 						</ul>
 					</div>
 					<div class="ds-feature-table__block--footer">
-						<a href="" class="btn--orange">View Budget Servers</a>
-						<a href="">20 configuration(s) available</a>
+						<?php 
+						$budget_servers = get_field('budget_servers'); 
+						?>
+						<a href="<?php if(isset($budget_servers['view_server_link'])){ echo $budget_servers['view_server_link']; }?>" class="btn--orange"><?php if(isset($budget_servers['view_server_button_label'])){ echo $budget_servers['view_server_button_label']; }?></a>
+						<a href="<?php if(isset($budget_servers['view_server_link'])){ echo $budget_servers['view_server_link']; }?>"><?php if(isset($budget_servers['configuration_available_text'])){ echo $budget_servers['configuration_available_text']; }?></a>
 					</div>
 				</div>
 				<div class="ds-feature-table__block">
@@ -842,34 +736,53 @@ get_header();?>
 					</div>
 					<div class="ds-feature-table__block--content">
 						<ul>
-							<li><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/tick-green.png'; ?>" alt="tick-green" class="tick-green"></li>
-							<li><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/cancel.png'; ?>" alt="cancel" class="cancel"></li>
-							<li><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/cancel.png'; ?>" alt="cancel" class="cancel"></li>
-							<li><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/cancel.png'; ?>" alt="cancel" class="cancel"></li>
-							<li><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/cancel.png'; ?>" alt="cancel" class="cancel"></li>
-							<li>Optional</li>
-							<li>Yes (1x)</li>
-							<li>Tier - Tier-III & IV</li>
-							<li>2x1Gbits</li>
-							<li>20TB</li>
-							<li>Up to 1Gbits Unlimited </li>
+							<?php					
+							if ( have_rows( 'budget_vs_pro_vs_enterprise_comparison' ) ) : 
+							while ( have_rows( 'budget_vs_pro_vs_enterprise_comparison' ) ) :
+							the_row();	
+							$yes_image = "<img src='".get_template_directory_uri(). "/dist/assets/images/tick-green.png' alt='tick-green' class='tick-green'>";
+							$no_image = "<img src='".get_template_directory_uri(). "/dist/assets/images/cancel.png' alt='cancel' class='cancel'>";
+							$yes_no_val = get_sub_field('pro_servers'); 
+							$yes_no = explode(',',$yes_no_val);							
+							?>
 							<li>
-								<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/tick-green.png'; ?>" alt="tick-green" class="tick-green">
-								<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/tick-green.png'; ?>" alt="tick-green" class="tick-green">
-							</li>
-							<li><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/cancel.png'; ?>" alt="cancel" class="cancel"></li>
-							<li>Optional</li>
-							<li><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/cancel.png'; ?>" alt="cancel" class="cancel"></li>
-							<li>99.50%</li>
-							<li>100%</li>
-							<li>16 cores</li>
-							<li>128gb</li>
-							<li><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/tick-green.png'; ?>" alt="tick-green" class="tick-green"></li>
+							<?php 
+							if(is_array($yes_no) && count($yes_no)>1){
+								foreach($yes_no as $row){
+									if(strtolower($row) =='yes'){
+										echo $yes_image;
+									}
+									else if(strtolower($row) =='no'){
+										echo $no_image;
+									}else{
+										echo $row;	
+									}
+								}
+							}else{
+								if(strtolower($yes_no_val) =='yes'){
+									echo $yes_image;
+								}
+								else if(strtolower($yes_no_val) =='no'){
+									echo $no_image;
+								}else{
+									$result = !empty($yes_no_val)?$yes_no_val:'&nbsp;';
+									echo $result;
+								}
+							} 							
+							?>
+							</li>							
+							<?php 
+							endwhile; 
+							endif;			
+							?>
 						</ul>
 					</div>
 					<div class="ds-feature-table__block--footer">
-						<a href="" class="btn--orange">View Pro Servers</a>
-						<a href="">27 configuration(s) available</a>
+						<?php 
+						$pro_servers = get_field('pro_servers'); 
+						?>
+						<a href="<?php if(isset($pro_servers['view_server_link'])){ echo $pro_servers['view_server_link']; }?>" class="btn--orange"><?php if(isset($pro_servers['view_server_button_label'])){ echo $pro_servers['view_server_button_label']; }?></a>
+						<a href="<?php if(isset($pro_servers['view_server_link'])){ echo $pro_servers['view_server_link']; }?>"><?php if(isset($pro_servers['configuration_available_text'])){ echo $pro_servers['configuration_available_text']; }?></a>
 					</div>
 				</div>
 				<div class="ds-feature-table__block">
@@ -877,39 +790,58 @@ get_header();?>
 						<div class="ds-feature-table-icon-box">
 							<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/budget-server.png'; ?>" alt="budget-server">
 						</div>
-						<h3>Budget Servers</h3>
+						<h3>Enterprise Servers</h3>
 						<h4>Prebuilt Servers</h4>
 					</div>
 					<div class="ds-feature-table__block--content">
 						<ul>
-							<li><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/tick-green.png'; ?>" alt="tick-green" class="tick-green"></li>
-							<li><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/cancel.png'; ?>" alt="cancel" class="cancel"></li>
-							<li><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/cancel.png'; ?>" alt="cancel" class="cancel"></li>
-							<li><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/cancel.png'; ?>" alt="cancel" class="cancel"></li>
-							<li><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/cancel.png'; ?>" alt="cancel" class="cancel"></li>
-							<li>Optional</li>
-							<li>Yes (Up to 10x)</li>
-							<li>Tier - Tier-III & IV</li>
-							<li>Up to 4x10Gbits</li>
-							<li>100TB</li>
-							<li>Up to 10Gbits Unlimited </li>
+						<?php					
+							if ( have_rows( 'budget_vs_pro_vs_enterprise_comparison' ) ) : 
+							while ( have_rows( 'budget_vs_pro_vs_enterprise_comparison' ) ) :
+							the_row();	
+							$yes_image = "<img src='".get_template_directory_uri(). "/dist/assets/images/tick-green.png' alt='tick-green' class='tick-green'>";
+							$no_image = "<img src='".get_template_directory_uri(). "/dist/assets/images/cancel.png' alt='cancel' class='cancel'>";
+							$yes_no_val = get_sub_field('enterprise_servers'); 
+							$yes_no = explode(',',$yes_no_val);							
+							?>
 							<li>
-								<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/tick-green.png'; ?>" alt="tick-green" class="tick-green">
-								<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/tick-green.png'; ?>" alt="tick-green" class="tick-green">
-							</li>
-							<li>Optional</li>
-							<li>Optional</li>
-							<li><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/tick-green.png'; ?>" alt="tick-green" class="tick-green"></li>
-							<li>100%</li>
-							<li>100%</li>
-							<li>68 cores</li>
-							<li>512gb</li>
-							<li>&nbsp;</li>
+							<?php 
+							if(is_array($yes_no) && count($yes_no)>1){
+								foreach($yes_no as $row){
+									if(strtolower($row) =='yes'){
+										echo $yes_image;
+									}
+									else if(strtolower($row) =='no'){
+										echo $no_image;
+									}else{
+										echo $row;	
+									}
+								}
+							}else{
+								if(strtolower($yes_no_val) =='yes'){
+									echo $yes_image;
+								}
+								else if(strtolower($yes_no_val) =='no'){
+									echo $no_image;
+								}else{
+									$result = !empty($yes_no_val)?$yes_no_val:'&nbsp;';
+									echo $result;
+								}
+							} 							
+							?>
+							</li>							
+							<?php 
+							endwhile; 
+							endif;			
+							?>
 						</ul>
 					</div>
 					<div class="ds-feature-table__block--footer">
-						<a href="" class="btn--orange">View Enterprise Servers</a>
-						<a href="">56 configuration(s) available</a>
+					<?php 
+						$enterprice_servers = get_field('enterprise_servers'); 
+						?>
+						<a href="<?php if(isset($enterprice_servers['view_server_link'])){ echo $enterprice_servers['view_server_link']; }?>" class="btn--orange"><?php if(isset($enterprice_servers['view_server_button_label'])){ echo $enterprice_servers['view_server_button_label']; }?></a>
+						<a href="<?php if(isset($enterprice_servers['view_server_link'])){ echo $enterprice_servers['view_server_link']; }?>"><?php if(isset($enterprice_servers['configuration_available_text'])){ echo $enterprice_servers['configuration_available_text']; }?></a>
 					</div>
 				</div>
 			</div>

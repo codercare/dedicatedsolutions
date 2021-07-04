@@ -53,20 +53,20 @@
 		<?php wp_footer(); ?>
 		<script>			
 			jQuery(document).ready(function($) {
-				$('#fullpage').fullpage({
-					licenseKey: '71051AA7-77BC4D43-BEDAB639-090EF836',
-					fitToSection: true,
-					navigation: true,
-					navigationPosition: 'right',
-					responsiveWidth: 768,
-					onLeave: function(index, next, direction) {
-						if (next.index != 0) {
-						$('.site-header').addClass('site-header--on-scroll');
-						} else {
-						$('.site-header').removeClass('site-header--on-scroll');
-						}
-					}
-				});
+				// $('#fullpage').fullpage({
+				// 	licenseKey: '71051AA7-77BC4D43-BEDAB639-090EF836',
+				// 	fitToSection: true,
+				// 	navigation: true,
+				// 	navigationPosition: 'right',
+				// 	responsiveWidth: 768,
+				// 	onLeave: function(index, next, direction) {
+				// 		if (next.index != 0) {
+				// 		$('.site-header').addClass('site-header--on-scroll');
+				// 		} else {
+				// 		$('.site-header').removeClass('site-header--on-scroll');
+				// 		}
+				// 	}
+				// });
 				$('.av-gridder').gridderExpander({
 					scroll: true,
 					scrollOffset: 30,
@@ -75,7 +75,7 @@
 					animationEasing: "easeInOutExpo",
 					showNav: false,                      // Show Navigation
 				});
-				$("#gridder_id_1").trigger("click");				
+							
 			});	
 				
 		</script>

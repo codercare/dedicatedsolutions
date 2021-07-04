@@ -92,3 +92,9 @@ function remove_admin_bar() {
 		 show_admin_bar(false);
 	//}
 }
+
+function strlimit($str,$limit=10,$add='...'){
+	$str = substr($str, 0,$limit).$add;
+	return $str;
+}
+

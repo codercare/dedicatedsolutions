@@ -297,3 +297,9 @@ get_header();?>
 <?php endwhile; // end of the loop. ?>
 </main>
 <?php get_footer(); ?>
+
+<script>			
+	jQuery(document).ready(function($) {				
+		// $("#gridder_id_1").trigger("click");				
+	});
+</script>

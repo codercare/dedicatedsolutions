@@ -181,7 +181,7 @@
             "key": "field_609513300d491",
             "label": "Learn More",
             "name": "learn_more",
-            "type": "url",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -191,7 +191,10 @@
                 "id": ""
             },
             "default_value": "",
-            "placeholder": ""
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         },
         {
             "key": "field_608d928ad7169",
@@ -1495,5 +1498,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "Form fields for home page.",
-    "modified": 1624129720
+    "modified": 1625452307
 }

@@ -1,6 +1,5 @@
 <?php
 /* Template Name: Dedicated Server Design */ 
-
 get_header();?>
 ?>
 <main id="fullpage" class="site-main">

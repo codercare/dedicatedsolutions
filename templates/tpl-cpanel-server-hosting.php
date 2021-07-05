@@ -188,7 +188,7 @@ while ( have_posts() ) : the_post();
 									</div>
 									<ul>
 										<li>Server - <?php the_field( 'server_ghz' ); ?></li>
-										<li>HDD - <?php $hdd = get_field( 'hdd' );  $raid = get_field( 'raid' ); echo strlimit($hdd.' '.$raid,'25','')?></li>
+										<li>HDD - <?php $hdd = get_field( 'hdd' );  $raid = get_field( 'raid' ); echo strlimit(strip_tags($hdd.' '.$raid),'25','');  ?></li>
 										<li>RAM - <?php the_field( 'ram' ); ?></li>
 										<li>PORT - <?php the_field( 'port' ); ?></li>
 										<li>LOCATION  - <?php the_field( 'location' ); ?></li>
@@ -245,7 +245,7 @@ while ( have_posts() ) : the_post();
 									</div>
 									<ul>
 										<li>Server - <?php the_field( 'server_ghz' ); ?></li>
-										<li>HDD - <?php the_field( 'hdd' );  the_field( 'raid' );?></li>
+										<li><?php $hdd = get_field( 'hdd' );  $raid = get_field( 'raid' ); echo strlimit(strip_tags($hdd.' '.$raid),'25','');  ?></li>
 										<li>RAM - <?php the_field( 'ram' ); ?></li>
 										<li>PORT - <?php the_field( 'port' ); ?></li>
 										<li>LOCATION  - <?php the_field( 'location' ); ?></li>
@@ -302,7 +302,7 @@ while ( have_posts() ) : the_post();
 									</div>
 									<ul>
 										<li>Server - <?php the_field( 'server_ghz' ); ?></li>
-										<li>HDD - <?php the_field( 'hdd' );  the_field( 'raid' );?></li>
+										<li><?php $hdd = get_field( 'hdd' );  $raid = get_field( 'raid' ); echo strlimit(strip_tags($hdd.' '.$raid),'25','');  ?></li>
 										<li>RAM - <?php the_field( 'ram' ); ?></li>
 										<li>PORT - <?php the_field( 'port' ); ?></li>
 										<li>LOCATION  - <?php the_field( 'location' ); ?></li>

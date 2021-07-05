@@ -13,7 +13,7 @@ while ( have_posts() ) : the_post();
 		$banner_image_url = $banner_image['sizes']['banner_image'];
 	}
 ?>
-	<section class="section">
+	<section  class="section">
 		<section class="page-banner os-control-page-banner" style="background-image:url('<?php echo $banner_image_url; ?>')">
 			<div class="wrapper">
 				<div class="page-banner-content">
@@ -30,7 +30,7 @@ while ( have_posts() ) : the_post();
 								$button_link_icon = $button_icon['sizes']['small_icon'];
 							}
 							?>
-							<a href="<?php the_field( 'button_link' ); ?>" class="btn--orange">
+							<a href="<?php the_sub_field( 'button_link' ); ?>" class="btn--orange">
 								<i class="btn-icon">
 									<img src="<?php echo $button_link_icon; ?>" alt="<?php the_sub_field( 'button_lable' ); ?>">
 								</i>
@@ -90,7 +90,7 @@ while ( have_posts() ) : the_post();
 		</section>
 	</section>
 	
-	<section class="section">
+	<section data-anchor="section2"  class="section">
 		<section class="linux-os-section">
 			<div class="wrapper">
 				<div class="row">
@@ -193,7 +193,7 @@ while ( have_posts() ) : the_post();
 	</section>
 
 
-	<section class="virtulization-os section">
+	<section  class="virtulization-os section">
 		<div class="wrapper">
 			<div class="section-header u-txt-center">
 				<h2 class="section-header__title"><?php the_field( 'virtulization_os_title' ); ?></h2>
@@ -299,7 +299,7 @@ while ( have_posts() ) : the_post();
 		</div>
 	</section>
 
-	<section class="section">
+	<section  class="section">
 		<section class="control-panels-section">
 			<div class="wrapper">
 				<div class="section-header u-txt-center">
@@ -397,3 +397,22 @@ while ( have_posts() ) : the_post();
 <?php endwhile; // end of the loop. ?>
 
 <?php get_footer(); ?>
+<script>			
+	// jQuery(document).ready(function($) {
+	// 	$('#fullpage').fullpage({
+	// 		licenseKey: '71051AA7-77BC4D43-BEDAB639-090EF836',
+	// 		fitToSection: true,
+	// 		navigation: true,
+	// 		anchors: ['section1', 'section2', 'section3', 'section4','section5','section6','section7','section8','section9','section10'],
+	// 		navigationPosition: 'right',
+	// 		responsiveWidth: 768,
+	// 		onLeave: function(index, next, direction) {
+	// 			if (next.index != 0) {
+	// 			$('.site-header').addClass('site-header--on-scroll');
+	// 			} else {
+	// 			$('.site-header').removeClass('site-header--on-scroll');
+	// 			}
+	// 		}
+	// 	});					
+	// });	
+</script>

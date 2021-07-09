@@ -37,6 +37,7 @@ function required_custom_post_types(){
    ));
    */
     // Why Us
+    /*
     register_post_type('why-us', array(
         'labels' => array('name' => 'Why Us'),
         'public' => true,
@@ -45,9 +46,9 @@ function required_custom_post_types(){
         'rewrite'=> array('slug'=> 'services'),
         'menu_icon' => 'dashicons-awards'
     ));
+    */
 
-   // Testimonials 
-
+    // Testimonials 
     $testimonial_labels = array(
         'name'                  => _x( 'Testimonials', 'Post type general name', 'dedicatedsolutions' ),
         'singular_name'         => _x( 'Testimonial', 'Post type singular name', 'dedicatedsolutions' ),
@@ -132,6 +133,7 @@ add_action('init','required_custom_post_types');
  * 
  * List Custom meta and Feature Image on testimonial custom post type
  */
+
 add_filter('manage_testimonials_posts_columns', 'add_img_column');
 add_filter('manage_testimonials_posts_custom_column', 'manage_img_column', 10, 2);
 function add_img_column($columns) {

@@ -23,17 +23,17 @@ get_header();?>
 	</section>
 	<section class="press-release">
 		<div class="wrapper">
-			<div class="section-header u-txt-center">
-				<h2 class="section-header__title"><?php the_field( 'press_release_block_title' ); ?></h2>
-				<span class="section-header__decoration-element"></span>
-			</div>
-			<div class="press-relase-block-wrap">
-			    <?php
-				global $post;
-				$press_release = get_posts( array(
-					'posts_per_page' => 2,
-					'post_type'      => 'press-release'
-					));
+		<div class="section-header u-txt-center">
+			<h2 class="section-header__title"><?php the_field( 'press_release_block_title' ); ?></h2>
+			<span class="section-header__decoration-element"></span>
+		</div>
+		<div class="press-relase-block-wrap">
+			<?php
+			global $post;
+			$press_release = get_posts( array(
+				'posts_per_page' => 2,
+				'post_type'      => 'press-release'
+				));
 
 				if ( $press_release ) {
 				$count = 1;
@@ -43,7 +43,7 @@ get_header();?>
 					<div class="row">
 						<div class="col-md-6 <?php if($count %2 === 0){ echo 'order-md-1'; } ?> pr-md-0">
 							<figure class="thumbnail-img">
-							    <?php the_post_thumbnail( 'press_image_center' );?>								
+								<?php the_post_thumbnail( 'press_image_center' );?>								
 							</figure>
 						</div>
 						<div class="col-md-6">
@@ -62,8 +62,8 @@ get_header();?>
 				endforeach;
 				wp_reset_postdata();
 				}
-				?>
-			</div>
+			?>
+		</div>
 		</div>
 	</section>
 
@@ -85,17 +85,19 @@ get_header();?>
 				if ( $awards ) {
 				$count = 1;
 				foreach ( $awards as $post ) : 
-				setup_postdata( $post ); ?>
+				setup_postdata( $post ); 
+				
+				$external_url = get_post_meta(get_the_ID(),'external_link',true);
+				$new_tab = get_post_meta(get_the_ID(),'open_in_new_tab',true);
+				?>
 					<div class="col-md-4">
 						<div class="awards-block award-1">
 							<div class="awards-block-content">
 								<div class="award-logo">
-								    <?php 
-									
-									the_post_thumbnail('full');?>		
+								    <?php the_post_thumbnail('full');?>		
 								</div>
 								<h3><?php the_title(); ?></h3>
-								<a href="<?php the_permalink(); ?>" class="btn--orange">Read Full Review</a>
+								<a href="<?php echo $external_url; ?>" <?php if(isset($new_tab) && $new_tab ==1){ echo 'target="_blank"'; }?>  class="btn--orange">Read Full Review</a>
 							</div>
 						</div>
 					</div>

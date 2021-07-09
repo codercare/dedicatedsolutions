@@ -20,30 +20,6 @@
             "prepend": "",
             "append": "",
             "maxlength": ""
-        },
-        {
-            "key": "field_609c041123dcf",
-            "label": "Photo",
-            "name": "photo",
-            "type": "image",
-            "instructions": "best [W:200px , 200px]",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array",
-            "preview_size": "medium",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": ""
         }
     ],
     "location": [
@@ -65,5 +41,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1624129901
+    "modified": 1625803805
 }

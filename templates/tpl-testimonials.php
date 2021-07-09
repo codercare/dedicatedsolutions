@@ -14,7 +14,6 @@ get_header();?>
 				<div class="row">
 				    <?php
 					global $post;
-
 					$testimonials = get_posts( array(
 						'offset' => 0,
 						'posts_per_page' => 3,
@@ -52,7 +51,6 @@ get_header();?>
 				<div class="row">
 					<?php
 					global $post;
-
 					$testimonial_more = get_posts( array(
 						'offset' => 3,
 						'posts_per_page' => 6,

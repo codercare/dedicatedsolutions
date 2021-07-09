@@ -6,6 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title><?php bloginfo( 'title' ); ?></title>
 		<?php wp_head(); ?>
+		<?php echo do_shortcode('[dedicated_shopping_cart_link target="#js-shopping-cart-link"]') ?>
 	</head>
 
 	<body <?php body_class(); ?>>
@@ -35,8 +36,10 @@
 						</div>
 					</div>
 					<div class="rows__small-4 rows__medium-2 rows--item-vertical-center">
+						<a href="<?php echo do_shortcode('[dedicated_client_area_url]') ?>" class="login">Log In </a> &nbsp;&nbsp;
+						<div id="js-shopping-cart-link" class="shopping-cart-link"></div>
 						<a href="<?php the_field( 'banner_dedicated_server_button_link' ); ?>" class="btn--orange u-mb-untill-small ml-auto">
-							<div class="btn-icon"><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/chat@2x.png'; ?>" alt="" srcset=""></div><span class="btn-label btn-txt-um">Live Chat</span>
+							<div class="btn-icon"><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/chat@2x.png'; ?>" alt="" srcset=""></div><span class="btn-label btn-txt-um">Chat</span>
 						</a>
 						<div class="site-header__menu-icon">
 							<div class="site-header__menu-icon__middle"></div>

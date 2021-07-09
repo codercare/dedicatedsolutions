@@ -1,5 +1,5 @@
 <?php
-/* Template Name: Dedicated Servers */ 
+/* Dedicated Servers */ 
 
 get_header();?>
 <main id="fullpage" class="site-main">
@@ -417,14 +417,225 @@ get_header();?>
 		<div class="server-details-table-wrap">
 			<div class="tab-content" id="bmc-pills-tabContent">
 				<div class="tab-pane fade show active" id="budget-server" role="tabpanel" aria-labelledby="budget-server-tab">
-					<?php echo do_shortcode('[dedicated_pricing_info product_group_id=358 discount=20 caption="Budget Servers"]');?>
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th>Model</th>
+								<th>CPU</th>
+								<th>RAM</th>
+								<th>RAID</th>
+								<th>HDD</th>
+								<th>LOCATION</th>
+								<th>PORT</th>
+								<th>PRICE</th>
+								<th>AVAILABLE</th>
+								<th>&nbsp;</th>
+							</tr>
+						</thead>
+						<tbody>
+						    <?php
+							global $post;
+							
+							$budget_query = array(
+								'posts_per_page' => 10,
+								'post_type'      => 'product',
+								'tax_query' => array(
+									array(
+										'taxonomy' => 'product_cat',
+										'field'    => 'slug',
+										'terms'    => array( 'budget-servers' ),
+									)
+								)
+							);		
+														
+							$budget_server = new WP_Query($budget_query);
+							if ( $budget_server->have_posts() ) :
+							while ( $budget_server->have_posts() ) : $budget_server->the_post(); 
+							
+							$price = get_post_meta( get_the_ID(), '_regular_price', true);
+							$price_sale = get_post_meta( get_the_ID(), '_sale_price', true);
+
+							?>									
+							<tr>
+								<td>
+									<?php 
+									$server_icon = get_template_directory_uri() . '/dist/assets/images/customer-support-2.png';
+									$img_server_icon     = get_field( 'server_icon' );
+									if ( ! empty( $img_server_icon ) ) {
+										$server_icon = $img_server_icon['sizes']['mid_icon'];
+									}
+									if(!empty($server_icon)){ echo"<span class='logo-type'><img src='".$server_icon."'></span>"; }
+									?>										
+									<?php the_field( 'model' ); ?>
+								</td>
+								<td><?php the_title(); ?> <span class="orangeText"><?php the_field( 'server_ghz' ); ?></span></td>
+								<td><?php the_field( 'ram' ); ?> <span class="orangeText">RAM</span></td>
+								<td><?php the_field( 'raid' ); ?></td>
+								<td><?php the_field( 'hdd' ); ?></td>
+								<td><?php the_field( 'location' ); ?></td>
+								<td><?php the_field( 'port' ); ?></td>
+								<td>
+								<span class="orangeText new-price"><?php $current_price = (float)$price_sale; echo"$".number_format($current_price, 2); ?></span>
+									<span class="old-price"><?php $old_price = (float)$price;  echo"$".number_format($old_price, 2);  ?></span>
+								</td>
+								<td><?php the_field( 'available' ); ?></td>
+								<td>
+									<a href="<?php /* the_permalink();*/ ?>" class="btn--orange">Configure <i class="fas fa-arrow-right"></i></a>
+								</td>
+							</tr>
+							<?php 
+							endwhile; 
+							wp_reset_postdata();
+							endif; 
+							?>
+						</tbody>
+					</table>
 				</div>
 				<div class="tab-pane fade" id="pro-server" role="tabpanel" aria-labelledby="pro-server-tab">
-					<?php echo do_shortcode('[dedicated_pricing_info product_group_id=331 discount=20 caption="Pro Servers"]');?>
+				<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th>Model</th>
+								<th>CPU</th>
+								<th>RAM</th>
+								<th>RAID</th>
+								<th>HDD</th>
+								<th>LOCATION</th>
+								<th>PORT</th>
+								<th>PRICE</th>
+								<th>AVAILABLE</th>
+								<th>&nbsp;</th>
+							</tr>
+						</thead>
+						<tbody>
+						    <?php
+							global $post;
+							
+							$pro_query = array(
+								'posts_per_page' => 10,
+								'post_type'      => 'product',
+								'tax_query' => array(
+									array(
+										'taxonomy' => 'product_cat',
+										'field'    => 'slug',
+										'terms'    => array('pro-servers'),
+									)
+								)
+							);		
+														
+							$pro_server = new WP_Query($pro_query);
+							if ( $pro_server->have_posts() ) :
+							while ( $pro_server->have_posts() ) : $pro_server->the_post(); 
+								$price = get_post_meta( get_the_ID(), '_regular_price', true);
+								$price_sale = get_post_meta( get_the_ID(), '_sale_price', true);
+							?>									
+							<tr>
+								<td>
+									<?php 
+									$server_icon = get_template_directory_uri() . '/dist/assets/images/customer-support-2.png';
+									$img_server_icon     = get_field( 'server_icon' );
+									if ( ! empty( $img_server_icon ) ) {
+										$server_icon = $img_server_icon['sizes']['mid_icon'];
+									}
+									if(!empty($server_icon)){ echo"<span class='logo-type'><img src='".$server_icon."'></span>"; }
+									?>										
+									<?php the_field( 'model' );  ?>
+								</td>
+								<td><?php the_title(); ?> <span class="orangeText"><?php the_field( 'server_ghz' ); ?></span></td>
+								<td><?php the_field( 'ram' ); ?> <span class="orangeText">RAM</span></td>
+								<td><?php the_field( 'raid' ); ?></td>
+								<td><?php the_field( 'hdd' ); ?></td>
+								<td><?php the_field( 'location' ); ?></td>
+								<td><?php the_field( 'port' ); ?></td>
+								<td>
+								<span class="orangeText new-price"><?php $current_price = (float)$price_sale; echo"$".number_format($current_price, 2); ?></span>
+									<span class="old-price"><?php $old_price = (float)$price;  echo"$".number_format($old_price, 2);  ?></span>
+								</td>
+								<td><?php the_field( 'available' ); ?></td>
+								<td>
+									<a href="<?php the_permalink(); ?>" class="btn--orange">Configure <i class="fas fa-arrow-right"></i></a>
+								</td>
+							</tr>
+							<?php 
+							endwhile; 
+							wp_reset_postdata();
+							endif; 
+							?>
+						</tbody>
+					</table>
 				</div>
 				<div class="tab-pane fade" id="enterprise-server" role="tabpanel" aria-labelledby="enterprise-server-tab">
-					<?php echo do_shortcode('[dedicated_pricing_info product_group_id=332 discount=20 caption=" "]
-');?>
+				<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th>Model</th>
+								<th>CPU</th>
+								<th>RAM</th>
+								<th>RAID</th>
+								<th>HDD</th>
+								<th>LOCATION</th>
+								<th>PORT</th>
+								<th>PRICE</th>
+								<th>AVAILABLE</th>
+								<th>&nbsp;</th>
+							</tr>
+						</thead>
+						<tbody>
+						    <?php
+							global $post;
+							
+							$enterprise_serv_query = array(
+								'posts_per_page' => 10,
+								'post_type'      => 'product',
+								'tax_query' => array(
+									array(
+										'taxonomy' => 'product_cat',
+										'field'    => 'slug',
+										'terms'    => array('enterprise-servers'),
+									)
+								)
+							);		
+														
+							$ent_server = new WP_Query($enterprise_serv_query);
+							if ( $ent_server->have_posts() ) :
+							while ( $ent_server->have_posts() ) : $ent_server->the_post(); 
+							    $price = get_post_meta( get_the_ID(), '_regular_price', true);
+								$price_sale = get_post_meta( get_the_ID(), '_sale_price', true);
+							?>									
+							<tr>
+								<td>
+									<?php 
+									$server_icon = get_template_directory_uri() . '/dist/assets/images/customer-support-2.png';
+									$img_server_icon     = get_field( 'server_icon' );
+									if ( ! empty( $img_server_icon ) ) {
+										$server_icon = $img_server_icon['sizes']['mid_icon'];
+									}
+									if(!empty($server_icon)){ echo"<span class='logo-type'><img src='".$server_icon."'></span>"; }
+									?>										
+									<?php the_field( 'model' ); ?>
+								</td>
+								<td><?php the_title(); ?> <span class="orangeText"><?php the_field( 'server_ghz' ); ?></span></td>
+								<td><?php the_field( 'ram' ); ?> <span class="orangeText">RAM</span></td>
+								<td><?php the_field( 'raid' ); ?></td>
+								<td><?php the_field( 'hdd' ); ?></td>
+								<td><?php the_field( 'location' ); ?></td>
+								<td><?php the_field( 'port' ); ?></td>
+								<td>
+								<span class="orangeText new-price"><?php $current_price = (float)$price_sale; echo"$".number_format($current_price, 2); ?></span>
+									<span class="old-price"><?php $old_price = (float)$price;  echo"$".number_format($old_price, 2);  ?></span>
+								</td>
+								<td><?php the_field( 'available' ); ?></td>
+								<td>
+									<a href="<?php /* the_permalink();*/ ?>" class="btn--orange">Configure <i class="fas fa-arrow-right"></i></a>
+								</td>
+							</tr>
+							<?php 
+							endwhile; 
+							wp_reset_postdata();
+							endif; 
+							?>
+						</tbody>
+					</table>
 				</div>
 			</div>
 		</div>

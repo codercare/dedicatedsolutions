@@ -122,6 +122,7 @@ function required_custom_post_types(){
         'menu_position'      => 19,
         'menu_icon' => 'dashicons-database-view',
         'supports'           => array( 'title'),
+        'taxonomies'          => array( 'product_cat' ),
     );
 
     register_post_type( 'dedicated-servers', $dedicated_args );

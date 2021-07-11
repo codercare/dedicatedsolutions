@@ -232,7 +232,7 @@ get_header();?>
 							
 							$budget_query = array(
 								'posts_per_page' => 4,
-								'post_type'      => 'product',
+								'post_type'      => 'dedicated-servers',
 								'tax_query' => array(
 									array(
 										'taxonomy' => 'product_cat',
@@ -289,7 +289,7 @@ get_header();?>
 							
 							$pro_query = array(
 								'posts_per_page' => 4,
-								'post_type'      => 'product',
+								'post_type'      => 'dedicated-servers',
 								'tax_query' => array(
 									array(
 										'taxonomy' => 'product_cat',
@@ -346,7 +346,7 @@ get_header();?>
 							
 							$enterprise_query = array(
 								'posts_per_page' => 4,
-								'post_type'      => 'product',
+								'post_type'      => 'dedicated-servers',
 								'tax_query' => array(
 									array(
 										'taxonomy' => 'product_cat',

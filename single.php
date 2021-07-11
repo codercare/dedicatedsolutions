@@ -10,8 +10,8 @@
 get_header();
 ?>
 
-	<main id="fullpage" class="site-main">
-
+	<main  class="site-main">
+		<div class="wrapper">
 		<?php
 		while ( have_posts() ) :
 			the_post();
@@ -29,7 +29,9 @@ get_header();
 			if ( comments_open() || get_comments_number() ) :
 				comments_template();
 			endif;
-
+		?>
+		</div>
+		<?php
 		endwhile; // End of the loop.
 		?>
 

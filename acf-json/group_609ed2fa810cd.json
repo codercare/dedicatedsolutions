@@ -175,60 +175,6 @@
             ]
         },
         {
-            "key": "field_609ed39740f79",
-            "label": "Plans And Pricing",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "left",
-            "endpoint": 0
-        },
-        {
-            "key": "field_609ed3c340f7a",
-            "label": "Plans And Pricing Title",
-            "name": "plans_and_pricing_title",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_609ed3d540f7b",
-            "label": "Plans And Pricing Short Detail",
-            "name": "plans_and_pricing_short_detail",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
             "key": "field_60d54088605ad",
             "label": "Plans & Pricing Comparison",
             "name": "",
@@ -553,5 +499,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1624590078
+    "modified": 1625503524
 }

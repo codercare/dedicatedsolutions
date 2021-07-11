@@ -48,8 +48,8 @@
 	}
 	.inner-head-wrapper{
 		padding: .4rem 0;
-		@include respond(tab-port){
-			padding: .8vmin 0;
+		@include respond(tab-land){
+			padding: 0;
 		}
 	}
 

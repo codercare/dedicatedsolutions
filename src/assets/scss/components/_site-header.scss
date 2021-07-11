@@ -1,9 +1,6 @@
 @mixin header-on-scroll{
 	border-top-width: 0;
 	border-bottom-width: .1vmin;
-	.inner-head-wrapper{
-		padding: .4vmin 0;
-	}
 	.site-header__logo{
 		img{
 			@include respond(tab-port){
@@ -29,6 +26,13 @@
 	&::before{
 		border-bottom-width: .1vmin;
 	}
+	.header-navigation .menu > .menu-item{
+		padding: .8vmin 0;
+	}
+	.shopping-cart-link{
+		width: 2.4vmin !important;
+    	height: 2.4vmin !important;
+	}
 }
 
 .site-header {
@@ -47,7 +51,7 @@
 		}
 	}
 	.inner-head-wrapper{
-		padding: .4rem 0;
+		padding: .8rem 0;
 		@include respond(tab-land){
 			padding: 0;
 		}
@@ -98,7 +102,7 @@
 		height: 1.6rem;
 		position: relative;
 		z-index: 2;
-		margin-left: .7rem;
+		margin-left: 1rem;
 		cursor: pointer;
 		@include respond(tab-port){
 			width: 2vmin;
@@ -161,6 +165,7 @@
 	&__menu-icon--close-x {
 		&::before {
 			transform: rotate(45deg) scaleX(1.25);
+			top: -.1rem;
 		}
 
 		.site-header__menu-icon__middle {
@@ -170,29 +175,34 @@
 
 		&::after {
 			transform: rotate(-45deg) scaleX(1.25) translateY(1px);
+			bottom: -.1rem;
 		}
 	}
 
 	&__mobile-menu-content {
 		display: none;
-		transform: scale(1.2);
-		text-align: center;
 		transition: all 0.3s ease-out;
-		position: fixed;
-		top: 0;
+		position: absolute;
+		top: 4.5rem;
 		left: 0;
-		height: 100vh;
-		width: 100vw;
-		background-color: #fafafa;
-		border-bottom: .3rem solid $mainOrange;
-		@include respond(tab-port){
-			border-bottom-width: .3vmin;
+		width: 100%;
+		background-color: $mainOrange;
+		@include respond(mobile){
+			&--is-visible {
+				display: block;
+				z-index: 2;
+			}
 		}
-
-		&--is-visible {
-			transform: scale(1);
-			display: block;
-			z-index: 2;
+	}
+	.shopping-cart-link{
+		width: 2.4rem !important;
+		height: 2.4rem !important;
+		background-size: 100% !important;
+    	margin-left: 1rem;
+		@include respond(tab-port){
+			width: 3vmin !important;
+			height: 3vmin !important;
+			margin-left: 1vmin;
 		}
 	}
 	@include respond(tab-port){

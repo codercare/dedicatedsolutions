@@ -51,8 +51,14 @@
                 > a{
                     color: #fff;
                     text-decoration: none;
-                    img{
-                        height: 4.2vmin;
+                    transition: all .25s ease-in-out;
+                    &:hover{
+                        color: $darkGrey;
+                    }
+                    @include respond(tab-port){
+                        padding: 1.5vmin 2vmin;
+                        font-size: 1.4vmin;
+                        font-weight: 500;
                     }
                 }
             }
@@ -74,37 +80,68 @@
 .header-navigation .menu ul li a:hover{
     color:#000;
 }
+
 // Header Mobile Navigation
-
 .header-mobile-navigation{
-    height: 100%;
-}
-
-
-.header-mobile-navigation .menu{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+    .menu{
         margin: 0;
-        height: 100%;
-        list-style: none;
-        padding: 0;
-
-    > .menu-item {
-        margin: 0;
-        &:not(:last-child){
-            margin-bottom: 1.8vmin;
+        padding: .5rem 1.5rem;
+        list-style-type: none;
+        > .menu-item{
+            &:not(:last-child){
+                border-bottom: .1rem solid rgba($color: #fff, $alpha: .15);
+            }
+            > a{
+                display: block;
+                text-decoration: none;
+                color: #fff;
+                padding: .7rem 1.5rem;
+                font-weight: 500;
+            }
+            > .sub-menu{
+                margin: 0;
+                padding: 0;
+                display: none;
+                background: rgba($color: #fff, $alpha: .15);
+                padding: .7rem 0;
+                > .menu-item{
+                    display: flex;
+                    &:not(:last-child){
+                        border-bottom: .1rem solid rgba($color: #fff, $alpha: .2);
+                    }
+                    > a {
+                        display: flex;
+                        align-items: center;
+                        color: #fff;
+                        text-decoration: none;
+                        font-weight: 500;
+                        font-size: 1.3rem;
+                        padding: .7rem 3rem;
+                        width: 100%;
+                        > .menu-image-hover-wrapper {
+                            padding: 0;
+                            width: 2.2rem;
+                            position: relative;
+                            height: 2.2rem;
+                            margin: 0 1.2rem 0 0 !important;
+                            img {
+                                margin: 0 !important;
+                                position: absolute;
+                                left: 0;
+                                top: 0;
+                            }
+                        }
+                    }
+                }
+            }
+            &:hover{
+                > a{
+                    color: $darkGrey;
+                }
+                > .sub-menu{
+                    display: block;
+                }
+            }
         }
-        > a {
-            border-bottom: none;
-            display: block;
-            color: $darkGrey;
-            transition: 0.2s color ease;
-        }
-        &:hover a, &.open > a {
-            color: $mainOrange;
-        }
-    }
-
+    } 
 } 

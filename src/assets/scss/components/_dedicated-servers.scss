@@ -325,12 +325,26 @@
                 display: block;
             }
         }
-        .table{
+        .table, .dedicated_billing_list{
             margin: 0;
-            @include respond(tab-port){
-                font-size: 1.6vmin;
+            width: 100%;
+            color: $mainOrange;
+            caption, br{
+                display: none;
+            }
+            strong{
                 font-weight: 500;
-                border-top:none
+                color: $darkGrey;
+                margin: 0 .5vmin 0 0;
+                @include respond(mobile){
+                    margin: 0 .5rem 0 0;
+                    font-weight: normal;
+                }
+            }
+            @include respond(tab-port){
+                font-size: 1.4vmin;
+                font-weight: 500;
+                border-top:none;
             }
             &.table-bordered{
                 border-color: #D7D6D6;
@@ -349,6 +363,7 @@
                     font-weight: 700;
                     color: #fff;
                     padding: .75vmin;
+                    text-transform: uppercase;
                     &:first-child{
                         text-align: center;
                     }
@@ -367,11 +382,22 @@
                     padding: .7rem .7rem .7rem 50%;
                     border-color: #D7D6D6;
                     position: relative;
+                    border-width: .1rem;
+                    border-style: solid;
+                    &[title="location"], &[title="port"]{
+                        color: $darkGrey;
+                    }
                     @include respond(tab-port){
                         padding: .75vmin;
                         border-left: none;
                         border-top: none;
                         border-right: none;
+                        &:first-child{
+                            border-left: .1vmin solid #D7D6D6;
+                        }
+                        &:last-child{
+                            border-right: .1vmin solid #D7D6D6;
+                        }
                     }
                     @include respond(mobile){
                         border: none;
@@ -417,6 +443,33 @@
                             width: 100%;
                         }
                     }
+                    img{
+                        margin: 0 .5rem 0 0;
+                        @include respond(tab-port){
+                            width: 12.5%;
+                        }
+                    }
+                    p{
+                        display: inline-block;
+                        margin: 0;
+                    }
+                    a{
+                        background: $mainOrange;
+                        color: #fff;
+                        border-radius: .5rem; 
+                        padding: 1rem 1.5rem;
+                        display: inline-block;
+                        text-align: center;
+                        text-decoration: none;
+                        font-weight: 500;
+                        line-height: initial;
+                        font-size: 1.3rem;
+                        @include respond(tab-port){
+                            padding: 1.4vmin 1vmin;
+                            font-size: 1.4vmin;
+                            border-radius: .5vmin; 
+                        }
+                    }
                     .btn--orange{
                         text-transform: none;
                         @include respond(tab-port){
@@ -439,9 +492,13 @@
                         color: #6D6D6D;
                         text-decoration: line-through;
                         margin: 0 0 0 .5rem;
+                        display: inline-block;
                         @include respond(tab-port){
                             margin: 0 0 0 .5vmin;
                         }
+                    }
+                    .new-price{
+                        display: inline-block;
                     }
                 }
             }
@@ -476,7 +533,6 @@
             text-align: center;
             border: .1rem solid #DFDFDF;
             box-shadow: 0 0 .3rem 0 rgba($color: #000000, $alpha: .16);
-            cursor: pointer;
             position: relative;
             @include respond(mobile){
                 &:not(:last-child){
@@ -495,6 +551,8 @@
                         left: 0;
                         width: 100%;
                         border-bottom: .6vmin solid $mainOrange;
+                        opacity: 0;
+                        visibility: hidden;
                     }
                     &::after{
                         content: "";
@@ -505,6 +563,14 @@
                         border-left: 1.4vmin solid transparent;
                         border-top: 1.2vmin solid $mainOrange;
                         margin: -.1vmin 0 0 -.7vmin;
+                        opacity: 0;
+                        visibility: hidden;
+                    }
+                }
+                &:hover{
+                    &::before, &::after{
+                        opacity: 1;
+                        visibility: visible;
                     }
                 }
             }

@@ -169,155 +169,109 @@ get_header();?>
 						<div class="col-md-5">
 							<div class="sample-config-block">
 								<h3>Sample Configuration</h3>
-								<div id="smapleConfigBlock-carousel" class="carousel carousel-fade" data-ride="carousel" data-interval="false">
-									<div class="carousel-inner">
-										<div class="carousel-item active">
-											<div class="row">
-												<div class="col-md-6">
-													<div class="sample-config-item">
-														<div class="sample-config-item__icon">
-															<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/vps.png'; ?>" alt="vps">
-														</div>
-														<h4>2x Hypervisor Server</h4>
-														<ul>
-															<li>Intel Xeon 12 Core</li>
-															<li>48GB RAM</li>
-															<li>2x 1TB SATA</li>
-															<li>Hardware RAID 1</li>
-															<li>2x 10Gbits Redundant NIC</li>
-														</ul>
-													</div>
-												</div>
-												<div class="col-md-6">
-													<div class="sample-config-item">
-														<div class="sample-config-item__icon">
-															<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/customer-support-2.png'; ?>" alt="cs-2">
-														</div>
-														<h4>1x Control Panel Server</h4>
-														<ul>
-															<li>Intel Xeon 12 Core</li>
-															<li>12GB RAM</li>
-															<li>2x 250GB SATA</li>
-															<li>Hardware RAID 1</li>
-															<li>2x 10Gbits Redundant NIC</li>
-														</ul>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="carousel-item">
-											<div class="row">
-												<div class="col-md-6">
-													<div class="sample-config-item">
-														<div class="sample-config-item__icon">
-															<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/vps.png'; ?>" alt="vps">
-														</div>
-														<h4>1x 2TB Enterprise SAN</h4>
-														<ul>
-															<li>Intel Xeon 12 Core</li>
-															<li>48GB RAM</li>
-															<li>2x 1TB SATA</li>
-															<li>Hardware RAID 1</li>
-															<li>2x 10Gbits Redundant NIC</li>
-														</ul>
-													</div>
-												</div>
-												<div class="col-md-6">
-													<div class="sample-config-item">
-														<div class="sample-config-item__icon">
-															<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/customer-support-2.png'; ?>" alt="cs-2">
-														</div>
-														<h4>1x Backup Server Node</h4>
-														<ul>
-															<li>Intel Xeon 12 Core</li>
-															<li>12GB RAM</li>
-															<li>2x 250GB SATA</li>
-															<li>Hardware RAID 1</li>
-															<li>2x 10Gbits Redundant NIC</li>
-														</ul>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
+								<?php
+								$count_controls = get_sub_field( 'control_panel_type' ); 
+								if ( isset($count_controls) && is_array($count_controls) &&  (count($count_controls) > 0 )) : 
+								?>
+								<div class="carosel-navigation-custom">										
 									<a class="carousel-control-next" href="#smapleConfigBlock-carousel" role="button" data-slide="next">
 										<i class="fas fa-angle-right"></i>
+									</a>	
+									<a class="carousel-control-prev" href="#smapleConfigBlock-carousel" role="button" data-slide="prev">
+										<i class="fas fa-angle-left"></i>
 									</a>
 								</div>
-								<!-- <div class="row">
-								<?php
-								// if ( have_rows( 'configuration_type' ) ) : 
-								// while ( have_rows( 'configuration_type' ) ) :
-								// the_row();						
-								?>
-								<div class="col-md-6">
-									<div class="sample-config-item">
-										<div class="sample-config-item__icon">
-											<?php 
-											// $conf_icon = get_template_directory_uri() . '/dist/assets/images/vps.png';
-											// $img_conf_icon     = get_sub_field( 'configuration_type_icon' );
-											// if ( ! empty( $img_conf_icon ) ) {
-											// 	$conf_icon = $img_conf_icon['sizes']['mid_icon'];
-											// }
-											// if(!empty($conf_icon)){ echo"<img src='".$conf_icon."'>"; }
-											?>
-										</div>
-										<h4><?php //the_sub_field('configuration_list_title');?></h4>
-										<ul>
-											<?php												
-											// if ( have_rows( 'configuration_feature_list' ) ) : 
-											// while ( have_rows( 'configuration_feature_list' ) ) :
-											// the_row();						
-											?>
-											<li><?php // the_sub_field('conf_feature');?></li>
-											<?php 
-											// endwhile; 
-											// endif;
-											?>
-										</ul>
-									</div>
-								</div>
 								<?php 
-								// endwhile; 
-								// endif;
+								endif;
 								?>
-								<?php
-								// if ( have_rows( 'control_panel_type' ) ) : 
-								// while ( have_rows( 'control_panel_type' ) ) :
-								// the_row();						
-								?>
-								<div class="col-md-6">
-									<div class="sample-config-item">
-										<div class="sample-config-item__icon">
-											<?php 
-											// $conf_icon = get_template_directory_uri() . '/dist/assets/images/customer-support-2.png';
-											// $img_conf_icon     = get_sub_field( 'control_panel_type_icon' );
-											// if ( ! empty( $img_conf_icon ) ) {
-											// 	$conf_icon = $img_conf_icon['sizes']['mid_icon'];
-											// }
-											// if(!empty($conf_icon)){ echo"<img src='".$conf_icon."'>"; }
-											?>											
+								<div id="smapleConfigBlock-carousel" class="carousel carousel-fade" data-ride="carousel" data-interval="false">									
+									<div class="carousel-inner">
+										<div class="carousel-item active">
+										<div class="row">
+												<?php
+												$counter_block = 1;
+												if ( have_rows( 'configuration_type' ) ) : 
+												while ( have_rows( 'configuration_type' ) ) :
+												the_row();															
+												?>											
+												<div class="col-md-6">
+													<div class="sample-config-item">
+														<div class="sample-config-item__icon">
+															<?php 
+															$conf_icon = get_template_directory_uri() . '/dist/assets/images/vps.png';
+															$img_conf_icon     = get_sub_field( 'configuration_type_icon' );
+															if ( ! empty( $img_conf_icon ) ) {
+																$conf_icon = $img_conf_icon['sizes']['mid_icon'];
+															}
+															if(!empty($conf_icon)){ echo"<img src='".$conf_icon."'>"; }		
+															?>
+														</div>
+														<h4><?php the_sub_field('configuration_list_title');?></h4>
+														<ul>
+															<?php												
+															if ( have_rows( 'configuration_feature_list' ) ) : 
+															while ( have_rows( 'configuration_feature_list' ) ) :
+															the_row();						
+															?>
+															<li><?php  the_sub_field('conf_feature');?></li>
+															<?php 
+															endwhile; 
+															endif;
+															?>
+														</ul>
+													</div>
+												</div>										
+												<?php 
+												$counter_block++;
+												endwhile; 
+												endif;
+												?>
 										</div>
-										<h4><?php // the_sub_field('control_panel_type_title');?></h4>
-										<ul>
+										</div>
 										<?php
-											// if ( have_rows( 'control_panel_type_features' ) ) : 
-											// while ( have_rows( 'control_panel_type_features' ) ) :
-											// the_row();						
-											?>
-											<li><?php // the_sub_field('features');?></li>
-											<?php 
-											// endwhile; 
-											// endif;			
-											?>
-										</ul>
-									</div>
-								</div>
-								<?php 
-								// endwhile; 
-								// endif;
-								?>
-							</div> -->
+										if ( have_rows( 'control_panel_type' ) ) : 
+										?>
+										<div class="carousel-item">
+											<div class="row">
+												<?php												
+												while ( have_rows( 'control_panel_type' ) ) :
+												the_row();						
+												?>
+												<div class="col-md-6">
+													<div class="sample-config-item">
+														<div class="sample-config-item__icon">
+														<?php 
+														$conf_icon = get_template_directory_uri() . '/dist/assets/images/customer-support-2.png';
+														$img_conf_icon     = get_sub_field( 'control_panel_type_icon' );
+														if ( ! empty( $img_conf_icon ) ) {
+															$conf_icon = $img_conf_icon['sizes']['mid_icon'];
+														}
+														if(!empty($conf_icon)){ echo"<img src='".$conf_icon."'>"; }
+														?>				
+														</div>
+														<h4><?php  the_sub_field('control_panel_type_title');?></h4>
+														<ul>
+															<?php
+															if ( have_rows( 'control_panel_type_features' ) ) : 
+															while ( have_rows( 'control_panel_type_features' ) ) :
+															the_row();						
+															?>
+															<li><?php  the_sub_field('features');?></li>
+															<?php 
+															endwhile; 
+															endif;			
+															?>
+														</ul>
+													</div>
+												</div>
+												<?php 
+												endwhile; 												
+												?>
+											</div>
+										</div> 
+										<?php endif; ?>
+									</div>								
+								</div>								
 							</div>
 						</div>
 						<div class="col-md-5">

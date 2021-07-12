@@ -206,4 +206,4 @@ require_once get_template_directory() .'/inc/navigation.php';
 
 
 require_once get_template_directory() .'/inc/login-registration.php';
-require_once get_template_directory() .'/inc/woocommerce_customization.php';
+// require_once get_template_directory() .'/inc/woocommerce_customization.php';

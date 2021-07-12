@@ -15,8 +15,8 @@
 get_header();
 ?>
 
-	<main id="fullpage" class="site-main">
-
+	<main class="site-main nonslider-page">
+		<div class="wrapper">
 		<?php
 		while ( have_posts() ) :
 			the_post();
@@ -30,7 +30,7 @@ get_header();
 
 		endwhile; // End of the loop.
 		?>
-
+		</div>
 	</main><!-- #main -->
 
 <?php

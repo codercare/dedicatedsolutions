@@ -1,5 +1,5 @@
 <?php
-/* Template Name: Dedicated Solutions Secure Networks */ 
+/* Template Name: Our Network */ 
 
 get_header();
 

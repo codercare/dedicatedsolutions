@@ -10,7 +10,7 @@
 get_header();
 ?>
 
-	<main  class="site-main">
+	<main  class="site-main nonslider-page">
 		<div class="wrapper">
 		<?php
 		while ( have_posts() ) :
@@ -30,10 +30,11 @@ get_header();
 				comments_template();
 			endif;
 		?>
-		</div>
+		
 		<?php
 		endwhile; // End of the loop.
 		?>
+		</div>
 
 	</main><!-- #main -->
 

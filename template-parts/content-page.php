@@ -10,8 +10,10 @@
 ?>
 <section id="post-<?php the_ID(); ?>" class="wrapper section page-wrap">
 
-	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+	<header class="entry-header u-txt-center">
+		<?php the_title( '<h1 class="entry-title">', '</h1>' ); 
+		echo '<span class="section-header__decoration-element"></span>';
+		?>
 	</header><!-- .entry-header -->
 
 	<?php dedicatedsolutions_post_thumbnail(); ?>

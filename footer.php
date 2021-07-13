@@ -76,6 +76,8 @@
 					animationEasing: "easeInOutExpo",
 					showNav: false,                      // Show Navigation
 				});
+
+				$('[data-toggle="tooltip"]').tooltip();   
 							
 			});	
 				

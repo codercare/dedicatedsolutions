@@ -446,7 +446,7 @@ get_header();?>
 							while ( have_rows( 'budget_vs_pro_vs_enterprise_comparison' ) ) :
 							the_row();						
 							?>
-							<li><?php the_sub_field('feature_heading');?> <?php if(!empty(get_sub_field('help_text'))){ ?> <i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/question.png'; ?>" alt="question"></i><?php  }?></li>							
+							<li><?php the_sub_field('feature_heading');?> <?php if(!empty(get_sub_field('help_text'))){ ?> <i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/question.png'; ?>" alt="question" data-toggle="tooltip" data-placement="right" title="<?php the_sub_field('help_text');?>"></i><?php  }?></li>							
 							<?php 
 							endwhile; 
 							endif;			

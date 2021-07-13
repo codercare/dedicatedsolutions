@@ -1,0 +1,9 @@
+/*!
+ * Shooping Card page design
+ * Used to write rendered page html design
+ */
+ 
+ button#js-coupon{ 
+     background-color: #ff8800;
+     color: #fff;
+}

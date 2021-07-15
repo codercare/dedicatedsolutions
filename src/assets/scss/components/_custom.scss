@@ -41,7 +41,11 @@ header.entry-header.u-txt-center{
     color: #ff8800;
 }
 
-div#bmc-pills-tabContent{
-    max-height: 750px;
-    overflow: scroll;
+#server-details-table-scroll-view #bmc-pills-tabContent{
+    max-height: 750px;    
+    overflow-x: hidden;
+    overflow-y: scroll;    
 }
+
+#server-details-table-scroll-view #bmc-pills-tabContent::-webkit-scrollbar{width:8px;}
+#server-details-table-scroll-view #bmc-pills-tabContent::-webkit-scrollbar-thumb{background-color:#ffce95;}

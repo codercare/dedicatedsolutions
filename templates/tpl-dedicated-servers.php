@@ -414,7 +414,7 @@ get_header();?>
 				</ul>
 			</div>
 		</div>
-		<div class="server-details-table-wrap">
+		<div class="server-details-table-wrap" id="server-details-table-scroll-view">
 			<div class="tab-content" id="bmc-pills-tabContent">
 				<div class="tab-pane fade show active" id="budget-server" role="tabpanel" aria-labelledby="budget-server-tab">
 					<?php echo do_shortcode('[dedicated_pricing_info product_group_id=358 discount=20 caption="Budget Servers"]');?>
@@ -446,7 +446,7 @@ get_header();?>
 							while ( have_rows( 'budget_vs_pro_vs_enterprise_comparison' ) ) :
 							the_row();						
 							?>
-							<li><?php the_sub_field('feature_heading');?> <?php if(!empty(get_sub_field('help_text'))){ ?> <i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/question.png'; ?>" alt="question" data-toggle="tooltip" data-placement="right" title="<?php the_sub_field('help_text');?>"></i><?php  }?></li>							
+							<li><?php the_sub_field('feature_heading');?> <?php if(!empty(get_sub_field('help_text'))){ ?> <i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/question.png'; ?>" alt="question"  data-toggle="tooltip" data-html="true" data-placement="right" title="<?php the_sub_field('help_text');?>"></i><?php  }?></li>							
 							<?php 
 							endwhile; 
 							endif;			

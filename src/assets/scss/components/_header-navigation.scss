@@ -14,10 +14,6 @@
 
     > .menu-item {
         margin: 0 2vmin;
-        @include respond(tab-land){
-            padding: 2vmin 0;
-        }
-        padding: 2vmin 0;
         > a {
             border-bottom: none;
             display: block;
@@ -26,14 +22,37 @@
             font-size: 1.4vmin;
             text-decoration: none;
             letter-spacing: .025vmin;
+            display: block;
+            position: relative;
+            &::before{
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                border-right: 1vmin solid transparent;
+                border-left: 1vmin solid transparent;
+                border-bottom: 1vmin solid transparent;
+                margin-left: -1vmin;
+                transition: all .3s ease;
+            }
+            @include respond(tab-land){
+                padding: 2vmin 0;
+            }
         }
         &:hover a, &.open > a {
             color: $mainOrange;
         }
+        &.open{
+            > a{
+               &::before{
+                   border-bottom-color: $darkGrey;
+               }
+            }
+        }
         > .sub-menu {
             position: absolute;
             list-style-type: none;
-            background: $mainOrange;
+            background: $darkGrey;
             left: 0;
             top: 100%;
             width: 100%;
@@ -53,7 +72,7 @@
                     text-decoration: none;
                     transition: all .25s ease-in-out;
                     &:hover{
-                        color: $darkGrey;
+                        color: $mainOrange;
                     }
                     @include respond(tab-port){
                         padding: 1.5vmin 2vmin;
@@ -89,7 +108,7 @@
         list-style-type: none;
         > .menu-item{
             &:not(:last-child){
-                border-bottom: .1rem solid rgba($color: #fff, $alpha: .15);
+                border-bottom: .1rem solid rgba($color: #fff, $alpha: .05);
             }
             > a{
                 display: block;
@@ -107,7 +126,7 @@
                 > .menu-item{
                     display: flex;
                     &:not(:last-child){
-                        border-bottom: .1rem solid rgba($color: #fff, $alpha: .2);
+                        border-bottom: .1rem solid rgba($color: #fff, $alpha: .05);
                     }
                     > a {
                         display: flex;
@@ -118,6 +137,9 @@
                         font-size: 1.3rem;
                         padding: .7rem 3rem;
                         width: 100%;
+                        &:hover{
+                            color: $mainOrange;
+                        }
                         > .menu-image-hover-wrapper {
                             padding: 0;
                             width: 2.2rem;
@@ -136,7 +158,7 @@
             }
             &:hover{
                 > a{
-                    color: $darkGrey;
+                    color: $mainOrange;
                 }
                 > .sub-menu{
                     display: block;

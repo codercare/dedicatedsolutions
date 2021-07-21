@@ -26,7 +26,7 @@
 	&::before{
 		border-bottom-width: .1vmin;
 	}
-	.header-navigation .menu > .menu-item{
+	.header-navigation .menu > .menu-item > a{
 		padding: .8vmin 0;
 	}
 	.shopping-cart-link{
@@ -166,6 +166,9 @@
 		&::before {
 			transform: rotate(45deg) scaleX(1.25);
 			top: -.1rem;
+			@include respond(tab-port){
+				top: 0;
+			}
 		}
 
 		.site-header__menu-icon__middle {
@@ -176,23 +179,30 @@
 		&::after {
 			transform: rotate(-45deg) scaleX(1.25) translateY(1px);
 			bottom: -.1rem;
+			@include respond(tab-port){
+				bottom: 0;
+			}
 		}
 	}
 
 	&__mobile-menu-content {
-		display: none;
 		transition: all 0.3s ease-out;
 		position: absolute;
 		top: 4.5rem;
 		left: 0;
 		width: 100%;
-		background-color: $mainOrange;
-		@include respond(mobile){
-			&--is-visible {
-				display: block;
-				z-index: 2;
-			}
+		background-color: $darkGrey;
+		z-index: 2;
+		display: none;
+		&--is-visible {
+			display: block;
 		}
+		@include respond(tab-land){
+			display: none;
+		}
+		@include respond(tab-port){
+			top: 8.2vmin;
+		}	
 	}
 	.shopping-cart-link{
 		width: 2.4rem !important;

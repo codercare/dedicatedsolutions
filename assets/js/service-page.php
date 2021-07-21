@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Dedicated Servers
+ * 
  *
  * This is the most main template file in a WordPress theme
  * and one of the two required files for a theme (the other being style.css).

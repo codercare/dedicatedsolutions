@@ -1,6 +1,5 @@
 <?php
-/* Template Name: Dedicated Servers */ 
-
+/* Template Name: Dedicated Servers  */
 get_header();?>
 <main id="fullpage" class="site-main">
 <?php while ( have_posts() ) : the_post(); 

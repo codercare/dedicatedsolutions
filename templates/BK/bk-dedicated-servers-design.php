@@ -12,7 +12,7 @@ get_header();?>
 						<span class="price">$39<span class="subPrice">.00</span></span>
 						<span class="per-month">/month</span>
 					</div>
-					<h1 class="large-banner__heading">Dedicated Servers</h1>
+					<h1 class="large-banner__heading">Dedicated Servers -- here</h1>
 					<p>All Computing Options in one place – That is Bare-Metal Server Hosting!</p>
 					<div class="large-banner__features">
 						<ul class="large-banner__features-list">

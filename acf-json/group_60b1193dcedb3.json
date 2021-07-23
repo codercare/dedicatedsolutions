@@ -663,7 +663,7 @@
                     "key": "field_60e0ba1e85cff",
                     "label": "View Server Link",
                     "name": "view_server_link",
-                    "type": "url",
+                    "type": "text",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -673,7 +673,10 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "placeholder": ""
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
                 },
                 {
                     "key": "field_60e0ba2985d00",
@@ -734,7 +737,7 @@
                     "key": "field_60e0ba8785d04",
                     "label": "View Server Link",
                     "name": "view_server_link",
-                    "type": "url",
+                    "type": "text",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -744,7 +747,10 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "placeholder": ""
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
                 },
                 {
                     "key": "field_60e0ba8785d05",
@@ -805,7 +811,7 @@
                     "key": "field_60e0ba9d85d08",
                     "label": "View Server Link",
                     "name": "view_server_link",
-                    "type": "url",
+                    "type": "text",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -815,7 +821,10 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "placeholder": ""
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
                 },
                 {
                     "key": "field_60e0ba9d85d09",
@@ -856,5 +865,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1625340916
+    "modified": 1626873490
 }

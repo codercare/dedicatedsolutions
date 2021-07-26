@@ -165,9 +165,8 @@ while ( have_posts() ) : the_post();
 		</div>
 	</section>
 
-	
 	<?php if(get_field('showhide_popular_dedicated_server')){ ?>
-	<section class="popular-dedicated-server section">
+		<section class="popular-dedicated-server section">
 		<div class="wrappper">
 			<div class="section-header u-txt-center">
 				<h2 class="section-header__title">Our Most Popular Dedicated Server</h2>
@@ -178,172 +177,28 @@ while ( have_posts() ) : the_post();
 			<div class="row">
 				<div class="col-md-4">
 					<div class="server-type-block-wrap">
-						<h3><i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/servers.png'; ?>" alt="servers"></i>Budget Servers</h3>
+						<h3><i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/servers.png'; ?>" alt="servers"></i>Budget Srvers</h3>
 						<h4>Our Best Selling Budget Servers</h4>
 						<div class="row">
-							<?php
-							global $post;
-							
-							$budget_query = array(
-								'posts_per_page' => 4,
-								'post_type'      => 'product',
-								'tax_query' => array(
-									array(
-										'taxonomy' => 'product_cat',
-										'field'    => 'slug',
-										'terms'    => array( 'budget-servers' ),
-									)
-								)
-							);		
-														
-							$budget_server = new WP_Query($budget_query);
-							if ( $budget_server->have_posts() ) :
-							while ( $budget_server->have_posts() ) : $budget_server->the_post(); 
-							?>
-							<div class="col-md-6">
-								<div class="server-type-block">
-									<div class="server-tye-header">
-										<h5><?php the_title(); ?> <span><?php the_field( 'server_ghz' ); ?></span></h5>
-									</div>
-									<div class="server-type-logo">
-										<?php
-										$server_list_icon = '';
-										$serv_icon_image = get_field('server_icon', get_the_ID());
-										if ( ! empty( $serv_icon_image ) ) {
-											$server_list_icon = $serv_icon_image['url'];
-										}
-										?>
-										<span><img src="<?php echo $server_list_icon; ?>" alt="<?php the_title(); ?>"  class="server-icon-image"></span>
-									</div>
-									<ul>
-										<li>Server - <?php the_field( 'server_ghz' ); ?></li>
-										<li>HDD - <?php $hdd = get_field( 'hdd' );  $raid = get_field( 'raid' ); echo strlimit(strip_tags($hdd.' '.$raid),'25','');  ?></li>
-										<li>RAM - <?php the_field( 'ram' ); ?></li>
-										<li>PORT - <?php the_field( 'port' ); ?></li>
-										<li>LOCATION  - <?php the_field( 'location' ); ?></li>
-									</ul>
-									<a href="<?php the_field( 'instance_order_link' ); ?>" class="btn--orange">Order (Instant) <i class="fas fa-arrow-right"></i></a>
-								</div>
-							</div>
-							<?php
-							endwhile; 
-							wp_reset_postdata();
-							endif; 
-							?>
+							<?php echo do_shortcode('[dedicated_popular_info product_group_id=358 discount=20 caption=""]');?>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-4">
 					<div class="server-type-block-wrap">
-						<h3><i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/servers.png'; ?>" alt="servers"></i>Pro Servers</h3>
+						<h3><i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/servers.png'; ?>" alt="servers"></i>Pro Srvers</h3>
 						<h4>Our Best Selling Pro Servers</h4>
 						<div class="row">
-							<?php
-							global $post;
-							
-							$pro_query = array(
-								'posts_per_page' => 4,
-								'post_type'      => 'product',
-								'tax_query' => array(
-									array(
-										'taxonomy' => 'product_cat',
-										'field'    => 'slug',
-										'terms'    => array( 'pro-servers' ),
-									)
-								)
-							);		
-														
-							$pro_server = new WP_Query($pro_query);
-							if ( $pro_server->have_posts() ) :
-							while ( $pro_server->have_posts() ) : $pro_server->the_post(); 
-							?>
-							<div class="col-md-6">
-								<div class="server-type-block">
-									<div class="server-tye-header">
-										<h5><?php the_title(); ?> <span><?php the_field( 'server_ghz' ); ?></span></h5>
-									</div>
-									<div class="server-type-logo">
-										<?php
-										$server_list_icon = '';
-										$serv_icon_image = get_field('server_icon', get_the_ID());
-										if ( ! empty( $serv_icon_image ) ) {
-											$server_list_icon = $serv_icon_image['url'];
-										}
-										?>
-										<span><img src="<?php echo $server_list_icon; ?>" alt="<?php the_title(); ?>"  class="server-icon-image"></span>
-									</div>
-									<ul>
-										<li>Server - <?php the_field( 'server_ghz' ); ?></li>
-										<li>HDD - <?php $hdd = get_field( 'hdd' );  $raid = get_field( 'raid' ); echo strlimit(strip_tags($hdd.' '.$raid),'25','');  ?></li>
-										<li>RAM - <?php the_field( 'ram' ); ?></li>
-										<li>PORT - <?php the_field( 'port' ); ?></li>
-										<li>LOCATION  - <?php the_field( 'location' ); ?></li>
-									</ul>
-									<a href="<?php the_field( 'instance_order_link' ); ?>" class="btn--orange blue">Order (Instant) <i class="fas fa-arrow-right"></i></a>
-								</div>
-							</div>
-							<?php 
-							endwhile; 
-							wp_reset_postdata();
-							endif;
-							?>
+							<?php echo do_shortcode('[dedicated_popular_info product_group_id=331 discount=20 caption="" ]');?>							
 						</div>
 					</div>
 				</div>
 				<div class="col-md-4">
 					<div class="server-type-block-wrap">
-						<h3><i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/servers.png'; ?>" alt="servers"></i>Enterprise Servers</h3>
+						<h3><i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/servers.png'; ?>" alt="servers"></i>Enterprise Srvers</h3>
 						<h4>Our Best Selling Enterprise Servers</h4>
 						<div class="row">
-						    <?php
-							global $post;
-							
-							$enterprise_query = array(
-								'posts_per_page' => 4,
-								'post_type'      => 'product',
-								'tax_query' => array(
-									array(
-										'taxonomy' => 'product_cat',
-										'field'    => 'slug',
-										'terms'    => array( 'enterprise-servers' ),
-									)
-								)
-							);		
-														
-							$enterprise_server = new WP_Query($enterprise_query);
-							if ( $enterprise_server->have_posts() ) :
-							while ( $enterprise_server->have_posts() ) : $enterprise_server->the_post(); 
-							?>
-							<div class="col-md-6">
-								<div class="server-type-block">
-									<div class="server-tye-header">
-										<h5><?php the_title(); ?> <span><?php the_field( 'server_ghz' ); ?></span></h5>
-									</div>
-									<div class="server-type-logo">
-										<?php
-										$server_list_icon = '';
-										$serv_icon_image = get_field('server_icon', get_the_ID());
-										if ( ! empty( $serv_icon_image ) ) {
-											$server_list_icon = $serv_icon_image['url'];
-										}
-										?>
-										<span><img src="<?php echo $server_list_icon; ?>" alt="<?php the_title(); ?>" class="server-icon-image"></span>
-									</div>
-									<ul>
-										<li>Server - <?php the_field( 'server_ghz' ); ?></li>
-										<li>HDD - <?php $hdd = get_field( 'hdd' );  $raid = get_field( 'raid' ); echo strlimit(strip_tags($hdd.' '.$raid),'25','');  ?></li>
-										<li>RAM - <?php the_field( 'ram' ); ?></li>
-										<li>PORT - <?php the_field( 'port' ); ?></li>
-										<li>LOCATION  - <?php the_field( 'location' ); ?></li>
-									</ul>
-									<a href="<?php the_field( 'instance_order_link' ); ?>" class="btn--orange success">Order (Instant) <i class="fas fa-arrow-right"></i></a>
-								</div>
-							</div>
-							<?php 
-							endwhile; 
-							wp_reset_postdata();
-							endif;
-							?>							
+							<?php echo do_shortcode('[dedicated_popular_info  product_group_id=332 discount=20 caption=""]');?>
 						</div>
 					</div>
 				</div>
@@ -351,6 +206,7 @@ while ( have_posts() ) : the_post();
 		</div>
 	</section>
 	<?php } ?>
+	
 	
 <?php endwhile; // end of the loop. ?>
 </main>

@@ -366,8 +366,8 @@ get_header();?>
 						<?php 
 						$budget_servers = get_field('budget_servers'); 
 						?>
-						<a href="<?php if(isset($budget_servers['view_server_link'])){ echo $budget_servers['view_server_link']; }?>" class="btn--orange"><?php if(isset($budget_servers['view_server_button_label'])){ echo $budget_servers['view_server_button_label']; }?></a>
-						<a href="<?php if(isset($budget_servers['view_server_link'])){ echo $budget_servers['view_server_link']; }?>"><?php if(isset($budget_servers['configuration_available_text'])){ echo $budget_servers['configuration_available_text']; }?></a>
+						<a  href="#section4" class="btn--orange chooseEnterprise" servertype='budget'><?php if(isset($budget_servers['view_server_button_label'])){ echo $budget_servers['view_server_button_label']; }?></a>
+						<a href="#section4" class="chooseEnterprise" servertype='budget'><?php if(isset($budget_servers['configuration_available_text'])){ echo $budget_servers['configuration_available_text']; }?></a>
 					</div>
 				</div>
 				<div class="ds-feature-table__block">
@@ -425,8 +425,8 @@ get_header();?>
 						<?php 
 						$pro_servers = get_field('pro_servers'); 
 						?>
-						<a href="<?php if(isset($pro_servers['view_server_link'])){ echo $pro_servers['view_server_link']; }?>" class="btn--orange"><?php if(isset($pro_servers['view_server_button_label'])){ echo $pro_servers['view_server_button_label']; }?></a>
-						<a href="<?php if(isset($pro_servers['view_server_link'])){ echo $pro_servers['view_server_link']; }?>"><?php if(isset($pro_servers['configuration_available_text'])){ echo $pro_servers['configuration_available_text']; }?></a>
+						<a  href="#section4" class="btn--orange chooseEnterprise" servertype='pro'><?php if(isset($pro_servers['view_server_button_label'])){ echo $pro_servers['view_server_button_label']; }?></a>
+						<a href="#section4" class="chooseEnterprise" servertype='pro'><?php if(isset($pro_servers['configuration_available_text'])){ echo $pro_servers['configuration_available_text']; }?></a>
 					</div>
 				</div>
 				<div class="ds-feature-table__block">
@@ -484,8 +484,8 @@ get_header();?>
 					<?php 
 						$enterprice_servers = get_field('enterprise_servers'); 
 						?>
-						<a href="<?php if(isset($enterprice_servers['view_server_link'])){ echo $enterprice_servers['view_server_link']; }?>" class="btn--orange"><?php if(isset($enterprice_servers['view_server_button_label'])){ echo $enterprice_servers['view_server_button_label']; }?></a>
-						<a href="<?php if(isset($enterprice_servers['view_server_link'])){ echo $enterprice_servers['view_server_link']; }?>"><?php if(isset($enterprice_servers['configuration_available_text'])){ echo $enterprice_servers['configuration_available_text']; }?></a>
+						<a href="#section4" class="btn--orange chooseEnterprise" servertype='enterprise'><?php if(isset($enterprice_servers['view_server_button_label'])){ echo $enterprice_servers['view_server_button_label']; }?></a>
+						<a href="#section4" class="chooseEnterprise" servertype='enterprise'><?php if(isset($enterprice_servers['configuration_available_text'])){ echo $enterprice_servers['configuration_available_text']; }?></a>
 					</div>
 				</div>
 			</div>

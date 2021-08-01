@@ -9,3 +9,4 @@ $('.header-navigation').on('mouseenter', '.menu-item-has-children', (e) =>{
 }).on('mouseleave', '.menu-item-has-children', (e) =>{
     $(e.currentTarget).removeClass('open');
 })
+

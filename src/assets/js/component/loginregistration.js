@@ -187,6 +187,24 @@ jQuery('.showLocation').on('click',function(e){
         $("."+recent).hide();
     }
 });
+
+jQuery('.chooseEnterprise').on('click',function(e){
+    var type = $(this).attr('servertype');
+    
+    if(type=='enterprise'){
+        jQuery("#enterprise-server-tab" ).trigger( "click" );
+    }else if(type=='pro'){
+        jQuery("#pro-server-tab" ).trigger( "click" );
+    }else{
+        jQuery("#budget-server-tab" ).trigger( "click" );
+    }
+    
+});
+
+
+
+
+
 /* Registration Ajax */
 /*
 $('#register').on('click',function(e){

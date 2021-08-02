@@ -272,14 +272,19 @@ get_header();?>
 		<div class="server-details-table-wrap" id="server-details-table-scroll-view">
 			<div class="tab-content" id="bmc-pills-tabContent">
 				<div class="tab-pane fade show active" id="budget-server" role="tabpanel" aria-labelledby="budget-server-tab">
-					<?php echo do_shortcode('[dedicated_pricing_info product_group_id=358 discount=20 caption="Budget Servers"]');?>
+					<div id="bmc-pills-table-scroll">
+						<?php echo do_shortcode('[dedicated_pricing_info product_group_id=358 discount=20 caption="Budget Servers"]');?>
+					</div>
 				</div>
 				<div class="tab-pane fade" id="pro-server" role="tabpanel" aria-labelledby="pro-server-tab">
-					<?php echo do_shortcode('[dedicated_pricing_info product_group_id=331 discount=20 caption="Pro Servers"]');?>
+					<div id="bmc-pills-table-scroll">
+						<?php echo do_shortcode('[dedicated_pricing_info product_group_id=331 discount=20 caption="Pro Servers"]');?>
+					</div>
 				</div>
 				<div class="tab-pane fade" id="enterprise-server" role="tabpanel" aria-labelledby="enterprise-server-tab">
-					<?php echo do_shortcode('[dedicated_pricing_info product_group_id=332 discount=20 caption="Enterprise Server"]
-');?>
+					<div id="bmc-pills-table-scroll">
+						<?php echo do_shortcode('[dedicated_pricing_info product_group_id=332 discount=20 caption="Enterprise Server"]');?>
+					</div>
 				</div>
 			</div>
 		</div>

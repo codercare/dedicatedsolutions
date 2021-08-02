@@ -41,13 +41,22 @@ header.entry-header.u-txt-center{
     color: #ff8800;
 }
 
-#server-details-table-scroll-view #bmc-pills-tabContent{
-    max-height: 750px;    
-    overflow-x: hidden;
-    overflow-y: scroll;    
+@media(min-width: 767px){
+    #bmc-pills-table-scroll{
+        max-height: 78vmin;    
+        overflow-x: hidden;
+        overflow-y: scroll;
+        scrollbar-color: #ff8800 #ffce95; 
+        &::-webkit-scrollbar{
+            width:8rem;
+        }
+        &::-webkit-scrollbar-thumb{
+            background-color:#ffce95;  
+            scrollbar-color:#f00 #ff0 !important; 
+        }
+        &::-moz-any-link { 
+            color: #ffce95;  
+        }    
+    }
 }
 
-#server-details-table-scroll-view #bmc-pills-tabContent::-webkit-scrollbar{width:8px;}
-#server-details-table-scroll-view #bmc-pills-tabContent::-webkit-scrollbar-thumb{background-color:#ffce95;  scrollbar-color:#f00 #ff0 !important; }
-#server-details-table-scroll-view #bmc-pills-tabContent::-moz-any-link { color: #ffce95;  }
-#server-details-table-scroll-view #bmc-pills-tabContent{  scrollbar-color: #ff8800 #ffce95; }

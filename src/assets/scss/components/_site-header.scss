@@ -4,7 +4,7 @@
 	.site-header__logo{
 		img{
 			@include respond(tab-port){
-				width: 40%;
+				width: 70%;
 			}
 		}
 	}

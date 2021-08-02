@@ -244,6 +244,21 @@
                 @include respond(tab-port){
                     padding: 0 1.1vmin;
                 }
+                &:nth-of-type(1){
+                    .nav-link{
+                        background: #062D5A;
+                    }
+                }
+                &:nth-of-type(2){
+                    .nav-link{
+                        background: #5FA6BE;
+                    }
+                }
+                &:nth-of-type(3){
+                    .nav-link{
+                        background: #56BC3A;
+                    }
+                }
                 .nav-link{
                     text-transform: none;
                     color: #fff;
@@ -278,39 +293,10 @@
                         }
                     }
                     &.active{
+                        background: $mainOrange;
                         &::before{
                             display: block;
                             background: $mainOrange;
-                        }
-                    }
-                }
-                &:nth-of-type(1){
-                    .nav-link{
-                        background: #062D5A;
-                        &.active{
-                            &::before{
-                                background: #062D5A;
-                            }
-                        }
-                    }
-                }
-                &:nth-of-type(2){
-                    .nav-link{
-                        background: #5FA6BE;
-                        &.active{
-                            &::before{
-                                background: #5FA6BE;
-                            }
-                        }
-                    }
-                }
-                &:nth-of-type(3){
-                    .nav-link{
-                        background: #56BC3A;
-                        &.active{
-                            &::before{
-                                background: #56BC3A;
-                            }
                         }
                     }
                 }
@@ -725,6 +711,21 @@
                     }
                 }
             }
+            &:nth-of-type(2){
+                .btn--orange{
+                    background: #062D5A;
+                }
+            }
+            &:nth-of-type(3){
+                .btn--orange{
+                    background: #5FA6BE;
+                }
+            }
+            &:last-child{
+                .btn--orange{
+                    background: #56BC3A;
+                }
+            }
             &--footer{
                 min-height: 8rem;
                 display: flex;
@@ -741,6 +742,9 @@
                     display: block;
                     max-width: none;
                     margin: 0 0 .8rem;
+                    &:hover{
+                        background: $mainOrange;
+                    }
                     @include respond(tab-port){
                         font-size: 1.6vmin;
                         padding: .9vmin 3vmin;
@@ -757,16 +761,6 @@
                             font-size: 1.2vmin
                         }
                     }
-                }
-            }
-            &:nth-of-type(3){
-                .btn--orange{
-                    background: #5FA6BE;
-                }
-            }
-            &:last-child{
-                .btn--orange{
-                    background: #56BC3A;
                 }
             }
         }

@@ -60,6 +60,7 @@
 					anchors: ['section1', 'section2', 'section3', 'section4','section5','section6','section7','section8','section9','section10'],
 					navigationPosition: 'right',
 					responsiveWidth: 768,
+					normalScrollElements: '#bmc-pills-table-scroll',
 					onLeave: function(index, next, direction) {
 						if (next.index != 0) {
 						$('.site-header').addClass('site-header--on-scroll');

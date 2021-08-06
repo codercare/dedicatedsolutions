@@ -40,15 +40,19 @@ header.entry-header.u-txt-center{
 .carosel-navigation .carousel-control-next:hover, .carousel-control-prev:hover{
     color: #ff8800;
 }
+.light-theme .current{  background: #ff8800!important; border-color:#d87503!important;}
+
+.simple-pagination{ padding-top:15px!important; float: right;}
+.simple-pagination li.disabled span{ background: #fff!important; color: #666; border-color: #BBB!important;  cursor:not-allowed; }
 
 @media(min-width: 767px){
     #bmc-pills-table-scroll{
-        max-height: 78vmin;    
-        overflow-x: hidden;
-        overflow-y: scroll;
+        // max-height: 78vmin;    
+        // overflow-x: hidden;
+        // overflow-y: scroll;
         scrollbar-color: #ff8800 #ffce95; 
         &::-webkit-scrollbar{
-            width:8rem;
+            width:2.5rem;
         }
         &::-webkit-scrollbar-thumb{
             background-color:#ffce95;  

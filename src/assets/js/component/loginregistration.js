@@ -1,4 +1,28 @@
+
+
+
 import $ from 'jquery';
+
+// $.noConflict();
+// var items = $(".list-wrapper .list-item");
+// var numItems = items.length;
+// var perPage = 4;
+
+// items.slice(perPage).hide();
+// var pageContainer = $('#pagination-container');
+
+// pageContainer.pagination({
+//     items: numItems,
+//     itemsOnPage: perPage,
+//     prevText: "&laquo;",
+//     nextText: "&raquo;",
+//     onPageClick: function (pageNumber) {
+//         var showFrom = perPage * (pageNumber - 1);
+//         var showTo = showFrom + perPage;
+//         items.hide().slice(showFrom, showTo).show();
+//     }
+// });
+
 
 
 var $form = $("#wp_signup_form"),
@@ -200,6 +224,104 @@ jQuery('.chooseEnterprise').on('click',function(e){
     }
     
 });
+
+
+/**
+ *  Pagination of Dedicated Server page
+ * 
+ */
+
+ var items = $("#budget-server tbody tr");
+ var numItems = items.length;
+ var perPage = 10;
+
+ items.slice(perPage).hide();
+
+ $('#budget-server-pagination').pagination({
+     items: numItems,
+     itemsOnPage: perPage,
+     prevText: "&laquo;",
+     nextText: "&raquo;",
+     cssStyle:'light-theme',
+     onPageClick: function (pageNumber) {
+         var showFrom = perPage * (pageNumber - 1);
+         var showTo = showFrom + perPage;
+         items.hide().slice(showFrom, showTo).show();
+     }
+ });
+
+
+ var items_pro = $("#pro-server tbody tr");
+ var numItems_pro = items_pro.length;
+ var perPage_pro = 10;
+
+ items_pro.slice(perPage_pro).hide();
+
+ $('#pro-server-pagination').pagination({
+     items: numItems_pro,
+     itemsOnPage: perPage_pro,
+     prevText: "&laquo;",
+     nextText: "&raquo;",
+     cssStyle:'light-theme',
+     onPageClick: function (pageNumber) {
+         var showFrom = perPage_pro * (pageNumber - 1);
+         var showTo = showFrom + perPage_pro;
+         items_pro.hide().slice(showFrom, showTo).show();
+     }
+ });
+
+
+ var items_ent = $("#enterprise-server tbody tr");
+ var numItems_ent = items_ent.length;
+ var perPage_ent = 10;
+
+ items_ent.slice(perPage_ent).hide();
+
+ $('#enterprise-server-pagination').pagination({
+     items: numItems_ent,
+     itemsOnPage: perPage_ent,
+     prevText: "&laquo;",
+     nextText: "&raquo;",
+     cssStyle:'light-theme',
+     onPageClick: function (pageNumber) {
+         var showFrom = perPage_ent * (pageNumber - 1);
+         var showTo = showFrom + perPage_ent;
+         items_ent.hide().slice(showFrom, showTo).show();
+     }
+ });
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+// var items = jQuery(".budget-server-page tbody tr");
+// var numItems = items.length;
+// var perPage = 5;
+
+// items.slice(perPage).hide();
+
+// jQuery('#dedi-pagination-container').pagination({
+//     items: numItems,
+//     itemsOnPage: perPage,
+//     prevText: "&laquo;",
+//     nextText: "&raquo;",
+//     onPageClick: function (pageNumber) {
+//         var showFrom = perPage * (pageNumber - 1);
+//         var showTo = showFrom + perPage;
+//         items.hide().slice(showFrom, showTo).show();
+//     }
+// });
 
 
 

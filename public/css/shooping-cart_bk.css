@@ -2,19 +2,6 @@
  * Shooping Card page design
  * Used to write rendered page html design
  */
- .btn-primary{
-	background-color:#FA8D1D!important;
-	border-color:#FA8D1D!important;	
-}
-.btn-primary:hover{
-	background-color:#FA8D1D!important;
-	border-color:#FA8D1D!important;
-}
-.btn-warning{
-	border-color:#FA8D1D!important;
-	background-color:#FA8D1D!important;
-	color:#fff!important;
-}
  .nav-wizard {
     padding: 15px 0;
 }
@@ -224,7 +211,6 @@
 	position: relative;
     padding: .3rem 0;
 }
-
 .popular-dedicated-server .server-type-block-wrap .col ul li br {
     display: none;
 }
@@ -277,7 +263,7 @@
 	}
 	.popular-dedicated-server .server-type-block-wrap .col ul li {
 		font-size: 1.4vmin;
-		padding: .3vmin 2vmin;
+		padding: .3vmin 0;
 	}
 	.popular-dedicated-server .server-type-block-wrap .col ul li::before {
 		border-bottom-width: .1vmin;
@@ -297,9 +283,17 @@
 	.popular-dedicated-server .server-type-block-wrap .col ul li:last-child {
 		padding: 1vmin 2vmin;
 	}
-	.popular-dedicated-server .server-type-block-wrap .col ul li:not(:last-child) {
-		text-overflow: ellipsis;
-		white-space: nowrap;
-		overflow: hidden;
-	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

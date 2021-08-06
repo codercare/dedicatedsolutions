@@ -19,9 +19,20 @@ function ds_assets() {
 	wp_enqueue_style( 'shooping-cart', get_template_directory_uri() . '/public/css/shooping-cart.css', array(), _S_VERSION, 'all' );
 
 
-    // wp_enqueue_script( 'ds-jquery-min', get_template_directory_uri() . '/public/js/jquery-3.5.1.min.js', array(), _S_VERSION, true );
-	wp_enqueue_style( 'jquery2.2.4', get_template_directory_uri() . '/public/js/jquery-2.2.4.min.js', array(), _S_VERSION, 'all' );
+   
+	// wp_enqueue_style( 'jquery2.2.4', get_template_directory_uri() . '/public/js/jquery-2.2.4.min.js', array(), _S_VERSION, 'all' );
+	//wp_enqueue_script( 'ds-jquery-3.3.1-min', get_template_directory_uri() . '/public/js/jquery-3.3.1.min.js', array(), _S_VERSION, true );
+
 	
+	wp_enqueue_style( 'simple-pagination-style', get_template_directory_uri() . '/public/css/simplePagination.css', array(), _S_VERSION, 'all' );
+	
+
+	wp_enqueue_script( 'simple-pagination-js', get_template_directory_uri() . '/public/js/jquery.simplePagination.js', array(), _S_VERSION, true );
+
+	// wp_enqueue_style( 'jquery-v3.3.1-online', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js', array(), _S_VERSION, 'all' );
+	// wp_enqueue_style( 'simple-paagination-online', get_template_directory_uri() . '/public/js/jquery.simplePagination.js', array(), _S_VERSION, 'all' );
+	
+
 	//// wp_enqueue_script( 'ds-jquery-slim', get_template_directory_uri() . '/public/js/jquery-3.3.1.slim.min.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'bootstrap-js-loc', get_template_directory_uri() . '/public/js/bootstrap.bundle.min.js', array( 'jquery' ), true );
 	wp_enqueue_script( 'validate-js-loc', get_template_directory_uri() . '/public/js/validate.min.js',_S_VERSION, true );

@@ -146,7 +146,7 @@ get_header();?>
 							</div>
 						</div>
 						<div class="av-gridder-button">
-							<a href="<?php the_sub_field('view_budget_servers_link');?>" class="btn--orange">View Budget Servers</a>
+							<a href="<?php the_sub_field('view_budget_servers_link');?>" class="btn--orange">View Detail</a>
 						</div>
 					</div>
 				</div>

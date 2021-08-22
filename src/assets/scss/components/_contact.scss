@@ -91,9 +91,12 @@
             .btn--orange{
                 text-transform: inherit;
                 justify-content: center;
+                cursor: pointer;
                 @include respond(tab-port){
                     padding: .8vmin 2.2vmin;
                     max-width: 12.8vmin;
+                }&:hover{
+                    background-color: #000;
                 }
                 .fas {
                     margin: 0 0 0 1rem;
@@ -106,10 +109,7 @@
                 background-color: #982890;
             }
             &.block-2{
-                background-color: #4591DA;
-                .btn--orange{
-                    background: #000;
-                }
+                background-color: #4591DA;                
             }
             &.block-3{
                 background-color: #284970;
@@ -293,3 +293,4 @@
         }
     }
 }
+.default-hide{ display:none; }

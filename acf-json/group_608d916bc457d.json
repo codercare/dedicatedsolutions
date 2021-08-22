@@ -430,7 +430,7 @@
                     "key": "field_608ee0cb0a8bd",
                     "label": "Satisfied Customer button link",
                     "name": "satisfied_customer_button_link",
-                    "type": "url",
+                    "type": "text",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -440,7 +440,10 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "placeholder": ""
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
                 }
             ]
         },
@@ -1097,7 +1100,7 @@
                     "key": "field_608da30cec7a8",
                     "label": "Section button link",
                     "name": "section_button_link",
-                    "type": "url",
+                    "type": "text",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -1107,7 +1110,10 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "placeholder": ""
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
                 }
             ]
         },
@@ -1269,7 +1275,7 @@
                     "key": "field_608da4ff3862f",
                     "label": "Feature block button link",
                     "name": "feature_block_button_link",
-                    "type": "url",
+                    "type": "text",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -1279,7 +1285,10 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "placeholder": ""
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
                 }
             ]
         },
@@ -1442,7 +1451,7 @@
                     "key": "field_608da7645d4da",
                     "label": "Block Buton Link",
                     "name": "technology_and_support_block_button_link",
-                    "type": "url",
+                    "type": "text",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -1452,7 +1461,10 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "placeholder": ""
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
                 },
                 {
                     "key": "field_609527928c3d6",
@@ -1498,5 +1510,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "Form fields for home page.",
-    "modified": 1625452307
+    "modified": 1629567944
 }

@@ -104,7 +104,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\XAMPP\htdocs\dedicated-solutions.com\wp-content\themes\dedicatedsolutions\src\assets\js\customize-preview.js */"./src/assets/js/customize-preview.js");
+module.exports = __webpack_require__(/*! D:\Prakash\htdocs\dedicated-solutions.com\wp-content\themes\dedicatedsolutions\src\assets\js\customize-preview.js */"./src/assets/js/customize-preview.js");
 
 
 /***/ })

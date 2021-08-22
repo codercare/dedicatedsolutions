@@ -2,7 +2,10 @@
     &.dedicated-server-page-banner{
         .page-banner-content{
             @include respond(tab-port){
-                padding: 7vmin 0 2vmin;
+                padding: 8vmin 0 2vmin;
+            }
+            h1{
+                font-size:4.5vmin;
             }
             h4{
                 font-size: 1.2rem;

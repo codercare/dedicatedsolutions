@@ -49,6 +49,12 @@ get_header();?>
 							?>							
 						</ul>
 					</div>
+					<!-- <div class="os-control-panl__btn-wrap">
+					<a href="<?php the_sub_field('button_link');?>" class="btn--orange">
+					<span class="btn-label">Server Feature</span></a>
+					<a href="<?php the_sub_field('button_link');?>" class="btn--orange">
+					<span class="btn-label">Server Feature</span></a>
+					</div> -->
 				</div>
 			</div>
 		</section>
@@ -56,8 +62,9 @@ get_header();?>
 		<section class="dedicated-server-navTabs">
 			<div class="navTabs-pills-wrap">
 				<div class="wrapper">
-					<ul class="nav nav-pills" id="db-bd-hosting-pills-tab" role="tablist">
+					<ul class="nav nav-pills"  >
 						<?php
+						/*
 						$counter = 1;
 						if ( have_rows( 'three_tab' ) ) : 
 						while ( have_rows( 'three_tab' ) ) :
@@ -69,8 +76,18 @@ get_header();?>
 						<?php 
 						$counter++;
 						endwhile; 
-						endif;			
+						endif;		
+						*/	
 						?>
+						<li class="nav-item" >
+							<a class="nav-link" href="#section2">Hosting Features</a>
+						</li>
+						<li class="nav-item" >
+							<a class="nav-link active"  href="#section4">Server Configurations</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link " href="#section5">Feature Compare</a>
+						</li>
 					</ul>
 				</div>
 			</div>
@@ -223,7 +240,7 @@ get_header();?>
 			<div class="row">
 				<div class="col-md-4">
 					<div class="server-type-block-wrap">
-						<h3><i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/servers.png'; ?>" alt="servers"></i>Budget Srvers</h3>
+						<h3><i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/servers.png'; ?>" alt="servers"></i>Budget Servers</h3>
 						<h4>Our Best Selling Budget Servers</h4>
 						<div class="row">
 							<?php echo do_shortcode('[dedicated_popular_info product_group_id=358 discount=20 caption=""]');?>
@@ -232,7 +249,7 @@ get_header();?>
 				</div>
 				<div class="col-md-4">
 					<div class="server-type-block-wrap">
-						<h3><i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/servers.png'; ?>" alt="servers"></i>Pro Srvers</h3>
+						<h3><i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/servers.png'; ?>" alt="servers"></i>Pro Servers</h3>
 						<h4>Our Best Selling Pro Servers</h4>
 						<div class="row">
 							<?php echo do_shortcode('[dedicated_popular_info product_group_id=331 discount=20 caption="" ]');?>							
@@ -241,7 +258,7 @@ get_header();?>
 				</div>
 				<div class="col-md-4">
 					<div class="server-type-block-wrap">
-						<h3><i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/servers.png'; ?>" alt="servers"></i>Enterprise Srvers</h3>
+						<h3><i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/servers.png'; ?>" alt="servers"></i>Enterprise Servers</h3>
 						<h4>Our Best Selling Enterprise Servers</h4>
 						<div class="row">
 							<?php echo do_shortcode('[dedicated_popular_info  product_group_id=332 discount=20 caption=""]');?>

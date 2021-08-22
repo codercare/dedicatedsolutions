@@ -307,7 +307,7 @@ get_header();?>
 			<div class="row">
 				<div class="col-xl-4 col-lg-6">
 					<div class="server-type-block-wrap">
-						<h3><i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/servers.png'; ?>" alt="servers"></i>Budget Srvers</h3>
+						<h3><i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/servers.png'; ?>" alt="servers"></i>Budget Servers</h3>
 						<h4>Our Best Selling Budget Servers</h4>
 						<div class="row">
 							<div class="col-lg-6">
@@ -391,7 +391,7 @@ get_header();?>
 				</div>
 				<div class="col-xl-4 col-lg-6">
 					<div class="server-type-block-wrap">
-						<h3><i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/servers.png'; ?>" alt="servers"></i>Pro Srvers</h3>
+						<h3><i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/servers.png'; ?>" alt="servers"></i>Pro Servers</h3>
 						<h4>Our Best Selling Pro Servers</h4>
 						<div class="row">
 							<div class="col-lg-6">
@@ -475,7 +475,7 @@ get_header();?>
 				</div>
 				<div class="col-xl-4 col-lg-6">
 					<div class="server-type-block-wrap">
-						<h3><i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/servers.png'; ?>" alt="servers"></i>Enterprise Srvers</h3>
+						<h3><i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/servers.png'; ?>" alt="servers"></i>Enterprise Servers</h3>
 						<h4>Our Best Selling Enterprise Servers</h4>
 						<div class="row">
 							<div class="col-lg-6">

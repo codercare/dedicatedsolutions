@@ -31,7 +31,7 @@
 					<ul class="support-links">
 						<li class="support-links__item">
 							<h6 class="support-links__title">Managed Support</h6>
-							<a href="#" class="support-links__link">Industry Leading Managed support</a>
+							<a href="<?php echo site_url('/managed-services');?>" class="support-links__link">Industry Leading Managed support</a>
 						</li>
 						<li class="support-links__item">
 							<h6 class="support-links__title">Speak with an Expert</h6>

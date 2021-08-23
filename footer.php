@@ -92,5 +92,19 @@
 		<!-- <noscript><a href="https://www.livechatinc.com/chat-with/13057212/" rel="nofollow">Chat with us</a>, powered by <a href="https://www.livechatinc.com/?welcome" rel="noopener nofollow" target="_blank">LiveChat</a></noscript> -->
 		<!-- End of LiveChat code -->
 
+
+		<script type="text/javascript">
+		var LC_API = LC_API || {};
+		LC_API.on_chat_started = function()
+		{
+			return;
+			var google_conversion_id, google_conversion_label, img;
+
+			google_conversion_id    = "965323049";
+			google_conversion_label = "i879CLLNzVsQqdKmzAM";
+			img = new Image(1, 1);
+			img.src = 'http://www.googleadservices.com/pagead/conversion/'+google_conversion_id+'/?label='+google_conversion_label+'&script=0';
+		};
+		</script>
 	</body>
 </html>

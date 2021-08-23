@@ -293,22 +293,17 @@ jQuery('.chooseEnterprise').on('click',function(e){
 
 
  jQuery('#requestCallback').on('click',function(e){
-    // var type = $(this).attr('servertype');
-    // alert("Clicked button");
     jQuery('#container-contact-form').hide();
-
     jQuery('#container-request-form').show();
     window.location.hash = '#section2';
+    return false;    
+});
 
-
-    // if(type=='enterprise'){
-    //     jQuery("#enterprise-server-tab" ).trigger( "click" );
-    // }else if(type=='pro'){
-    //     jQuery("#pro-server-tab" ).trigger( "click" );
-    // }else{
-    //     jQuery("#budget-server-tab" ).trigger( "click" );
-    // }
-    
+jQuery('#requestContact').on('click',function(e){
+    jQuery('#container-request-form').hide();
+    jQuery('#container-contact-form').show();
+    window.location.hash = '#section2';
+    return false;    
 });
 
 

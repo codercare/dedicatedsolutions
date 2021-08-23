@@ -40,7 +40,7 @@ while ( have_posts() ) : the_post();
 							</div>
 							<h3><?php the_field( 'live_support_block_title' ); ?></h3>
 							<p><?php the_field( 'live_support_detail' ); ?></p>
-							<a href="<?php the_field( 'live_support_button_link' ); ?>" class="btn--orange"><?php the_field( 'live_support_button_label' ); ?> <i class="fas fa-arrow-right"></i></a>
+							<a id="callback1123" onclick="LC_API.open_chat_window({source:'button'});return false;" class="btn--orange"><?php the_field( 'live_support_button_label' ); ?> <i class="fas fa-arrow-right"></i></a>
 						</div>
 					</div>
 					<div class="col-md-4">
@@ -72,11 +72,28 @@ while ( have_posts() ) : the_post();
 								?>
 								<img src="<?php echo $existing_user_icon; ?>" alt="<?php the_field( 'already_user_title' ); ?>">
 							</div>
-							<h3><?php the_field( 'already_user_title' ); ?></h3>
+							<h3>Get In Touch</h3>
 							<p><?php the_field( 'already_user_description' ); ?></p>
-							<a href="<?php the_field( 'already_user_button_link' ); ?>" class="btn--orange"><?php the_field( 'already_user_button_label' ); ?> <i class="fas fa-arrow-right"></i></a>
+							<a  id="requestContact"  class="btn--orange"> Contact <i class="fas fa-arrow-right"></i></a>
 						</div>
 					</div> 
+					<!-- <div class="col-md-4">
+						<div class="service-block block-3" style="background-image: url('< ?php echo get_template_directory_uri() . '/dist/assets/images/user.svg'; ?>')">
+							<div class="service-icon-box">
+								< ?php
+								$existing_user_icon = '';
+								$user_icon_image     = get_field( 'already_user_icon' );
+								if ( ! empty( $user_icon_image ) ) {
+									$existing_user_icon = $user_icon_image['sizes']['mid_icon'];
+								}
+								?>
+								<img src="< ?php echo $existing_user_icon; ?>" alt="< ?php the_field( 'already_user_title' ); ?>">
+							</div>
+							<h3>< ?php the_field( 'already_user_title' ); ?></h3>
+							<p>< ?php the_field( 'already_user_description' ); ?></p>
+							<a  href="< ?php the_field( 'already_user_button_link' ); ?>" class="btn--orange">< ?php the_field( 'already_user_button_label' ); ?> <i class="fas fa-arrow-right"></i></a>
+						</div>
+					</div>  -->
 				</div>
 			</div>
 		</section>
@@ -131,7 +148,7 @@ while ( have_posts() ) : the_post();
 							<span class="section-header__decoration-element"></span>							
 						</div>						
 						<div class="contact_form">
-							<?php echo do_shortcode('[contact-form-7 id="1186" title="Contact form 1"]');?>
+							<?php echo do_shortcode('[contact-form-7 id="2551" title="Request Call Back"]');?>
 						</div>
 					</div>
 				</div>

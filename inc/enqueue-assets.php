@@ -17,6 +17,7 @@ function ds_assets() {
 	wp_enqueue_style( 'fullpage-css', get_template_directory_uri() . '/public/css/fullpage.min.css', array(), _S_VERSION, 'all' );
 	wp_enqueue_style( 'ds-stylesheet', get_template_directory_uri() . '/dist/assets/css/bundle.css', array(), _S_VERSION, 'all' );
 	wp_enqueue_style( 'shooping-cart', get_template_directory_uri() . '/public/css/shooping-cart.css', array(), _S_VERSION, 'all' );
+	wp_enqueue_style( 'animation', get_template_directory_uri() . '/public/css/animation.css', array(), _S_VERSION, 'all' );
 
 
    

@@ -145,7 +145,7 @@ while ( have_posts() ) : the_post();
 					<div id="container-request-form" class="contact-form default-hide">
 						<div class="section-header u-txt-center">
 							<h2 class="section-header__title">Request a callback</h2>
-							<span class="section-header__decoration-element">Please leave us phone number and we will contact you back.</span>							
+							<h4 class="section-header__Orangesub-title">Please leave us phone number and we will contact you back.</h4>							
 						</div>						
 						<div class="contact_form">
 							<?php echo do_shortcode('[contact-form-7 id="2551" title="Request Call Back"]');?>

@@ -26,7 +26,7 @@
 							<i class="fas fa-headset"></i>
 						</div>
 						<h5 class="us-support__title">Us based support</h5>
-						<p class="us-support__text">Live support</p>
+						<p class="us-support__text"><a onclick="LC_API.open_chat_window({source:'button'}); return false;" >Live support</a></p>
 					</div>
 					<ul class="support-links">
 						<li class="support-links__item">
@@ -34,7 +34,7 @@
 							<a href="<?php echo site_url('/managed-services');?>" class="support-links__link">Industry Leading Managed support</a>
 						</li>
 						<li class="support-links__item">
-							<h6 class="support-links__title">Speak with an Expert</h6>
+							<h6 class="support-links__title"><a onclick="LC_API.open_chat_window({source:'button'}); return false;" >Speak with an Expert</a></h6>
 							<a href="#" class="support-links__link">Need help deciding on the best server for your need?</a>
 						</li>
 					</ul>
@@ -42,7 +42,7 @@
 						<a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Contact Us' ) ) ); ?>" class="btn--orange u-mb-untill-small u-mr">
 							<span class="btn-label">Contact Us</span>
 						</a>
-						<a href="<?php the_field( 'banner_dedicated_server_button_link' ); ?>" class="btn--orange u-mb-untill-small">
+						<a onclick="LC_API.open_chat_window({source:'button'}); return false;"  class="btn--orange u-mb-untill-small">
 							<div class="btn-icon"><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/chat@2x.png'; ?>" alt="" srcset=""></div>
 						</a>
 					</div>
@@ -66,6 +66,7 @@
 					licenseKey: '71051AA7-77BC4D43-BEDAB639-090EF836',
 					navigation: true,
 					navigationPosition: 'right',
+					anchors: ['section1', 'section2','section3','section4','section5','section6','section7','section8','section9','section10'],
 					responsiveWidth: 768,
 					paralax:true,
 						onLeave: function(origin, destination, direction){

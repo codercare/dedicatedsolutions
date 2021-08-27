@@ -37,7 +37,7 @@
 					</div>
 					<div class="rows__small-8 rows__medium-4 rows--item-vertical-center">
 						<a class="btn--orange u-mb-untill-small ml-auto" href="<?php echo do_shortcode('[dedicated_client_area_url]') ?>" class="login">Log In </a> &nbsp;&nbsp;
-						<a href="<?php the_field( 'banner_dedicated_server_button_link' ); ?>" class="btn--orange u-mb-untill-small">
+						<a onclick="LC_API.open_chat_window({source:'button'}); return false;" class="btn--orange u-mb-untill-small">
 							<div class="btn-icon"><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/chat@2x.png'; ?>" alt="" srcset=""></div><span class="btn-label btn-txt-um">Chat</span>
 						</a>
 						<div id="js-shopping-cart-link" class="shopping-cart-link"></div>

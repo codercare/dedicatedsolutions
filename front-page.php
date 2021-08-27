@@ -13,16 +13,16 @@ if ( ! empty( $banner_image ) ) {
 	<section class="section fp-auto-height">
 		<section id="large-banner" class="large-banner page-section" style="background-image: url(<?php echo $banner_image_url; ?>);">
 			<div class="large-banner__container">
-				<h1 class="large-banner__heading"><?php the_field( 'banner_title' ); ?></h1>
+				<h1 class="large-banner__heading wow fadeInDown"><?php the_field( 'banner_title' ); ?></h1>
 				<div class="large-banner__CTA-container">
-					<a href="<?php the_field( 'banner_dedicated_server_button_link' ); ?>" class="btn--orange u-mb-untill-small">
+					<a href="<?php the_field( 'banner_dedicated_server_button_link' ); ?>" class="btn--orange u-mb-untill-small wow fadeInUp">
 						<div class="btn-icon"><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/dserver.png'; ?>" alt="" srcset=""></div><span class="btn-label"><?php the_field( 'banner_dedicated_server_button_label' ); ?></span>
 					</a>
-					<a href="<?php the_field( 'banner_private_cloud_button_link' ); ?>" class="btn--orange">
+					<a href="<?php the_field( 'banner_private_cloud_button_link' ); ?>" class="btn--orange wow fadeInUp">
 						<div class="btn-icon"><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/server@2x.png'; ?>" alt="" srcset=""></div><span class="btn-label"><?php the_field( 'banner_private_cloud_button_label' ); ?></span>
 					</a>
 				</div>
-				<div class="large-banner__features">
+				<div class="large-banner__features wow fadeInLeft">
 					<?php if ( have_rows( 'banner_feature_list' ) ) : ?>
 						<ul class="large-banner__features-list">
 							<?php
@@ -35,7 +35,7 @@ if ( ! empty( $banner_image ) ) {
 						</ul>
 					<?php endif; ?>
 				</div>
-				<div class="btn--transparent">			
+				<div class="btn--transparent wow fadeInUp">			
 					<span><a href="<?php the_field( 'learn_more' ); ?>">Learn More</a></span> 
 					<i class="fas fa-arrow-down"></i>			
 				</div>
@@ -53,7 +53,7 @@ if ( ! empty( $banner_image ) ) {
 							if ( ! empty( $client_logo ) ) {
 								$client_logo_url = $client_logo['url'];
 								?>
-								<li class="client-showcase__logo" ><img src="<?php echo $client_logo_url; ?>" alt="client-logo"/></li>
+								<li class="client-showcase__logo wow fadeInUp" ><img src="<?php echo $client_logo_url; ?>" alt="client-logo"/></li>
 							<?php } ?>
 						<?php endwhile; ?>
 					</ul>
@@ -87,7 +87,7 @@ if ( ! empty( $banner_image ) ) {
 							$sc_bg_image_url = 'background-image: url(' . $satisfied_customer_background_image['url'] . ');';
 						}
 						?>
-					<div class="col-md-4">
+					<div class="col-md-4 wow fadeInUp" >
 						<div class="customer-cards" style="background-color: <?php echo $satisfied_customer_background_color.'; '; echo $sc_bg_image_url; ?>">
 							<h4 class="customer-cards__title"><?php the_sub_field( 'satisfied_customer_title' ); ?></h4>
 							<p class="customer-cards__details"><?php the_sub_field( 'satisfied_customer_content' ); ?></p>						
@@ -126,12 +126,13 @@ if ( ! empty( $banner_image ) ) {
 					<div class="wrapper wrapper--medium">
 						<div class="row">
 						<?php
+						$counter_b = 1;
 						if ( have_rows( 'data_center_locations_content_blocks' ) ) :
 							while ( have_rows( 'data_center_locations_content_blocks' ) ) :
 								the_row();
 								?>
 							<div class="col-md-6">
-								<div class="datalocation-card">
+								<div class="datalocation-card wow <?php if($counter_b%2==0){ echo 'fadeInRight';}else{ echo 'fadeInLeft'; } ?>">
 									<div class="datalocation-card__header">
 										<div class="datalocation-card__icon">
 											<img src="<?php echo get_template_directory_uri(); ?>/dist/assets/images/data-location-icon.png" alt="Icon image">
@@ -142,6 +143,7 @@ if ( ! empty( $banner_image ) ) {
 								</div>
 							</div>
 								<?php
+								$counter_b++;
 							endwhile;
 						endif;
 						?>
@@ -154,11 +156,11 @@ if ( ! empty( $banner_image ) ) {
 		<section class="datacenter">
 			<div class="wrapper">
 				<div class="row">
-					<div class="col-md-4">
+					<div class="col-md-4 wow fadeInUp">
 						<h2 class="section-header__title"><?php the_field( 'our_data_center_title' ); ?></h2>
 						<p class="datacenter__description"><?php the_field( 'our_data_center_content' ); ?></p>
 					</div>
-					<div class="col-md-8">
+					<div class="col-md-8 wow fadeInUp">
 						<div class="wrapper">
 							<div class="row">
 							<?php
@@ -200,7 +202,7 @@ if ( ! empty( $banner_image ) ) {
 					<?php endif; ?>
 				</header>
 				<div class="row">
-					<div class="col-md-6">
+					<div class="col-md-6 wow fadeInLeft ">
 						<p class="server-features__text"><?php the_field( 'unlimited_bandwidth_content' ); ?></p>
 						<ul class="server-features__list">
 						<?php
@@ -218,7 +220,7 @@ if ( ! empty( $banner_image ) ) {
 						?>
 						</ul>
 					</div>
-					<div class="col-md-6">
+					<div class="col-md-6 wow fadeInRight">
 						<div class="server-features__image-container">
 							<?php $bandwidth_feature_image = get_field( 'unlimited_bandwidth_feature_image' ); ?> 
 							<img src="<?php echo $bandwidth_feature_image['url']; ?>" > 
@@ -242,7 +244,7 @@ if ( ! empty( $banner_image ) ) {
 						if ( ! empty( $icon_feature_block_image ) ) {
 							$icon_block_image = $icon_feature_block_image['url'];
 							?>
-						<div class="col-md-4">
+						<div class="col-md-4 wow fadeInUp">
 							<div class="feature-highlight-card">
 								<div class="feature-highlight-card__image-container">
 									<img src="<?php echo $icon_block_image; ?>" alt="" srcset="">
@@ -278,7 +280,7 @@ if ( ! empty( $banner_image ) ) {
 						the_row();
 						$section_background_color = get_sub_field( 'section_background_color' );
 						?>
-					<div class="col-md-6">
+					<div class="col-md-6 wow <?php if($i%2==0){ echo 'fadeInRight'; }else { echo 'fadeInLeft'; }?>">
 						<div class="services-card" style="background-color:<?php echo $section_background_color; ?>">
 							<div class="services-card__image-container">
 								<?php
@@ -301,6 +303,7 @@ if ( ! empty( $banner_image ) ) {
 						</div>
 					</div>
 						<?php
+						$i++;
 						endwhile;
 					endif;
 				?>
@@ -327,7 +330,7 @@ if ( ! empty( $banner_image ) ) {
 					// if($count_p > 4){ break; }
 					$product_image = get_sub_field( 'feature_block_icon_image' );
 					?>
-				<div class="col-md-3 ">
+				<div class="col-md-3 wow fadeInUp">
 					<a href="<?php the_sub_field( 'feature_block_button_link' ); ?>">
 					<div class="product-card">						
 						<div class="product-card__image-container">
@@ -362,6 +365,7 @@ if ( ! empty( $banner_image ) ) {
 				<div class="row">
 				<?php
 				if ( have_rows( 'technology_and_support_blocks' ) ) :
+					$i = 1;
 					while ( have_rows( 'technology_and_support_blocks' ) ) :
 						the_row();
 						$tnsupport_block_bg_image_url          = '';
@@ -375,7 +379,7 @@ if ( ! empty( $banner_image ) ) {
 							$tnsupport_block_bg_image_url = 'background-image: url(' . $technology_and_support_block_bg_image['url'] . ');';
 						}
 						?>
-					<div class="col-md-6">
+					<div class="col-md-6 wow <?php if($i%2==0){ echo 'fadeInRight'; }else { echo 'fadeInLeft'; }?>">
 						<div class="tech-support-card" style="background-color:<?php the_sub_field( 'technology_and_support_block_color_code' ); ?>;<?php echo $tnsupport_block_bg_image_url; ?>">
 							<h4 class="tech-support-card__title"><?php the_sub_field( 'technology_and_support_block_title' ); ?></h4>
 							<p class="tech-support-card__description"><?php the_sub_field( 'technology_and_support_block_content' ); ?></p>
@@ -386,6 +390,7 @@ if ( ! empty( $banner_image ) ) {
 						</div>
 					</div>
 						<?php
+						$i++;
 					endwhile;
 				endif;
 				?>

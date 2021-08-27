@@ -49,26 +49,57 @@
 				</div>
 
 			</div>
+
+			<style>
+				@media(min-width:768px){
+					body{
+						overflow: hidden !important;
+					}
+				}
+			</style>
 		</footer>
 		<?php wp_footer(); ?>
 		<script>			
 			jQuery(document).ready(function($) {
-				$('#fullpage').fullpage({
+				var myFullpage = new fullpage('#fullpage', {
+					scrollBar: true,
 					licenseKey: '71051AA7-77BC4D43-BEDAB639-090EF836',
-					fitToSection: true,
 					navigation: true,
-					anchors: ['section1', 'section2', 'section3', 'section4','section5','section6','section7','section8','section9','section10'],
 					navigationPosition: 'right',
 					responsiveWidth: 768,
-					normalScrollElements: '#bmc-pills-table-scroll',
-					onLeave: function(index, next, direction) {
-						if (next.index != 0) {
-						$('.site-header').addClass('site-header--on-scroll');
-						} else {
-						$('.site-header').removeClass('site-header--on-scroll');
+					paralax:true,
+						onLeave: function(origin, destination, direction){
+						var loadedSection = this;
+					
+						switch(destination.index){
+						case 0:
+							$(".site-header").removeClass('site-header--on-scroll');
+						break;
+						default:
+							$(".site-header").addClass('site-header--on-scroll');
 						}
+						
+					},
+					afterResponsive: function(isResponsive){
 					}
 				});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				
 				$('.av-gridder').gridderExpander({
 					scroll: true,
 					scrollOffset: 30,
@@ -79,9 +110,25 @@
 				});
 
 				$('[data-toggle="tooltip"]').tooltip();   
-							
-			});	
+
 				
+				// WOW JS
+				$(window).on ('load', function (){
+					wow = new WOW(
+					{
+						boxClass:     'wow',      // default
+						animateClass: 'animated', // default
+						offset:       0,          // default
+						mobile:       true,       // default
+						live:         true        // default
+						}
+					)
+					wow.init();
+					});
+					
+					
+			});	
+					
 		</script>
 		
 		<!-- Start of LiveChat (www.livechatinc.com) code -->

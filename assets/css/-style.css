@@ -16,6 +16,11 @@ body {
   font-weight: normal;
 }
 
+:root{
+  --animate-duration: 800ms;
+  --animate-delay: 0.9s;
+}
+
 .page-content {
   padding-bottom: 5.1vmin;
 }

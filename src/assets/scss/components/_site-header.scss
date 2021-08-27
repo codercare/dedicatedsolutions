@@ -209,6 +209,7 @@
 		height: 2.4rem !important;
 		background-size: 100% !important;
     	margin-left: 1rem;
+		cursor: pointer;
 		@include respond(tab-port){
 			width: 3vmin !important;
 			height: 3vmin !important;

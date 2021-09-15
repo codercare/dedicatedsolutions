@@ -17,9 +17,9 @@ while ( have_posts() ) : the_post();
 	<section class="section">
 		<section class="page-banner db-bd-sh-page-banner" style="background-image:url('<?php echo $banner_image_url; ?>')">
 			<div class="wrapper">
-				<div class="page-banner-content">
-					<h1 class="large-banner__heading"><?php the_field( 'database_and_big_data_server_hosting_title' ); ?></h1>
-					<a href="<?php the_field( 'database_and_big_data_button_link' ); ?>" class="btn--orange"><?php the_field( 'database_and_big_data_button_label' ); ?> <i class="fas fa-arrow-right"></i></a>
+				<div class="page-banner-content wow fadeInDown">
+					<h1 class="large-banner__heading wow fadeInLeft"><?php the_field( 'database_and_big_data_server_hosting_title' ); ?></h1>
+					<a href="<?php the_field( 'database_and_big_data_button_link' ); ?>" class="btn--orange  wow pulse infinite"><?php the_field( 'database_and_big_data_button_label' ); ?> <i class="fas fa-arrow-right"></i></a>
 				</div>
 			</div>
 		</section>
@@ -54,9 +54,9 @@ while ( have_posts() ) : the_post();
 					the_row();								
 					?>
 					<div class="tab-pane fade <?php if($counter_feature == '3'){ echo'show active'; }?>" id="tab_id_<?php echo $counter_feature;?>" role="tabpanel" aria-labelledby="tab_id_<?php echo $counter_feature;?>-tab">
-						<h2 class="section-header__title"><?php the_sub_field( 'database_title' ); ?></h2>
+						<h2 class="section-header__title wow fadeInUp"><?php the_sub_field( 'database_title' ); ?></h2>
 						<div class="row">
-							<div class="col-md-6">
+							<div class="col-md-6 wow fadeInLeftBig">
 								<div class="server-hosting-content">
 									<h4 class="section-header__Orangesub-title"><?php the_sub_field( 'database_feature_sub_title' ); ?></h4>
 									<p class="section-header__sub-title"><?php the_sub_field( 'left_text_box' ); ?></p>
@@ -73,7 +73,7 @@ while ( have_posts() ) : the_post();
 									}?>
 								</div>
 							</div>
-							<div class="col-md-6">
+							<div class="col-md-6 wow fadeInRightBig">
 								<div class="server-hosting-support-list">
 									<?php 
 									$feature_group = get_sub_field('feature_title_and_feature_listing');									
@@ -106,12 +106,13 @@ while ( have_posts() ) : the_post();
 	<section class="ss-and-db-cluster section" style="background-image:url('<?php echo get_template_directory_uri() . '/dist/assets/images/ss-and-db-cluster-bg.jpg'; ?>')">
 		<div class="wrapper">
 			 <div class="section-header u-txt-center">
-				<h2 class="section-header__title"><?php the_field( 'single_server_&_database_clusters_title' ); ?></h2>
+				<h2 class="section-header__title wow fadeInDown"><?php the_field( 'single_server_&_database_clusters_title' ); ?></h2>
 				<span class="section-header__decoration-element--dark"></span>
-				<h4 class="section-header__Orangesub-title"><?php the_field( 'single_server_database_clusters_sub_heading' ); ?></h4>
+				<h4 class="section-header__Orangesub-title wow fadeInDown"><?php the_field( 'single_server_database_clusters_sub_heading' ); ?></h4>
 			</div>
 			<div class="row">
 				<?php
+				$i = 1;
 				if ( have_rows( 'single_or_cluster_block' ) ) : 
 				while ( have_rows( 'single_or_cluster_block' ) ) :
 				the_row();
@@ -121,7 +122,7 @@ while ( have_posts() ) : the_post();
 					$sig_clus_image = $single_cluster_db['url'];
 				}
 				?>
-				<div class="col-md-6">
+				<div class="col-md-6  wow <?php if($i%2==0){ echo 'fadeInRightBig'; }else { echo 'fadeInLeftBig'; }?> ">
 					<div class="ss-db-cluster-block">
 						<figure class="thumbnail-img">
 							<img src="<?php echo $sig_clus_image; ?>" alt="<?php the_sub_field('title');?>">
@@ -162,6 +163,7 @@ while ( have_posts() ) : the_post();
 					</div>
 				</div>
 				<?php
+				$i++;
 				endwhile;
 				endif;
 				?>				
@@ -180,7 +182,7 @@ while ( have_posts() ) : the_post();
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-4">
-					<div class="server-type-block-wrap">
+					<div class="server-type-block-wrap wow fadeInUp">
 						<h3><i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/servers.png'; ?>" alt="servers"></i>Budget Servers</h3>
 						<h4>Our Best Selling Budget Servers</h4>
 						<div class="row">
@@ -189,7 +191,7 @@ while ( have_posts() ) : the_post();
 					</div>
 				</div>
 				<div class="col-md-4">
-					<div class="server-type-block-wrap">
+					<div class="server-type-block-wrap wow fadeInUp">
 						<h3><i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/servers.png'; ?>" alt="servers"></i>Pro Servers</h3>
 						<h4>Our Best Selling Pro Servers</h4>
 						<div class="row">
@@ -198,7 +200,7 @@ while ( have_posts() ) : the_post();
 					</div>
 				</div>
 				<div class="col-md-4">
-					<div class="server-type-block-wrap">
+					<div class="server-type-block-wrap wow fadeInUp">
 						<h3><i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/servers.png'; ?>" alt="servers"></i>Enterprise Servers</h3>
 						<h4>Our Best Selling Enterprise Servers</h4>
 						<div class="row">
@@ -214,9 +216,9 @@ while ( have_posts() ) : the_post();
 	<section class="hadoop-data-server section">
 		<div class="wrapper">
 			<div class="section-header u-txt-center">
-				<h2 class="section-header__title"><?php the_field('hadoop_plus_big_data_server_equals_speed_title');?></h2>
+				<h2 class="section-header__title wow shake"><?php the_field('hadoop_plus_big_data_server_equals_speed_title');?></h2>
 				<span class="section-header__decoration-element"></span>
-				<h4 class="section-header__Orangesub-title"><?php the_field('hadoop_plus_big_data_server_equals_description');?></h4>
+				<h4 class="section-header__Orangesub-title wow bounceInDown"><?php the_field('hadoop_plus_big_data_server_equals_description');?></h4>
 			</div>
 			<div class="hadoop-server-feat">
 				<div class="row">
@@ -225,7 +227,7 @@ while ( have_posts() ) : the_post();
 					while ( have_rows( 'hadoop_plus_big_data_server_equals_blocks' ) ) :
 					the_row();											
 					?>
-					<div class="col-md-4">
+					<div class="col-md-4 wow fadeInRightBig">
 						<div class="hadoop-server-feat--block">
 							<div class="hadoop-server-feat--block__icon">
 								<?php the_sub_field('block_svg_code');?>
@@ -239,7 +241,7 @@ while ( have_posts() ) : the_post();
 					endif;
 					?>
 				</div>
-				<a href="<?php the_field('learn_more_button_link');?>" class="btn--orange"><?php the_field('learn_more_button_label');?> <i class="fas fa-arrow-right"></i></a>
+				<a href="<?php the_field('learn_more_button_link');?>" class="btn--orange wow pulse infinite"><?php the_field('learn_more_button_label');?> <i class="fas fa-arrow-right"></i></a>
 			</div>
 		</div>
 	</section>

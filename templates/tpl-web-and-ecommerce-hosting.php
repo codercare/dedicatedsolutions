@@ -17,10 +17,10 @@ while ( have_posts() ) : the_post();
 	<section class="section">
 		<section class="page-banner about-page-banner wh-eh-page-banner" style="background-image:url('<?php echo $banner_image_url; ?>')">
 			<div class="wrapper">
-				<div class="page-banner-content">
-					<h1 class="large-banner__heading"><?php the_field( 'web_hosting_ecommerce_hosting_title' ); ?></h1>
-					<p><?php the_field( 'web_hosting_ecommerce_hosting_sub_title' ); ?></p>
-					<a href="<?php the_field( 'banner_button_link' ); ?>" class="btn--orange"><?php the_field( 'banner_button_label' ); ?> <i class="fas fa-arrow-right"></i></a>
+				<div class="page-banner-content wow fadeInDown">
+					<h1 class="large-banner__heading wow fadeInLeft"><?php the_field( 'web_hosting_ecommerce_hosting_title' ); ?></h1>
+					<p class="wow fadeInLeft"><?php the_field( 'web_hosting_ecommerce_hosting_sub_title' ); ?></p>
+					<a href="<?php the_field( 'banner_button_link' ); ?>" class="btn--orange wow pulse infinite"><?php the_field( 'banner_button_label' ); ?> <i class="fas fa-arrow-right"></i></a>
 				</div>
 			</div>
 		</section>
@@ -29,7 +29,7 @@ while ( have_posts() ) : the_post();
 			<div class="wrapper">
 				<div class="row align-items-center">
 					<div class="col-md-4 order-md-1">
-						<figure class="thumbnail-img">
+						<figure class="thumbnail-img wow fadeInUp">
 							<?php
 							$single_server_image = get_template_directory_uri() . '/dist/assets/images/ecommerce-img1.png';
 							$single_serv_image     = get_field( 'block_icon' );
@@ -41,7 +41,7 @@ while ( have_posts() ) : the_post();
 						</figure>
 					</div>
 					<div class="col-md-4 order-md-0">
-						<div class="wh-eh-hosting-content">
+						<div class="wh-eh-hosting-content  wow fadeInLeftBig">
 							<div class="section-header">
 								<h2 class="section-header__title"><?php the_field( 'single_server_web_hosting_title' ); ?></h2>
 								<span class="section-header__decoration-element"></span>
@@ -50,8 +50,8 @@ while ( have_posts() ) : the_post();
 							<a href="<?php the_field( 'single_server_button_link' ); ?>" class="btn--orange"><?php the_field( 'single_server_button_label' ); ?><i class="fas fa-arrow-right"></i></a>
 						</div>
 					</div>
-					<div class="col-md-4 order-md-2">
-						<div class="wh-eh-hosting-adv">
+					<div class="col-md-4 order-md-2 ">
+						<div class="wh-eh-hosting-adv wow fadeInRightBig">
 							<h2>Advantages</h2>
 							<ul class="check-list-group orange-check">
 								<?php
@@ -76,7 +76,7 @@ while ( have_posts() ) : the_post();
 		<div class="wrapper">
 			<div class="row align-items-center">
 				<div class="col-md-4 order-md-1">
-					<figure class="thumbnail-img">
+					<figure class="thumbnail-img wow fadeInUp">
 						<?php
 						$mul_load_serv = get_template_directory_uri() . '/dist/assets/images/ecommerce-img2.png';
 						$multi_serv_image     = get_field( 'block_icon' );
@@ -88,7 +88,7 @@ while ( have_posts() ) : the_post();
 					</figure>
 				</div>
 				<div class="col-md-4 order-md-2">
-					<div class="wh-eh-hosting-content">
+					<div class="wh-eh-hosting-content wow fadeInRightBig ">
 						<div class="section-header">
 							<h2 class="section-header__title"><?php the_field( 'multiple_load_balance_server_title' ); ?></h2>
 							<span class="section-header__decoration-element"></span>
@@ -98,7 +98,7 @@ while ( have_posts() ) : the_post();
 					</div>
 				</div>
 				<div class="col-md-4 order-md-0">
-					<div class="wh-eh-hosting-adv">
+					<div class="wh-eh-hosting-adv wow fadeInLeftBig">
 						<h2>Advantages</h2>
 						<ul class="check-list-group orange-check">
 							<?php
@@ -122,7 +122,7 @@ while ( have_posts() ) : the_post();
 		<div class="wrapper">
 			<div class="row align-items-center">
 				<div class="col-md-4 order-md-1">
-					<figure class="thumbnail-img">
+					<figure class="thumbnail-img wow fadeInUp">
 						<?php
 						$mul_geo_serv = get_template_directory_uri() . '/dist/assets/images/ecommerce-img1.png';
 						$mul_geo_images     = get_field( 'multiple_geographical_block_image' );
@@ -134,7 +134,7 @@ while ( have_posts() ) : the_post();
 					</figure>
 				</div>
 				<div class="col-md-4 order-md-0">
-					<div class="wh-eh-hosting-content">
+					<div class="wh-eh-hosting-content  wow fadeInLeftBig">
 						<div class="section-header">
 							<h2 class="section-header__title"><?php the_field( 'multiple_geographical_data_centers_title' ); ?></h2>
 							<span class="section-header__decoration-element"></span>
@@ -144,7 +144,7 @@ while ( have_posts() ) : the_post();
 					</div>
 				</div>
 				<div class="col-md-4 order-md-2">
-					<div class="wh-eh-hosting-adv">
+					<div class="wh-eh-hosting-adv wow fadeInRightBig">
 						<h2>Advantages</h2>
 						<ul class="check-list-group orange-check">
 							<?php
@@ -176,7 +176,7 @@ while ( have_posts() ) : the_post();
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-4">
-					<div class="server-type-block-wrap">
+					<div class="server-type-block-wrap wow fadeInUp">
 						<h3><i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/servers.png'; ?>" alt="servers"></i>Budget Servers</h3>
 						<h4>Our Best Selling Budget Servers</h4>
 						<div class="row">
@@ -185,7 +185,7 @@ while ( have_posts() ) : the_post();
 					</div>
 				</div>
 				<div class="col-md-4">
-					<div class="server-type-block-wrap">
+					<div class="server-type-block-wrap wow fadeInUp">
 						<h3><i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/servers.png'; ?>" alt="servers"></i>Pro Servers</h3>
 						<h4>Our Best Selling Pro Servers</h4>
 						<div class="row">
@@ -194,7 +194,7 @@ while ( have_posts() ) : the_post();
 					</div>
 				</div>
 				<div class="col-md-4">
-					<div class="server-type-block-wrap">
+					<div class="server-type-block-wrap wow fadeInUp">
 						<h3><i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/servers.png'; ?>" alt="servers"></i>Enterprise Servers</h3>
 						<h4>Our Best Selling Enterprise Servers</h4>
 						<div class="row">

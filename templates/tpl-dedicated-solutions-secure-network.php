@@ -11,15 +11,15 @@ while ( have_posts() ) : the_post();
 	<section class="section">
 		<section class="dedicated-solutions">
 			<div class="wrapper">
-				<h2 class="section-header__title"><?php the_field( 'dedicated_solutions_networks_title' ); ?></h2>
+				<h2 class="section-header__title  wow fadeInLeftBig"><?php the_field( 'dedicated_solutions_networks_title' ); ?></h2>
 				<span class="section-header__decoration-element"></span>
-				<h4 class="section-header__Orangesub-title"><?php the_field( 'dedicated_solutions_networks_sub_title' ); ?></h4>
+				<h4 class="section-header__Orangesub-title  wow fadeInLeftBig"><?php the_field( 'dedicated_solutions_networks_sub_title' ); ?></h4>
 				<div class="dedicated-solutons-detail">
 					<div class="row">
-						<div class="col-md-6 first-detail">
+						<div class="col-md-6 first-detail  wow fadeInLeftBig">
 							<p><?php the_field( 'left_details' ); ?></p>
 						</div>
-						<div class="col-md-6 second-detail">
+						<div class="col-md-6 second-detail  wow fadeInRightBig">
 							<p><?php the_field( 'right_details' ); ?></p>
 						</div>
 					</div>
@@ -28,7 +28,7 @@ while ( have_posts() ) : the_post();
 		</section>
 
 		<section class="global-network-section">
-			<div class="wrapper">
+			<div class="wrapper  wow fadeInUp">
 				<h2 class="section-header__title"><?php the_field( 'global_networks_title' ); ?></h2>
 				<span class="section-header__decoration-element--dark"></span>
 				<ul class="clearfix">
@@ -60,7 +60,7 @@ while ( have_posts() ) : the_post();
 						the_row();
 					?>
 					<div class="col-md-6">
-						<div class="inner-decicated-grid">
+						<div class="inner-decicated-grid  wow fadeInUp">
 							<figure class="thumbnail">						
 							<?php
 							/** Block icon image  */
@@ -99,7 +99,7 @@ while ( have_posts() ) : the_post();
 			<div class="wrapper">
 				<div class="multi-dedicated-col">
 					<div class="row">
-						<div class="col-md-6">
+						<div class="col-md-6 wow fadeInLeftBig">
 							<div class="multi-dedicated-inner-content first">
 								<h2><?php the_field( 'technician_block_title' ); ?></h2>
 								<ul>
@@ -116,7 +116,7 @@ while ( have_posts() ) : the_post();
 								</ul>
 							</div>
 						</div>
-						<div class="col-md-6">
+						<div class="col-md-6 wow fadeInRightBig">
 							<div class="multi-dedicated-inner-content second">
 								<h2><?php the_field( 'routing_equipement_block_title' ); ?></h2>
 								<ul>

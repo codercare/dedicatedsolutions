@@ -15,11 +15,11 @@ if ( ! empty( $banner_image ) ) {
 			<div class="large-banner__container">
 				<h1 class="large-banner__heading wow fadeInDown"><?php the_field( 'banner_title' ); ?></h1>
 				<div class="large-banner__CTA-container">
-					<a href="<?php the_field( 'banner_dedicated_server_button_link' ); ?>" class="btn--orange u-mb-untill-small wow fadeInUp">
+					<a href="<?php the_field( 'banner_dedicated_server_button_link' ); ?>" class="btn--orange u-mb-untill-small wow pulse infinite">
 						<div class="btn-icon"><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/dserver.png'; ?>" alt="" srcset=""></div><span class="btn-label"><?php the_field( 'banner_dedicated_server_button_label' ); ?></span>
 					</a>
-					<a href="<?php the_field( 'banner_private_cloud_button_link' ); ?>" class="btn--orange wow fadeInUp">
-						<div class="btn-icon"><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/server@2x.png'; ?>" alt="" srcset=""></div><span class="btn-label"><?php the_field( 'banner_private_cloud_button_label' ); ?></span>
+					<a href="<?php the_field( 'banner_private_cloud_button_link' ); ?>" class="btn--orange  wow pulse infinite">
+						<div class="btn-icon "><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/server@2x.png'; ?>" alt="" srcset=""></div><span class="btn-label"><?php the_field( 'banner_private_cloud_button_label' ); ?></span>
 					</a>
 				</div>
 				<div class="large-banner__features wow fadeInLeft">
@@ -87,7 +87,7 @@ if ( ! empty( $banner_image ) ) {
 							$sc_bg_image_url = 'background-image: url(' . $satisfied_customer_background_image['url'] . ');';
 						}
 						?>
-					<div class="col-md-4 wow fadeInUp" >
+					<div class="col-md-4 wow zoomIn" >
 						<div class="customer-cards" style="background-color: <?php echo $satisfied_customer_background_color.'; '; echo $sc_bg_image_url; ?>">
 							<h4 class="customer-cards__title"><?php the_sub_field( 'satisfied_customer_title' ); ?></h4>
 							<p class="customer-cards__details"><?php the_sub_field( 'satisfied_customer_content' ); ?></p>						
@@ -330,7 +330,7 @@ if ( ! empty( $banner_image ) ) {
 					// if($count_p > 4){ break; }
 					$product_image = get_sub_field( 'feature_block_icon_image' );
 					?>
-				<div class="col-md-3 wow fadeInUp">
+				<div class="col-md-3 wow fadeInRightBig"  data-wow-offset="10">
 					<a href="<?php the_sub_field( 'feature_block_button_link' ); ?>">
 					<div class="product-card">						
 						<div class="product-card__image-container">

@@ -4,7 +4,6 @@
 get_header();?>
 <main id="fullpage" class="site-main">
 <?php while ( have_posts() ) : the_post(); 
-
 	$banner_image_url = '';
 	$banner_image     = get_field( 'advanced_virtualization_bg_image' );
 	if ( ! empty( $banner_image ) ) {
@@ -14,27 +13,28 @@ get_header();?>
 	<section class="section">
 		<section class="page-banner about-page-banner av-page-banner" style="background-image:url('<?php echo $banner_image_url; ?>')">
 			<div class="wrapper">
-				<div class="page-banner-content">
-					<h1 class="large-banner__heading"><?php the_field('advanced_virtualization_title');?></h1>
-					<p><?php the_field('advanced_virtualization_sub_title');?></p>
-					<a href="<?php the_field('advanced_virtualization_button_link');?>" class="btn--orange"><?php the_field('advanced_virtualization_button_label');?><i class="fas fa-arrow-right"></i></a>
+				<div class="page-banner-content wow fadeInDown">
+					<h1 class="large-banner__heading wow fadeInLeft"><?php the_field('advanced_virtualization_title');?></h1>
+					<p class="wow fadeInDown"><?php the_field('advanced_virtualization_sub_title');?></p>
+					<a href="<?php the_field('advanced_virtualization_button_link');?>" class="btn--orange wow pulse infinite"><?php the_field('advanced_virtualization_button_label');?><i class="fas fa-arrow-right"></i></a>
 				</div>
 			</div>
 		</section>
 		<section class="demand-storage-data-block av-private-cloud">
 			<div class="wrapper">
-				<div class="section-header u-txt-center">
-					<h2 class="section-header__title"><?php the_field('private_cloud_title');?></h2>
+				<div class="section-header u-txt-center wow fadeInUp">
+					<h2 class="section-header__title "><?php the_field('private_cloud_title');?></h2>
 					<span class="section-header__decoration-element"></span>
 					<p class="section-header__sub-title"><?php the_field('private_cloud_short_description');?></p>
 				</div>
 				<div class="row">
 					<?php
+					$animate_a = 1;
 					if ( have_rows( 'supported_virtualization_block' ) ) : 
 					while ( have_rows( 'supported_virtualization_block' ) ) :
 					the_row();									
 					?>
-					<div class="col-md-6">
+					<div class="col-md-6 wow <?php if($animate_a%2==0){ echo 'fadeInRight'; }else { echo 'fadeInLeft'; }?>">
 						<div class="demand-storage-block-content">
 							<div class="deman-storage-block-icon">
 								<?php 
@@ -46,7 +46,7 @@ get_header();?>
 								if(!empty($private_cloud_icon)){ echo"<img src='".$private_cloud_icon."'>"; }
 								?>	
 							</div>
-							<h2>Supported Virtualization</h2>
+							<h2><?php the_sub_field( 'virtualization_block_title' )?></h2>
 							<ul class="check-list-group orange-check">
 								<?php
 								if ( have_rows( 'virtualization_block_features' ) ) : 
@@ -62,6 +62,7 @@ get_header();?>
 						</div>
 					</div>
 					<?php
+					$animate_a++;
 					endwhile; 
 					endif;									
 					?>
@@ -82,7 +83,7 @@ get_header();?>
 				while ( have_rows( 'server_details' ) ) :
 					the_row();						
 				?>
-				<div id="gridder_id_<?php echo $counter_grid;?>" class="gridder-list" data-griddercontent="#av-gridder<?php echo $counter_grid;?>">
+				<div id="gridder_id_<?php echo $counter_grid;?>" class="gridder-list  wow fadeInRightBig" data-wow-offset="10" data-griddercontent="#av-gridder<?php echo $counter_grid;?>">
 					<div class="av-gridder-block">
 						<div class="av-gridder-header">
 							<h1 class="av-gridder-header__title"><?php the_sub_field('server_name');?></h1>

@@ -16,9 +16,9 @@ while ( have_posts() ) : the_post();
 	<section  class="section">
 		<section class="page-banner os-control-page-banner" style="background-image:url('<?php echo $banner_image_url; ?>')">
 			<div class="wrapper">
-				<div class="page-banner-content">
-					<h1 class="large-banner__heading"><?php the_field( 'os_and_control_panels' ); ?></h1>
-					<p><?php the_field( 'os_and_control_panels_sub_title' ); ?></p>
+				<div class="page-banner-content  wow fadeInDown">
+					<h1 class="large-banner__heading  wow fadeInLeftBig"><?php the_field( 'os_and_control_panels' ); ?></h1>
+					<p class="wow fadeInLeftBig"><?php the_field( 'os_and_control_panels_sub_title' ); ?></p>
 					<div class="os-control-panl__btn-wrap">
 						<?php
 						if ( have_rows( 'buttons_and_links' ) ) : 
@@ -30,7 +30,7 @@ while ( have_posts() ) : the_post();
 								$button_link_icon = $button_icon['sizes']['small_icon'];
 							}
 							?>
-							<a href="<?php the_sub_field( 'button_link' ); ?>" class="btn--orange">
+							<a href="<?php the_sub_field( 'button_link' ); ?>" class="btn--orange wow fadeInRightBig">
 								<i class="btn-icon">
 									<img src="<?php echo $button_link_icon; ?>" alt="<?php the_sub_field( 'button_lable' ); ?>">
 								</i>
@@ -48,7 +48,7 @@ while ( have_posts() ) : the_post();
 		<section class="operating-system">
 			<div class="wrapper">
 				<div class="row align-items-center">
-					<div class="col-md-6 order-md-1">
+					<div class="col-md-6 order-md-1 wow fadeInRightBig">
 						<?php 
 						$os_image_url = '';
 						$os_feature_image     = get_field( 'operating_system_block_image' );
@@ -63,7 +63,7 @@ while ( have_posts() ) : the_post();
 						<?php
 						}?>
 					</div>
-					<div class="col-md-6">
+					<div class="col-md-6 wow fadeInLeftBig">
 						<div class="os-inner-content">
 							<h2 class="section-header__title"><?php the_field( 'operating_systems_title' ); ?></h2>
 							<p class="section-header__sub-title"><?php the_field( 'operating_systems_short_info' ); ?></p>
@@ -92,7 +92,7 @@ while ( have_posts() ) : the_post();
 	
 	<section data-anchor="section2"  class="section">
 		<section class="linux-os-section">
-			<div class="wrapper">
+			<div class="wrapper  wow fadeInLeftBig">
 				<div class="row">
 					<div class="col-md-3 order-md-1">
 						<div class="linux-os-type--block">					
@@ -137,7 +137,7 @@ while ( have_posts() ) : the_post();
 	
 		<section class="windows-os-section">
 			<div class="wrapper">
-				<div class="row align-items-center">
+				<div class="row align-items-center  wow fadeInRightBig">
 					<div class="col-md-4">
 						<?php 
 						$windows_os_image_url = '';
@@ -181,7 +181,7 @@ while ( have_posts() ) : the_post();
 				</div>
 			</div>
 		</section>
-		<section class="find-your-os" style="background-image:url('<?php echo get_template_directory_uri() . '/dist/assets/images/find-your-os-bg.jpg'; ?>')">
+		<section class="find-your-os  wow fadeInLeftBig" style="background-image:url('<?php echo get_template_directory_uri() . '/dist/assets/images/find-your-os-bg.jpg'; ?>')">
 			<div class="wrapper">
 				<div class="find-your-os--inner-content">
 					<h2 class="section-header__title"><?php the_field( 'cant_find_os_title' ); ?></h2>
@@ -200,7 +200,7 @@ while ( have_posts() ) : the_post();
 				<span class="section-header__decoration-element"></span>
 				<p class="section-header__sub-title"><?php the_field( 'virtulization_os_description' ); ?></p>
 			</div>
-			<table class="virtulization-table table table-striped table-bordered">
+			<table class="virtulization-table table table-striped table-bordered wow fadeInUp">
 				<thead>
 					<tr>
 						<th>
@@ -246,7 +246,7 @@ while ( have_posts() ) : the_post();
 				while ( have_rows( 'vmware_promax_block' ) ) :
 				the_row();
 				?>
-				<div class="single-virtulzation-row <?php if($block_counter === 1){ echo"vmware"; } else if($block_counter === 2){ echo"citrix";}else if($block_counter === 3){ echo"proxmox";}else{ echo"vmware";}?>">
+				<div class="single-virtulzation-row  wow  <?php if($block_counter === 1){ echo"vmware fadeInLeftBig"; } else if($block_counter === 2){ echo"citrix fadeInRightBig";}else if($block_counter === 3){ echo"proxmox fadeInLeftBig";}else{ echo"vmware";}?>">
 					<div class="row <?php if($block_counter%2 == 0){ echo'flex-row-reverse'; }?>">
 						<div class="col-md-2">
 							<div class="virtulization-logo">
@@ -307,7 +307,7 @@ while ( have_posts() ) : the_post();
 					<span class="section-header__decoration-element"></span>
 					<p class="section-header__sub-title"><?php the_field('control_panels_sub_heading'); ?></p>
 				</div>
-				<div class="cp-camparison-table">
+				<div class="cp-camparison-table wow fadeInUp">
 					<div class="cp-camprasion-block cpanel--block">
 						<ul class="cp-detail-list">
 							<li>
@@ -388,7 +388,7 @@ while ( have_posts() ) : the_post();
 				</div>
 				<div class="ask-to-expert">
 					<h2 class="section-header__title"><?php the_field('deciding_between_cpanel_and_plesk'); ?></h2>
-					<a href="<?php the_field('ask_our_expert_button_link'); ?>" class="btn--orange"><?php the_field('ask_our_expert_button_label'); ?><i class="fas fa-arrow-right"></i></a>
+					<a href="<?php the_field('ask_our_expert_button_link'); ?>" class="btn--orange wow pulse infinite"><?php the_field('ask_our_expert_button_label'); ?><i class="fas fa-arrow-right"></i></a>
 				</div>
 			</div>
 		</section>
@@ -397,22 +397,3 @@ while ( have_posts() ) : the_post();
 <?php endwhile; // end of the loop. ?>
 
 <?php get_footer(); ?>
-<script>			
-	// jQuery(document).ready(function($) {
-	// 	$('#fullpage').fullpage({
-	// 		licenseKey: '71051AA7-77BC4D43-BEDAB639-090EF836',
-	// 		fitToSection: true,
-	// 		navigation: true,
-	// 		anchors: ['section1', 'section2', 'section3', 'section4','section5','section6','section7','section8','section9','section10'],
-	// 		navigationPosition: 'right',
-	// 		responsiveWidth: 768,
-	// 		onLeave: function(index, next, direction) {
-	// 			if (next.index != 0) {
-	// 			$('.site-header').addClass('site-header--on-scroll');
-	// 			} else {
-	// 			$('.site-header').removeClass('site-header--on-scroll');
-	// 			}
-	// 		}
-	// 	});					
-	// });	
-</script>

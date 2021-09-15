@@ -16,16 +16,16 @@ while ( have_posts() ) : the_post();
 	<section class="section">
 		<section class="page-banner os-control-page-banner managed-services-page-banner" style="background-image:url('<?php echo $banner_image_url; ?>')">
 			<div class="wrapper">
-				<div class="page-banner-content">
-					<h1 class="large-banner__heading"><?php the_field( 'managed_services_title' ); ?></h1>
-					<p><?php the_field( 'managed_services_sub_title' ); ?></p>
+				<div class="page-banner-content  wow fadeInDown">
+					<h1 class="large-banner__heading wow fadeInLeft"><?php the_field( 'managed_services_title' ); ?></h1>
+					<p class="wow fadeInLeft"><?php the_field( 'managed_services_sub_title' ); ?></p>
 					<div class="os-control-panl__btn-wrap">
 						<?php
 						if ( have_rows( 'managed_services_buttons' ) ) : 
 						while ( have_rows( 'managed_services_buttons' ) ) :
 						the_row();											
 						?>
-						<a href="<?php the_sub_field('button_link');?>" class="btn--orange">
+						<a href="<?php the_sub_field('button_link');?>" class="btn--orange wow fadeInRight">
 						<?php
 						$button_icon_image = get_template_directory_uri() . '/dist/assets/images/customer-support.png';
 						$btn_icon_image     = get_sub_field( 'button_icon' );
@@ -50,7 +50,7 @@ while ( have_posts() ) : the_post();
 		<section class="managed-service-layer">
 			<div class="wrapper">
 				<div class="managed-layer-content">
-					<figure class="thumbnail-img">
+					<figure class="thumbnail-img wow fadeInUp">
 						<?php
 						$feature_image = '';
 						$feature_box_image     = get_field( 'managed_services_feature_image' );
@@ -77,7 +77,7 @@ while ( have_posts() ) : the_post();
 			?>
 			<ul>			   
 				<?php foreach( $server_logo_icon as $image ): ?>
-				<li>
+				<li class="wow fadeInRightBig">
 				<img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
 				</li>
 				<?php endforeach; ?>				
@@ -122,7 +122,7 @@ while ( have_posts() ) : the_post();
 						?>
 						<div class="tab-pane fade  <?php if($count_service ==1){ echo'show active'; } ?>" id="tab_id_<?php echo $count_service;?>" role="tabpanel" aria-labelledby="tab_id_<?php echo $count_service;?>-tab">
 							<div class="managed-service-plan-table">
-								<ul class="ms-plan-list">
+								<ul class="ms-plan-list wow fadeInUp">
 									<li>
 										<div class="ms-plan-col">&nbsp;</div>
 										<div class="ms-plan-col">&nbsp;</div>
@@ -132,7 +132,7 @@ while ( have_posts() ) : the_post();
 									while ( have_rows('feature_icon_and_detail')) :
 									the_row();
 									?>
-									<li>
+									<li >
 										<div class="ms-plan-col">
 											<div class="ms-plan-icon">
 												<div class="ms-plan-blnc--inner">
@@ -177,7 +177,7 @@ while ( have_posts() ) : the_post();
 				</div>
 				<div class="ask-for-quotation">
 					<h2 class="section-header__title"><?php the_field( 'ask_quotation_label' ); ?></h2>
-					<a href="<?php the_field( 'ask_quotation_button_link' ); ?>" class="btn--orange"><?php the_field( 'ask_quotation_button_label' ); ?> <i class="fas fa-arrow-right"></i></a>
+					<a href="<?php the_field( 'ask_quotation_button_link' ); ?>" class="btn--orange wow pulse infinite"><?php the_field( 'ask_quotation_button_label' ); ?> <i class="fas fa-arrow-right"></i></a>
 				</div>
 			</div>
 		</section>
@@ -195,7 +195,7 @@ while ( have_posts() ) : the_post();
 			<div class="wrapper">
 				<div class="tech-support-block-wrap">
 					<div class="row">						
-						<div class="col-md-6">
+						<div class="col-md-6 wow fadeInLeft">
 							<div class="tech-support-card" style="background-image:url('<?php echo get_template_directory_uri() . '/dist/assets/images/server-bg-1.svg'; ?>')">
 								<h4 class="tech-support-card__title"><?php the_field( 'custom_service_title' ); ?></h4>
 								<p class="tech-support-card__description"><?php the_field( 'custom_service_detail' ); ?></p>
@@ -213,7 +213,7 @@ while ( have_posts() ) : the_post();
 							</div>
 						</div>
 						
-						<div class="col-md-6">
+						<div class="col-md-6 wow fadeInRight">
 							<div class="tech-support-card" style="background-image:url('<?php echo get_template_directory_uri() . '/dist/assets/images/support-bg-1.svg'; ?>')">
 								<h4 class="tech-support-card__title"><?php the_field( 'consulting_service_title' ); ?></h4>
 								<p class="tech-support-card__description"><?php the_field( 'consulting_service_detail' ); ?></p>

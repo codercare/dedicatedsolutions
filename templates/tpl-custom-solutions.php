@@ -18,9 +18,9 @@ while ( have_posts() ) : the_post();
 	<section class="section">
 		<section class="page-banner customSol-page-banner" style="background-image:url('<?php echo $banner_image_url; ?>')">
 			<div class="wrapper">
-				<div class="page-banner-content">
-					<h1 class="large-banner__heading"><?php the_field( 'cs_banner_title' ); ?></h1>
-					<p><?php the_field( 'cs_banner_sub_title' ); ?></p>
+				<div class="page-banner-content wow fadeInDown">
+					<h1 class="large-banner__heading wow fadeInLeft"><?php the_field( 'cs_banner_title' ); ?></h1>
+					<p class="wow fadeInLeft"><?php the_field( 'cs_banner_sub_title' ); ?></p>
 					<a href="<?php the_field( 'cs_left_button_link' ); ?>" class="btn--orange"><?php the_field( 'cs_left_button_label' ); ?></a>
 					<a href="<?php the_field( 'cs_right_button_link' ); ?>" class="btn--white"><?php the_field( 'cs_right_button_label' ); ?></a>
 				</div>
@@ -30,14 +30,14 @@ while ( have_posts() ) : the_post();
 		<section class="customSol-overview">
 			<div class="wrapper">
 				<div class="row">
-					<div class="col-md-6">
+					<div class="col-md-6 wow fadeInLeft">
 						<div class="customSol-overview-content">
 							<h2 class="section-header__title"><?php the_field( 'cs_overview_title' ); ?></h2>
 							<h4 class="section-header__Orangesub-title"><?php the_field( 'cs_overview_sub_title' ); ?></h4>
 							<p><?php the_field( 'cs_overview_detail' ); ?></p>
 						</div>
 					</div>
-					<div class="col-md-6">
+					<div class="col-md-6 wow fadeInRight" >
 						<div class="customSol-overview-grid">
 						<?php
 						if ( have_rows( 'custom_solution_types' ) ) : 
@@ -89,9 +89,9 @@ while ( have_posts() ) : the_post();
 	<section class="premium-server-features section">
 		<div class="wrapper">
 			<div class="section-header u-txt-center">
-				<h2 class="section-header__title"><?php the_field( 'premium_server_feature_title' ); ?></h2>
+				<h2 class="section-header__title  wow fadeInLeft"><?php the_field( 'premium_server_feature_title' ); ?></h2>
 				<span class="section-header__decoration-element--dark"></span>
-				<h4 class="section-header__Orangesub-title"><?php the_field( 'premium_server_feature_sub_title' ); ?></h4>
+				<h4 class="section-header__Orangesub-title  wow fadeInLeft"><?php the_field( 'premium_server_feature_sub_title' ); ?></h4>
 			</div>
 			<div class="p-feat-content">
 				<div class="row align-items-center">
@@ -103,7 +103,7 @@ while ( have_posts() ) : the_post();
 							$premium_server_image = $premium_image['url'];
 						}
 						?>
-						<figure class="thumbnail-img">
+						<figure class="thumbnail-img wow fadeInUp">
 							<img src="<?php echo $premium_server_image; ?>" alt="<?php the_field( 'premium_server_feature_title' ); ?>">
 						</figure>
 					</div>
@@ -120,7 +120,7 @@ while ( have_posts() ) : the_post();
 						}else{ $icon_class = 'networking';
 						}					
 						?>
-						<div class="p-server-feat-block <?php echo $icon_class;?>">
+						<div class="p-server-feat-block <?php echo $icon_class;?>  wow fadeInLeftBig">
 							<div class="p-server-feat-icon">
 								<?php
 								$premium_icon = '';
@@ -170,7 +170,7 @@ while ( have_posts() ) : the_post();
 				while ( have_rows( 'additional_features_list' ) ) :
 					the_row();											
 					?>
-					<div class="col-md-6">
+					<div class="col-md-6 wow fadeInRightBig">
 						<div class="add-feat-block">
 							<div class="add-feat-icon">
 								<?php 
@@ -209,7 +209,7 @@ while ( have_posts() ) : the_post();
 	<section class="custom-support section">
 		<div class="wrapper">
 			<div class="row align-items-center">
-				<div class="col-md-5 order-md-1">
+				<div class="col-md-5 order-md-1 wow fadeInRightBig">
 				    <?php 
 					$custom_support_image = '';
 					$custom_support_image     = get_field( 'custom_support_image' );
@@ -221,7 +221,7 @@ while ( have_posts() ) : the_post();
 						<img src="<?php echo $custom_support_image; ?>" alt="<?php the_field( 'custom_support_title' ); ?>">
 					</figure>
 				</div> 
-				<div class="col-md-7">
+				<div class="col-md-7 wow fadeInLeftBig ">
 					<div class="custom-support-content">
 						<h2 class="section-header__title"><?php the_field( 'custom_support_title' ); ?></h2>
 						<ul>

@@ -14,10 +14,10 @@ while ( have_posts() ) : the_post();
 	<section class="section">
 		<section class="page-banner about-page-banner demand-storage-banner" style="background-image:url('<?php echo $banner_image_url; ?>')">
 			<div class="wrapper">
-				<div class="page-banner-content">
-					<h1 class="large-banner__heading"><?php the_field( 'on_demand_storage_title' ); ?></h1>
-					<p><?php the_field( 'on_demand_storage_sub_title' ); ?></p>
-					<div class="os-control-panl__btn-wrap">
+				<div class="page-banner-content  wow fadeInDown">
+					<h1 class="large-banner__heading wow fadeInLeft"><?php the_field( 'on_demand_storage_title' ); ?></h1>
+					<p class="wow fadeInLeft"><?php the_field( 'on_demand_storage_sub_title' ); ?></p>
+					<div class="os-control-panl__btn-wrap wow fadeInUp">
 						<?php
 						if ( have_rows( 'on_demand_button_and_links' ) ) : 
 						while ( have_rows( 'on_demand_button_and_links' ) ) :
@@ -37,6 +37,7 @@ while ( have_posts() ) : the_post();
 			<div class="wrapper">
 				<div class="row">
 					<?php
+					$i = 1;
 					if ( have_rows( 'on_demand_storage_block' ) ) : 
 					while ( have_rows( 'on_demand_storage_block' ) ) :
 					the_row();	
@@ -47,7 +48,7 @@ while ( have_posts() ) : the_post();
 						$block_image = $block_bg_image['url'];
 					}
 					?>
-					<div class="col-md-6">
+					<div class="col-md-6  wow <?php if($i%2==0){ echo 'fadeInRight'; }else { echo 'fadeInLeft'; }?>">
 						<div class="demand-storage-block-content">
 							<div class="deman-storage-block-icon">
 								<img src="<?php echo $block_image; ?>" alt="binary-code">
@@ -56,7 +57,8 @@ while ( have_posts() ) : the_post();
 							<p><?php the_sub_field('block_detail'); ?></p>
 						</div>
 					</div>
-					<?php 					
+					<?php 
+					$i++;					
 					endwhile; 
 					endif;
 					?>	
@@ -67,13 +69,13 @@ while ( have_posts() ) : the_post();
 
 	<section class="storage-based-section ip-cloud-storage section">
 		<div class="container-fluid">
-			<div class="section-header u-txt-center">
+			<div class="section-header u-txt-center wow fadeInUp">
 				<h2 class="section-header__title"><?php the_field( 'cloud_storage_title' ); ?></h2>
 				<span class="section-header__decoration-element"></span>
 				<p><?php the_field( 'cloud_storage_detail' ); ?></p>
 			</div>
 			<div class="row">
-				<div class="col-md-6 order-md-1">
+				<div class="col-md-6 order-md-1 wow fadeInUp">
 					<div class="storage-based-thumb-content">
 					<?php 
 					if( have_rows('nas_mid_block') ): 
@@ -95,7 +97,7 @@ while ( have_posts() ) : the_post();
 				    endif; ?>
 					</div>
 				</div>
-				<div class="col-md-3">
+				<div class="col-md-3 wow fadeInLeftBig">
 					<?php if( have_rows('nas_features_block_left') ): ?>
 					<?php while( have_rows('nas_features_block_left') ): the_row(); ?>
 					<div class="storage-based-feat-block">
@@ -114,7 +116,7 @@ while ( have_posts() ) : the_post();
 					endwhile; 
 				    endif; ?>
 				</div>
-				<div class="col-md-3 order-md-2">
+				<div class="col-md-3 order-md-2 wow fadeInRightBig">
 					<div class="storage-based-feat-block">
 					<?php if( have_rows('nas_features_block_right') ): ?>
 					<?php while( have_rows('nas_features_block_right') ): the_row(); ?>
@@ -145,7 +147,7 @@ while ( have_posts() ) : the_post();
 				<?php the_field( 'redundant_nas_detail_top' ); ?>
 			</div>
 			<div class="row">
-				<div class="col-md-6 order-md-1">
+				<div class="col-md-6 order-md-1 wow fadeInUp">
 					<div class="storage-based-thumb-content">
 					<?php 
 					if( have_rows('redundant_nas_mid') ): 
@@ -167,7 +169,7 @@ while ( have_posts() ) : the_post();
 				    endif; ?>
 					</div>
 				</div>
-				<div class="col-md-3">
+				<div class="col-md-3 wow fadeInLeftBig">
 					<div class="storage-based-feat-block">						
 						<?php if( have_rows('nas_features_block_left') ): ?>
 						<?php while( have_rows('nas_features_block_left') ): the_row(); ?>
@@ -187,7 +189,7 @@ while ( have_posts() ) : the_post();
 						endif; ?>
 					</div>
 				</div>
-				<div class="col-md-3 order-md-2">
+				<div class="col-md-3 order-md-2 wow fadeInRightBig">
 					<div class="storage-based-feat-block">
 					    <?php 
 						if( have_rows('redundant_nas_right') ): 
@@ -220,7 +222,7 @@ while ( have_posts() ) : the_post();
 				<?php the_field( 'storage_area_network_description' ); ?>
 			</div>
 			<div class="row">
-				<div class="col-md-6 order-md-1">
+				<div class="col-md-6 order-md-1 wow fadeInUp">
 					<div class="storage-based-thumb-content">
 						<?php 
 						if( have_rows('redundant_nas_mid') ): 
@@ -240,7 +242,7 @@ while ( have_posts() ) : the_post();
 						endif; ?>
 					</div>
 				</div>
-				<div class="col-md-3">
+				<div class="col-md-3 wow fadeInLeftBig">
 					<div class="storage-based-feat-block">
 					    <?php if( have_rows('san_left') ): ?>
 						<?php while( have_rows('san_left') ): the_row(); ?>
@@ -260,7 +262,7 @@ while ( have_posts() ) : the_post();
 						endif; ?>
 					</div>
 				</div>
-				<div class="col-md-3 order-md-2">
+				<div class="col-md-3 order-md-2 wow fadeInRightBig">
 					<div class="storage-based-feat-block">
 					    <?php if( have_rows('san_right') ): ?>
 						<?php while( have_rows('san_right') ): the_row(); ?>
@@ -291,7 +293,7 @@ while ( have_posts() ) : the_post();
 				<span class="section-header__decoration-element"></span>
 				<?php the_field( 'storage_area_network_dr_description' ); ?>
 			</div>
-			<figure class="thumbnail-img">
+			<figure class="thumbnail-img wow fadeInUp">
 				<?php
 				$san_dr =  get_template_directory_uri() . '/dist/assets/images/storage-img1.png';
 				$san_dr_image     = get_field( 'san_dr_block_image' );
@@ -312,7 +314,7 @@ while ( have_posts() ) : the_post();
 				<p class="section-header__sub-title">Whether you're a Windows, Linux, VMware vSphere or server user, you almost certainly need access to shared storage. The comprehensive functions can be used with storage protocols such as Fibre Channel, iSCSI, and NFS.</p>
 			</div>
 			<div class="demand-storage-feat__table-content">
-				<table class="table">
+				<table class="table  wow fadeInUp">
 					<thead>
 						<tr>
 							<th>Features</th>
@@ -351,7 +353,7 @@ while ( have_posts() ) : the_post();
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-4">
-					<div class="server-type-block-wrap">
+					<div class="server-type-block-wrap  wow fadeInUp">
 						<h3><i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/servers.png'; ?>" alt="servers"></i>Budget Servers</h3>
 						<h4>Our Best Selling Budget Servers</h4>
 						<div class="row">
@@ -360,7 +362,7 @@ while ( have_posts() ) : the_post();
 					</div>
 				</div>
 				<div class="col-md-4">
-					<div class="server-type-block-wrap">
+					<div class="server-type-block-wrap  wow fadeInUp">
 						<h3><i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/servers.png'; ?>" alt="servers"></i>Pro Servers</h3>
 						<h4>Our Best Selling Pro Servers</h4>
 						<div class="row">
@@ -369,7 +371,7 @@ while ( have_posts() ) : the_post();
 					</div>
 				</div>
 				<div class="col-md-4">
-					<div class="server-type-block-wrap">
+					<div class="server-type-block-wrap  wow fadeInUp">
 						<h3><i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/servers.png'; ?>" alt="servers"></i>Enterprise Servers</h3>
 						<h4>Our Best Selling Enterprise Servers</h4>
 						<div class="row">
@@ -393,7 +395,7 @@ while ( have_posts() ) : the_post();
 						$block_counter = 0;
 						if( have_rows('footer_three_blocks') ): ?>
 						<?php while( have_rows('footer_three_blocks') ): the_row(); ?>
-						<div class="col-md-4">
+						<div class="col-md-4 wow <?php if($block_counter ==0){ echo 'fadeInLeftBig'; } else if($block_counter ==1){ echo 'fadeInUp'; }else{ echo 'fadeInRightBig'; }?>">
 							<div class="tech-support-card" style="background-image:url('<?php echo get_template_directory_uri() . '/dist/assets/images/'.$bg_image[$block_counter]; ?>')">
 								<div class="tech-support-card__icon">
 								    <?php

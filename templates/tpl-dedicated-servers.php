@@ -10,12 +10,12 @@ get_header();?>
 		$banner_image_url = $banner_image['sizes']['banner_image'];
 	}
 ?>
-<section class="section">
+	<section class="section">
 		<section class="page-banner dedicated-server-page-banner" style="background-image:url('<?php echo $banner_image_url; ?>')">
 			<div class="wrapper">			
-				<div class="page-banner-content">
+				<div class="page-banner-content  wow fadeInDown">
 					<h4>Starting from</h4>
-					<div class="starting-price">
+					<div class="starting-price wow pulse infinite">
 						<span class="price">
 						<?php 
 						$deci_arr = array();	
@@ -33,8 +33,8 @@ get_header();?>
 							?>
 						<span class="per-month">/month</span>
 					</div>
-					<h1 class="large-banner__heading"><?php the_field('dedicated_server_title');?></h1>
-					<p><?php the_field('dedicated_server_sub_title');?></p>
+					<h1 class="large-banner__heading wow fadeInLeft"><?php the_field('dedicated_server_title');?></h1>
+					<p class="wow fadeInLeft"><?php the_field('dedicated_server_sub_title');?></p>
 					<div class="large-banner__features">
 						<ul class="large-banner__features-list">
 							<?php
@@ -49,12 +49,6 @@ get_header();?>
 							?>							
 						</ul>
 					</div>
-					<!-- <div class="os-control-panl__btn-wrap">
-					<a href="<?php the_sub_field('button_link');?>" class="btn--orange">
-					<span class="btn-label">Server Feature</span></a>
-					<a href="<?php the_sub_field('button_link');?>" class="btn--orange">
-					<span class="btn-label">Server Feature</span></a>
-					</div> -->
 				</div>
 			</div>
 		</section>
@@ -63,22 +57,7 @@ get_header();?>
 			<div class="navTabs-pills-wrap">
 				<div class="wrapper">
 					<ul class="nav nav-pills"  >
-						<?php
-						/*
-						$counter = 1;
-						if ( have_rows( 'three_tab' ) ) : 
-						while ( have_rows( 'three_tab' ) ) :
-						the_row();						
-						?>
-						<li class="nav-item" role="presentation">
-							<a class="nav-link <?php if( $counter==2){ echo 'active'; } ?>"  id="server-<?php echo $counter;?>-tab" data-toggle="pill" href="#server-config-<?php echo $counter;?>" role="tab" aria-controls="#server-config-<?php echo $counter;?>" aria-selected="<?php if( $counter==2){ echo 'true'; }else{ echo 'false';}?>"><?php the_sub_field('tab_title');?></a>
-						</li>
-						<?php 
-						$counter++;
-						endwhile; 
-						endif;		
-						*/	
-						?>
+						
 						<li class="nav-item" >
 							<a class="nav-link" href="#section2">Hosting Features</a>
 						</li>
@@ -106,7 +85,7 @@ get_header();?>
 							while ( have_rows( 'block_feature_lists' ) ) :
 							the_row();						
 							?>
-							<div class="col-md-3">
+							<div class="col-md-3 wow fadeInRightBig">
 								<div class="dedicated-server-block">
 									<div class="ds-icon-box">
 										<?php 
@@ -146,7 +125,7 @@ get_header();?>
 				<h4 class="section-header__Orangesub-title"><?php the_field('sub_heading_title');?></h4>
 			</div>
 			<div class="row align-items-center">
-				<div class="col-md-4 order-md-1">
+				<div class="col-md-4 order-md-1  wow fadeInUp">
 					<div class="thumbnail-img">
 						<?php 
 						$hosting_feature = get_template_directory_uri() . '/dist/assets/images/ds-hosting-feat.png';
@@ -158,7 +137,7 @@ get_header();?>
 						?>
 					</div>
 				</div>
-				<div class="col-md-4 order-md-0">
+				<div class="col-md-4 order-md-0  wow fadeInLeftBig">
 					<div class="ds-hosting-feat-block">
 						<?php
 						$count = 1;
@@ -191,7 +170,7 @@ get_header();?>
 						?>
 					</div>
 				</div>
-				<div class="col-md-4 order-md-2">
+				<div class="col-md-4 order-md-2  wow fadeInRightBig">
 					<div class="ds-hosting-feat-block">
 					<?php
 						$count_right = 1;
@@ -239,7 +218,7 @@ get_header();?>
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-4">
-					<div class="server-type-block-wrap">
+					<div class="server-type-block-wrap wow fadeInUp">
 						<h3><i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/servers.png'; ?>" alt="servers"></i>Budget Servers</h3>
 						<h4>Our Best Selling Budget Servers</h4>
 						<div class="row">
@@ -248,7 +227,7 @@ get_header();?>
 					</div>
 				</div>
 				<div class="col-md-4">
-					<div class="server-type-block-wrap">
+					<div class="server-type-block-wrap wow fadeInUp">
 						<h3><i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/servers.png'; ?>" alt="servers"></i>Pro Servers</h3>
 						<h4>Our Best Selling Pro Servers</h4>
 						<div class="row">
@@ -257,7 +236,7 @@ get_header();?>
 					</div>
 				</div>
 				<div class="col-md-4">
-					<div class="server-type-block-wrap">
+					<div class="server-type-block-wrap wow fadeInUp">
 						<h3><i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/servers.png'; ?>" alt="servers"></i>Enterprise Servers</h3>
 						<h4>Our Best Selling Enterprise Servers</h4>
 						<div class="row">
@@ -286,7 +265,7 @@ get_header();?>
 				</ul>
 			</div>
 		</div>
-		<div class="server-details-table-wrap" id="server-details-table-scroll-view">
+		<div class="server-details-table-wrap wow fadeInRightBig" id="server-details-table-scroll-view">
 			<div class="tab-content" id="bmc-pills-tabContent">
 				<div class="tab-pane fade show active" id="budget-server" role="tabpanel" aria-labelledby="budget-server-tab">
 					<?php echo do_shortcode('[dedicated_pricing_info product_group_id=358 discount=20 caption="Budget Servers"]');?>
@@ -304,41 +283,13 @@ get_header();?>
 			</div>
 		</div>
 	</section>
-
-<!--
-	<section class="all-server-details section">
-		
-		<div >
-				
-			 <div class="tab-content" id="bmc-pills-tabContent">
-				<div class="tab-pane fade show active" id="budget-server" role="tabpanel" aria-labelledby="budget-server-tab">
-					<div id="bmc-pills-table-scroll" class="budget-server-page">
-						<?php echo do_shortcode('[dedicated_pricing_info product_group_id=358 discount=20 caption="Budget Servers"]');?>
-						<div id="dedi-pagination-container"></div>
-					</div>
-					
-				</div>
-				<div class="tab-pane fade" id="pro-server" role="tabpanel" aria-labelledby="pro-server-tab">
-					<div id="bmc-pills-table-scroll">
-						<?php echo do_shortcode('[dedicated_pricing_info product_group_id=331 discount=20 caption="Pro Servers"]');?>
-					</div>
-				</div>
-				<div class="tab-pane fade" id="enterprise-server" role="tabpanel" aria-labelledby="enterprise-server-tab">
-					<div id="bmc-pills-table-scroll">
-						<?php echo do_shortcode('[dedicated_pricing_info product_group_id=332 discount=20 caption="Enterprise Server"]');?>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section> -->
-
 	<section class="ds-feature-compare section">
 		<div class="wrapper">
 			<div class="section-header u-txt-center">
 				<h2 class="section-header__title"><?php the_field('budget_vs_pro_vs_enterprise_title'); ?></h2>
 				<span class="section-header__decoration-element"></span>
 			</div>
-			<div class="ds-feature-table">
+			<div class="ds-feature-table wow fadeInUp">
 				<div class="ds-feature-table__block">
 					<div class="ds-feature-table__block--header">&nbsp;</div>
 					<div class="ds-feature-table__block--content">

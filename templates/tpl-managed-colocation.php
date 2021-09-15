@@ -14,10 +14,10 @@ while ( have_posts() ) : the_post();
 	<section class="section">
 		<section class="page-banner mc-page-banner" style="background-image:url('<?php echo $banner_image_url; ?>')">
 			<div class="wrapper">
-				<div class="page-banner-content">
-					<h1 class="large-banner__heading"><?php the_field( 'managed_colocation_title' ); ?></h1>
-					<p><?php the_field( 'managed_colocation_short' ); ?></p>
-					<a href="<?php the_field( 'managed_colocation_button_link' ); ?>" class="btn--orange"><?php the_field( 'managed_colocation_button_label' ); ?> <i class="fas fa-arrow-right"></i></a>
+				<div class="page-banner-content wow fadeInDown">
+					<h1 class="large-banner__heading  wow fadeInLeft"><?php the_field( 'managed_colocation_title' ); ?></h1>
+					<p class="wow fadeInDown"><?php the_field( 'managed_colocation_short' ); ?></p>
+					<a href="<?php the_field( 'managed_colocation_button_link' ); ?>" class="btn--orange  wow pulse infinite"><?php the_field( 'managed_colocation_button_label' ); ?> <i class="fas fa-arrow-right"></i></a>
 				</div>
 			</div>
 		</section>
@@ -30,7 +30,7 @@ while ( have_posts() ) : the_post();
 					while ( have_rows( 'managed_colocation_lists' ) ) :
 					the_row();											
 					?>
-					<div class="col-md-3">
+					<div class="col-md-3 wow fadeInUp" data-wow-offset="10">
 						<div class="managed-colocation-block">
 							<div class="mc-icon-box">
 								<?php
@@ -57,23 +57,23 @@ while ( have_posts() ) : the_post();
 
 	<section class="mc-plans-pricing section">
 		<div class="wrapper">
-			<div class="section-header u-txt-center">
+			<div class="section-header u-txt-center wow fadeInRightBig" >
 				<h2 class="section-header__title"><?php the_field( 'plans_pricing_title' ); ?></h2>
 				<span class="section-header__decoration-element"></span>
 				<h4 class="section-header__Orangesub-title"><?php the_field( 'plans_pricing_sub_title' ); ?></h4>
 			</div>
-			<div class="select-your-location">
-				<label  class="form-check-label">
+			<div class="select-your-location ">
+				<label  class="form-check-label wow fadeInLeftBig">
 					<input type="checkbox" class="form-check-input showLocation" id="COLUMBUS" value="columbus" checked> 
 					<span>COLUMBUS,OH <i>TIER IV</i></span>
 				</label>
-				<label class="form-check-label">
+				<label class="form-check-label wow fadeInRightBig">
 					<input type="checkbox" class="form-check-input showLocation" id="DALLAS" value="dallas" checked>
 					<span>DALLAS,TX <i>TIER III</i></span>
 				</label>
 			</div>
 			<div class="mc-plan-pricing-table">
-				<div class="mc-pp-table-head">
+				<div class="mc-pp-table-head wow fadeInRightBig">
 					<ul>
 						<li class="columbus">Columbus, OH</li>
 						<li class="dallas">Dallas, TX</li>
@@ -86,7 +86,7 @@ while ( have_posts() ) : the_post();
 				$sub_group = get_sub_field( 'columbus_dallas_comparisons' );				
 				$feature_lists = $sub_group['feature_topics'];
 				?>
-				<div class="mc-pp-table-block">
+				<div class="mc-pp-table-block wow fadeInRightBig">
 					<div class="mc-pp-table-row">
 						<div class="mc-pp-table-col">
 							<h4 class="section-header__Orangesub-title"><?php echo esc_attr( $sub_group['main_feature_heading'] ); ?></h4>
@@ -125,7 +125,7 @@ while ( have_posts() ) : the_post();
 	?>
 	<section class="mc-benefits section"  style="background-image:url('<?php echo $benifits_bg; ?>')">
 		<div class="wrapper">
-			<div class="section-header u-txt-center">
+			<div class="section-header u-txt-center wow fadeInDown">
 				<h2 class="section-header__title"><?php the_field( 'the_benifits_title' ); ?></h2>
 				<span class="section-header__decoration-element--dark"></span>
 				<h4 class="section-header__sub-title"><?php the_field( 'the_benifits_sub_title' ); ?></h4>
@@ -136,7 +136,7 @@ while ( have_posts() ) : the_post();
 				while ( have_rows( 'benifits_list_items' ) ) :
 				the_row();											
 				?>
-				<li><?php the_sub_field('items');?></li>
+				<li class="wow fadeInRightBig" data-wow-offset="20"><?php the_sub_field('items');?></li>
 				<?php 					
 				endwhile; 
 				endif;

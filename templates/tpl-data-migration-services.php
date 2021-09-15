@@ -17,10 +17,10 @@ while ( have_posts() ) : the_post();
 	<section class="section">
 		<section class="page-banner about-page-banner dm-service-banner" style="background-image:url('<?php echo $banner_image_url; ?>')">
 			<div class="wrapper">
-				<div class="page-banner-content">
-					<h1 class="large-banner__heading"><?php the_field( 'data_migration_services_title' ); ?></h1>
-					<p><?php the_field( 'data_migration_services_sub_title' ); ?></p>
-					<a href="<?php the_field( 'data_migration_services_button_link' ); ?>" class="btn--orange"><?php the_field( 'data_migration_services_button_label' ); ?><i class="fas fa-arrow-right"></i></a>
+				<div class="page-banner-content wow fadeInDown">
+					<h1 class="large-banner__heading wow fadeInLeft"><?php the_field( 'data_migration_services_title' ); ?></h1>
+					<p class="wow fadeInLeft"><?php the_field( 'data_migration_services_sub_title' ); ?></p>
+					<a href="<?php the_field( 'data_migration_services_button_link' ); ?>" class="btn--orange wow pulse infinite"><?php the_field( 'data_migration_services_button_label' ); ?><i class="fas fa-arrow-right"></i></a>
 				</div>
 			</div>
 		</section>
@@ -36,9 +36,9 @@ while ( have_posts() ) : the_post();
 				<div class="row">
 					<div class="col-md-8">
 						<div class="section-header">
-							<h2 class="section-header__title"><?php the_field( 'data_migration_heading' ); ?></h2>
+							<h2 class="section-header__title wow fadeInRightBig"><?php the_field( 'data_migration_heading' ); ?></h2>
 							<span class="section-header__decoration-element--dark"></span>
-							<h4 class="section-header__Orangesub-title"><?php the_field( 'data_migration_detail' ); ?></h4>
+							<h4 class="section-header__Orangesub-title wow fadeInRightBig"><?php the_field( 'data_migration_detail' ); ?></h4>
 						</div>
 						<div class="data-migration-block-wrap">
 							<?php
@@ -51,7 +51,7 @@ while ( have_posts() ) : the_post();
 									$button_link_icon = $button_icon['sizes']['small_icon'];
 								}
 								?>
-								<div class="data-migration-block">
+								<div class="data-migration-block wow fadeInRightBig">
 									<div class="data-migration-icon-box migrating">
 										<img src="<?php echo $button_link_icon; ?>" alt="migrating">
 									</div>
@@ -74,7 +74,7 @@ while ( have_posts() ) : the_post();
 			<div class="section-header u-txt-center">
 				<h2 class="section-header__title"><?php the_field( 'what_can_we_migrate_title' ); ?></h2>
 				<span class="section-header__decoration-element"></span>
-				<h4 class="section-header__Orangesub-title"><?php the_field( 'what_can_we_migrate_detail' ); ?></h4>
+				<h4 class="section-header__Orangesub-title wow fadeInUp"><?php the_field( 'what_can_we_migrate_detail' ); ?></h4>
 			</div>
 			<div class="wcw-migrate-block-wrap">
 				<div class="row">
@@ -88,8 +88,8 @@ while ( have_posts() ) : the_post();
 							$migrate_feature_icon = $what_we_migrate['url'];
 						}
 						?>
-						<div class="col-md-6">
-							<div class="wcw-migrate-block">
+						<div class="col-md-6 wow fadeInRightBig">
+							<div class="wcw-migrate-block ">
 								<div class="wcw-icon-box">
 									<img src="<?php echo $migrate_feature_icon; ?>" alt="server">
 								</div>

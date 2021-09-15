@@ -15,9 +15,9 @@ while ( have_posts() ) : the_post();
 	<section class="section">
 		<section class="page-banner cp-sh-page-banner dg-server-banner" style="background-image:url('<?php echo $banner_image_url; ?>')">
 			<div class="container-fluid">
-				<div class="page-banner-content">
-					<h1 class="large-banner__heading"><?php the_field( 'dedicated_game_server_title' ); ?></h1>
-					<p><?php the_field( 'dedicated_game_server_sub_title' ); ?></p>
+				<div class="page-banner-content wow fadeInDown">
+					<h1 class="large-banner__heading wow fadeInLeft"><?php the_field( 'dedicated_game_server_title' ); ?></h1>
+					<p class="wow fadeInLeft"><?php the_field( 'dedicated_game_server_sub_title' ); ?></p>
 					<ul>
 						<?php
 						if ( have_rows( 'dedicated_game_servers_icon_images' ) ) : 
@@ -30,7 +30,7 @@ while ( have_posts() ) : the_post();
 							$game_server_icon = $game_server_logo['sizes']['mid_icon'];
 						}
 					    ?>
-						<li><img src="<?php echo $game_server_icon; ?>" alt="game-servers"></li>
+						<li class="wow fadeInRightBig"><img src="<?php echo $game_server_icon; ?>" alt="game-servers"></li>
 						<?php 
 						$counter_card++;
 						endwhile; 
@@ -44,7 +44,7 @@ while ( have_posts() ) : the_post();
 		<section class="game-server-section">
 			<div class="wrapper">
 				<div class="row">
-					<div class="col-md-6">
+					<div class="col-md-6 wow fadeInLeftBig">
 						<div class="game-server-content">
 							<div class="section-header">
 								<h2 class="section-header__title"><?php the_field( 'game_server_title' ); ?></h2>
@@ -53,7 +53,7 @@ while ( have_posts() ) : the_post();
 							</div>
 						</div>
 					</div>
-					<div class="col-md-6">
+					<div class="col-md-6 wow fadeInRightBig">
 						<?php
 						if ( have_rows( 'game_server_features' ) ) : 
 						$counter_card = 1;
@@ -84,7 +84,7 @@ while ( have_posts() ) : the_post();
 	</section>
 
 	<section class="section">
-		<section class="game-room-section">
+		<section class="game-room-section wow pulse infinite">
 			<?php 
 				$game_server_feature_image_url = get_template_directory_uri().'/dist/assets/images/game-room-image.jpg';
 				$game_serv_image     = get_field( 'ready_to_go_block_bg_image' );
@@ -97,10 +97,10 @@ while ( have_posts() ) : the_post();
 		<section class="get-cp-server get-game-server">
 			<div class="wrapper">
 				<div class="section-header u-txt-center">
-					<h2 class="section-header__title"><?php the_field( 'ready_to_go_block_title' ); ?></h2>
+					<h2 class="section-header__title wow fadeInRightBig"><?php the_field( 'ready_to_go_block_title' ); ?></h2>
 					<h4 class="section-header__Orangesub-title"><?php the_field( 'ready_to_go_block_sub_title' ); ?></h4>
 				</div>
-				<a href="<?php the_field( 'ready_to_go_block_button_label_url' ); ?>" class="btn--white"><?php the_field( 'ready_to_go_block_button_label' ); ?></a>
+				<a href="<?php the_field( 'ready_to_go_block_button_label_url' ); ?>" class="btn--white wow pulse infinite"><?php the_field( 'ready_to_go_block_button_label' ); ?></a>
 				<p><?php the_field( 'ready_to_go_block_label_text' ); ?></p>
 			</div>
 		</section>
@@ -117,7 +117,7 @@ while ( have_posts() ) : the_post();
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-4">
-					<div class="server-type-block-wrap">
+					<div class="server-type-block-wrap  wow fadeInUp">
 						<h3><i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/servers.png'; ?>" alt="servers"></i>Budget Servers</h3>
 						<h4>Our Best Selling Budget Servers</h4>
 						<div class="row">
@@ -126,7 +126,7 @@ while ( have_posts() ) : the_post();
 					</div>
 				</div>
 				<div class="col-md-4">
-					<div class="server-type-block-wrap">
+					<div class="server-type-block-wrap  wow fadeInUp">
 						<h3><i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/servers.png'; ?>" alt="servers"></i>Pro Servers</h3>
 						<h4>Our Best Selling Pro Servers</h4>
 						<div class="row">
@@ -135,7 +135,7 @@ while ( have_posts() ) : the_post();
 					</div>
 				</div>
 				<div class="col-md-4">
-					<div class="server-type-block-wrap">
+					<div class="server-type-block-wrap  wow fadeInUp">
 						<h3><i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/servers.png'; ?>" alt="servers"></i>Enterprise Servers</h3>
 						<h4>Our Best Selling Enterprise Servers</h4>
 						<div class="row">

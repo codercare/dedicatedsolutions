@@ -16,9 +16,9 @@ while ( have_posts() ) : the_post();
 	<section class="section">
 		<section class="page-banner cp-sh-page-banner plesk-server-banner" style="background-image:url('<?php echo $banner_image_url; ?>')">
 			<div class="container-fluid">
-				<div class="page-banner-content">
-					<h1 class="large-banner__heading"><?php the_field( 'plesk_server_management_tool_title' ); ?></h1>
-					<p><?php the_field( 'plesk_server_management_tool_sub_title' ); ?></p>
+				<div class="page-banner-content wow fadeInDown">
+					<h1 class="large-banner__heading  wow fadeInLeft"><?php the_field( 'plesk_server_management_tool_title' ); ?></h1>
+					<p class="wow fadeInLeft"><?php the_field( 'plesk_server_management_tool_sub_title' ); ?></p>
 				</div>
 			</div>
 		</section>
@@ -26,7 +26,7 @@ while ( have_posts() ) : the_post();
 			<div class="wrapper">
 				<div class="row">
 					<div class="col-md-6">
-						<div class="game-server-content">
+						<div class="game-server-content wow fadeInLeftBig">
 							<div class="section-header">
 								<h2 class="section-header__title"><?php the_field( 'choice_of_web_professionals_title' ); ?></h2>
 								<span class="section-header__decoration-element"></span>
@@ -34,7 +34,7 @@ while ( have_posts() ) : the_post();
 							</div>
 						</div>
 					</div>
-					<div class="col-md-6">
+					<div class="col-md-6 wow fadeInRightBig">
 						<?php
 						if ( have_rows( 'choice_of_web_professionals_features' ) ) : 
 						$counter_card = 1;
@@ -68,7 +68,7 @@ while ( have_posts() ) : the_post();
 		<section class="cpanel-dashboard-carousel plesk-dashboard-carousel">
 			<div class="wrapper">
 				<div id="pleskDashboardCarousel" class="carousel carousel-fade" data-ride="carousel">
-					<div class="carousel-inner">
+					<div class="carousel-inner wow fadeInRightBig">
 						<?php 
 						$images = get_field('plesk_dashboard_slider_images');
 						$size = 'full'; 
@@ -130,9 +130,9 @@ while ( have_posts() ) : the_post();
 		<section class="get-cp-server plesk-usage">
 			<div class="wrapper">
 				<div class="section-header u-txt-center">
-					<h2 class="section-header__title"><?php the_field( 'what_can_you_do_with_plesk_title' ); ?></h2>
+					<h2 class="section-header__title wow swing"><?php the_field( 'what_can_you_do_with_plesk_title' ); ?></h2>
 				</div>
-				<ul class="check-list-group white-check">				
+				<ul class="check-list-group white-check wow fadeInLeft">				
 					<?php
 					if ( have_rows( 'what_can_you_do_with_plesk_features' ) ) : 
 					while ( have_rows( 'what_can_you_do_with_plesk_features' ) ) :
@@ -159,7 +159,7 @@ while ( have_posts() ) : the_post();
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-4">
-					<div class="server-type-block-wrap">
+					<div class="server-type-block-wrap wow fadeInUp">
 						<h3><i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/servers.png'; ?>" alt="servers"></i>Budget Servers</h3>
 						<h4>Our Best Selling Budget Servers</h4>
 						<div class="row">
@@ -168,7 +168,7 @@ while ( have_posts() ) : the_post();
 					</div>
 				</div>
 				<div class="col-md-4">
-					<div class="server-type-block-wrap">
+					<div class="server-type-block-wrap wow fadeInUp">
 						<h3><i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/servers.png'; ?>" alt="servers"></i>Pro Servers</h3>
 						<h4>Our Best Selling Pro Servers</h4>
 						<div class="row">
@@ -177,7 +177,7 @@ while ( have_posts() ) : the_post();
 					</div>
 				</div>
 				<div class="col-md-4">
-					<div class="server-type-block-wrap">
+					<div class="server-type-block-wrap wow fadeInUp">
 						<h3><i><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/servers.png'; ?>" alt="servers"></i>Enterprise Servers</h3>
 						<h4>Our Best Selling Enterprise Servers</h4>
 						<div class="row">

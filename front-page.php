@@ -15,10 +15,10 @@ if ( ! empty( $banner_image ) ) {
 			<div class="large-banner__container">
 				<h1 class="large-banner__heading wow fadeInDown"><?php the_field( 'banner_title' ); ?></h1>
 				<div class="large-banner__CTA-container">
-					<a href="<?php the_field( 'banner_dedicated_server_button_link' ); ?>" class="btn--orange u-mb-untill-small wow pulse infinite">
+					<a href="<?php the_field( 'banner_dedicated_server_button_link' ); ?>" class="btn--orange u-mb-untill-small ">
 						<div class="btn-icon"><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/dserver.png'; ?>" alt="" srcset=""></div><span class="btn-label"><?php the_field( 'banner_dedicated_server_button_label' ); ?></span>
 					</a>
-					<a href="<?php the_field( 'banner_private_cloud_button_link' ); ?>" class="btn--orange  wow pulse infinite">
+					<a href="<?php the_field( 'banner_private_cloud_button_link' ); ?>" class="btn--orange  ">
 						<div class="btn-icon "><img src="<?php echo get_template_directory_uri() . '/dist/assets/images/server@2x.png'; ?>" alt="" srcset=""></div><span class="btn-label"><?php the_field( 'banner_private_cloud_button_label' ); ?></span>
 					</a>
 				</div>
@@ -36,7 +36,7 @@ if ( ! empty( $banner_image ) ) {
 					<?php endif; ?>
 				</div>
 				<div class="btn--transparent wow fadeInUp">			
-					<span class="wow pulse infinite"><a href="<?php the_field( 'learn_more' ); ?>">Learn More</a></span> 
+					<span class=""><a href="<?php the_field( 'learn_more' ); ?>">Learn More</a></span> 
 					<i class="fas fa-arrow-down"></i>			
 				</div>
 			</div>

@@ -84,7 +84,7 @@ while ( have_posts() ) : the_post();
 	</section>
 
 	<section class="section">
-		<section class="game-room-section wow pulse infinite">
+		<section class="game-room-section ">
 			<?php 
 				$game_server_feature_image_url = get_template_directory_uri().'/dist/assets/images/game-room-image.jpg';
 				$game_serv_image     = get_field( 'ready_to_go_block_bg_image' );
@@ -100,7 +100,7 @@ while ( have_posts() ) : the_post();
 					<h2 class="section-header__title wow fadeInRightBig"><?php the_field( 'ready_to_go_block_title' ); ?></h2>
 					<h4 class="section-header__Orangesub-title"><?php the_field( 'ready_to_go_block_sub_title' ); ?></h4>
 				</div>
-				<a href="<?php the_field( 'ready_to_go_block_button_label_url' ); ?>" class="btn--white wow pulse infinite"><?php the_field( 'ready_to_go_block_button_label' ); ?></a>
+				<a href="<?php the_field( 'ready_to_go_block_button_label_url' ); ?>" class="btn--white "><?php the_field( 'ready_to_go_block_button_label' ); ?></a>
 				<p><?php the_field( 'ready_to_go_block_label_text' ); ?></p>
 			</div>
 		</section>

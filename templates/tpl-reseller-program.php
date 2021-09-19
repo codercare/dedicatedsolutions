@@ -20,7 +20,7 @@ get_header();
 				<div class="page-banner-content wow fadeInDown">
 					<h1 class="large-banner__heading wow fadeInLeft"><?php the_field( 'reseller_program_title' ); ?></h1>
 					<p class="wow fadeInLeft"><?php the_field( 'reseller_program_sub_title' ); ?></p>
-					<a href="<?php the_field( 'reseller_button_link' ); ?>" class="btn--white wow pulse infinite"><?php the_field( 'reseller_button' ); ?><i class="fas fa-arrow-right"></i></a>
+					<a href="<?php the_field( 'reseller_button_link' ); ?>" class="btn--white "><?php the_field( 'reseller_button' ); ?><i class="fas fa-arrow-right"></i></a>
 				</div>
 			</div>
 		</section>
@@ -77,7 +77,7 @@ get_header();
 				</div>
 			<?php endif; ?>
 			</div>
-			<a href="<?php the_field( 'contact_link' ); ?>" class="btn--white  wow pulse infinite"><?php the_field( 'contact_label' ); ?> <i class="fas fa-arrow-right"></i></a>
+			<a href="<?php the_field( 'contact_link' ); ?>" class="btn--white  "><?php the_field( 'contact_label' ); ?> <i class="fas fa-arrow-right"></i></a>
 		</div>
 	</section>
 

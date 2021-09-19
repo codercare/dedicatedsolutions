@@ -134,7 +134,7 @@ while ( have_posts() ) : the_post();
 					<h2 class="section-header__title"><?php the_field( 'ready_to_go_title' ); ?></h2>
 					<h4 class="section-header__Orangesub-title"><?php the_field( 'ready_to_go_sub_title' ); ?></h4>
 				</div>
-				<a href="<?php the_field( 'view_server_button_link' ); ?>" class="btn--white wow pulse infinite"><?php the_field( 'ready_to_go_button_label' ); ?></a>
+				<a href="<?php the_field( 'view_server_button_link' ); ?>" class="btn--white "><?php the_field( 'ready_to_go_button_label' ); ?></a>
 				<p><?php the_field( 'some_line_below_button' ); ?></p>
 			</div>
 		</section>

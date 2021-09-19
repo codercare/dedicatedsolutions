@@ -13,7 +13,7 @@ get_header();?>
 					while ( have_rows( 'press_announcement_buttons_and_links' ) ) :
 					the_row();
 					?>
-					<a href="<?php the_sub_field('button_link');?>" class="btn--orange wow pulse infinite"><?php the_sub_field('button_label');?></a>
+					<a href="<?php the_sub_field('button_link');?>" class="btn--orange "><?php the_sub_field('button_label');?></a>
 					<?php 					
 					endwhile; 
 					endif;

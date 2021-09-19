@@ -388,7 +388,7 @@ while ( have_posts() ) : the_post();
 				</div>
 				<div class="ask-to-expert">
 					<h2 class="section-header__title"><?php the_field('deciding_between_cpanel_and_plesk'); ?></h2>
-					<a href="<?php the_field('ask_our_expert_button_link'); ?>" class="btn--orange wow pulse infinite"><?php the_field('ask_our_expert_button_label'); ?><i class="fas fa-arrow-right"></i></a>
+					<a href="<?php the_field('ask_our_expert_button_link'); ?>" class="btn--orange "><?php the_field('ask_our_expert_button_label'); ?><i class="fas fa-arrow-right"></i></a>
 				</div>
 			</div>
 		</section>

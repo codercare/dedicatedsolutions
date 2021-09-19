@@ -16,7 +16,7 @@ get_header();?>
 				<div class="page-banner-content wow fadeInDown">
 					<h1 class="large-banner__heading wow fadeInLeft"><?php the_field('advanced_virtualization_title');?></h1>
 					<p class="wow fadeInDown"><?php the_field('advanced_virtualization_sub_title');?></p>
-					<a href="<?php the_field('advanced_virtualization_button_link');?>" class="btn--orange wow pulse infinite"><?php the_field('advanced_virtualization_button_label');?><i class="fas fa-arrow-right"></i></a>
+					<a href="<?php the_field('advanced_virtualization_button_link');?>" class="btn--orange "><?php the_field('advanced_virtualization_button_label');?><i class="fas fa-arrow-right"></i></a>
 				</div>
 			</div>
 		</section>

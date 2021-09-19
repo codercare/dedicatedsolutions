@@ -20,7 +20,7 @@ while ( have_posts() ) : the_post();
 				<div class="page-banner-content wow fadeInDown">
 					<h1 class="large-banner__heading wow fadeInLeft"><?php the_field( 'bare_metal_cloud_title' ); ?></h1>
 					<p class="wow fadeInLeft"><?php the_field( 'bare_metal_cloud_title' ); ?></p>		
-					<a href="<?php the_field( 'bare_metal_cloud_button_link' ); ?>" class="btn--orange wow pulse infinite"><?php the_field( 'bare_metal_cloud_button_label' ); ?><i class="fas fa-arrow-right"></i></a>		
+					<a href="<?php the_field( 'bare_metal_cloud_button_link' ); ?>" class="btn--orange "><?php the_field( 'bare_metal_cloud_button_label' ); ?><i class="fas fa-arrow-right"></i></a>		
 				</div>
 			</div>
 		</section>

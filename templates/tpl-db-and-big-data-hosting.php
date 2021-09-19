@@ -19,7 +19,7 @@ while ( have_posts() ) : the_post();
 			<div class="wrapper">
 				<div class="page-banner-content wow fadeInDown">
 					<h1 class="large-banner__heading wow fadeInLeft"><?php the_field( 'database_and_big_data_server_hosting_title' ); ?></h1>
-					<a href="<?php the_field( 'database_and_big_data_button_link' ); ?>" class="btn--orange  wow pulse infinite"><?php the_field( 'database_and_big_data_button_label' ); ?> <i class="fas fa-arrow-right"></i></a>
+					<a href="<?php the_field( 'database_and_big_data_button_link' ); ?>" class="btn--orange  "><?php the_field( 'database_and_big_data_button_label' ); ?> <i class="fas fa-arrow-right"></i></a>
 				</div>
 			</div>
 		</section>
@@ -241,7 +241,7 @@ while ( have_posts() ) : the_post();
 					endif;
 					?>
 				</div>
-				<a href="<?php the_field('learn_more_button_link');?>" class="btn--orange wow pulse infinite"><?php the_field('learn_more_button_label');?> <i class="fas fa-arrow-right"></i></a>
+				<a href="<?php the_field('learn_more_button_link');?>" class="btn--orange "><?php the_field('learn_more_button_label');?> <i class="fas fa-arrow-right"></i></a>
 			</div>
 		</div>
 	</section>

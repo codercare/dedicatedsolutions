@@ -19,7 +19,7 @@ while ( have_posts() ) : the_post();
 				<div class="page-banner-content  wow fadeInDown">
 					<h1 class="large-banner__heading wow fadeInLeft"><?php the_field( 'about_dedicated_title' ); ?></h1>
 					<p class="wow fadeInLeft"><?php the_field( 'about_dedicated_sub_title' ); ?></p>
-					<a href="<?php the_field( 'about_dedicated_button_link' ); ?>" class="btn--orange wow pulse infinite"><?php the_field( 'about_dedicated_button_label' ); ?> <i class="fas fa-arrow-right"></i></a>
+					<a href="<?php the_field( 'about_dedicated_button_link' ); ?>" class="btn--orange "><?php the_field( 'about_dedicated_button_label' ); ?> <i class="fas fa-arrow-right"></i></a>
 				</div>
 			</div>
 		</section>
@@ -126,7 +126,7 @@ while ( have_posts() ) : the_post();
 					<h2 class="section-header__title wow fadeInDown"><?php the_field( 'our_location_title' ); ?></h2>
 					<span class="section-header__decoration-element"></span>
 				</div>
-				<figure class="thumbnail-img wow pulse infinite">
+				<figure class="thumbnail-img ">
 						<?php
 						$world_location_url = '';
 						$world_image     = get_field( 'our_location_image' );
@@ -170,7 +170,7 @@ while ( have_posts() ) : the_post();
 					<span class="section-header__decoration-element"></span>
 					<p class="section-header__sub-title"><?php the_field( 'speak_with_expert_detail' ); ?></p>
 				</div>
-				<a href="<?php the_field( 'speak_with_expert_button_link' ); ?>" class="btn--orange wow pulse infinite"><?php the_field( 'speak_with_expert_button' ); ?></a>
+				<a href="<?php the_field( 'speak_with_expert_button_link' ); ?>" class="btn--orange "><?php the_field( 'speak_with_expert_button' ); ?></a>
 			</div>
 		</section>
 	</section>

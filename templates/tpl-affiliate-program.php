@@ -18,7 +18,7 @@ get_header();?>
 				<div class="page-banner-content wow fadeInDown">
 					<h1 class="large-banner__heading wow fadeInLeft"><?php the_field( 'affiliate_banner_title' ); ?></h1>
 					<p class="wow fadeInLeft"><?php the_field( 'affiliate_short_description' ); ?></p>
-					<a href="<?php the_field( 'button_link' ); ?>" class="btn--white wow pulse infinite"><?php the_field( 'button_label' ); ?><i class="fas fa-arrow-right"></i></a>
+					<a href="<?php the_field( 'button_link' ); ?>" class="btn--white "><?php the_field( 'button_label' ); ?><i class="fas fa-arrow-right"></i></a>
 				</div>
 			</div>
 		</section>

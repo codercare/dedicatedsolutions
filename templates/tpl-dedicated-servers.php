@@ -15,7 +15,7 @@ get_header();?>
 			<div class="wrapper">			
 				<div class="page-banner-content  wow fadeInDown">
 					<h4>Starting from</h4>
-					<div class="starting-price wow pulse infinite">
+					<div class="starting-price ">
 						<span class="price">
 						<?php 
 						$deci_arr = array();	

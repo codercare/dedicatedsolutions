@@ -177,7 +177,7 @@ while ( have_posts() ) : the_post();
 				</div>
 				<div class="ask-for-quotation">
 					<h2 class="section-header__title"><?php the_field( 'ask_quotation_label' ); ?></h2>
-					<a href="<?php the_field( 'ask_quotation_button_link' ); ?>" class="btn--orange wow pulse infinite"><?php the_field( 'ask_quotation_button_label' ); ?> <i class="fas fa-arrow-right"></i></a>
+					<a href="<?php the_field( 'ask_quotation_button_link' ); ?>" class="btn--orange "><?php the_field( 'ask_quotation_button_label' ); ?> <i class="fas fa-arrow-right"></i></a>
 				</div>
 			</div>
 		</section>

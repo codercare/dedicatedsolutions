@@ -207,7 +207,7 @@ get_header();
 		<section class="promotional-code-banner" style="background-image:url('<?php echo get_template_directory_uri() . '/dist/assets/images/promotinal-code-bg.jpg'; ?>')">
 			<div class="wrapper">
 				<div class="promotionl-code-content">
-					<!-- <div class="section-header u-txt-center">
+					<div class="section-header u-txt-center">
 						<h2 class="section-header__title">Promotional Code</h2>
 						
 					</div>
@@ -217,26 +217,7 @@ get_header();
 						<button type="submit" class="btn--orange" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'woocommerce' ); ?>"><?php esc_html_e( 'Apply coupon', 'woocommerce' ); ?></button>
 						<div class="clear"></div>
 						</form>
-					</div> -->
-
-					<div class="woocommerce-form-coupon-toggle">
-						<?php wc_print_notice( apply_filters( 'woocommerce_checkout_coupon_message', esc_html__( 'Have a coupon?', 'woocommerce' ) . ' <a href="#" class="showcoupon">' . esc_html__( 'Click here to enter your code', 'woocommerce' ) . '</a>' ), 'notice' ); ?>
-					</div>
-
-					<form class="checkout_coupon woocommerce-form-coupon" method="post" style="display:none">
-
-						<p><?php esc_html_e( 'If you have a coupon code, please apply it below.', 'woocommerce' ); ?></p>
-
-						<p class="form-row form-row-first">
-							<input type="text" name="coupon_code" class="input-text" placeholder="<?php esc_attr_e( 'Coupon code', 'woocommerce' ); ?>" id="coupon_code" value="" />
-						</p>
-
-						<p class="form-row form-row-last">
-							<button type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'woocommerce' ); ?>"><?php esc_html_e( 'Apply coupon', 'woocommerce' ); ?></button>
-						</p>
-
-						<div class="clear"></div>
-					</form>
+					</div>					
 				</div>
 			</div>
 		</section>

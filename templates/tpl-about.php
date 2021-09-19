@@ -16,24 +16,24 @@ while ( have_posts() ) : the_post();
 	<section class="section">
 		<section class="page-banner about-page-banner" style="background-image:url('<?php echo $banner_image_url; ?>')">
 			<div class="wrapper">
-				<div class="page-banner-content">
-					<h1 class="large-banner__heading"><?php the_field( 'about_dedicated_title' ); ?></h1>
-					<p><?php the_field( 'about_dedicated_sub_title' ); ?></p>
-					<a href="<?php the_field( 'about_dedicated_button_link' ); ?>" class="btn--orange"><?php the_field( 'about_dedicated_button_label' ); ?> <i class="fas fa-arrow-right"></i></a>
+				<div class="page-banner-content  wow fadeInDown">
+					<h1 class="large-banner__heading wow fadeInLeft"><?php the_field( 'about_dedicated_title' ); ?></h1>
+					<p class="wow fadeInLeft"><?php the_field( 'about_dedicated_sub_title' ); ?></p>
+					<a href="<?php the_field( 'about_dedicated_button_link' ); ?>" class="btn--orange wow pulse infinite"><?php the_field( 'about_dedicated_button_label' ); ?> <i class="fas fa-arrow-right"></i></a>
 				</div>
 			</div>
 		</section>
 		
 		<section class="welcom-section page-section">
 			<div class="wrapper">
-				<div class="section-header u-txt-center">
+				<div class="section-header u-txt-center wow fadeInRightBig">
 					<h2 class="section-header__title"><?php the_field( 'weclome_block_title' ); ?></h2>
 					<span class="section-header__decoration-element"></span>
 					<p class="section-header__sub-title"><?php the_field( 'weclome_block_sub_title' ); ?></p>
 				</div>
 				<div class="row">
 					<div class="col-md-4">
-						<figure class="thumbnail-img">
+						<figure class="thumbnail-img wow fadeInLeftBig">
 							<?php
 							$welcome_url = '';
 							$welcome_image     = get_field( 'weclome_block_image' );
@@ -44,7 +44,7 @@ while ( have_posts() ) : the_post();
 							<img src="<?php echo $welcome_url; ?>" alt="<?php the_field( 'weclome_block_title' ); ?>">
 						</figure>
 					</div>
-					<div class="col-md-8">
+					<div class="col-md-8 wow fadeInRightBig">
 						<div class="welcome-content">
 							<?php the_field( 'weclome_block_content' ); ?>
 						</div>
@@ -58,8 +58,8 @@ while ( have_posts() ) : the_post();
 		<section class="ceo-detail" style="background-image:url('<?php echo get_template_directory_uri() . '/dist/assets/images/ceo-bg.jpg'; ?>')">
 			<div class="wrapper">
 				<div class="row align-items-center">
-					<div class="col-md-5">
-						<figure class="thumbnal-img">
+					<div class="col-md-5 ">
+						<figure class="thumbnal-img wow fadeInLeftBig">
 							<?php
 							$ceo_image_url = '';
 							$ceo_image     = get_field( 'ceo_image' );
@@ -71,7 +71,7 @@ while ( have_posts() ) : the_post();
 						</figure>
 					</div>
 					<div class="col-md-7">
-						<div class="ceo-content">
+						<div class="ceo-content wow fadeInRightBig">
 							<h1><?php the_field( 'ceo_name' ); ?><span><?php the_field( 'designation_detail' ); ?></span></h1>
 							<p><?php the_field( 'ceo_short' ); ?></p>
 						</div>
@@ -82,7 +82,7 @@ while ( have_posts() ) : the_post();
 
 		<section class="quick-fact">
 			<div class="wrapper">
-				<div class="quick-fact-inner-content">
+				<div class="quick-fact-inner-content wow fadeInUp">
 					<div class="section-header u-txt-center">
 						<h2 class="section-header__title">Quick Facts</h2>
 						<span class="section-header__decoration-element"></span>
@@ -100,7 +100,7 @@ while ( have_posts() ) : the_post();
 								$fact_icon = $quick_fact_icon['sizes']['small_icon'];
 							}
 							?>
-						<div class="col-md-6">
+						<div class="col-md-6 wow fadeInRightBig" data-wow-offset="20">
 							<div class="quick-fact-block">
 								<div class="quick-fact-icon">
 									<img src="<?php echo $fact_icon; ?>" alt="quick-fact-icon1">
@@ -123,10 +123,10 @@ while ( have_posts() ) : the_post();
 		<section class="our-locations">
 			<div class="wrapper">
 				<div class="section-header u-txt-center">
-					<h2 class="section-header__title"><?php the_field( 'our_location_title' ); ?></h2>
+					<h2 class="section-header__title wow fadeInDown"><?php the_field( 'our_location_title' ); ?></h2>
 					<span class="section-header__decoration-element"></span>
 				</div>
-				<figure class="thumbnail-img">
+				<figure class="thumbnail-img wow pulse infinite">
 						<?php
 						$world_location_url = '';
 						$world_image     = get_field( 'our_location_image' );
@@ -138,23 +138,23 @@ while ( have_posts() ) : the_post();
 				</figure>
 				<div class="location-detail">
 					<ul>
-						<li>
+						<li class="wow fadeInRightBig">
 							<span class="location-marker usa"></span>
 							<h3><span>USA</span> Eastern Time Zone (UTC-05:00)</h3>
 						</li>
-						<li>
+						<li class="wow fadeInRightBig">
 							<span class="location-marker germany"></span>
 							<h3><span>Germany</span> Central European Time Zone (UTC+01:00)</h3>
 						</li>
-						<li>
+						<li class="wow fadeInRightBig">
 							<span class="location-marker philippines"></span>
 							<h3><span>Philippines</span> Philippine Time Zone (UTC+08:00)</h3>
 						</li>
-						<li>
+						<li class="wow fadeInRightBig">
 							<span class="location-marker austria"></span>
 							<h3><span>Austria</span> Central European Time Zone (UTC+01:00)</h3>
 						</li>
-						<li>
+						<li class="wow fadeInRightBig">
 							<span class="location-marker ukraine"></span>
 							<h3><span>Ukraine</span> Eastern Time Zone (UTC-05:00)</h3>
 						</li>
@@ -170,7 +170,7 @@ while ( have_posts() ) : the_post();
 					<span class="section-header__decoration-element"></span>
 					<p class="section-header__sub-title"><?php the_field( 'speak_with_expert_detail' ); ?></p>
 				</div>
-				<a href="<?php the_field( 'speak_with_expert_button_link' ); ?>" class="btn--orange"><?php the_field( 'speak_with_expert_button' ); ?></a>
+				<a href="<?php the_field( 'speak_with_expert_button_link' ); ?>" class="btn--orange wow pulse infinite"><?php the_field( 'speak_with_expert_button' ); ?></a>
 			</div>
 		</section>
 	</section>

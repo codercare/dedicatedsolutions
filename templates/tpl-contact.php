@@ -16,9 +16,9 @@ while ( have_posts() ) : the_post();
 	<section class="section">
 		<section class="page-banner contact-page-banner" style="background-image:url('<?php echo $contact_banner; ?>')">
 			<div class="wrapper">
-				<div class="page-banner-content">
-					<h1 class="large-banner__heading"><?php the_field( 'contact_us_title' ); ?></h1>
-					<p><?php the_field( 'contact_us_sub_title' ); ?></p>
+				<div class="page-banner-content wow fadeInDown">
+					<h1 class="large-banner__heading wow fadeInLeft"><?php the_field( 'contact_us_title' ); ?></h1>
+					<p class="wow fadeInLeft"><?php the_field( 'contact_us_sub_title' ); ?></p>
 				</div>
 			</div> 
 		</section>
@@ -26,7 +26,7 @@ while ( have_posts() ) : the_post();
 		<section class="services-section page-section">
 			<div class="wrapper">
 				<div class="row">
-					<div class="col-md-4">
+					<div class="col-md-4 wow fadeInLeftBig">
 						<div class="service-block block-1" style="background-image: url('<?php echo get_template_directory_uri() . '/dist/assets/images/live-support.svg'; ?>')">
 							<div class="service-icon-box">
 								<?php
@@ -43,7 +43,7 @@ while ( have_posts() ) : the_post();
 							<a id="callback1123" onclick="LC_API.open_chat_window({source:'button'}); return false;" class="btn--orange"><?php the_field( 'live_support_button_label' ); ?> <i class="fas fa-arrow-right"></i></a>
 						</div>
 					</div>
-					<div class="col-md-4">
+					<div class="col-md-4 wow fadeInUp">
 						<div class="service-block block-2" style="background-image: url('<?php echo get_template_directory_uri() . '/dist/assets/images/request-call.svg'; ?>')">
 							<div class="service-icon-box">
 								<?php
@@ -60,7 +60,7 @@ while ( have_posts() ) : the_post();
 							<a  id="requestCallback" href="#section2" class="btn--orange"><?php the_field( 'request_call_back_button' ); ?> <i class="fas fa-arrow-right"></i></a>
 						</div>
 					</div>
-					<div class="col-md-4">
+					<div class="col-md-4 wow fadeInRightBig">
 						<div class="service-block block-3" style="background-image: url('<?php echo get_template_directory_uri() . '/dist/assets/images/user.svg'; ?>')">
 							<div class="service-icon-box">
 								<?php
@@ -102,7 +102,7 @@ while ( have_posts() ) : the_post();
 	<section class="conatct-form-setion page-section section" style="background-image:url('<?php echo get_template_directory_uri() . '/dist/assets/images/contact-form-bg.png'; ?>')">
 		<div class="wrapper">
 			<div class="row align-items-center">
-				<div class="col-md-5">
+				<div class="col-md-5 wow fadeInLeftBig">
 					<div class="get-in-touch">
 						<h2 class="section-header__title"><?php the_field( 'get_in_touch_title' ); ?></h2>
 						<p><?php the_field( 'get_in_touch_short_detail' ); ?></p>
@@ -131,7 +131,7 @@ while ( have_posts() ) : the_post();
 						</ul>
 					</div>
 				</div>
-				<div class="col-md-7">
+				<div class="col-md-7 wow fadeInRightBig">
 					<div id="container-contact-form" class="contact-form">
 						<div class="section-header u-txt-center">
 							<h2 class="section-header__title"><?php the_field( 'send_us_message_title' ); ?></h2>

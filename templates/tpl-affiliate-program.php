@@ -15,10 +15,10 @@ get_header();?>
 	<section class="section">
 		<section class="page-banner affiliate-page-banner" style="background-image:url('<?php echo $banner_image_url; ?>')">
 			<div class="wrapper">
-				<div class="page-banner-content">
-					<h1 class="large-banner__heading"><?php the_field( 'affiliate_banner_title' ); ?></h1>
-					<p><?php the_field( 'affiliate_short_description' ); ?></p>
-					<a href="<?php the_field( 'button_link' ); ?>" class="btn--white"><?php the_field( 'button_label' ); ?><i class="fas fa-arrow-right"></i></a>
+				<div class="page-banner-content wow fadeInDown">
+					<h1 class="large-banner__heading wow fadeInLeft"><?php the_field( 'affiliate_banner_title' ); ?></h1>
+					<p class="wow fadeInLeft"><?php the_field( 'affiliate_short_description' ); ?></p>
+					<a href="<?php the_field( 'button_link' ); ?>" class="btn--white wow pulse infinite"><?php the_field( 'button_label' ); ?><i class="fas fa-arrow-right"></i></a>
 				</div>
 			</div>
 		</section>
@@ -38,7 +38,7 @@ get_header();?>
 						while ( have_rows( 'pays_to_recommend_features' ) ) :
 							the_row();						
 						?>
-						<div class="col-md-4">
+						<div class="col-md-4 wow fadeInRightBig">
 							<div class="recom-block">
 								<div class="recom-icon">
 								<?php 
@@ -70,7 +70,7 @@ get_header();?>
 		<section class="signup-section" style="background-image:url('<?php echo get_template_directory_uri() . '/dist/assets/images/signup-background.png'; ?>')">
 			<div class="wrapper">
 				<div class="row">
-					<div class="col-md-6">
+					<div class="col-md-6 wow fadeInLeftBig">
 						<div class="signup-affiliate-program">
 							<h1><?php the_field( 'sign_up_title' ); ?></h1>
 							<a href="<?php the_field( 'sign_up_button_link' ); ?>" class="btn--orange"><?php the_field( 'sign_up_button_label' ); ?> <i class="fas fa-arrow-right"></i></a>
@@ -85,11 +85,11 @@ get_header();?>
 				$signup_form_banner_image = $signup_image['url'];
 			}
 			?>
-			<div class="signup-thumbnail-img" style="background-image:url('<?php echo $signup_form_banner_image; ?>')"></div>
+			<div class="signup-thumbnail-img wow fadeInRightBig" style="background-image:url('<?php echo $signup_form_banner_image; ?>')"></div>
 		</section>
 	
 		<section class="pay-out-terms">
-			<div class="wrapper">
+			<div class="wrapper wow fadeInUp">
 				<div class="section-header u-txt-center">
 					<h2 class="section-header__title"><?php the_field( 'pay_out_terms_title' ); ?></h2>
 					<span class="section-header__decoration-element"></span>

@@ -5,11 +5,11 @@ get_header();?>
 <main id="fullpage" class="site-main">
 	<section class="our-guarantee section">
 		<div class="wrapper">
-			<div class="section-header u-txt-center">
-				<h2 class="section-header__title"><?php the_field( 'guarantees_title' ); ?></h2>
+			<div class="section-header u-txt-center wow fadeInDown">
+				<h2 class="section-header__title  wow fadeInLeft"><?php the_field( 'guarantees_title' ); ?></h2>
 				<span class="section-header__decoration-element"></span>
-				<h4 class="section-header__Orangesub-title"><?php the_field( 'guarantees_sub_title' ); ?></h4>
-				<p><?php the_field( 'guarantees_short_info' ); ?></p>
+				<h4 class="section-header__Orangesub-title  wow fadeInLeft"><?php the_field( 'guarantees_sub_title' ); ?></h4>
+				<p class="wow fadeInLeft"><?php the_field( 'guarantees_short_info' ); ?></p>
 			</div>
 			<div class="our-guarante-grid">
 				<div class="row">
@@ -25,7 +25,7 @@ get_header();?>
 							$guarantee_icon = $guarantee_bg_image['sizes']['mid_icon'];
 						}
 					?>
-					<div class="<?php if($counter < 4){ echo "col-md-4";}else{ echo "col-md-6"; }?>">
+					<div class="<?php if($counter < 4){ echo "col-md-4";}else{ echo "col-md-6"; }?> wow fadeInUp">
 						<div class="our-guarantee-block">
 							<div class="guarantee-icon-box">
 								<img src="<?php echo $guarantee_icon; ?>" alt="our-g-icon1">

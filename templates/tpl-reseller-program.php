@@ -17,16 +17,16 @@ get_header();
 	<section class="section">
 		<section class="page-banner reseller-page-banner" style="background-image:url('<?php echo $banner_image_url; ?>')">
 			<div class="wrapper">
-				<div class="page-banner-content">
-					<h1 class="large-banner__heading"><?php the_field( 'reseller_program_title' ); ?></h1>
-					<p><?php the_field( 'reseller_program_sub_title' ); ?></p>
-					<a href="<?php the_field( 'reseller_button_link' ); ?>" class="btn--white"><?php the_field( 'reseller_button' ); ?><i class="fas fa-arrow-right"></i></a>
+				<div class="page-banner-content wow fadeInDown">
+					<h1 class="large-banner__heading wow fadeInLeft"><?php the_field( 'reseller_program_title' ); ?></h1>
+					<p class="wow fadeInLeft"><?php the_field( 'reseller_program_sub_title' ); ?></p>
+					<a href="<?php the_field( 'reseller_button_link' ); ?>" class="btn--white wow pulse infinite"><?php the_field( 'reseller_button' ); ?><i class="fas fa-arrow-right"></i></a>
 				</div>
 			</div>
 		</section>
 		
 		<section class="reseller-exclusive page-section">
-			<div class="wrapper">
+			<div class="wrapper wow fadeInUp">
 				<h2 class="section-header__title"><?php the_field( 'exclusive_reseller_title' ); ?></h2>
 				<span class="section-header__decoration-element"></span>
 				<h4 class="section-header__Orangesub-title"><?php the_field( 'exclusive_reseller_sub_title' ); ?></h4>
@@ -44,7 +44,7 @@ get_header();
 	?>
 	<section class="reseller-program-work page-section section" style="background-image:url('<?php echo $reseller_bg_image; ?>')">
 		<div class="wrapper">
-			<h2 class="section-header__title"><?php the_field( 'reseller_program_works_title' ); ?></h2>
+			<h2 class="section-header__title wow fadeInDown"><?php the_field( 'reseller_program_works_title' ); ?></h2>
 			<span class="section-header__decoration-element--dark"></span>
 			<div class="pogram-work-grid">
 			<?php if ( have_rows( 'reseller_package_list' ) ) : ?>
@@ -60,7 +60,7 @@ get_header();
 							$package_icon = $product_icon['url'];
 						}
 						?>
-						<div class="col-md-3">
+						<div class="col-md-3 wow fadeInRightBig">
 						<div class="product-work-card card-<?php echo $counter_card;?>">
 							<div class="product-icon-box">
 								<img src="<?php echo $package_icon; ?>" alt="server-icon-1">
@@ -77,15 +77,15 @@ get_header();
 				</div>
 			<?php endif; ?>
 			</div>
-			<a href="<?php the_field( 'contact_link' ); ?>" class="btn--white"><?php the_field( 'contact_label' ); ?> <i class="fas fa-arrow-right"></i></a>
+			<a href="<?php the_field( 'contact_link' ); ?>" class="btn--white  wow pulse infinite"><?php the_field( 'contact_label' ); ?> <i class="fas fa-arrow-right"></i></a>
 		</div>
 	</section>
 
 	<section class="why-choose-dedicatedSolutions page-section section">
 		<div class="wrapper">
-			<h2 class="section-header__title"><?php the_field('why_choose_our_dedicated_title'); ?></h2>
+			<h2 class="section-header__title wow fadeInDown"><?php the_field('why_choose_our_dedicated_title'); ?></h2>
 			<span class="section-header__decoration-element"></span>
-			<h4 class="section-header__Orangesub-title"><?php the_field( 'why_choose_our_dedicated_sub_title' ); ?></h4>
+			<h4 class="section-header__Orangesub-title wow fadeInUp"><?php the_field( 'why_choose_our_dedicated_sub_title' ); ?></h4>
 			<div class="why-choose-grid">
 				<div class="row">					
 					<?php
@@ -100,7 +100,7 @@ get_header();
 						$reseller_image = $feature_block_image['url'];
 					}
 					?>
-					<div class="col-md-4">
+					<div class="col-md-4 wow fadeInRightBig">
 						<div class="why-choose-card">						   
 							<figure class="thumbnail-image">
 								<img src="<?php echo $reseller_image; ?>" alt="<?php the_sub_field( 'feature_title' ); ?>">

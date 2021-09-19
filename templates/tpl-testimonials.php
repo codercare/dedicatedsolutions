@@ -5,10 +5,10 @@ get_header();?>
 <main id="fullpage" class="site-main">
 	<section class="testimonial-section section">
 		<div class="wrapper">
-			<div class="section-header u-txt-center">
-				<h2 class="section-header__title"><?php the_field( 'testimonial_block_title' ); ?></h2>
+			<div class="section-header u-txt-center wow fadeInDown">
+				<h2 class="section-header__title wow fadeInLeft"><?php the_field( 'testimonial_block_title' ); ?></h2>
 				<span class="section-header__decoration-element"></span>
-				<p class="section-header__sub-title"><?php the_field( 'testimonial_block_sub_title' ); ?></p>
+				<p class="section-header__sub-title wow fadeInLeft"><?php the_field( 'testimonial_block_sub_title' ); ?></p>
 			</div>
 			<div class="testimonial-block-wrap">
 				<div class="row">
@@ -23,7 +23,7 @@ get_header();?>
 					if ( $testimonials ) {
 					foreach ( $testimonials as $post ) : 
 					setup_postdata( $post ); ?>
-					<div class="col-md-4">
+					<div class="col-md-4 wow fadeInRightBig">
 						<div class="testimonial-block">
 							<i class="quote">
 								<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/quote.png'; ?>" alt="quote">
@@ -60,7 +60,7 @@ get_header();?>
 					if ( $testimonial_more ) {
 					foreach ( $testimonial_more as $post ) : 
 					setup_postdata( $post ); ?>
-					<div class="col-md-4">
+					<div class="col-md-4 wow fadeInRightBig">
 						<div class="testimonial-block">
 							<i class="quote">
 								<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/quote.png'; ?>" alt="quote">

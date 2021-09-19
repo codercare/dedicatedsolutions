@@ -5,15 +5,15 @@ get_header();?>
 <main id="fullpage" class="site-main">
 	<section class="page-banner pressAnnouncement-page-banner section fp-auto-height">
 		<div class="wrapper">
-			<div class="page-banner-content">
-				<h1 class="large-banner__heading"><?php the_field( 'press_announcement_title' ); ?></h1>
-				<p><?php the_field( 'press_announcement_sub_heading' ); ?></p>
+			<div class="page-banner-content wow fadeInDown">
+				<h1 class="large-banner__heading wow fadeInLeft"><?php the_field( 'press_announcement_title' ); ?></h1>
+				<p class="wow fadeInLeft"><?php the_field( 'press_announcement_sub_heading' ); ?></p>
 					<?php
 					if ( have_rows( 'press_announcement_buttons_and_links' ) ) : 
 					while ( have_rows( 'press_announcement_buttons_and_links' ) ) :
 					the_row();
 					?>
-					<a href="<?php the_sub_field('button_link');?>" class="btn--orange"><?php the_sub_field('button_label');?></a>
+					<a href="<?php the_sub_field('button_link');?>" class="btn--orange wow pulse infinite"><?php the_sub_field('button_label');?></a>
 					<?php 					
 					endwhile; 
 					endif;
@@ -40,7 +40,7 @@ get_header();?>
 				foreach ( $press_release as $post ) : 
 				setup_postdata( $post ); ?>
 				<div class="press-relase-block">
-					<div class="row">
+					<div class="row wow <?php if($count %2 === 0){ echo 'fadeInRightBig '; }else{ echo'fadeInLeftBig';} ?> ">
 						<div class="col-md-6 <?php if($count %2 === 0){ echo 'order-md-1'; } ?> pr-md-0">
 							<figure class="thumbnail-img">
 								<?php the_post_thumbnail( 'press_image_center' );?>								
@@ -91,7 +91,7 @@ get_header();?>
 				$new_tab = get_post_meta(get_the_ID(),'open_in_new_tab',true);
 				?>
 					<div class="col-md-4">
-						<div class="awards-block award-1">
+						<div class="awards-block award-1 wow  <?php if($count ==1){ echo 'fadeInLeftBig'; }else if($count ==2){  echo'fadeInUp'; }else{ echo"fadeInRightBig"; } ?>">
 							<div class="awards-block-content">
 								<div class="award-logo">
 								    <?php the_post_thumbnail('full');?>		

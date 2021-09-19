@@ -181,9 +181,9 @@ while ( have_posts() ) : the_post();
 				</div>
 			</div>
 		</section>
-		<section class="find-your-os  wow fadeInLeftBig" style="background-image:url('<?php echo get_template_directory_uri() . '/dist/assets/images/find-your-os-bg.jpg'; ?>')">
+		<section class="find-your-os  " style="background-image:url('<?php echo get_template_directory_uri() . '/dist/assets/images/find-your-os-bg.jpg'; ?>')">
 			<div class="wrapper">
-				<div class="find-your-os--inner-content">
+				<div class="find-your-os--inner-content wow fadeInLeftBig">
 					<h2 class="section-header__title"><?php the_field( 'cant_find_os_title' ); ?></h2>
 					<p class="section-header__sub-title"><?php the_field( 'cant_find_os_detail' ); ?></p>
 					<a href="<?php the_field( 'cant_find_os_button_link' ); ?>" class="btn--orange"><?php the_field( 'cant_find_os_button_label' ); ?> <i class="fas fa-arrow-right"></i></a>

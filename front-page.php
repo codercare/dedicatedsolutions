@@ -36,7 +36,7 @@ if ( ! empty( $banner_image ) ) {
 					<?php endif; ?>
 				</div>
 				<div class="btn--transparent wow fadeInUp">			
-					<span><a href="<?php the_field( 'learn_more' ); ?>">Learn More</a></span> 
+					<span class="wow pulse infinite"><a href="<?php the_field( 'learn_more' ); ?>">Learn More</a></span> 
 					<i class="fas fa-arrow-down"></i>			
 				</div>
 			</div>

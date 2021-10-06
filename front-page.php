@@ -338,7 +338,7 @@ if ( ! empty( $banner_image ) ) {
 						</div>
 						<h4 class="product-card__title"><?php the_sub_field( 'feature_block_title' ); ?></h4>
 						<p class="product-card__description"><?php the_sub_field( 'feature_block_content' ); ?></p>
-						<span  class="btn--outline-dark"><?php the_sub_field( 'feature_block_button_lable' ); ?></span>
+						<span  class="btn--outline-dark">Read More</span>
 					</div>
 					</a>
 				</div>

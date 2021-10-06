@@ -39,7 +39,7 @@ while ( have_posts() ) : the_post();
 								<img src="<?php echo $support_icon; ?>" alt="<?php the_field( 'live_support_block_title' ); ?>">
 							</div>
 							<h3><?php the_field( 'live_support_block_title' ); ?></h3>
-							<p><?php the_field( 'live_support_detail' ); ?></p>
+							<br/>
 							<a id="callback1123" onclick="LC_API.open_chat_window({source:'button'}); return false;" class="btn--orange"><?php the_field( 'live_support_button_label' ); ?> <i class="fas fa-arrow-right"></i></a>
 						</div>
 					</div>
@@ -56,7 +56,7 @@ while ( have_posts() ) : the_post();
 								<img src="<?php echo $reqest_icon; ?>" alt="<?php the_field( 'request_call_back_title' ); ?>">
 							</div>
 							<h3><?php the_field( 'request_call_back_title' ); ?></h3>
-							<p><?php the_field( 'request_call_back_detail' ); ?></p>
+							<br/>							
 							<a  id="requestCallback" href="#section2" class="btn--orange"><?php the_field( 'request_call_back_button' ); ?> <i class="fas fa-arrow-right"></i></a>
 						</div>
 					</div>
@@ -72,9 +72,9 @@ while ( have_posts() ) : the_post();
 								?>
 								<img src="<?php echo $existing_user_icon; ?>" alt="<?php the_field( 'already_user_title' ); ?>">
 							</div>
-							<h3>Get In Touch</h3>
-							<p><?php the_field( 'already_user_description' ); ?></p>
-							<a  id="requestContact"  href="#section2"  class="btn--orange"> Contact <i class="fas fa-arrow-right"></i></a>
+							<h3><?php the_field( 'already_user_title' ); ?></h3>
+							<br/>
+							<a  id="requestContact"  href="#section2"  class="btn--orange"> <?php the_field( 'already_user_button_label' ); ?> <i class="fas fa-arrow-right"></i></a>
 						</div>
 					</div> 
 					<!-- <div class="col-md-4">

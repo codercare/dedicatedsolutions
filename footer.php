@@ -35,7 +35,7 @@
 						</li>
 						<li class="support-links__item">
 							<h6 class="support-links__title"><a onclick="LC_API.open_chat_window({source:'button'}); return false;" >Speak with an Expert</a></h6>
-							<a href="#" class="support-links__link">Need help deciding on the best server for your need?</a>
+							<a href="<?php echo site_url('/dedicated-servers/#pro-server');?>" class="support-links__link">Need help deciding on the best server for your need?</a>
 						</li>
 					</ul>
 					<div class="site-footer__btn-container">

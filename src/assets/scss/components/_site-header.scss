@@ -28,10 +28,24 @@
 	}
 	.header-navigation .menu > .menu-item > a{
 		padding: .8vmin 0;
+		font-size: 1.4vmin;
 	}
 	.shopping-cart-link{
 		width: 2.4vmin !important;
     	height: 2.4vmin !important;
+		a span{
+			font-size: 10px;
+			background-color: #ec7a01;
+			color: #fff;
+			text-align: center;
+			display: block;
+			width: 16px;
+			height: 16px;
+			line-height: 16px;
+			padding: 0;
+			margin: -2px 0 0px 12px;
+			border-radius: 10px;
+		}
 	}
 }
 
@@ -74,7 +88,7 @@
 				width: 40%;
 			}
 			@include respond(tab-land){
-				width: 81%;
+				width: 90%;
 			}
 		}
 	}
@@ -211,9 +225,28 @@
     	margin-left: 1rem;
 		cursor: pointer;
 		@include respond(tab-port){
-			width: 3vmin !important;
-			height: 3vmin !important;
+			width: 4vmin !important;
+			height: 4vmin !important;
 			margin-left: 1vmin;
+		}
+		a{
+			color:#fff;
+			text-decoration: none;
+		}&:hover{
+			text-decoration: none;
+		}
+		a span{
+			font-size: 10px;
+			background-color: #ec7a01;
+			color: #fff;
+			text-align: center;
+			display: block;
+			width: 20px;
+			height: 19px;
+			line-height: 20px;
+			padding: 0;
+			margin: -2px 0 0px 15px;
+			border-radius: 10px;
 		}
 	}
 	@include respond(tab-port){

@@ -28,12 +28,15 @@ get_header();?>
 							<i class="quote">
 								<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/quote.png'; ?>" alt="quote">
 							</i>
-							<p><?php echo wp_trim_words( get_the_content(), 30, '<br/> <span class="more_text">read more...</span>' );  ?></p>
-							<span class="thanks">Thanks!</span>
-							<div class="testimonial-profile">
-								<?php the_post_thumbnail( 'thumbnail' );  ?>	
-							</div>
-							<h3><?php the_title(); ?> <span><?php  the_field( 'comapany_detail' ); ?></span></h3>
+							<p class="old"><?php echo wp_trim_words( get_the_content(), 25, '<br/> <a class="more_text">read more...</a>' );  ?></p>
+							<?php echo  '<p class="nextfull">'.wp_trim_words(get_the_content(),1000).'</p>';  ?>
+							<span class="old">
+								<span class="thanks">Thanks!</span>
+								<div class="testimonial-profile">
+									<?php the_post_thumbnail( 'thumbnail' );  ?>	
+								</div>
+								<h3><?php the_title(); ?> <span><?php  the_field( 'comapany_detail' ); ?></span></h3>
+							</span>
 						</div>
 					</div>
 					<?php
@@ -65,12 +68,15 @@ get_header();?>
 							<i class="quote">
 								<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/quote.png'; ?>" alt="quote">
 							</i>
-							<p><?php echo wp_trim_words( get_the_content(), 28, '<br/> <span class="more_text">read more...</span>' );  ?></p>
-							<span class="thanks">Thanks!</span>
-							<div class="testimonial-profile">
-								<?php the_post_thumbnail( 'thumbnail' );  ?>	
-							</div>
-							<h3><?php the_title(); ?> <span><?php  the_field( 'comapany_detail' ); ?></span></h3>
+							<p class="old"><?php echo wp_trim_words( get_the_content(), 28, '<br/> <a class="more_text">read more...</a>' );  ?></p>
+							<?php echo  '<p class="nextfull">'.wp_trim_words(get_the_content(),1000).'</p>';  ?>
+							<span class="old">
+								<span class="thanks">Thanks!</span>
+								<div class="testimonial-profile">
+									<?php the_post_thumbnail( 'thumbnail' );  ?>	
+								</div>
+								<h3><?php the_title(); ?> <span><?php  the_field( 'comapany_detail' ); ?></span></h3>
+							</span>
 						</div>
 					</div>
 					<?php

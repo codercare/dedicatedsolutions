@@ -190,6 +190,53 @@ jQuery('.showLocation').on('click',function(e){
     }
 });
 
+
+// jQuery('.readmore').on('mouseover',function(e){   
+//     // alert("Read More Clicked");
+//     if($(this).hasClass('back')){
+//         $(this).removeClass("back");
+//         // $(this).addClass(".back");
+//         $(this).html("Read More >>");  
+//         $(this).siblings(".nextfull").hide();
+//         $(this).siblings(".old").show(); 
+
+//     }else{
+//         $(this).addClass("back");
+//         $(this).html("<< Go Back");
+//         $(this).siblings(".old").hide();
+//         $(this).siblings(".nextfull").show();
+//     }   
+    
+// });
+
+
+jQuery('.testimonial-block').on('mouseover',function(e){   
+    $(this).children(".old").hide();
+    $(this).children(".nextfull").show();
+});
+
+jQuery('.testimonial-block').on('mouseout',function(e){     
+    $(this).children(".nextfull").hide();
+    $(this).children(".old").show();    
+});
+
+
+
+//jQuery('.back').on('click',function(e){   
+    // if($(this).hasClass('back')){
+    //     $(this).removeClass("back");
+    //     $(this).html("Back");       
+    // }else{
+    //     $(this).addClass("back");
+    //     $(this).html("<< Go Back");
+    //     $(this).siblings(".old").hide();
+    // }   
+   // $(this).siblings(".nextfull").hide();
+    //$(this).siblings(".old").show();
+    // $(this).siblings(".nextfull").show();
+//});
+
+
 jQuery('.chooseEnterprise').on('click',function(e){
     var type = $(this).attr('servertype');
     

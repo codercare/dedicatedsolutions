@@ -27,7 +27,7 @@ header.entry-header.u-txt-center{
     padding-right: 2%;
 }
 .carosel-navigation-custom .carousel-control-next, .carousel-control-prev{
-    color: #ff8800;
+    color: #ff8800!important;
     font-size: 22px;
     position: relative!important;
     float: right;
@@ -66,3 +66,6 @@ header.entry-header.u-txt-center{
 
 .product_card_list a{ color:#00020A; }
 .product_card_list a:hover{ color:#00020A; text-decoration: none;}
+
+.nextfull{ display: none; }
+.readmore{ cursor: pointer;}

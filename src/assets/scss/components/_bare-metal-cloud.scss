@@ -62,9 +62,11 @@
     .why-bmc-block-wrap{
         [class^="col-"]{
             .bmc-block{
-                margin: 0 0 2rem;
+                margin: 0 0 2vmin;
+                height: 40vmin;
+                overflow: hidden;
                 @include respond(tab-port){
-                    margin: 0 0 4vmin;
+                    margin: 0 0 2vmin;
                 }
             }
         }

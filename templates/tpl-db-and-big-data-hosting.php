@@ -171,6 +171,41 @@ while ( have_posts() ) : the_post();
 		</div>
 	</section>
 
+	
+
+	<section class="hadoop-data-server section">
+		<div class="wrapper">
+			<div class="section-header u-txt-center">
+				<h2 class="section-header__title wow shake"><?php the_field('hadoop_plus_big_data_server_equals_speed_title');?></h2>
+				<span class="section-header__decoration-element"></span>
+				<h4 class="section-header__Orangesub-title wow bounceInDown"><?php the_field('hadoop_plus_big_data_server_equals_description');?></h4>
+			</div>
+			<div class="hadoop-server-feat">
+				<div class="row">
+					<?php
+					if ( have_rows( 'hadoop_plus_big_data_server_equals_blocks' ) ) : 
+					while ( have_rows( 'hadoop_plus_big_data_server_equals_blocks' ) ) :
+					the_row();											
+					?>
+					<div class="col-md-4 wow fadeInRightBig">
+						<div class="hadoop-server-feat--block">
+							<div class="hadoop-server-feat--block__icon">
+								<?php the_sub_field('block_svg_code');?>
+							</div>
+							<h2><?php the_sub_field('block_title');?></h2>
+							<p><?php the_sub_field('block_detail');?></p>
+						</div>
+					</div>
+					<?php 					
+					endwhile; 
+					endif;
+					?>
+				</div>
+				<a href="<?php the_field('learn_more_button_link');?>" class="btn--orange "><?php the_field('learn_more_button_label');?> <i class="fas fa-arrow-right"></i></a>
+			</div>
+		</div>
+	</section>
+
 	<?php if(get_field('showhide_popular_dedicated_server')){ ?>
 	<section class="popular-dedicated-server section">
 		<div class="wrappper">
@@ -213,38 +248,6 @@ while ( have_posts() ) : the_post();
 	</section>
 	<?php } ?>
 
-	<section class="hadoop-data-server section">
-		<div class="wrapper">
-			<div class="section-header u-txt-center">
-				<h2 class="section-header__title wow shake"><?php the_field('hadoop_plus_big_data_server_equals_speed_title');?></h2>
-				<span class="section-header__decoration-element"></span>
-				<h4 class="section-header__Orangesub-title wow bounceInDown"><?php the_field('hadoop_plus_big_data_server_equals_description');?></h4>
-			</div>
-			<div class="hadoop-server-feat">
-				<div class="row">
-					<?php
-					if ( have_rows( 'hadoop_plus_big_data_server_equals_blocks' ) ) : 
-					while ( have_rows( 'hadoop_plus_big_data_server_equals_blocks' ) ) :
-					the_row();											
-					?>
-					<div class="col-md-4 wow fadeInRightBig">
-						<div class="hadoop-server-feat--block">
-							<div class="hadoop-server-feat--block__icon">
-								<?php the_sub_field('block_svg_code');?>
-							</div>
-							<h2><?php the_sub_field('block_title');?></h2>
-							<p><?php the_sub_field('block_detail');?></p>
-						</div>
-					</div>
-					<?php 					
-					endwhile; 
-					endif;
-					?>
-				</div>
-				<a href="<?php the_field('learn_more_button_link');?>" class="btn--orange "><?php the_field('learn_more_button_label');?> <i class="fas fa-arrow-right"></i></a>
-			</div>
-		</div>
-	</section>
 <?php endwhile; // end of the loop. ?>
 </main>
 

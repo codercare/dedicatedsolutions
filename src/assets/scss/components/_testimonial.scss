@@ -19,7 +19,8 @@
             background: #FAFAFA;
             padding: 2rem;
             margin: 0 0 2rem;
-            min-height: 43vmin;
+            height: 46vmin;
+            overflow: auto;
             transition: all .3s ease;
             @include respond(tab-port){
                 padding: 2vmin;

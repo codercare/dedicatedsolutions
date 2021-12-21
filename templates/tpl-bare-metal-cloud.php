@@ -42,7 +42,7 @@ while ( have_posts() ) : the_post();
 			</div>
 			<div class="wrapper">
 				<div class="tab-content" id="bmc-pills-tabContent">
-					<div class="tab-pane fade" id="pills-overview" role="tabpanel" aria-labelledby="pills-overview-tab">
+					<div class="tab-pane fadeInLeft" id="pills-overview" role="tabpanel" aria-labelledby="pills-overview-tab">
 						<div class="why-bmc-block-wrap">							
 							<div class="carosel-navigation-custom">	
 								<?php 
@@ -92,7 +92,7 @@ while ( have_posts() ) : the_post();
 							<a href="<?php the_field( 'button_label_link' ); ?>" class="btn--orange"><?php the_field( 'button_label' ); ?></a>
 						</div>
 					</div>
-					<div class="tab-pane fade show active" id="pills-why-bmc" role="tabpanel" aria-labelledby="pills-why-bmc-tab">
+					<div class="tab-pane fadeInLeft show active" id="pills-why-bmc" role="tabpanel" aria-labelledby="pills-why-bmc-tab">
 						<div class="why-bmc-block-wrap">
 							<div class="carosel-navigation-custom">		
 								<a class="carousel-control-next" href="#bareMetalCloudBlock-carousel" role="button" data-slide="next">
@@ -135,7 +135,7 @@ while ( have_posts() ) : the_post();
 								<a href="<?php the_field( 'button_label_link' ); ?>" class="btn--orange"><?php the_field( 'button_label' ); ?></a>
 						</div>
 					</div>
-					<div class="tab-pane fade" id="pills-bmc-usecases" role="tabpanel" aria-labelledby="pills-bmc-usecases-tab">
+					<div class="tab-pane fadeInLeft" id="pills-bmc-usecases" role="tabpanel" aria-labelledby="pills-bmc-usecases-tab">
 						<div class="why-bmc-block-wrap">
 						<div class="carosel-navigation-custom">		
 								<a class="carousel-control-next" href="#bareMetalCloudBlock-usecase" role="button" data-slide="next">

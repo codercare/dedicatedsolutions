@@ -69,3 +69,9 @@ header.entry-header.u-txt-center{
 
 .nextfull{ display: none; }
 .readmore{ cursor: pointer;}
+.server-type-block-wrap span.old-price {
+    text-decoration: line-through;
+}
+.server-type-block-wrap span.new-price {
+    font-weight: bold;
+}

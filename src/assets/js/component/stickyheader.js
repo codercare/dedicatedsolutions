@@ -1,5 +1,3 @@
-import throttle from 'lodash/throttle';
-
 class StickyHeader {
 
 	constructor() {
@@ -8,14 +6,16 @@ class StickyHeader {
 	}
 
 	events() {
-		window.addEventListener("scroll", throttle(() => this.showStickyOnScroll(), 200));
+		window.addEventListener("scroll", this.showStickyOnScroll.bind(this));
 	}
 
 	showStickyOnScroll() {
-		if (window.scrollY > 100) {
+		if (window.scrollY) {
 			this.siteHeader.classList.add("site-header--on-scroll");
 		} else {
-			this.siteHeader.classList.remove("site-header--on-scroll");
+			if(this.siteHeader.classList.contains("site-header--on-scroll")) {
+				this.siteHeader.classList.remove("site-header--on-scroll");
+			}
 		}
 	}
 }

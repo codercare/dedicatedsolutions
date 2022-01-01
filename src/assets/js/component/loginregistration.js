@@ -259,7 +259,8 @@ jQuery('.chooseEnterprise').on('click',function(e){
  var items = $("#budget-server tbody tr");
  var numItems = items.length;
  var perPage = 10;
-
+ 
+ $("#countConfBudget").html(numItems);
  items.slice(perPage).hide();
 
  $('#budget-server-pagination').pagination({
@@ -279,6 +280,8 @@ jQuery('.chooseEnterprise').on('click',function(e){
  var items_pro = $("#pro-server tbody tr");
  var numItems_pro = items_pro.length;
  var perPage_pro = 10;
+
+ $("#countConfPro").html(numItems_pro);
 
  items_pro.slice(perPage_pro).hide();
 
@@ -300,6 +303,8 @@ jQuery('.chooseEnterprise').on('click',function(e){
  var numItems_ent = items_ent.length;
  var perPage_ent = 10;
 
+ $("#countConfEnterprise").html(numItems_ent);
+ 
  items_ent.slice(perPage_ent).hide();
 
  $('#enterprise-server-pagination').pagination({

@@ -365,7 +365,7 @@ get_header();?>
 						$budget_servers = get_field('budget_servers'); 
 						?>
 						<a  href="#section4" class="btn--orange chooseEnterprise" servertype='budget'><?php if(isset($budget_servers['view_server_button_label'])){ echo $budget_servers['view_server_button_label']; }?></a>
-						<a href="#section4" class="chooseEnterprise" servertype='budget'><?php if(isset($budget_servers['configuration_available_text'])){ echo $budget_servers['configuration_available_text']; }?></a>
+						<a href="#section4" class="chooseEnterprise" servertype='budget'><span id="countConfBudget"></span> configuration(s) available</a>
 					</div>
 				</div>
 				<div class="ds-feature-table__block">
@@ -424,7 +424,7 @@ get_header();?>
 						$pro_servers = get_field('pro_servers'); 
 						?>
 						<a  href="#section4" class="btn--orange chooseEnterprise" servertype='pro'><?php if(isset($pro_servers['view_server_button_label'])){ echo $pro_servers['view_server_button_label']; }?></a>
-						<a href="#section4" class="chooseEnterprise" servertype='pro'><?php if(isset($pro_servers['configuration_available_text'])){ echo $pro_servers['configuration_available_text']; }?></a>
+						<a href="#section4" class="chooseEnterprise" servertype='pro'><span id="countConfPro"></span> configuration(s) available</a>
 					</div>
 				</div>
 				<div class="ds-feature-table__block">
@@ -483,7 +483,7 @@ get_header();?>
 						$enterprice_servers = get_field('enterprise_servers'); 
 						?>
 						<a href="#section4" class="btn--orange chooseEnterprise" servertype='enterprise'><?php if(isset($enterprice_servers['view_server_button_label'])){ echo $enterprice_servers['view_server_button_label']; }?></a>
-						<a href="#section4" class="chooseEnterprise" servertype='enterprise'><?php if(isset($enterprice_servers['configuration_available_text'])){ echo $enterprice_servers['configuration_available_text']; }?></a>
+						<a href="#section4" class="chooseEnterprise" servertype='enterprise'><span id="countConfEnterprise"></span> configuration(s) available</a>
 					</div>
 				</div>
 			</div>

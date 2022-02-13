@@ -1,0 +1,44 @@
+.scroll-nav{
+	position: fixed;
+	top: 50%;
+	transform: translateY(-50%);
+	right: 1%;
+	z-index: 1;
+
+	ul{
+		padding: 0;
+		margin: 0;
+		list-style: none;
+		text-align: center;
+	}
+
+	li{
+		position: relative;
+		text-align: center;
+		display: block;
+		width: 20px;
+		height: 20px;
+		margin: 5px;
+	}
+
+	a{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		height: 5px;
+		width: 5px;
+		border-radius: 100%;
+		border: transparent 8px;
+		background-color: $mainOrange;
+		transition: border .2s ease;
+
+		&:hover{
+			border: solid 8px $mainOrange;
+		}
+	}
+
+	&--is-active{
+		border: solid 8px $mainOrange!important;
+	}
+}

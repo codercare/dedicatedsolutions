@@ -1,0 +1,5 @@
+.section-products{
+	@include respond(mobile){
+		padding: 3rem 0;
+	}
+}

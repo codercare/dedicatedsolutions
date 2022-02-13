@@ -1,0 +1,10 @@
+.section-services{
+	@include respond(mobile){
+		padding: 3rem 0;
+	}
+	[class^="col-"]:not(:last-child){
+		.services-card{
+			margin: 0 0 2rem;
+		}
+	}
+}

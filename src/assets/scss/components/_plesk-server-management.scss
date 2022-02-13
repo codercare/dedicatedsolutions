@@ -1,0 +1,32 @@
+.cpanel-dashboard-carousel{
+    &.plesk-dashboard-carousel{
+        @include respond(tab-port){
+            padding: 5vmin 0 3vmin;
+        }
+    }
+}
+
+.plesk-usage{
+    @include respond(tab-port){
+        padding: 2vmin 0 5vmin;
+    }
+    ul{
+        text-align: left;
+        @include respond(tab-port){
+            column-count: 2;
+            column-gap: 10vmin;
+        }
+        li{
+            color: $darkGrey;
+            @include respond(mobile){
+                &:not(:last-child){
+                    margin: 0 0 .7rem;
+                }
+            }
+            @include respond(tab-port){
+                line-height: 2.4vmin;
+                margin: 1vmin 0 0;
+            }
+        }
+    }
+}

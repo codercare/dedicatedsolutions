@@ -1,0 +1,29 @@
+.services-card{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 2rem;
+	// padding: 8rem;
+	text-align: center;
+
+	&__image-container{
+		width: 10rem;
+		overflow: hidden;
+		margin-bottom: 3rem;
+
+		img{
+			object-fit: cover;
+		}
+	}
+
+	&__title{
+		font-size: 2.4rem;
+		font-weight: 700;
+		margin-bottom: 2.5rem;
+	}
+
+	&__description{
+		margin-bottom: 3rem;
+	}
+}

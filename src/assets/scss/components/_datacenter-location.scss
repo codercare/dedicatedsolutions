@@ -1,0 +1,16 @@
+.datacenter-location{
+	background-color: $black;
+	padding: 3rem 0;
+	background-size: 0;
+	[class^="col-"]:last-child{
+		.datalocation-card{
+			margin: 0;
+		}
+	}
+	@include respond(tab-port){
+		background-position: center;
+		background-repeat: no-repeat;
+		padding: 11vmin 0 9vmin;
+		background-size: 60%;
+	}
+}

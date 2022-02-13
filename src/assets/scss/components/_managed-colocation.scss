@@ -1,0 +1,396 @@
+.mc-page-banner{
+    .page-banner-content {
+        @include respond(tab-port){
+            padding: 8vmin 0 3vmin;
+            .large-banner__heading{
+                margin: 0 0 .8vmin;
+            }
+            p{
+                margin: 0 0 1vmin;
+            }
+        }
+    }
+} 
+
+.location{
+    display: none;
+}
+.managed-colocation{
+    padding: 3rem 0;
+    @include respond(tab-port){
+        padding: 5vmin 0 2vmin;
+    }
+    [class^="col-"]:not(:last-child){
+        .managed-colocation-block{
+            margin: 0 0 1.5rem;
+            @include respond(tab-port){
+                margin: 0 0 1vmin;
+            }
+        }
+    }
+    .managed-colocation-block {
+        padding: 2rem;
+        text-align: center;
+        background: #fff;
+        transition: all 0.3s ease;
+        @include respond(tab-port){
+            padding: 1.5vmin 1vmin;
+            min-height: 18vmin;
+        }
+        .mc-icon-box {
+            margin: 0 0 1.5rem;
+            @include respond(tab-port){
+                margin: 0 0 1.5vmin;
+                img{
+                    width: 20%;
+                }
+            }
+        }
+        h3 {
+            margin: 0 0 .3rem;
+            text-transform: uppercase;
+            font-family: 'Product Sans', sans-serif;
+            font-weight: 700;
+            font-size: 1.6rem;
+            @include respond(tab-port){
+                font-size: 1.7vmin;
+                margin: 0 0 .3vmin;
+            }
+        }
+        p{
+            margin: 0;
+        }  
+        &:hover{
+            box-shadow: 0 .03rem 1.5rem 0 rgba($color: #000000, $alpha: .08);
+            @include respond(tab-port){
+                box-shadow: 0 .03vmin 1.5vmin 0 rgba($color: #000000, $alpha: .08);
+            }
+        }      
+    }
+}
+
+.mc-plans-pricing {
+    background: #F2F2F2;
+    @include respond(mobile){
+        padding: 3rem 0;
+    }
+    @include respond(tab-port){
+        .section-header{
+            margin: 0 0 1.5vmin;
+        }
+    }   
+    .select-your-location {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 0 1.5rem;
+        @include respond(tab-port){
+            margin: 0 0 2vmin;
+        }
+        .form-check-label{
+            margin: 0 .5rem;
+            @include respond(tab-port){
+                margin: 0 1.5vmin;
+            }
+            span{
+                position: relative;
+                font-size: 1.4rem;
+                text-transform: uppercase;
+                font-weight: 500;
+                background: #fff;
+                border-radius: .4rem;
+                padding: .6rem 1rem .6rem 3.5rem;
+                cursor: pointer;
+                text-align: center;
+                display: inline-block;
+                @include respond(tab-port){
+                    font-size: 1.8vmin;
+                    border-radius: .4vmin;
+                    padding: 1vmin 2.5vmin 1vmin 5.4vmin;
+                    min-width: 29vmin;
+                }
+                &::before{
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    left: 1rem;
+                    width: 1.8rem;
+                    height: 1.8rem;
+                    border-radius: .4rem;
+                    margin-top: -.9rem;
+                    border: .2rem solid $mainOrange;
+                    @include respond(tab-port){
+                        left: 2.5vmin;
+                        width: 3vmin;
+                        height: 3vmin;
+                        border-radius: .4vmin;
+                        margin-top: -1.5vmin;
+                        border-width: .2vmin;
+                    }
+                }
+                &::after{
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    margin-top: -.65rem;
+                    left: 1.2rem;
+                    width: 1.4rem;
+                    height: 1.4rem;
+                    background: url(../images/checkbox-check.png) no-repeat center center;
+                    display: none;
+                    background-size: 100%;
+                    @include respond(tab-port){
+                        left: 3vmin;
+                        margin-top: -1vmin;
+                        width: 2vmin;
+                        height: 2vmin;
+                    }
+                }
+                i{
+                    font-size: 1.2rem;
+                    font-style: normal;
+                    @include respond(tab-port){
+                        font-size: 1.6vmin;
+                    }
+                }
+            }
+            input[type="checkbox"]{
+                position: absolute;
+                margin: 0;
+                opacity: 0;
+                z-index: -1;
+                &:checked{
+                    ~ span{
+                        color: #fff;
+                        background: $mainOrange;
+                        &::before{
+                            background: #fff;
+                            border-color: #fff;
+                        }
+                        &::after{
+                            display: block;
+                        }
+                    }
+                }
+            }
+            &:last-child{
+                span{
+                    &::before{
+                        @include respond(tab-port){
+                            left: 4.4vmin;
+                        }
+                    }
+                    &::after{
+                        @include respond(tab-port){
+                            left: 5vmin;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .mc-plan-pricing-table{
+        ul{
+            margin: 0;
+            padding: 0;
+            li{
+                list-style-type: none;
+            }
+        }
+        .mc-pp-table-head{
+            @include respond(mobile){
+                display: none;
+            }
+            ul {
+                @include respond(tab-port){
+                    display: flex;
+                    justify-content: flex-end;
+                    margin: 0 7vmin 0 0;
+                }
+                li {
+                    text-transform: uppercase;
+                    font-weight: 500;
+                    color: rgba($color: #000000, $alpha: .75);
+                    @include respond(tab-port){
+                        font-size: 1.8vmin;
+                        margin: 0 3vmin 0 0;
+                    }
+                    &:last-child{
+                        @include respond(tab-port){
+                            
+                        }
+                    }
+                }
+            }
+        } 
+        .mc-pp-table-block{
+            padding: 2rem;
+            background: #fff;
+            margin: 0 0 2rem;
+            box-shadow: 0 .3rem .6rem 0 rgba($color: #000000, $alpha: .16);
+            border-radius: .2rem;
+            @include respond(tab-port){
+                padding: 1.3vmin 2vmin;
+                margin: 0 0 2vmin;
+                box-shadow: 0 .3vmin .6vmin 0 rgba($color: #000000, $alpha: .16);
+                border-radius: .2vmin;
+            }
+            .mc-pp-table-row {
+                @include respond(tab-port){
+                    display: flex;
+                    align-items: center;
+                }
+                .mc-pp-table-col {
+                    @include respond(tab-port){
+                        flex: 1 0;
+                        .section-header__Orangesub-title{
+                            font-size: 3vmin;
+                            margin: 0;
+                            padding: 0 3vmin;
+                        }
+                    }
+                    &:first-child {
+                        @include respond(mobile){
+                            border-bottom: .1rem solid rgba($color: #707070, $alpha: .68);
+                        }
+                        @include respond(tab-port){
+                            flex: .29 0;
+                            display: flex;
+                            text-align: center;
+                            align-self: stretch;
+                            align-items: center;
+                            border-right: .1vmin solid rgba($color: #707070, $alpha: .68);
+                        }
+                    }
+                    ul{
+                        @include respond(tab-port){
+                            padding-left: 1.5vmin;
+                        }
+                        li{
+                            font-weight: 500;
+                            color: rgba($color: #000000, $alpha: .75);
+                            border-bottom: .1rem solid rgba($color: #000000, $alpha: .11);
+                            display: block;
+                            @include respond(tab-port){
+                                display: flex;
+                                align-items: center;
+                                font-size: 1.6vmin;
+                                padding: .45vmin 4vmin .45vmin 1vmin;
+                                border-bottom-width: .1vmin;
+                            }
+                            .mc-pp-item{
+                                position: relative;
+                                @include respond(mobile){
+                                    display: block;
+                                    padding: .8rem 0 .8rem 50%;
+                                    line-height: initial;
+                                    &::before{
+                                        content: '';
+                                        position: absolute;
+                                        top: 0;
+                                        left: 0;
+                                        height: 100%;
+                                        width: 45%;
+                                        display: flex;
+                                        align-items: center;
+                                        padding: .8rem 0;
+                                        font-weight: 500;
+                                    }
+                                    &:nth-of-type(2)::before{ content: 'COLUMBUS, OH'}
+                                    &:nth-of-type(3)::before{ content: 'DALLAS, TX'}
+                                }
+                                .fas{
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    width: 2rem;
+                                    height: 2rem;
+                                    border-radius: 100%;
+                                    background: $mainOrange;
+                                    color: #fff;
+                                    font-size: 1.2rem;
+                                    @include respond(tab-port){
+                                        width: 2.4vmin;
+                                        height: 2.4vmin;
+                                        font-size: 1.2vmin;
+                                        margin: 0 auto;
+                                    }
+                                }
+                                &:first-child{
+                                    @include respond(tab-port){
+                                        flex: 1 0;
+                                    }
+                                }
+                                &:not(:first-child){
+                                    font-weight: normal;
+                                    @include respond(tab-port){
+                                        flex: 0.24 0;
+                                        text-align: center;
+                                        font-size: 1.6vmin;
+                                        margin: 0 1.5vmin;
+                                    }
+                                }
+                            }
+                            &:last-child{
+                                border: none;
+                            }
+                        }
+                    }
+                }
+            }
+            &:last-child{
+                margin: 0;
+            }
+        } 
+    }
+}
+
+.mc-benefits {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    color: #fff;
+    z-index: 1;
+    @include respond(mobile){
+        padding: 3rem 0;
+    }
+    &::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba($color: #292C2D, $alpha: .5);
+        z-index: -1;
+    }
+    .section-header{
+        .section-header__title{
+            color: #fff;
+            @include respond(tab-port){
+                font-size: 3vmin;
+            }
+        }
+        .section-header__sub-title{
+            color: #fff;
+        }
+    }
+    ul{
+        @include respond(tab-port){
+            column-count: 2;
+            column-gap: 10vmin;
+        }
+        li {
+            font-weight: 300;
+            margin: 0 0 .7rem;
+            @include respond(tab-port){
+                margin: 0 0 1.5vmin;
+            }
+            &:last-child{
+                margin: 0;
+            }
+        }
+    }
+}

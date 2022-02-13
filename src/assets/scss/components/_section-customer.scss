@@ -1,0 +1,11 @@
+.section-customer{
+	padding: 3rem 0;
+	[class^="col-"]:last-child{
+		.customer-cards{
+			margin: 0;
+		}
+	}
+	@include respond(tab-port){
+		padding: 0;
+	}
+}

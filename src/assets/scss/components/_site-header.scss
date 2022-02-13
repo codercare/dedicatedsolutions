@@ -1,0 +1,265 @@
+@mixin header-on-scroll{
+	border-top-width: 0;
+	border-bottom-width: .1vmin;
+	.site-header__logo{
+		img{
+			@include respond(tab-port){
+				width: 70%;
+			}
+		}
+	}
+	.header-navigation{
+		.menu{
+			margin-top: 0;
+			margin-bottom: 0;
+			padding-top: 0;
+			padding-bottom: 0; 
+		}
+	} 
+	.btn--orange{
+		font-size: 1.2vmin;
+		padding: .5vmin 1.4vmin;
+		.btn-icon{
+			width: 1.8vmin;
+		}
+	} 
+	&::before{
+		border-bottom-width: .1vmin;
+	}
+	.header-navigation .menu > .menu-item > a{
+		padding: .8vmin 0;
+		font-size: 1.4vmin;
+	}
+	.shopping-cart-link{
+		width: 2.4vmin !important;
+    	height: 2.4vmin !important;
+		a span{
+			font-size: 10px;
+			background-color: #ec7a01;
+			color: #fff;
+			text-align: center;
+			display: block;
+			width: 16px;
+			height: 16px;
+			line-height: 16px;
+			padding: 0;
+			margin: -2px 0 0px 12px;
+			border-radius: 10px;
+		}
+	}
+}
+
+.site-header {
+	border-bottom: .1rem solid $mainOrange;
+	background: #fff;
+	transition: .05s all ease-in-out;
+	&::before {
+		content: "";
+		border-bottom: .1rem solid $mainOrange;
+		display: block;
+		top: -.05rem;
+    	position: relative;
+		@include respond(tab-port){
+			border-bottom-width: .3vmin;
+			top: -.05vmin;
+		}
+	}
+	.inner-head-wrapper{
+		padding: .8rem 0;
+		@include respond(tab-land){
+			padding: 0;
+		}
+	}
+
+	.container {
+		padding-top: .7rem;
+		padding-bottom: .7rem;
+		@include respond(tab-port){
+			padding-top: .7vmin;
+			padding-bottom: .7vmin;
+		}
+	}
+
+	&__logo {
+		img {
+			height: auto;
+			width: 18rem;
+			@include respond(tab-port){
+				width: 40%;
+			}
+			@include respond(tab-land){
+				width: 90%;
+			}
+		}
+	}
+
+	.btn--orange{
+		padding: .3rem .6rem;
+		margin: 0;
+		@include respond(tab-land){
+			padding: 1.1vmin 2.45vmin;
+			max-width: none;
+			max-height: none;
+			height: auto;
+			box-shadow: none;
+		}
+		.btn-icon{
+			margin: 0;
+			@include respond(tab-land){
+				margin-right: 1vmin;
+			}
+		}
+	}
+
+	&__menu-icon {
+		width: 2rem;
+		height: 1.6rem;
+		position: relative;
+		z-index: 2;
+		margin-left: 1rem;
+		cursor: pointer;
+		@include respond(tab-port){
+			width: 2vmin;
+			height: 1.9vmin;
+			margin-left: .7vmin;
+		}
+		@include respond(tab-land) {
+			display: none;
+		}
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 2rem;
+			height: .2rem;
+			background-color: $mainOrange;
+			transform-origin: 0 0;
+			transition: transform 0.4s ease-out;
+			@include respond(tab-port){
+				width: 2vmin;
+				height: .3vmin;
+			}
+		}
+
+		&__middle {
+			position: absolute;
+			top: 50%;
+			left: 0;
+			width: 2rem;
+			height: .2rem;
+			background-color: $mainOrange;
+			transition: all 0.4s ease-out;
+			margin-top: -.1rem;
+			@include respond(tab-port){
+				width: 2vmin;
+				height: .3vmin;
+				margin-top: -.15vmin;
+			}
+		}
+
+		&::after {
+			content: "";
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 2rem;
+			height: .2rem;
+			background-color: $mainOrange;
+			transform-origin: 0 100%;
+			transition: transform 0.4s ease-out;
+			@include respond(tab-port){
+				width: 2vmin;
+				height: .3vmin;
+			}
+		}
+	}
+
+	&__menu-icon--close-x {
+		&::before {
+			transform: rotate(45deg) scaleX(1.25);
+			top: -.1rem;
+			@include respond(tab-port){
+				top: 0;
+			}
+		}
+
+		.site-header__menu-icon__middle {
+			opacity: 0;
+			transform: scaleX(0);
+		}
+
+		&::after {
+			transform: rotate(-45deg) scaleX(1.25) translateY(1px);
+			bottom: -.1rem;
+			@include respond(tab-port){
+				bottom: 0;
+			}
+		}
+	}
+
+	&__mobile-menu-content {
+		transition: all 0.3s ease-out;
+		position: absolute;
+		top: 4.5rem;
+		left: 0;
+		width: 100%;
+		background-color: $darkGrey;
+		z-index: 2;
+		display: none;
+		&--is-visible {
+			display: block;
+		}
+		@include respond(tab-land){
+			display: none;
+		}
+		@include respond(tab-port){
+			top: 8.2vmin;
+		}	
+	}
+	.shopping-cart-link{
+		width: 2.4rem !important;
+		height: 2.4rem !important;
+		background-size: 100% !important;
+    	margin-left: 1rem;
+		cursor: pointer;
+		@include respond(tab-port){
+			width: 4vmin !important;
+			height: 4vmin !important;
+			margin-left: 1vmin;
+		}
+		a{
+			color:#fff;
+			text-decoration: none;
+		}&:hover{
+			text-decoration: none;
+		}
+		a span{
+			font-size: 10px;
+			background-color: #ec7a01;
+			color: #fff;
+			text-align: center;
+			display: block;
+			width: 20px;
+			height: 19px;
+			line-height: 20px;
+			padding: 0;
+			margin: -2px 0 0px 15px;
+			border-radius: 10px;
+		}
+	}
+	@include respond(tab-port){
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 999;
+		width: 100%;
+		border-bottom-width: .3vmin;
+		border-top: 2.5rem solid $darkGrey;
+		&--on-scroll{
+			@include header-on-scroll;
+		}
+	}
+
+}

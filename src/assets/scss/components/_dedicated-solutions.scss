@@ -1,0 +1,246 @@
+.site-main{
+    .dedicated-solutions{
+        text-align: center;
+        padding: 3rem 0;
+        @include respond(tab-port){
+            padding: 7vmin 0 3.5vmin;
+        }
+        .section-header__Orangesub-title{
+            @include respond(tab-port){
+                margin: 0 0 2.5vmin;
+            }
+        }
+        .dedicated-solutons-detail{
+            text-align: left;
+            font-weight: 300;
+            @include respond(tab-port){
+                font-size: 1.8vmin;
+                line-height: 3.4vmin;
+            }
+            .first-detail, .second-detail{
+                p{
+                    @include respond(tab-port){
+                        padding: 0 4vmin 0 0;
+                    }
+                }
+            }
+        }
+    }
+    
+    .global-network-section{
+        background: $darkGrey;
+        text-align: center;
+        color: #fff;
+        padding: 3rem 0;
+        @include respond(tab-port){
+            padding: 3vmin 0;
+        }
+        ul{
+            margin: 0;
+            padding: 0;
+            li{
+                list-style-type: none;
+                position: relative;
+                padding: 0 0 0 2.8rem;
+                text-align: left;
+                @include respond(mobile){
+                    &:not(:last-child){
+                        margin: 0 0 .8rem;
+                    }
+                }
+                @include respond(tab-port){
+                    float: left;
+                    width: 50%;
+                    padding: 0 7vmin 0 3.1vmin;
+                    margin: 0 0 1vmin;
+                }
+                span{
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    @include respond(tab-port){
+                        width: 1.92vmin;
+                    }
+                    img{
+                        @include respond(tab-port){
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    .dedicated-solution-grid-section{
+        padding: 3rem 0;
+        @include respond(tab-port){
+            padding: 3vmin 0;
+        }
+        @include respond(mobile){
+            [class^="col-"]:not(:last-child){
+                .inner-decicated-grid{
+                    margin: 0 0 2rem;
+                }
+            }
+        }
+        .inner-decicated-grid{
+            position: relative;
+            @include respond(tab-port){
+                margin: 0 0 3vmin;
+            }
+            .thumbnail{
+                width: 10rem;
+                height: 10rem;
+                border-radius: 100%;
+                overflow: hidden;
+                @include respond(mobile){
+                    margin: 0 0 1.5rem;
+                }
+                @include respond(tab-port){
+                    width: 15vmin;
+                    height: 15vmin;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                }
+                img{
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+            .inner-decicated-content {
+                @include respond(tab-port){
+                    padding: 0 0 0 17vmin;
+                    min-height: 13vmin;
+                }
+                h2{
+                    font-family: "Product Sans", sans-serif;
+                    font-size: 1.8rem;
+                    font-weight: 700;
+                    margin: 0 0 1rem;
+                    @include respond(tab-port){
+                        font-size: 2.8vmin;
+                        margin: 0 0 2vmin;
+                    }
+                }
+                ul{
+                    margin:0;
+                    padding: 0;
+                    li{
+                        list-style-type: none;
+                        position: relative;
+                        padding: 0 0 0 2.8rem;
+                        @include respond(mobile){
+                            &:not(:last-child){
+                                margin: 0 0 .8rem;
+                            }
+                        }
+                        @include respond(tab-port){
+                            font-size: 1.4vmin;
+                            padding: 0 0 0 3vmin;
+                        }
+                        span{
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            @include respond(tab-port){
+                                width: 1.92vmin;
+                            }
+                            img{
+                                @include respond(tab-port){
+                                    width: 100%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    .dedictaed-multi-col-grid{
+        color: #fff;
+        position: relative;
+        @include respond(tab-port){
+            background: $mainOrange;
+        }
+        [class^="col-"]{
+            &:first-child{
+                @include respond(mobile){
+                    background: $darkGrey;
+                }
+            }
+            &:last-child{
+                @include respond(mobile){
+                    background: $mainOrange;
+                }
+            }
+        }
+        .multi-dedicated-inner-content{
+            position: relative;
+            z-index: 1;
+            padding: 3rem 0;
+            @include respond(tab-port){
+                padding: 4vmin 6vmin;
+                &.first{
+                    padding-left: 0;
+                }
+            }
+            h2{
+                font-size: 2.2rem;
+                font-family: "Product Sans", sans-serif;
+                font-weight: 700;
+                margin: 0 0 1.5rem;
+                @include respond(tab-port){
+                    font-size: 3vmin;
+                    margin: 0 0 3.5vmin;
+                }
+            }
+            ul{
+                margin: 0;
+                padding: 0;
+                li{
+                    list-style-type: none;
+                    position: relative;
+                    padding: 0 0 0 2.8rem;
+                    @include respond(mobile){
+                        &:not(:last-child){
+                            margin: 0 0 .8rem;
+                        }
+                    }
+                    @include respond(tab-port){
+                        padding: 0 0 0 3.1vmin;
+                        &:not(:last-child){
+                            margin: 0 0 2vmin;
+                        }
+                    }
+                    span{
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        @include respond(tab-port){
+                            width: 1.92vmin;
+                        }
+                        img{
+                            @include respond(tab-port){
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        @include respond(tab-port){
+            &::before{
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 50%;
+                height: 100%;
+                background: $darkGrey;
+            }
+        }
+    }
+}

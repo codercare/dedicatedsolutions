@@ -1,0 +1,49 @@
+.datacenter{
+	padding: 3rem 0;
+	background-color: #f9f9f9;
+	@include respond(tab-port){
+		padding: 2vmin 0;
+	}
+	p:empty{
+		display: none;
+	}
+	p{
+		@include respond(tab-port){
+			margin: 0;
+		}
+	}
+	.section-header__title{
+		@include respond(tab-port){
+			margin-top: 2vmin;
+		}
+	}
+
+	&__image-container{
+		width: 100%;
+		height: 26vmin;
+		overflow: hidden;
+		// margin-bottom: 2vmin;
+
+		img{
+			object-fit: cover;
+			height: 100%;
+			width: 100%;
+		}
+	}
+	.rows--gutters{
+		@include respond(mobile){
+			margin: 0;
+		}
+	}
+}
+
+@media(min-width: 1680px){
+    .datacenter{
+		.section-header__title{
+			margin-top: 0;
+		}
+		&__image-container{
+			height: 17vmin;
+		}
+	}
+}

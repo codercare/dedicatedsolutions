@@ -1,0 +1,114 @@
+.header-navigation .menu {
+    margin: 0;
+    height: 100%;
+    display: flex;
+    list-style: none;
+    align-items: center;
+    padding: 0;
+    justify-content: center;
+
+    > .current-menu-item > a,
+    > .current_page_item > a {
+        color: $mainOrange!important;
+    } 
+
+    > .menu-item {
+        margin: 0 2rem;
+        > a {
+            border-bottom: none;
+            display: block;
+            color: #292828;
+            transition: 0.2s color ease;
+            font-size: 1.4rem;
+            text-decoration: none;
+            letter-spacing: .025rem;
+        }
+        &:hover a, &.open > a {
+            color: $mainOrange;
+        }
+        > .sub-menu {
+            position: absolute;
+            margin: 0;
+            list-style: none;
+            background: #fff;
+            display: none;
+            min-width: 200px;
+            border: 1px solid #efefef;
+            border-top-color: #fff;
+            z-index: 10;
+        }
+    }
+    > .menu-item {
+        .sub-menu {
+            .sub-menu {
+                position: absolute;
+                margin: 0;
+                list-style: none;
+                background: #fff;
+                display: none;
+                min-width: 200px;
+                left: 100%;
+                font-size: 100%;
+                top: 0px;
+                border-top-color:#efefef;
+            }
+            .menu-item {
+                margin: 0;
+                position: relative;
+                a {
+                    border-bottom: 1px solid #efefef;
+                    display: block;
+                }
+                &:hover > a {
+                    color: #ffffff;
+                }
+            }
+        }
+    }
+    .menu-item.open > .sub-menu {
+        display: block !important;
+    }
+
+}
+
+.header-navigation .menu ul li{
+    padding: 10px;
+    margin: 10px;
+}
+.header-navigation .menu ul li a:hover{
+    color:#000;
+}
+// Header Mobile Navigation
+
+.header-mobile-navigation{
+    height: 100%;
+}
+
+
+.header-mobile-navigation .menu{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        height: 100%;
+        list-style: none;
+        padding: 0;
+
+    > .menu-item {
+        margin: 0;
+        &:not(:last-child){
+            margin-bottom: 18px;
+        }
+        > a {
+            border-bottom: none;
+            display: block;
+            color: $darkGrey;
+            transition: 0.2s color ease;
+        }
+        &:hover a, &.open > a {
+            color: $mainOrange;
+        }
+    }
+
+} 

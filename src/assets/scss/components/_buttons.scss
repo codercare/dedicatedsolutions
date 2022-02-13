@@ -1,0 +1,230 @@
+%btn{
+	border: none;
+	padding: .7rem 1.5rem;
+	border-radius: .5rem;
+	font-family: 'Roboto', sans-serif;
+	font-size: 1.2rem;
+	font-weight: 500;
+	display: flex;
+	align-items: center;
+	max-width: max-content;
+	cursor: pointer;
+	@include respond(tab-port){
+		border-radius: .5vmin;
+		padding: 1.2vmin 2.2vmin;
+		font-size: 1.4vmin;
+	}
+}
+
+.btn--orange{
+	@extend %btn;
+	background-color: $mainOrange;
+	color: #fff;
+	text-transform: uppercase;
+	transition: all .3s ease-in;
+	// box-shadow: 0 1vmin 2vmin rgba(#3f3f3f, 0.2);
+
+	.btn-txt-um{
+		display: none;
+
+		@include respond(tab-land){
+			display: block;
+		}
+	}
+
+	.fas{
+		margin-right: .7rem;
+		@include respond(tab-port){
+			margin-right: .7vmin;
+		}
+	}
+
+	&:hover{
+		text-decoration: none;
+		color: #fff;
+		background-color: $darkOrange;
+		transform: translateY(-.2rem);
+        // box-shadow: 0 1vmin 2vmin rgba(#3f3f3f, 0.2);
+		@include respond(tab-port){
+			transform: translateY(-.2rem);
+		}
+	}
+
+	&:active,
+    &:focus{
+        outline: none;
+        transform: translateY(-.1rem);
+        // box-shadow: 0 5px 10px rgba(#3f3f3f, 0.2);
+		@include respond(tab-port){
+			transform: translateY(-.1vmin);
+		}
+    }
+}
+
+.btn--transparent{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba( #3f3f3f, 0.1);
+	color: #fff;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 2rem;
+	cursor: pointer;
+	transition: transform .3s;
+	@include respond(tab-port){
+		width: 39vmin;
+		height: 8vmin;
+		margin-top: 4vmin;
+	}
+
+	span{
+		margin-bottom: .7rem;
+		font-family: 'Roboto', sans-serif;
+		font-size: 1.4rem;
+		font-weight: 500;
+		text-transform: uppercase;
+		@include respond(tab-port){
+			margin-bottom: .7vmin;
+			font-size: 1.5vmin;
+		}
+	}
+
+	&:hover{
+		transform: translateY(-.5rem);
+        // box-shadow: 0 10px 20px rgba(#3f3f3f, 0.09);
+		@include respond(tab-port){
+			transform: translateY(-.5vmin);
+		}
+	}
+
+	&:active,
+    &:focus{
+        outline: none;
+        transform: translateY(-.1rem);
+        // box-shadow: 0 5px 10px rgba(#3f3f3f, 0.09);
+		@include respond(tab-port){
+			transform: translateY(-.1vmin);
+		}
+    }
+}
+
+.btn--outline{
+	@extend %btn;
+	color: #fff;
+	border: solid .1rem #fff;
+	background-color: transparent;
+	transition: all .2s ease-in-out;
+	text-decoration: none;
+	@include respond(tab-port){
+		border-width: .1vmin;
+	}
+
+	.fas{
+		font-size: 1.1rem;
+		margin-left: .7rem;
+		transition: all .2s ease-in-out;
+		@include respond(tab-port){
+			font-size: 1.1vmin;
+			margin-left: .7vmin;
+		}
+	}
+
+	&:hover,
+	&:active,
+    &:focus{
+		border: #fff;
+		border: solid .1rem #fff;
+		color: $mainOrange;
+		text-decoration: none;
+		background-color: #fff;
+		@include respond(tab-port){
+			border-width: .1vmin;
+		}
+
+		.fas{
+			margin-left: 1.3rem;
+			@include respond(tab-port){
+				margin-left: 1.3vmin;
+			}
+		}
+	}
+}
+
+.btn--outline-dark{
+	@extend %btn;
+	color: $black;
+	border: solid .1rem $black;
+	background-color: transparent;
+	transition: all .2s ease-in-out;
+	text-decoration: none;
+	@include respond(tab-port){
+		border-width: .1vmin;
+	}
+
+	.fas{
+		font-size: 1.1rem;
+		margin-left: .7rem;
+		transition: all .2s ease-in-out;
+		@include respond(tab-port){
+			font-size: 1.1vmin;
+			margin-left: .7vmin;
+		}
+	}
+
+	&:hover,
+	&:active,
+    &:focus{
+		border: #fff;
+		border: solid .1rem $mainOrange;
+		color: $mainOrange;
+		text-decoration: none;
+		background-color: #fff;
+		@include respond(tab-port){
+			border-width: .1vmin;
+		}
+
+		.fas{
+			margin-left: 1.3rem;
+			@include respond(tab-port){
+				margin-left: 1.3vmin;
+			}
+		}
+	}
+}
+
+.btn-icon{
+	width: 1.8rem;
+	margin-right: 1rem;
+	overflow: hidden;
+	@include respond(tab-port){
+		width: 2.5vmin;
+		margin-right: 1vmin;
+	}
+
+	img{
+		object-fit: cover;
+	}
+}
+.btn--white{
+	@extend %btn;
+	background: #fff;
+	color: $black;
+	max-width: none;
+	height: auto;
+	display: inline-block;
+	max-height: none;
+	&:hover{
+		background: $mainOrange;
+		text-decoration: none;
+		color: #fff;
+		outline: none;
+	}
+	.fas{
+		margin: 0 0 0 1rem;
+		@include respond(tab-port){
+			margin: 0 0 0 1vmin;
+		}
+	}
+}

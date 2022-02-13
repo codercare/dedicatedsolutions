@@ -1,0 +1,113 @@
+
+.testimonial-section{
+    @include respond(mobile){
+        &:first-child{
+            padding: 3rem 0 0;
+        }
+        &:last-child{
+            padding: 0 0 1rem;
+        }
+    }
+    @include respond(tab-port){
+        &:last-child{
+            padding: 1vmin 0 0;
+        }
+    }
+    .testimonial-block-wrap{
+        .testimonial-block {
+            text-align: center;
+            background: #FAFAFA;
+            padding: 2rem;
+            margin: 0 0 2rem;
+            height: 46vmin;
+            overflow: auto;
+            transition: all .3s ease;
+            @include respond(tab-port){
+                padding: 2vmin;
+                margin: 0 0 2vmin;
+            }
+            .quote {
+                display: inline-block;
+                margin: 0 0 1rem;
+                @include respond(tab-port){
+                    margin: 0 0 1vmin;
+                }
+            }
+            p{
+                @include respond(tab-port){
+                    line-height: 2.8vmin;
+                }
+            }
+            .thanks{
+                display: block;
+                font-size: 1.4rem;
+                font-weight: 700;
+                background: url(../images/thanks-box-shadow.png) no-repeat bottom center;
+                padding: 0 0 .5rem;
+                margin: 0 0 1rem;
+                @include respond(tab-port){
+                    font-size: 1.8vmin;
+                    padding: 0 0 1vmin;
+                    margin: 0 0 1.5vmin;
+                }
+            }
+            .testimonial-profile {
+                width: 6rem;
+                height: 6rem;
+                border-radius: 100%;
+                overflow: hidden;
+                margin: 0 auto 1.5rem;
+                @include respond(tab-port){
+                    width: 9.4vmin;
+                    height: 9.4vmin;
+                    margin: 0 auto 1.8vmin;
+                }
+                img {
+                    object-fit: cover;
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+            h3{
+                margin: 0;
+                font-family: 'Product Sans', sans-serif;
+                font-size: 1.6rem;
+                font-weight: 700;
+                @include respond(tab-port){
+                    font-size: 1.8vmin;
+                }
+                span{
+                    display: block;
+                    font-size: 1.4rem;
+                    color: rgba($color: $darkGrey, $alpha: .75);
+                    margin: .5rem 0 0;
+                    @include respond(tab-port){
+                        font-size: 1.5vmin;
+                        margin: .5vmin 0 0;
+                    }
+                }
+            }
+            &:hover{
+                background: $darkGrey;
+                color: #fff;
+                h3{
+                    span{
+                        color: rgba($color: white, $alpha: .75);
+                    }
+                }
+            }
+        }
+    }
+}
+
+// @media(min-width: 1680px){
+//     .testimonial-section{
+//         padding: 0;
+//         &:first-child{
+//             padding: 0;
+//         }
+//         &:last-child{
+//             padding: 0;
+//         }
+//     }
+// }

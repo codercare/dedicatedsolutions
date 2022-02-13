@@ -1,0 +1,41 @@
+.ds-form-order-section{
+    .ds-config-product{
+        .product-header {
+            display: flex;
+            align-items: center;
+            margin: 0 0 1.5rem;
+            @include respond(tab-port){
+                margin: 0 0 .5vmin;
+            }
+            .product-logo{
+                width: 3rem;
+                width: 3rem;
+                @include respond(tab-port){
+                    width: 3vmin;
+                    width: 3vmin;
+                }
+            }
+            &__title{
+                margin: 0 0 0 1rem;
+                font-size: 2rem;
+                font-weight: 700;
+                @include respond(tab-port){
+                    margin: 0 0 0 1.5vmin;
+                    font-size: 3vmin;
+                }
+            }
+        }
+        .form-group{
+            @include respond(tab-port){
+                margin: 0 0 .5vmin;
+            }
+        }
+        .form-label{
+            font-weight: 500;
+        }
+        .form-control{
+            color: rgba($color: #000000, $alpha: 0.6);
+            font-weight: 500;
+        }
+    }
+}

@@ -1,0 +1,38 @@
+.customer-cards{
+	padding: 2rem;
+	color: #fff;
+	background-repeat: no-repeat;
+    background-position: center;
+    border-radius: .5rem;
+	width: 100%;
+	margin-bottom: 2rem;
+	@include respond(tab-port){
+		padding: 3.5vmin 4vmin 3.5vmin 3vmin;
+		border-radius: .5vmin;
+		min-height: 29vmin;
+		margin-bottom: 2.5vmin;
+	}
+
+	&__title{
+		font-family: 'Product Sans', sans-serif;
+		font-size: 1.8rem;
+		color: #fff;
+		font-weight: 700;
+		margin-bottom: 1rem;
+		@include respond(tab-port){
+			font-size: 1.8vmin;
+			margin-bottom: 1.8vmin;
+		}
+	}
+
+	&__details{
+		font-family: 'Roboto', sans-serif;
+		font-size: 1.4rem;
+		font-weight: 400;
+		margin-bottom: 1.5rem;
+		@include respond(tab-port){
+			font-size: 1.4vmin;
+			margin-bottom: 2.8vmin;
+		}
+	}
+}

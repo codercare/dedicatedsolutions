@@ -1,0 +1,18 @@
+.tech-support {
+	background-position: center top;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	@include respond(mobile){
+		padding: 3rem 0;
+	}
+	[class^="col-"]:not(:last-child){
+		.tech-support-card{
+			margin: 0 0 2rem;
+		}
+	}
+	&__content{
+		@include respond(tab-port){
+			transform: translateY(55%);
+		}
+	}
+}

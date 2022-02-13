@@ -9,7 +9,7 @@
 
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.0.0' );
+	define( '_S_VERSION', '1.0.2' );
 }
 
 if ( ! function_exists( 'dedicatedsolutions_setup' ) ) :
@@ -46,14 +46,6 @@ if ( ! function_exists( 'dedicatedsolutions_setup' ) ) :
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
 		add_theme_support( 'post-thumbnails' );
-
-		// This theme uses wp_nav_menu() in one location.
-		register_nav_menus(
-			array(
-				'primary' => esc_html__( 'Primary menu', 'dedicatedsolutions' ),
-				'footer'  => __( 'Secondary menu', 'dedicatedsolutions' ),
-			)
-		);
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
@@ -119,7 +111,7 @@ add_action( 'after_setup_theme', 'dedicatedsolutions_setup' );
  * @global int $content_width
  */
 function dedicatedsolutions_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'dedicatedsolutions_content_width', 750 );
+	$GLOBALS['content_width'] = apply_filters( 'dedicatedsolutions_content_width', 1920 );
 }
 add_action( 'after_setup_theme', 'dedicatedsolutions_content_width', 0 );
 
@@ -143,64 +135,16 @@ function dedicatedsolutions_widgets_init() {
 }
 add_action( 'widgets_init', 'dedicatedsolutions_widgets_init' );
 
-/**
- * Enqueue scripts and styles.
- */
-function dedicatedsolutions_scripts() {
-	wp_enqueue_style( 'ds-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_style_add_data( 'ds-style', 'rtl', 'replace' );
-
-	// CSS Files
-	wp_enqueue_style( 'ds-bootstrap', trailingslashit(get_template_directory_uri()) . 'assets/plugin/bootstrap/css/bootstrap.css', array(), NULL );
-	wp_enqueue_style( 'ds-fullpage-style', trailingslashit(get_template_directory_uri()) . 'assets/css/fullpage.min.css', array(), wp_get_theme()->get( 'Version' ) );
-	wp_enqueue_style( 'ds-style-main', trailingslashit(get_template_directory_uri()) . 'assets/css/style.css', array(), wp_get_theme()->get( 'Version' ) );
-
-	// JS Scripts
-	wp_enqueue_script(
-		'ds-slim-script',
-		trailingslashit(get_template_directory_uri()) . 'assets/js/jquery-3.3.1.slim.min.js',
-		array(),
-		wp_get_theme()->get( 'Version' ),
-		true
-	);
-	wp_enqueue_script(
-		'ds-propper-script',
-		trailingslashit(get_template_directory_uri()) . 'assets/js/popper.min.js',
-		array(),
-		wp_get_theme()->get( 'Version' ),
-		true
-	);
-	wp_enqueue_script(
-		'ds-fullpage-script',
-		trailingslashit(get_template_directory_uri()) . 'assets/js/fullpage.min.js',
-		array(),
-		wp_get_theme()->get( 'Version' ),
-		true
-	);
-	wp_enqueue_script(
-		'ds-shuffle-script',
-		trailingslashit(get_template_directory_uri()) . 'assets/js/shuffle.js',
-		array(),
-		wp_get_theme()->get( 'Version' ),
-		true
-	);
-	wp_enqueue_script(
-		'ds-custom-js',
-		trailingslashit(get_template_directory_uri()) . 'assets/js/custom.js',
-		array(),
-		wp_get_theme()->get( 'Version' ),
-		true
-	);
-
-
-
-	// wp_enqueue_script( 'dedicatedsolutions-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
+/* Add Global javascript ajax url to call ajax function from jQuery
+*/
+function ds_ajaxurl(){ 
+	?>
+	<script>
+	var ajaxurl = '<?php echo admin_url('admin-ajax.php') ?>';
+	</script>
+	<?php
 }
-add_action( 'wp_enqueue_scripts', 'dedicatedsolutions_scripts' );
+add_action('wp_head','ds_ajaxurl');
 
 
 /**
@@ -222,7 +166,13 @@ require get_template_directory() . '/inc/template-functions.php';
 require get_template_directory() . '/inc/acf/acf-init.php';
 
 /* Menu functions and filters. */
-require get_template_directory() . '/inc/menu-functions.php';
+// require get_template_directory() . '/inc/menu-functions.php';
+
+
+/**
+ * Contact 7 Form Customized  Error message
+ */
+require get_template_directory() . '/inc/contact7_form_validation.php';
 
 
 
@@ -238,48 +188,22 @@ require get_template_directory() . '/inc/menu-functions.php';
 // 	require get_template_directory() . '/inc/jetpack.php';
 // }
 
+require get_template_directory() . '/inc/custom_posts_features.php';
 
 
-
-function required_custom_post_types(){
-   
-	// Services
-	register_post_type('services', array(
-		'labels' => array('name' => 'Our Services'),
-		'public' => true,
-		'menu_position'=> 24,
-		'supports' => array('title','editor','thumbnail','excerpt'),
-		'rewrite'=> array('slug'=> 'services'),
-		'menu_icon' => 'dashicons-sos'
-	));
-
-	// Why Us
-	register_post_type('why-us', array(
-		'labels' => array('name' => 'Why Us'),
-		'public' => true,
-		'menu_position'=> 22,
-		'supports' => array('title','editor','thumbnail','excerpt'),
-		'rewrite'=> array('slug'=> 'services'),
-		'menu_icon' => 'dashicons-awards'
-	));
-
-}
-add_action('init','required_custom_post_types');
 /**
  * Add SVG Support in theme to upload and view svg files
  */
-
-// function add_file_types_to_uploads($file_types){
-// 	$new_filetypes = array();
-// 	$new_filetypes['svg'] = 'image/svg+xml';
-// 	$file_types = array_merge($file_types, $new_filetypes );
-// 	return $file_types;
-// 	}
-// add_filter('upload_mimes', 'add_file_types_to_uploads');
-
-
 function cc_mime_types($mimes) {
 	$mimes['svg'] = 'image/svg+xml';
 	return $mimes;
   }
 add_filter('upload_mimes', 'cc_mime_types');
+
+
+require_once get_template_directory() .'/inc/enqueue-assets.php';
+require_once get_template_directory() .'/inc/navigation.php';
+
+
+require_once get_template_directory() .'/inc/login-registration.php';
+// require_once get_template_directory() .'/inc/woocommerce_customization.php';

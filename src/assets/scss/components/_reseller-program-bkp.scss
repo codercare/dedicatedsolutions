@@ -1,0 +1,250 @@
+.page-banner{
+    background-size: cover;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center center;
+    .page-banner-content {
+        text-align: center;
+        position: relative;
+        z-index: 1;
+        padding: 3rem 0;
+        .large-banner__heading{
+            line-height: initial;
+            margin: 0 0 1.2rem;
+        }
+        p{
+            color: #fff;
+            font-size: 1.8rem;
+            font-weight: 500;
+            margin: 0 0 4rem;
+        }
+        .btn--white, .btn--orange{
+            max-width: none;
+            display: inline-block;
+            height: auto;
+            text-transform: inherit;
+            max-height: none;
+        }
+    }
+    &::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba($color: #00020A, $alpha: .67);
+    }
+    &.reseller-page-banner{
+        .page-banner-content{
+            padding: 14rem 0 8rem;
+            .btn--white{
+                padding: 1.2rem 3.55rem;
+            }
+        }
+    }
+}
+.section-header__Orangesub-title{
+    font-size: 2.2rem;
+    color: $mainOrange;
+    font-weight: 500;
+    line-height: 3.2rem;
+}
+
+.site-main{
+    @include respond(tab-port){
+        min-height: 85rem;
+    }
+    @include respond(big-desktop){
+        margin-bottom: 5rem;
+    }
+    .page-section{
+        padding: 14rem 0;
+    }
+    .section-header__title{
+        font-size: 4rem;
+    }
+    .reseller-exclusive{
+        text-align: center;
+        padding: 10rem 0;
+        .section-header__title{
+            margin: 0 0 1rem;
+        }
+        .section-header__Orangesub-title{
+            max-width: 42rem;
+            margin: 0 auto 2rem;
+        }
+        p{
+            font-size: 1.8rem;
+            font-weight: 300;
+            line-height: 3.4rem;
+            max-width: 70rem;
+            margin: 0 auto;
+        }
+    }
+    
+    .reseller-program-work{
+        background-color: $darkGrey;
+        background-size: cover;
+        background-repeat: no-repeat;
+        text-align: center;
+        padding: 14rem 0;
+        .section-header__title{
+            color: #fff;
+            max-width: 70rem;
+            margin: 0 auto 2rem;
+        }
+        .pogram-work-grid{
+            margin: 6.7rem 0 5.6rem;
+            .product-work-card {
+                color: #fff;
+                position: relative;
+                border-radius: .5rem;
+                padding: 10rem 0 5rem;
+                font-family: "Product Sans", sans-serif;
+                .product-icon-box {
+                    width: 13.2rem;
+                    height: 13.2rem;
+                    border-radius: 100%;
+                    background: #fff;
+                    position: absolute;
+                    top: -6.6rem;
+                    left: 50%;
+                    margin-left: -6.6rem;
+                    border: 1rem solid $darkGrey;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+                h6{
+                    font-size: 2.4rem;
+                    position: relative;
+                    padding: 0 0 1.2rem;
+                    margin: 0 0 2.4rem;
+                    &::before{
+                        content: '';
+                        position: absolute;
+                        width: 3.5rem;
+                        border-bottom: .3rem solid #fff;
+                        bottom: 0;
+                        left: 50%;
+                        margin-left: -1.75rem;
+                    }
+                }
+                h3{
+                    font-size: 2.4rem;
+                    font-weight: 700;
+                    margin: 2.4rem;
+                }
+                .rate{
+                    font-size: 5rem;
+                    font-weight: 700;
+                    background: rgba($color: #000000, $alpha: .05);
+                    margin: 0 0 2.5rem;
+                }
+                h4{
+                    font-size: 2rem;
+                    margin: 0;
+                }
+                &.card-1{
+                    background: #11A39F;
+                }
+                &.card-2{
+                    background: #EFB42A;
+                }
+                &.card-3{
+                    background: #98068D;
+                }
+                &.card-4{
+                    background: #48B2D8;
+                }
+            }
+        }
+        .btn--white{
+            font-size: 2rem;
+            padding: 1.4rem 4.4rem;
+            .fas{
+                font-size: 1.4rem;
+                margin: 0 0 0 .5rem;
+            }
+        }
+    }
+    
+    .why-choose-dedicatedSolutions{
+        text-align: center;
+        padding: 10rem 0;
+        .section-header__title{
+            max-width: 70rem;
+            margin: 0 auto 2rem;
+        }
+        .section-header__Orangesub-title{
+            margin: 0 0 5rem;
+        }
+        .why-choose-grid{
+            .why-choose-card {
+                .thumbnail-image{
+                    overflow: hidden;
+                    margin: 0;
+                    height: 24.1rem;
+                    border-top-left-radius: .5rem;
+                    border-top-right-radius: .5rem;
+                    img{
+                        object-fit: cover;
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                .why-choose-card-content {
+                    border: .15rem solid rgba($color: #000000, $alpha: .1);
+                    border-top: none;
+                    border-bottom-left-radius: .5rem;
+                    border-bottom-right-radius: .5rem;
+                    text-align: left;
+                    padding: 5rem 3rem;
+                    min-height: 34.2rem;
+                    h2{
+                        font-family: "Product Sans", sans-serif;
+                        font-size: 2.2rem;
+                        font-weight: 700;
+                        margin: 0 0 2rem;
+                    }
+                    ul{
+                        padding: 0;
+                        margin: 0;
+                        li{
+                            font-weight: 300;
+                            list-style-type: none;
+                            background: url(../images/check.png) no-repeat top left;
+                            line-height: initial;
+                            margin: 0 0 2.5rem;
+                            padding: 0 0 0 2.6rem;
+                            &:last-child{
+                                margin: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(min-width: 1680px){
+    .page-banner{
+        &.reseller-page-banner{
+            .page-banner-content {
+                padding: 10rem 0 8rem;
+            }
+        } 
+    }
+    .site-main{
+        .reseller-program-work, .why-choose-dedicatedSolutions{
+            padding: 0;
+            .section-header__title{
+                max-width: none;
+            }
+        }
+    }
+}
+
+

@@ -1,0 +1,44 @@
+.services-card{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 2rem;
+	text-align: center;
+	@include respond(tab-port){
+		padding: 8vmin;
+	}
+
+	&__image-container{
+		width: 5rem;
+		height: 5rem;
+		margin-bottom: 2rem;
+		@include respond(tab-port){
+			width: 9.3vmin;
+			height: 9.3vmin;
+			margin-bottom: 3vmin;
+		}
+		img{
+			object-fit: cover;
+			height: 100%;
+			width: 100%;
+		}
+	}
+
+	&__title{
+		font-size: 1.8rem;
+		font-weight: 700;
+		margin-bottom: 1rem;
+		@include respond(tab-port){
+			font-size: 2.4vmin;
+			margin-bottom: 2.5vmin;
+		}
+	}
+
+	&__description{
+		margin-bottom: 1.5rem;
+		@include respond(tab-port){
+			margin-bottom: 3vmin;
+		}
+	}
+}

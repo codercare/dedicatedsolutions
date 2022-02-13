@@ -1,0 +1,24 @@
+.section-products{
+	padding: 5rem 0 12rem;
+
+	// @include respond(small){
+	// 	padding-top: 13rem;
+	// 	padding-bottom: 13rem;
+	// }
+
+	// @include respond(tab-port){
+	// 	padding-top: 14rem;
+	// 	padding-bottom: 14rem;
+	// }
+
+	// @include respond(tab-land){
+	// 	padding-top: 17rem;
+	// 	padding-bottom: 15rem;
+	// }
+}
+
+@media(min-width: 1680px){
+	.section-products{
+		padding: 0
+	}
+}

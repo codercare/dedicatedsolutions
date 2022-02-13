@@ -1,0 +1,12 @@
+.features-highlight{
+	background-color: $black;
+	padding-top: 4rem;
+	padding-bottom: 4rem;
+	[class^="rows__"]{
+		&:last-child{
+			.feature-highlight-card{
+				border: none;
+			}
+		}
+	}
+}

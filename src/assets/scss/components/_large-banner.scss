@@ -1,0 +1,101 @@
+.large-banner{
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	padding: 3rem 0;
+	@include respond(tab-port){
+		padding: 10vmin 0;
+		height: calc(100vh - 15vmin);
+	}
+
+	&__container{
+		@include respond(tab-port){
+			padding: 9.7vmin 0 0;
+		}
+	}
+
+	&__heading{
+		font-family: "Product Sans", sans-serif;
+		font-weight: 700;
+		font-size: 2.4rem;
+		margin-bottom: 1rem;
+		text-align: center;
+		color: #fff;
+		@include respond(tab-port){
+			font-size: 6vmin;
+			margin-bottom: 2.5vmin;
+			padding: 0 3vmin;
+		}
+	}
+
+	&__CTA-container{
+		display: flex;
+		margin: 0 auto;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		.btn--orange:not(:last-child){
+			margin: 0 0 1rem;
+			@include respond(tab-port){
+				margin: 0;
+			}
+		}
+		@include respond(tab-port){
+			max-width: 43.5vmin;
+			justify-content: space-between;
+			flex-direction: row;
+			align-items: center;
+			margin-bottom: 0;
+		}
+	}
+
+	&__features{
+		margin-top: 2rem;
+		text-align: center;
+		@include respond(tab-port){
+			margin-top: 7vmin;
+		}
+	}
+
+	&__features-list{
+		display: flex;
+		justify-content: center;
+		list-style: none;
+		flex-direction: column;
+		padding: 0;
+		margin: 0;
+
+		@include respond(tab-port){
+			flex-direction: row;
+		}
+	}
+
+	&__features-item{
+		font-size: 1.4rem;
+		font-family: 'Roboto', sans-serif;
+		font-weight: 500;
+		color: #fff;
+		@include respond(tab-port){
+			font-size: 1.8vmin;
+		}
+		&:not(:last-child){
+			margin: 0 0 .6rem;
+			@include respond(tab-port){
+				margin: 0 1rem 0 0;
+			}
+		}
+
+		.fas{
+			margin-right: .7rem;
+			color: $mainOrange;
+			@include respond(tab-port){
+				margin-right: .7vmin;
+			}
+		}
+	}
+}

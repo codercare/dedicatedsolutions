@@ -1,0 +1,164 @@
+.dm-service-banner{
+    &::before{
+        background: rgba($color: #00020A, $alpha: .8);
+    }
+}
+
+.data-migration-simple{
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-size: 53.3%;
+    background-color: #040C12;
+    color: #fff;
+    padding: 3rem 0;
+    @include respond(mobile){
+        background-image: none !important;
+    }
+    @include respond(tab-port){
+        padding: .8vmin 0 5vmin 8.5vmin;
+        .section-header{
+            margin: 0 0 3vmin;
+            .section-header__Orangesub-title{
+                color: #fff;
+                max-width: 101.1vmin;
+            }
+        }
+    }
+    .section-header__title, .section-header__Orangesub-title{
+        color: #fff;
+    }
+    .data-migration-block {
+        position: relative;
+        margin: 0 0 2rem;
+        @include respond(tab-port){
+            max-width: 80vmin;
+            min-height: 11.6vmin;
+            margin: 0 0 2vmin;
+            padding: 1vmin 0 1vmin 13.6vmin;
+        }
+        .data-migration-icon-box{
+            width: 7rem;
+            height: 7rem;
+            border-radius: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 0 1.5rem;
+            @include respond(tab-port){
+                width: 11.6vmin;
+                height: 11.6vmin;
+                position: absolute;
+                top: 0;
+                left: 0;
+                margin: 0;
+                img{
+                    width: 100%;
+                }
+            }
+            &.migrating{
+                background: #98068D;
+            }
+            &.data-storage{
+                background: #48B2D8;
+            }
+            &.migration{
+                background: #11A39F;
+            }
+        }
+        h2{
+            font-size: 1.8rem;
+            font-family: "Product Sans", sans-serif;
+            font-weight: 700;
+            @include respond(mobile){
+                margin: 0 0 1rem;
+            }
+            @include respond(tab-port){
+                font-size: 2.7vmin;
+            }
+        }
+        p{
+            margin: 0;
+            @include respond(tab-port){
+                line-height: 2vmin;
+                font-weight: 500;
+            }
+        }
+        &:last-child{
+            margin: 0;
+        }
+    }
+}
+
+.what-can-we-migrate{
+    @include respond(mobile){
+        padding: 3rem 0;
+    }
+    @include respond(tab-port){
+        .section-header{
+            margin: 0 0 7.5vmin;
+            &__Orangesub-title{
+                max-width: 106.8vmin;
+                margin: 0 auto;
+            }
+        }
+    }
+    .wcw-migrate-block-wrap{
+        [class^="col-"]:not(:last-child){
+            .wcw-migrate-block{
+                margin: 0 0 2rem;
+                @include respond(tab-port){
+                    margin: 0 0 5vmin;
+                }
+            }
+        }
+        .wcw-migrate-block{
+            position: relative;
+            @include respond(tab-port){
+                padding: 0 13vmin 0 14.6vmin;
+            }
+            .wcw-icon-box{
+                width: 5rem;
+                height: 5rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 0 1.5rem;
+                @include respond(tab-port){
+                    width: 10.6vmin;
+                    height: 10.6vmin;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    margin: 0;
+                    img{
+                        width: 100%;
+                    }
+                }
+            }
+            h3{
+                text-transform: uppercase;
+                font-size: 1.6rem;
+                font-family: "Product Sans", sans-serif;
+                font-weight: 700;
+                margin: 0 0 1rem;
+                @include respond(tab-port){
+                    font-size: 2.2vmin;
+                    margin: 0 0 1.5vmin;
+                }
+            }
+            ul{
+                li{
+                    font-weight: 300;
+                    margin: 0 0 .7rem;
+                    @include respond(tab-port){
+                        margin: 0 0 .5vmin;
+                        background-size: 6.3%;
+                    }
+                    &:last-child{
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+}

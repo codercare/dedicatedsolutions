@@ -85,3 +85,16 @@ function ds_show_icon($icon, $echo=true){
 		return '<img src="'. get_stylesheet_directory_uri() . '/assets/svg-icons/'. $icon .'.svg" alt="" />';
 	}
 }
+
+add_action('after_setup_theme', 'remove_admin_bar');
+function remove_admin_bar() {
+	//if (!current_user_can('administrator') && !is_admin()) {
+		 show_admin_bar(false);
+	//}
+}
+
+function strlimit($str,$limit=10,$add='...'){
+	$str = substr($str, 0,$limit).$add;
+	return $str;
+}
+

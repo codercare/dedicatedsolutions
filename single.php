@@ -10,8 +10,8 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
-
+	<main  class="site-main nonslider-page">
+		<div class="wrapper">
 		<?php
 		while ( have_posts() ) :
 			the_post();
@@ -29,12 +29,15 @@ get_header();
 			if ( comments_open() || get_comments_number() ) :
 				comments_template();
 			endif;
-
+		?>
+		
+		<?php
 		endwhile; // End of the loop.
 		?>
+		</div>
 
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
+// get_sidebar();
 get_footer();

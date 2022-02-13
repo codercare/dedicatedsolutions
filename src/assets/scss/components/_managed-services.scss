@@ -1,0 +1,311 @@
+.site-main{
+    .os-control-page-banner {
+        &.managed-services-page-banner{
+            @include respond(tab-port){
+                padding: 4vmin 0 0;
+            }
+        }
+    }
+} 
+
+.managed-service-layer{
+    padding: 3rem 0;
+    @include respond(tab-port){
+        padding: 3vmin 0 1vmin;
+    }
+    .managed-layer-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .thumbnail-img{
+            text-align: center;
+            // margin: 0 2.5vmin 0 0;
+            // display: none;
+            // text-align: right;
+            // @include respond(tab-port){
+            //     display: block;
+            //     width: 47%;
+            // }
+            // @include respond(tab-land){
+            //     width: 39%
+            // }
+            @include respond(tab-port){
+                width: 77.9%;
+                img{
+                    width: 100%;
+                }
+            }
+        }
+        ul{
+            padding: 0;
+            margin: 0;
+            @include respond(tab-port){
+                margin: -4.7vmin 0 0;
+            }
+            li{
+                list-style-type: none;
+                font-size: 2vmin;
+                font-weight: 500;
+                margin: 1vmin 0;
+                position: relative;
+                padding-left: 3vmin;
+                @include respond(tab-port){
+                    padding-left: 0;
+                    margin: 2vmin 0;
+                }
+                &::before{
+                    content: '';
+                    position: absolute;
+                    top: 1vmin;
+                    left: 0;
+                    width: 1.2vmin;
+                    height: 1.2vmin;
+                    border-radius: 100%;
+                    display: block;
+                    @include respond(tab-port){
+                        display: none;
+                    }
+                }
+                &:nth-of-type(1)::before{
+                    background: #F2AE1F;
+                }
+                &:nth-of-type(2)::before{
+                    background: #EF2034;
+                }
+                &:nth-of-type(3)::before{
+                    background: #D65616;
+                }
+                &:nth-of-type(4)::before{
+                    background: #A0287C;
+                }
+                &:nth-of-type(5)::before{
+                    background: #522F84;
+                }
+                &:nth-of-type(6)::before{
+                    background: #0E7F8E;
+                }
+            }
+        }
+    } 
+}
+
+.linux-server-os{
+    background: #F2F2F2;
+    @include respond(mobile){
+        padding: 3rem 0;
+    }
+    ul {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        li {
+            list-style-type: none;
+            flex: 1 1 15rem;
+            text-align: center;
+            margin: 2rem 0;
+            @include respond(tab-port){
+                flex: 1 1 25vmin;
+                margin: 4vmin 0;
+            }
+        }
+    }
+}
+
+.manage-service-plan{
+    @include respond(mobile){
+       padding: 3rem 0;
+    }
+    @include respond(tab-port){
+        .section-header{
+            margin: 0 0 2vmin;
+        }
+    }
+    .managed-service-plan-viewWrap{
+        .nav{
+            justify-content: center;
+            .nav-item{
+                margin: 0 .25rem;
+                @include respond(tab-port){
+                    margin: 0 1vmin;
+                }
+                .nav-link {
+                    background: $darkGrey;
+                    color: #fff;
+                    font-weight: 500;
+                    border-radius: .4rem;
+                    padding: .4rem 1rem;
+                    font-size: 1.2rem;
+                    @include respond(tab-port){
+                        padding: .3vmin 2.8vmin;
+                        font-size: 2vmin;
+                        border-radius: .4vmin;
+                    }
+                    &:hover{
+                        background: $mainOrange;
+                    }
+                    &.active{
+                        background: $mainOrange;
+                    }
+                }
+            } 
+        }
+        .tab-content{
+            padding: 2rem 0;
+            @include respond(tab-port){
+                padding: 2vmin 0 1vmin;
+            }
+        }
+        .managed-service-plan-table{
+            .ms-plan-list{
+                margin: 0;
+                padding: 0;
+                li{
+                    list-style-type: none;
+                    list-style-type: none;
+                    display: flex;
+                    flex-wrap: nowrap;
+                    border-top: 1px solid #C6C6C6;
+                    .ms-plan-col {
+                        flex: 1 1;
+                        display: flex;
+                        align-items: center;
+                        padding: .5rem 0 .5rem 1rem;
+                        @include respond(tab-port){
+                            padding: .55vmin 1vmin .55vmin 4vmin;
+                        }
+                        .ms-plan-blnc--inner{
+                            padding: 0 1.5rem 0 0;
+                            img{
+                                width: 3rem;
+                            }
+                            @include respond(tab-port){
+                                width: 14vmin;
+                                padding: 0 1.5vmin 0 0;
+                                img{
+                                    width: 38%;
+                                }
+                            }
+                        }
+                        &:first-child {
+                            flex-direction: row-reverse;
+                            border-right: 1px solid #C6C6C6;
+                            text-align: right;
+                            padding: .5rem 1rem .5rem 0;
+                            @include respond(tab-port){
+                                padding: .55vmin 4vmin .55vmin 1vmin;
+                            }
+                            .ms-plan-blnc--inner{
+                                padding: 0 0 0 1.5rem;
+                                @include respond(tab-port){
+                                    padding: 0 0 0 1.5vmin;
+                                }
+                            }
+                        }
+                        .big-txt {
+                            line-height: initial;
+                            font-size: 1.6rem;
+                            @include respond(tab-port){
+                                font-size: 3vmin;
+                            }
+                            &.orange-txt{
+                                color: $mainOrange;
+                            }
+                            &.dark-txt{
+                                color: $darkGrey;
+                            }
+                        }
+                        h2{
+                            margin: 0;
+                            font-weight: 400;
+                            color: rgba(0, 0, 0, 0.75);
+                            font-size: 1.3rem;
+                            @include respond(tab-port){
+                                font-size: 1.8vmin;
+                            }
+                        }
+                        p{
+                            margin: 0;
+                            color: rgba(0, 0, 0, 0.75);
+                            font-size: 1.3rem;
+                            @include respond(tab-port){
+                                font-size: 1.4vmin;
+                                line-height: 2.2vmin;
+                            }
+                        }
+                    }
+                    &:first-child {
+                       border: none;
+                        .ms-plan-col {
+                            padding: 0;
+                        }
+                    }
+                    &:last-child {
+                        .ms-plan-col {
+                            padding: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.ask-for-quotation {
+    text-align: center;
+    @include respond(tab-port){
+        padding-bottom: 2vmin;
+        .section-header__title {
+            font-size: 3vmin;
+            margin: 0 0 1.3vmin;
+        }
+    }
+    .btn--orange {
+        display: inline-block;
+        box-shadow: none;
+        text-transform: inherit;
+        @include respond(tab-port){
+            padding: 1.2vmin 3.7vmin;
+        }
+        .fas {
+            margin-left: .7rem;
+            @include respond(tab-port){
+                margin-left: 1vmin;
+            }
+        }
+    }
+}
+
+.ms-tech-support{
+    .tech-support-block-wrap{
+        @include respond(tab-port){
+            max-width: 100vmin;
+            margin: 0 auto;
+        }
+        .tech-support-card{
+            background-color: $mainOrange;
+            &__title{
+                font-size: 1.8rem;
+                text-transform: uppercase;
+                @include respond(tab-port){
+                    font-size: 2.6vmin;
+                }
+            }
+            .btn--outline{
+                border-radius: 0;
+                font-family: "Product Sans";
+                padding: .2rem 2.1rem;
+                @include respond(tab-port){
+                    padding: .2vmin 2.1vmin;
+                    font-size: 1.6vmin;
+                }
+            }
+        }
+        [class^="col-"]:last-child{
+            .tech-support-card{
+                background-color: #363636;
+            }
+        }
+    }
+}

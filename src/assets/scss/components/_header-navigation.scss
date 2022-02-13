@@ -1,0 +1,169 @@
+.header-navigation .menu {
+    margin: 0;
+    height: 100%;
+    display: flex;
+    list-style: none;
+    align-items: center;
+    padding: 0;
+    justify-content: center;
+
+    > .current-menu-item > a,
+    > .current_page_item > a {
+        color: $mainOrange!important;
+    } 
+
+    > .menu-item {
+        margin: 0 2vmin;
+        > a {
+            border-bottom: none;
+            display: block;
+            color: #292828;
+            transition: 0.2s color ease;
+            font-size: 1.8vmin;
+            text-decoration: none;
+            letter-spacing: .025vmin;
+            display: block;
+            position: relative;
+            &::before{
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                border-right: 1vmin solid transparent;
+                border-left: 1vmin solid transparent;
+                border-bottom: 1vmin solid transparent;
+                margin-left: -1vmin;
+                transition: all .3s ease;
+            }
+            @include respond(tab-land){
+                padding: 2vmin 0;
+            }
+        }
+        &:hover a, &.open > a {
+            color: $mainOrange;
+        }
+        &.open{
+            > a{
+               &::before{
+                   border-bottom-color: $darkGrey;
+               }
+            }
+        }
+        > .sub-menu {
+            position: absolute;
+            list-style-type: none;
+            background: $darkGrey;
+            left: 0;
+            top: 100%;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            visibility: hidden;
+            opacity: 0;
+            transition: all .3s ease;
+            > li{
+                margin: 0;
+                padding: 0;
+                > a{
+                    color: #fff;
+                    text-decoration: none;
+                    transition: all .25s ease-in-out;
+                    &:hover{
+                        color: $mainOrange;
+                    }
+                    @include respond(tab-port){
+                        padding: 1.5vmin 2vmin;
+                        font-size: 1.4vmin;
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+        &:hover{
+            > .sub-menu {
+                visibility: visible;
+                opacity: 1;
+            }
+        } 
+    }
+
+}
+
+.header-navigation .menu ul li{
+    padding: 1vmin;
+    margin: 1vmin;
+}
+.header-navigation .menu ul li a:hover{
+    color:#000;
+}
+
+// Header Mobile Navigation
+.header-mobile-navigation{
+    .menu{
+        margin: 0;
+        padding: .5rem 1.5rem;
+        list-style-type: none;
+        > .menu-item{
+            &:not(:last-child){
+                border-bottom: .1rem solid rgba($color: #fff, $alpha: .05);
+            }
+            > a{
+                display: block;
+                text-decoration: none;
+                color: #fff;
+                padding: .7rem 1.5rem;
+                font-weight: 500;
+            }
+            > .sub-menu{
+                margin: 0;
+                padding: 0;
+                display: none;
+                background: rgba($color: #fff, $alpha: .15);
+                padding: .7rem 0;
+                > .menu-item{
+                    display: flex;
+                    &:not(:last-child){
+                        border-bottom: .1rem solid rgba($color: #fff, $alpha: .05);
+                    }
+                    > a {
+                        display: flex;
+                        align-items: center;
+                        color: #fff;
+                        text-decoration: none;
+                        font-weight: 500;
+                        font-size: 1.3rem;
+                        padding: .7rem 3rem;
+                        width: 100%;
+                        &:hover{
+                            color: $mainOrange;
+                        }
+                        > .menu-image-hover-wrapper {
+                            padding: 0;
+                            width: 2.2rem;
+                            position: relative;
+                            height: 2.2rem;
+                            margin: 0 1.2rem 0 0 !important;
+                            img {
+                                margin: 0 !important;
+                                position: absolute;
+                                left: 0;
+                                top: 0;
+                            }
+                        }
+                    }
+                }
+            }
+            &:hover{
+                > a{
+                    color: $mainOrange;
+                }
+                > .sub-menu{
+                    display: block;
+                }
+            }
+        }
+    } 
+} 

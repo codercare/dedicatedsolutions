@@ -1,0 +1,215 @@
+.site-footer{
+	background-color: $black;
+	color: #fff;
+	padding: 3rem 0;
+	@include respond(tab-port){
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		padding: .3vmin 0;
+		z-index: 999;
+	}
+
+	&__content{
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		flex-wrap: wrap;
+		justify-content: center;
+
+		@include respond(tab-port){
+			flex-direction: row;
+		}
+	}
+
+	&__btn-container{
+		display: flex;
+		.btn--orange{
+			height: auto;
+			max-height: none;
+			max-width: none;
+			text-transform: capitalize;
+			padding: .7vmin 1.5rem;
+			@include respond(tab-port){
+				padding: .6vmin 2.2vmin;
+				font-size: 1.6vmin;
+			}
+			.btn-icon{
+				margin: 0;
+			}
+			&:last-child{
+				padding: .7rem 1rem;
+				@include respond(tab-port){
+					padding: .6vmin 1.3vmin;
+				}
+			}
+		}
+	}
+}
+
+.payment-methods{
+	display: block;
+	margin: 0 0 2rem;
+	text-align: center;
+	@include respond(tab-port){
+		display: none
+	}
+
+	@include respond(tab-land){
+		display: flex;
+		align-items: center;
+		margin: 0 3vmin 0 0;
+		text-align: left;
+	}
+
+	&__title{
+		font-family: 'Product Sans', sans-serif;
+		font-size: 1.4rem;
+		font-weight: 700;
+		@include respond(tab-port){
+			font-size: 1.6vmin;
+			display: flex;
+			flex-direction: column;
+			margin: 0 1vmin 0;
+			text-align: left;
+		}
+	}
+
+	&__list{
+		margin: 0;
+		padding: 0;
+		display: flex;
+		list-style: none;
+	}
+
+	&__item{
+		width: 4rem;
+		@include respond(tab-port){
+			width: 4.5vmin;
+		}
+		img{
+			height: 2.5rem;
+			object-fit: cover;
+			@include respond(tab-port){
+				height: 3vmin;
+			}
+		}
+
+		&:not(:last-child){
+			margin-right: 0;
+			@include respond(tab-port){
+				margin-right: .5vmin;
+			}
+		}
+	}
+}
+
+.us-support{
+	position: relative;
+	padding-left: 4rem;
+	margin: 0 0 2rem;
+
+	@include respond(tab-port){
+		padding-left: 5vmin;
+		margin: 0 3vmin 0 0;
+	}
+
+	&__title{
+		font-family: 'Product Sans', sans-serif;
+		font-size: 1.4rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		margin: 0;
+		@include respond(tab-port){
+			font-size: 1.6vmin;
+		}
+	}
+
+	&__text{
+		font-size: 1.2rem;
+		margin: 0;
+		@include respond(tab-port){
+			font-size: 1.4vmin;
+		}
+	}
+
+	&__icon-container{
+		position: absolute;
+		left: 0;
+
+		.fas{
+			font-size: 3rem;
+			@include respond(tab-port){
+				font-size: 3.5vmin;
+			}
+		}
+	}
+}
+
+.support-links{
+	list-style: none;
+	display: flex;
+	padding: 0;
+	margin: 0 0 2rem;
+
+	@include respond(tab-port){
+		margin: 0 3vmin 0 0;
+	}
+
+	&__item{
+		&:not(:last-child){
+			margin-right: 1rem;
+			@include respond(tab-port){
+				margin-right: 1vmin;
+			}
+		}
+	}
+
+	&__title{
+		font-family: 'Product Sans', sans-serif;
+		font-size: 1.2rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		@include respond(tab-port){
+			font-size: 1.2vmin;
+		}
+	}
+
+	&__link{
+		font-size: 1rem;
+		line-height: 1rem;
+		display: block;
+		color: #fff;
+		max-width: 14rem;
+
+		@include respond(tab-port){
+			max-width: 15vmin;
+			font-size: 1vmin;
+			line-height: 1vmin;
+		}
+
+		&:hover{
+			color: inherit;
+		}
+	}
+}
+
+#fp-nav.fp-right{
+	ul{
+		li{
+			a{
+				outline: none;
+				&:hover,&:focus{
+					outline: none;
+				}
+				span{
+					background: $mainOrange;
+					&:hover,&:focus{
+						outline: none;
+					}
+				}
+			} 
+		} 
+	} 
+}

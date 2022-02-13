@@ -1,0 +1,119 @@
+
+.wh-eh-hosting-feat-adv{
+    padding: 3rem 0;
+    @include respond(tab-port){
+        padding: 5vmin 0;
+        &.ss-web-hosting{
+            padding: 4vmin 0;
+        }
+        &.mlb-server, &.mg-data-center{
+            padding: 0;
+        }
+    }
+    .wrapper{
+        overflow: visible;
+        @include respond(tab-port){
+            max-width: 178vmin;
+        }
+    }
+    .thumbnail-img{
+        text-align: center;
+        margin: 0 0 2rem;
+        @include respond(tab-port){
+            margin: 0;
+            img{
+                width: 100%;
+            }
+        }
+    }
+    .wh-eh-hosting-content{
+        margin: 0 0 2rem;
+        @include respond(tab-port){
+            padding: 0 2vmin 0 7vmin;
+            margin: 0;
+        }
+        .section-header{
+            margin: 0;
+            @include respond(tab-port){
+                margin: 0 0 0.5vmin;
+            }
+            .section-header__title{
+                color: $mainOrange;
+                @include respond(tab-port){
+                    font-size: 6vmin;
+                    margin: 0 0 3vmin;
+                }
+            }
+        }
+        p {
+            @include respond(tab-port){
+                line-height: 3vmin;
+                margin: 0 0 2.5vmin;
+            }
+        }
+        .btn--orange{
+            text-transform: inherit;
+            display: inline-block;
+            box-shadow: none;
+            @include respond(tab-port){
+                padding: 1.1vmin 3.2vmin;
+                font-size: 1.5vmin;
+            }
+            .fas{
+                margin: 0 0 0 .5rem;
+                @include respond(tab-port){
+                    margin: 0 0 0 1.3vmin;
+                }
+            }
+        }
+    }
+    .wh-eh-hosting-adv {
+        background: #fff;
+        box-shadow: 0 0 1rem 0 rgba($color: #CFCFCF, $alpha: 1.0);
+        @include respond(tab-port){
+            margin: 0 8.1vmin 0 3vmin;
+            box-shadow: 0 0 1vmin 0 rgba($color: #CFCFCF, $alpha: 1.0);
+        }
+        h2 {
+            margin: 0;
+            text-transform: uppercase;
+            font-size: 1.6rem;
+            padding: 1rem 1.5rem;
+            background: $mainOrange;
+            color: #fff;
+            @include respond(tab-port){
+                font-size: 2.2vmin;
+                padding: 2.7vmin 2vmin;
+            }
+        }
+        ul{
+            li{
+                padding: .5rem 1.5rem .5rem 4.3rem;
+                background-position: left 1.5rem center;
+                @include respond(tab-port){
+                    background-position: left 2vmin center;
+                    padding: 2.1vmin 2vmin 2.1vmin 4.8vmin;
+                    background-size: 4.3%;
+                }
+                &:nth-of-type(even){
+                    background-color: #FFFCF9;
+                }
+            }
+        }
+    }
+    &.ss-web-hosting, &.mg-data-center{
+        background: #F2F2F2;
+    }
+    &.mlb-server{
+        .wh-eh-hosting-adv {
+            @include respond(tab-port){
+                margin: 0 4.1vmin 0 7vmin;
+            }
+        }
+        .wh-eh-hosting-content {
+            @include respond(tab-port){
+                padding: 0 5vmin 0 3vmin;
+            }
+        }
+    }
+}

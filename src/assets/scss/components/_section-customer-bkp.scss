@@ -1,0 +1,30 @@
+.section-customer{
+	padding: 10rem 0;
+	// padding-top: 4rem;
+	// padding-bottom: 12rem;
+
+	// @include respond(small){
+	// 	padding-top: 13rem;
+	// 	padding-bottom: 13rem;
+	// }
+
+	// @include respond(tab-port){
+	// 	padding-top: 12rem;
+	// 	padding-bottom: 12rem;
+	// }
+
+	// @include respond(tab-land){
+	// 	padding-top: 17rem;
+	// 	padding-bottom: 15rem;
+	// }
+
+	&__content{
+		margin-top: 4rem;
+	}
+}
+
+@media(min-width: 1680px){
+    .section-customer{
+		padding: 0;
+	}
+}

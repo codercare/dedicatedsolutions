@@ -1,0 +1,19 @@
+.features-highlight{
+	background-color: $black;
+	padding: 1rem 0;
+	@include respond(tab-port){
+		padding: 4vmin 0;
+	}
+	.feature-highlight-card{
+		@include respond(mobile){
+			padding: 2rem;
+		}
+	}
+	[class^="col-"]{
+		&:last-child{
+			.feature-highlight-card{
+				border: none;
+			}
+		}
+	}
+}

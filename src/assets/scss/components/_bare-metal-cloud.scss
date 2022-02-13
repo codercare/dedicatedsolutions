@@ -1,0 +1,225 @@
+.site-main{
+    .about-page-banner{
+        &.bmc-page-banner{
+            @include respond(tab-port){
+                padding: 5vmin 0 0;
+            }  
+        }
+    }
+} 
+
+.navTabs-pills-wrap{
+    background: #F6F6F6;
+    @include respond(mobile){
+        .wrapper{
+            padding: 0;
+        }  
+    }
+    .nav{
+        .nav-item{
+            text-align: center;
+            .nav-link{
+                font-size: 1.2rem;
+                font-weight: 500;
+                text-transform: uppercase;
+                color: $darkGrey;
+                border-radius: 0;
+                padding: .6rem;
+                display: flex;
+                justify-content: center;
+                height: 100%;
+                align-items: center;
+                @include respond(tab-port){
+                    font-size: 1.8vmin;
+                    padding: 1.4vmin;
+                }
+                &:hover{
+                    color: $mainOrange;
+                }
+                &.active{
+                    background: $mainOrange;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+
+.bare-metal-navtabs{
+    .navTabs-pills-wrap{
+        .nav{
+            .nav-item{
+                width: 33.33%;
+            }
+        }
+    }
+    .tab-content{
+        padding: 3rem 0;
+        @include respond(tab-port){
+            padding: 4vmin 0;
+        }  
+    }
+    .why-bmc-block-wrap{
+        [class^="col-"]{
+            .bmc-block{
+                margin: 0 0 2vmin;
+                height: 40vmin;
+                overflow: hidden;
+                @include respond(tab-port){
+                    margin: 0 0 2vmin;
+                }
+            }
+        }
+        .carousel-inner{
+            overflow: unset;
+        }
+        .carousel-control-next{
+            opacity: 1;
+            width: auto;
+            color: $mainOrange;
+            padding: 0 1rem;
+            font-size: 2.4rem;
+            right: -2rem;
+            @include respond(tab-port){
+                padding: 0 1vmin;
+                font-size: 2.6vmin;
+                right: -3vmin;
+            }
+        }
+        .bmc-block{
+            padding: 2rem;
+            background: #fff;
+            box-shadow: 0 0 1.5rem 0 rgba($color: #000000, $alpha: .06);
+            border-radius: .5rem;
+            transition: all .3s ease;
+            @include respond(tab-port){
+                box-shadow: 0 0 1.5vmin 0 rgba($color: #000000, $alpha: .06);
+                padding: 4vmin 3vmin;
+                border-radius: .5vmin;
+            }
+            .nmc-icon-box {
+                width: 5rem;
+                margin: 0 0 1.5rem;
+                @include respond(tab-port){
+                    width: 10vmin;
+                    margin: 0 0 4vmin;
+                }  
+                svg {
+                    width: 100%;
+                    height: auto;
+                    fill: $mainOrange;
+                    transition: all .3s ease;
+                }
+            }
+            h2{
+                font-size: 1.8rem;
+                font-family: "Product Sans", sans-serif;
+                font-weight: 700;
+                margin: 0 0 1rem;
+                @include respond(tab-port){
+                    font-size: 2.2vmin;
+                    margin: 0 0 1.5vmin;
+                }
+            }
+            p{
+                margin: 0;
+                font-weight: 300;
+            }
+            &:hover{
+                background: $mainOrange;
+                color: #fff;
+                .nmc-icon-box{
+                    svg {
+                        fill: #fff;
+                    }
+                }
+            }
+        }
+        .btn--orange{
+            text-align: center;
+            box-shadow: none;
+            margin: 0 auto;
+            @include respond(tab-port){
+                max-width: 56.1vmin;
+                display: block;
+                font-size: 2vmin;
+            }
+        }
+    }
+}
+
+
+.bare-metal-power{
+    background: $darkGrey;
+    @include respond(mobile){
+        padding: 3rem 0;
+    }
+    @include respond(tab-port){
+        .section-header{
+            margin: 0;
+            .section-header__Orangesub-title{
+                padding: 0 4vmin;
+            }
+        }
+    }  
+    .section-header__title{
+        color: #fff;
+    }
+    .thumbnail-img{
+        text-align: center;
+        @include respond(tab-port){
+            img{
+                width: 100%;
+            }
+        }
+    }
+    .bmc-power-instant-content{
+        @include respond(tab-port){
+            padding: 0 0 0 3vmin;
+        }
+        .bmc-power-instant-block{
+            margin: 0 0 1.5rem;
+            display: flex;
+            align-items: center;
+            @include respond(tab-port){
+                margin: 0 0 4vmin;
+            }
+            .bmc-power-instant-icon{
+                margin: 0 1rem 0 0;
+                @include respond(tab-port){
+                    margin: 0 1vmin 0 0;
+                }
+                &--inner{
+                    width: 5rem;
+                    height: 5rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background: $mainOrange;
+                    border-radius: 100%;
+                    @include respond(tab-port){
+                        width: 8vmin;
+                        height: 8vmin;
+                        img{
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+            h3{
+                color: #fff;
+                font-family: 'Product Sans', sans-serif;
+                font-weight: 700;
+                margin: 0;
+                font-size: 1.6rem;
+                @include respond(tab-port){
+                    line-height: 2.4vmin;
+                    font-size: 1.8vmin;
+                }
+            }
+            &:last-child{
+                margin: 0;
+            }
+        }
+    }
+}

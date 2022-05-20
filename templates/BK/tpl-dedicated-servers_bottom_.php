@@ -1,5 +1,6 @@
 <?php
-/* Template Name: Dedicated Servers  */
+/* Dedicated Servers Backup Bottom Menu navigation :  https://prnt.sc/n5HA_VQju_2-   */
+
 get_header();?>
 <main id="fullpage" class="site-main">
 <?php while ( have_posts() ) : the_post(); 
@@ -11,7 +12,7 @@ get_header();?>
 	}
 ?>	
 	<section class="section fp-auto-height">
-		<section id="large-banner" class="page-banner dedicated-server-page-banner large-banner  dedi-page-section" style="background-image: url('<?php echo $banner_image_url; ?>');">
+		<section id="large-banner" class="page-banner dedicated-server-page-banner large-banner page-section" style="background-image: url('<?php echo $banner_image_url; ?>');">
 			<div class=" page-banner-content  wow fadeInDown" style="visibility: visible; animation-name: fadeInDown;">
 				<h4>Starting from</h4>
 				<div class="starting-price ">
@@ -48,15 +49,30 @@ get_header();?>
 					endif;			
 					?>							
 					</ul>
+				</div>	
+			</div>
+		</section>
+
+		<section class="dedicated-server-navTabs">
+			<div class="navTabs-pills-wrap">
+				<div class="wrapper">
+					<ul class="nav nav-pills"  >						
+						<li class="nav-item" >
+							<a class="nav-link" href="#section2">Hosting Features</a>
+						</li>
+						<li class="nav-item" >
+							<a class="nav-link "  href="#section3">Popular Dedicated Servers</a>
+						</li>
+						<li class="nav-item" >
+							<a class="nav-link "  href="#section4">Server Configurations</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link " href="#section5">Feature Compare</a>
+						</li>
+					</ul>
 				</div>
-				<div class="os-control-panl__btn-wrap wow fadeInUp dedi-buttons-nav" style="visibility: visible; animation-name: fadeInUp; margin-top:40px;">
-					<a href="#section2" class="btn--white">Hosting Features</a>
-					<a href="#section3" class="btn--white">Popular Dedicated Servers</a>
-					<a href="#section4" class="btn--white">Server Configurations</a>
-					<a href="#section5" class="btn--white">Feature Compare</a>												
-				</div>
-			</div>			
-		</section>		
+			</div>
+		</section>
 	</section>
 
 	<section class="ds-server-hosting-feat section">

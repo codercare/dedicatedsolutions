@@ -2,7 +2,7 @@
     &.dedicated-server-page-banner{
         .page-banner-content{
             @include respond(tab-port){
-                padding: 8vmin 0 2vmin;
+                padding: 15vmin 0 2vmin;
             }
             h1{
                 font-size:4.5vmin;
@@ -13,6 +13,11 @@
                 font-weight: 500;
                 @include respond(tab-port){
                     font-size: 1.4vmin;
+                }
+            }
+            .dedi-buttons-nav{
+                a{
+                    margin: 6px;
                 }
             }
             .starting-price {
@@ -67,6 +72,9 @@
                 margin: 0;
             }
         }
+    }
+    &.dedi-page-section{
+        padding: 47vmin 0;
     }
 }
 

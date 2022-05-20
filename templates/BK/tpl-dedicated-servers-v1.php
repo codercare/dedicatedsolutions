@@ -1,74 +1,117 @@
 <?php
-/* Template Name: Dedicated Servers  */
+/*  Dedicated Servers V1  */
 get_header();?>
 <main id="fullpage" class="site-main">
 <?php while ( have_posts() ) : the_post(); 
 
-	$banner_image_url = get_template_directory_uri() . '/dist/assets/images/dedi-servers.jpg';
+	$banner_image_url = get_template_directory_uri() . '/dist/assets/images/bare-metal-cloud-banner.jpg';
 	$banner_image     = get_field( 'banner_bg' );
 	if ( ! empty( $banner_image ) ) {
 		$banner_image_url = $banner_image['sizes']['banner_image'];
 	}
-?>	
-	<section class="section fp-auto-height">
-		<section id="large-banner" class="page-banner dedicated-server-page-banner large-banner page-section" style="background-image: url('<?php echo $banner_image_url; ?>');">
-			<div class=" page-banner-content  wow fadeInDown" style="visibility: visible; animation-name: fadeInDown;">
-				<h4>Starting from</h4>
-				<div class="starting-price ">
-					<span class="price">
-					<?php 
-					$deci_arr = array();	
-					$deci_arr[0] = '00';
-					$deci_arr[1] = '00';
-						$price_doller = get_field('starting_from_price_per_month'); 
-						if(is_numeric($price_doller)){
-							$decimal_price = number_format($price_doller, 2, '.', '');
-							$deci_arr = explode('.',$decimal_price);								
-						}
-						
-						if(is_numeric($price_doller)){ echo"$".$deci_arr[0]; echo'<span class="subPrice">'.'.'.$deci_arr[1].'</span></span>'; }else{
-							echo $price_doller;
-						}
-						?>
-					<span class="per-month">/month</span>
+?>
+	<section class="section">
+		<section class="page-banner dedicated-server-page-banner" style="background-image:url('<?php echo $banner_image_url; ?>')">
+			<div class="wrapper">			
+				<div class="page-banner-content  wow fadeInDown">
+					<h4>Starting from</h4>
+					<div class="starting-price ">
+						<span class="price">
+						<?php 
+						$deci_arr = array();	
+						$deci_arr[0] = '00';
+						$deci_arr[1] = '00';
+							$price_doller = get_field('starting_from_price_per_month'); 
+							if(is_numeric($price_doller)){
+								$decimal_price = number_format($price_doller, 2, '.', '');
+								$deci_arr = explode('.',$decimal_price);								
+							}
+							
+							if(is_numeric($price_doller)){ echo"$".$deci_arr[0]; echo'<span class="subPrice">'.'.'.$deci_arr[1].'</span></span>'; }else{
+								echo $price_doller;
+							}
+							?>
+						<span class="per-month">/month</span>
+					</div>
+					<h1 class="large-banner__heading wow fadeInLeft"><?php the_field('dedicated_server_title');?></h1>
+					<p class="wow fadeInLeft"><?php the_field('dedicated_server_sub_title');?></p>
+					<div class="large-banner__features">
+						<ul class="large-banner__features-list">
+							<?php
+							if ( have_rows( 'dedicated_server_feature_lists' ) ) : 
+							while ( have_rows( 'dedicated_server_feature_lists' ) ) :
+							the_row();						
+							?>
+							<li class="large-banner__features-item"><i class="fas fa-check-circle"></i><?php the_sub_field('list');?></li>
+							<?php 
+							endwhile; 
+							endif;			
+							?>							
+						</ul>
+					</div>
 				</div>
-				<h1 class="large-banner__heading wow fadeInDown"><?php the_field( 'dedicated_server_title' ); ?></h1>
-				
-				<p class="wow fadeInLeft" style="visibility: visible; animation-name: fadeInLeft;"><?php the_field('dedicated_server_sub_title');?></p>
-				<div class="large-banner__features">
-					<ul class="large-banner__features-list">
-					<?php
-					if ( have_rows( 'dedicated_server_feature_lists' ) ) : 
-					while ( have_rows( 'dedicated_server_feature_lists' ) ) :
-					the_row();						
-					?>
-					<li class="large-banner__features-item"><i class="fas fa-check-circle"></i><?php the_sub_field('list');?></li>
-					<?php 
-					endwhile; 
-					endif;			
-					?>							
-					</ul>
-				</div>	
 			</div>
 		</section>
-
+		
 		<section class="dedicated-server-navTabs">
 			<div class="navTabs-pills-wrap">
 				<div class="wrapper">
-					<ul class="nav nav-pills"  >						
+					<ul class="nav nav-pills"  >
+						
 						<li class="nav-item" >
 							<a class="nav-link" href="#section2">Hosting Features</a>
 						</li>
 						<li class="nav-item" >
-							<a class="nav-link "  href="#section3">Popular Dedicated Servers</a>
-						</li>
-						<li class="nav-item" >
-							<a class="nav-link "  href="#section4">Server Configurations</a>
+							<a class="nav-link active"  href="#section4">Server Configurations</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link " href="#section5">Feature Compare</a>
 						</li>
 					</ul>
+				</div>
+			</div>
+			<div class="wrapper">
+				<div class="tab-content" id="bmc-pills-tabContent">				
+					<?php
+					$tab_count = 1;
+					if ( have_rows( 'three_tab' ) ) : 
+					while ( have_rows( 'three_tab' ) ) :
+					the_row();						
+					?>
+						<div class="tab-pane fade <?php if($tab_count == 2){ echo"show active"; }?> " id="server-config-<?php echo $tab_count;?>" role="tabpanel" aria-labelledby="server-<?php echo $tab_count;?>-tab">
+						<div class="row">
+							<?php
+							if ( have_rows( 'block_feature_lists' ) ) : 
+							while ( have_rows( 'block_feature_lists' ) ) :
+							the_row();						
+							?>
+							<div class="col-md-3 wow fadeInRightBig">
+								<div class="dedicated-server-block">
+									<div class="ds-icon-box">
+										<?php 
+										$feature_img_icon = get_template_directory_uri() . '/dist/assets/images/customer-support-2.png';
+										$feature_icon     = get_sub_field( 'feature_icon' );
+										if ( ! empty( $feature_icon ) ) {
+											$feature_img_icon = $feature_icon['sizes']['mid_icon'];
+										}
+										if(!empty($feature_img_icon)){ echo"<img src='".$feature_img_icon."'>"; }
+										?>
+									</div>
+									<h3><?php the_sub_field('title');?></h3>
+									<p><?php the_sub_field('short_detail');?></p>
+								</div>
+							</div>
+							<?php 
+							endwhile; 
+							endif;			
+							?>
+						</div>
+					</div>
+					<?php 
+					$tab_count++;
+					endwhile; 
+					endif;			
+					?>
 				</div>
 			</div>
 		</section>

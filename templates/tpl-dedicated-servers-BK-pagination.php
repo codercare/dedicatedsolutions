@@ -215,7 +215,7 @@ get_header();?>
 		<section class="popular-dedicated-server section">
 		<div class="wrappper">
 			<div class="section-header u-txt-center">
-				<h2 class="section-header__title">Our Most Popular Dedicated Server</h2>
+				<h2 class="section-header__title">Our Most Popular Dedicated Servers</h2>
 				<span class="section-header__decoration-element"></span>
 			</div>
 		</div>

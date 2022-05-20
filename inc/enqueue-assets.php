@@ -41,6 +41,13 @@ function ds_assets() {
 	wp_enqueue_script( 'ds-gridder-plugin', get_template_directory_uri() . '/public/js/jquery.gridder.min.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'ds-scripts', get_template_directory_uri() . '/dist/assets/js/bundle.js', array( 'jquery' ), _S_VERSION, true );
 	wp_enqueue_script( 'aos', get_template_directory_uri() . '/public/js/aos.js', array( 'jquery' ), _S_VERSION, true );
+	
+	// wp_enqueue_style( 'jquery-2.2.4.min', 'https://code.jquery.com/jquery-2.2.4.min.js', array(), _S_VERSION, 'all' );
+	wp_enqueue_style( 'popper', 'https://unpkg.com/popper.js/dist/umd/popper.min.js', array(), _S_VERSION, 'all' );
+
+	
+	
+
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

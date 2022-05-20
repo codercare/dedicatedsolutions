@@ -18,7 +18,7 @@
             .starting-price {
                 width: 6rem;
                 height: 6rem;
-                margin: 0 auto 1rem;
+                margin: 0 auto 2.5rem;
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -57,10 +57,10 @@
             }
             @include respond(tab-port){
                 .large-banner__heading{
-                    margin: 0;
+                    margin-bottom:2.5vmin;
                 }
                 p{
-                    margin: 0 0 1vmin;
+                    margin: 0 0 2.5vmin;
                 }
             }
             .large-banner__features{
@@ -74,7 +74,11 @@
     .navTabs-pills-wrap{
         .nav{
             .nav-item{
-                width: 33.33%;
+                width: 25%;
+                border-right:1px dashed #000;
+            }
+            .nav-item:last-child{
+                border-right:none;
             }
         } 
     } 

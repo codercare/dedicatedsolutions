@@ -264,6 +264,7 @@
 }
 .popular-dedicated-server .server-type-block-wrap .col ul li strong {
     font-weight: normal;
+    color:#ff8800;
 }
 .popular-dedicated-server .server-type-block-wrap .col ul li::before {
     content: '';

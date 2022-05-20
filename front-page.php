@@ -1,12 +1,12 @@
 <?php
-get_header();?>
+get_header();
 
-<?php
+while ( have_posts() ) : the_post(); 
 	$banner_image_url = '';
 	$banner_image     = get_field( 'banner_image' );
-if ( ! empty( $banner_image ) ) {
-	$banner_image_url = $banner_image['url'];
-}
+	if ( ! empty( $banner_image ) ) {
+		$banner_image_url = $banner_image['url'];
+	}
 
 ?>
 
@@ -401,4 +401,7 @@ if ( ! empty( $banner_image ) ) {
 	</section>
 </section>
 
-<?php get_footer(); ?>
+<?php 
+endwhile; 
+
+get_footer(); ?>

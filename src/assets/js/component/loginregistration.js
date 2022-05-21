@@ -209,32 +209,17 @@ jQuery('.showLocation').on('click',function(e){
     
 // });
 
-
-jQuery('.testimonial-block').on('mouseover',function(e){   
-    $(this).children(".old").hide();
-    $(this).children(".nextfull").show();
+jQuery(document).on('click', '.more_text', function () {
+     jQuery(this).parents('.testimonial-block').find(".old").hide();
+     jQuery(this).parents('.testimonial-block').find(".nextfull").show();
+    return false;
 });
 
-jQuery('.testimonial-block').on('mouseout',function(e){     
-    $(this).children(".nextfull").hide();
-    $(this).children(".old").show();    
+jQuery(document).on('click', '.back_link', function () {         
+    jQuery(this).parents('.testimonial-block').find(".nextfull").hide();
+    jQuery(this).parents('.testimonial-block').find(".old").show();
+    return false;
 });
-
-
-
-//jQuery('.back').on('click',function(e){   
-    // if($(this).hasClass('back')){
-    //     $(this).removeClass("back");
-    //     $(this).html("Back");       
-    // }else{
-    //     $(this).addClass("back");
-    //     $(this).html("<< Go Back");
-    //     $(this).siblings(".old").hide();
-    // }   
-   // $(this).siblings(".nextfull").hide();
-    //$(this).siblings(".old").show();
-    // $(this).siblings(".nextfull").show();
-//});
 
 
 jQuery('.chooseEnterprise').on('click',function(e){

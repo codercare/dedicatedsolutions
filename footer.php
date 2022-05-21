@@ -25,19 +25,18 @@
 						<div class="us-support__icon-container">
 							<i class="fas fa-headset"></i>
 						</div>
-						<h5 class="us-support__title">Us based support</h5>
-						<p class="us-support__text"><a onclick="LC_API.open_chat_window({source:'button'}); return false;" >Live support</a></p>
+						<h5 class="us-support__title"><a onclick="LC_API.open_chat_window({source:'button'}); return false;" >Us based support</a></h5>
+						
+						
 					</div>
-					<ul class="support-links">
-						<li class="support-links__item">
-							<h6 class="support-links__title">Managed Support</h6>
-							<a href="<?php echo site_url('/managed-services');?>" class="support-links__link">Industry Leading Managed support</a>
-						</li>
-						<li class="support-links__item">
-							<h6 class="support-links__title"><a onclick="LC_API.open_chat_window({source:'button'}); return false;" >Speak with an Expert</a></h6>
-							<a href="<?php echo site_url('/dedicated-servers/#section3');?>" class="support-links__link">Need help deciding on the best server for your need?</a>
-						</li>
-					</ul>
+					<div class="support-text">
+						<h5 class="support-text__title"><a href="<?php echo site_url('/managed-services');?>" >Managed Support</a></h5>
+						
+					</div>
+					<div class="support-text">
+						<h5 class="support-text__title"><a onclick="LC_API.open_chat_window({source:'button'}); return false;" >Speak with an Expert</a></h5>
+						
+					</div>
 					<div class="site-footer__btn-container">
 						<a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Contact Us' ) ) ); ?>" class="btn--orange u-mb-untill-small u-mr">
 							<span class="btn-label">Contact Us</span>

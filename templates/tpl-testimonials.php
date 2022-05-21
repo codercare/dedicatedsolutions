@@ -29,7 +29,7 @@ get_header();?>
 								<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/quote.png'; ?>" alt="quote">
 							</i>
 							<p class="old"><?php echo wp_trim_words( get_the_content(), 25, '<br/> <a class="more_text">read more...</a>' );  ?></p>
-							<?php echo  '<p class="nextfull">'.wp_trim_words(get_the_content(),1000).'</p>';  ?>
+							<?php echo  '<div class="nextfull"><p>'.wp_trim_words(get_the_content(),1000).'</p><a class="back_link"><< go back</a></div>';  ?>
 							<span class="old">
 								<span class="thanks">Thanks!</span>
 								<div class="testimonial-profile">
@@ -69,7 +69,7 @@ get_header();?>
 								<img src="<?php echo get_template_directory_uri() . '/dist/assets/images/quote.png'; ?>" alt="quote">
 							</i>
 							<p class="old"><?php echo wp_trim_words( get_the_content(), 28, '<br/> <a class="more_text">read more...</a>' );  ?></p>
-							<?php echo  '<p class="nextfull">'.wp_trim_words(get_the_content(),1000).'</p>';  ?>
+							<?php echo  '<div class="nextfull"><p>'.wp_trim_words(get_the_content(),1000).'</p><a class="back_link"><< go back</a></div>';  ?>
 							<span class="old">
 								<span class="thanks">Thanks!</span>
 								<div class="testimonial-profile">

@@ -26,11 +26,33 @@
                 padding: 2vmin;
                 margin: 0 0 2vmin;
             }
+            
             .quote {
                 display: inline-block;
                 margin: 0 0 1rem;
                 @include respond(tab-port){
                     margin: 0 0 1vmin;
+                }
+            }
+            .old{
+                a {
+                    .more_text{                
+                        color:#ff8800;
+                    }&:hover{
+                        color:#f00;
+                        text-decoration: underline;
+                    }
+                }
+            }
+            .nextfull{
+                a {
+                    .back_link{                
+                        color:#ff8800;
+                        text-align: center;
+                    }&:hover{
+                        color:#f00;
+                        text-decoration: underline;
+                    }
                 }
             }
             p{

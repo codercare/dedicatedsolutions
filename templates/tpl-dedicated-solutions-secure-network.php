@@ -16,12 +16,12 @@ while ( have_posts() ) : the_post();
 				<h4 class="section-header__Orangesub-title  wow fadeInLeftBig"><?php the_field( 'dedicated_solutions_networks_sub_title' ); ?></h4>
 				<div class="dedicated-solutons-detail">
 					<div class="row">
-						<div class="col-md-6 first-detail  wow fadeInLeftBig">
+						<div class="col-md-12   wow fadeInLeftBig">
 							<p><?php the_field( 'left_details' ); ?></p>
 						</div>
-						<div class="col-md-6 second-detail  wow fadeInRightBig">
-							<p><?php the_field( 'right_details' ); ?></p>
-						</div>
+						<!-- <div class="col-md-6 second-detail  wow fadeInRightBig">
+							<p>< ?php the_field( 'right_details' ); ?></p>
+						</div> -->
 					</div>
 				</div>
 			</div>

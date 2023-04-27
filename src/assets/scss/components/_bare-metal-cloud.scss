@@ -63,8 +63,8 @@
         [class^="col-"]{
             .bmc-block{
                 margin: 0 0 2vmin;
-                height: 40vmin;
-                overflow: hidden;
+                // height: 40vmin;
+                // overflow: hidden;
                 @include respond(tab-port){
                     margin: 0 0 2vmin;
                 }

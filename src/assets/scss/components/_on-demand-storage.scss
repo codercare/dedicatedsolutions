@@ -396,8 +396,8 @@
         }
         .btn--outline{
             border-radius: 0;
-            font-family: "Product Sans";
-            padding: .2rem 2rem;
+            // font-family: "Product Sans";
+            padding: .2rem 2rem; 
             @include respond(tab-port){
                 font-size: 1.6vmin;
                 padding: .2vmin 4.26vmin;

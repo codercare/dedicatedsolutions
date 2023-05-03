@@ -12,7 +12,7 @@ while ( have_posts() ) : the_post();
 
 <section id="fullpage">
 	<section class="section fp-auto-height">
-		<section id="large-banner" class="large-banner page-section" style="background-image: url(<?php echo $banner_image_url; ?>);">
+		<section id="large-banner" class="large-banner page-section" style="background-image: url('<?php echo $banner_image_url; ?>');">
 			<div class="large-banner__container">
 				<h1 class="large-banner__heading wow fadeInDown"><?php the_field( 'banner_title' ); ?></h1>
 				<div class="large-banner__CTA-container">

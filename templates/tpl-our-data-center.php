@@ -94,8 +94,8 @@ while ( have_posts() ) : the_post();
 						?>
 						<tr>
 							<td><?php the_sub_field( 'feature_title' ); ?></td>
-							<td><?php if(get_sub_field( 'columbus_ohio_oh' ) == 1){ echo '<span class="check-yes"><i class="fas fa-check"></i></span>'; } else{ echo'<span class="dash"></span>'; } ?><!--  --></td>
-							<td><?php if(get_sub_field( 'dallas_texas_tx' ) == 1){ echo '<span class="check-yes"><i class="fas fa-check"></i></span>'; } else{ echo'<span class="dash"></span>'; } ?> <!-- <span class="check-yes"><i class="fas fa-check"></i></span>--></td>
+							<td><?php if(get_sub_field( 'columbus_ohio_oh' ) == 1){ echo '<span class="check-yes"><i class="fas fa-check"></i></span>'; } else{ echo'<span class="check-no"><i class="fas fa-times"></i></span>'; } ?><!--  --></td>
+							<td><?php if(get_sub_field( 'dallas_texas_tx' ) == 1){ echo '<span class="check-yes"><i class="fas fa-check"></i></span>'; } else{ echo'<span class="check-no"><i class="fas fa-times"></i></span>'; } ?> <!-- <span class="check-yes"><i class="fas fa-check"></i></span>--></td>
 						</tr>
 						<?php 
 						endwhile; 

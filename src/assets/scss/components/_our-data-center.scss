@@ -219,6 +219,16 @@
                                     text-align: center;
                                 }
                             }
+                            .check-no{
+                                display: block;
+                                font-size: 1.6rem;
+                                line-height: initial;
+                                color: #C63838;
+                                @include respond(tab-port){
+                                    font-size: 3vmin;
+                                    text-align: center;
+                                }
+                            }
                             .dash{
                                 display: block;
                                 height: 3px;

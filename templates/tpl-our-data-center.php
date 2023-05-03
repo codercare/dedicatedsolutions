@@ -23,7 +23,7 @@ while ( have_posts() ) : the_post();
 								$count_columbus = 1;						
 								foreach($columbus_download['speed_and_download'] as $row){
 								?>
-								<a href="<?php echo $row['download_file']; ?>" class="<?php if($count_columbus %2==0){ echo'btn--white'; }else{ echo'btn--orange'; }?>"><?php echo $row['mb_title']; ?><i class="fas fa-download"></i></a>
+								<a target="_blank" href="<?php echo $row['download_file']; ?>" class="<?php if($count_columbus %2==0){ echo'btn--white'; }else{ echo'btn--orange'; }?>"><?php echo $row['mb_title']; ?><i class="fas fa-download"></i></a>
 								<?php 
 								$count_columbus++;
 								}
@@ -47,7 +47,7 @@ while ( have_posts() ) : the_post();
 								$count_texas = 1;							
 								foreach($texas_download['speed_and_download'] as $row){
 								?>
-								<a href="<?php echo $row['download_file']; ?>" class="<?php if($count_texas %2==0){ echo'btn--white'; }else{ echo'btn--orange'; }?>"><?php echo $row['mb_title']; ?><i class="fas fa-download"></i></a>
+								<a target="_blank" href="<?php echo $row['download_file']; ?>" class="<?php if($count_texas %2==0){ echo'btn--white'; }else{ echo'btn--orange'; }?>"><?php echo $row['mb_title']; ?><i class="fas fa-download"></i></a>
 								<?php 
 								$count_texas++;
 								}

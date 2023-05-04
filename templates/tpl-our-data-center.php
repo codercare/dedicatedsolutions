@@ -67,7 +67,7 @@ while ( have_posts() ) : the_post();
 					?>
 					<img src="<?php echo $data_center_map; ?>" alt="map-network">
 					</div>
-					<a href="<?php the_field( 'see_network_ping_time_button_link' ); ?>" class="btn--orange"><?php the_field( 'see_network_ping_time_button' ); ?></a>
+					<a target="_blank" href="<?php the_field( 'see_network_ping_time_button_link' ); ?>" class="btn--orange"><?php the_field( 'see_network_ping_time_button' ); ?></a>
 				</div>
 			</div>
 		</div>

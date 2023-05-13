@@ -109,6 +109,11 @@
                 flex: 1 1 25vmin;
                 margin: 4vmin 0;
             }
+            img{
+                width: 65%;
+                object-fit: contain;
+                height: 60px;
+            }
         }
     }
 }

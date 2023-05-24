@@ -781,3 +781,18 @@
         }
     }
 }
+
+.mobileLink{
+    display:none;
+}
+.desktopLink{
+    display:block;
+}   
+@include respond(mobile){
+    .mobileLink{
+        display:block;
+    }
+    .desktopLink{
+        display:none;
+    }    
+}

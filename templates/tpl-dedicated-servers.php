@@ -192,7 +192,7 @@ get_header();?>
 	<?php } ?>
 	
 	<section class="all-server-details section">
-		<div class="navTabs-pills-wrap">
+		<div  id="section4Mobile" class="navTabs-pills-wrap">
 			<div class="wrapper">
 				<ul class="nav nav-pills" id="db-bd-hosting-pills-tab" role="tablist">
 					<li class="nav-item" role="presentation">
@@ -312,8 +312,14 @@ get_header();?>
 						<?php 
 						$budget_servers = get_field('budget_servers'); 
 						?>
+						<div class="desktopLink">
 						<a  href="#section4" class="btn--orange chooseEnterprise" servertype='budget'><?php if(isset($budget_servers['view_server_button_label'])){ echo $budget_servers['view_server_button_label']; }?></a>
 						<a href="#section4" class="chooseEnterprise" servertype='budget'><span id="countConfBudget"></span> configuration(s) available</a>
+						</div>
+						<div class="mobileLink">
+						<a  href="#section4Mobile" class="btn--orange chooseEnterprise" servertype='budget'><?php if(isset($budget_servers['view_server_button_label'])){ echo $budget_servers['view_server_button_label']; }?></a>
+						<a href="#section4Mobile" class="chooseEnterprise" servertype='budget'><span id="countConfBudget"></span> configuration(s) available</a>
+						</div>
 					</div>
 				</div>
 				<div class="ds-feature-table__block">
@@ -371,8 +377,14 @@ get_header();?>
 						<?php 
 						$pro_servers = get_field('pro_servers'); 
 						?>
+						<div class="desktopLink">
 						<a  href="#section4" class="btn--orange chooseEnterprise" servertype='pro'><?php if(isset($pro_servers['view_server_button_label'])){ echo $pro_servers['view_server_button_label']; }?></a>
 						<a href="#section4" class="chooseEnterprise" servertype='pro'><span id="countConfPro"></span> configuration(s) available</a>
+						</div>
+						<div class="mobileLink">
+						<a  href="#section4Mobile" class="btn--orange chooseEnterprise" servertype='pro'><?php if(isset($pro_servers['view_server_button_label'])){ echo $pro_servers['view_server_button_label']; }?></a>
+						<a href="#section4Mobile" class="chooseEnterprise" servertype='pro'><span id="countConfPro"></span> configuration(s) available</a>
+						</div>
 					</div>
 				</div>
 				<div class="ds-feature-table__block">
@@ -430,8 +442,14 @@ get_header();?>
 					<?php 
 						$enterprice_servers = get_field('enterprise_servers'); 
 						?>
+						<div class="desktopLink">
 						<a href="#section4" class="btn--orange chooseEnterprise" servertype='enterprise'><?php if(isset($enterprice_servers['view_server_button_label'])){ echo $enterprice_servers['view_server_button_label']; }?></a>
 						<a href="#section4" class="chooseEnterprise" servertype='enterprise'><span id="countConfEnterprise"></span> configuration(s) available</a>
+					    </div>
+						<div  class="mobileLink">
+						<a href="#section4Mobile" class="btn--orange chooseEnterprise" servertype='enterprise'><?php if(isset($enterprice_servers['view_server_button_label'])){ echo $enterprice_servers['view_server_button_label']; }?></a>
+						<a href="#section4Mobile" class="chooseEnterprise" servertype='enterprise'><span id="countConfEnterprise"></span> configuration(s) available</a>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -461,6 +479,8 @@ get_header();?>
 .tooltip-inner a:hover{
 	color:#fd7e14;
 }
+
+
 </style>
 <script>
 jQuery('[data-toggle="tooltip"]')

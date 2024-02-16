@@ -196,11 +196,15 @@
                 background: $mainOrange;
                 margin: 0 1.5rem 0 0;
                 @include respond(tab-port){
-                    width: 8vmin;
-                    height: 8vmin;
+                    width: 6vmin;
+                    height: 6vmin;
                     margin: 0 1.2vmin 0 0;
                 }
                 img{
+                    @include respond(mobile){
+                        // height: 45px;
+                        // width: 45px;
+                    }
                     width: 100%;
                 }
             }

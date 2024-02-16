@@ -1,3 +1,7 @@
+<div id="custom-nav">
+  <a class="icon icon__previous" title="Previous"></a>
+  <a class="icon icon__next" title="Next"></a>
+</div>
 		<footer class="site-footer">
 			<div class="wrapper">
 				<div class="site-footer__content">
@@ -38,7 +42,7 @@
 						
 					</div>
 					<div class="site-footer__btn-container">
-						<a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Contact Us' ) ) ); ?>" class="btn--orange u-mb-untill-small u-mr">
+						<a href="<?php echo site_url('/contact-us');?>" class="btn--orange u-mb-untill-small u-mr">
 							<span class="btn-label">Contact Us</span>
 						</a>
 						<a onclick="LC_API.open_chat_window({source:'button'}); return false;"  class="btn--orange u-mb-untill-small">
@@ -68,6 +72,7 @@
 					anchors: ['section1', 'section2','section3','section4','section5','section6','section7','section8','section9','section10'],
 					responsiveWidth: 768,
 					paralax:true,
+					
 						onLeave: function(origin, destination, direction){
 						var loadedSection = this;
 					
@@ -81,9 +86,30 @@
 						
 					},
 					afterResponsive: function(isResponsive){
-					}
+					},
+					afterLoad: function (origin, destination, direction) {
+						// Update custom navigation based on the current section
+						updateCustomNavigation(destination.index);
+					},
 				});
 			
+				// Custom navigation click events
+				$('#custom-nav .icon__previous').on('click', function () {
+					myFullpage.moveSectionUp();
+				});
+
+				$('#custom-nav .icon__next').on('click', function () {
+					myFullpage.moveSectionDown();
+				});
+
+				// Update custom navigation based on the current section
+				function updateCustomNavigation(index) {
+				// Remove the 'active' class from all navigation elements
+					$('#custom-nav a').removeClass('active');
+					// Add the 'active' class to the current navigation element
+					$('#custom-nav a').eq(index).addClass('active');
+				}
+
 				$('.av-gridder').gridderExpander({
 					scroll: true,
 					scrollOffset: 30,

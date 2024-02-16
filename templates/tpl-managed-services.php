@@ -151,7 +151,7 @@ while ( have_posts() ) : the_post();
 										<div class="ms-plan-col">
 											<div class="ms-plan-big-text">
 												<div class="ms-plan-blnc--inner">
-													<span class="big-txt <?php if(strtolower($yes_or_no) =='no'){ echo'dark-txt';  }else{ echo'orange-txt'; } ?>"><?php echo $yes_or_no; ?></span>
+													<span class="big-txt <?php if(strtolower($yes_or_no) =='n/a'){ echo'dark-txt';  }else{ echo'orange-txt'; } ?>"><?php echo $yes_or_no; ?></span>
 												</div>
 											</div>
 											<p><?php the_sub_field('detail'); ?></p>

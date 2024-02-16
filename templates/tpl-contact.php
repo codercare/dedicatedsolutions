@@ -144,7 +144,7 @@ while ( have_posts() ) : the_post();
 					</div>
 					<div id="container-request-form" class="contact-form default-hide">
 						<div class="section-header u-txt-center">
-							<h2 class="section-header__title">Request a callback</h2>
+							<h2 class="section-header__title">Request A Callback</h2>
 							<h4 class="section-header__Orangesub-title">Please leave us phone number and we will contact you back.</h4>							
 						</div>						
 						<div class="contact_form">

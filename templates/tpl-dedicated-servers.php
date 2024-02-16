@@ -153,9 +153,13 @@ get_header();?>
 		<section class="popular-dedicated-server section">
 		<div class="wrappper">
 			<div class="section-header u-txt-center">
+				<span style="float:right; padding-right: 3%; margin: 10px 0px;"><a href="#section4">View All Servers</a></span>
 				<h2 class="section-header__title">Our Most Popular Dedicated Servers</h2>
 				<span class="section-header__decoration-element"></span>
+				
+				
 			</div>
+			
 		</div>
 		<div class="container-fluid">
 			<div class="row">

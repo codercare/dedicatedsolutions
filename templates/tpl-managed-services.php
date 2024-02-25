@@ -1,11 +1,11 @@
 <?php
-/* Template Name: Managed Services */ 
+/* Template Name: Managed Services */
 
 get_header();?>
 
 <main id="fullpage" class="site-main">
 <?php
-while ( have_posts() ) : the_post(); 
+while ( have_posts() ) : the_post();
 
 	$banner_image_url = get_template_directory_uri() . '/dist/assets/images/os-control-panel-banner.jpg';
 	$banner_image     = get_field( 'managed_services_banner_bg_image' );
@@ -21,9 +21,9 @@ while ( have_posts() ) : the_post();
 					<p class="wow fadeInLeft"><?php the_field( 'managed_services_sub_title' ); ?></p>
 					<div class="os-control-panl__btn-wrap">
 						<?php
-						if ( have_rows( 'managed_services_buttons' ) ) : 
+						if ( have_rows( 'managed_services_buttons' ) ) :
 						while ( have_rows( 'managed_services_buttons' ) ) :
-						the_row();											
+						the_row();
 						?>
 						<a href="<?php the_sub_field('button_link');?>" class="btn--orange wow fadeInRight">
 						<?php
@@ -38,15 +38,15 @@ while ( have_posts() ) : the_post();
 						</i>
 						<span class="btn-label"><?php the_sub_field('button_label');?></span>
 						</a>
-						<?php 					
-						endwhile; 
+						<?php
+						endwhile;
 						endif;
-						?>						
+						?>
 					</div>
 				</div>
 			</div>
 		</section>
-	
+
 		<section class="managed-service-layer">
 			<div class="wrapper">
 				<div class="managed-layer-content">
@@ -59,7 +59,7 @@ while ( have_posts() ) : the_post();
 						}
 						?>
 						<img src="<?php echo $feature_image; ?>" alt="managed-layers-img">
-					</figure>					
+					</figure>
 				</div>
 			</div>
 		</section>
@@ -71,20 +71,20 @@ while ( have_posts() ) : the_post();
 				<h2 class="section-header__title"><?php the_field( 'linux_server_os_title' ); ?></h2>
 				<span class="section-header__decoration-element"></span>
 			</div>
-			<?php 
+			<?php
 			$server_logo_icon = get_field('server_logos');
-			if( $server_logo_icon ): 
+			if( $server_logo_icon ):
 			?>
-			<ul>			   
+			<ul>
 				<?php foreach( $server_logo_icon as $image ): ?>
 				<li class="wow fadeInRightBig">
 				<img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
 				</li>
-				<?php endforeach; ?>				
+				<?php endforeach; ?>
 			</ul>
-			<?php 					
+			<?php
 			endif;
-			?>	
+			?>
 		</div>
 	</section>
 
@@ -100,7 +100,7 @@ while ( have_posts() ) : the_post();
 					<ul class="nav nav-pills" id="ms-plan-pills-tab" role="tablist">
 						<?php
 						$counter_service = 1;
-						if ( have_rows('managed_service_plans')) : 
+						if ( have_rows('managed_service_plans')) :
 						while ( have_rows('managed_service_plans')) :
 						the_row();
 						?>
@@ -108,27 +108,27 @@ while ( have_posts() ) : the_post();
 							<a class="nav-link <?php if($counter_service ==1){ echo'active'; } ?> " id="#tab_id_<?php echo $counter_service;?>-tab" data-toggle="pill" href="#tab_id_<?php echo $counter_service;?>" role="tab" aria-controls="tab_id_<?php echo $counter_service;?>" aria-selected="true"><?php the_sub_field('comparison_plan_type'); ?></a>
 						</li>
 						<?php
-						$counter_service++;					
-						endwhile; 
+						$counter_service++;
+						endwhile;
 						endif;
 						?>
 					</ul>
-					<div class="tab-content" id="ms-paln-tabContent">
+					<div class="tab-content wow fadeInUp" id="ms-paln-tabContent">
 						<?php
 						$count_service = 1;
-						if ( have_rows('managed_service_plans')) : 
+						if ( have_rows('managed_service_plans')) :
 						while ( have_rows('managed_service_plans')) :
 						the_row();
 						?>
 						<div class="tab-pane fade  <?php if($count_service ==1){ echo'show active'; } ?>" id="tab_id_<?php echo $count_service;?>" role="tabpanel" aria-labelledby="tab_id_<?php echo $count_service;?>-tab">
 							<div class="managed-service-plan-table">
-								<ul class="ms-plan-list wow fadeInUp">
+								<ul class="ms-plan-list">
 									<li>
 										<div class="ms-plan-col">&nbsp;</div>
 										<div class="ms-plan-col">&nbsp;</div>
 									</li>
 									<?php
-									if ( have_rows('feature_icon_and_detail')) : 
+									if ( have_rows('feature_icon_and_detail')) :
 									while ( have_rows('feature_icon_and_detail')) :
 									the_row();
 									?>
@@ -157,8 +157,8 @@ while ( have_posts() ) : the_post();
 											<p><?php the_sub_field('detail'); ?></p>
 										</div>
 									</li>
-									<?php			
-									endwhile; 
+									<?php
+									endwhile;
 									endif;
 									?>
 									<li>
@@ -169,10 +169,10 @@ while ( have_posts() ) : the_post();
 							</div>
 						</div>
 						<?php
-						$count_service++;					
-						endwhile; 
+						$count_service++;
+						endwhile;
 						endif;
-						?>					
+						?>
 					</div>
 				</div>
 				<div class="ask-for-quotation">
@@ -182,19 +182,19 @@ while ( have_posts() ) : the_post();
 			</div>
 		</section>
 	</section>
-	
+
 	<?php
 	$service_bg_images = '';
 	$box_bg_image     = get_field( 'custom_or_consulting_service_bg_image' );
 	if ( ! empty( $box_bg_image ) ) {
 		$service_bg_images = $box_bg_image['url'];
 	}
-	?>	
+	?>
 	<section class="tech-support ms-tech-support section" style="background-image:url('<?php echo $service_bg_images; ?>')">
 		<div class="tech-support__content">
 			<div class="wrapper">
 				<div class="tech-support-block-wrap">
-					<div class="row">						
+					<div class="row">
 						<div class="col-md-6 wow fadeInLeft">
 							<div class="tech-support-card" style="background-image:url('<?php echo get_template_directory_uri() . '/dist/assets/images/server-bg-1.svg'; ?>')">
 								<h4 class="tech-support-card__title"><?php the_field( 'custom_service_title' ); ?></h4>
@@ -202,7 +202,7 @@ while ( have_posts() ) : the_post();
 								<a href="<?php the_field( 'custom_service_button_link' ); ?>" class="btn--outline"><?php the_field( 'custom_service_button_label' ); ?></a>
 								<div class="tech-support-card__icon-container">
 									<?php
-									$managed_image = get_template_directory_uri() . '/dist/assets/images/server-sub-icon.png'; 
+									$managed_image = get_template_directory_uri() . '/dist/assets/images/server-sub-icon.png';
 									$managed_box_image     = get_field( 'custom_service_icon' );
 									if ( ! empty( $managed_box_image ) ) {
 										$managed_image = $managed_box_image['sizes']['small_icon'];
@@ -212,7 +212,7 @@ while ( have_posts() ) : the_post();
 								</div>
 							</div>
 						</div>
-						
+
 						<div class="col-md-6 wow fadeInRight">
 							<div class="tech-support-card" style="background-image:url('<?php echo get_template_directory_uri() . '/dist/assets/images/support-bg-1.svg'; ?>')">
 								<h4 class="tech-support-card__title"><?php the_field( 'consulting_service_title' ); ?></h4>
